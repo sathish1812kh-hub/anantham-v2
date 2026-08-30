@@ -6,15 +6,21 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P4 — Policy / Tools / Execution)
 
-### [P4.2 — ToolGateway, Schema Validation & Idempotency](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P4.3 — Native Tools (Filesystem, Search, Process, Shell, Git, Worktree, Artifact, Memory, Browser)](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Principal Tool & Execution Architect
-- **Description**: Implement authoritative ToolGateway boundary, schema validation, policy check integration, approval gate enforcement, capability checks, execution timeouts, idempotency caching, normalized errors, and observation/artifact event recording.
-- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1`.
+- **Owner**: Principal Tool & Systems Architect
+- **Description**: Implement first-class Native Tools for Anantham V2 with strict sandboxing, path isolation, streaming outputs, security policies, and ToolGateway compliance.
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.2`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P4.2-TOOLGATEWAY — ToolGateway, Schema Validation & Idempotency](file:///C:/herness/src/tools/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Tool & Execution Architect
+- **Completed Date**: 2026-08-31
+- **Verification**: 289/289 tests passing across 128 test suites in Vitest. Authoritative ToolGateway execution boundary, tool registry, strict runtime schema validation with prototype pollution defense, P4.1 PolicyEngine & ApprovalManager integration, capability checks, execution timeouts via AbortController, idempotency caching and concurrency deduplication, normalized error mapping, immutable event/observation emission, and zero-state-loss SQLite durability.
 
 ### [TASK-P4.1-POLICY — Policy Engine, Risk Classification & Approval Gates](file:///C:/herness/src/policy/index.ts)
 - **Status**: `COMPLETED`

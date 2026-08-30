@@ -20,3 +20,4 @@ export * from "./capability.js";
 export * from "./routing.js";
 export * from "./auth.js";
 export * from "./policy.js";
+export * from "./tool.js";

@@ -90,7 +90,7 @@ export class PolicyEngine {
     }
 
     // Determine deterministic risk
-    const evaluatedRisk: RiskLevel = RiskClassifier.classify({
+    const classifiedRisk: RiskLevel = RiskClassifier.classify({
       type: ctx.operation.type,
       toolName: ctx.operation.toolName,
       resource: ctx.operation.resource,
@@ -98,6 +98,7 @@ export class PolicyEngine {
       targetProjectId: ctx.operation.targetProjectId,
       sourceProjectId: ctx.project.id,
     });
+    const evaluatedRisk: RiskLevel = ctx.requestedRiskLevel || classifiedRisk;
 
     // 4. PRECEDENCE TIER 2: Explicit Configured Policy Rules
     for (const rule of this.rules) {

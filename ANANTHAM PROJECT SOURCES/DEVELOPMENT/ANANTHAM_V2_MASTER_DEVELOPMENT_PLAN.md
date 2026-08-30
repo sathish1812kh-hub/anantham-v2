@@ -296,14 +296,14 @@ Every update MUST include:
 - [x] project isolation
 
 ### P4.2 ToolGateway
-- [ ] schema validation
-- [ ] policy check
-- [ ] approval check
-- [ ] capability check
-- [ ] timeout
-- [ ] idempotency
-- [ ] normalized errors
-- [ ] observation/artifact recording
+- [x] schema validation
+- [x] policy check
+- [x] approval check
+- [x] capability check
+- [x] timeout
+- [x] idempotency
+- [x] normalized errors
+- [x] observation/artifact recording
 
 ### P4.3 Native tools
 - [ ] filesystem
