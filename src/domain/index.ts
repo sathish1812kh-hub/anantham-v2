@@ -18,3 +18,4 @@ export * from "./task.js";
 export * from "./model.js";
 export * from "./capability.js";
 export * from "./routing.js";
+export * from "./auth.js";

@@ -264,22 +264,22 @@ Every update MUST include:
 - [x] ProviderAdapter
 - [x] capability model
 - [x] capability resolver
-- [ ] ModelRouter
-- [ ] routing explanation
+- [x] ModelRouter
+- [x] routing explanation
 - [ ] auth profiles
 - [ ] secure credential storage
 - [ ] key pools
 - [ ] rate/concurrency limits
 - [ ] provider health
 - [ ] cooldown/fairness
-- [ ] retry/failover
+- [x] retry/failover
 - [ ] OpenRouter
 - [ ] direct providers
 - [ ] custom/local endpoints
 - [x] streaming
 - [x] tool calling
 - [x] usage accounting
-- [ ] model switching without state loss
+- [x] model switching without state loss
 
 **P3 GATE:** provider/key failure does not lose committed runtime state.
 

@@ -6,15 +6,21 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P3 — Model / Provider / Credential Plane)
 
-### [P3.3 — ModelRouter & Failover Routing](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P3.4 — Auth Profiles, Key Pools, Rate Limits & Provider Health](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Principal AI Platform Architect
-- **Description**: Implement dynamic model routing, routing explanations, deterministic fallback/failover cascades, and zero-state-loss model switching.
-- **Dependencies**: `P3.1`, `P3.2`.
+- **Owner**: Principal Security & Infrastructure Architect
+- **Description**: Implement secure auth profiles, encrypted credential storage, rotating API key pools, concurrency/rate limit tracking, provider health monitoring, and cooldown fairness.
+- **Dependencies**: `P3.1`, `P3.2`, `P3.3`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P3.3-ROUTER — ModelRouter, Explainability & Bounded Failover Cascades](file:///C:/herness/src/models/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal AI Platform Architect
+- **Completed Date**: 2026-08-31
+- **Verification**: 203/203 tests passing across 90 test suites in Vitest. Deterministic ModelRouter with capability-first candidate filtering, explicit preference/priority ranking, structured explainability (RoutingDecision with rejected candidate reasons), transient error failover cascades (RateLimitError, ProviderUnavailableError, ModelTimeoutError), non-retryable error safety aborts, data sensitivity isolation, and zero-state-loss SQLite durability under failover.
 
 ### [TASK-P3.2-CAPABILITY — Capability Model, Taxonomy & Capability Resolver](file:///C:/herness/src/models/index.ts)
 - **Status**: `COMPLETED`

@@ -4,3 +4,6 @@ export * from "./mock-provider-adapter.js";
 export * from "./capability-profiles.js";
 export * from "./capability-resolver.js";
 export * from "./model-router.js";
+export * from "./secret-store.js";
+export * from "./provider-health-tracker.js";
+export * from "./key-pool-manager.js";

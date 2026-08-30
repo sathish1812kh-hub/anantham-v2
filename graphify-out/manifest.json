@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\governance\\scorecard.json": {
-    "mtime": 1788117099.3726325,
-    "ast_hash": "93496ca28651f9673f1e0c419adfe41f",
+    "mtime": 1788117550.9240825,
+    "ast_hash": "e15aaa3aa8d3dc7b9b66f847536721b2",
     "semantic_hash": ""
   },
   "C:\\herness\\scripts\\certification-scorecard.ps1": {
@@ -250,8 +250,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\src\\domain\\index.ts": {
-    "mtime": 1788116904.6076078,
-    "ast_hash": "b496734c9833d0948212a878f6286723",
+    "mtime": 1788117321.6525977,
+    "ast_hash": "3aa108c8bc5236661617e2d2fb45296a",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\domain\\memory.ts": {
@@ -272,6 +272,11 @@
   "C:\\herness\\src\\domain\\provenance.ts": {
     "mtime": 1788103201.5012043,
     "ast_hash": "d7bf47de093d55f819eeac03760a42fa",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\domain\\routing.ts": {
+    "mtime": 1788117315.8805714,
+    "ast_hash": "50190aa6b1ee6de56b292ac600e2747a",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\domain\\security.ts": {
@@ -370,8 +375,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\src\\models\\index.ts": {
-    "mtime": 1788116922.6393888,
-    "ast_hash": "ff7e85836dfd5728b7baddc7cc0e8ac4",
+    "mtime": 1788117334.7933166,
+    "ast_hash": "e4044cbf77d5b5b2d5fb7611131fb920",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\models\\mock-provider-adapter.ts": {
@@ -382,6 +387,11 @@
   "C:\\herness\\src\\models\\model-errors.ts": {
     "mtime": 1788116559.2297826,
     "ast_hash": "ec92067a650edbb673c72425d121358f",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\models\\model-router.ts": {
+    "mtime": 1788117354.5171127,
+    "ast_hash": "c12cf6c3094a9bfe06704b32c84c1c77",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\models\\provider-adapter.ts": {
@@ -799,6 +809,16 @@
     "ast_hash": "920075de50d5eb909b29297158cbec66",
     "semantic_hash": ""
   },
+  "C:\\herness\\tests\\models\\failover-non-retryable-errors.test.ts": {
+    "mtime": 1788117391.0587046,
+    "ast_hash": "ec1fab1128274a3f41e6683e8d300505",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\models\\failover-transient-error-cascade.test.ts": {
+    "mtime": 1788117386.1241417,
+    "ast_hash": "6e0f31fee06c10e78cb0a83b62a54017",
+    "semantic_hash": ""
+  },
   "C:\\herness\\tests\\models\\feature-negotiation-dependencies.test.ts": {
     "mtime": 1788116947.928485,
     "ast_hash": "41e86d98ceae73bee4eb18502269e78d",
@@ -824,9 +844,34 @@
     "ast_hash": "94b06bceec810c4c90f4452563dbab24",
     "semantic_hash": ""
   },
+  "C:\\herness\\tests\\models\\router-candidate-selection-ranking.test.ts": {
+    "mtime": 1788117376.1449635,
+    "ast_hash": "81e0d5a8bb784805f8e4d4b38c24ff07",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\models\\router-durability-zero-state-loss.test.ts": {
+    "mtime": 1788117447.8479462,
+    "ast_hash": "8ceafbab0abb58f57b265e3c808263a4",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\models\\routing-contracts-validation.test.ts": {
+    "mtime": 1788117370.824176,
+    "ast_hash": "8be7284e32af3361d208cb58ef2c2b38",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\models\\routing-explanation-metadata.test.ts": {
+    "mtime": 1788117381.1518023,
+    "ast_hash": "c6ed0aaea4e6d4bd3a2f5fd2766f93ad",
+    "semantic_hash": ""
+  },
   "C:\\herness\\tests\\models\\security-policy-capability-boundary.test.ts": {
     "mtime": 1788116958.8121116,
     "ast_hash": "2e3076cd0e15310fa7ed2a8021ed1520",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\models\\sensitivity-policy-routing-isolation.test.ts": {
+    "mtime": 1788117396.0246997,
+    "ast_hash": "0e76b9553373003f160f362e9dd406e8",
     "semantic_hash": ""
   },
   "C:\\herness\\tests\\models\\state-durability-fault-tolerance.test.ts": {
@@ -965,8 +1010,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\ANANTHAM PROJECT SOURCES\\DEVELOPMENT\\ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md": {
-    "mtime": 1788117060.3442657,
-    "ast_hash": "49e39668e75ed75ff23c546ab94845dc",
+    "mtime": 1788117493.5536444,
+    "ast_hash": "f407893cc43a7433c85ed40c9709eaf2",
     "semantic_hash": ""
   },
   "C:\\herness\\ANANTHAM PROJECT SOURCES\\prd\\ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md": {
@@ -985,8 +1030,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\active-tasks.md": {
-    "mtime": 1788117066.6397977,
-    "ast_hash": "5f7b469b48a189afd31915444f15dac9",
+    "mtime": 1788117502.1295738,
+    "ast_hash": "f8e6fc1f1da2dbc93204a0429e7485cb",
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\CHATGPT_ORCHESTRATION_KT.md": {
@@ -995,8 +1040,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\current-state.md": {
-    "mtime": 1788117075.158313,
-    "ast_hash": "5110cc36364d352ecfa89975bf0504ca",
+    "mtime": 1788117511.2604165,
+    "ast_hash": "c64cc307329826aa8bdec26e4c3b4e96",
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\decision-log.md": {

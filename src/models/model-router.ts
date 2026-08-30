@@ -26,6 +26,8 @@ import {
   ProviderUnavailableError,
   ModelTimeoutError,
 } from "./model-errors.js";
+import { KeyPoolManager } from "./key-pool-manager.js";
+import { ProviderHealthTracker } from "./provider-health-tracker.js";
 
 export class NoCompatibleModelCandidateError extends ModelExecutionError {
   public readonly rejectedCandidates: RejectedCandidate[];
@@ -56,8 +58,20 @@ const SENSITIVITY_RANK: Record<SensitivityLevel, number> = {
   secret: 3,
 };
 
+export interface ModelRouterOptions {
+  keyPoolManager?: KeyPoolManager;
+  healthTracker?: ProviderHealthTracker;
+}
+
 export class ModelRouter {
   private candidates: Map<string, { candidate: ModelCandidate; adapter: ProviderAdapter }> = new Map();
+  public readonly keyPoolManager?: KeyPoolManager;
+  public readonly healthTracker: ProviderHealthTracker;
+
+  constructor(options: ModelRouterOptions = {}) {
+    this.keyPoolManager = options.keyPoolManager;
+    this.healthTracker = options.healthTracker || new ProviderHealthTracker();
+  }
 
   public registerCandidate(candidate: ModelCandidate, adapter: ProviderAdapter): void {
     const validatedCandidate = ModelCandidateSchema.parse(candidate);
@@ -82,7 +96,7 @@ export class ModelRouter {
   }
 
   /**
-   * Deterministically evaluates registered model candidates against requirements and policy.
+   * Deterministically evaluates registered model candidates against requirements, health, and policy.
    * PRD Part 1 Section 83 & PRD Part 2 Section 42.
    */
   public route(request: RoutingRequest): RoutingDecision {
@@ -104,7 +118,18 @@ export class ModelRouter {
         continue;
       }
 
-      // 2. Capability Resolution Filter
+      // 2. Provider Health Filter
+      const provHealth = this.healthTracker.getProviderHealth(candidate.providerId);
+      if (provHealth.status === "unavailable") {
+        rejected.push({
+          modelId: candidate.modelId,
+          providerId: candidate.providerId,
+          reason: `Provider '${candidate.providerId}' is currently unavailable (Reason: ${provHealth.reason || "Outage"})`,
+        });
+        continue;
+      }
+
+      // 3. Capability Resolution Filter
       const resolution = CapabilityResolver.resolve(
         candidate.profile,
         validatedReq.requirements,
@@ -132,7 +157,7 @@ export class ModelRouter {
       );
     }
 
-    // 3. Deterministic Ranking
+    // 4. Deterministic Ranking
     eligible.sort((a, b) => {
       // Explicit model preference
       if (validatedReq.preferredModelId) {
@@ -144,6 +169,12 @@ export class ModelRouter {
         if (a.providerId === validatedReq.preferredProviderId && b.providerId !== validatedReq.preferredProviderId) return -1;
         if (b.providerId === validatedReq.preferredProviderId && a.providerId !== validatedReq.preferredProviderId) return 1;
       }
+      // Degraded health downranking
+      const aHealth = this.healthTracker.getProviderHealth(a.providerId);
+      const bHealth = this.healthTracker.getProviderHealth(b.providerId);
+      if (aHealth.status === "healthy" && bHealth.status === "degraded") return -1;
+      if (bHealth.status === "healthy" && aHealth.status === "degraded") return 1;
+
       // Configured priority descending
       if (b.priority !== a.priority) {
         return b.priority - a.priority;
@@ -174,7 +205,7 @@ export class ModelRouter {
   }
 
   /**
-   * Executes a model request through deterministic routing and bounded failover cascades.
+   * Executes a model request through deterministic routing, key leasing, and bounded failover cascades.
    */
   public async execute(
     modelRequest: ModelRequest,
@@ -202,6 +233,28 @@ export class ModelRouter {
       const attemptNumber = i + 1;
       const startTime = Date.now();
 
+      // Key lease acquisition if keyPoolManager is configured
+      let leaseId: string | undefined;
+      if (this.keyPoolManager) {
+        const keyResult = await this.keyPoolManager.acquireKey(candidate.providerId);
+        if (!keyResult.success) {
+          // Key pool exhausted for this candidate -> record attempt failure and cascade to next candidate
+          const durationMs = Date.now() - startTime;
+          attempts.push({
+            attemptNumber,
+            modelId: candidate.modelId,
+            providerId: candidate.providerId,
+            status: "failure",
+            errorName: "KeyPoolExhaustedError",
+            errorMessage: keyResult.rejectionReason || "No eligible keys in pool",
+            durationMs,
+            timestamp: new Date().toISOString(),
+          });
+          continue;
+        }
+        leaseId = keyResult.lease?.leaseId;
+      }
+
       try {
         const response: ModelResponse = await entry.adapter.send({
           ...validatedModelReq,
@@ -209,6 +262,13 @@ export class ModelRouter {
         });
 
         const durationMs = Date.now() - startTime;
+
+        if (leaseId && this.keyPoolManager) {
+          this.keyPoolManager.releaseKey(leaseId, { isError: false });
+        }
+
+        this.healthTracker.recordSuccess(candidate.providerId, candidate.modelId);
+
         attempts.push({
           attemptNumber,
           modelId: candidate.modelId,
@@ -230,6 +290,16 @@ export class ModelRouter {
         const durationMs = Date.now() - startTime;
         const errorName = err?.name || "ModelExecutionError";
         const errorMessage = err?.message || String(err);
+
+        if (leaseId && this.keyPoolManager) {
+          const isRateLimit = err instanceof RateLimitError;
+          this.keyPoolManager.releaseKey(leaseId, {
+            isError: true,
+            cooldownMs: isRateLimit ? 5000 : 0,
+          });
+        }
+
+        this.healthTracker.recordFailure(candidate.providerId, candidate.modelId, err);
 
         attempts.push({
           attemptNumber,
