@@ -223,11 +223,11 @@ Every update MUST include:
 - [x] sensitivity classification
 
 ### P2.3 Artifacts
-- [ ] durable writes
-- [ ] hashes
-- [ ] metadata
-- [ ] references
-- [ ] verification status
+- [x] durable writes
+- [x] hashes
+- [x] metadata
+- [x] references
+- [x] verification status
 
 ### P2.4 Context
 - [ ] ContextPlan

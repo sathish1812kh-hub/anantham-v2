@@ -4,18 +4,18 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `aafbd3d`
-- **Generated**: `2026-08-30T23:15:22Z`
+- **Project Commit**: `2677c43`
+- **Generated**: `2026-08-30T23:36:59Z`
 - **Current Release**: `v2.0.0-alpha.1`
 - **Current Phase**: `P2 — CONTENT / CONTEXT / MEMORY / RETRIEVAL`
-- **Current Task**: `P2.3 — Artifacts (Durable Writes, Hashes, Metadata & References)`
-- **Last Completed Task**: `TASK-P2.2-CONTENT-SECURITY — Content Security, MIME Validation & Provenance`
+- **Current Task**: `P2.4 — Context (ContextPlan, Relevance, Capabilities, Token Budget, /context)`
+- **Last Completed Task**: `TASK-P2.3-ARTIFACTS — Durable Writes, Hashes, Metadata & Verification`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`
   - `0 type check errors under strict: true.`
 - **Pending Approvals**:
-  - `None (P1.1-P1.5, P2.1, P2.2 Implemented Clean & Verified).`
+  - `None (P1.1-P1.5, P2.1-P2.3 Implemented Clean & Verified).`
 - **Recently Completed Milestones**:
   - [P1.1-CORE-DOMAIN](file:///C:/herness/src/domain/index.ts) (12 core domain models, runtime Zod validation schemas, state machines, immutability)
   - [P1.2-PERSISTENCE-ENGINE](file:///C:/herness/src/persistence/index.ts) (Native `node:sqlite` engine, WAL mode, synchronous=FULL RPO-0 durability, MigrationEngine, 8 repositories)
@@ -24,6 +24,7 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
   - [P1.5-RESUME-ENGINE](file:///C:/herness/src/resume/index.ts) (SessionResumeEngine, TaskDagRestorer, PendingApprovalRestorer, full disk crash & resume verification)
   - [P2.1-CONTENT-FOUNDATION](file:///C:/herness/src/content/index.ts) (ContentIngestionEngine, specialized parsers for Text, Code, Markdown, JSON, CSV, PDF, Image, Media, Archive, Binary preservation, RepresentationSelector, ContentReferenceManager, ContentAccessValidator)
   - [P2.2-CONTENT-SECURITY](file:///C:/herness/src/content/index.ts) (ContentGuards MIME spoofing detection, Archive bomb decompression ratio checks, ContentSanitizer secret redaction, ProvenanceManager lineage, sensitivity downgrade lockdown, cross-project isolation)
+  - [P2.3-ARTIFACTS](file:///C:/herness/src/artifacts/index.ts) (ArtifactManager atomic durable writes, SHA-256 integrity verification, ArtifactRepository metadata persistence, verification lifecycle, storage path traversal prevention, cross-project isolation)
   - [CHATGPT-ORCHESTRATION-KT](file:///C:/herness/docs/discovery/CHATGPT_ORCHESTRATION_KT.md) (Complete Knowledge Transfer package, 7 Pillars, 11-Phase Lifecycle, Source Hierarchy, commands)
 - **Synchronization Status**:
   - **Type Safety**: `100% PASSED (0 TypeScript compilation errors under strict: true)`
@@ -34,5 +35,6 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
   - **Recovery Engine**: `SYNCED (CheckpointManifestBuilder, CheckpointValidator, LeaseManager, OrphanDetector, CrashRecoveryEngine)`
   - **Resume Engine**: `SYNCED (SessionResumeEngine, TaskDagRestorer, PendingApprovalRestorer)`
   - **Content Engine**: `SYNCED (ContentIngestionEngine, RepresentationSelector, ContentReferenceManager, ContentAccessValidator, ContentSanitizer, ProvenanceManager)`
-  - **Automated Test Suites**: `100% PASSED (129/129 tests passing across 47 test files)`
+  - **Artifact Subsystem**: `SYNCED (ArtifactManager, ArtifactReferenceValidator, ArtifactRepository)`
+  - **Automated Test Suites**: `100% PASSED (138/138 tests passing across 52 test files)`
   - **Quality Scorecard**: `1000/1000 CERTIFIED GOLD STANDARD`
