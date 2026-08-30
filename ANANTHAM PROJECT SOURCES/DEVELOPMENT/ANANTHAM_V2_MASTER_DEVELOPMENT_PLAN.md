@@ -241,11 +241,11 @@ Every update MUST include:
 - [x] `/context`
 
 ### P2.5 Compaction
-- [ ] `/compact`
-- [ ] preview
-- [ ] undo
-- [ ] auto-compact
-- [ ] authoritative-history preservation
+- [x] `/compact`
+- [x] preview
+- [x] undo
+- [x] auto-compact
+- [x] authoritative-history preservation
 
 ### P2.6 Memory/retrieval
 - [ ] scoped memory

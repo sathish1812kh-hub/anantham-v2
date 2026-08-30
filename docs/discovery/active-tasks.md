@@ -6,15 +6,21 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P2 — Content / Context / Memory / Retrieval)
 
-### [P2.5 — Compaction (/compact, preview, undo, auto-compact, authoritative history)](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P2.6 — Memory / Retrieval (Scoped Memory, Provenance, Search, FTS Indexes)](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Principal Context & State Engineer
-- **Description**: Implement session compaction, `/compact` preview, undo mechanism, automated token-threshold compaction, and zero-authoritative-history-loss preservation.
-- **Dependencies**: `P2.1`, `P2.2`, `P2.3`, `P2.4`.
+- **Owner**: Principal Retrieval & Knowledge Engineer
+- **Description**: Implement scoped memory stores, memory item provenance, deterministic search/retrieval, FTS5 indexes, and rebuildable vector/text indexes.
+- **Dependencies**: `P2.1`, `P2.2`, `P2.3`, `P2.4`, `P2.5`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P2.5-COMPACTION — Session Compaction, Preview, Undo & History Preservation](file:///C:/herness/src/compaction/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Context & State Engineer
+- **Completed Date**: 2026-08-31
+- **Verification**: 153/153 tests passing across 64 test suites in Vitest. Non-destructive preview, /compact execution emitting immutable context.compacted events, structured CompactionSummary (objectives, constraints, facts, decisions, unresolved items, artifacts), /compact undo rollback, auto-compact token pressure trigger, and zero-authoritative-history-loss invariant.
 
 ### [TASK-P2.4-CONTEXT — ContextPlan, Relevance, Capabilities, Token Budget, /context](file:///C:/herness/src/context/index.ts)
 - **Status**: `COMPLETED`

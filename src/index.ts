@@ -11,3 +11,4 @@ export * from "./resume/index.js";
 export * from "./content/index.js";
 export * from "./artifacts/index.js";
 export * from "./context/index.js";
+export * from "./compaction/index.js";
