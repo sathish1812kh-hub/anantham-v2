@@ -599,7 +599,7 @@ Antigravity MUST append an entry after every completed work package:
  Files: src/event-state/event-store.ts, src/event-state/reconstruction/*.ts, src/event-state/projections/*.ts, src/event-state/session-tree/*.ts, src/event-state/index.ts, src/index.ts, tests/event-state/*.test.ts
  Tests: 61 automated tests passing across 24 test suites (event append, immutability, state reconstruction, projection incremental update & lossless rebuild from log, session branching/forking, and concurrency isolation).
  Verification: npm run typecheck (0 errors under strict: true), npm test (61/61 passing), npm run build (successful).
- Commit/Revision: Pending git commit
+ Commit/Revision: 388c4e8
  Risks: None.
  Unresolved: None.
  Next: P1.4 Checkpoints/recovery (Checkpoint manifests, validation, crash recovery, orphan detection, stale lease handling).
