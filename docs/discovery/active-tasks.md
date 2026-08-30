@@ -6,15 +6,21 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P3 — Model / Provider / Credential Plane)
 
-### [P3.2 — Capability Model & Capability Resolver](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P3.3 — ModelRouter & Failover Routing](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
 - **Owner**: Principal AI Platform Architect
-- **Description**: Implement dynamic model capability profiles, capability resolution engine, modality matching, and feature negotiation.
-- **Dependencies**: `P3.1`.
+- **Description**: Implement dynamic model routing, routing explanations, deterministic fallback/failover cascades, and zero-state-loss model switching.
+- **Dependencies**: `P3.1`, `P3.2`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P3.2-CAPABILITY — Capability Model, Taxonomy & Capability Resolver](file:///C:/herness/src/models/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal AI Platform Architect
+- **Completed Date**: 2026-08-31
+- **Verification**: 191/191 tests passing across 83 test suites in Vitest. Granular Input/Output modalities, execution features, quantitative token constraints (contextWindow, maxOutputTokens), deterministic CapabilityResolver (COMPATIBLE, INCOMPATIBLE, UNKNOWN, LIMIT_EXCEEDED), staleness handling, and Capability != Authorization security isolation.
 
 ### [TASK-P3.1-ADAPTERS — Unified ModelAdapter, ProviderAdapter & Error Classification](file:///C:/herness/src/models/index.ts)
 - **Status**: `COMPLETED`

@@ -262,8 +262,8 @@ Every update MUST include:
 
 - [x] ModelAdapter
 - [x] ProviderAdapter
-- [ ] capability model
-- [ ] capability resolver
+- [x] capability model
+- [x] capability resolver
 - [ ] ModelRouter
 - [ ] routing explanation
 - [ ] auth profiles

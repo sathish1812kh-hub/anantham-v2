@@ -4,18 +4,18 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `1f11705`
-- **Generated**: `2026-08-31T00:39:48Z`
+- **Project Commit**: `b6f7a77`
+- **Generated**: `2026-08-31T00:46:28Z`
 - **Current Release**: `v2.0.0-alpha.1`
 - **Current Phase**: `P3 — MODEL / PROVIDER / CREDENTIAL PLANE`
-- **Current Task**: `P3.2 — Capability Model & Capability Resolver`
-- **Last Completed Task**: `TASK-P3.1-ADAPTERS — Unified ModelAdapter, ProviderAdapter & Error Classification`
+- **Current Task**: `P3.3 — ModelRouter & Failover Routing`
+- **Last Completed Task**: `TASK-P3.2-CAPABILITY — Capability Model, Taxonomy & Capability Resolver`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`
   - `0 type check errors under strict: true.`
 - **Pending Approvals**:
-  - `None (P1.1-P1.5, P2.1-P2.6, P3.1 Implemented Clean & Verified).`
+  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.2 Implemented Clean & Verified).`
 - **Recently Completed Milestones**:
   - [P1.1-CORE-DOMAIN](file:///C:/herness/src/domain/index.ts) (12 core domain models, runtime Zod validation schemas, state machines, immutability)
   - [P1.2-PERSISTENCE-ENGINE](file:///C:/herness/src/persistence/index.ts) (Native `node:sqlite` engine, WAL mode, synchronous=FULL RPO-0 durability, MigrationEngine, 8 repositories)
@@ -29,6 +29,7 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
   - [P2.5-COMPACTION](file:///C:/herness/src/compaction/index.ts) (CompactionEngine preview, /compact execution emitting context.compacted events, structured CompactionSummary, /compact undo rollback, auto-compact token pressure trigger, zero-history-loss invariant)
   - [P2.6-MEMORY-RETRIEVAL](file:///C:/herness/src/memory/index.ts) (MemoryManager scoped persistence, SQLite FTS5 index migration, MemoryIndexManager 100% rebuildability, MemoryRetrievalEngine composite BM25/confidence ranking, ContextEngine candidate integration, Data != Policy prompt injection isolation)
   - [P3.1-ADAPTERS](file:///C:/herness/src/models/index.ts) (Unified ModelRequest/Response schemas, MockProviderAdapter unary/streaming execution, normalized tool calling, token/cost accounting, structured error hierarchy, P3 Gate SQLite durability)
+  - [P3.2-CAPABILITY](file:///C:/herness/src/models/index.ts) (ModelInput/Output capabilities, execution features, limits, CapabilityProfile status lifecycle, CapabilityResolver deterministic negotiation, RepresentationSelector integration, Capability != Authorization boundary)
   - [CHATGPT-ORCHESTRATION-KT](file:///C:/herness/docs/discovery/CHATGPT_ORCHESTRATION_KT.md) (Complete Knowledge Transfer package, 7 Pillars, 11-Phase Lifecycle, Source Hierarchy, commands)
 - **Synchronization Status**:
   - **Type Safety**: `100% PASSED (0 TypeScript compilation errors under strict: true)`
@@ -43,6 +44,6 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
   - **Context Engine**: `SYNCED (ContextEngine, ToolResultPruner, ContextPlan)`
   - **Compaction Engine**: `SYNCED (CompactionEngine, CompactionSummary, CompactionPreview)`
   - **Memory Subsystem**: `SYNCED (MemoryManager, MemoryIndexManager, MemoryRetrievalEngine, FTS5 Index)`
-  - **Model Plane**: `SYNCED (ModelAdapter, ProviderAdapter, MockProviderAdapter, ModelErrors)`
-  - **Automated Test Suites**: `100% PASSED (175/175 tests passing across 76 test files)`
+  - **Model Plane**: `SYNCED (ModelAdapter, ProviderAdapter, MockProviderAdapter, CapabilityResolver, CapabilityProfiles)`
+  - **Automated Test Suites**: `100% PASSED (191/191 tests passing across 83 test files)`
   - **Quality Scorecard**: `1000/1000 CERTIFIED GOLD STANDARD`

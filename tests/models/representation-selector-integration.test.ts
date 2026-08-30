@@ -17,7 +17,7 @@ describe("Content Pipeline -> CapabilityResolver Integration", () => {
       sha256: "abc123hash",
       representations: [
         { type: "image", mimeType: "image/png", byteSize: 1024, tokenEstimate: 500 },
-        { type: "ocr-text", text: "Extracted image text", byteSize: 20, tokenEstimate: 5 },
+        { type: "text", data: "Extracted image text", byteSize: 20, tokenEstimate: 5 },
       ],
       trustLevel: "trusted",
       sensitivity: "normal",
@@ -51,7 +51,7 @@ describe("Content Pipeline -> CapabilityResolver Integration", () => {
       localProfile
     );
     expect(selLocal.isNativeModality).toBe(false);
-    expect(selLocal.representation.type).toBe("ocr-text"); // Fell back to OCR text
+    expect(selLocal.representation.type).toBe("text"); // Fell back to text
 
     // Direct image requirement on text model fails
     const resLocal = CapabilityResolver.resolve(TEXT_ONLY_LOCAL_PROFILE, {
