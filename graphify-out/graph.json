@@ -1080,7 +1080,7 @@
       "source_file": "src/domain/artifact.ts",
       "source_location": "L1",
       "id": "src_domain_artifact_ts",
-      "community": 44,
+      "community": 8,
       "norm_label": "artifact.ts"
     },
     {
@@ -1089,7 +1089,7 @@
       "source_file": "src/domain/artifact.ts",
       "source_location": "L7",
       "id": "domain_artifact_artifacttypeschema",
-      "community": 44,
+      "community": 8,
       "norm_label": "artifacttypeschema"
     },
     {
@@ -1098,7 +1098,7 @@
       "source_file": "src/domain/artifact.ts",
       "source_location": "L28",
       "id": "domain_artifact_artifacttype",
-      "community": 44,
+      "community": 8,
       "norm_label": "artifacttype"
     },
     {
@@ -1107,7 +1107,7 @@
       "source_file": "src/domain/artifact.ts",
       "source_location": "L33",
       "id": "domain_artifact_artifactverificationschema",
-      "community": 44,
+      "community": 8,
       "norm_label": "artifactverificationschema"
     },
     {
@@ -1116,7 +1116,7 @@
       "source_file": "src/domain/artifact.ts",
       "source_location": "L39",
       "id": "domain_artifact_artifactverification",
-      "community": 44,
+      "community": 8,
       "norm_label": "artifactverification"
     },
     {
@@ -1125,7 +1125,7 @@
       "source_file": "src/domain/artifact.ts",
       "source_location": "L45",
       "id": "domain_artifact_artifactschema",
-      "community": 44,
+      "community": 8,
       "norm_label": "artifactschema"
     },
     {
@@ -1134,7 +1134,7 @@
       "source_file": "src/domain/artifact.ts",
       "source_location": "L60",
       "id": "domain_artifact_artifact",
-      "community": 44,
+      "community": 8,
       "norm_label": "artifact"
     },
     {
@@ -1530,7 +1530,7 @@
       "source_file": "src/domain/event.ts",
       "source_location": "L131",
       "id": "domain_event_iseventfrozen",
-      "community": 5,
+      "community": 21,
       "norm_label": "iseventfrozen()"
     },
     {
@@ -1674,7 +1674,7 @@
       "source_file": "src/domain/provenance.ts",
       "source_location": "L1",
       "id": "src_domain_provenance_ts",
-      "community": 19,
+      "community": 37,
       "norm_label": "provenance.ts"
     },
     {
@@ -1683,7 +1683,7 @@
       "source_file": "src/domain/provenance.ts",
       "source_location": "L6",
       "id": "domain_provenance_extractormetadataschema",
-      "community": 19,
+      "community": 37,
       "norm_label": "extractormetadataschema"
     },
     {
@@ -1692,7 +1692,7 @@
       "source_file": "src/domain/provenance.ts",
       "source_location": "L10",
       "id": "domain_provenance_extractormetadata",
-      "community": 19,
+      "community": 37,
       "norm_label": "extractormetadata"
     },
     {
@@ -1701,7 +1701,7 @@
       "source_file": "src/domain/provenance.ts",
       "source_location": "L16",
       "id": "domain_provenance_provenanceschema",
-      "community": 19,
+      "community": 37,
       "norm_label": "provenanceschema"
     },
     {
@@ -1710,7 +1710,7 @@
       "source_file": "src/domain/provenance.ts",
       "source_location": "L25",
       "id": "domain_provenance_provenance",
-      "community": 19,
+      "community": 37,
       "norm_label": "provenance"
     },
     {
@@ -1746,7 +1746,7 @@
       "source_file": "src/domain/security.ts",
       "source_location": "L21",
       "id": "domain_security_sensitivitylevelschema",
-      "community": 31,
+      "community": 30,
       "norm_label": "sensitivitylevelschema"
     },
     {
@@ -1863,7 +1863,7 @@
       "source_file": "src/domain/task.ts",
       "source_location": "L19",
       "id": "domain_task_taskstatus",
-      "community": 11,
+      "community": 5,
       "norm_label": "taskstatus"
     },
     {
@@ -1935,7 +1935,7 @@
       "source_file": "src/event-state/event-store.ts",
       "source_location": "L1",
       "id": "src_event_state_event_store_ts",
-      "community": 4,
+      "community": 5,
       "norm_label": "event-store.ts"
     },
     {
@@ -1944,7 +1944,7 @@
       "source_file": "src/event-state/event-store.ts",
       "source_location": "L5",
       "id": "event_state_event_store_streamqueryoptions",
-      "community": 4,
+      "community": 5,
       "norm_label": "streamqueryoptions"
     },
     {
@@ -1953,7 +1953,7 @@
       "source_file": "src/event-state/event-store.ts",
       "source_location": "L12",
       "id": "event_state_event_store_eventsubscriptionfilter",
-      "community": 4,
+      "community": 5,
       "norm_label": "eventsubscriptionfilter"
     },
     {
@@ -1962,7 +1962,7 @@
       "source_file": "src/event-state/event-store.ts",
       "source_location": "L18",
       "id": "event_state_event_store_eventlistener",
-      "community": 4,
+      "community": 5,
       "norm_label": "eventlistener"
     },
     {
@@ -1971,7 +1971,7 @@
       "source_file": "src/event-state/event-store.ts",
       "source_location": "L20",
       "id": "event_state_event_store_activesubscription",
-      "community": 4,
+      "community": 5,
       "norm_label": "activesubscription"
     },
     {
@@ -1980,7 +1980,7 @@
       "source_file": "src/event-state/event-store.ts",
       "source_location": "L31",
       "id": "event_state_event_store_eventstore",
-      "community": 4,
+      "community": 38,
       "norm_label": "eventstore"
     },
     {
@@ -1989,7 +1989,7 @@
       "source_file": "src/event-state/event-store.ts",
       "source_location": "L37",
       "id": "event_state_event_store_eventstore_constructor",
-      "community": 4,
+      "community": 38,
       "norm_label": ".constructor()"
     },
     {
@@ -1998,7 +1998,7 @@
       "source_file": "src/event-state/event-store.ts",
       "source_location": "L42",
       "id": "event_state_event_store_eventstore_sqliteengine",
-      "community": 4,
+      "community": 38,
       "norm_label": ".sqliteengine()"
     },
     {
@@ -2007,7 +2007,7 @@
       "source_file": "src/event-state/event-store.ts",
       "source_location": "L50",
       "id": "event_state_event_store_eventstore_append",
-      "community": 4,
+      "community": 38,
       "norm_label": ".append()"
     },
     {
@@ -2016,7 +2016,7 @@
       "source_file": "src/event-state/event-store.ts",
       "source_location": "L65",
       "id": "event_state_event_store_eventstore_geteventsbysession",
-      "community": 4,
+      "community": 38,
       "norm_label": ".geteventsbysession()"
     },
     {
@@ -2025,7 +2025,7 @@
       "source_file": "src/event-state/event-store.ts",
       "source_location": "L75",
       "id": "event_state_event_store_eventstore_geteventsbyproject",
-      "community": 4,
+      "community": 38,
       "norm_label": ".geteventsbyproject()"
     },
     {
@@ -2034,7 +2034,7 @@
       "source_file": "src/event-state/event-store.ts",
       "source_location": "L141",
       "id": "event_state_event_store_eventstore_geteventbyid",
-      "community": 4,
+      "community": 38,
       "norm_label": ".geteventbyid()"
     },
     {
@@ -2043,7 +2043,7 @@
       "source_file": "src/event-state/event-store.ts",
       "source_location": "L149",
       "id": "event_state_event_store_eventstore_subscribe",
-      "community": 4,
+      "community": 38,
       "norm_label": ".subscribe()"
     },
     {
@@ -2052,7 +2052,7 @@
       "source_file": "src/event-state/event-store.ts",
       "source_location": "L161",
       "id": "event_state_event_store_eventstore_notifysubscribers",
-      "community": 4,
+      "community": 38,
       "norm_label": ".notifysubscribers()"
     },
     {
@@ -2079,7 +2079,7 @@
       "source_file": "src/event-state/projections/projection-manager.ts",
       "source_location": "L11",
       "id": "projections_projection_manager_projectionmanager",
-      "community": 38,
+      "community": 44,
       "norm_label": "projectionmanager"
     },
     {
@@ -2088,7 +2088,7 @@
       "source_file": "src/event-state/projections/projection-manager.ts",
       "source_location": "L19",
       "id": "projections_projection_manager_projectionmanager_constructor",
-      "community": 38,
+      "community": 44,
       "norm_label": ".constructor()"
     },
     {
@@ -2097,7 +2097,7 @@
       "source_file": "src/event-state/projections/projection-manager.ts",
       "source_location": "L33",
       "id": "projections_projection_manager_projectionmanager_initsubscription",
-      "community": 38,
+      "community": 44,
       "norm_label": ".initsubscription()"
     },
     {
@@ -2106,7 +2106,7 @@
       "source_file": "src/event-state/projections/projection-manager.ts",
       "source_location": "L39",
       "id": "projections_projection_manager_projectionmanager_register",
-      "community": 38,
+      "community": 44,
       "norm_label": ".register()"
     },
     {
@@ -2115,7 +2115,7 @@
       "source_file": "src/event-state/projections/projection-manager.ts",
       "source_location": "L43",
       "id": "projections_projection_manager_projectionmanager_getprojection",
-      "community": 38,
+      "community": 44,
       "norm_label": ".getprojection()"
     },
     {
@@ -2124,7 +2124,7 @@
       "source_file": "src/event-state/projections/projection-manager.ts",
       "source_location": "L47",
       "id": "projections_projection_manager_projectionmanager_handleevent",
-      "community": 38,
+      "community": 44,
       "norm_label": ".handleevent()"
     },
     {
@@ -2133,7 +2133,7 @@
       "source_file": "src/event-state/projections/projection-manager.ts",
       "source_location": "L62",
       "id": "projections_projection_manager_projectionmanager_rebuildsession",
-      "community": 38,
+      "community": 44,
       "norm_label": ".rebuildsession()"
     },
     {
@@ -2142,7 +2142,7 @@
       "source_file": "src/event-state/projections/projection-manager.ts",
       "source_location": "L72",
       "id": "projections_projection_manager_projectionmanager_rebuildall",
-      "community": 38,
+      "community": 44,
       "norm_label": ".rebuildall()"
     },
     {
@@ -2151,7 +2151,7 @@
       "source_file": "src/event-state/projections/projection-manager.ts",
       "source_location": "L119",
       "id": "projections_projection_manager_projectionmanager_dispose",
-      "community": 38,
+      "community": 44,
       "norm_label": ".dispose()"
     },
     {
@@ -2367,7 +2367,7 @@
       "source_file": "src/event-state/reconstruction/session-reconstruct.ts",
       "source_location": "L4",
       "id": "reconstruction_session_reconstruct_reconstructedsessionstate",
-      "community": 5,
+      "community": 12,
       "norm_label": "reconstructedsessionstate"
     },
     {
@@ -2421,7 +2421,7 @@
       "source_file": "src/event-state/session-tree/session-tree-manager.ts",
       "source_location": "L1",
       "id": "src_event_state_session_tree_session_tree_manager_ts",
-      "community": 12,
+      "community": 5,
       "norm_label": "session-tree-manager.ts"
     },
     {
@@ -2430,7 +2430,7 @@
       "source_file": "src/event-state/session-tree/session-tree-manager.ts",
       "source_location": "L6",
       "id": "session_tree_session_tree_manager_forksessionoptions",
-      "community": 12,
+      "community": 5,
       "norm_label": "forksessionoptions"
     },
     {
@@ -2439,7 +2439,7 @@
       "source_file": "src/event-state/session-tree/session-tree-manager.ts",
       "source_location": "L16",
       "id": "session_tree_session_tree_manager_sessiontreenode",
-      "community": 12,
+      "community": 5,
       "norm_label": "sessiontreenode"
     },
     {
@@ -2502,7 +2502,7 @@
       "source_file": "src/persistence/index.ts",
       "source_location": "L1",
       "id": "src_persistence_index_ts",
-      "community": 4,
+      "community": 14,
       "norm_label": "index.ts"
     },
     {
@@ -2583,7 +2583,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L1",
       "id": "src_persistence_sqlite_engine_ts",
-      "community": 7,
+      "community": 14,
       "norm_label": "sqlite-engine.ts"
     },
     {
@@ -2592,7 +2592,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L5",
       "id": "persistence_sqlite_engine_databaseconfig",
-      "community": 7,
+      "community": 14,
       "norm_label": "databaseconfig"
     },
     {
@@ -2601,7 +2601,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L24",
       "id": "persistence_sqlite_engine_integritycheckresult",
-      "community": 7,
+      "community": 14,
       "norm_label": "integritycheckresult"
     },
     {
@@ -2610,7 +2610,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L33",
       "id": "persistence_sqlite_engine_sqliteengine",
-      "community": 7,
+      "community": 14,
       "norm_label": "sqliteengine"
     },
     {
@@ -2619,7 +2619,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L37",
       "id": "persistence_sqlite_engine_sqliteengine_constructor",
-      "community": 7,
+      "community": 14,
       "norm_label": ".constructor()"
     },
     {
@@ -2628,7 +2628,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L49",
       "id": "persistence_sqlite_engine_sqliteengine_open",
-      "community": 7,
+      "community": 14,
       "norm_label": ".open()"
     },
     {
@@ -2637,7 +2637,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L77",
       "id": "persistence_sqlite_engine_sqliteengine_raw",
-      "community": 7,
+      "community": 14,
       "norm_label": ".raw()"
     },
     {
@@ -2646,7 +2646,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L87",
       "id": "persistence_sqlite_engine_sqliteengine_isopen",
-      "community": 7,
+      "community": 14,
       "norm_label": ".isopen()"
     },
     {
@@ -2655,7 +2655,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L94",
       "id": "persistence_sqlite_engine_sqliteengine_close",
-      "community": 7,
+      "community": 14,
       "norm_label": ".close()"
     },
     {
@@ -2664,7 +2664,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L106",
       "id": "persistence_sqlite_engine_sqliteengine_transaction",
-      "community": 7,
+      "community": 14,
       "norm_label": ".transaction()"
     },
     {
@@ -2673,7 +2673,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L129",
       "id": "persistence_sqlite_engine_sqliteengine_integritycheck",
-      "community": 7,
+      "community": 14,
       "norm_label": ".integritycheck()"
     },
     {
@@ -2682,7 +2682,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L145",
       "id": "persistence_sqlite_engine_sqliteengine_foreignkeycheck",
-      "community": 7,
+      "community": 14,
       "norm_label": ".foreignkeycheck()"
     },
     {
@@ -2727,7 +2727,7 @@
       "source_file": "src/persistence/repositories/artifact-repository.ts",
       "source_location": "L1",
       "id": "src_persistence_repositories_artifact_repository_ts",
-      "community": 44,
+      "community": 8,
       "norm_label": "artifact-repository.ts"
     },
     {
@@ -2736,7 +2736,7 @@
       "source_file": "src/persistence/repositories/artifact-repository.ts",
       "source_location": "L4",
       "id": "repositories_artifact_repository_artifactrow",
-      "community": 44,
+      "community": 8,
       "norm_label": "artifactrow"
     },
     {
@@ -2745,7 +2745,7 @@
       "source_file": "src/persistence/repositories/artifact-repository.ts",
       "source_location": "L20",
       "id": "repositories_artifact_repository_artifactrepository",
-      "community": 44,
+      "community": 7,
       "norm_label": "artifactrepository"
     },
     {
@@ -2754,7 +2754,7 @@
       "source_file": "src/persistence/repositories/artifact-repository.ts",
       "source_location": "L23",
       "id": "repositories_artifact_repository_artifactrepository_constructor",
-      "community": 44,
+      "community": 7,
       "norm_label": ".constructor()"
     },
     {
@@ -2763,7 +2763,7 @@
       "source_file": "src/persistence/repositories/artifact-repository.ts",
       "source_location": "L27",
       "id": "repositories_artifact_repository_artifactrepository_rowtoartifact",
-      "community": 44,
+      "community": 7,
       "norm_label": ".rowtoartifact()"
     },
     {
@@ -2772,7 +2772,7 @@
       "source_file": "src/persistence/repositories/artifact-repository.ts",
       "source_location": "L46",
       "id": "repositories_artifact_repository_artifactrepository_save",
-      "community": 44,
+      "community": 7,
       "norm_label": ".save()"
     },
     {
@@ -2781,7 +2781,7 @@
       "source_file": "src/persistence/repositories/artifact-repository.ts",
       "source_location": "L82",
       "id": "repositories_artifact_repository_artifactrepository_findbyid",
-      "community": 44,
+      "community": 7,
       "norm_label": ".findbyid()"
     },
     {
@@ -2790,7 +2790,7 @@
       "source_file": "src/persistence/repositories/artifact-repository.ts",
       "source_location": "L90",
       "id": "repositories_artifact_repository_artifactrepository_findbyhash",
-      "community": 44,
+      "community": 7,
       "norm_label": ".findbyhash()"
     },
     {
@@ -2799,7 +2799,7 @@
       "source_file": "src/persistence/repositories/artifact-repository.ts",
       "source_location": "L98",
       "id": "repositories_artifact_repository_artifactrepository_listbytask",
-      "community": 44,
+      "community": 7,
       "norm_label": ".listbytask()"
     },
     {
@@ -2808,7 +2808,7 @@
       "source_file": "src/persistence/repositories/artifact-repository.ts",
       "source_location": "L106",
       "id": "repositories_artifact_repository_artifactrepository_listbysession",
-      "community": 44,
+      "community": 7,
       "norm_label": ".listbysession()"
     },
     {
@@ -2997,7 +2997,7 @@
       "source_file": "src/persistence/repositories/event-repository.ts",
       "source_location": "L19",
       "id": "repositories_event_repository_eventrepository",
-      "community": 37,
+      "community": 5,
       "norm_label": "eventrepository"
     },
     {
@@ -3006,7 +3006,7 @@
       "source_file": "src/persistence/repositories/event-repository.ts",
       "source_location": "L22",
       "id": "repositories_event_repository_eventrepository_constructor",
-      "community": 37,
+      "community": 5,
       "norm_label": ".constructor()"
     },
     {
@@ -3015,7 +3015,7 @@
       "source_file": "src/persistence/repositories/event-repository.ts",
       "source_location": "L26",
       "id": "repositories_event_repository_eventrepository_rowtoevent",
-      "community": 37,
+      "community": 5,
       "norm_label": ".rowtoevent()"
     },
     {
@@ -3024,7 +3024,7 @@
       "source_file": "src/persistence/repositories/event-repository.ts",
       "source_location": "L49",
       "id": "repositories_event_repository_eventrepository_append",
-      "community": 37,
+      "community": 5,
       "norm_label": ".append()"
     },
     {
@@ -3033,7 +3033,7 @@
       "source_file": "src/persistence/repositories/event-repository.ts",
       "source_location": "L78",
       "id": "repositories_event_repository_eventrepository_findbyid",
-      "community": 37,
+      "community": 5,
       "norm_label": ".findbyid()"
     },
     {
@@ -3042,7 +3042,7 @@
       "source_file": "src/persistence/repositories/event-repository.ts",
       "source_location": "L86",
       "id": "repositories_event_repository_eventrepository_listbysession",
-      "community": 37,
+      "community": 5,
       "norm_label": ".listbysession()"
     },
     {
@@ -3051,7 +3051,7 @@
       "source_file": "src/persistence/repositories/event-repository.ts",
       "source_location": "L114",
       "id": "repositories_event_repository_eventrepository_countbysession",
-      "community": 37,
+      "community": 5,
       "norm_label": ".countbysession()"
     },
     {
@@ -3159,7 +3159,7 @@
       "source_file": "src/persistence/repositories/project-repository.ts",
       "source_location": "L20",
       "id": "repositories_project_repository_projectrepository",
-      "community": 255,
+      "community": 56,
       "norm_label": "projectrepository"
     },
     {
@@ -3168,7 +3168,7 @@
       "source_file": "src/persistence/repositories/project-repository.ts",
       "source_location": "L23",
       "id": "repositories_project_repository_projectrepository_constructor",
-      "community": 255,
+      "community": 56,
       "norm_label": ".constructor()"
     },
     {
@@ -3177,7 +3177,7 @@
       "source_file": "src/persistence/repositories/project-repository.ts",
       "source_location": "L27",
       "id": "repositories_project_repository_projectrepository_rowtoproject",
-      "community": 255,
+      "community": 56,
       "norm_label": ".rowtoproject()"
     },
     {
@@ -3186,7 +3186,7 @@
       "source_file": "src/persistence/repositories/project-repository.ts",
       "source_location": "L46",
       "id": "repositories_project_repository_projectrepository_save",
-      "community": 255,
+      "community": 56,
       "norm_label": ".save()"
     },
     {
@@ -3195,7 +3195,7 @@
       "source_file": "src/persistence/repositories/project-repository.ts",
       "source_location": "L85",
       "id": "repositories_project_repository_projectrepository_findbyid",
-      "community": 255,
+      "community": 56,
       "norm_label": ".findbyid()"
     },
     {
@@ -3204,7 +3204,7 @@
       "source_file": "src/persistence/repositories/project-repository.ts",
       "source_location": "L93",
       "id": "repositories_project_repository_projectrepository_list",
-      "community": 255,
+      "community": 56,
       "norm_label": ".list()"
     },
     {
@@ -3213,7 +3213,7 @@
       "source_file": "src/persistence/repositories/project-repository.ts",
       "source_location": "L108",
       "id": "repositories_project_repository_projectrepository_delete",
-      "community": 255,
+      "community": 56,
       "norm_label": ".delete()"
     },
     {
@@ -3240,7 +3240,7 @@
       "source_file": "src/persistence/repositories/session-repository.ts",
       "source_location": "L21",
       "id": "repositories_session_repository_sessionrepository",
-      "community": 12,
+      "community": 23,
       "norm_label": "sessionrepository"
     },
     {
@@ -3249,7 +3249,7 @@
       "source_file": "src/persistence/repositories/session-repository.ts",
       "source_location": "L24",
       "id": "repositories_session_repository_sessionrepository_constructor",
-      "community": 12,
+      "community": 23,
       "norm_label": ".constructor()"
     },
     {
@@ -3258,7 +3258,7 @@
       "source_file": "src/persistence/repositories/session-repository.ts",
       "source_location": "L28",
       "id": "repositories_session_repository_sessionrepository_rowtosession",
-      "community": 12,
+      "community": 23,
       "norm_label": ".rowtosession()"
     },
     {
@@ -3267,7 +3267,7 @@
       "source_file": "src/persistence/repositories/session-repository.ts",
       "source_location": "L48",
       "id": "repositories_session_repository_sessionrepository_save",
-      "community": 12,
+      "community": 23,
       "norm_label": ".save()"
     },
     {
@@ -3276,7 +3276,7 @@
       "source_file": "src/persistence/repositories/session-repository.ts",
       "source_location": "L88",
       "id": "repositories_session_repository_sessionrepository_findbyid",
-      "community": 12,
+      "community": 23,
       "norm_label": ".findbyid()"
     },
     {
@@ -3285,7 +3285,7 @@
       "source_file": "src/persistence/repositories/session-repository.ts",
       "source_location": "L96",
       "id": "repositories_session_repository_sessionrepository_listbyproject",
-      "community": 12,
+      "community": 23,
       "norm_label": ".listbyproject()"
     },
     {
@@ -3294,7 +3294,7 @@
       "source_file": "src/persistence/repositories/session-repository.ts",
       "source_location": "L111",
       "id": "repositories_session_repository_sessionrepository_updatestatus",
-      "community": 12,
+      "community": 23,
       "norm_label": ".updatestatus()"
     },
     {
@@ -3492,7 +3492,7 @@
       "source_file": "src/recovery/crash-recovery-engine.ts",
       "source_location": "L24",
       "id": "recovery_crash_recovery_engine_crashrecoveryengine",
-      "community": 23,
+      "community": 20,
       "norm_label": "crashrecoveryengine"
     },
     {
@@ -3501,7 +3501,7 @@
       "source_file": "src/recovery/crash-recovery-engine.ts",
       "source_location": "L33",
       "id": "recovery_crash_recovery_engine_crashrecoveryengine_constructor",
-      "community": 23,
+      "community": 20,
       "norm_label": ".constructor()"
     },
     {
@@ -3510,7 +3510,7 @@
       "source_file": "src/recovery/crash-recovery-engine.ts",
       "source_location": "L47",
       "id": "recovery_crash_recovery_engine_crashrecoveryengine_executerecovery",
-      "community": 23,
+      "community": 20,
       "norm_label": ".executerecovery()"
     },
     {
@@ -3528,7 +3528,7 @@
       "source_file": "src/recovery/lease-manager.ts",
       "source_location": "L1",
       "id": "src_recovery_lease_manager_ts",
-      "community": 20,
+      "community": 255,
       "norm_label": "lease-manager.ts"
     },
     {
@@ -3537,7 +3537,7 @@
       "source_file": "src/recovery/lease-manager.ts",
       "source_location": "L4",
       "id": "recovery_lease_manager_taskleaseschema",
-      "community": 20,
+      "community": 255,
       "norm_label": "taskleaseschema"
     },
     {
@@ -3546,7 +3546,7 @@
       "source_file": "src/recovery/lease-manager.ts",
       "source_location": "L14",
       "id": "recovery_lease_manager_tasklease",
-      "community": 20,
+      "community": 255,
       "norm_label": "tasklease"
     },
     {
@@ -3555,7 +3555,7 @@
       "source_file": "src/recovery/lease-manager.ts",
       "source_location": "L16",
       "id": "recovery_lease_manager_leasemanager",
-      "community": 20,
+      "community": 255,
       "norm_label": "leasemanager"
     },
     {
@@ -3564,7 +3564,7 @@
       "source_file": "src/recovery/lease-manager.ts",
       "source_location": "L22",
       "id": "recovery_lease_manager_leasemanager_constructor",
-      "community": 20,
+      "community": 255,
       "norm_label": ".constructor()"
     },
     {
@@ -3573,7 +3573,7 @@
       "source_file": "src/recovery/lease-manager.ts",
       "source_location": "L30",
       "id": "recovery_lease_manager_leasemanager_acquirelease",
-      "community": 20,
+      "community": 255,
       "norm_label": ".acquirelease()"
     },
     {
@@ -3582,7 +3582,7 @@
       "source_file": "src/recovery/lease-manager.ts",
       "source_location": "L81",
       "id": "recovery_lease_manager_leasemanager_heartbeat",
-      "community": 20,
+      "community": 255,
       "norm_label": ".heartbeat()"
     },
     {
@@ -3591,7 +3591,7 @@
       "source_file": "src/recovery/lease-manager.ts",
       "source_location": "L106",
       "id": "recovery_lease_manager_leasemanager_releaselease",
-      "community": 20,
+      "community": 255,
       "norm_label": ".releaselease()"
     },
     {
@@ -3600,7 +3600,7 @@
       "source_file": "src/recovery/lease-manager.ts",
       "source_location": "L120",
       "id": "recovery_lease_manager_leasemanager_getactivelease",
-      "community": 20,
+      "community": 255,
       "norm_label": ".getactivelease()"
     },
     {
@@ -3609,7 +3609,7 @@
       "source_file": "src/recovery/lease-manager.ts",
       "source_location": "L139",
       "id": "recovery_lease_manager_leasemanager_reclaimstaleleases",
-      "community": 20,
+      "community": 255,
       "norm_label": ".reclaimstaleleases()"
     },
     {
@@ -3721,12 +3721,273 @@
       "norm_label": "recoveryrecord"
     },
     {
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "src/resume/index.ts",
+      "source_location": "L1",
+      "id": "src_resume_index_ts",
+      "community": 866,
+      "norm_label": "index.ts"
+    },
+    {
+      "label": "pending-approval-restorer.ts",
+      "file_type": "code",
+      "source_file": "src/resume/pending-approval-restorer.ts",
+      "source_location": "L1",
+      "id": "src_resume_pending_approval_restorer_ts",
+      "community": 12,
+      "norm_label": "pending-approval-restorer.ts"
+    },
+    {
+      "label": "PendingApprovalRestorer",
+      "file_type": "code",
+      "source_file": "src/resume/pending-approval-restorer.ts",
+      "source_location": "L4",
+      "id": "resume_pending_approval_restorer_pendingapprovalrestorer",
+      "community": 12,
+      "norm_label": "pendingapprovalrestorer"
+    },
+    {
+      "label": ".restorePendingApprovals()",
+      "file_type": "code",
+      "source_file": "src/resume/pending-approval-restorer.ts",
+      "source_location": "L9",
+      "id": "resume_pending_approval_restorer_pendingapprovalrestorer_restorependingapprovals",
+      "community": 12,
+      "norm_label": ".restorependingapprovals()"
+    },
+    {
+      "label": "resume-contract.ts",
+      "file_type": "code",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L1",
+      "id": "src_resume_resume_contract_ts",
+      "community": 12,
+      "norm_label": "resume-contract.ts"
+    },
+    {
+      "label": "ResumeTargetSchema",
+      "file_type": "code",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L12",
+      "id": "resume_resume_contract_resumetargetschema",
+      "community": 12,
+      "norm_label": "resumetargetschema"
+    },
+    {
+      "label": "ResumeTarget",
+      "file_type": "code",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L30",
+      "id": "resume_resume_contract_resumetarget",
+      "community": 12,
+      "norm_label": "resumetarget"
+    },
+    {
+      "label": "ResumeOptionsSchema",
+      "file_type": "code",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L35",
+      "id": "resume_resume_contract_resumeoptionsschema",
+      "community": 12,
+      "norm_label": "resumeoptionsschema"
+    },
+    {
+      "label": "ResumeOptions",
+      "file_type": "code",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L41",
+      "id": "resume_resume_contract_resumeoptions",
+      "community": 12,
+      "norm_label": "resumeoptions"
+    },
+    {
+      "label": "ResumeRequestSchema",
+      "file_type": "code",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L46",
+      "id": "resume_resume_contract_resumerequestschema",
+      "community": 12,
+      "norm_label": "resumerequestschema"
+    },
+    {
+      "label": "ResumeRequest",
+      "file_type": "code",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L50",
+      "id": "resume_resume_contract_resumerequest",
+      "community": 12,
+      "norm_label": "resumerequest"
+    },
+    {
+      "label": "RestoredTaskDAGSchema",
+      "file_type": "code",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L55",
+      "id": "resume_resume_contract_restoredtaskdagschema",
+      "community": 12,
+      "norm_label": "restoredtaskdagschema"
+    },
+    {
+      "label": "RestoredTaskDAG",
+      "file_type": "code",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L68",
+      "id": "resume_resume_contract_restoredtaskdag",
+      "community": 11,
+      "norm_label": "restoredtaskdag"
+    },
+    {
+      "label": "PendingApprovalItemSchema",
+      "file_type": "code",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L81",
+      "id": "resume_resume_contract_pendingapprovalitemschema",
+      "community": 12,
+      "norm_label": "pendingapprovalitemschema"
+    },
+    {
+      "label": "PendingApprovalItem",
+      "file_type": "code",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L91",
+      "id": "resume_resume_contract_pendingapprovalitem",
+      "community": 12,
+      "norm_label": "pendingapprovalitem"
+    },
+    {
+      "label": "RestoredPendingApprovalsSchema",
+      "file_type": "code",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L96",
+      "id": "resume_resume_contract_restoredpendingapprovalsschema",
+      "community": 12,
+      "norm_label": "restoredpendingapprovalsschema"
+    },
+    {
+      "label": "RestoredPendingApprovals",
+      "file_type": "code",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L100",
+      "id": "resume_resume_contract_restoredpendingapprovals",
+      "community": 12,
+      "norm_label": "restoredpendingapprovals"
+    },
+    {
+      "label": "ResumeValidationResultSchema",
+      "file_type": "code",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L105",
+      "id": "resume_resume_contract_resumevalidationresultschema",
+      "community": 12,
+      "norm_label": "resumevalidationresultschema"
+    },
+    {
+      "label": "ResumeValidationResult",
+      "file_type": "code",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L115",
+      "id": "resume_resume_contract_resumevalidationresult",
+      "community": 12,
+      "norm_label": "resumevalidationresult"
+    },
+    {
+      "label": "ResumeResultSchema",
+      "file_type": "code",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L121",
+      "id": "resume_resume_contract_resumeresultschema",
+      "community": 12,
+      "norm_label": "resumeresultschema"
+    },
+    {
+      "label": "ResumeResult",
+      "file_type": "code",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L141",
+      "id": "resume_resume_contract_resumeresult",
+      "community": 12,
+      "norm_label": "resumeresult"
+    },
+    {
+      "label": "session-resume-engine.ts",
+      "file_type": "code",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L1",
+      "id": "src_resume_session_resume_engine_ts",
+      "community": 12,
+      "norm_label": "session-resume-engine.ts"
+    },
+    {
+      "label": "SessionResumeEngineOptions",
+      "file_type": "code",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L23",
+      "id": "resume_session_resume_engine_sessionresumeengineoptions",
+      "community": 12,
+      "norm_label": "sessionresumeengineoptions"
+    },
+    {
+      "label": "SessionResumeEngine",
+      "file_type": "code",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L36",
+      "id": "resume_session_resume_engine_sessionresumeengine",
+      "community": 4,
+      "norm_label": "sessionresumeengine"
+    },
+    {
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L48",
+      "id": "resume_session_resume_engine_sessionresumeengine_constructor",
+      "community": 4,
+      "norm_label": ".constructor()"
+    },
+    {
+      "label": ".resume()",
+      "file_type": "code",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L65",
+      "id": "resume_session_resume_engine_sessionresumeengine_resume",
+      "community": 4,
+      "norm_label": ".resume()"
+    },
+    {
+      "label": "task-dag-restorer.ts",
+      "file_type": "code",
+      "source_file": "src/resume/task-dag-restorer.ts",
+      "source_location": "L1",
+      "id": "src_resume_task_dag_restorer_ts",
+      "community": 11,
+      "norm_label": "task-dag-restorer.ts"
+    },
+    {
+      "label": "TaskDagRestorer",
+      "file_type": "code",
+      "source_file": "src/resume/task-dag-restorer.ts",
+      "source_location": "L5",
+      "id": "resume_task_dag_restorer_taskdagrestorer",
+      "community": 11,
+      "norm_label": "taskdagrestorer"
+    },
+    {
+      "label": ".restoreDAG()",
+      "file_type": "code",
+      "source_file": "src/resume/task-dag-restorer.ts",
+      "source_location": "L10",
+      "id": "resume_task_dag_restorer_taskdagrestorer_restoredag",
+      "community": 11,
+      "norm_label": ".restoredag()"
+    },
+    {
       "label": "artifact.test.ts",
       "file_type": "code",
       "source_file": "tests/domain/artifact.test.ts",
       "source_location": "L1",
       "id": "tests_domain_artifact_test_ts",
-      "community": 44,
+      "community": 8,
       "norm_label": "artifact.test.ts"
     },
     {
@@ -3735,7 +3996,7 @@
       "source_file": "tests/domain/artifact.test.ts",
       "source_location": "L9",
       "id": "domain_artifact_test_samplesha256",
-      "community": 44,
+      "community": 8,
       "norm_label": "samplesha256"
     },
     {
@@ -3744,7 +4005,7 @@
       "source_file": "tests/domain/artifact.test.ts",
       "source_location": "L12",
       "id": "domain_artifact_test_artifact",
-      "community": 44,
+      "community": 8,
       "norm_label": "artifact"
     },
     {
@@ -3753,7 +4014,7 @@
       "source_file": "tests/domain/artifact.test.ts",
       "source_location": "L33",
       "id": "domain_artifact_test_parsed",
-      "community": 44,
+      "community": 8,
       "norm_label": "parsed"
     },
     {
@@ -3762,7 +4023,7 @@
       "source_file": "tests/domain/artifact.test.ts",
       "source_location": "L38",
       "id": "domain_artifact_test_types",
-      "community": 44,
+      "community": 8,
       "norm_label": "types"
     },
     {
@@ -3969,7 +4230,7 @@
       "source_file": "tests/domain/immutability.test.ts",
       "source_location": "L1",
       "id": "tests_domain_immutability_test_ts",
-      "community": 5,
+      "community": 21,
       "norm_label": "immutability.test.ts"
     },
     {
@@ -3978,7 +4239,7 @@
       "source_file": "tests/domain/immutability.test.ts",
       "source_location": "L7",
       "id": "domain_immutability_test_event",
-      "community": 5,
+      "community": 21,
       "norm_label": "event"
     },
     {
@@ -3987,7 +4248,7 @@
       "source_file": "tests/domain/immutability.test.ts",
       "source_location": "L22",
       "id": "domain_immutability_test_frozen",
-      "community": 5,
+      "community": 21,
       "norm_label": "frozen"
     },
     {
@@ -3996,7 +4257,7 @@
       "source_file": "tests/domain/immutability.test.ts",
       "source_location": "L45",
       "id": "domain_immutability_test_samplesha",
-      "community": 5,
+      "community": 21,
       "norm_label": "samplesha"
     },
     {
@@ -4005,7 +4266,7 @@
       "source_file": "tests/domain/immutability.test.ts",
       "source_location": "L46",
       "id": "domain_immutability_test_checkpoint",
-      "community": 5,
+      "community": 21,
       "norm_label": "checkpoint"
     },
     {
@@ -4095,7 +4356,7 @@
       "source_file": "tests/domain/provenance.test.ts",
       "source_location": "L1",
       "id": "tests_domain_provenance_test_ts",
-      "community": 19,
+      "community": 37,
       "norm_label": "provenance.test.ts"
     },
     {
@@ -4104,7 +4365,7 @@
       "source_file": "tests/domain/provenance.test.ts",
       "source_location": "L6",
       "id": "domain_provenance_test_prov",
-      "community": 19,
+      "community": 37,
       "norm_label": "prov"
     },
     {
@@ -4113,7 +4374,7 @@
       "source_file": "tests/domain/provenance.test.ts",
       "source_location": "L19",
       "id": "domain_provenance_test_parsed",
-      "community": 19,
+      "community": 37,
       "norm_label": "parsed"
     },
     {
@@ -4122,7 +4383,7 @@
       "source_file": "tests/domain/provenance.test.ts",
       "source_location": "L24",
       "id": "domain_provenance_test_invalid",
-      "community": 19,
+      "community": 37,
       "norm_label": "invalid"
     },
     {
@@ -4374,7 +4635,7 @@
       "source_file": "tests/event-state/concurrency.test.ts",
       "source_location": "L1",
       "id": "tests_event_state_concurrency_test_ts",
-      "community": 4,
+      "community": 14,
       "norm_label": "concurrency.test.ts"
     },
     {
@@ -4383,7 +4644,7 @@
       "source_file": "tests/event-state/concurrency.test.ts",
       "source_location": "L17",
       "id": "event_state_concurrency_test_migrator",
-      "community": 4,
+      "community": 14,
       "norm_label": "migrator"
     },
     {
@@ -4392,7 +4653,7 @@
       "source_file": "tests/event-state/concurrency.test.ts",
       "source_location": "L20",
       "id": "event_state_concurrency_test_projectrepo",
-      "community": 4,
+      "community": 14,
       "norm_label": "projectrepo"
     },
     {
@@ -4401,7 +4662,7 @@
       "source_file": "tests/event-state/concurrency.test.ts",
       "source_location": "L36",
       "id": "event_state_concurrency_test_sessionrepo",
-      "community": 4,
+      "community": 14,
       "norm_label": "sessionrepo"
     },
     {
@@ -4410,7 +4671,7 @@
       "source_file": "tests/event-state/concurrency.test.ts",
       "source_location": "L123",
       "id": "event_state_concurrency_test_streama",
-      "community": 4,
+      "community": 14,
       "norm_label": "streama"
     },
     {
@@ -4419,7 +4680,7 @@
       "source_file": "tests/event-state/concurrency.test.ts",
       "source_location": "L124",
       "id": "event_state_concurrency_test_streamb",
-      "community": 4,
+      "community": 14,
       "norm_label": "streamb"
     },
     {
@@ -4428,7 +4689,7 @@
       "source_file": "tests/event-state/concurrency.test.ts",
       "source_location": "L133",
       "id": "event_state_concurrency_test_summarya",
-      "community": 4,
+      "community": 14,
       "norm_label": "summarya"
     },
     {
@@ -4437,7 +4698,7 @@
       "source_file": "tests/event-state/concurrency.test.ts",
       "source_location": "L134",
       "id": "event_state_concurrency_test_summaryb",
-      "community": 4,
+      "community": 14,
       "norm_label": "summaryb"
     },
     {
@@ -4446,7 +4707,7 @@
       "source_file": "tests/event-state/concurrency.test.ts",
       "source_location": "L139",
       "id": "event_state_concurrency_test_boarda",
-      "community": 4,
+      "community": 14,
       "norm_label": "boarda"
     },
     {
@@ -4455,7 +4716,7 @@
       "source_file": "tests/event-state/concurrency.test.ts",
       "source_location": "L140",
       "id": "event_state_concurrency_test_boardb",
-      "community": 4,
+      "community": 14,
       "norm_label": "boardb"
     },
     {
@@ -4464,7 +4725,7 @@
       "source_file": "tests/event-state/event-store.test.ts",
       "source_location": "L1",
       "id": "tests_event_state_event_store_test_ts",
-      "community": 4,
+      "community": 14,
       "norm_label": "event-store.test.ts"
     },
     {
@@ -4473,7 +4734,7 @@
       "source_file": "tests/event-state/event-store.test.ts",
       "source_location": "L17",
       "id": "event_state_event_store_test_migrator",
-      "community": 4,
+      "community": 14,
       "norm_label": "migrator"
     },
     {
@@ -4482,7 +4743,7 @@
       "source_file": "tests/event-state/event-store.test.ts",
       "source_location": "L60",
       "id": "event_state_event_store_test_e1",
-      "community": 4,
+      "community": 14,
       "norm_label": "e1"
     },
     {
@@ -4491,7 +4752,7 @@
       "source_file": "tests/event-state/event-store.test.ts",
       "source_location": "L71",
       "id": "event_state_event_store_test_e2",
-      "community": 4,
+      "community": 14,
       "norm_label": "e2"
     },
     {
@@ -4500,7 +4761,7 @@
       "source_file": "tests/event-state/event-store.test.ts",
       "source_location": "L83",
       "id": "event_state_event_store_test_committed1",
-      "community": 4,
+      "community": 14,
       "norm_label": "committed1"
     },
     {
@@ -4509,7 +4770,7 @@
       "source_file": "tests/event-state/event-store.test.ts",
       "source_location": "L84",
       "id": "event_state_event_store_test_committed2",
-      "community": 4,
+      "community": 14,
       "norm_label": "committed2"
     },
     {
@@ -4518,7 +4779,7 @@
       "source_file": "tests/event-state/event-store.test.ts",
       "source_location": "L89",
       "id": "event_state_event_store_test_stream",
-      "community": 4,
+      "community": 14,
       "norm_label": "stream"
     },
     {
@@ -4527,7 +4788,7 @@
       "source_file": "tests/event-state/event-store.test.ts",
       "source_location": "L94",
       "id": "event_state_event_store_test_byproject",
-      "community": 4,
+      "community": 14,
       "norm_label": "byproject"
     },
     {
@@ -4536,7 +4797,7 @@
       "source_file": "tests/event-state/event-store.test.ts",
       "source_location": "L99",
       "id": "event_state_event_store_test_received",
-      "community": 4,
+      "community": 14,
       "norm_label": "received"
     },
     {
@@ -4545,7 +4806,7 @@
       "source_file": "tests/event-state/event-store.test.ts",
       "source_location": "L102",
       "id": "event_state_event_store_test_unsub",
-      "community": 4,
+      "community": 14,
       "norm_label": "unsub"
     },
     {
@@ -4554,7 +4815,7 @@
       "source_file": "tests/event-state/event-store.test.ts",
       "source_location": "L111",
       "id": "event_state_event_store_test_event",
-      "community": 4,
+      "community": 14,
       "norm_label": "event"
     },
     {
@@ -4563,7 +4824,7 @@
       "source_file": "tests/event-state/event-store.test.ts",
       "source_location": "L123",
       "id": "event_state_event_store_test_committed",
-      "community": 4,
+      "community": 14,
       "norm_label": "committed"
     },
     {
@@ -5130,7 +5391,7 @@
       "source_file": "tests/persistence/sqlite-engine.test.ts",
       "source_location": "L1",
       "id": "tests_persistence_sqlite_engine_test_ts",
-      "community": 7,
+      "community": 14,
       "norm_label": "sqlite-engine.test.ts"
     },
     {
@@ -5139,7 +5400,7 @@
       "source_file": "tests/persistence/sqlite-engine.test.ts",
       "source_location": "L18",
       "id": "persistence_sqlite_engine_test_result",
-      "community": 7,
+      "community": 14,
       "norm_label": "result"
     },
     {
@@ -5148,7 +5409,7 @@
       "source_file": "tests/persistence/sqlite-engine.test.ts",
       "source_location": "L34",
       "id": "persistence_sqlite_engine_test_rows",
-      "community": 7,
+      "community": 14,
       "norm_label": "rows"
     },
     {
@@ -5562,7 +5823,7 @@
       "source_file": "tests/recovery/orphan-detector.test.ts",
       "source_location": "L1",
       "id": "tests_recovery_orphan_detector_test_ts",
-      "community": 7,
+      "community": 14,
       "norm_label": "orphan-detector.test.ts"
     },
     {
@@ -5571,7 +5832,7 @@
       "source_file": "tests/recovery/orphan-detector.test.ts",
       "source_location": "L24",
       "id": "recovery_orphan_detector_test_migrator",
-      "community": 7,
+      "community": 14,
       "norm_label": "migrator"
     },
     {
@@ -5580,8 +5841,332 @@
       "source_file": "tests/recovery/orphan-detector.test.ts",
       "source_location": "L67",
       "id": "recovery_orphan_detector_test_report",
-      "community": 7,
+      "community": 14,
       "norm_label": "report"
+    },
+    {
+      "label": "crash-resume-integration.test.ts",
+      "file_type": "code",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L1",
+      "id": "tests_resume_crash_resume_integration_test_ts",
+      "community": 4,
+      "norm_label": "crash-resume-integration.test.ts"
+    },
+    {
+      "label": "migrator",
+      "file_type": "code",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L30",
+      "id": "resume_crash_resume_integration_test_migrator",
+      "community": 4,
+      "norm_label": "migrator"
+    },
+    {
+      "label": "projectRepo",
+      "file_type": "code",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L42",
+      "id": "resume_crash_resume_integration_test_projectrepo",
+      "community": 4,
+      "norm_label": "projectrepo"
+    },
+    {
+      "label": "sessionRepo",
+      "file_type": "code",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L43",
+      "id": "resume_crash_resume_integration_test_sessionrepo",
+      "community": 4,
+      "norm_label": "sessionrepo"
+    },
+    {
+      "label": "taskRepo",
+      "file_type": "code",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L44",
+      "id": "resume_crash_resume_integration_test_taskrepo",
+      "community": 4,
+      "norm_label": "taskrepo"
+    },
+    {
+      "label": "checkpointRepo",
+      "file_type": "code",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L45",
+      "id": "resume_crash_resume_integration_test_checkpointrepo",
+      "community": 4,
+      "norm_label": "checkpointrepo"
+    },
+    {
+      "label": "artifactRepo",
+      "file_type": "code",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L46",
+      "id": "resume_crash_resume_integration_test_artifactrepo",
+      "community": 4,
+      "norm_label": "artifactrepo"
+    },
+    {
+      "label": "eventStore",
+      "file_type": "code",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L47",
+      "id": "resume_crash_resume_integration_test_eventstore",
+      "community": 4,
+      "norm_label": "eventstore"
+    },
+    {
+      "label": "chk",
+      "file_type": "code",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L162",
+      "id": "resume_crash_resume_integration_test_chk",
+      "community": 4,
+      "norm_label": "chk"
+    },
+    {
+      "label": "freshEngine",
+      "file_type": "code",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L174",
+      "id": "resume_crash_resume_integration_test_freshengine",
+      "community": 4,
+      "norm_label": "freshengine"
+    },
+    {
+      "label": "freshProjectRepo",
+      "file_type": "code",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L177",
+      "id": "resume_crash_resume_integration_test_freshprojectrepo",
+      "community": 4,
+      "norm_label": "freshprojectrepo"
+    },
+    {
+      "label": "freshSessionRepo",
+      "file_type": "code",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L178",
+      "id": "resume_crash_resume_integration_test_freshsessionrepo",
+      "community": 4,
+      "norm_label": "freshsessionrepo"
+    },
+    {
+      "label": "freshTaskRepo",
+      "file_type": "code",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L179",
+      "id": "resume_crash_resume_integration_test_freshtaskrepo",
+      "community": 4,
+      "norm_label": "freshtaskrepo"
+    },
+    {
+      "label": "freshCheckpointRepo",
+      "file_type": "code",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L180",
+      "id": "resume_crash_resume_integration_test_freshcheckpointrepo",
+      "community": 4,
+      "norm_label": "freshcheckpointrepo"
+    },
+    {
+      "label": "freshArtifactRepo",
+      "file_type": "code",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L181",
+      "id": "resume_crash_resume_integration_test_freshartifactrepo",
+      "community": 4,
+      "norm_label": "freshartifactrepo"
+    },
+    {
+      "label": "freshEventRepo",
+      "file_type": "code",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L182",
+      "id": "resume_crash_resume_integration_test_fresheventrepo",
+      "community": 4,
+      "norm_label": "fresheventrepo"
+    },
+    {
+      "label": "freshEventStore",
+      "file_type": "code",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L183",
+      "id": "resume_crash_resume_integration_test_fresheventstore",
+      "community": 4,
+      "norm_label": "fresheventstore"
+    },
+    {
+      "label": "freshProjectionManager",
+      "file_type": "code",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L184",
+      "id": "resume_crash_resume_integration_test_freshprojectionmanager",
+      "community": 4,
+      "norm_label": "freshprojectionmanager"
+    },
+    {
+      "label": "freshLeaseManager",
+      "file_type": "code",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L185",
+      "id": "resume_crash_resume_integration_test_freshleasemanager",
+      "community": 4,
+      "norm_label": "freshleasemanager"
+    },
+    {
+      "label": "resumeEngine",
+      "file_type": "code",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L187",
+      "id": "resume_crash_resume_integration_test_resumeengine",
+      "community": 4,
+      "norm_label": "resumeengine"
+    },
+    {
+      "label": "taskBoard",
+      "file_type": "code",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L220",
+      "id": "resume_crash_resume_integration_test_taskboard",
+      "community": 4,
+      "norm_label": "taskboard"
+    },
+    {
+      "label": "pending-approvals.test.ts",
+      "file_type": "code",
+      "source_file": "tests/resume/pending-approvals.test.ts",
+      "source_location": "L1",
+      "id": "tests_resume_pending_approvals_test_ts",
+      "community": 12,
+      "norm_label": "pending-approvals.test.ts"
+    },
+    {
+      "label": "events",
+      "file_type": "code",
+      "source_file": "tests/resume/pending-approvals.test.ts",
+      "source_location": "L7",
+      "id": "resume_pending_approvals_test_events",
+      "community": 12,
+      "norm_label": "events"
+    },
+    {
+      "label": "result",
+      "file_type": "code",
+      "source_file": "tests/resume/pending-approvals.test.ts",
+      "source_location": "L57",
+      "id": "resume_pending_approvals_test_result",
+      "community": 12,
+      "norm_label": "result"
+    },
+    {
+      "label": "nowMs",
+      "file_type": "code",
+      "source_file": "tests/resume/pending-approvals.test.ts",
+      "source_location": "L85",
+      "id": "resume_pending_approvals_test_nowms",
+      "community": 12,
+      "norm_label": "nowms"
+    },
+    {
+      "label": "resume-engine.test.ts",
+      "file_type": "code",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L1",
+      "id": "tests_resume_resume_engine_test_ts",
+      "community": 255,
+      "norm_label": "resume-engine.test.ts"
+    },
+    {
+      "label": "migrator",
+      "file_type": "code",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L33",
+      "id": "resume_resume_engine_test_migrator",
+      "community": 255,
+      "norm_label": "migrator"
+    },
+    {
+      "label": "artSha",
+      "file_type": "code",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L131",
+      "id": "resume_resume_engine_test_artsha",
+      "community": 255,
+      "norm_label": "artsha"
+    },
+    {
+      "label": "checkpoint",
+      "file_type": "code",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L143",
+      "id": "resume_resume_engine_test_checkpoint",
+      "community": 255,
+      "norm_label": "checkpoint"
+    },
+    {
+      "label": "task-dag-restorer.test.ts",
+      "file_type": "code",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L1",
+      "id": "tests_resume_task_dag_restorer_test_ts",
+      "community": 11,
+      "norm_label": "task-dag-restorer.test.ts"
+    },
+    {
+      "label": "migrator",
+      "file_type": "code",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L19",
+      "id": "resume_task_dag_restorer_test_migrator",
+      "community": 11,
+      "norm_label": "migrator"
+    },
+    {
+      "label": "t1",
+      "file_type": "code",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L61",
+      "id": "resume_task_dag_restorer_test_t1",
+      "community": 11,
+      "norm_label": "t1"
+    },
+    {
+      "label": "t2",
+      "file_type": "code",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L75",
+      "id": "resume_task_dag_restorer_test_t2",
+      "community": 11,
+      "norm_label": "t2"
+    },
+    {
+      "label": "t3",
+      "file_type": "code",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L89",
+      "id": "resume_task_dag_restorer_test_t3",
+      "community": 11,
+      "norm_label": "t3"
+    },
+    {
+      "label": "dag",
+      "file_type": "code",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L107",
+      "id": "resume_task_dag_restorer_test_dag",
+      "community": 11,
+      "norm_label": "dag"
+    },
+    {
+      "label": "tRunning",
+      "file_type": "code",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L118",
+      "id": "resume_task_dag_restorer_test_trunning",
+      "community": 11,
+      "norm_label": "trunning"
     },
     {
       "label": "GEMINI.md",
@@ -11214,7 +11799,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
       "source_location": "L49",
       "id": "development_anantham_v2_master_development_plan_2_global_completion_gates",
-      "community": 25,
+      "community": 256,
       "norm_label": "2. global completion gates"
     },
     {
@@ -11223,7 +11808,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
       "source_location": "L51",
       "id": "development_anantham_v2_master_development_plan_g0_requirements_architecture",
-      "community": 25,
+      "community": 256,
       "norm_label": "g0 \u2014 requirements & architecture"
     },
     {
@@ -11232,7 +11817,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
       "source_location": "L59",
       "id": "development_anantham_v2_master_development_plan_g1_durability",
-      "community": 25,
+      "community": 256,
       "norm_label": "g1 \u2014 durability"
     },
     {
@@ -11241,7 +11826,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
       "source_location": "L72",
       "id": "development_anantham_v2_master_development_plan_g2_security",
-      "community": 25,
+      "community": 256,
       "norm_label": "g2 \u2014 security"
     },
     {
@@ -11250,7 +11835,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
       "source_location": "L86",
       "id": "development_anantham_v2_master_development_plan_g3_execution",
-      "community": 25,
+      "community": 256,
       "norm_label": "g3 \u2014 execution"
     },
     {
@@ -11259,7 +11844,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
       "source_location": "L98",
       "id": "development_anantham_v2_master_development_plan_g4_verification",
-      "community": 25,
+      "community": 256,
       "norm_label": "g4 \u2014 verification"
     },
     {
@@ -11686,10 +12271,19 @@
       "norm_label": "5. change log"
     },
     {
-      "label": "2026-08-30 21:15 \u2014 TASK-P1.4-CHECKPOINTS-RECOVERY",
+      "label": "2026-08-30 21:50 \u2014 TASK-P1.5-RESUME-ENGINE",
       "file_type": "document",
       "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
       "source_location": "L595",
+      "id": "development_anantham_v2_master_development_plan_2026_08_30_21_50_task_p1_5_resume_engine",
+      "community": 260,
+      "norm_label": "2026-08-30 21:50 \u2014 task-p1.5-resume-engine"
+    },
+    {
+      "label": "2026-08-30 21:15 \u2014 TASK-P1.4-CHECKPOINTS-RECOVERY",
+      "file_type": "document",
+      "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
+      "source_location": "L607",
       "id": "development_anantham_v2_master_development_plan_2026_08_30_21_15_task_p1_4_checkpoints_recovery",
       "community": 260,
       "norm_label": "2026-08-30 21:15 \u2014 task-p1.4-checkpoints-recovery"
@@ -11698,7 +12292,7 @@
       "label": "2026-08-30 21:00 \u2014 TASK-P1.3-EVENT-STATE",
       "file_type": "document",
       "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
-      "source_location": "L607",
+      "source_location": "L619",
       "id": "development_anantham_v2_master_development_plan_2026_08_30_21_00_task_p1_3_event_state",
       "community": 260,
       "norm_label": "2026-08-30 21:00 \u2014 task-p1.3-event-state"
@@ -11707,7 +12301,7 @@
       "label": "code:text (## YYYY-MM-DD HH:MM \u2014 TASK-ID)",
       "file_type": "document",
       "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
-      "source_location": "L643",
+      "source_location": "L655",
       "id": "development_anantham_v2_master_development_plan_codeblock_1",
       "community": 260,
       "norm_label": "code:text (## yyyy-mm-dd hh:mm \u2014 task-id)"
@@ -11716,7 +12310,7 @@
       "label": "6. HUMAN DECISION LOG",
       "file_type": "document",
       "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
-      "source_location": "L661",
+      "source_location": "L673",
       "id": "development_anantham_v2_master_development_plan_6_human_decision_log",
       "community": 25,
       "norm_label": "6. human decision log"
@@ -11725,7 +12319,7 @@
       "label": "code:text (## DECISION-ID)",
       "file_type": "document",
       "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
-      "source_location": "L665",
+      "source_location": "L677",
       "id": "development_anantham_v2_master_development_plan_codeblock_2",
       "community": 25,
       "norm_label": "code:text (## decision-id)"
@@ -11734,7 +12328,7 @@
       "label": "7. MASTER RULE",
       "file_type": "document",
       "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
-      "source_location": "L686",
+      "source_location": "L698",
       "id": "development_anantham_v2_master_development_plan_7_master_rule",
       "community": 25,
       "norm_label": "7. master rule"
@@ -12438,7 +13032,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L816",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_19_attachment_security",
-      "community": 412,
+      "community": 3,
       "norm_label": "19. attachment security"
     },
     {
@@ -12447,7 +13041,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L820",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_20",
-      "community": 412,
+      "community": 3,
       "norm_label": "code:text (signature validation)"
     },
     {
@@ -12519,7 +13113,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L904",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_23_code_index",
-      "community": 3,
+      "community": 386,
       "norm_label": "23. code index"
     },
     {
@@ -12528,7 +13122,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L906",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_24",
-      "community": 3,
+      "community": 386,
       "norm_label": "code:ts (interface codeindex {)"
     },
     {
@@ -12690,7 +13284,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1130",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_34_project_trust",
-      "community": 3,
+      "community": 390,
       "norm_label": "34. project trust"
     },
     {
@@ -12699,7 +13293,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1134",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_31",
-      "community": 3,
+      "community": 390,
       "norm_label": "code:text (untrusted)"
     },
     {
@@ -12744,7 +13338,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1202",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_37_event_sourced_session",
-      "community": 385,
+      "community": 3,
       "norm_label": "37. event-sourced session"
     },
     {
@@ -12753,7 +13347,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1206",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_34",
-      "community": 385,
+      "community": 3,
       "norm_label": "code:text (user)"
     },
     {
@@ -12798,7 +13392,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1306",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_40_event_immutability",
-      "community": 390,
+      "community": 3,
       "norm_label": "40. event immutability"
     },
     {
@@ -12807,7 +13401,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1314",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_37",
-      "community": 390,
+      "community": 3,
       "norm_label": "code:text (memory.written)"
     },
     {
@@ -12879,7 +13473,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1394",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_45_write_ahead_logging",
-      "community": 3,
+      "community": 391,
       "norm_label": "45. write-ahead logging"
     },
     {
@@ -12888,7 +13482,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1402",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_40",
-      "community": 3,
+      "community": 391,
       "norm_label": "code:text (pragma journal_mode=wal;)"
     },
     {
@@ -12924,7 +13518,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1441",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_48_crash_recovery",
-      "community": 386,
+      "community": 3,
       "norm_label": "48. crash recovery"
     },
     {
@@ -12933,7 +13527,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1445",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_42",
-      "community": 386,
+      "community": 3,
       "norm_label": "code:text (open db)"
     },
     {
@@ -12951,7 +13545,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1482",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_50_data_integrity",
-      "community": 381,
+      "community": 3,
       "norm_label": "50. data integrity"
     },
     {
@@ -12960,7 +13554,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1486",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_43",
-      "community": 381,
+      "community": 3,
       "norm_label": "code:text (sha-256)"
     },
     {
@@ -13077,7 +13671,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1618",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_56_resume_algorithm",
-      "community": 3,
+      "community": 392,
       "norm_label": "56. resume algorithm"
     },
     {
@@ -13086,7 +13680,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1620",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_50",
-      "community": 3,
+      "community": 392,
       "norm_label": "code:text (resolve target)"
     },
     {
@@ -13149,7 +13743,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1718",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_60_agent_process_recovery",
-      "community": 3,
+      "community": 410,
       "norm_label": "60. agent process recovery"
     },
     {
@@ -13158,7 +13752,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1722",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_54",
-      "community": 3,
+      "community": 410,
       "norm_label": "code:text (leaseid)"
     },
     {
@@ -13203,7 +13797,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1774",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_63_memory_object",
-      "community": 3,
+      "community": 412,
       "norm_label": "63. memory object"
     },
     {
@@ -13212,7 +13806,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1776",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_57",
-      "community": 3,
+      "community": 412,
       "norm_label": "code:ts (interface memoryitem {)"
     },
     {
@@ -13284,7 +13878,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1879",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_67_memory_freshness",
-      "community": 3,
+      "community": 422,
       "norm_label": "67. memory freshness"
     },
     {
@@ -13293,7 +13887,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1893",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_62",
-      "community": 3,
+      "community": 422,
       "norm_label": "code:text (fresh)"
     },
     {
@@ -13302,7 +13896,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1901",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_68_memory_ttl",
-      "community": 391,
+      "community": 3,
       "norm_label": "68. memory ttl"
     },
     {
@@ -13311,7 +13905,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1907",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_63",
-      "community": 391,
+      "community": 3,
       "norm_label": "code:text (dev server port = 3000)"
     },
     {
@@ -13419,7 +14013,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2012",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_74_cross_session_references",
-      "community": 392,
+      "community": 3,
       "norm_label": "74. cross-session references"
     },
     {
@@ -13428,7 +14022,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2016",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_70",
-      "community": 392,
+      "community": 3,
       "norm_label": "code:text (@session:abc123)"
     },
     {
@@ -13626,7 +14220,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2229",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_82_context",
-      "community": 3,
+      "community": 431,
       "norm_label": "82. `/context`"
     },
     {
@@ -13635,7 +14229,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2233",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_80",
-      "community": 3,
+      "community": 431,
       "norm_label": "code:text (/context)"
     },
     {
@@ -13680,7 +14274,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2286",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_85_attachment_aware_context",
-      "community": 422,
+      "community": 3,
       "norm_label": "85. attachment-aware context"
     },
     {
@@ -13689,7 +14283,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2290",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_83",
-      "community": 422,
+      "community": 3,
       "norm_label": "code:text (pdf pages)"
     },
     {
@@ -13752,7 +14346,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2348",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_88_compact",
-      "community": 431,
+      "community": 3,
       "norm_label": "88. `/compact`"
     },
     {
@@ -13761,7 +14355,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2352",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_87",
-      "community": 431,
+      "community": 3,
       "norm_label": "code:text (/compact)"
     },
     {
@@ -14040,7 +14634,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2665",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_102_task_priority",
-      "community": 384,
+      "community": 3,
       "norm_label": "102. task priority"
     },
     {
@@ -14049,7 +14643,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2669",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_101",
-      "community": 384,
+      "community": 3,
       "norm_label": "code:text (critical)"
     },
     {
@@ -14076,7 +14670,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2698",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_104_user_interrupt_model",
-      "community": 3,
+      "community": 381,
       "norm_label": "104. user interrupt model"
     },
     {
@@ -14085,7 +14679,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2702",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_103",
-      "community": 3,
+      "community": 381,
       "norm_label": "code:text (pause)"
     },
     {
@@ -14130,7 +14724,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2750",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_107_multi_root_workspace",
-      "community": 3,
+      "community": 384,
       "norm_label": "107. multi-root workspace"
     },
     {
@@ -14139,7 +14733,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2754",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_106",
-      "community": 3,
+      "community": 384,
       "norm_label": "code:text (repo-a)"
     },
     {
@@ -14193,7 +14787,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2815",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_111_edit_transactions",
-      "community": 256,
+      "community": 3,
       "norm_label": "111. edit transactions"
     },
     {
@@ -14202,7 +14796,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2819",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_109",
-      "community": 256,
+      "community": 3,
       "norm_label": "code:text (prepare)"
     },
     {
@@ -14823,7 +15417,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L3484",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_142_implementation_package_boundaries",
-      "community": 410,
+      "community": 3,
       "norm_label": "142. implementation package boundaries"
     },
     {
@@ -14832,7 +15426,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L3488",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_140",
-      "community": 410,
+      "community": 3,
       "norm_label": "code:text (packages/)"
     },
     {
@@ -14895,7 +15489,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L3603",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_147_part_1_completion_test",
-      "community": 3,
+      "community": 385,
       "norm_label": "147. part 1 completion test"
     },
     {
@@ -14904,7 +15498,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L3607",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_143",
-      "community": 3,
+      "community": 385,
       "norm_label": "code:text (where does project state live?)"
     },
     {
@@ -22302,7 +22896,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L455",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_14_session_commands",
-      "community": 733,
+      "community": 0,
       "norm_label": "14. session commands"
     },
     {
@@ -22311,7 +22905,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L457",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_16",
-      "community": 733,
+      "community": 0,
       "norm_label": "code:text (/session)"
     },
     {
@@ -22365,7 +22959,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L541",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_17_checkpoint_commands",
-      "community": 746,
+      "community": 0,
       "norm_label": "17. checkpoint commands"
     },
     {
@@ -22374,7 +22968,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L543",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_20",
-      "community": 746,
+      "community": 0,
       "norm_label": "code:text (/checkpoint)"
     },
     {
@@ -22644,7 +23238,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L809",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_31_model_commands",
-      "community": 0,
+      "community": 743,
       "norm_label": "31. model commands"
     },
     {
@@ -22653,7 +23247,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L811",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_37",
-      "community": 0,
+      "community": 743,
       "norm_label": "code:text (/model)"
     },
     {
@@ -24147,7 +24741,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L2248",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_114_tool_replay",
-      "community": 866,
+      "community": 0,
       "norm_label": "114. tool replay"
     },
     {
@@ -24156,7 +24750,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L2252",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_121",
-      "community": 866,
+      "community": 0,
       "norm_label": "code:text (mock/simulated response)"
     },
     {
@@ -24624,7 +25218,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L2632",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_133_logging_requirements",
-      "community": 724,
+      "community": 0,
       "norm_label": "133. logging requirements"
     },
     {
@@ -24633,7 +25227,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L2636",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_151",
-      "community": 724,
+      "community": 0,
       "norm_label": "code:text (structured)"
     },
     {
@@ -25281,7 +25875,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L3230",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_176_release_channels",
-      "community": 743,
+      "community": 0,
       "norm_label": "176. release channels"
     },
     {
@@ -25290,7 +25884,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L3234",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_181",
-      "community": 743,
+      "community": 0,
       "norm_label": "code:text (stable)"
     },
     {
@@ -25371,7 +25965,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L3311",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_181_adr_process",
-      "community": 0,
+      "community": 724,
       "norm_label": "181. adr process"
     },
     {
@@ -25380,7 +25974,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L3315",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_186",
-      "community": 0,
+      "community": 724,
       "norm_label": "code:text (id)"
     },
     {
@@ -26253,7 +26847,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L4028",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_236_maintenance_lock",
-      "community": 0,
+      "community": 733,
       "norm_label": "236. maintenance lock"
     },
     {
@@ -26262,7 +26856,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L4032",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_229",
-      "community": 0,
+      "community": 733,
       "norm_label": "code:text (runtime = maintenance)"
     },
     {
@@ -28692,7 +29286,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L5963",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_387_support_diagnostics",
-      "community": 0,
+      "community": 746,
       "norm_label": "387. support diagnostics"
     },
     {
@@ -28701,7 +29295,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L5967",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_349",
-      "community": 0,
+      "community": 746,
       "norm_label": "code:text (/doctor)"
     },
     {
@@ -29083,28 +29677,19 @@
       "norm_label": "active tasks registry \u2014 anantham v2"
     },
     {
-      "label": "1. Active Phase Backlog (P1 \u2014 Durable Runtime Foundation)",
+      "label": "1. Active Phase Backlog (P2 \u2014 Content / Context / Memory / Retrieval)",
       "file_type": "document",
       "source_file": "docs/discovery/active-tasks.md",
       "source_location": "L7",
-      "id": "discovery_active_tasks_1_active_phase_backlog_p1_durable_runtime_foundation",
+      "id": "discovery_active_tasks_1_active_phase_backlog_p2_content_context_memory_retrieval",
       "community": 35,
-      "norm_label": "1. active phase backlog (p1 \u2014 durable runtime foundation)"
-    },
-    {
-      "label": "[P1.5 \u2014 Durable Session Resume Engine (`/resume`)](file:///C:/herness/docs/discovery/current-state.md#L10)",
-      "file_type": "document",
-      "source_file": "docs/discovery/active-tasks.md",
-      "source_location": "L9",
-      "id": "discovery_active_tasks_p1_5_durable_session_resume_engine_resume_file_c_herness_docs_discovery_current_state_md_l10",
-      "community": 35,
-      "norm_label": "[p1.5 \u2014 durable session resume engine (`/resume`)](file:///c:/herness/docs/discovery/current-state.md#l10)"
+      "norm_label": "1. active phase backlog (p2 \u2014 content / context / memory / retrieval)"
     },
     {
       "label": "[P2.1 \u2014 Multimodal Content Ingestion & Parsers](file:///C:/herness/docs/discovery/current-state.md#L10)",
       "file_type": "document",
       "source_file": "docs/discovery/active-tasks.md",
-      "source_location": "L19",
+      "source_location": "L9",
       "id": "discovery_active_tasks_p2_1_multimodal_content_ingestion_parsers_file_c_herness_docs_discovery_current_state_md_l10",
       "community": 35,
       "norm_label": "[p2.1 \u2014 multimodal content ingestion & parsers](file:///c:/herness/docs/discovery/current-state.md#l10)"
@@ -29113,16 +29698,25 @@
       "label": "2. Completed Milestones (Recent)",
       "file_type": "document",
       "source_file": "docs/discovery/active-tasks.md",
-      "source_location": "L27",
+      "source_location": "L17",
       "id": "discovery_active_tasks_2_completed_milestones_recent",
       "community": 35,
       "norm_label": "2. completed milestones (recent)"
     },
     {
+      "label": "[TASK-P1.5-RESUME-ENGINE \u2014 Durable Session Resume Engine (`/resume`)](file:///C:/herness/src/resume/index.ts)",
+      "file_type": "document",
+      "source_file": "docs/discovery/active-tasks.md",
+      "source_location": "L19",
+      "id": "discovery_active_tasks_task_p1_5_resume_engine_durable_session_resume_engine_resume_file_c_herness_src_resume_index_ts",
+      "community": 35,
+      "norm_label": "[task-p1.5-resume-engine \u2014 durable session resume engine (`/resume`)](file:///c:/herness/src/resume/index.ts)"
+    },
+    {
       "label": "[TASK-P1.4-CHECKPOINTS-RECOVERY \u2014 Manifests, Validation, Leases & Crash Recovery](file:///C:/herness/src/recovery/index.ts)",
       "file_type": "document",
       "source_file": "docs/discovery/active-tasks.md",
-      "source_location": "L29",
+      "source_location": "L25",
       "id": "discovery_active_tasks_task_p1_4_checkpoints_recovery_manifests_validation_leases_crash_recovery_file_c_herness_src_recovery_index_ts",
       "community": 35,
       "norm_label": "[task-p1.4-checkpoints-recovery \u2014 manifests, validation, leases & crash recovery](file:///c:/herness/src/recovery/index.ts)"
@@ -29131,7 +29725,7 @@
       "label": "[TASK-P1.3-EVENT-STATE \u2014 EventStore, Reducers, Projections & Branching](file:///C:/herness/src/event-state/index.ts)",
       "file_type": "document",
       "source_file": "docs/discovery/active-tasks.md",
-      "source_location": "L35",
+      "source_location": "L31",
       "id": "discovery_active_tasks_task_p1_3_event_state_eventstore_reducers_projections_branching_file_c_herness_src_event_state_index_ts",
       "community": 35,
       "norm_label": "[task-p1.3-event-state \u2014 eventstore, reducers, projections & branching](file:///c:/herness/src/event-state/index.ts)"
@@ -29140,7 +29734,7 @@
       "label": "[TASK-P1.2-PERSISTENCE \u2014 Native SQLite Engine, WAL, Migrations & Repositories](file:///C:/herness/src/persistence/index.ts)",
       "file_type": "document",
       "source_file": "docs/discovery/active-tasks.md",
-      "source_location": "L42",
+      "source_location": "L38",
       "id": "discovery_active_tasks_task_p1_2_persistence_native_sqlite_engine_wal_migrations_repositories_file_c_herness_src_persistence_index_ts",
       "community": 35,
       "norm_label": "[task-p1.2-persistence \u2014 native sqlite engine, wal, migrations & repositories](file:///c:/herness/src/persistence/index.ts)"
@@ -29149,7 +29743,7 @@
       "label": "[TASK-P1.1-CORE-DOMAIN \u2014 Core Domain Models, Zod Schemas & State Machine](file:///C:/herness/src/domain/index.ts)",
       "file_type": "document",
       "source_file": "docs/discovery/active-tasks.md",
-      "source_location": "L49",
+      "source_location": "L45",
       "id": "discovery_active_tasks_task_p1_1_core_domain_core_domain_models_zod_schemas_state_machine_file_c_herness_src_domain_index_ts",
       "community": 35,
       "norm_label": "[task-p1.1-core-domain \u2014 core domain models, zod schemas & state machine](file:///c:/herness/src/domain/index.ts)"
@@ -29747,6 +30341,24 @@
       "id": "discovery_v1_0_anantham_orchestrator_phase_11_multi_engine_synchronization",
       "community": 15,
       "norm_label": "phase 11 \u2014 multi-engine synchronization"
+    },
+    {
+      "label": "1. Active Phase Backlog (P1 \u2014 Durable Runtime Foundation)",
+      "file_type": "document",
+      "source_file": "docs/discovery/active-tasks.md",
+      "source_location": "L7",
+      "community": 35,
+      "norm_label": "1. active phase backlog (p1 \u2014 durable runtime foundation)",
+      "id": "discovery_active_tasks_1_active_phase_backlog_p1_durable_runtime_foundation"
+    },
+    {
+      "label": "[P1.5 \u2014 Durable Session Resume Engine (`/resume`)](file:///C:/herness/docs/discovery/current-state.md#L10)",
+      "file_type": "document",
+      "source_file": "docs/discovery/active-tasks.md",
+      "source_location": "L9",
+      "community": 35,
+      "norm_label": "[p1.5 \u2014 durable session resume engine (`/resume`)](file:///c:/herness/docs/discovery/current-state.md#l10)",
+      "id": "discovery_active_tasks_p1_5_durable_session_resume_engine_resume_file_c_herness_docs_discovery_current_state_md_l10"
     }
   ],
   "links": [
@@ -31208,6 +31820,17 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "src_domain_checkpoint_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/domain/checkpoint.test.ts",
       "source_location": "L2",
       "weight": 1.0,
@@ -31335,6 +31958,17 @@
       "confidence_score": 1.0,
       "source": "src_recovery_checkpoint_validator_ts",
       "target": "domain_checkpoint_checkpoint"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "domain_checkpoint_checkpoint",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -31983,6 +32617,28 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/pending-approval-restorer.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "src_resume_pending_approval_restorer_ts",
+      "target": "src_domain_event_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "src_domain_event_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/domain/event.test.ts",
       "source_location": "L2",
       "weight": 1.0,
@@ -32068,6 +32724,39 @@
       "target": "src_domain_event_ts"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "src_domain_event_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/pending-approvals.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "tests_resume_pending_approvals_test_ts",
+      "target": "src_domain_event_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "src_domain_event_ts",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -32137,6 +32826,17 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "domain_event_eventtypes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/domain/event.test.ts",
       "source_location": "L2",
       "weight": 1.0,
@@ -32198,6 +32898,28 @@
       "confidence_score": 1.0,
       "source": "tests_event_state_state_reconstruction_test_ts",
       "target": "domain_event_eventtypes"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "domain_event_eventtypes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "domain_event_eventtypes",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -32324,6 +33046,17 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/pending-approval-restorer.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "src_resume_pending_approval_restorer_ts",
+      "target": "domain_event_harnessevent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/domain/event.test.ts",
       "source_location": "L2",
       "weight": 1.0,
@@ -32374,6 +33107,17 @@
       "confidence_score": 1.0,
       "source": "tests_persistence_repositories_test_ts",
       "target": "domain_event_harnessevent"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/pending-approvals.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "tests_resume_pending_approvals_test_ts",
+      "target": "domain_event_harnessevent",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -32719,6 +33463,17 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "src_domain_project_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/domain/project.test.ts",
       "source_location": "L2",
       "weight": 1.0,
@@ -32802,6 +33557,17 @@
       "confidence_score": 1.0,
       "source": "src_persistence_repositories_project_repository_ts",
       "target": "domain_project_project"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "domain_project_project",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -33110,6 +33876,17 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "src_domain_session_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/domain/session.test.ts",
       "source_location": "L2",
       "weight": 1.0,
@@ -33193,6 +33970,17 @@
       "confidence_score": 1.0,
       "source": "src_persistence_repositories_session_repository_ts",
       "target": "domain_session_session"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "domain_session_session",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -33343,6 +34131,28 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "src_domain_task_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/task-dag-restorer.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "src_resume_task_dag_restorer_ts",
+      "target": "src_domain_task_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/domain/task.test.ts",
       "source_location": "L2",
       "weight": 1.0,
@@ -33360,6 +34170,17 @@
       "confidence_score": 1.0,
       "source": "tests_persistence_repositories_test_ts",
       "target": "src_domain_task_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "tests_resume_task_dag_restorer_test_ts",
+      "target": "src_domain_task_ts",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -33464,6 +34285,28 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "domain_task_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/task-dag-restorer.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "src_resume_task_dag_restorer_ts",
+      "target": "domain_task_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/domain/task.test.ts",
       "source_location": "L2",
       "weight": 1.0,
@@ -33481,6 +34324,17 @@
       "confidence_score": 1.0,
       "source": "tests_persistence_repositories_test_ts",
       "target": "domain_task_task"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "tests_resume_task_dag_restorer_test_ts",
+      "target": "domain_task_task",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -33679,6 +34533,17 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "src_event_state_event_store_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/event-state/concurrency.test.ts",
       "source_location": "L4",
       "weight": 1.0,
@@ -33740,6 +34605,28 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_crash_simulation_disk_test_ts",
       "target": "src_event_state_event_store_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "src_event_state_event_store_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "src_event_state_event_store_ts",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -33858,6 +34745,17 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "event_state_event_store_eventstore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/event-state/concurrency.test.ts",
       "source_location": "L4",
       "weight": 1.0,
@@ -33919,6 +34817,28 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_crash_simulation_disk_test_ts",
       "target": "event_state_event_store_eventstore"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "event_state_event_store_eventstore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "event_state_event_store_eventstore",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -34022,6 +34942,17 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "src_event_state_projections_projection_manager_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/event-state/concurrency.test.ts",
       "source_location": "L5",
       "weight": 1.0,
@@ -34061,6 +34992,28 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_crash_simulation_disk_test_ts",
       "target": "src_event_state_projections_projection_manager_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "src_event_state_projections_projection_manager_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "src_event_state_projections_projection_manager_ts",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -34157,6 +35110,17 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "projections_projection_manager_projectionmanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/event-state/concurrency.test.ts",
       "source_location": "L5",
       "weight": 1.0,
@@ -34196,6 +35160,28 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_crash_simulation_disk_test_ts",
       "target": "projections_projection_manager_projectionmanager"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "projections_projection_manager_projectionmanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "projections_projection_manager_projectionmanager",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -34609,6 +35595,28 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "src_event_state_reconstruction_session_reconstruct_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "src_event_state_reconstruction_session_reconstruct_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/event-state/state-reconstruction.test.ts",
       "source_location": "L2",
       "weight": 1.0,
@@ -34620,11 +35628,44 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "reconstruction_session_reconstruct_reconstructedsessionstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "reconstruction_session_reconstruct_reconstructsessionstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/event-state/state-reconstruction.test.ts",
       "source_location": "L2",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "tests_event_state_state_reconstruction_test_ts",
+      "target": "reconstruction_session_reconstruct_reconstructsessionstate"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L169",
+      "weight": 1.0,
+      "source": "resume_session_resume_engine_sessionresumeengine_resume",
       "target": "reconstruction_session_reconstruct_reconstructsessionstate"
     },
     {
@@ -35088,6 +36129,39 @@
       "target": "src_persistence_migration_engine_ts"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "src_persistence_migration_engine_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "src_persistence_migration_engine_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "tests_resume_task_dag_restorer_test_ts",
+      "target": "src_persistence_migration_engine_ts",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/persistence/migration-engine.ts",
@@ -35281,6 +36355,39 @@
       "target": "persistence_migration_engine_migrationengine"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "persistence_migration_engine_migrationengine",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "persistence_migration_engine_migrationengine",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "tests_resume_task_dag_restorer_test_ts",
+      "target": "persistence_migration_engine_migrationengine",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -35468,6 +36575,17 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "src_persistence_sqlite_engine_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/event-state/concurrency.test.ts",
       "source_location": "L2",
       "weight": 1.0,
@@ -35617,6 +36735,39 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_orphan_detector_test_ts",
       "target": "src_persistence_sqlite_engine_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "src_persistence_sqlite_engine_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "src_persistence_sqlite_engine_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "tests_resume_task_dag_restorer_test_ts",
+      "target": "src_persistence_sqlite_engine_ts",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -35812,6 +36963,17 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "persistence_sqlite_engine_sqliteengine",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/event-state/concurrency.test.ts",
       "source_location": "L2",
       "weight": 1.0,
@@ -35963,6 +37125,39 @@
       "target": "persistence_sqlite_engine_sqliteengine"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "persistence_sqlite_engine_sqliteengine",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "persistence_sqlite_engine_sqliteengine",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "tests_resume_task_dag_restorer_test_ts",
+      "target": "persistence_sqlite_engine_sqliteengine",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/persistence/migrations/001_initial_core_schema.ts",
@@ -36060,6 +37255,17 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "src_persistence_repositories_artifact_repository_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/recovery/checkpoint.test.ts",
       "source_location": "L10",
       "weight": 1.0,
@@ -36088,6 +37294,28 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_crash_simulation_disk_test_ts",
       "target": "src_persistence_repositories_artifact_repository_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "src_persistence_repositories_artifact_repository_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "src_persistence_repositories_artifact_repository_ts",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -36185,6 +37413,17 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "repositories_artifact_repository_artifactrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/recovery/checkpoint.test.ts",
       "source_location": "L10",
       "weight": 1.0,
@@ -36213,6 +37452,28 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_crash_simulation_disk_test_ts",
       "target": "repositories_artifact_repository_artifactrepository"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "repositories_artifact_repository_artifactrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "repositories_artifact_repository_artifactrepository",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -36373,6 +37634,17 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "src_persistence_repositories_checkpoint_repository_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/recovery/checkpoint.test.ts",
       "source_location": "L7",
       "weight": 1.0,
@@ -36401,6 +37673,28 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_crash_simulation_disk_test_ts",
       "target": "src_persistence_repositories_checkpoint_repository_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "src_persistence_repositories_checkpoint_repository_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "src_persistence_repositories_checkpoint_repository_ts",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -36477,6 +37771,17 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "repositories_checkpoint_repository_checkpointrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/recovery/checkpoint.test.ts",
       "source_location": "L7",
       "weight": 1.0,
@@ -36505,6 +37810,28 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_crash_simulation_disk_test_ts",
       "target": "repositories_checkpoint_repository_checkpointrepository"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "repositories_checkpoint_repository_checkpointrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "repositories_checkpoint_repository_checkpointrepository",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -36563,6 +37890,17 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "src_persistence_repositories_event_repository_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/recovery/checkpoint.test.ts",
       "source_location": "L11",
       "weight": 1.0,
@@ -36591,6 +37929,28 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_crash_simulation_disk_test_ts",
       "target": "src_persistence_repositories_event_repository_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "src_persistence_repositories_event_repository_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "src_persistence_repositories_event_repository_ts",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -36667,6 +38027,17 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "repositories_event_repository_eventrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/recovery/checkpoint.test.ts",
       "source_location": "L11",
       "weight": 1.0,
@@ -36695,6 +38066,28 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_crash_simulation_disk_test_ts",
       "target": "repositories_event_repository_eventrepository"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "repositories_event_repository_eventrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "repositories_event_repository_eventrepository",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -36822,6 +38215,17 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "src_persistence_repositories_project_repository_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/recovery/checkpoint.test.ts",
       "source_location": "L8",
       "weight": 1.0,
@@ -36872,6 +38276,39 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_orphan_detector_test_ts",
       "target": "src_persistence_repositories_project_repository_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "src_persistence_repositories_project_repository_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "src_persistence_repositories_project_repository_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "tests_resume_task_dag_restorer_test_ts",
+      "target": "src_persistence_repositories_project_repository_ts",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -36937,6 +38374,17 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "repositories_project_repository_projectrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/recovery/checkpoint.test.ts",
       "source_location": "L8",
       "weight": 1.0,
@@ -36987,6 +38435,39 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_orphan_detector_test_ts",
       "target": "repositories_project_repository_projectrepository"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "repositories_project_repository_projectrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "repositories_project_repository_projectrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "tests_resume_task_dag_restorer_test_ts",
+      "target": "repositories_project_repository_projectrepository",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -37023,6 +38504,17 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "src_persistence_repositories_session_repository_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/recovery/checkpoint.test.ts",
       "source_location": "L9",
       "weight": 1.0,
@@ -37073,6 +38565,39 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_orphan_detector_test_ts",
       "target": "src_persistence_repositories_session_repository_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "src_persistence_repositories_session_repository_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "src_persistence_repositories_session_repository_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "tests_resume_task_dag_restorer_test_ts",
+      "target": "src_persistence_repositories_session_repository_ts",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -37138,6 +38663,17 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "repositories_session_repository_sessionrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/recovery/checkpoint.test.ts",
       "source_location": "L9",
       "weight": 1.0,
@@ -37190,6 +38726,39 @@
       "target": "repositories_session_repository_sessionrepository"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "repositories_session_repository_sessionrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "repositories_session_repository_sessionrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "tests_resume_task_dag_restorer_test_ts",
+      "target": "repositories_session_repository_sessionrepository",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -37235,6 +38804,28 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "src_persistence_repositories_task_repository_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/task-dag-restorer.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_resume_task_dag_restorer_ts",
+      "target": "src_persistence_repositories_task_repository_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/recovery/crash-recovery.test.ts",
       "source_location": "L9",
       "weight": 1.0,
@@ -37263,6 +38854,39 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_lease_manager_test_ts",
       "target": "src_persistence_repositories_task_repository_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "src_persistence_repositories_task_repository_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "src_persistence_repositories_task_repository_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "tests_resume_task_dag_restorer_test_ts",
+      "target": "src_persistence_repositories_task_repository_ts",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -37339,6 +38963,28 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "repositories_task_repository_taskrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/task-dag-restorer.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_resume_task_dag_restorer_ts",
+      "target": "repositories_task_repository_taskrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/recovery/crash-recovery.test.ts",
       "source_location": "L9",
       "weight": 1.0,
@@ -37367,6 +39013,39 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_lease_manager_test_ts",
       "target": "repositories_task_repository_taskrepository"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "repositories_task_repository_taskrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "repositories_task_repository_taskrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "tests_resume_task_dag_restorer_test_ts",
+      "target": "repositories_task_repository_taskrepository",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -37466,6 +39145,28 @@
       "target": "src_recovery_checkpoint_manifest_ts"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "src_recovery_checkpoint_manifest_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "src_recovery_checkpoint_manifest_ts",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/recovery/checkpoint-manifest.ts",
@@ -37530,6 +39231,28 @@
       "target": "recovery_checkpoint_manifest_checkpointmanifestbuilder"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "recovery_checkpoint_manifest_checkpointmanifestbuilder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "recovery_checkpoint_manifest_checkpointmanifestbuilder",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -37575,6 +39298,17 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "src_recovery_checkpoint_validator_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/recovery/checkpoint.test.ts",
       "source_location": "L13",
       "weight": 1.0,
@@ -37612,6 +39346,17 @@
       "confidence_score": 1.0,
       "source": "src_recovery_crash_recovery_engine_ts",
       "target": "recovery_checkpoint_validator_checkpointvalidator"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "recovery_checkpoint_validator_checkpointvalidator",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -37841,6 +39586,17 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "src_recovery_lease_manager_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/recovery/crash-recovery.test.ts",
       "source_location": "L17",
       "weight": 1.0,
@@ -37869,6 +39625,28 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_lease_manager_test_ts",
       "target": "src_recovery_lease_manager_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "src_recovery_lease_manager_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "src_recovery_lease_manager_ts",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -37934,6 +39712,17 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "recovery_lease_manager_leasemanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/recovery/crash-recovery.test.ts",
       "source_location": "L17",
       "weight": 1.0,
@@ -37962,6 +39751,28 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_lease_manager_test_ts",
       "target": "recovery_lease_manager_leasemanager"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "recovery_lease_manager_leasemanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "recovery_lease_manager_leasemanager",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -38117,6 +39928,488 @@
       "confidence_score": 1.0,
       "source": "src_recovery_recovery_record_ts",
       "target": "recovery_recovery_record_recoveryrecord"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/pending-approval-restorer.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_resume_pending_approval_restorer_ts",
+      "target": "src_resume_resume_contract_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/pending-approval-restorer.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_resume_pending_approval_restorer_ts",
+      "target": "resume_resume_contract_pendingapprovalitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/pending-approval-restorer.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_resume_pending_approval_restorer_ts",
+      "target": "resume_resume_contract_restoredpendingapprovals",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/pending-approval-restorer.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_resume_pending_approval_restorer_ts",
+      "target": "resume_pending_approval_restorer_pendingapprovalrestorer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "src_resume_pending_approval_restorer_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/pending-approvals.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "tests_resume_pending_approvals_test_ts",
+      "target": "src_resume_pending_approval_restorer_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/pending-approval-restorer.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "resume_pending_approval_restorer_pendingapprovalrestorer",
+      "target": "resume_pending_approval_restorer_pendingapprovalrestorer_restorependingapprovals",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "resume_pending_approval_restorer_pendingapprovalrestorer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/pending-approvals.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "tests_resume_pending_approvals_test_ts",
+      "target": "resume_pending_approval_restorer_pendingapprovalrestorer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "resume_resume_contract_resumetargetschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "resume_resume_contract_resumetarget",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "resume_resume_contract_resumeoptionsschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "resume_resume_contract_resumeoptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "resume_resume_contract_resumerequestschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "resume_resume_contract_resumerequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "resume_resume_contract_restoredtaskdagschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "resume_resume_contract_restoredtaskdag",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "resume_resume_contract_pendingapprovalitemschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L91",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "resume_resume_contract_pendingapprovalitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L96",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "resume_resume_contract_restoredpendingapprovalsschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "resume_resume_contract_restoredpendingapprovals",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L105",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "resume_resume_contract_resumevalidationresultschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L115",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "resume_resume_contract_resumevalidationresult",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L121",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "resume_resume_contract_resumeresultschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/resume-contract.ts",
+      "source_location": "L141",
+      "weight": 1.0,
+      "source": "src_resume_resume_contract_ts",
+      "target": "resume_resume_contract_resumeresult",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "src_resume_resume_contract_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/task-dag-restorer.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_resume_task_dag_restorer_ts",
+      "target": "src_resume_resume_contract_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "resume_resume_contract_resumerequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/task-dag-restorer.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_resume_task_dag_restorer_ts",
+      "target": "resume_resume_contract_restoredtaskdag",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "resume_resume_contract_resumevalidationresult",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "resume_resume_contract_resumeresultschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "resume_resume_contract_resumeresult",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "src_resume_task_dag_restorer_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "resume_task_dag_restorer_taskdagrestorer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "resume_session_resume_engine_sessionresumeengineoptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "src_resume_session_resume_engine_ts",
+      "target": "resume_session_resume_engine_sessionresumeengine",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "src_resume_session_resume_engine_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "src_resume_session_resume_engine_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "resume_session_resume_engine_sessionresumeengine",
+      "target": "resume_session_resume_engine_sessionresumeengine_constructor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/session-resume-engine.ts",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "resume_session_resume_engine_sessionresumeengine",
+      "target": "resume_session_resume_engine_sessionresumeengine_resume",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "resume_session_resume_engine_sessionresumeengine",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "resume_session_resume_engine_sessionresumeengine",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/task-dag-restorer.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_resume_task_dag_restorer_ts",
+      "target": "resume_task_dag_restorer_taskdagrestorer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "tests_resume_task_dag_restorer_test_ts",
+      "target": "src_resume_task_dag_restorer_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/resume/task-dag-restorer.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "resume_task_dag_restorer_taskdagrestorer",
+      "target": "resume_task_dag_restorer_taskdagrestorer_restoredag",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "tests_resume_task_dag_restorer_test_ts",
+      "target": "resume_task_dag_restorer_taskdagrestorer",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -39897,6 +42190,326 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_orphan_detector_test_ts",
       "target": "recovery_orphan_detector_test_report"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "resume_crash_resume_integration_test_migrator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "resume_crash_resume_integration_test_projectrepo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "resume_crash_resume_integration_test_sessionrepo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "resume_crash_resume_integration_test_taskrepo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "resume_crash_resume_integration_test_checkpointrepo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "resume_crash_resume_integration_test_artifactrepo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "resume_crash_resume_integration_test_eventstore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L162",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "resume_crash_resume_integration_test_chk",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L174",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "resume_crash_resume_integration_test_freshengine",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L177",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "resume_crash_resume_integration_test_freshprojectrepo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L178",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "resume_crash_resume_integration_test_freshsessionrepo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L179",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "resume_crash_resume_integration_test_freshtaskrepo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L180",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "resume_crash_resume_integration_test_freshcheckpointrepo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L181",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "resume_crash_resume_integration_test_freshartifactrepo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L182",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "resume_crash_resume_integration_test_fresheventrepo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L183",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "resume_crash_resume_integration_test_fresheventstore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L184",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "resume_crash_resume_integration_test_freshprojectionmanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L185",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "resume_crash_resume_integration_test_freshleasemanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L187",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "resume_crash_resume_integration_test_resumeengine",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/crash-resume-integration.test.ts",
+      "source_location": "L220",
+      "weight": 1.0,
+      "source": "tests_resume_crash_resume_integration_test_ts",
+      "target": "resume_crash_resume_integration_test_taskboard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/pending-approvals.test.ts",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "tests_resume_pending_approvals_test_ts",
+      "target": "resume_pending_approvals_test_events",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/pending-approvals.test.ts",
+      "source_location": "L86",
+      "weight": 1.0,
+      "source": "tests_resume_pending_approvals_test_ts",
+      "target": "resume_pending_approvals_test_result",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/pending-approvals.test.ts",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "tests_resume_pending_approvals_test_ts",
+      "target": "resume_pending_approvals_test_nowms",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "resume_resume_engine_test_migrator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L131",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "resume_resume_engine_test_artsha",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/resume-engine.test.ts",
+      "source_location": "L143",
+      "weight": 1.0,
+      "source": "tests_resume_resume_engine_test_ts",
+      "target": "resume_resume_engine_test_checkpoint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "tests_resume_task_dag_restorer_test_ts",
+      "target": "resume_task_dag_restorer_test_migrator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "tests_resume_task_dag_restorer_test_ts",
+      "target": "resume_task_dag_restorer_test_t1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "tests_resume_task_dag_restorer_test_ts",
+      "target": "resume_task_dag_restorer_test_t2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L89",
+      "weight": 1.0,
+      "source": "tests_resume_task_dag_restorer_test_ts",
+      "target": "resume_task_dag_restorer_test_t3",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L134",
+      "weight": 1.0,
+      "source": "tests_resume_task_dag_restorer_test_ts",
+      "target": "resume_task_dag_restorer_test_dag",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/resume/task-dag-restorer.test.ts",
+      "source_location": "L118",
+      "weight": 1.0,
+      "source": "tests_resume_task_dag_restorer_test_ts",
+      "target": "resume_task_dag_restorer_test_trunning",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -46597,6 +49210,16 @@
       "confidence_score": 1.0,
       "source": "development_anantham_v2_master_development_plan_p9_verification_evaluation_production_hardening",
       "target": "development_anantham_v2_master_development_plan_p9_6_release_engineering"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
+      "source_location": "L595",
+      "weight": 1.0,
+      "source": "development_anantham_v2_master_development_plan_5_change_log",
+      "target": "development_anantham_v2_master_development_plan_2026_08_30_21_50_task_p1_5_resume_engine",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -65874,9 +68497,9 @@
       "source_file": "docs/discovery/active-tasks.md",
       "source_location": "L7",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "discovery_active_tasks_active_tasks_registry_anantham_v2",
-      "target": "discovery_active_tasks_1_active_phase_backlog_p1_durable_runtime_foundation"
+      "target": "discovery_active_tasks_1_active_phase_backlog_p2_content_context_memory_retrieval",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -65892,11 +68515,21 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/discovery/active-tasks.md",
-      "source_location": "L9",
+      "source_location": "L7",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "discovery_active_tasks_1_active_phase_backlog_p1_durable_runtime_foundation",
-      "target": "discovery_active_tasks_p1_5_durable_session_resume_engine_resume_file_c_herness_docs_discovery_current_state_md_l10"
+      "source": "discovery_active_tasks_active_tasks_registry_anantham_v2",
+      "target": "discovery_active_tasks_1_active_phase_backlog_p1_durable_runtime_foundation"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/discovery/active-tasks.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "discovery_active_tasks_1_active_phase_backlog_p2_content_context_memory_retrieval",
+      "target": "discovery_active_tasks_p2_1_multimodal_content_ingestion_parsers_file_c_herness_docs_discovery_current_state_md_l10",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -65907,6 +68540,16 @@
       "confidence_score": 1.0,
       "source": "discovery_active_tasks_1_active_phase_backlog_p1_durable_runtime_foundation",
       "target": "discovery_active_tasks_p2_1_multimodal_content_ingestion_parsers_file_c_herness_docs_discovery_current_state_md_l10"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/discovery/active-tasks.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "discovery_active_tasks_2_completed_milestones_recent",
+      "target": "discovery_active_tasks_task_p1_5_resume_engine_durable_session_resume_engine_resume_file_c_herness_src_resume_index_ts",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -65954,9 +68597,9 @@
       "source_file": "docs/discovery/CHATGPT_ORCHESTRATION_KT.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_discovery_chatgpt_orchestration_kt_md",
-      "target": "discovery_chatgpt_orchestration_kt_anantham_v2_knowledge_transfer_kt_autonomous_orchestration_guide_for_chatgpt",
-      "confidence_score": 1.0
+      "target": "discovery_chatgpt_orchestration_kt_anantham_v2_knowledge_transfer_kt_autonomous_orchestration_guide_for_chatgpt"
     },
     {
       "relation": "contains",
@@ -65964,9 +68607,9 @@
       "source_file": "docs/discovery/CHATGPT_ORCHESTRATION_KT.md",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_discovery_chatgpt_orchestration_kt_md",
-      "target": "discovery_chatgpt_orchestration_kt_1_executive_summary_core_philosophy",
-      "confidence_score": 1.0
+      "target": "discovery_chatgpt_orchestration_kt_1_executive_summary_core_philosophy"
     },
     {
       "relation": "contains",
@@ -65974,9 +68617,9 @@
       "source_file": "docs/discovery/CHATGPT_ORCHESTRATION_KT.md",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_discovery_chatgpt_orchestration_kt_md",
-      "target": "discovery_chatgpt_orchestration_kt_2_the_7_non_negotiable_pillars",
-      "confidence_score": 1.0
+      "target": "discovery_chatgpt_orchestration_kt_2_the_7_non_negotiable_pillars"
     },
     {
       "relation": "contains",
@@ -65984,9 +68627,9 @@
       "source_file": "docs/discovery/CHATGPT_ORCHESTRATION_KT.md",
       "source_location": "L58",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_discovery_chatgpt_orchestration_kt_md",
-      "target": "discovery_chatgpt_orchestration_kt_3_source_authority_hierarchy",
-      "confidence_score": 1.0
+      "target": "discovery_chatgpt_orchestration_kt_3_source_authority_hierarchy"
     },
     {
       "relation": "contains",
@@ -65994,9 +68637,9 @@
       "source_file": "docs/discovery/CHATGPT_ORCHESTRATION_KT.md",
       "source_location": "L78",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_discovery_chatgpt_orchestration_kt_md",
-      "target": "discovery_chatgpt_orchestration_kt_4_the_11_phase_autonomous_lifecycle",
-      "confidence_score": 1.0
+      "target": "discovery_chatgpt_orchestration_kt_4_the_11_phase_autonomous_lifecycle"
     },
     {
       "relation": "contains",
@@ -66004,9 +68647,9 @@
       "source_file": "docs/discovery/CHATGPT_ORCHESTRATION_KT.md",
       "source_location": "L112",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_discovery_chatgpt_orchestration_kt_md",
-      "target": "discovery_chatgpt_orchestration_kt_5_codebase_subsystems_directory_map",
-      "confidence_score": 1.0
+      "target": "discovery_chatgpt_orchestration_kt_5_codebase_subsystems_directory_map"
     },
     {
       "relation": "contains",
@@ -66014,9 +68657,9 @@
       "source_file": "docs/discovery/CHATGPT_ORCHESTRATION_KT.md",
       "source_location": "L127",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_discovery_chatgpt_orchestration_kt_md",
-      "target": "discovery_chatgpt_orchestration_kt_6_essential_developer_agent_commands",
-      "confidence_score": 1.0
+      "target": "discovery_chatgpt_orchestration_kt_6_essential_developer_agent_commands"
     },
     {
       "relation": "contains",
@@ -66024,9 +68667,9 @@
       "source_file": "docs/discovery/CHATGPT_ORCHESTRATION_KT.md",
       "source_location": "L157",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_discovery_chatgpt_orchestration_kt_md",
-      "target": "discovery_chatgpt_orchestration_kt_7_mandatory_engineering_verdict_format",
-      "confidence_score": 1.0
+      "target": "discovery_chatgpt_orchestration_kt_7_mandatory_engineering_verdict_format"
     },
     {
       "relation": "contains",
@@ -66034,9 +68677,9 @@
       "source_file": "docs/discovery/CHATGPT_ORCHESTRATION_KT.md",
       "source_location": "L220",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_discovery_chatgpt_orchestration_kt_md",
-      "target": "discovery_chatgpt_orchestration_kt_8_prohibited_actions_strict_anti_patterns",
-      "confidence_score": 1.0
+      "target": "discovery_chatgpt_orchestration_kt_8_prohibited_actions_strict_anti_patterns"
     },
     {
       "relation": "contains",
@@ -66044,9 +68687,9 @@
       "source_file": "docs/discovery/CHATGPT_ORCHESTRATION_KT.md",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "discovery_chatgpt_orchestration_kt_2_the_7_non_negotiable_pillars",
-      "target": "discovery_chatgpt_orchestration_kt_codeblock_1",
-      "confidence_score": 1.0
+      "target": "discovery_chatgpt_orchestration_kt_codeblock_1"
     },
     {
       "relation": "contains",
@@ -66054,9 +68697,9 @@
       "source_file": "docs/discovery/CHATGPT_ORCHESTRATION_KT.md",
       "source_location": "L62",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "discovery_chatgpt_orchestration_kt_3_source_authority_hierarchy",
-      "target": "discovery_chatgpt_orchestration_kt_codeblock_2",
-      "confidence_score": 1.0
+      "target": "discovery_chatgpt_orchestration_kt_codeblock_2"
     },
     {
       "relation": "contains",
@@ -66064,9 +68707,9 @@
       "source_file": "docs/discovery/CHATGPT_ORCHESTRATION_KT.md",
       "source_location": "L82",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "discovery_chatgpt_orchestration_kt_4_the_11_phase_autonomous_lifecycle",
-      "target": "discovery_chatgpt_orchestration_kt_codeblock_3",
-      "confidence_score": 1.0
+      "target": "discovery_chatgpt_orchestration_kt_codeblock_3"
     },
     {
       "relation": "contains",
@@ -66074,9 +68717,9 @@
       "source_file": "docs/discovery/CHATGPT_ORCHESTRATION_KT.md",
       "source_location": "L131",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "discovery_chatgpt_orchestration_kt_6_essential_developer_agent_commands",
-      "target": "discovery_chatgpt_orchestration_kt_codeblock_4",
-      "confidence_score": 1.0
+      "target": "discovery_chatgpt_orchestration_kt_codeblock_4"
     },
     {
       "relation": "contains",
@@ -66084,9 +68727,9 @@
       "source_file": "docs/discovery/CHATGPT_ORCHESTRATION_KT.md",
       "source_location": "L161",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "discovery_chatgpt_orchestration_kt_7_mandatory_engineering_verdict_format",
-      "target": "discovery_chatgpt_orchestration_kt_codeblock_5",
-      "confidence_score": 1.0
+      "target": "discovery_chatgpt_orchestration_kt_codeblock_5"
     },
     {
       "relation": "contains",
@@ -66517,8 +69160,18 @@
       "confidence_score": 1.0,
       "source": "discovery_v1_0_anantham_orchestrator_2_the_11_phase_autonomous_lifecycle",
       "target": "discovery_v1_0_anantham_orchestrator_phase_11_multi_engine_synchronization"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/discovery/active-tasks.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "discovery_active_tasks_1_active_phase_backlog_p1_durable_runtime_foundation",
+      "target": "discovery_active_tasks_p1_5_durable_session_resume_engine_resume_file_c_herness_docs_discovery_current_state_md_l10"
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "297269b9610bea88af649afc5c39e3b870d2d14e"
+  "built_at_commit": "5a89f90614f3f17413e94c704a9177e6deb9bdc2"
 }

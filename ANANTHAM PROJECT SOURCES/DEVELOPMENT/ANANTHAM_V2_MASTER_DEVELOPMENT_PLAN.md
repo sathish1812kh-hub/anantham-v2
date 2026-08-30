@@ -190,13 +190,13 @@ Every update MUST include:
 - [x] recovery records
 
 ### P1.5 Resume
-- [ ] `/resume`
-- [ ] durable reconstruction
-- [ ] task/workflow restoration
-- [ ] pending approval restoration
-- [ ] artifact/worktree restoration
+- [x] `/resume`
+- [x] durable reconstruction
+- [x] task/workflow restoration
+- [x] pending approval restoration
+- [x] artifact/worktree restoration
 
-**P1 GATE:** restart/crash/resume acceptance passes.
+**P1 GATE:** restart/crash/resume acceptance passes. [x] (VERIFIED COMPLETE - 86/86 tests, 1000/1000 scorecard)
 
 ---
 
@@ -592,6 +592,18 @@ The PRD defines concrete acceptance targets including RPO 0 for committed state 
 
 Antigravity MUST append an entry after every completed work package:
 
+## 2026-08-30 21:50 — TASK-P1.5-RESUME-ENGINE
+ 
+Status: VERIFIED COMPLETE
+What changed: Implemented the Durable Session Resume Engine (`/resume`) subsystem. Added `SessionResumeEngine` executing the complete PRD Section 56 algorithm, `TaskDagRestorer` for task dependency resolution, topological execution sorting, and interrupted task state recovery, `PendingApprovalRestorer` for reconstructing unapproved tool requests from the event stream with TTL checks, and comprehensive integration/unit tests. Verified full disk crash, restart, and state reconstruction on file-backed SQLite database. P1 Gate officially satisfied.
+Files: src/resume/resume-contract.ts, src/resume/task-dag-restorer.ts, src/resume/pending-approval-restorer.ts, src/resume/session-resume-engine.ts, src/resume/index.ts, src/index.ts, tests/resume/*.test.ts
+Tests: 86 automated tests passing across 33 test suites in Vitest (target resolution, task DAG sorting, interrupted task recovery, pending approvals, checkpoint validation, idempotent resume, and real disk crash reconstruction).
+Verification: npm run typecheck (0 errors under strict: true), npm test (86/86 passing), npm run build (successful), npm run scorecard (1000/1000 Certified Perfect), multi-engine sync (CodeGraph, Graphify, Neo4j, Graphiti, Git).
+Commit/Revision: Active
+Risks: None.
+Unresolved: None.
+Next: P2.1 Multimodal Content Ingestion & Parsers.
+ 
 ## 2026-08-30 21:15 — TASK-P1.4-CHECKPOINTS-RECOVERY
  
 Status: VERIFIED COMPLETE

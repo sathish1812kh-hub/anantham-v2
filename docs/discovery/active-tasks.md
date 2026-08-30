@@ -4,27 +4,23 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ---
 
-## 1. Active Phase Backlog (P1 — Durable Runtime Foundation)
-
-### [P1.5 — Durable Session Resume Engine (`/resume`)](file:///C:/herness/docs/discovery/current-state.md#L10)
-- **Status**: `IN_PROGRESS`
-- **Owner**: Principal Core Architect
-- **Description**: Implement `/resume` pipeline to rebuild runtime state (task DAG, pending approvals, worktrees, memory context) from durable event log and checkpoints without duplicate execution.
-- **Dependencies**: `P1.4` (Checkpoints & Crash Recovery Engine).
-- **Target Files**:
-  - `src/resume/session-resume-engine.ts`
-  - `src/resume/task-dag-restorer.ts`
-  - `tests/resume/*.test.ts`
+## 1. Active Phase Backlog (P2 — Content / Context / Memory / Retrieval)
 
 ### [P2.1 — Multimodal Content Ingestion & Parsers](file:///C:/herness/docs/discovery/current-state.md#L10)
-- **Status**: `PENDING`
+- **Status**: `READY_FOR_EXECUTION`
 - **Owner**: Senior Systems Engineer
 - **Description**: Implement safe parsers and representation selectors for text, PDF, DOCX, XLSX, CSV, audio, video, and archive extraction with strict size/MIME guards.
-- **Dependencies**: `P1.5`.
+- **Dependencies**: `P1.5` (Durable Resume Engine).
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P1.5-RESUME-ENGINE — Durable Session Resume Engine (`/resume`)](file:///C:/herness/src/resume/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Core Architect
+- **Completed Date**: 2026-08-30
+- **Verification**: 86/86 tests passing across 33 test suites in Vitest. Durable session reconstruction from SQLite events + checkpoints, Task DAG topological sort and crash reconciliation, pending approval restoration, and disk restart verification.
 
 ### [TASK-P1.4-CHECKPOINTS-RECOVERY — Manifests, Validation, Leases & Crash Recovery](file:///C:/herness/src/recovery/index.ts)
 - **Status**: `COMPLETED`
