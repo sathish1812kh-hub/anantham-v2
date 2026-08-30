@@ -174,12 +174,12 @@ Every update MUST include:
 - [x] repository/service boundaries
 
 ### P1.3 Event/state
-- [ ] Event store
-- [ ] immutable events
-- [ ] state reconstruction
-- [ ] projections
-- [ ] projection rebuild
-- [ ] session tree/branches
+- [x] Event store
+- [x] immutable events
+- [x] state reconstruction
+- [x] projections
+- [x] projection rebuild
+- [x] session tree/branches
 
 ### P1.4 Checkpoints/recovery
 - [ ] Checkpoint manifests
@@ -592,7 +592,19 @@ The PRD defines concrete acceptance targets including RPO 0 for committed state 
 
 Antigravity MUST append an entry after every completed work package:
 
-## 2026-08-30 20:56 — TASK-P1.2-PERSISTENCE
+## 2026-08-30 21:00 — TASK-P1.3-EVENT-STATE
+ 
+ Status: VERIFIED COMPLETE
+ What changed: Implemented the EventStore subsystem with append-only immutable event streams, safe pub/sub notifications, deterministic aggregate state reconstruction (Session and Task reducers), rebuildable projections (SessionSummaryProjection, TaskBoardProjection, ProjectionManager), and SessionTreeManager for hierarchical branching and forking without parent mutation.
+ Files: src/event-state/event-store.ts, src/event-state/reconstruction/*.ts, src/event-state/projections/*.ts, src/event-state/session-tree/*.ts, src/event-state/index.ts, src/index.ts, tests/event-state/*.test.ts
+ Tests: 61 automated tests passing across 24 test suites (event append, immutability, state reconstruction, projection incremental update & lossless rebuild from log, session branching/forking, and concurrency isolation).
+ Verification: npm run typecheck (0 errors under strict: true), npm test (61/61 passing), npm run build (successful).
+ Commit/Revision: Pending git commit
+ Risks: None.
+ Unresolved: None.
+ Next: P1.4 Checkpoints/recovery (Checkpoint manifests, validation, crash recovery, orphan detection, stale lease handling).
+ 
+ ## 2026-08-30 20:56 — TASK-P1.2-PERSISTENCE
  
  Status: VERIFIED COMPLETE
  What changed: Implemented the authoritative SQLite persistence subsystem using Node.js v25 native `node:sqlite` (DatabaseSync). Added SqliteEngine with WAL mode, synchronous=FULL (RPO 0 durability), foreign_keys=ON, and transactional units of work. Implemented MigrationEngine with SHA-256 checksum tracking in _migrations and Migration 001 for all core relational tables. Implemented ProjectRepository, SessionRepository, TaskRepository (with state transition enforcement), EventRepository (with append-only immutability), CheckpointRepository, ArtifactRepository, AttachmentRepository, and MemoryRepository.

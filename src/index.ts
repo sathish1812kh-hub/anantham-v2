@@ -5,3 +5,4 @@
 
 export * from "./domain/index.js";
 export * from "./persistence/index.js";
+export * from "./event-state/index.js";
