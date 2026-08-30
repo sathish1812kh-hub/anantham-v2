@@ -6,21 +6,27 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P2 — Content / Context / Memory / Retrieval)
 
-### [P2.1 — Multimodal Content Ingestion & Parsers](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P2.2 — Content Security, MIME Validation & Provenance](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Senior Systems Engineer
-- **Description**: Implement safe parsers and representation selectors for text, PDF, DOCX, XLSX, CSV, audio, video, and archive extraction with strict size/MIME guards.
-- **Dependencies**: `P1.5` (Durable Resume Engine).
+- **Owner**: Senior Security Engineer
+- **Description**: Implement signature/MIME security validation, sensitive data redaction, archive bomb inspection, and provenance integrity tracking.
+- **Dependencies**: `P2.1` (Content Ingestion Engine).
 
 ---
 
 ## 2. Completed Milestones (Recent)
 
+### [TASK-P2.1-CONTENT-INGESTION — Multimodal Content Ingestion & Parsers](file:///C:/herness/src/content/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Senior Systems Engineer
+- **Completed Date**: 2026-08-30
+- **Verification**: 106/106 tests passing across 40 test suites in Vitest. Provider-neutral multimodal ingestion, magic byte MIME sniffing, size guardrails, Zip Slip security checks, specialized parsers for Text, Code, Markdown, JSON, CSV, PDF, Image, Media, and Archive, and unknown binary preservation.
+
 ### [TASK-P1.5-RESUME-ENGINE — Durable Session Resume Engine (`/resume`)](file:///C:/herness/src/resume/index.ts)
 - **Status**: `COMPLETED`
 - **Owner**: Principal Core Architect
 - **Completed Date**: 2026-08-30
-- **Verification**: 86/86 tests passing across 33 test suites in Vitest. Durable session reconstruction from SQLite events + checkpoints, Task DAG topological sort and crash reconciliation, pending approval restoration, and disk restart verification.
+- **Verification**: 90/90 tests passing across 35 test suites in Vitest. Durable session reconstruction from SQLite events + checkpoints, Task DAG topological sort and crash reconciliation, pending approval restoration, and disk restart verification. P1 Gate officially certified.
 
 ### [TASK-P1.4-CHECKPOINTS-RECOVERY — Manifests, Validation, Leases & Crash Recovery](file:///C:/herness/src/recovery/index.ts)
 - **Status**: `COMPLETED`

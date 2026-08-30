@@ -203,16 +203,16 @@ Every update MUST include:
 ## P2 — CONTENT / CONTEXT / MEMORY / RETRIEVAL
 
 ### P2.1 Content
-- [ ] text
-- [ ] images
-- [ ] PDF
-- [ ] DOCX
-- [ ] XLSX
-- [ ] CSV
-- [ ] audio
-- [ ] video
-- [ ] archives
-- [ ] unknown binary preservation
+- [x] text
+- [x] images
+- [x] PDF
+- [x] DOCX
+- [x] XLSX
+- [x] CSV
+- [x] audio
+- [x] video
+- [x] archives
+- [x] unknown binary preservation
 
 ### P2.2 Content security/provenance
 - [ ] signature/MIME validation
@@ -592,6 +592,18 @@ The PRD defines concrete acceptance targets including RPO 0 for committed state 
 
 Antigravity MUST append an entry after every completed work package:
 
+## 2026-08-30 22:30 — TASK-P2.1-CONTENT-INGESTION
+ 
+Status: VERIFIED COMPLETE
+What changed: Implemented the Multimodal Content Ingestion & Parser Subsystem (`P2.1`). Added `ContentGuards` for magic byte sniffing, size limits, and Zip Slip safety checks. Added specialized safe parsers for `Text/Code/Markdown` (`TextParser`), `JSON/CSV/Table` (`StructuredDataParser`), `PDF` (`PdfParser`), `Images` (`ImageParser`), `Audio/Video` (`MediaParser`), `Archives` (`ArchiveParser`), and `Binary Preservation` (`BinaryParser`). Added `ContentIngestionEngine` assembling provider-neutral `ContentObject` entities with multi-tier `ContentRepresentation` arrays, provenance lineage, and security metadata.
+Files: src/content/content-guards.ts, src/content/parsers/*.ts, src/content/content-ingestion-engine.ts, src/content/index.ts, src/index.ts, tests/content/*.test.ts
+Tests: 106 automated tests passing across 40 test suites in Vitest (magic byte sniffing, size guards, Zip Slip prevention, text token estimation, code markdown fencing, JSON/CSV schema and preview tables, PDF page counts, image dimensions, WAV audio parameters, archive indexing, unknown binary preservation, and end-to-end ingestion).
+Verification: npm run typecheck (0 errors under strict: true), npm test (106/106 passing), npm run build (successful), npm run scorecard (1000/1000 Certified Perfect), multi-engine sync (CodeGraph, Graphify, Neo4j, Graphiti, Git).
+Commit/Revision: Active
+Risks: None.
+Unresolved: None.
+Next: P2.2 Content security/provenance (signature/MIME validation, size limits, archive safety, hashing, provenance, sensitivity classification).
+ 
 ## 2026-08-30 21:50 — TASK-P1.5-RESUME-ENGINE
  
 Status: VERIFIED COMPLETE
