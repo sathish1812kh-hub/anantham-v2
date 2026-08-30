@@ -6,15 +6,21 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P4 — Policy / Tools / Execution)
 
-### [P4.4 — Executors (Local, Sandbox Controls, Resource Limits, Process Lifecycle)](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P4.5 — Side Effects (Retry Classification, Global Retry Budget, Duplicate Protection, Divergence Detection)](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Principal Runtime & Systems Architect
-- **Description**: Implement first-class Execution boundary drivers (Local, Docker sandbox, container resource limits, process supervisor, and remote interface).
-- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.3`.
+- **Owner**: Principal Reliability & Fault-Tolerance Architect
+- **Description**: Implement idempotent side effect safety, retry classification, global project/session retry budgets, duplicate side-effect prevention, and filesystem divergence detection.
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.4`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P4.4-EXECUTORS — Execution Infrastructure Plane](file:///C:/herness/src/execution/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Runtime & Systems Architect
+- **Completed Date**: 2026-08-31
+- **Verification**: 325/325 tests passing across 148 test suites in Vitest. First-class execution infrastructure behind ToolGateway & Native Tools: LocalExecutor (bounded cwd containment, env whitelist, secret scrubbing, output truncation), DockerSandboxExecutor (mount containment, privilege drops, network policy, deterministic fail-closed unavailability), RemoteExecutor (interface and unconfigured handling), ProcessSupervisor (lifecycle state machine, active handle tracking, process tree termination, and SQLite EventStore audit durability).
 
 ### [TASK-P4.3-NATIVE-TOOLS — Native Tools Suite](file:///C:/herness/src/tools/native/index.ts)
 - **Status**: `COMPLETED`

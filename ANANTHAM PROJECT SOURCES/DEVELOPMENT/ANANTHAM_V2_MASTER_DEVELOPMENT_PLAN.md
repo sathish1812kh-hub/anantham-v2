@@ -317,12 +317,12 @@ Every update MUST include:
 - [x] browser where applicable
 
 ### P4.4 Executors
-- [ ] local
-- [ ] Docker
-- [ ] remote interface
-- [ ] sandbox controls
-- [ ] resource limits
-- [ ] process lifecycle
+- [x] local
+- [x] Docker
+- [x] remote interface
+- [x] sandbox controls
+- [x] resource limits
+- [x] process lifecycle
 
 ### P4.5 Side effects
 - [ ] retry classification
