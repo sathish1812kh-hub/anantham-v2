@@ -288,12 +288,12 @@ Every update MUST include:
 ## P4 — POLICY / TOOLS / EXECUTION
 
 ### P4.1 Policy
-- [ ] policy engine
-- [ ] data sensitivity
-- [ ] risk classification
-- [ ] approval
-- [ ] audit
-- [ ] project isolation
+- [x] policy engine
+- [x] data sensitivity
+- [x] risk classification
+- [x] approval
+- [x] audit
+- [x] project isolation
 
 ### P4.2 ToolGateway
 - [ ] schema validation

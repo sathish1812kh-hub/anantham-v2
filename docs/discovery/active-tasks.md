@@ -6,15 +6,21 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P4 — Policy / Tools / Execution)
 
-### [P4.1 — Policy Engine, Risk Classification & Approval Gates](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P4.2 — ToolGateway, Schema Validation & Idempotency](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Principal Security & Policy Architect
-- **Description**: Implement authoritative policy engine, data sensitivity evaluation, risk classification, human-in-the-loop approval gates, audit recording, and project isolation.
-- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`.
+- **Owner**: Principal Tool & Execution Architect
+- **Description**: Implement authoritative ToolGateway boundary, schema validation, policy check integration, approval gate enforcement, capability checks, execution timeouts, idempotency caching, normalized errors, and observation/artifact event recording.
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P4.1-POLICY — Policy Engine, Risk Classification & Approval Gates](file:///C:/herness/src/policy/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Security & Policy Architect
+- **Completed Date**: 2026-08-31
+- **Verification**: 269/269 tests passing across 118 test suites in Vitest. Authoritative PolicyEngine with strict precedence hierarchy, fail-closed evaluation, zero-secret-leakage, RiskClassifier with deterministic LOW/MEDIUM/HIGH/CRITICAL tiering, ApprovalManager with SHA-256 canonical TOCTOU binding, expiration/drift revalidation, immutable SQLite audit events, and P4 Gate zero-state-loss durability.
 
 ### [TASK-P3.5-INTEGRATIONS — OpenRouter, Direct Providers & Custom Endpoints](file:///C:/herness/src/models/index.ts)
 - **Status**: `COMPLETED`

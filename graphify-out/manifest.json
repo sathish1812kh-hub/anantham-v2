@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\governance\\scorecard.json": {
-    "mtime": 1788119149.1468039,
-    "ast_hash": "4da83c4add4c114418f764ff645440bc",
+    "mtime": 1788120502.866758,
+    "ast_hash": "5bbffea8f3c40bd5d97346daba2e99a7",
     "semantic_hash": ""
   },
   "C:\\herness\\scripts\\certification-scorecard.ps1": {
@@ -90,8 +90,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\src\\index.ts": {
-    "mtime": 1788116578.3298154,
-    "ast_hash": "bd9dab096c77c72fe15634c24c547994",
+    "mtime": 1788120299.3858962,
+    "ast_hash": "bafb68b5c14c248d79167d70d679d810",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\artifacts\\artifact-manager.ts": {
@@ -255,8 +255,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\src\\domain\\index.ts": {
-    "mtime": 1788117942.7311704,
-    "ast_hash": "ef8c3d73cad3fec86b53b02c2c37007c",
+    "mtime": 1788120259.5491805,
+    "ast_hash": "6186f4f496d6d90e58e0d5946f22d2d5",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\domain\\memory.ts": {
@@ -267,6 +267,11 @@
   "C:\\herness\\src\\domain\\model.ts": {
     "mtime": 1788116549.0934403,
     "ast_hash": "b668c901c0a342193a386a4ccf1099b3",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\domain\\policy.ts": {
+    "mtime": 1788120253.9666655,
+    "ast_hash": "7f14af1a7d46d6066c24e013ad2b0407",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\domain\\project.ts": {
@@ -502,6 +507,26 @@
   "C:\\herness\\src\\persistence\\repositories\\task-repository.ts": {
     "mtime": 1788103473.9770164,
     "ast_hash": "883686e089b065070beea48b3d3ea327",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\policy\\approval-manager.ts": {
+    "mtime": 1788120376.7064736,
+    "ast_hash": "f049cd20a4a6dcd648e8ad035efbe9cb",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\policy\\index.ts": {
+    "mtime": 1788120294.6934412,
+    "ast_hash": "b69522e6d87228fb5878e18bbd53946f",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\policy\\policy-engine.ts": {
+    "mtime": 1788120283.1365404,
+    "ast_hash": "98bdee062922c373c6c5818c2b997506",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\policy\\risk-classifier.ts": {
+    "mtime": 1788120275.3363373,
+    "ast_hash": "320561d628b2bc53153f13d1feb4072e",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\recovery\\checkpoint-manifest.ts": {
@@ -1034,6 +1059,56 @@
     "ast_hash": "ee692a82bd7758af39e1452b91156ece",
     "semantic_hash": ""
   },
+  "C:\\herness\\tests\\policy\\approval-lifecycle-toctou.test.ts": {
+    "mtime": 1788120326.0138135,
+    "ast_hash": "9132dadab47ea3b4bc218211a8cb8f89",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\policy\\approval-revalidation-expiration.test.ts": {
+    "mtime": 1788120330.6326706,
+    "ast_hash": "a7bf662e1568da54b29a27e06b569643",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\policy\\data-sensitivity-authorization.test.ts": {
+    "mtime": 1788120317.7220347,
+    "ast_hash": "1fbf14598fb67c75fd2e7f9d56c0855c",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\policy\\policy-audit-events.test.ts": {
+    "mtime": 1788120381.5444026,
+    "ast_hash": "b7ac64979cb8c113e6957d9591582019",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\policy\\policy-contracts-validation.test.ts": {
+    "mtime": 1788120303.7243557,
+    "ast_hash": "2d4daebb38f6a1b421093497c4b7f7f9",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\policy\\policy-durability-zero-state-loss.test.ts": {
+    "mtime": 1788120386.601606,
+    "ast_hash": "bde80b79ca193bc96753a9ac753d5ce9",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\policy\\policy-precedence-evaluation.test.ts": {
+    "mtime": 1788120314.4439466,
+    "ast_hash": "1f271eeb90ac392d14f24297511ee66c",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\policy\\project-isolation.test.ts": {
+    "mtime": 1788120321.84269,
+    "ast_hash": "d8f6e513ae46e0e105f2c65e4cd8ebd9",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\policy\\risk-classification.test.ts": {
+    "mtime": 1788120307.9798944,
+    "ast_hash": "3abab799bac30aeb61d8429b8a452b8f",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\policy\\security-prompt-injection-adversarial.test.ts": {
+    "mtime": 1788120335.7869265,
+    "ast_hash": "cc29806b85de567109a547afe26c00c7",
+    "semantic_hash": ""
+  },
   "C:\\herness\\tests\\recovery\\checkpoint.test.ts": {
     "mtime": 1788104573.7599404,
     "ast_hash": "84cc125fdb44eed4650ee06c27f1ee4e",
@@ -1135,8 +1210,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\ANANTHAM PROJECT SOURCES\\DEVELOPMENT\\ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md": {
-    "mtime": 1788119094.2709184,
-    "ast_hash": "454d4231b822fa09f1374a3af7a78241",
+    "mtime": 1788120439.7899067,
+    "ast_hash": "62ff33edf6004de9f4e5c224b7a3a170",
     "semantic_hash": ""
   },
   "C:\\herness\\ANANTHAM PROJECT SOURCES\\prd\\ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md": {
@@ -1155,8 +1230,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\active-tasks.md": {
-    "mtime": 1788119101.0839207,
-    "ast_hash": "3249118690dc8cc68c131bf43ce7e473",
+    "mtime": 1788120446.498672,
+    "ast_hash": "f397a1e0578b5ad98b3bdf6dca4b5e58",
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\CHATGPT_ORCHESTRATION_KT.md": {
@@ -1165,8 +1240,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\current-state.md": {
-    "mtime": 1788119109.8689544,
-    "ast_hash": "2007b014c98c90ed8ae886f2df43ed85",
+    "mtime": 1788120463.486492,
+    "ast_hash": "e1e8b3ed026ff6f78125f8e6cbea64ff",
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\decision-log.md": {
