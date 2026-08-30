@@ -230,15 +230,15 @@ Every update MUST include:
 - [x] verification status
 
 ### P2.4 Context
-- [ ] ContextPlan
-- [ ] relevance
-- [ ] provenance
-- [ ] capability matching
-- [ ] token accounting
-- [ ] attachment selection
-- [ ] tool-schema budget
-- [ ] tool-result pruning
-- [ ] `/context`
+- [x] ContextPlan
+- [x] relevance
+- [x] provenance
+- [x] capability matching
+- [x] token accounting
+- [x] attachment selection
+- [x] tool-schema budget
+- [x] tool-result pruning
+- [x] `/context`
 
 ### P2.5 Compaction
 - [ ] `/compact`

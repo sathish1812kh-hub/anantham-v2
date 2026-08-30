@@ -6,15 +6,21 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P2 — Content / Context / Memory / Retrieval)
 
-### [P2.4 — Context (ContextPlan, Relevance, Capabilities, Token Budget, /context)](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P2.5 — Compaction (/compact, preview, undo, auto-compact, authoritative history)](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Principal Context & LLM Engineer
-- **Description**: Implement ContextPlan assembly, semantic relevance scoring, token budget enforcement, attachment selection, tool-result pruning, and `/context` inspection.
-- **Dependencies**: `P2.1`, `P2.2`, `P2.3`.
+- **Owner**: Principal Context & State Engineer
+- **Description**: Implement session compaction, `/compact` preview, undo mechanism, automated token-threshold compaction, and zero-authoritative-history-loss preservation.
+- **Dependencies**: `P2.1`, `P2.2`, `P2.3`, `P2.4`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P2.4-CONTEXT — ContextPlan, Relevance, Capabilities, Token Budget, /context](file:///C:/herness/src/context/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Context & LLM Engineer
+- **Completed Date**: 2026-08-30
+- **Verification**: 148/148 tests passing across 58 test suites in Vitest. ContextPlan assembly, deterministic relevance & priority ranking (CRITICAL > HIGH > NORMAL > LOW > DROP), capability matching via RepresentationSelector, token budgeting, tool schema allocation, ToolResultPruner for oversized outputs, security isolation, and /context inspection report.
 
 ### [TASK-P2.3-ARTIFACTS — Durable Writes, Hashes, Metadata & Verification](file:///C:/herness/src/artifacts/index.ts)
 - **Status**: `COMPLETED`
