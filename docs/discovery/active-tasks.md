@@ -20,7 +20,7 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 - **Status**: `COMPLETED`
 - **Owner**: Senior Systems Engineer
 - **Completed Date**: 2026-08-30
-- **Verification**: 106/106 tests passing across 40 test suites in Vitest. Provider-neutral multimodal ingestion, magic byte MIME sniffing, size guardrails, Zip Slip security checks, specialized parsers for Text, Code, Markdown, JSON, CSV, PDF, Image, Media, and Archive, and unknown binary preservation.
+- **Verification**: 114/114 tests passing across 43 test suites in Vitest. Provider-neutral multimodal ingestion, magic byte MIME sniffing, size guardrails, Zip Slip security checks, specialized parsers for Text, Code, Markdown, JSON, CSV, PDF, Image, Media, and Archive, unknown binary preservation, RepresentationSelector, ContentReferenceManager, and ContentAccessValidator.
 
 ### [TASK-P1.5-RESUME-ENGINE — Durable Session Resume Engine (`/resume`)](file:///C:/herness/src/resume/index.ts)
 - **Status**: `COMPLETED`

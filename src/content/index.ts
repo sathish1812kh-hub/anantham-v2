@@ -7,3 +7,6 @@ export * from "./parsers/media-parser.js";
 export * from "./parsers/archive-parser.js";
 export * from "./parsers/binary-parser.js";
 export * from "./content-ingestion-engine.js";
+export * from "./representation-selector.js";
+export * from "./content-reference-manager.js";
+export * from "./content-access-validator.js";

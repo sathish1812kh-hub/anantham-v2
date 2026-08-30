@@ -4,8 +4,8 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `fd35ae8`
-- **Generated**: `2026-08-30T22:33:31Z`
+- **Project Commit**: `9572d96`
+- **Generated**: `2026-08-30T22:40:22Z`
 - **Current Release**: `v2.0.0-alpha.1`
 - **Current Phase**: `P2 — CONTENT / CONTEXT / MEMORY / RETRIEVAL`
 - **Current Task**: `P2.2 — Content Security, MIME Validation & Provenance`
@@ -22,7 +22,7 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
   - [P1.3-EVENT-STATE-ENGINE](file:///C:/herness/src/event-state/index.ts) (Append-only EventStore, Session/Task state reconstruction reducers, ProjectionManager, SessionTreeManager)
   - [P1.4-CHECKPOINTS-RECOVERY](file:///C:/herness/src/recovery/index.ts) (CheckpointManifestBuilder, CheckpointValidator, LeaseManager, OrphanDetector, CrashRecoveryEngine)
   - [P1.5-RESUME-ENGINE](file:///C:/herness/src/resume/index.ts) (SessionResumeEngine, TaskDagRestorer, PendingApprovalRestorer, full disk crash & resume verification)
-  - [P2.1-CONTENT-INGESTION](file:///C:/herness/src/content/index.ts) (ContentIngestionEngine, specialized parsers for Text, Code, Markdown, JSON, CSV, PDF, Image, Media, Archive, and Binary preservation)
+  - [P2.1-CONTENT-FOUNDATION](file:///C:/herness/src/content/index.ts) (ContentIngestionEngine, specialized parsers for Text, Code, Markdown, JSON, CSV, PDF, Image, Media, Archive, Binary preservation, RepresentationSelector, ContentReferenceManager, ContentAccessValidator)
   - [CHATGPT-ORCHESTRATION-KT](file:///C:/herness/docs/discovery/CHATGPT_ORCHESTRATION_KT.md) (Complete Knowledge Transfer package, 7 Pillars, 11-Phase Lifecycle, Source Hierarchy, commands)
 - **Synchronization Status**:
   - **Type Safety**: `100% PASSED (0 TypeScript compilation errors under strict: true)`
@@ -32,6 +32,6 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
   - **Session Tree**: `SYNCED (Hierarchical zero-parent-mutation branching)`
   - **Recovery Engine**: `SYNCED (CheckpointManifestBuilder, CheckpointValidator, LeaseManager, OrphanDetector, CrashRecoveryEngine)`
   - **Resume Engine**: `SYNCED (SessionResumeEngine, TaskDagRestorer, PendingApprovalRestorer)`
-  - **Content Engine**: `SYNCED (ContentIngestionEngine, multi-tier representation parser registry)`
-  - **Automated Test Suites**: `100% PASSED (106/106 tests passing across 40 test files)`
+  - **Content Engine**: `SYNCED (ContentIngestionEngine, RepresentationSelector, ContentReferenceManager, ContentAccessValidator)`
+  - **Automated Test Suites**: `100% PASSED (114/114 tests passing across 43 test files)`
   - **Quality Scorecard**: `1000/1000 CERTIFIED GOLD STANDARD`

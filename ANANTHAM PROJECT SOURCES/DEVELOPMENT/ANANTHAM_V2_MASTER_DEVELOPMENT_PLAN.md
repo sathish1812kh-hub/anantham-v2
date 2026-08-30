@@ -592,13 +592,13 @@ The PRD defines concrete acceptance targets including RPO 0 for committed state 
 
 Antigravity MUST append an entry after every completed work package:
 
-## 2026-08-30 22:30 — TASK-P2.1-CONTENT-INGESTION
+## 2026-08-30 22:35 — TASK-P2.1-CONTENT-FOUNDATION
  
 Status: VERIFIED COMPLETE
-What changed: Implemented the Multimodal Content Ingestion & Parser Subsystem (`P2.1`). Added `ContentGuards` for magic byte sniffing, size limits, and Zip Slip safety checks. Added specialized safe parsers for `Text/Code/Markdown` (`TextParser`), `JSON/CSV/Table` (`StructuredDataParser`), `PDF` (`PdfParser`), `Images` (`ImageParser`), `Audio/Video` (`MediaParser`), `Archives` (`ArchiveParser`), and `Binary Preservation` (`BinaryParser`). Added `ContentIngestionEngine` assembling provider-neutral `ContentObject` entities with multi-tier `ContentRepresentation` arrays, provenance lineage, and security metadata.
-Files: src/content/content-guards.ts, src/content/parsers/*.ts, src/content/content-ingestion-engine.ts, src/content/index.ts, src/index.ts, tests/content/*.test.ts
-Tests: 106 automated tests passing across 40 test suites in Vitest (magic byte sniffing, size guards, Zip Slip prevention, text token estimation, code markdown fencing, JSON/CSV schema and preview tables, PDF page counts, image dimensions, WAV audio parameters, archive indexing, unknown binary preservation, and end-to-end ingestion).
-Verification: npm run typecheck (0 errors under strict: true), npm test (106/106 passing), npm run build (successful), npm run scorecard (1000/1000 Certified Perfect), multi-engine sync (CodeGraph, Graphify, Neo4j, Graphiti, Git).
+What changed: Implemented and hardened the Multimodal Content Foundation & Representation Selector Subsystem (`P2.1`). Added `ContentGuards` for magic byte sniffing, size limits, and Zip Slip safety checks. Added specialized safe parsers for `Text/Code/Markdown` (`TextParser`), `JSON/CSV/Table` (`StructuredDataParser`), `PDF` (`PdfParser`), `Images` (`ImageParser`), `Audio/Video` (`MediaParser`), `Archives` (`ArchiveParser`), and `Binary Preservation` (`BinaryParser`). Added `ContentIngestionEngine` assembling provider-neutral `ContentObject` entities with multi-tier `ContentRepresentation` arrays, provenance lineage, and security metadata. Added `RepresentationSelector` for model modality matching and token budget truncation, `ContentReferenceManager` for large binary offloading and SHA-256 disk verification, and `ContentAccessValidator` for cross-project boundary isolation.
+Files: src/content/content-guards.ts, src/content/parsers/*.ts, src/content/content-ingestion-engine.ts, src/content/representation-selector.ts, src/content/content-reference-manager.ts, src/content/content-access-validator.ts, src/content/index.ts, src/index.ts, tests/content/*.test.ts
+Tests: 114 automated tests passing across 43 test suites in Vitest (magic byte sniffing, size guards, Zip Slip prevention, text token estimation, code markdown fencing, JSON/CSV schema and preview tables, PDF page counts, image dimensions, WAV audio parameters, archive indexing, unknown binary preservation, modality capability matching, token budget truncations, large payload disk offload and SHA-256 verification, and cross-project security isolation).
+Verification: npm run typecheck (0 errors under strict: true), npm test (114/114 passing), npm run build (successful), npm run scorecard (1000/1000 Certified Perfect), multi-engine sync (CodeGraph, Graphify, Neo4j, Graphiti, Git).
 Commit/Revision: Active
 Risks: None.
 Unresolved: None.
