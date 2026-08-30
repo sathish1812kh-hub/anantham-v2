@@ -4,11 +4,34 @@ export interface MimeSniffResult {
   mimeType: string;
   detectedBy: "magic" | "extension" | "text-heuristic" | "binary-fallback";
   confidence: number;
+  isExecutable?: boolean;
+}
+
+export interface ArchiveEntryMeta {
+  name: string;
+  compressedSize: number;
+  uncompressedSize: number;
+}
+
+export interface ArchiveBombOptions {
+  maxDecompressionRatio?: number; // e.g. 100
+  maxTotalExpandedBytes?: number; // e.g. 100MB
+  maxEntryCount?: number;         // e.g. 1000
+}
+
+export interface MimeSpoofCheckResult {
+  isSpoofed: boolean;
+  declaredMime?: string;
+  detectedMime: string;
+  risk: string | null;
 }
 
 export class ContentGuards {
   public static readonly DEFAULT_MAX_FILE_BYTES = 50 * 1024 * 1024; // 50MB
   public static readonly DEFAULT_MAX_TEXT_BYTES = 10 * 1024 * 1024; // 10MB
+  public static readonly DEFAULT_MAX_DECOMPRESSION_RATIO = 100;      // 100:1 ratio
+  public static readonly DEFAULT_MAX_EXPANDED_ARCHIVE_BYTES = 100 * 1024 * 1024; // 100MB
+  public static readonly DEFAULT_MAX_ARCHIVE_ENTRIES = 1000;
 
   /**
    * Sniffs MIME type using magic byte signatures, file extension fallback, and text heuristics.
@@ -17,6 +40,27 @@ export class ContentGuards {
   public static sniffMimeType(buffer: Buffer, filename?: string): MimeSniffResult {
     // 1. Check Magic Byte Signatures
     if (buffer.length >= 4) {
+      // Windows Executable / DLL: MZ (0x4D 0x5A)
+      if (buffer[0] === 0x4d && buffer[1] === 0x5a) {
+        return { mimeType: "application/x-dosexec", detectedBy: "magic", confidence: 1.0, isExecutable: true };
+      }
+
+      // Unix ELF: 0x7F 'E' 'L' 'F' (0x7F 0x45 0x4C 0x46)
+      if (buffer[0] === 0x7f && buffer[1] === 0x45 && buffer[2] === 0x4c && buffer[3] === 0x46) {
+        return { mimeType: "application/x-executable", detectedBy: "magic", confidence: 1.0, isExecutable: true };
+      }
+
+      // Mach-O Executable / Universal Binary
+      const magic32 = buffer.readUInt32BE(0);
+      if (
+        magic32 === 0xfeedface ||
+        magic32 === 0xfeedfacf ||
+        magic32 === 0xcafebabe ||
+        magic32 === 0xbebafeca
+      ) {
+        return { mimeType: "application/x-mach-binary", detectedBy: "magic", confidence: 1.0, isExecutable: true };
+      }
+
       // PDF: %PDF- (0x25 0x50 0x44 0x46)
       if (buffer[0] === 0x25 && buffer[1] === 0x50 && buffer[2] === 0x44 && buffer[3] === 0x46) {
         return { mimeType: "application/pdf", detectedBy: "magic", confidence: 1.0 };
@@ -138,6 +182,75 @@ export class ContentGuards {
   }
 
   /**
+   * Detects MIME spoofing where a declared MIME or filename extension contradicts actual magic bytes.
+   * PRD Part 3 Section 136.
+   */
+  public static detectMimeSpoofing(
+    buffer: Buffer,
+    declaredMime?: string,
+    filename?: string
+  ): MimeSpoofCheckResult {
+    const sniffResult = ContentGuards.sniffMimeType(buffer, filename);
+    const detectedMime = sniffResult.mimeType;
+
+    // Check if detected as executable disguised as non-executable
+    if (sniffResult.isExecutable) {
+      if (declaredMime && !declaredMime.includes("executable") && !declaredMime.includes("dosexec")) {
+        return {
+          isSpoofed: true,
+          declaredMime,
+          detectedMime,
+          risk: `CRITICAL: Binary executable payload disguised as declared MIME '${declaredMime}'.`,
+        };
+      }
+      if (filename) {
+        const ext = extname(filename).toLowerCase();
+        if (ext === ".png" || ext === ".jpg" || ext === ".jpeg" || ext === ".pdf" || ext === ".txt") {
+          return {
+            isSpoofed: true,
+            declaredMime,
+            detectedMime,
+            risk: `CRITICAL: Binary executable payload disguised as safe extension '${ext}'.`,
+          };
+        }
+      }
+    }
+
+    // Check media / document spoofing
+    if (declaredMime) {
+      const isDeclaredImage = declaredMime.startsWith("image/");
+      const isDetectedImage = detectedMime.startsWith("image/");
+      const isDeclaredPdf = declaredMime === "application/pdf";
+      const isDetectedPdf = detectedMime === "application/pdf";
+
+      if (isDeclaredImage && !isDetectedImage && detectedMime !== "application/octet-stream") {
+        return {
+          isSpoofed: true,
+          declaredMime,
+          detectedMime,
+          risk: `MIME mismatch: declared image MIME '${declaredMime}' but detected '${detectedMime}'.`,
+        };
+      }
+
+      if (isDeclaredPdf && !isDetectedPdf) {
+        return {
+          isSpoofed: true,
+          declaredMime,
+          detectedMime,
+          risk: `MIME mismatch: declared PDF but detected '${detectedMime}'.`,
+        };
+      }
+    }
+
+    return {
+      isSpoofed: false,
+      declaredMime,
+      detectedMime,
+      risk: null,
+    };
+  }
+
+  /**
    * Enforces file size boundaries.
    */
   public static validateSize(sizeBytes: number, maxBytes = ContentGuards.DEFAULT_MAX_FILE_BYTES): void {
@@ -158,19 +271,83 @@ export class ContentGuards {
       const normalized = name.replace(/\\/g, "/");
 
       // Check for path traversal (Zip Slip)
-      if (normalized.includes("../") || normalized.startsWith("/") || normalized.includes("/..")) {
+      if (
+        normalized.includes("../") ||
+        normalized.startsWith("/") ||
+        normalized.includes("/..") ||
+        /^[a-zA-Z]:\//.test(normalized)
+      ) {
         violations.push(`Zip Slip path traversal risk detected in entry: '${name}'`);
       }
 
       // Check for hidden malicious control scripts or executables in archives
       const lower = normalized.toLowerCase();
-      if (lower.endsWith(".exe") || lower.endsWith(".bat") || lower.endsWith(".cmd") || lower.endsWith(".vbs")) {
+      const dangerousExtensions = [
+        ".exe", ".bat", ".cmd", ".vbs", ".ps1", ".sh", ".dll", ".so", ".dylib", ".scr", ".com", ".pif"
+      ];
+      if (dangerousExtensions.some(ext => lower.endsWith(ext))) {
         violations.push(`Restricted executable entry detected in archive: '${name}'`);
       }
     }
 
     return {
       isSafe: violations.length === 0,
+      violations,
+    };
+  }
+
+  /**
+   * Evaluates archive entries against zip bomb / decompression amplification attacks.
+   * PRD Part 3 Section 138.
+   */
+  public static checkArchiveBomb(
+    entries: ArchiveEntryMeta[],
+    options?: ArchiveBombOptions
+  ): { isBomb: boolean; violations: string[] } {
+    const violations: string[] = [];
+    const maxRatio = options?.maxDecompressionRatio ?? ContentGuards.DEFAULT_MAX_DECOMPRESSION_RATIO;
+    const maxTotalBytes = options?.maxTotalExpandedBytes ?? ContentGuards.DEFAULT_MAX_EXPANDED_ARCHIVE_BYTES;
+    const maxEntries = options?.maxEntryCount ?? ContentGuards.DEFAULT_MAX_ARCHIVE_ENTRIES;
+
+    if (entries.length > maxEntries) {
+      violations.push(`Archive entry count (${entries.length}) exceeds safety limit of ${maxEntries} entries.`);
+    }
+
+    let totalCompressed = 0;
+    let totalUncompressed = 0;
+
+    for (const entry of entries) {
+      totalCompressed += entry.compressedSize;
+      totalUncompressed += entry.uncompressedSize;
+
+      // Check individual entry compression ratio
+      if (entry.compressedSize > 0) {
+        const ratio = entry.uncompressedSize / entry.compressedSize;
+        if (ratio > maxRatio && entry.uncompressedSize > 1024 * 1024) { // Only flag if uncompressed > 1MB
+          violations.push(
+            `Archive entry '${entry.name}' has anomalous compression ratio of ${ratio.toFixed(1)}:1 (limit: ${maxRatio}:1).`
+          );
+        }
+      }
+    }
+
+    if (totalUncompressed > maxTotalBytes) {
+      violations.push(
+        `Total uncompressed archive size of ${totalUncompressed} bytes exceeds safety limit of ${maxTotalBytes} bytes.`
+      );
+    }
+
+    if (totalCompressed > 0) {
+      const overallRatio = totalUncompressed / totalCompressed;
+      if (overallRatio > maxRatio && totalUncompressed > 10 * 1024 * 1024) {
+        violations.push(
+          `Overall archive decompression ratio of ${overallRatio.toFixed(1)}:1 exceeds safety limit of ${maxRatio}:1.`
+        );
+      }
+    }
+
+    return {
+      isBomb: violations.length > 0,
       violations,
     };
   }

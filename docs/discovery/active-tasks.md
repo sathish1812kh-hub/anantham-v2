@@ -6,15 +6,21 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P2 — Content / Context / Memory / Retrieval)
 
-### [P2.2 — Content Security, MIME Validation & Provenance](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P2.3 — Artifacts (Durable Writes, Hashes, Metadata & References)](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Senior Security Engineer
-- **Description**: Implement signature/MIME security validation, sensitive data redaction, archive bomb inspection, and provenance integrity tracking.
-- **Dependencies**: `P2.1` (Content Ingestion Engine).
+- **Owner**: Senior Persistence & Artifacts Engineer
+- **Description**: Implement durable artifact writes, SHA-256 digests, structured metadata, reference tracking, verification status, and worktree isolation.
+- **Dependencies**: `P2.1`, `P2.2`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P2.2-CONTENT-SECURITY — Content Security, MIME Validation & Provenance](file:///C:/herness/src/content/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Senior Security Engineer
+- **Completed Date**: 2026-08-30
+- **Verification**: 129/129 tests passing across 47 test suites in Vitest. MIME spoofing detection (PE/ELF/Mach-O disguise checks), archive bomb & decompression amplification ratio protection, automated credential scanning & secret redaction (ContentSanitizer), provenance lineage chaining (ProvenanceManager), sensitivity downgrade lockdown, and cross-project isolation.
 
 ### [TASK-P2.1-CONTENT-INGESTION — Multimodal Content Ingestion & Parsers](file:///C:/herness/src/content/index.ts)
 - **Status**: `COMPLETED`

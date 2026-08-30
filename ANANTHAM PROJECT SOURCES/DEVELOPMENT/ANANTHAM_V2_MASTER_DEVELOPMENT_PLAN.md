@@ -215,12 +215,12 @@ Every update MUST include:
 - [x] unknown binary preservation
 
 ### P2.2 Content security/provenance
-- [ ] signature/MIME validation
-- [ ] size limits
-- [ ] archive safety
-- [ ] hashing
-- [ ] provenance
-- [ ] sensitivity classification
+- [x] signature/MIME validation
+- [x] size limits
+- [x] archive safety
+- [x] hashing
+- [x] provenance
+- [x] sensitivity classification
 
 ### P2.3 Artifacts
 - [ ] durable writes

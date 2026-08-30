@@ -1156,12 +1156,30 @@
       "norm_label": ".verifyaccess()"
     },
     {
+      "label": ".validateClassificationTransition()",
+      "file_type": "code",
+      "source_file": "src/content/content-access-validator.ts",
+      "source_location": "L59",
+      "id": "content_content_access_validator_contentaccessvalidator_validateclassificationtransition",
+      "community": 388,
+      "norm_label": ".validateclassificationtransition()"
+    },
+    {
+      "label": ".verifyProjectIsolation()",
+      "file_type": "code",
+      "source_file": "src/content/content-access-validator.ts",
+      "source_location": "L87",
+      "id": "content_content_access_validator_contentaccessvalidator_verifyprojectisolation",
+      "community": 388,
+      "norm_label": ".verifyprojectisolation()"
+    },
+    {
       "label": "content-guards.ts",
       "file_type": "code",
       "source_file": "src/content/content-guards.ts",
       "source_location": "L1",
       "id": "src_content_content_guards_ts",
-      "community": 376,
+      "community": 356,
       "norm_label": "content-guards.ts"
     },
     {
@@ -1170,52 +1188,97 @@
       "source_file": "src/content/content-guards.ts",
       "source_location": "L3",
       "id": "content_content_guards_mimesniffresult",
-      "community": 376,
+      "community": 356,
       "norm_label": "mimesniffresult"
+    },
+    {
+      "label": "ArchiveEntryMeta",
+      "file_type": "code",
+      "source_file": "src/content/content-guards.ts",
+      "source_location": "L10",
+      "id": "content_content_guards_archiveentrymeta",
+      "community": 356,
+      "norm_label": "archiveentrymeta"
+    },
+    {
+      "label": "ArchiveBombOptions",
+      "file_type": "code",
+      "source_file": "src/content/content-guards.ts",
+      "source_location": "L16",
+      "id": "content_content_guards_archivebomboptions",
+      "community": 356,
+      "norm_label": "archivebomboptions"
+    },
+    {
+      "label": "MimeSpoofCheckResult",
+      "file_type": "code",
+      "source_file": "src/content/content-guards.ts",
+      "source_location": "L22",
+      "id": "content_content_guards_mimespoofcheckresult",
+      "community": 356,
+      "norm_label": "mimespoofcheckresult"
     },
     {
       "label": "ContentGuards",
       "file_type": "code",
       "source_file": "src/content/content-guards.ts",
-      "source_location": "L9",
+      "source_location": "L29",
       "id": "content_content_guards_contentguards",
-      "community": 376,
+      "community": 356,
       "norm_label": "contentguards"
     },
     {
       "label": ".sniffMimeType()",
       "file_type": "code",
       "source_file": "src/content/content-guards.ts",
-      "source_location": "L17",
+      "source_location": "L40",
       "id": "content_content_guards_contentguards_sniffmimetype",
-      "community": 376,
+      "community": 356,
       "norm_label": ".sniffmimetype()"
+    },
+    {
+      "label": ".detectMimeSpoofing()",
+      "file_type": "code",
+      "source_file": "src/content/content-guards.ts",
+      "source_location": "L188",
+      "id": "content_content_guards_contentguards_detectmimespoofing",
+      "community": 356,
+      "norm_label": ".detectmimespoofing()"
     },
     {
       "label": ".validateSize()",
       "file_type": "code",
       "source_file": "src/content/content-guards.ts",
-      "source_location": "L143",
+      "source_location": "L256",
       "id": "content_content_guards_contentguards_validatesize",
-      "community": 376,
+      "community": 356,
       "norm_label": ".validatesize()"
     },
     {
       "label": ".checkArchiveSafety()",
       "file_type": "code",
       "source_file": "src/content/content-guards.ts",
-      "source_location": "L153",
+      "source_location": "L266",
       "id": "content_content_guards_contentguards_checkarchivesafety",
-      "community": 376,
+      "community": 356,
       "norm_label": ".checkarchivesafety()"
+    },
+    {
+      "label": ".checkArchiveBomb()",
+      "file_type": "code",
+      "source_file": "src/content/content-guards.ts",
+      "source_location": "L303",
+      "id": "content_content_guards_contentguards_checkarchivebomb",
+      "community": 356,
+      "norm_label": ".checkarchivebomb()"
     },
     {
       "label": ".estimateTokens()",
       "file_type": "code",
       "source_file": "src/content/content-guards.ts",
-      "source_location": "L181",
+      "source_location": "L358",
       "id": "content_content_guards_contentguards_estimatetokens",
-      "community": 376,
+      "community": 356,
       "norm_label": ".estimatetokens()"
     },
     {
@@ -1242,7 +1305,7 @@
       "source_file": "src/content/content-ingestion-engine.ts",
       "source_location": "L31",
       "id": "content_content_ingestion_engine_contentingestionengine",
-      "community": 97,
+      "community": 388,
       "norm_label": "contentingestionengine"
     },
     {
@@ -1251,7 +1314,7 @@
       "source_file": "src/content/content-ingestion-engine.ts",
       "source_location": "L37",
       "id": "content_content_ingestion_engine_contentingestionengine_ingest",
-      "community": 97,
+      "community": 388,
       "norm_label": ".ingest()"
     },
     {
@@ -1327,6 +1390,69 @@
       "norm_label": ".verifyblob()"
     },
     {
+      "label": "content-sanitizer.ts",
+      "file_type": "code",
+      "source_file": "src/content/content-sanitizer.ts",
+      "source_location": "L1",
+      "id": "src_content_content_sanitizer_ts",
+      "community": 19,
+      "norm_label": "content-sanitizer.ts"
+    },
+    {
+      "label": "SecretFinding",
+      "file_type": "code",
+      "source_file": "src/content/content-sanitizer.ts",
+      "source_location": "L4",
+      "id": "content_content_sanitizer_secretfinding",
+      "community": 19,
+      "norm_label": "secretfinding"
+    },
+    {
+      "label": "SecretDetectionResult",
+      "file_type": "code",
+      "source_file": "src/content/content-sanitizer.ts",
+      "source_location": "L10",
+      "id": "content_content_sanitizer_secretdetectionresult",
+      "community": 19,
+      "norm_label": "secretdetectionresult"
+    },
+    {
+      "label": "ContentSanitizer",
+      "file_type": "code",
+      "source_file": "src/content/content-sanitizer.ts",
+      "source_location": "L15",
+      "id": "content_content_sanitizer_contentsanitizer",
+      "community": 19,
+      "norm_label": "contentsanitizer"
+    },
+    {
+      "label": ".scanSecrets()",
+      "file_type": "code",
+      "source_file": "src/content/content-sanitizer.ts",
+      "source_location": "L57",
+      "id": "content_content_sanitizer_contentsanitizer_scansecrets",
+      "community": 19,
+      "norm_label": ".scansecrets()"
+    },
+    {
+      "label": ".redactSecrets()",
+      "file_type": "code",
+      "source_file": "src/content/content-sanitizer.ts",
+      "source_location": "L83",
+      "id": "content_content_sanitizer_contentsanitizer_redactsecrets",
+      "community": 19,
+      "norm_label": ".redactsecrets()"
+    },
+    {
+      "label": ".sanitizeContentObject()",
+      "file_type": "code",
+      "source_file": "src/content/content-sanitizer.ts",
+      "source_location": "L112",
+      "id": "content_content_sanitizer_contentsanitizer_sanitizecontentobject",
+      "community": 19,
+      "norm_label": ".sanitizecontentobject()"
+    },
+    {
       "label": "index.ts",
       "file_type": "code",
       "source_file": "src/content/index.ts",
@@ -1334,6 +1460,60 @@
       "id": "src_content_index_ts",
       "community": 1016,
       "norm_label": "index.ts"
+    },
+    {
+      "label": "provenance-manager.ts",
+      "file_type": "code",
+      "source_file": "src/content/provenance-manager.ts",
+      "source_location": "L1",
+      "id": "src_content_provenance_manager_ts",
+      "community": 392,
+      "norm_label": "provenance-manager.ts"
+    },
+    {
+      "label": "ProvenanceValidationResult",
+      "file_type": "code",
+      "source_file": "src/content/provenance-manager.ts",
+      "source_location": "L6",
+      "id": "content_provenance_manager_provenancevalidationresult",
+      "community": 392,
+      "norm_label": "provenancevalidationresult"
+    },
+    {
+      "label": "ProvenanceManager",
+      "file_type": "code",
+      "source_file": "src/content/provenance-manager.ts",
+      "source_location": "L11",
+      "id": "content_provenance_manager_provenancemanager",
+      "community": 392,
+      "norm_label": "provenancemanager"
+    },
+    {
+      "label": ".createDerivedProvenance()",
+      "file_type": "code",
+      "source_file": "src/content/provenance-manager.ts",
+      "source_location": "L16",
+      "id": "content_provenance_manager_provenancemanager_createderivedprovenance",
+      "community": 392,
+      "norm_label": ".createderivedprovenance()"
+    },
+    {
+      "label": ".verifyIntegrity()",
+      "file_type": "code",
+      "source_file": "src/content/provenance-manager.ts",
+      "source_location": "L43",
+      "id": "content_provenance_manager_provenancemanager_verifyintegrity",
+      "community": 392,
+      "norm_label": ".verifyintegrity()"
+    },
+    {
+      "label": ".verifyLineage()",
+      "file_type": "code",
+      "source_file": "src/content/provenance-manager.ts",
+      "source_location": "L52",
+      "id": "content_provenance_manager_provenancemanager_verifylineage",
+      "community": 392,
+      "norm_label": ".verifylineage()"
     },
     {
       "label": "representation-selector.ts",
@@ -1458,7 +1638,7 @@
       "source_file": "src/content/parsers/binary-parser.ts",
       "source_location": "L1",
       "id": "src_content_parsers_binary_parser_ts",
-      "community": 356,
+      "community": 97,
       "norm_label": "binary-parser.ts"
     },
     {
@@ -1467,7 +1647,7 @@
       "source_file": "src/content/parsers/binary-parser.ts",
       "source_location": "L4",
       "id": "parsers_binary_parser_binaryparseresult",
-      "community": 356,
+      "community": 97,
       "norm_label": "binaryparseresult"
     },
     {
@@ -1476,7 +1656,7 @@
       "source_file": "src/content/parsers/binary-parser.ts",
       "source_location": "L13",
       "id": "parsers_binary_parser_binaryparser",
-      "community": 356,
+      "community": 97,
       "norm_label": "binaryparser"
     },
     {
@@ -1485,7 +1665,7 @@
       "source_file": "src/content/parsers/binary-parser.ts",
       "source_location": "L18",
       "id": "parsers_binary_parser_binaryparser_parse",
-      "community": 356,
+      "community": 97,
       "norm_label": ".parse()"
     },
     {
@@ -1611,7 +1791,7 @@
       "source_file": "src/content/parsers/structured-parser.ts",
       "source_location": "L1",
       "id": "src_content_parsers_structured_parser_ts",
-      "community": 385,
+      "community": 97,
       "norm_label": "structured-parser.ts"
     },
     {
@@ -1620,7 +1800,7 @@
       "source_file": "src/content/parsers/structured-parser.ts",
       "source_location": "L4",
       "id": "parsers_structured_parser_structuredparseresult",
-      "community": 385,
+      "community": 97,
       "norm_label": "structuredparseresult"
     },
     {
@@ -1629,7 +1809,7 @@
       "source_file": "src/content/parsers/structured-parser.ts",
       "source_location": "L16",
       "id": "parsers_structured_parser_structureddataparser",
-      "community": 385,
+      "community": 97,
       "norm_label": "structureddataparser"
     },
     {
@@ -1638,7 +1818,7 @@
       "source_file": "src/content/parsers/structured-parser.ts",
       "source_location": "L21",
       "id": "parsers_structured_parser_structureddataparser_parse",
-      "community": 385,
+      "community": 97,
       "norm_label": ".parse()"
     },
     {
@@ -1647,7 +1827,7 @@
       "source_file": "src/content/parsers/text-parser.ts",
       "source_location": "L1",
       "id": "src_content_parsers_text_parser_ts",
-      "community": 376,
+      "community": 97,
       "norm_label": "text-parser.ts"
     },
     {
@@ -1656,7 +1836,7 @@
       "source_file": "src/content/parsers/text-parser.ts",
       "source_location": "L6",
       "id": "parsers_text_parser_textparseresult",
-      "community": 376,
+      "community": 97,
       "norm_label": "textparseresult"
     },
     {
@@ -1863,7 +2043,7 @@
       "source_file": "src/domain/content.ts",
       "source_location": "L1",
       "id": "src_domain_content_ts",
-      "community": 19,
+      "community": 97,
       "norm_label": "content.ts"
     },
     {
@@ -1890,7 +2070,7 @@
       "source_file": "src/domain/content.ts",
       "source_location": "L29",
       "id": "domain_content_contentrepresentationtypeschema",
-      "community": 19,
+      "community": 97,
       "norm_label": "contentrepresentationtypeschema"
     },
     {
@@ -1899,7 +2079,7 @@
       "source_file": "src/domain/content.ts",
       "source_location": "L50",
       "id": "domain_content_contentrepresentationtype",
-      "community": 19,
+      "community": 97,
       "norm_label": "contentrepresentationtype"
     },
     {
@@ -1917,7 +2097,7 @@
       "source_file": "src/domain/content.ts",
       "source_location": "L65",
       "id": "domain_content_contentrepresentation",
-      "community": 356,
+      "community": 97,
       "norm_label": "contentrepresentation"
     },
     {
@@ -1926,7 +2106,7 @@
       "source_file": "src/domain/content.ts",
       "source_location": "L70",
       "id": "domain_content_contentsourceschema",
-      "community": 19,
+      "community": 97,
       "norm_label": "contentsourceschema"
     },
     {
@@ -1944,7 +2124,7 @@
       "source_file": "src/domain/content.ts",
       "source_location": "L88",
       "id": "domain_content_contentobjectschema",
-      "community": 19,
+      "community": 97,
       "norm_label": "contentobjectschema"
     },
     {
@@ -2961,7 +3141,7 @@
       "source_file": "src/event-state/reconstruction/session-reconstruct.ts",
       "source_location": "L1",
       "id": "src_event_state_reconstruction_session_reconstruct_ts",
-      "community": 5,
+      "community": 12,
       "norm_label": "session-reconstruct.ts"
     },
     {
@@ -2970,7 +3150,7 @@
       "source_file": "src/event-state/reconstruction/session-reconstruct.ts",
       "source_location": "L4",
       "id": "reconstruction_session_reconstruct_reconstructedsessionstate",
-      "community": 5,
+      "community": 12,
       "norm_label": "reconstructedsessionstate"
     },
     {
@@ -2979,7 +3159,7 @@
       "source_file": "src/event-state/reconstruction/session-reconstruct.ts",
       "source_location": "L24",
       "id": "reconstruction_session_reconstruct_reconstructsessionstate",
-      "community": 5,
+      "community": 12,
       "norm_label": "reconstructsessionstate()"
     },
     {
@@ -3186,7 +3366,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L1",
       "id": "src_persistence_sqlite_engine_ts",
-      "community": 14,
+      "community": 44,
       "norm_label": "sqlite-engine.ts"
     },
     {
@@ -3195,7 +3375,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L5",
       "id": "persistence_sqlite_engine_databaseconfig",
-      "community": 14,
+      "community": 44,
       "norm_label": "databaseconfig"
     },
     {
@@ -3204,7 +3384,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L24",
       "id": "persistence_sqlite_engine_integritycheckresult",
-      "community": 14,
+      "community": 44,
       "norm_label": "integritycheckresult"
     },
     {
@@ -3213,7 +3393,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L33",
       "id": "persistence_sqlite_engine_sqliteengine",
-      "community": 14,
+      "community": 44,
       "norm_label": "sqliteengine"
     },
     {
@@ -3222,7 +3402,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L37",
       "id": "persistence_sqlite_engine_sqliteengine_constructor",
-      "community": 14,
+      "community": 44,
       "norm_label": ".constructor()"
     },
     {
@@ -3231,7 +3411,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L49",
       "id": "persistence_sqlite_engine_sqliteengine_open",
-      "community": 14,
+      "community": 44,
       "norm_label": ".open()"
     },
     {
@@ -3240,7 +3420,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L77",
       "id": "persistence_sqlite_engine_sqliteengine_raw",
-      "community": 14,
+      "community": 44,
       "norm_label": ".raw()"
     },
     {
@@ -3249,7 +3429,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L87",
       "id": "persistence_sqlite_engine_sqliteengine_isopen",
-      "community": 14,
+      "community": 44,
       "norm_label": ".isopen()"
     },
     {
@@ -3258,7 +3438,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L94",
       "id": "persistence_sqlite_engine_sqliteengine_close",
-      "community": 14,
+      "community": 44,
       "norm_label": ".close()"
     },
     {
@@ -3267,7 +3447,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L106",
       "id": "persistence_sqlite_engine_sqliteengine_transaction",
-      "community": 14,
+      "community": 44,
       "norm_label": ".transaction()"
     },
     {
@@ -3276,7 +3456,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L129",
       "id": "persistence_sqlite_engine_sqliteengine_integritycheck",
-      "community": 14,
+      "community": 44,
       "norm_label": ".integritycheck()"
     },
     {
@@ -3285,7 +3465,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L145",
       "id": "persistence_sqlite_engine_sqliteengine_foreignkeycheck",
-      "community": 14,
+      "community": 44,
       "norm_label": ".foreignkeycheck()"
     },
     {
@@ -3330,7 +3510,7 @@
       "source_file": "src/persistence/repositories/artifact-repository.ts",
       "source_location": "L1",
       "id": "src_persistence_repositories_artifact_repository_ts",
-      "community": 14,
+      "community": 20,
       "norm_label": "artifact-repository.ts"
     },
     {
@@ -3339,7 +3519,7 @@
       "source_file": "src/persistence/repositories/artifact-repository.ts",
       "source_location": "L4",
       "id": "repositories_artifact_repository_artifactrow",
-      "community": 14,
+      "community": 20,
       "norm_label": "artifactrow"
     },
     {
@@ -3348,7 +3528,7 @@
       "source_file": "src/persistence/repositories/artifact-repository.ts",
       "source_location": "L20",
       "id": "repositories_artifact_repository_artifactrepository",
-      "community": 54,
+      "community": 14,
       "norm_label": "artifactrepository"
     },
     {
@@ -3357,7 +3537,7 @@
       "source_file": "src/persistence/repositories/artifact-repository.ts",
       "source_location": "L23",
       "id": "repositories_artifact_repository_artifactrepository_constructor",
-      "community": 54,
+      "community": 14,
       "norm_label": ".constructor()"
     },
     {
@@ -3366,7 +3546,7 @@
       "source_file": "src/persistence/repositories/artifact-repository.ts",
       "source_location": "L27",
       "id": "repositories_artifact_repository_artifactrepository_rowtoartifact",
-      "community": 54,
+      "community": 14,
       "norm_label": ".rowtoartifact()"
     },
     {
@@ -3375,7 +3555,7 @@
       "source_file": "src/persistence/repositories/artifact-repository.ts",
       "source_location": "L46",
       "id": "repositories_artifact_repository_artifactrepository_save",
-      "community": 54,
+      "community": 14,
       "norm_label": ".save()"
     },
     {
@@ -3384,7 +3564,7 @@
       "source_file": "src/persistence/repositories/artifact-repository.ts",
       "source_location": "L82",
       "id": "repositories_artifact_repository_artifactrepository_findbyid",
-      "community": 54,
+      "community": 14,
       "norm_label": ".findbyid()"
     },
     {
@@ -3393,7 +3573,7 @@
       "source_file": "src/persistence/repositories/artifact-repository.ts",
       "source_location": "L90",
       "id": "repositories_artifact_repository_artifactrepository_findbyhash",
-      "community": 54,
+      "community": 14,
       "norm_label": ".findbyhash()"
     },
     {
@@ -3402,7 +3582,7 @@
       "source_file": "src/persistence/repositories/artifact-repository.ts",
       "source_location": "L98",
       "id": "repositories_artifact_repository_artifactrepository_listbytask",
-      "community": 54,
+      "community": 14,
       "norm_label": ".listbytask()"
     },
     {
@@ -3411,7 +3591,7 @@
       "source_file": "src/persistence/repositories/artifact-repository.ts",
       "source_location": "L106",
       "id": "repositories_artifact_repository_artifactrepository_listbysession",
-      "community": 54,
+      "community": 14,
       "norm_label": ".listbysession()"
     },
     {
@@ -3501,7 +3681,7 @@
       "source_file": "src/persistence/repositories/checkpoint-repository.ts",
       "source_location": "L1",
       "id": "src_persistence_repositories_checkpoint_repository_ts",
-      "community": 14,
+      "community": 21,
       "norm_label": "checkpoint-repository.ts"
     },
     {
@@ -3510,7 +3690,7 @@
       "source_file": "src/persistence/repositories/checkpoint-repository.ts",
       "source_location": "L8",
       "id": "repositories_checkpoint_repository_checkpointrow",
-      "community": 14,
+      "community": 21,
       "norm_label": "checkpointrow"
     },
     {
@@ -3600,7 +3780,7 @@
       "source_file": "src/persistence/repositories/event-repository.ts",
       "source_location": "L19",
       "id": "repositories_event_repository_eventrepository",
-      "community": 4,
+      "community": 23,
       "norm_label": "eventrepository"
     },
     {
@@ -3609,7 +3789,7 @@
       "source_file": "src/persistence/repositories/event-repository.ts",
       "source_location": "L22",
       "id": "repositories_event_repository_eventrepository_constructor",
-      "community": 4,
+      "community": 23,
       "norm_label": ".constructor()"
     },
     {
@@ -3618,7 +3798,7 @@
       "source_file": "src/persistence/repositories/event-repository.ts",
       "source_location": "L26",
       "id": "repositories_event_repository_eventrepository_rowtoevent",
-      "community": 4,
+      "community": 23,
       "norm_label": ".rowtoevent()"
     },
     {
@@ -3627,7 +3807,7 @@
       "source_file": "src/persistence/repositories/event-repository.ts",
       "source_location": "L49",
       "id": "repositories_event_repository_eventrepository_append",
-      "community": 4,
+      "community": 23,
       "norm_label": ".append()"
     },
     {
@@ -3636,7 +3816,7 @@
       "source_file": "src/persistence/repositories/event-repository.ts",
       "source_location": "L78",
       "id": "repositories_event_repository_eventrepository_findbyid",
-      "community": 4,
+      "community": 23,
       "norm_label": ".findbyid()"
     },
     {
@@ -3645,7 +3825,7 @@
       "source_file": "src/persistence/repositories/event-repository.ts",
       "source_location": "L86",
       "id": "repositories_event_repository_eventrepository_listbysession",
-      "community": 4,
+      "community": 23,
       "norm_label": ".listbysession()"
     },
     {
@@ -3654,7 +3834,7 @@
       "source_file": "src/persistence/repositories/event-repository.ts",
       "source_location": "L114",
       "id": "repositories_event_repository_eventrepository_countbysession",
-      "community": 4,
+      "community": 23,
       "norm_label": ".countbysession()"
     },
     {
@@ -3744,7 +3924,7 @@
       "source_file": "src/persistence/repositories/project-repository.ts",
       "source_location": "L1",
       "id": "src_persistence_repositories_project_repository_ts",
-      "community": 14,
+      "community": 20,
       "norm_label": "project-repository.ts"
     },
     {
@@ -3753,7 +3933,7 @@
       "source_file": "src/persistence/repositories/project-repository.ts",
       "source_location": "L4",
       "id": "repositories_project_repository_projectrow",
-      "community": 14,
+      "community": 20,
       "norm_label": "projectrow"
     },
     {
@@ -3762,7 +3942,7 @@
       "source_file": "src/persistence/repositories/project-repository.ts",
       "source_location": "L20",
       "id": "repositories_project_repository_projectrepository",
-      "community": 23,
+      "community": 20,
       "norm_label": "projectrepository"
     },
     {
@@ -3771,7 +3951,7 @@
       "source_file": "src/persistence/repositories/project-repository.ts",
       "source_location": "L23",
       "id": "repositories_project_repository_projectrepository_constructor",
-      "community": 23,
+      "community": 20,
       "norm_label": ".constructor()"
     },
     {
@@ -3780,7 +3960,7 @@
       "source_file": "src/persistence/repositories/project-repository.ts",
       "source_location": "L27",
       "id": "repositories_project_repository_projectrepository_rowtoproject",
-      "community": 23,
+      "community": 20,
       "norm_label": ".rowtoproject()"
     },
     {
@@ -3789,7 +3969,7 @@
       "source_file": "src/persistence/repositories/project-repository.ts",
       "source_location": "L46",
       "id": "repositories_project_repository_projectrepository_save",
-      "community": 23,
+      "community": 20,
       "norm_label": ".save()"
     },
     {
@@ -3798,7 +3978,7 @@
       "source_file": "src/persistence/repositories/project-repository.ts",
       "source_location": "L85",
       "id": "repositories_project_repository_projectrepository_findbyid",
-      "community": 23,
+      "community": 20,
       "norm_label": ".findbyid()"
     },
     {
@@ -3807,7 +3987,7 @@
       "source_file": "src/persistence/repositories/project-repository.ts",
       "source_location": "L93",
       "id": "repositories_project_repository_projectrepository_list",
-      "community": 23,
+      "community": 20,
       "norm_label": ".list()"
     },
     {
@@ -3816,7 +3996,7 @@
       "source_file": "src/persistence/repositories/project-repository.ts",
       "source_location": "L108",
       "id": "repositories_project_repository_projectrepository_delete",
-      "community": 23,
+      "community": 20,
       "norm_label": ".delete()"
     },
     {
@@ -4437,7 +4617,7 @@
       "source_file": "src/resume/resume-contract.ts",
       "source_location": "L68",
       "id": "resume_resume_contract_restoredtaskdag",
-      "community": 12,
+      "community": 11,
       "norm_label": "restoredtaskdag"
     },
     {
@@ -4554,7 +4734,7 @@
       "source_file": "src/resume/session-resume-engine.ts",
       "source_location": "L65",
       "id": "resume_session_resume_engine_sessionresumeengine_resume",
-      "community": 5,
+      "community": 20,
       "norm_label": ".resume()"
     },
     {
@@ -4563,7 +4743,7 @@
       "source_file": "src/resume/task-dag-restorer.ts",
       "source_location": "L1",
       "id": "src_resume_task_dag_restorer_ts",
-      "community": 12,
+      "community": 11,
       "norm_label": "task-dag-restorer.ts"
     },
     {
@@ -4572,7 +4752,7 @@
       "source_file": "src/resume/task-dag-restorer.ts",
       "source_location": "L5",
       "id": "resume_task_dag_restorer_taskdagrestorer",
-      "community": 12,
+      "community": 11,
       "norm_label": "taskdagrestorer"
     },
     {
@@ -4581,7 +4761,7 @@
       "source_file": "src/resume/task-dag-restorer.ts",
       "source_location": "L10",
       "id": "resume_task_dag_restorer_taskdagrestorer_restoredag",
-      "community": 12,
+      "community": 11,
       "norm_label": ".restoredag()"
     },
     {
@@ -4630,12 +4810,66 @@
       "norm_label": "rawbinary"
     },
     {
+      "label": "archive-bomb-security.test.ts",
+      "file_type": "code",
+      "source_file": "tests/content/archive-bomb-security.test.ts",
+      "source_location": "L1",
+      "id": "tests_content_archive_bomb_security_test_ts",
+      "community": 356,
+      "norm_label": "archive-bomb-security.test.ts"
+    },
+    {
+      "label": "maliciousEntries",
+      "file_type": "code",
+      "source_file": "tests/content/archive-bomb-security.test.ts",
+      "source_location": "L6",
+      "id": "content_archive_bomb_security_test_maliciousentries",
+      "community": 356,
+      "norm_label": "maliciousentries"
+    },
+    {
+      "label": "result",
+      "file_type": "code",
+      "source_file": "tests/content/archive-bomb-security.test.ts",
+      "source_location": "L11",
+      "id": "content_archive_bomb_security_test_result",
+      "community": 356,
+      "norm_label": "result"
+    },
+    {
+      "label": "excessiveEntries",
+      "file_type": "code",
+      "source_file": "tests/content/archive-bomb-security.test.ts",
+      "source_location": "L18",
+      "id": "content_archive_bomb_security_test_excessiveentries",
+      "community": 356,
+      "norm_label": "excessiveentries"
+    },
+    {
+      "label": "entries",
+      "file_type": "code",
+      "source_file": "tests/content/archive-bomb-security.test.ts",
+      "source_location": "L30",
+      "id": "content_archive_bomb_security_test_entries",
+      "community": 356,
+      "norm_label": "entries"
+    },
+    {
+      "label": "safeEntries",
+      "file_type": "code",
+      "source_file": "tests/content/archive-bomb-security.test.ts",
+      "source_location": "L41",
+      "id": "content_archive_bomb_security_test_safeentries",
+      "community": 356,
+      "norm_label": "safeentries"
+    },
+    {
       "label": "content-ingestion-engine.test.ts",
       "file_type": "code",
       "source_file": "tests/content/content-ingestion-engine.test.ts",
       "source_location": "L1",
       "id": "tests_content_content_ingestion_engine_test_ts",
-      "community": 97,
+      "community": 388,
       "norm_label": "content-ingestion-engine.test.ts"
     },
     {
@@ -4644,7 +4878,7 @@
       "source_file": "tests/content/content-ingestion-engine.test.ts",
       "source_location": "L39",
       "id": "content_content_ingestion_engine_test_largebuffer",
-      "community": 97,
+      "community": 388,
       "norm_label": "largebuffer"
     },
     {
@@ -4653,7 +4887,7 @@
       "source_file": "tests/content/content-ingestion-engine.test.ts",
       "source_location": "L51",
       "id": "content_content_ingestion_engine_test_bindata",
-      "community": 97,
+      "community": 388,
       "norm_label": "bindata"
     },
     {
@@ -4756,6 +4990,105 @@
       "norm_label": "rawpath"
     },
     {
+      "label": "content-sanitizer.test.ts",
+      "file_type": "code",
+      "source_file": "tests/content/content-sanitizer.test.ts",
+      "source_location": "L1",
+      "id": "tests_content_content_sanitizer_test_ts",
+      "community": 19,
+      "norm_label": "content-sanitizer.test.ts"
+    },
+    {
+      "label": "scanResult",
+      "file_type": "code",
+      "source_file": "tests/content/content-sanitizer.test.ts",
+      "source_location": "L15",
+      "id": "content_content_sanitizer_test_scanresult",
+      "community": 19,
+      "norm_label": "scanresult"
+    },
+    {
+      "label": "{ redactedText, findings }",
+      "file_type": "code",
+      "source_file": "tests/content/content-sanitizer.test.ts",
+      "source_location": "L26",
+      "id": "content_content_sanitizer_test_redactedtext_findings",
+      "community": 19,
+      "norm_label": "{ redactedtext, findings }"
+    },
+    {
+      "label": "{ sanitized, secretsFound }",
+      "file_type": "code",
+      "source_file": "tests/content/content-sanitizer.test.ts",
+      "source_location": "L44",
+      "id": "content_content_sanitizer_test_sanitized_secretsfound",
+      "community": 19,
+      "norm_label": "{ sanitized, secretsfound }"
+    },
+    {
+      "label": "textRep",
+      "file_type": "code",
+      "source_file": "tests/content/content-sanitizer.test.ts",
+      "source_location": "L50",
+      "id": "content_content_sanitizer_test_textrep",
+      "community": 19,
+      "norm_label": "textrep"
+    },
+    {
+      "label": "mime-spoofing-guards.test.ts",
+      "file_type": "code",
+      "source_file": "tests/content/mime-spoofing-guards.test.ts",
+      "source_location": "L1",
+      "id": "tests_content_mime_spoofing_guards_test_ts",
+      "community": 356,
+      "norm_label": "mime-spoofing-guards.test.ts"
+    },
+    {
+      "label": "maliciousBuffer",
+      "file_type": "code",
+      "source_file": "tests/content/mime-spoofing-guards.test.ts",
+      "source_location": "L6",
+      "id": "content_mime_spoofing_guards_test_maliciousbuffer",
+      "community": 356,
+      "norm_label": "maliciousbuffer"
+    },
+    {
+      "label": "check",
+      "file_type": "code",
+      "source_file": "tests/content/mime-spoofing-guards.test.ts",
+      "source_location": "L7",
+      "id": "content_mime_spoofing_guards_test_check",
+      "community": 356,
+      "norm_label": "check"
+    },
+    {
+      "label": "elfBuffer",
+      "file_type": "code",
+      "source_file": "tests/content/mime-spoofing-guards.test.ts",
+      "source_location": "L15",
+      "id": "content_mime_spoofing_guards_test_elfbuffer",
+      "community": 356,
+      "norm_label": "elfbuffer"
+    },
+    {
+      "label": "machBuffer",
+      "file_type": "code",
+      "source_file": "tests/content/mime-spoofing-guards.test.ts",
+      "source_location": "L24",
+      "id": "content_mime_spoofing_guards_test_machbuffer",
+      "community": 356,
+      "norm_label": "machbuffer"
+    },
+    {
+      "label": "pngBuffer",
+      "file_type": "code",
+      "source_file": "tests/content/mime-spoofing-guards.test.ts",
+      "source_location": "L34",
+      "id": "content_mime_spoofing_guards_test_pngbuffer",
+      "community": 356,
+      "norm_label": "pngbuffer"
+    },
+    {
       "label": "pdf-media-parser.test.ts",
       "file_type": "code",
       "source_file": "tests/content/pdf-media-parser.test.ts",
@@ -4799,6 +5132,60 @@
       "id": "content_pdf_media_parser_test_wavbuffer",
       "community": 97,
       "norm_label": "wavbuffer"
+    },
+    {
+      "label": "provenance-integrity.test.ts",
+      "file_type": "code",
+      "source_file": "tests/content/provenance-integrity.test.ts",
+      "source_location": "L1",
+      "id": "tests_content_provenance_integrity_test_ts",
+      "community": 392,
+      "norm_label": "provenance-integrity.test.ts"
+    },
+    {
+      "label": "derivedProv",
+      "file_type": "code",
+      "source_file": "tests/content/provenance-integrity.test.ts",
+      "source_location": "L15",
+      "id": "content_provenance_integrity_test_derivedprov",
+      "community": 392,
+      "norm_label": "derivedprov"
+    },
+    {
+      "label": "validEscalation",
+      "file_type": "code",
+      "source_file": "tests/content/provenance-integrity.test.ts",
+      "source_location": "L40",
+      "id": "content_provenance_integrity_test_validescalation",
+      "community": 392,
+      "norm_label": "validescalation"
+    },
+    {
+      "label": "invalidDowngrade",
+      "file_type": "code",
+      "source_file": "tests/content/provenance-integrity.test.ts",
+      "source_location": "L43",
+      "id": "content_provenance_integrity_test_invaliddowngrade",
+      "community": 392,
+      "norm_label": "invaliddowngrade"
+    },
+    {
+      "label": "sameProject",
+      "file_type": "code",
+      "source_file": "tests/content/provenance-integrity.test.ts",
+      "source_location": "L56",
+      "id": "content_provenance_integrity_test_sameproject",
+      "community": 392,
+      "norm_label": "sameproject"
+    },
+    {
+      "label": "crossProject",
+      "file_type": "code",
+      "source_file": "tests/content/provenance-integrity.test.ts",
+      "source_location": "L59",
+      "id": "content_provenance_integrity_test_crossproject",
+      "community": 392,
+      "norm_label": "crossproject"
     },
     {
       "label": "representation-selector.test.ts",
@@ -6003,7 +6390,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L1",
       "id": "tests_persistence_durability_test_ts",
-      "community": 44,
+      "community": 43,
       "norm_label": "durability.test.ts"
     },
     {
@@ -6012,7 +6399,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L10",
       "id": "persistence_durability_test_testdbdir",
-      "community": 44,
+      "community": 43,
       "norm_label": "testdbdir"
     },
     {
@@ -6021,7 +6408,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L11",
       "id": "persistence_durability_test_testdbpath",
-      "community": 44,
+      "community": 43,
       "norm_label": "testdbpath"
     },
     {
@@ -6030,7 +6417,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L28",
       "id": "persistence_durability_test_engine1",
-      "community": 44,
+      "community": 43,
       "norm_label": "engine1"
     },
     {
@@ -6039,7 +6426,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L30",
       "id": "persistence_durability_test_migrator1",
-      "community": 44,
+      "community": 43,
       "norm_label": "migrator1"
     },
     {
@@ -6048,7 +6435,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L33",
       "id": "persistence_durability_test_projectrepo1",
-      "community": 44,
+      "community": 43,
       "norm_label": "projectrepo1"
     },
     {
@@ -6057,7 +6444,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L53",
       "id": "persistence_durability_test_engine2",
-      "community": 44,
+      "community": 43,
       "norm_label": "engine2"
     },
     {
@@ -6066,7 +6453,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L56",
       "id": "persistence_durability_test_integrity",
-      "community": 44,
+      "community": 43,
       "norm_label": "integrity"
     },
     {
@@ -6075,7 +6462,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L59",
       "id": "persistence_durability_test_projectrepo2",
-      "community": 44,
+      "community": 43,
       "norm_label": "projectrepo2"
     },
     {
@@ -6084,7 +6471,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L60",
       "id": "persistence_durability_test_restored",
-      "community": 44,
+      "community": 43,
       "norm_label": "restored"
     },
     {
@@ -6093,7 +6480,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L70",
       "id": "persistence_durability_test_engine",
-      "community": 44,
+      "community": 43,
       "norm_label": "engine"
     },
     {
@@ -6102,7 +6489,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L72",
       "id": "persistence_durability_test_migrator",
-      "community": 44,
+      "community": 43,
       "norm_label": "migrator"
     },
     {
@@ -6111,7 +6498,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L75",
       "id": "persistence_durability_test_projectrepo",
-      "community": 44,
+      "community": 43,
       "norm_label": "projectrepo"
     },
     {
@@ -6120,7 +6507,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L91",
       "id": "persistence_durability_test_eventrepo",
-      "community": 44,
+      "community": 43,
       "norm_label": "eventrepo"
     },
     {
@@ -6345,7 +6732,7 @@
       "source_file": "tests/persistence/sqlite-engine.test.ts",
       "source_location": "L1",
       "id": "tests_persistence_sqlite_engine_test_ts",
-      "community": 14,
+      "community": 44,
       "norm_label": "sqlite-engine.test.ts"
     },
     {
@@ -6354,7 +6741,7 @@
       "source_file": "tests/persistence/sqlite-engine.test.ts",
       "source_location": "L18",
       "id": "persistence_sqlite_engine_test_result",
-      "community": 14,
+      "community": 44,
       "norm_label": "result"
     },
     {
@@ -6363,7 +6750,7 @@
       "source_file": "tests/persistence/sqlite-engine.test.ts",
       "source_location": "L34",
       "id": "persistence_sqlite_engine_test_rows",
-      "community": 14,
+      "community": 44,
       "norm_label": "rows"
     },
     {
@@ -6777,7 +7164,7 @@
       "source_file": "tests/recovery/orphan-detector.test.ts",
       "source_location": "L1",
       "id": "tests_recovery_orphan_detector_test_ts",
-      "community": 14,
+      "community": 44,
       "norm_label": "orphan-detector.test.ts"
     },
     {
@@ -6786,7 +7173,7 @@
       "source_file": "tests/recovery/orphan-detector.test.ts",
       "source_location": "L24",
       "id": "recovery_orphan_detector_test_migrator",
-      "community": 14,
+      "community": 44,
       "norm_label": "migrator"
     },
     {
@@ -6795,7 +7182,7 @@
       "source_file": "tests/recovery/orphan-detector.test.ts",
       "source_location": "L67",
       "id": "recovery_orphan_detector_test_report",
-      "community": 14,
+      "community": 44,
       "norm_label": "report"
     },
     {
@@ -6993,7 +7380,7 @@
       "source_file": "tests/resume/isolation-and-security.test.ts",
       "source_location": "L1",
       "id": "tests_resume_isolation_and_security_test_ts",
-      "community": 14,
+      "community": 20,
       "norm_label": "isolation-and-security.test.ts"
     },
     {
@@ -7002,7 +7389,7 @@
       "source_file": "tests/resume/isolation-and-security.test.ts",
       "source_location": "L31",
       "id": "resume_isolation_and_security_test_migrator",
-      "community": 14,
+      "community": 20,
       "norm_label": "migrator"
     },
     {
@@ -9486,7 +9873,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2339",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_94_failure_analysis",
-      "community": 2,
+      "community": 54,
       "norm_label": "94. failure analysis"
     },
     {
@@ -9495,7 +9882,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2343",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_130",
-      "community": 2,
+      "community": 54,
       "norm_label": "code:text (what failed)"
     },
     {
@@ -10935,7 +11322,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3807",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_166_database_access",
-      "community": 55,
+      "community": 2,
       "norm_label": "166. database access"
     },
     {
@@ -10944,7 +11331,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3815",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_214",
-      "community": 55,
+      "community": 2,
       "norm_label": "code:text (transactions)"
     },
     {
@@ -13662,7 +14049,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L296",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_7_architecture_overview",
-      "community": 393,
+      "community": 3,
       "norm_label": "7. architecture overview"
     },
     {
@@ -13671,7 +14058,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L298",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_5",
-      "community": 393,
+      "community": 3,
       "norm_label": "code:text (user)"
     },
     {
@@ -13887,7 +14274,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L622",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_13_any_format_requirement",
-      "community": 349,
+      "community": 3,
       "norm_label": "13. \"any format\" requirement"
     },
     {
@@ -13896,7 +14283,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L630",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_13",
-      "community": 349,
+      "community": 3,
       "norm_label": "code:text (detect signature)"
     },
     {
@@ -13941,7 +14328,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L696",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_15_context_references",
-      "community": 366,
+      "community": 3,
       "norm_label": "15. `@` context references"
     },
     {
@@ -13950,7 +14337,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L702",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_16",
-      "community": 366,
+      "community": 3,
       "norm_label": "code:text (@src/auth.ts)"
     },
     {
@@ -14031,7 +14418,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L792",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_18_audio_video_pipeline",
-      "community": 3,
+      "community": 369,
       "norm_label": "18. audio/video pipeline"
     },
     {
@@ -14040,7 +14427,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L794",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_19",
-      "community": 3,
+      "community": 369,
       "norm_label": "code:text (video)"
     },
     {
@@ -14049,7 +14436,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L816",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_19_attachment_security",
-      "community": 3,
+      "community": 375,
       "norm_label": "19. attachment security"
     },
     {
@@ -14058,7 +14445,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L820",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_20",
-      "community": 3,
+      "community": 375,
       "norm_label": "code:text (signature validation)"
     },
     {
@@ -14067,7 +14454,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L834",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_20_content_cache",
-      "community": 365,
+      "community": 3,
       "norm_label": "20. content cache"
     },
     {
@@ -14076,7 +14463,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L850",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_21",
-      "community": 365,
+      "community": 3,
       "norm_label": "code:text (sha256)"
     },
     {
@@ -14184,7 +14571,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L982",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_27_project_knowledge_graph",
-      "community": 375,
+      "community": 3,
       "norm_label": "27. project knowledge graph"
     },
     {
@@ -14193,7 +14580,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L986",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_26",
-      "community": 375,
+      "community": 3,
       "norm_label": "code:text (project)"
     },
     {
@@ -14247,7 +14634,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1052",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_30_project_remove_semantics",
-      "community": 3,
+      "community": 390,
       "norm_label": "30. project remove semantics"
     },
     {
@@ -14256,7 +14643,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1058",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_29",
-      "community": 3,
+      "community": 390,
       "norm_label": "code:text (remove registry entry)"
     },
     {
@@ -14301,7 +14688,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1130",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_34_project_trust",
-      "community": 390,
+      "community": 3,
       "norm_label": "34. project trust"
     },
     {
@@ -14310,7 +14697,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1134",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_31",
-      "community": 390,
+      "community": 3,
       "norm_label": "code:text (untrusted)"
     },
     {
@@ -14355,7 +14742,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1202",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_37_event_sourced_session",
-      "community": 3,
+      "community": 393,
       "norm_label": "37. event-sourced session"
     },
     {
@@ -14364,7 +14751,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1206",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_34",
-      "community": 3,
+      "community": 393,
       "norm_label": "code:text (user)"
     },
     {
@@ -14409,7 +14796,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1306",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_40_event_immutability",
-      "community": 3,
+      "community": 402,
       "norm_label": "40. event immutability"
     },
     {
@@ -14418,7 +14805,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1314",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_37",
-      "community": 3,
+      "community": 402,
       "norm_label": "code:text (memory.written)"
     },
     {
@@ -14436,7 +14823,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1341",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_42_checkpoint_types",
-      "community": 415,
+      "community": 3,
       "norm_label": "42. checkpoint types"
     },
     {
@@ -14445,7 +14832,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1343",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_38",
-      "community": 415,
+      "community": 3,
       "norm_label": "code:text (automatic)"
     },
     {
@@ -14562,7 +14949,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1482",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_50_data_integrity",
-      "community": 3,
+      "community": 404,
       "norm_label": "50. data integrity"
     },
     {
@@ -14571,7 +14958,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1486",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_43",
-      "community": 3,
+      "community": 404,
       "norm_label": "code:text (sha-256)"
     },
     {
@@ -14643,7 +15030,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1568",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_54_storage_layout",
-      "community": 1008,
+      "community": 3,
       "norm_label": "54. storage layout"
     },
     {
@@ -14652,7 +15039,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1570",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_48",
-      "community": 1008,
+      "community": 3,
       "norm_label": "code:text (~/.anantham/)"
     },
     {
@@ -14760,7 +15147,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1718",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_60_agent_process_recovery",
-      "community": 410,
+      "community": 3,
       "norm_label": "60. agent process recovery"
     },
     {
@@ -14769,7 +15156,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1722",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_54",
-      "community": 410,
+      "community": 3,
       "norm_label": "code:text (leaseid)"
     },
     {
@@ -14913,7 +15300,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1901",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_68_memory_ttl",
-      "community": 3,
+      "community": 410,
       "norm_label": "68. memory ttl"
     },
     {
@@ -14922,7 +15309,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1907",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_63",
-      "community": 3,
+      "community": 410,
       "norm_label": "code:text (dev server port = 3000)"
     },
     {
@@ -14940,7 +15327,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1931",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_70_agent_specific_memory",
-      "community": 1009,
+      "community": 3,
       "norm_label": "70. agent-specific memory"
     },
     {
@@ -14949,7 +15336,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1937",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_64",
-      "community": 1009,
+      "community": 3,
       "norm_label": "code:text (agent/security-reviewer/project-video-editor)"
     },
     {
@@ -15030,7 +15417,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2012",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_74_cross_session_references",
-      "community": 3,
+      "community": 415,
       "norm_label": "74. cross-session references"
     },
     {
@@ -15039,7 +15426,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2016",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_70",
-      "community": 3,
+      "community": 415,
       "norm_label": "code:text (@session:abc123)"
     },
     {
@@ -15048,7 +15435,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2024",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_75_context_engine",
-      "community": 3,
+      "community": 420,
       "norm_label": "75. context engine"
     },
     {
@@ -15057,7 +15444,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2028",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_71",
-      "community": 3,
+      "community": 420,
       "norm_label": "code:text (task)"
     },
     {
@@ -15255,7 +15642,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2250",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_83_tool_schema_budget",
-      "community": 420,
+      "community": 3,
       "norm_label": "83. tool schema budget"
     },
     {
@@ -15264,7 +15651,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2256",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_81",
-      "community": 420,
+      "community": 3,
       "norm_label": "code:text (catalog descriptions)"
     },
     {
@@ -15291,7 +15678,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2286",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_85_attachment_aware_context",
-      "community": 3,
+      "community": 426,
       "norm_label": "85. attachment-aware context"
     },
     {
@@ -15300,7 +15687,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2290",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_83",
-      "community": 3,
+      "community": 426,
       "norm_label": "code:text (pdf pages)"
     },
     {
@@ -15381,7 +15768,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2368",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_89_compaction_algorithm",
-      "community": 426,
+      "community": 3,
       "norm_label": "89. compaction algorithm"
     },
     {
@@ -15390,7 +15777,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2370",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_88",
-      "community": 426,
+      "community": 3,
       "norm_label": "code:text (1. freeze current context revision)"
     },
     {
@@ -15651,7 +16038,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2665",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_102_task_priority",
-      "community": 3,
+      "community": 55,
       "norm_label": "102. task priority"
     },
     {
@@ -15660,7 +16047,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2669",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_101",
-      "community": 3,
+      "community": 55,
       "norm_label": "code:text (critical)"
     },
     {
@@ -15669,7 +16056,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2680",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_103_task_dependencies",
-      "community": 43,
+      "community": 3,
       "norm_label": "103. task dependencies"
     },
     {
@@ -15678,7 +16065,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2684",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_102",
-      "community": 43,
+      "community": 3,
       "norm_label": "code:text (a)"
     },
     {
@@ -15687,7 +16074,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2698",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_104_user_interrupt_model",
-      "community": 404,
+      "community": 3,
       "norm_label": "104. user interrupt model"
     },
     {
@@ -15696,7 +16083,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2702",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_103",
-      "community": 404,
+      "community": 3,
       "norm_label": "code:text (pause)"
     },
     {
@@ -15723,7 +16110,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2734",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_106_working_directory",
-      "community": 310,
+      "community": 3,
       "norm_label": "106. working directory"
     },
     {
@@ -15732,7 +16119,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2740",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_105",
-      "community": 310,
+      "community": 3,
       "norm_label": "code:text (wd: d:/projects/video-editor)"
     },
     {
@@ -15768,7 +16155,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2779",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_109_file_watching",
-      "community": 402,
+      "community": 3,
       "norm_label": "109. file watching"
     },
     {
@@ -15777,7 +16164,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2783",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_107",
-      "community": 402,
+      "community": 3,
       "norm_label": "code:text (create)"
     },
     {
@@ -15804,7 +16191,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2815",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_111_edit_transactions",
-      "community": 3,
+      "community": 310,
       "norm_label": "111. edit transactions"
     },
     {
@@ -15813,7 +16200,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2819",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_109",
-      "community": 3,
+      "community": 310,
       "norm_label": "code:text (prepare)"
     },
     {
@@ -15849,7 +16236,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2858",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_113_git_aware_state",
-      "community": 369,
+      "community": 3,
       "norm_label": "113. git-aware state"
     },
     {
@@ -15858,7 +16245,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2862",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_112",
-      "community": 369,
+      "community": 3,
       "norm_label": "code:text (head)"
     },
     {
@@ -15966,7 +16353,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2982",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_119_instruction_authority",
-      "community": 3,
+      "community": 331,
       "norm_label": "119. instruction authority"
     },
     {
@@ -15975,7 +16362,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2986",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_119",
-      "community": 3,
+      "community": 331,
       "norm_label": "code:text (system)"
     },
     {
@@ -16335,7 +16722,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L3353",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_139_internal_queue",
-      "community": 3,
+      "community": 349,
       "norm_label": "139. internal queue"
     },
     {
@@ -16344,7 +16731,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L3357",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_138",
-      "community": 3,
+      "community": 349,
       "norm_label": "code:text (job)"
     },
     {
@@ -16434,7 +16821,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L3484",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_142_implementation_package_boundaries",
-      "community": 3,
+      "community": 365,
       "norm_label": "142. implementation package boundaries"
     },
     {
@@ -16443,7 +16830,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L3488",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_140",
-      "community": 3,
+      "community": 365,
       "norm_label": "code:text (packages/)"
     },
     {
@@ -16452,7 +16839,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L3517",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_143_database_tables_part_1",
-      "community": 3,
+      "community": 366,
       "norm_label": "143. database tables \u2014 part 1"
     },
     {
@@ -16461,7 +16848,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L3519",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_141",
-      "community": 3,
+      "community": 366,
       "norm_label": "code:text (projects)"
     },
     {
@@ -16470,7 +16857,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L3542",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_144_required_adrs_before_implementation",
-      "community": 331,
+      "community": 3,
       "norm_label": "144. required adrs before implementation"
     },
     {
@@ -16479,7 +16866,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L3546",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_142",
-      "community": 331,
+      "community": 3,
       "norm_label": "code:text (adr-0001 event-sourced durable state)"
     },
     {
@@ -23913,7 +24300,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L455",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_14_session_commands",
-      "community": 0,
+      "community": 894,
       "norm_label": "14. session commands"
     },
     {
@@ -23922,7 +24309,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L457",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_16",
-      "community": 0,
+      "community": 894,
       "norm_label": "code:text (/session)"
     },
     {
@@ -25506,7 +25893,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L2014",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_99_privacy_policy_ui",
-      "community": 1012,
+      "community": 0,
       "norm_label": "99. privacy policy ui"
     },
     {
@@ -25515,7 +25902,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L2018",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_108",
-      "community": 1012,
+      "community": 0,
       "norm_label": "code:text (data transfer)"
     },
     {
@@ -25794,7 +26181,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L2273",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_116_benchmark_commands",
-      "community": 0,
+      "community": 868,
       "norm_label": "116. benchmark commands"
     },
     {
@@ -25803,7 +26190,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L2275",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_123",
-      "community": 0,
+      "community": 868,
       "norm_label": "code:text (/bench)"
     },
     {
@@ -25848,7 +26235,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L2330",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_119_false_completion_metric",
-      "community": 869,
+      "community": 0,
       "norm_label": "119. false completion metric"
     },
     {
@@ -25857,7 +26244,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L2334",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_126",
-      "community": 869,
+      "community": 0,
       "norm_label": "code:text (model says complete)"
     },
     {
@@ -26271,7 +26658,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L2659",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_135_correlation_ids",
-      "community": 0,
+      "community": 869,
       "norm_label": "135. correlation ids"
     },
     {
@@ -26280,7 +26667,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L2663",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_153",
-      "community": 0,
+      "community": 869,
       "norm_label": "code:text (requestid)"
     },
     {
@@ -26892,7 +27279,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L3230",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_176_release_channels",
-      "community": 0,
+      "community": 1005,
       "norm_label": "176. release channels"
     },
     {
@@ -26901,7 +27288,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L3234",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_181",
-      "community": 0,
+      "community": 1005,
       "norm_label": "code:text (stable)"
     },
     {
@@ -27162,7 +27549,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L3457",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_191_provider_outage_dashboard",
-      "community": 868,
+      "community": 0,
       "norm_label": "191. provider outage dashboard"
     },
     {
@@ -27171,7 +27558,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L3461",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_196",
-      "community": 868,
+      "community": 0,
       "norm_label": "code:text (provider)"
     },
     {
@@ -27459,7 +27846,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L3688",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_212_redacted_replay",
-      "community": 0,
+      "community": 1008,
       "norm_label": "212. redacted replay"
     },
     {
@@ -27468,7 +27855,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L3692",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_208",
-      "community": 0,
+      "community": 1008,
       "norm_label": "code:text (structure)"
     },
     {
@@ -27513,7 +27900,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L3731",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_215_user_performance_profile",
-      "community": 894,
+      "community": 0,
       "norm_label": "215. user performance profile"
     },
     {
@@ -27522,7 +27909,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L3735",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_211",
-      "community": 894,
+      "community": 0,
       "norm_label": "code:text (performance balanced)"
     },
     {
@@ -28917,7 +29304,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L4891",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_302_minimal_profile",
-      "community": 1005,
+      "community": 0,
       "norm_label": "302. minimal profile"
     },
     {
@@ -28926,7 +29313,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L4895",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_280",
-      "community": 1005,
+      "community": 0,
       "norm_label": "code:text (one model)"
     },
     {
@@ -29808,7 +30195,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L5596",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_353_task_acceptance",
-      "community": 0,
+      "community": 1009,
       "norm_label": "353. task acceptance"
     },
     {
@@ -29817,7 +30204,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L5600",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_328",
-      "community": 0,
+      "community": 1009,
       "norm_label": "code:text (accepted)"
     },
     {
@@ -30703,13 +31090,13 @@
       "norm_label": "1. active phase backlog (p2 \u2014 content / context / memory / retrieval)"
     },
     {
-      "label": "[P2.2 \u2014 Content Security, MIME Validation & Provenance](file:///C:/herness/docs/discovery/current-state.md#L10)",
+      "label": "[P2.3 \u2014 Artifacts (Durable Writes, Hashes, Metadata & References)](file:///C:/herness/docs/discovery/current-state.md#L10)",
       "file_type": "document",
       "source_file": "docs/discovery/active-tasks.md",
       "source_location": "L9",
-      "id": "discovery_active_tasks_p2_2_content_security_mime_validation_provenance_file_c_herness_docs_discovery_current_state_md_l10",
+      "id": "discovery_active_tasks_p2_3_artifacts_durable_writes_hashes_metadata_references_file_c_herness_docs_discovery_current_state_md_l10",
       "community": 35,
-      "norm_label": "[p2.2 \u2014 content security, mime validation & provenance](file:///c:/herness/docs/discovery/current-state.md#l10)"
+      "norm_label": "[p2.3 \u2014 artifacts (durable writes, hashes, metadata & references)](file:///c:/herness/docs/discovery/current-state.md#l10)"
     },
     {
       "label": "2. Completed Milestones (Recent)",
@@ -30721,10 +31108,19 @@
       "norm_label": "2. completed milestones (recent)"
     },
     {
-      "label": "[TASK-P2.1-CONTENT-INGESTION \u2014 Multimodal Content Ingestion & Parsers](file:///C:/herness/src/content/index.ts)",
+      "label": "[TASK-P2.2-CONTENT-SECURITY \u2014 Content Security, MIME Validation & Provenance](file:///C:/herness/src/content/index.ts)",
       "file_type": "document",
       "source_file": "docs/discovery/active-tasks.md",
       "source_location": "L19",
+      "id": "discovery_active_tasks_task_p2_2_content_security_content_security_mime_validation_provenance_file_c_herness_src_content_index_ts",
+      "community": 35,
+      "norm_label": "[task-p2.2-content-security \u2014 content security, mime validation & provenance](file:///c:/herness/src/content/index.ts)"
+    },
+    {
+      "label": "[TASK-P2.1-CONTENT-INGESTION \u2014 Multimodal Content Ingestion & Parsers](file:///C:/herness/src/content/index.ts)",
+      "file_type": "document",
+      "source_file": "docs/discovery/active-tasks.md",
+      "source_location": "L25",
       "id": "discovery_active_tasks_task_p2_1_content_ingestion_multimodal_content_ingestion_parsers_file_c_herness_src_content_index_ts",
       "community": 35,
       "norm_label": "[task-p2.1-content-ingestion \u2014 multimodal content ingestion & parsers](file:///c:/herness/src/content/index.ts)"
@@ -30733,7 +31129,7 @@
       "label": "[TASK-P1.5-RESUME-ENGINE \u2014 Durable Session Resume Engine (`/resume`)](file:///C:/herness/src/resume/index.ts)",
       "file_type": "document",
       "source_file": "docs/discovery/active-tasks.md",
-      "source_location": "L25",
+      "source_location": "L31",
       "id": "discovery_active_tasks_task_p1_5_resume_engine_durable_session_resume_engine_resume_file_c_herness_src_resume_index_ts",
       "community": 35,
       "norm_label": "[task-p1.5-resume-engine \u2014 durable session resume engine (`/resume`)](file:///c:/herness/src/resume/index.ts)"
@@ -30742,7 +31138,7 @@
       "label": "[TASK-P1.4-CHECKPOINTS-RECOVERY \u2014 Manifests, Validation, Leases & Crash Recovery](file:///C:/herness/src/recovery/index.ts)",
       "file_type": "document",
       "source_file": "docs/discovery/active-tasks.md",
-      "source_location": "L31",
+      "source_location": "L37",
       "id": "discovery_active_tasks_task_p1_4_checkpoints_recovery_manifests_validation_leases_crash_recovery_file_c_herness_src_recovery_index_ts",
       "community": 35,
       "norm_label": "[task-p1.4-checkpoints-recovery \u2014 manifests, validation, leases & crash recovery](file:///c:/herness/src/recovery/index.ts)"
@@ -30751,7 +31147,7 @@
       "label": "[TASK-P1.3-EVENT-STATE \u2014 EventStore, Reducers, Projections & Branching](file:///C:/herness/src/event-state/index.ts)",
       "file_type": "document",
       "source_file": "docs/discovery/active-tasks.md",
-      "source_location": "L37",
+      "source_location": "L43",
       "id": "discovery_active_tasks_task_p1_3_event_state_eventstore_reducers_projections_branching_file_c_herness_src_event_state_index_ts",
       "community": 35,
       "norm_label": "[task-p1.3-event-state \u2014 eventstore, reducers, projections & branching](file:///c:/herness/src/event-state/index.ts)"
@@ -30760,7 +31156,7 @@
       "label": "[TASK-P1.2-PERSISTENCE \u2014 Native SQLite Engine, WAL, Migrations & Repositories](file:///C:/herness/src/persistence/index.ts)",
       "file_type": "document",
       "source_file": "docs/discovery/active-tasks.md",
-      "source_location": "L44",
+      "source_location": "L50",
       "id": "discovery_active_tasks_task_p1_2_persistence_native_sqlite_engine_wal_migrations_repositories_file_c_herness_src_persistence_index_ts",
       "community": 35,
       "norm_label": "[task-p1.2-persistence \u2014 native sqlite engine, wal, migrations & repositories](file:///c:/herness/src/persistence/index.ts)"
@@ -30769,7 +31165,7 @@
       "label": "[TASK-P1.1-CORE-DOMAIN \u2014 Core Domain Models, Zod Schemas & State Machine](file:///C:/herness/src/domain/index.ts)",
       "file_type": "document",
       "source_file": "docs/discovery/active-tasks.md",
-      "source_location": "L51",
+      "source_location": "L57",
       "id": "discovery_active_tasks_task_p1_1_core_domain_core_domain_models_zod_schemas_state_machine_file_c_herness_src_domain_index_ts",
       "community": 35,
       "norm_label": "[task-p1.1-core-domain \u2014 core domain models, zod schemas & state machine](file:///c:/herness/src/domain/index.ts)"
@@ -31367,6 +31763,15 @@
       "id": "discovery_v1_0_anantham_orchestrator_phase_11_multi_engine_synchronization",
       "community": 15,
       "norm_label": "phase 11 \u2014 multi-engine synchronization"
+    },
+    {
+      "label": "[P2.2 \u2014 Content Security, MIME Validation & Provenance](file:///C:/herness/docs/discovery/current-state.md#L10)",
+      "file_type": "document",
+      "source_file": "docs/discovery/active-tasks.md",
+      "source_location": "L9",
+      "community": 35,
+      "norm_label": "[p2.2 \u2014 content security, mime validation & provenance](file:///c:/herness/docs/discovery/current-state.md#l10)",
+      "id": "discovery_active_tasks_p2_2_content_security_mime_validation_provenance_file_c_herness_docs_discovery_current_state_md_l10"
     },
     {
       "label": "Test-Neo4jOnline()",
@@ -32413,9 +32818,9 @@
       "source_file": "scripts/start-neo4j.ps1",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_start_neo4j_ps1",
-      "target": "scripts_start_neo4j_test_neo4jready",
-      "confidence_score": 1.0
+      "target": "scripts_start_neo4j_test_neo4jready"
     },
     {
       "relation": "contains",
@@ -32584,6 +32989,17 @@
       "target": "src_content_content_access_validator_ts"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/provenance-integrity.test.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "tests_content_provenance_integrity_test_ts",
+      "target": "src_content_content_access_validator_ts",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/content/content-access-validator.ts",
@@ -32592,6 +33008,26 @@
       "confidence_score": 1.0,
       "source": "content_content_access_validator_contentaccessvalidator",
       "target": "content_content_access_validator_contentaccessvalidator_verifyaccess"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/content-access-validator.ts",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "content_content_access_validator_contentaccessvalidator",
+      "target": "content_content_access_validator_contentaccessvalidator_validateclassificationtransition",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/content-access-validator.ts",
+      "source_location": "L87",
+      "weight": 1.0,
+      "source": "content_content_access_validator_contentaccessvalidator",
+      "target": "content_content_access_validator_contentaccessvalidator_verifyprojectisolation",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -32605,6 +33041,17 @@
       "target": "content_content_access_validator_contentaccessvalidator"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/provenance-integrity.test.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "tests_content_provenance_integrity_test_ts",
+      "target": "content_content_access_validator_contentaccessvalidator",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/content/content-guards.ts",
@@ -32613,6 +33060,36 @@
       "confidence_score": 1.0,
       "source": "src_content_content_guards_ts",
       "target": "content_content_guards_mimesniffresult"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/content-guards.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_content_content_guards_ts",
+      "target": "content_content_guards_archiveentrymeta",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/content-guards.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "src_content_content_guards_ts",
+      "target": "content_content_guards_archivebomboptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/content-guards.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "src_content_content_guards_ts",
+      "target": "content_content_guards_mimespoofcheckresult",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -32683,6 +33160,28 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "tests/content/archive-bomb-security.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "tests_content_archive_bomb_security_test_ts",
+      "target": "src_content_content_guards_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/mime-spoofing-guards.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "tests_content_mime_spoofing_guards_test_ts",
+      "target": "src_content_content_guards_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/content/text-parser.test.ts",
       "source_location": "L3",
       "weight": 1.0,
@@ -32704,6 +33203,16 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/content/content-guards.ts",
+      "source_location": "L188",
+      "weight": 1.0,
+      "source": "content_content_guards_contentguards",
+      "target": "content_content_guards_contentguards_detectmimespoofing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/content-guards.ts",
       "source_location": "L143",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -32719,6 +33228,16 @@
       "confidence_score": 1.0,
       "source": "content_content_guards_contentguards",
       "target": "content_content_guards_contentguards_checkarchivesafety"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/content-guards.ts",
+      "source_location": "L303",
+      "weight": 1.0,
+      "source": "content_content_guards_contentguards",
+      "target": "content_content_guards_contentguards_checkarchivebomb",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -32789,12 +33308,45 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "tests/content/archive-bomb-security.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "tests_content_archive_bomb_security_test_ts",
+      "target": "content_content_guards_contentguards",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/mime-spoofing-guards.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "tests_content_mime_spoofing_guards_test_ts",
+      "target": "content_content_guards_contentguards",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/content/text-parser.test.ts",
       "source_location": "L3",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "tests_content_text_parser_test_ts",
       "target": "content_content_guards_contentguards"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/content-guards.ts",
+      "source_location": "L193",
+      "weight": 1.0,
+      "source": "content_content_guards_contentguards_detectmimespoofing",
+      "target": "content_content_guards_contentguards_sniffmimetype",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -33084,6 +33636,28 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "tests/content/content-sanitizer.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "tests_content_content_sanitizer_test_ts",
+      "target": "src_content_content_ingestion_engine_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/provenance-integrity.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "tests_content_provenance_integrity_test_ts",
+      "target": "src_content_content_ingestion_engine_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/content/representation-selector.test.ts",
       "source_location": "L3",
       "weight": 1.0,
@@ -33122,6 +33696,28 @@
       "confidence_score": 1.0,
       "source": "tests_content_content_isolation_test_ts",
       "target": "content_content_ingestion_engine_contentingestionengine"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/content-sanitizer.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "tests_content_content_sanitizer_test_ts",
+      "target": "content_content_ingestion_engine_contentingestionengine",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/provenance-integrity.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "tests_content_provenance_integrity_test_ts",
+      "target": "content_content_ingestion_engine_contentingestionengine",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -33236,6 +33832,270 @@
       "confidence_score": 1.0,
       "source": "content_content_reference_manager_contentreferencemanager_verifyblob",
       "target": "content_content_reference_manager_contentreferencemanager_readblob"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/content-sanitizer.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_content_content_sanitizer_ts",
+      "target": "src_domain_content_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/content-sanitizer.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "src_content_content_sanitizer_ts",
+      "target": "domain_content_contentobject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/content-sanitizer.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "src_content_content_sanitizer_ts",
+      "target": "domain_content_contentrepresentation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/content-sanitizer.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_content_content_sanitizer_ts",
+      "target": "domain_content_contentobjectschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/content-sanitizer.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_content_content_sanitizer_ts",
+      "target": "content_content_sanitizer_secretfinding",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/content-sanitizer.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_content_content_sanitizer_ts",
+      "target": "content_content_sanitizer_secretdetectionresult",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/content-sanitizer.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "src_content_content_sanitizer_ts",
+      "target": "content_content_sanitizer_contentsanitizer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/content-sanitizer.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "tests_content_content_sanitizer_test_ts",
+      "target": "src_content_content_sanitizer_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/content-sanitizer.ts",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "content_content_sanitizer_contentsanitizer",
+      "target": "content_content_sanitizer_contentsanitizer_scansecrets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/content-sanitizer.ts",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "content_content_sanitizer_contentsanitizer",
+      "target": "content_content_sanitizer_contentsanitizer_redactsecrets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/content-sanitizer.ts",
+      "source_location": "L112",
+      "weight": 1.0,
+      "source": "content_content_sanitizer_contentsanitizer",
+      "target": "content_content_sanitizer_contentsanitizer_sanitizecontentobject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/content-sanitizer.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "tests_content_content_sanitizer_test_ts",
+      "target": "content_content_sanitizer_contentsanitizer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/content-sanitizer.ts",
+      "source_location": "L123",
+      "weight": 1.0,
+      "source": "content_content_sanitizer_contentsanitizer_sanitizecontentobject",
+      "target": "content_content_sanitizer_contentsanitizer_redactsecrets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/provenance-manager.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_content_provenance_manager_ts",
+      "target": "src_domain_content_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/provenance-manager.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_content_provenance_manager_ts",
+      "target": "domain_content_contentobject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/provenance-manager.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_content_provenance_manager_ts",
+      "target": "src_domain_provenance_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/provenance-manager.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_content_provenance_manager_ts",
+      "target": "domain_provenance_provenance",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/provenance-manager.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_content_provenance_manager_ts",
+      "target": "domain_provenance_provenanceschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/provenance-manager.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_content_provenance_manager_ts",
+      "target": "content_provenance_manager_provenancevalidationresult",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/provenance-manager.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "src_content_provenance_manager_ts",
+      "target": "content_provenance_manager_provenancemanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/provenance-integrity.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "tests_content_provenance_integrity_test_ts",
+      "target": "src_content_provenance_manager_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/provenance-manager.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "content_provenance_manager_provenancemanager",
+      "target": "content_provenance_manager_provenancemanager_createderivedprovenance",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/provenance-manager.ts",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "content_provenance_manager_provenancemanager",
+      "target": "content_provenance_manager_provenancemanager_verifyintegrity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/provenance-manager.ts",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "content_provenance_manager_provenancemanager",
+      "target": "content_provenance_manager_provenancemanager_verifylineage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/provenance-integrity.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "tests_content_provenance_integrity_test_ts",
+      "target": "content_provenance_manager_provenancemanager",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -43522,6 +44382,56 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "tests/content/archive-bomb-security.test.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "tests_content_archive_bomb_security_test_ts",
+      "target": "content_archive_bomb_security_test_maliciousentries",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/archive-bomb-security.test.ts",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "tests_content_archive_bomb_security_test_ts",
+      "target": "content_archive_bomb_security_test_result",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/archive-bomb-security.test.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "tests_content_archive_bomb_security_test_ts",
+      "target": "content_archive_bomb_security_test_excessiveentries",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/archive-bomb-security.test.ts",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "tests_content_archive_bomb_security_test_ts",
+      "target": "content_archive_bomb_security_test_entries",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/archive-bomb-security.test.ts",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "tests_content_archive_bomb_security_test_ts",
+      "target": "content_archive_bomb_security_test_safeentries",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "tests/content/content-ingestion-engine.test.ts",
       "source_location": "L39",
       "weight": 1.0,
@@ -43632,6 +44542,96 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "tests/content/content-sanitizer.test.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "tests_content_content_sanitizer_test_ts",
+      "target": "content_content_sanitizer_test_scanresult",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/content-sanitizer.test.ts",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "tests_content_content_sanitizer_test_ts",
+      "target": "content_content_sanitizer_test_redactedtext_findings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/content-sanitizer.test.ts",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "tests_content_content_sanitizer_test_ts",
+      "target": "content_content_sanitizer_test_sanitized_secretsfound",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/content-sanitizer.test.ts",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "tests_content_content_sanitizer_test_ts",
+      "target": "content_content_sanitizer_test_textrep",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/mime-spoofing-guards.test.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "tests_content_mime_spoofing_guards_test_ts",
+      "target": "content_mime_spoofing_guards_test_maliciousbuffer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/mime-spoofing-guards.test.ts",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "tests_content_mime_spoofing_guards_test_ts",
+      "target": "content_mime_spoofing_guards_test_check",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/mime-spoofing-guards.test.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "tests_content_mime_spoofing_guards_test_ts",
+      "target": "content_mime_spoofing_guards_test_elfbuffer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/mime-spoofing-guards.test.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "tests_content_mime_spoofing_guards_test_ts",
+      "target": "content_mime_spoofing_guards_test_machbuffer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/mime-spoofing-guards.test.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "tests_content_mime_spoofing_guards_test_ts",
+      "target": "content_mime_spoofing_guards_test_pngbuffer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "tests/content/pdf-media-parser.test.ts",
       "source_location": "L9",
       "weight": 1.0,
@@ -43668,6 +44668,56 @@
       "confidence_score": 1.0,
       "source": "tests_content_pdf_media_parser_test_ts",
       "target": "content_pdf_media_parser_test_wavbuffer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/provenance-integrity.test.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "tests_content_provenance_integrity_test_ts",
+      "target": "content_provenance_integrity_test_derivedprov",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/provenance-integrity.test.ts",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "tests_content_provenance_integrity_test_ts",
+      "target": "content_provenance_integrity_test_validescalation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/provenance-integrity.test.ts",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "tests_content_provenance_integrity_test_ts",
+      "target": "content_provenance_integrity_test_invaliddowngrade",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/provenance-integrity.test.ts",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "tests_content_provenance_integrity_test_ts",
+      "target": "content_provenance_integrity_test_sameproject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/content/provenance-integrity.test.ts",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "tests_content_provenance_integrity_test_ts",
+      "target": "content_provenance_integrity_test_crossproject",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -71965,6 +73015,16 @@
       "source_file": "docs/discovery/active-tasks.md",
       "source_location": "L9",
       "weight": 1.0,
+      "source": "discovery_active_tasks_1_active_phase_backlog_p2_content_context_memory_retrieval",
+      "target": "discovery_active_tasks_p2_3_artifacts_durable_writes_hashes_metadata_references_file_c_herness_docs_discovery_current_state_md_l10",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/discovery/active-tasks.md",
+      "source_location": "L9",
+      "weight": 1.0,
       "confidence_score": 1.0,
       "source": "discovery_active_tasks_1_active_phase_backlog_p2_content_context_memory_retrieval",
       "target": "discovery_active_tasks_p2_2_content_security_mime_validation_provenance_file_c_herness_docs_discovery_current_state_md_l10"
@@ -71978,6 +73038,16 @@
       "confidence_score": 1.0,
       "source": "discovery_active_tasks_1_active_phase_backlog_p2_content_context_memory_retrieval",
       "target": "discovery_active_tasks_p2_1_multimodal_content_ingestion_parsers_file_c_herness_docs_discovery_current_state_md_l10"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/discovery/active-tasks.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "discovery_active_tasks_2_completed_milestones_recent",
+      "target": "discovery_active_tasks_task_p2_2_content_security_content_security_mime_validation_provenance_file_c_herness_src_content_index_ts",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -72631,5 +73701,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "b6ca201ba6d440c7828adcb6861abc0412071fa9"
+  "built_at_commit": "aafbd3d18ce20185d03848793c41748bce8acccb"
 }
