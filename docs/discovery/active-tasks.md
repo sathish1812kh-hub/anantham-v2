@@ -6,15 +6,21 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P3 — Model / Provider / Credential Plane)
 
-### [P3.1 — ModelAdapter & ProviderAdapter (Streaming, Tools, Modalities)](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P3.2 — Capability Model & Capability Resolver](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Principal Model & Integrations Architect
-- **Description**: Implement unified ModelAdapter, ProviderAdapter interface, streaming lifecycle, tool calling normalization, multimodal payload formatting, and rate-limit backoff.
-- **Dependencies**: `P1.1-P1.5`, `P2.1-P2.6`.
+- **Owner**: Principal AI Platform Architect
+- **Description**: Implement dynamic model capability profiles, capability resolution engine, modality matching, and feature negotiation.
+- **Dependencies**: `P3.1`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P3.1-ADAPTERS — Unified ModelAdapter, ProviderAdapter & Error Classification](file:///C:/herness/src/models/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Model & Integrations Architect
+- **Completed Date**: 2026-08-31
+- **Verification**: 175/175 tests passing across 76 test suites in Vitest. Unified ModelRequest/ModelResponse/ModelStreamChunk domain contracts, MockProviderAdapter with unary & streaming execution, normalized tool calling, token usage/cost accounting, structured error hierarchy (RateLimitError, AuthenticationError, ContextWindowExceededError, ProviderUnavailableError, ModelTimeoutError), and P3 Gate SQLite state durability verification.
 
 ### [TASK-P2.6-MEMORY — Scoped Memory, Provenance, SQLite FTS5 & Rebuildable Retrieval](file:///C:/herness/src/memory/index.ts)
 - **Status**: `COMPLETED`

@@ -13,3 +13,4 @@ export * from "./artifacts/index.js";
 export * from "./context/index.js";
 export * from "./compaction/index.js";
 export * from "./memory/index.js";
+export * from "./models/index.js";

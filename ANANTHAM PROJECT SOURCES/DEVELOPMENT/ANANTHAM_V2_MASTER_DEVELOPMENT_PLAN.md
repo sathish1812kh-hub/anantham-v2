@@ -260,8 +260,8 @@ Every update MUST include:
 
 ## P3 — MODEL / PROVIDER / CREDENTIAL PLANE
 
-- [ ] ModelAdapter
-- [ ] ProviderAdapter
+- [x] ModelAdapter
+- [x] ProviderAdapter
 - [ ] capability model
 - [ ] capability resolver
 - [ ] ModelRouter
@@ -276,9 +276,9 @@ Every update MUST include:
 - [ ] OpenRouter
 - [ ] direct providers
 - [ ] custom/local endpoints
-- [ ] streaming
-- [ ] tool calling
-- [ ] usage accounting
+- [x] streaming
+- [x] tool calling
+- [x] usage accounting
 - [ ] model switching without state loss
 
 **P3 GATE:** provider/key failure does not lose committed runtime state.
