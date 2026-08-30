@@ -165,13 +165,13 @@ Every update MUST include:
 - [x] SecurityMetadata
 
 ### P1.2 Persistence
-- [ ] SQLite schema
-- [ ] migrations
-- [ ] WAL
-- [ ] transactions
-- [ ] foreign keys
-- [ ] integrity checks
-- [ ] repository/service boundaries
+- [x] SQLite schema
+- [x] migrations
+- [x] WAL
+- [x] transactions
+- [x] foreign keys
+- [x] integrity checks
+- [x] repository/service boundaries
 
 ### P1.3 Event/state
 - [ ] Event store
@@ -592,7 +592,19 @@ The PRD defines concrete acceptance targets including RPO 0 for committed state 
 
 Antigravity MUST append an entry after every completed work package:
 
-## 2026-08-30 20:55 — TASK-P1.1-CORE-DOMAIN
+## 2026-08-30 20:56 — TASK-P1.2-PERSISTENCE
+ 
+ Status: VERIFIED COMPLETE
+ What changed: Implemented the authoritative SQLite persistence subsystem using Node.js v25 native `node:sqlite` (DatabaseSync). Added SqliteEngine with WAL mode, synchronous=FULL (RPO 0 durability), foreign_keys=ON, and transactional units of work. Implemented MigrationEngine with SHA-256 checksum tracking in _migrations and Migration 001 for all core relational tables. Implemented ProjectRepository, SessionRepository, TaskRepository (with state transition enforcement), EventRepository (with append-only immutability), CheckpointRepository, ArtifactRepository, AttachmentRepository, and MemoryRepository.
+ Files: src/persistence/sqlite-engine.ts, src/persistence/migration-engine.ts, src/persistence/migrations/001_initial_core_schema.ts, src/persistence/repositories/*.ts, src/persistence/index.ts, src/index.ts, tests/persistence/*.test.ts
+ Tests: 51 automated tests passing across 19 test suites (durability, crash recovery, foreign key cascading, migration idempotency/tamper detection, repository CRUD, and state transitions).
+ Verification: npm run typecheck (0 errors under strict: true), npm test (51/51 passing), npm run build (successful).
+ Commit/Revision: Pending git commit
+ Risks: None.
+ Unresolved: None.
+ Next: P1.3 Event/state (Event store stream projections, state reconstruction, projection rebuild, session tree branching).
+ 
+ ## 2026-08-30 20:55 — TASK-P1.1-CORE-DOMAIN
 
 Status: VERIFIED COMPLETE
 What changed: Initialized git repo, Node.js/TypeScript configuration (package.json, strict tsconfig.json, vitest.config.ts), and implemented all 12 core domain models and contracts (Project, Session, Task, HarnessEvent, Checkpoint, ContentObject, Attachment, Artifact, MemoryItem, ContextPlan, Provenance, SecurityMetadata) with runtime Zod schemas, immutability helpers, and state transition machine.
