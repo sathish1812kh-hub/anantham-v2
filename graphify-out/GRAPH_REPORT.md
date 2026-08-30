@@ -1,16 +1,16 @@
 # Graph Report - herness  (2026-08-31)
 
 ## Corpus Check
-- 271 files · ~121,462 words
+- 291 files · ~126,521 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 4247 nodes · 5655 edges · 1043 communities (292 shown, 751 thin omitted)
+- 4313 nodes · 5811 edges · 1060 communities (307 shown, 753 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `6283da4d`
+- Built from commit: `d54037d4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -998,6 +998,7 @@
 - [[_COMMUNITY_Community 988|Community 988]]
 - [[_COMMUNITY_Community 989|Community 989]]
 - [[_COMMUNITY_Community 990|Community 990]]
+- [[_COMMUNITY_Community 991|Community 991]]
 - [[_COMMUNITY_Community 992|Community 992]]
 - [[_COMMUNITY_Community 993|Community 993]]
 - [[_COMMUNITY_Community 994|Community 994]]
@@ -1021,6 +1022,7 @@
 - [[_COMMUNITY_Community 1026|Community 1026]]
 - [[_COMMUNITY_Community 1027|Community 1027]]
 - [[_COMMUNITY_Community 1028|Community 1028]]
+- [[_COMMUNITY_Community 1030|Community 1030]]
 - [[_COMMUNITY_Community 1031|Community 1031]]
 - [[_COMMUNITY_Community 1032|Community 1032]]
 - [[_COMMUNITY_Community 1033|Community 1033]]
@@ -1034,27 +1036,50 @@
 - [[_COMMUNITY_Community 1041|Community 1041]]
 - [[_COMMUNITY_Community 1042|Community 1042]]
 - [[_COMMUNITY_Community 1043|Community 1043]]
+- [[_COMMUNITY_Community 1045|Community 1045]]
+- [[_COMMUNITY_Community 1046|Community 1046]]
+- [[_COMMUNITY_Community 1047|Community 1047]]
+- [[_COMMUNITY_Community 1048|Community 1048]]
+- [[_COMMUNITY_Community 1049|Community 1049]]
+- [[_COMMUNITY_Community 1050|Community 1050]]
+- [[_COMMUNITY_Community 1051|Community 1051]]
+- [[_COMMUNITY_Community 1052|Community 1052]]
+- [[_COMMUNITY_Community 1053|Community 1053]]
+- [[_COMMUNITY_Community 1054|Community 1054]]
+- [[_COMMUNITY_Community 1055|Community 1055]]
+- [[_COMMUNITY_Community 1056|Community 1056]]
+- [[_COMMUNITY_Community 1057|Community 1057]]
+- [[_COMMUNITY_Community 1058|Community 1058]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `SqliteEngine` - 69 edges
-2. `MigrationEngine` - 49 edges
-3. `EventStore` - 47 edges
-4. `ProjectRepository` - 40 edges
+1. `SqliteEngine` - 70 edges
+2. `MigrationEngine` - 50 edges
+3. `EventStore` - 48 edges
+4. `ProjectRepository` - 41 edges
 5. `SessionRepository` - 36 edges
 6. `Anantham V2 — Technology Stack` - 34 edges
-7. `compilerOptions` - 29 edges
-8. `EventTypes` - 29 edges
+7. `EventTypes` - 30 edges
+8. `compilerOptions` - 29 edges
 9. `ArtifactRepository` - 24 edges
-10. `HarnessEvent` - 20 edges
+10. `ToolRegistry` - 22 edges
 
 ## Surprising Connections (you probably didn't know these)
-- None detected - all connections are within the same source files.
+- `registerNativeTools()` --calls--> `createArtifactTools()`  [EXTRACTED]
+  src/tools/native/register-native-tools.ts → src/tools/native/artifact-tools.ts
+- `registerNativeTools()` --calls--> `createFilesystemTools()`  [EXTRACTED]
+  src/tools/native/register-native-tools.ts → src/tools/native/filesystem-tools.ts
+- `registerNativeTools()` --calls--> `createGitTools()`  [EXTRACTED]
+  src/tools/native/register-native-tools.ts → src/tools/native/git-tools.ts
+- `registerNativeTools()` --calls--> `createMemoryTools()`  [EXTRACTED]
+  src/tools/native/register-native-tools.ts → src/tools/native/memory-tools.ts
+- `registerNativeTools()` --calls--> `createNetworkTools()`  [EXTRACTED]
+  src/tools/native/register-native-tools.ts → src/tools/native/network-tools.ts
 
-## Communities (1043 total, 751 thin omitted)
+## Communities (1060 total, 753 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.02
-Nodes (99): 102. ENCRYPTION, 108. BACKUP VALIDATION, 112. REPLAY SAFETY, 114. TOOL REPLAY, 137. TELEMETRY PRIVACY, 141. SECURITY POLICY, 147. APPROVAL EXPIRY, 151. POLICY REVISION (+91 more)
+Nodes (99): 102. ENCRYPTION, 108. BACKUP VALIDATION, 111. EVENT REPLAY, 112. REPLAY SAFETY, 137. TELEMETRY PRIVACY, 141. SECURITY POLICY, 147. APPROVAL EXPIRY, 151. POLICY REVISION (+91 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.02
@@ -1066,7 +1091,7 @@ Nodes (74): 101. RESTART TESTING, 102. CRASH TESTING, 103. CONCURRENCY TESTING, 
 
 ### Community 3 - "Community 3"
 Cohesion: 0.03
-Nodes (63): 102. TASK PRIORITY, 106. WORKING DIRECTORY, 108. MONOREPO SUPPORT, 111. EDIT TRANSACTIONS, 122. ZERO-LOSS REQUIREMENT MATRIX, 128. GARBAGE COLLECTION, 130. OFFLINE MODE, 137. PERFORMANCE PRINCIPLES (+55 more)
+Nodes (67): 102. TASK PRIORITY, 103. TASK DEPENDENCIES, 106. WORKING DIRECTORY, 108. MONOREPO SUPPORT, 109. FILE WATCHING, 113. GIT-AWARE STATE, 115. SEARCH INDEXES, 122. ZERO-LOSS REQUIREMENT MATRIX (+59 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.1
@@ -1081,12 +1106,12 @@ Cohesion: 0.06
 Nodes (31): compilerOptions, allowSyntheticDefaultImports, alwaysStrict, declaration, declarationMap, esModuleInterop, exactOptionalPropertyTypes, forceConsistentCasingInFileNames (+23 more)
 
 ### Community 7 - "Community 7"
-Cohesion: 0.1
-Nodes (32): AnthropicAdapterOptions, GeminiAdapterOptions, ModelFinishReason, ModelFinishReasonSchema, ModelMessage, ModelMessageSchema, ModelRequest, ModelRequestSchema (+24 more)
+Cohesion: 0.08
+Nodes (38): AnthropicAdapterOptions, GeminiAdapterOptions, ModelFinishReason, ModelFinishReasonSchema, ModelMessage, ModelMessageSchema, ModelRequest, ModelRequestSchema (+30 more)
 
 ### Community 8 - "Community 8"
-Cohesion: 0.09
-Nodes (14): ContentAccessValidator, ContentIngestionEngine, binData, largeBuffer, checkDenied, checkHigherPermitted, checkPermitted, checkUntrustedDenied (+6 more)
+Cohesion: 0.11
+Nodes (14): AccessRequestContext, AccessValidationResult, ContentAccessValidator, checkDenied, checkHigherPermitted, checkPermitted, checkUntrustedDenied, crossProject (+6 more)
 
 ### Community 9 - "Community 9"
 Cohesion: 0.06
@@ -1097,20 +1122,20 @@ Cohesion: 0.09
 Nodes (22): 11. Native Tools, 14. Skills, 15. Hooks, 1. Stack Overview, 21. Security Stack, 26. Code Intelligence Stack, 2. High-Level Architecture, 31. Implementation Priority (+14 more)
 
 ### Community 11 - "Community 11"
-Cohesion: 0.06
-Nodes (23): freezeEvent(), LeaseManager, TaskLease, TaskLeaseSchema, claim, claim1, claim2, hb (+15 more)
+Cohesion: 0.11
+Nodes (10): LeaseManager, TaskLease, TaskLeaseSchema, chk, migrator, tampered, artSha, checkpoint (+2 more)
 
 ### Community 12 - "Community 12"
-Cohesion: 0.05
-Nodes (44): assertValidTaskTransition(), isValidTaskTransition(), Task, TaskPriority, TaskPrioritySchema, TaskSchema, TaskStatus, TaskStatusSchema (+36 more)
+Cohesion: 0.1
+Nodes (21): assertValidTaskTransition(), isValidTaskTransition(), Task, TaskPrioritySchema, TaskSchema, TaskStatusSchema, parsed, priorities (+13 more)
 
 ### Community 13 - "Community 13"
 Cohesion: 0.2
 Nodes (9): cypherLines, data, fileType, id, label, outFile, source, sourceFile (+1 more)
 
 ### Community 14 - "Community 14"
-Cohesion: 0.11
-Nodes (16): CrashRecoveryEngine, CrashRecoveryOptions, board, chk, migrator, recoveredTask, recoveryEngine, summary (+8 more)
+Cohesion: 0.21
+Nodes (9): CrashRecoveryOptions, OrphanDetectionReport, OrphanDetector, RecoveryAnomaly, RecoveryAnomalySchema, RecoveryAnomalyType, RecoveryAnomalyTypeSchema, RecoveryRecord (+1 more)
 
 ### Community 15 - "Community 15"
 Cohesion: 0.11
@@ -1125,8 +1150,8 @@ Cohesion: 0.11
 Nodes (18): 403. IMPLEMENTATION ORDER — PART 2, code:text (ModelAdapter), code:text (credential manager), code:text (agent roles), code:text (ToolDefinition), code:text (MCP registry), code:text (local), code:text (task board) (+10 more)
 
 ### Community 18 - "Community 18"
-Cohesion: 0.11
-Nodes (12): ActorType, ToolSpec, gateway, registry, registry, ToolExecutionContext, ToolHandler, ToolRegistration (+4 more)
+Cohesion: 0.08
+Nodes (17): gateway, registry, ToolGateway, registry, ToolRegistry, gateway, poisoned, registry (+9 more)
 
 ### Community 19 - "Community 19"
 Cohesion: 0.25
@@ -1137,16 +1162,16 @@ Cohesion: 0.07
 Nodes (28): AuthProfile, AuthProfileSchema, CredentialReference, CredentialReferenceSchema, CredentialStatus, CredentialStatusSchema, HealthStatus, HealthStatusSchema (+20 more)
 
 ### Community 21 - "Community 21"
-Cohesion: 0.07
-Nodes (28): Checkpoint, CheckpointManifest, CheckpointManifestSchema, CheckpointSchema, CheckpointType, CheckpointTypeSchema, freezeCheckpoint(), checkpoint (+20 more)
+Cohesion: 0.09
+Nodes (27): Checkpoint, CheckpointManifest, CheckpointManifestSchema, CheckpointSchema, CheckpointType, CheckpointTypeSchema, freezeCheckpoint(), checkpoint (+19 more)
 
 ### Community 22 - "Community 22"
-Cohesion: 0.08
-Nodes (32): AutoCompactParams, CompactionOptions, ExecuteCompactionParams, CompactionArtifactRef, CompactionArtifactRefSchema, CompactionPreview, CompactionPreviewSchema, CompactionResult (+24 more)
+Cohesion: 0.12
+Nodes (20): CandidateContextItem, ContextAssemblyRequest, ContextInspectionReport, ToolResultEntry, ToolSchemaEntry, validated, ContextDecision, ContextDecisionSchema (+12 more)
 
 ### Community 23 - "Community 23"
-Cohesion: 0.17
-Nodes (14): ToolExecutionError, ToolExecutionErrorSchema, ToolExecutionStatus, ToolExecutionStatusSchema, ToolInvocationRequest, ToolInvocationRequestSchema, ToolMetadata, ToolObservation (+6 more)
+Cohesion: 0.12
+Nodes (18): ToolExecutionError, ToolExecutionErrorSchema, ToolExecutionStatus, ToolExecutionStatusSchema, ToolInvocationRequest, ToolInvocationRequestSchema, ToolMetadata, ToolObservation (+10 more)
 
 ### Community 24 - "Community 24"
 Cohesion: 0.13
@@ -1161,20 +1186,20 @@ Cohesion: 0.33
 Nodes (5): changedFiles, episode, match, sc, status
 
 ### Community 28 - "Community 28"
-Cohesion: 0.14
-Nodes (10): ToolGateway, gateway, poisoned, registry, res, schema, approvalManager, gateway (+2 more)
+Cohesion: 0.1
+Nodes (31): readRes, retrieveRes, [saveArtifact, readArtifact], saveRes, [storeMemory, retrieveMemory], storeRes, ArtifactToolsOptions, createArtifactTools() (+23 more)
 
 ### Community 29 - "Community 29"
 Cohesion: 0.15
 Nodes (13): 401. PART 2 ACCEPTANCE CRITERIA, Agents, API keys, Execution, Hooks, Integrations, MCP, Models (+5 more)
 
 ### Community 30 - "Community 30"
-Cohesion: 0.05
-Nodes (42): Attachment, AttachmentSchema, AttachmentSource, AttachmentSourceSchema, attachment, parsed, sampleSha256, Project (+34 more)
+Cohesion: 0.15
+Nodes (9): Attachment, AttachmentSchema, AttachmentSource, AttachmentSourceSchema, attachment, parsed, sampleSha256, AttachmentRepository (+1 more)
 
 ### Community 31 - "Community 31"
-Cohesion: 0.18
-Nodes (13): AccessRequestContext, AccessValidationResult, AuthorityClass, AuthorityClassSchema, SecurityMetadata, SecurityMetadataSchema, SensitivityLevel, SensitivityLevelSchema (+5 more)
+Cohesion: 0.31
+Nodes (8): AuthorityClassSchema, SecurityMetadata, SecurityMetadataSchema, SensitivityLevelSchema, authorities, parsed, validMeta, TrustLevelSchema
 
 ### Community 32 - "Community 32"
 Cohesion: 0.13
@@ -1190,15 +1215,15 @@ Nodes (11): 4. PRODUCT PRINCIPLES, PRIN-001 — Durable over ephemeral, PRIN-002
 
 ### Community 35 - "Community 35"
 Cohesion: 0.05
-Nodes (39): 1. Active Phase Backlog (P1 — Durable Runtime Foundation), 1. Active Phase Backlog (P2 — Content / Context / Memory / Retrieval), 1. Active Phase Backlog (P3 — Model / Provider / Credential Plane), 1. Active Phase Backlog (P4 — Policy / Tools / Execution), 2. Completed Milestones (Recent), Active Tasks Registry — Anantham V2, [P1.5 — Durable Session Resume Engine (`/resume`)](file:///C:/herness/docs/discovery/current-state.md#L10), [P2.1 — Multimodal Content Ingestion & Parsers](file:///C:/herness/docs/discovery/current-state.md#L10) (+31 more)
+Nodes (41): 1. Active Phase Backlog (P1 — Durable Runtime Foundation), 1. Active Phase Backlog (P2 — Content / Context / Memory / Retrieval), 1. Active Phase Backlog (P3 — Model / Provider / Credential Plane), 1. Active Phase Backlog (P4 — Policy / Tools / Execution), 2. Completed Milestones (Recent), Active Tasks Registry — Anantham V2, [P1.5 — Durable Session Resume Engine (`/resume`)](file:///C:/herness/docs/discovery/current-state.md#L10), [P2.1 — Multimodal Content Ingestion & Parsers](file:///C:/herness/docs/discovery/current-state.md#L10) (+33 more)
 
 ### Community 36 - "Community 36"
 Cohesion: 0.2
 Nodes (10): 401. MASTER DEFINITION OF DONE, Agents, Code intelligence, Models, Operations, Orchestration, Product, Security (+2 more)
 
 ### Community 37 - "Community 37"
-Cohesion: 0.11
-Nodes (18): CandidateContextItem, MemoryItem, MemoryItemSchema, MemoryPriority, MemoryPrioritySchema, MemoryScope, MemoryScopeSchema, memory (+10 more)
+Cohesion: 0.19
+Nodes (14): MemoryItemSchema, MemoryPriority, MemoryPrioritySchema, MemoryScope, MemoryScopeSchema, memory, parsed, scopes (+6 more)
 
 ### Community 38 - "Community 38"
 Cohesion: 0.12
@@ -1219,10 +1244,6 @@ Nodes (7): Anantham V2 — Project Rules & Ingestion Governance, code:text (1. S
 ### Community 43 - "Community 43"
 Cohesion: 0.14
 Nodes (13): engine, engine1, engine2, eventRepo, integrity, migrator, migrator1, projectRepo (+5 more)
-
-### Community 44 - "Community 44"
-Cohesion: 0.26
-Nodes (4): IdempotencyStore, gateway, idempotencyStore, registry
 
 ### Community 46 - "Community 46"
 Cohesion: 0.29
@@ -1257,15 +1278,15 @@ Cohesion: 0.29
 Nodes (6): 1. System Identity & Mission, 2. Core Architectural Pillars, 3. Technology Stack & Directory Structure, 4. Invariant Rules, code:text (C:/herness/), Project Context — Anantham V2
 
 ### Community 54 - "Community 54"
-Cohesion: 0.24
-Nodes (5): accumulatedText, adapter, chunks, adapter, parsedArgs
+Cohesion: 0.5
+Nodes (3): accumulatedText, adapter, chunks
 
 ### Community 55 - "Community 55"
-Cohesion: 0.29
-Nodes (6): ToolDefinitionSchema, parsed, validChunk, validReq, validResp, validTool
+Cohesion: 0.06
+Nodes (21): now, projectRepo, sessionRepo, CompactionEngine, now, preview, projectRepo, sessionRepo (+13 more)
 
 ### Community 56 - "Community 56"
-Cohesion: 0.16
+Cohesion: 0.15
 Nodes (7): ContentReferenceManager, StoredBlobDescriptor, descriptor, payload, rawPath, readBuffer, testDir
 
 ### Community 57 - "Community 57"
@@ -2033,52 +2054,56 @@ Cohesion: 0.29
 Nodes (7): 2026-08-30 21:00 — TASK-P1.3-EVENT-STATE, 2026-08-30 21:15 — TASK-P1.4-CHECKPOINTS-RECOVERY, 2026-08-30 21:50 — TASK-P1.5-RESUME-ENGINE, 2026-08-30 22:30 — TASK-P2.1-CONTENT-INGESTION, 2026-08-30 22:35 — TASK-P2.1-CONTENT-FOUNDATION, 5. CHANGE LOG, code:text (## YYYY-MM-DD HH:MM — TASK-ID)
 
 ### Community 310 - "Community 310"
-Cohesion: 0.08
-Nodes (19): boardA, boardB, migrator, projectRepo, sessionRepo, streamA, streamB, summaryA (+11 more)
+Cohesion: 0.1
+Nodes (18): boardA, boardB, migrator, projectRepo, sessionRepo, streamA, streamB, summaryA (+10 more)
 
 ### Community 331 - "Community 331"
 Cohesion: 0.1
-Nodes (24): CapabilityProfileStatus, CapabilityProfileStatusSchema, CapabilityRequirement, CapabilityRequirementSchema, CapabilityResolutionResult, CapabilityResolutionResultSchema, InsufficientLimit, InsufficientLimitSchema (+16 more)
+Nodes (25): CapabilityProfileStatus, CapabilityProfileStatusSchema, CapabilityRequirement, CapabilityRequirementSchema, CapabilityResolutionResult, CapabilityResolutionResultSchema, InsufficientLimit, InsufficientLimitSchema (+17 more)
 
 ### Community 335 - "Community 335"
-Cohesion: 0.07
-Nodes (19): EventStore, ancestry, b1Node, branches, events, migrator, { newSession, forkEvent }, parentAfter (+11 more)
+Cohesion: 0.12
+Nodes (11): ancestry, b1Node, branches, events, migrator, { newSession, forkEvent }, parentAfter, parentBefore (+3 more)
 
 ### Community 349 - "Community 349"
-Cohesion: 0.06
-Nodes (35): ModelCapabilityProfile, cred, jsonStr, CLAUDE_3_5_SONNET_PROFILE, GEMINI_1_5_PRO_PROFILE, GPT_4O_PROFILE, TEXT_ONLY_LOCAL_PROFILE, CapabilityResolver (+27 more)
+Cohesion: 0.05
+Nodes (42): events, now, cred, jsonStr, invalidProfile, res, resNormal, resStrict (+34 more)
 
 ### Community 356 - "Community 356"
-Cohesion: 0.05
-Nodes (30): check, rawBinary, result, zipHeader, entries, excessiveEntries, maliciousEntries, result (+22 more)
+Cohesion: 0.08
+Nodes (20): entries, excessiveEntries, maliciousEntries, result, safeEntries, ArchiveBombOptions, ArchiveEntryMeta, ContentGuards (+12 more)
 
 ### Community 365 - "Community 365"
-Cohesion: 0.06
-Nodes (41): ActorTypeSchema, EventType, EventTypes, HarnessEvent, HarnessEventSchema, actors, parsed, userEvent (+33 more)
+Cohesion: 0.13
+Nodes (21): ActorType, ActorTypeSchema, EventType, EventTypes, HarnessEvent, HarnessEventSchema, actors, parsed (+13 more)
 
 ### Community 366 - "Community 366"
-Cohesion: 0.07
-Nodes (33): ContentIngestRequest, SecretDetectionResult, SecretFinding, buffer, pngHeader, result, wavBuffer, sampleImageContent (+25 more)
+Cohesion: 0.1
+Nodes (16): ContentIngestionEngine, ContentIngestRequest, binData, largeBuffer, buffer, pngHeader, result, wavBuffer (+8 more)
 
 ### Community 369 - "Community 369"
-Cohesion: 0.13
-Nodes (9): decision, engine, PolicyEngine, decision, engine, decision, engine, decision (+1 more)
+Cohesion: 0.1
+Nodes (13): decision, engine, PolicyEngine, decision, engine, decision, engine, decision (+5 more)
 
 ### Community 370 - "Community 370"
-Cohesion: 0.29
-Nodes (6): invalidProfile, res, resNormal, resStrict, staleProfile, unknownProfile
+Cohesion: 0.1
+Nodes (22): ReconstructedSessionState, reconstructSessionState(), PendingApprovalRestorer, events, nowMs, result, PendingApprovalItem, PendingApprovalItemSchema (+14 more)
 
 ### Community 375 - "Community 375"
-Cohesion: 0.13
-Nodes (19): ApprovalRecord, ApprovalRecordSchema, ApprovalStatus, ApprovalStatusSchema, PolicyDecision, PolicyDecisionSchema, PolicyDecisionType, PolicyDecisionTypeSchema (+11 more)
+Cohesion: 0.07
+Nodes (33): ApprovalRecord, ApprovalRecordSchema, ApprovalStatus, ApprovalStatusSchema, PolicyDecision, PolicyDecisionSchema, PolicyDecisionType, PolicyDecisionTypeSchema (+25 more)
+
+### Community 376 - "Community 376"
+Cohesion: 0.1
+Nodes (11): now, projectRepo, sessionRepo, validated, EventStore, approvalManager, events, gateway (+3 more)
 
 ### Community 381 - "Community 381"
 Cohesion: 0.22
 Nodes (6): AnthropicCompatibleAdapter, adapter, chunks, createReadableStream(), mockFetch(), sseLines
 
 ### Community 382 - "Community 382"
-Cohesion: 0.05
-Nodes (34): remainingFiles, newManager, newRepo, now, payload, projectRepo, sessionRepo, filePath (+26 more)
+Cohesion: 0.06
+Nodes (33): remainingFiles, newManager, newRepo, now, payload, projectRepo, sessionRepo, filePath (+25 more)
 
 ### Community 383 - "Community 383"
 Cohesion: 0.22
@@ -2089,8 +2114,8 @@ Cohesion: 0.1
 Nodes (17): ModelModality, ModelModalityProfile, ModelModalityProfileSchema, ModelModalitySchema, RepresentationSelector, SelectionResult, longText, pngHeader (+9 more)
 
 ### Community 385 - "Community 385"
-Cohesion: 0.29
-Nodes (6): badJson, buffer, jsonStr, result, rows, tableRep
+Cohesion: 0.2
+Nodes (8): badJson, buffer, jsonStr, result, rows, tableRep, StructuredDataParser, StructuredParseResult
 
 ### Community 387 - "Community 387"
 Cohesion: 0.15
@@ -2101,45 +2126,101 @@ Cohesion: 0.17
 Nodes (11): byProject, committed, committed1, committed2, e1, e2, event, migrator (+3 more)
 
 ### Community 390 - "Community 390"
-Cohesion: 0.4
-Nodes (4): approvalManager, gateway, policyEngine, registry
+Cohesion: 0.1
+Nodes (12): adapter, events, now, allEvents, context, manager1, manager2, now (+4 more)
 
 ### Community 392 - "Community 392"
-Cohesion: 0.25
-Nodes (8): ProvenanceValidationResult, ExtractorMetadata, ExtractorMetadataSchema, Provenance, ProvenanceSchema, invalid, parsed, prov
+Cohesion: 0.17
+Nodes (9): ProvenanceManager, ProvenanceValidationResult, ExtractorMetadata, ExtractorMetadataSchema, Provenance, ProvenanceSchema, invalid, parsed (+1 more)
 
 ### Community 393 - "Community 393"
-Cohesion: 0.5
-Nodes (3): item, omittedReasons, selectedIds
+Cohesion: 0.17
+Nodes (7): ContextEngine, report, item, omittedReasons, selectedIds, omittedSourceIds, selectedSourceIds
+
+### Community 395 - "Community 395"
+Cohesion: 0.15
+Nodes (15): SecretDetectionResult, SecretFinding, sampleImageContent, ContentKind, ContentKindSchema, ContentObject, ContentObjectSchema, ContentRepresentationSchema (+7 more)
 
 ### Community 400 - "Community 400"
-Cohesion: 0.24
-Nodes (8): allMigrations, Migration, migration001, migration002, history, result, secondRun, tamperedMigration
+Cohesion: 0.14
+Nodes (14): allMigrations, Migration, migration001, migration002, AppliedMigration, history, result, secondRun (+6 more)
+
+### Community 401 - "Community 401"
+Cohesion: 0.11
+Nodes (8): stmt, SqliteEngine, result, rows, events, gateway, now, registry
+
+### Community 402 - "Community 402"
+Cohesion: 0.17
+Nodes (13): Project, ProjectSchema, ProjectStatus, ProjectStatusSchema, parsed, profiles, project, statuses (+5 more)
+
+### Community 410 - "Community 410"
+Cohesion: 0.15
+Nodes (10): adapter, eventsAfter, now, projectRepo, sessionRepo, events, gateway, now (+2 more)
+
+### Community 411 - "Community 411"
+Cohesion: 0.12
+Nodes (16): artifact, attachment, checkpoint, event1, event2, events, found, foundChk (+8 more)
+
+### Community 415 - "Community 415"
+Cohesion: 0.19
+Nodes (11): Session, SessionSchema, SessionStatus, SessionStatusSchema, parsed, session, statuses, SessionRow (+3 more)
+
+### Community 419 - "Community 419"
+Cohesion: 0.16
+Nodes (10): check, rawBinary, result, zipHeader, ContentRepresentation, ArchiveEntry, ArchiveParser, ArchiveParseResult (+2 more)
 
 ### Community 725 - "Community 725"
-Cohesion: 0.03
-Nodes (79): now, projectRepo, sessionRepo, CompactionEngine, now, projectRepo, sessionRepo, validated (+71 more)
+Cohesion: 0.06
+Nodes (38): MemoryItem, ActiveSubscription, EventListener, EventSubscriptionFilter, StreamQueryOptions, memoryCandidates, now, projectRepo (+30 more)
 
 ### Community 746 - "Community 746"
-Cohesion: 0.13
-Nodes (13): PolicyEvaluationContext, context, granted, manager, originalContext, record, reval, tamperedContext (+5 more)
+Cohesion: 0.23
+Nodes (11): AutoCompactParams, CompactionOptions, ExecuteCompactionParams, CompactionArtifactRef, CompactionArtifactRefSchema, CompactionPreview, CompactionPreviewSchema, CompactionResult (+3 more)
+
+### Community 749 - "Community 749"
+Cohesion: 0.27
+Nodes (3): freezeEvent(), EventRepository, EventRow
+
+### Community 819 - "Community 819"
+Cohesion: 0.14
+Nodes (8): SessionSummaryProjection, CrashRecoveryEngine, board, chk, migrator, recoveredTask, recoveryEngine, summary
+
+### Community 865 - "Community 865"
+Cohesion: 0.2
+Nodes (9): claim, claim1, claim2, hb, leaseManager, migrator, released, result (+1 more)
+
+### Community 991 - "Community 991"
+Cohesion: 0.33
+Nodes (5): delRes, listRes, readRes, statRes, writeRes
+
+### Community 1008 - "Community 1008"
+Cohesion: 0.4
+Nodes (3): ToolPruneOptions, ToolPruneResult, ToolResultPruner
+
+### Community 1030 - "Community 1030"
+Cohesion: 0.4
+Nodes (4): [gitStatus, , gitLog, , worktreeList], logRes, statusRes, wtRes
+
+### Community 1035 - "Community 1035"
+Cohesion: 0.5
+Nodes (3): res, res1, res2
 
 ## Knowledge Gaps
-- **2359 isolated node(s):** `name`, `version`, `description`, `type`, `main` (+2354 more)
+- **2388 isolated node(s):** `name`, `version`, `description`, `type`, `main` (+2383 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **751 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **753 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `SqliteEngine` connect `Community 725` to `Community 97`, `Community 4`, `Community 37`, `Community 389`, `Community 11`, `Community 12`, `Community 365`, `Community 14`, `Community 335`, `Community 43`, `Community 400`, `Community 21`, `Community 310`, `Community 30`, `Community 349`, `Community 382`?**
+- **Why does `SqliteEngine` connect `Community 401` to `Community 4`, `Community 389`, `Community 390`, `Community 11`, `Community 12`, `Community 14`, `Community 400`, `Community 402`, `Community 21`, `Community 410`, `Community 411`, `Community 30`, `Community 415`, `Community 37`, `Community 43`, `Community 819`, `Community 310`, `Community 55`, `Community 335`, `Community 725`, `Community 349`, `Community 97`, `Community 865`, `Community 749`, `Community 370`, `Community 376`, `Community 382`?**
   _High betweenness centrality (0.012) - this node is a cross-community bridge._
-- **Why does `MigrationEngine` connect `Community 725` to `Community 97`, `Community 4`, `Community 389`, `Community 43`, `Community 11`, `Community 365`, `Community 14`, `Community 335`, `Community 400`, `Community 12`, `Community 21`, `Community 310`, `Community 30`, `Community 349`, `Community 382`?**
+- **Why does `EventStore` connect `Community 376` to `Community 4`, `Community 389`, `Community 390`, `Community 11`, `Community 14`, `Community 400`, `Community 401`, `Community 23`, `Community 410`, `Community 415`, `Community 819`, `Community 310`, `Community 55`, `Community 335`, `Community 725`, `Community 349`, `Community 97`, `Community 746`, `Community 365`, `Community 370`, `Community 375`?**
   _High betweenness centrality (0.006) - this node is a cross-community bridge._
-- **Why does `SessionRepository` connect `Community 725` to `Community 97`, `Community 4`, `Community 11`, `Community 12`, `Community 365`, `Community 14`, `Community 21`, `Community 349`, `Community 382`?**
+- **Why does `MockProviderAdapter` connect `Community 349` to `Community 410`, `Community 1037`, `Community 54`, `Community 7`?**
   _High betweenness centrality (0.006) - this node is a cross-community bridge._
 - **What connects `name`, `version`, `description` to the rest of the system?**
-  _2359 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _2388 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.02 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**

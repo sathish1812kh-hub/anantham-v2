@@ -6,15 +6,21 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P4 — Policy / Tools / Execution)
 
-### [P4.3 — Native Tools (Filesystem, Search, Process, Shell, Git, Worktree, Artifact, Memory, Browser)](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P4.4 — Executors (Local, Sandbox Controls, Resource Limits, Process Lifecycle)](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Principal Tool & Systems Architect
-- **Description**: Implement first-class Native Tools for Anantham V2 with strict sandboxing, path isolation, streaming outputs, security policies, and ToolGateway compliance.
-- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.2`.
+- **Owner**: Principal Runtime & Systems Architect
+- **Description**: Implement first-class Execution boundary drivers (Local, Docker sandbox, container resource limits, process supervisor, and remote interface).
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.3`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P4.3-NATIVE-TOOLS — Native Tools Suite](file:///C:/herness/src/tools/native/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Tool & Systems Architect
+- **Completed Date**: 2026-08-31
+- **Verification**: 306/306 tests passing across 138 test suites in Vitest. First-class Native Tools suite behind ToolGateway: Filesystem (read_file, write_file, list_dir, file_stat, delete_file), Search (search_text, find_files), Process/Shell (run_command), Git (git_status, git_diff, git_log, git_commit), Worktree (worktree_list, worktree_add, worktree_remove), Artifacts (save_artifact, read_artifact), Memory (store_memory, retrieve_memory), and Network/Browser (fetch_url). Enforced path traversal defense, SSRF boundary, prototype pollution guards, secret scrubbing, and SQLite EventStore audit durability.
 
 ### [TASK-P4.2-TOOLGATEWAY — ToolGateway, Schema Validation & Idempotency](file:///C:/herness/src/tools/index.ts)
 - **Status**: `COMPLETED`

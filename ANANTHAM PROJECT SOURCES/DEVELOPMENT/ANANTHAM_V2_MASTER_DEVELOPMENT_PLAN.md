@@ -306,15 +306,15 @@ Every update MUST include:
 - [x] observation/artifact recording
 
 ### P4.3 Native tools
-- [ ] filesystem
-- [ ] search
-- [ ] process
-- [ ] shell
-- [ ] git
-- [ ] worktree
-- [ ] artifact
-- [ ] memory
-- [ ] browser where applicable
+- [x] filesystem
+- [x] search
+- [x] process
+- [x] shell
+- [x] git
+- [x] worktree
+- [x] artifact
+- [x] memory
+- [x] browser where applicable
 
 ### P4.4 Executors
 - [ ] local

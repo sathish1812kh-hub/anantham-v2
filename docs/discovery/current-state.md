@@ -4,18 +4,18 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `6283da4`
-- **Generated**: `2026-08-31T01:59:12Z`
+- **Project Commit**: `d54037d`
+- **Generated**: `2026-08-31T02:16:48Z`
 - **Current Release**: `v2.0.0-alpha.1`
 - **Current Phase**: `P4 — POLICY / TOOLS / EXECUTION`
-- **Current Task**: `P4.3 — Native Tools (Filesystem, Search, Process, Shell, Git, Worktree, Artifact, Memory, Browser)`
-- **Last Completed Task**: `TASK-P4.2-TOOLGATEWAY — ToolGateway, Schema Validation & Idempotency`
+- **Current Task**: `P4.4 — Executors (Local, Sandbox Controls, Resource Limits, Process Lifecycle)`
+- **Last Completed Task**: `TASK-P4.3-NATIVE-TOOLS — Native Tools Suite`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`
   - `0 type check errors under strict: true.`
 - **Pending Approvals**:
-  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.5, P4.1-P4.2 Implemented Clean & Verified).`
+  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.5, P4.1-P4.3 Implemented Clean & Verified).`
 - **Recently Completed Milestones**:
   - [P1.1-CORE-DOMAIN](file:///C:/herness/src/domain/index.ts) (12 core domain models, runtime Zod validation schemas, state machines, immutability)
   - [P1.2-PERSISTENCE-ENGINE](file:///C:/herness/src/persistence/index.ts) (Native `node:sqlite` engine, WAL mode, synchronous=FULL RPO-0 durability, MigrationEngine, 8 repositories)
@@ -35,6 +35,7 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
   - [P3.5-INTEGRATIONS](file:///C:/herness/src/models/index.ts) (ProviderAdapters for OpenRouter, OpenAI, Anthropic, Gemini, DeepSeek, Local/Custom vLLM/Ollama, ProviderRegistry, streaming SSE, tool call parsing, SSRF boundary, prototype pollution defense)
   - [P4.1-POLICY-ENGINE](file:///C:/herness/src/policy/index.ts) (Authoritative PolicyEngine, precedence hierarchy, fail-closed evaluation, zero-secret-leakage, RiskClassifier LOW/MEDIUM/HIGH/CRITICAL, ApprovalManager with SHA-256 TOCTOU binding, expiration/drift revalidation, immutable SQLite audit events)
   - [P4.2-TOOLGATEWAY](file:///C:/herness/src/tools/index.ts) (Authoritative ToolGateway boundary, ToolRegistry, strict runtime schema validation, AbortController timeouts, IdempotencyStore caching/deduplication, normalized error mappings, and immutable SQLite event recording)
+  - [P4.3-NATIVE-TOOLS](file:///C:/herness/src/tools/native/index.ts) (Filesystem, Search, Process/Shell, Git, Worktree, Artifact, Memory, and Network/Browser tools, safe path containment, SSRF defense, secret scrubbing, and SQLite audit durability)
   - [CHATGPT-ORCHESTRATION-KT](file:///C:/herness/docs/discovery/CHATGPT_ORCHESTRATION_KT.md) (Complete Knowledge Transfer package, 7 Pillars, 11-Phase Lifecycle, Source Hierarchy, commands)
 - **Synchronization Status**:
   - **Type Safety**: `100% PASSED (0 TypeScript compilation errors under strict: true)`
@@ -52,5 +53,6 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
   - **Model Plane**: `SYNCED (ModelAdapter, ProviderAdapter, MockProviderAdapter, CapabilityResolver, CapabilityProfiles, ModelRouter, KeyPoolManager, SecretStore, ProviderHealthTracker, ProviderRegistry, OpenAI/Anthropic/Gemini/OpenRouter Adapters)`
   - **Policy Plane**: `SYNCED (PolicyEngine, RiskClassifier, ApprovalManager, TOCTOU Argument Digest, PolicyDecision, ApprovalRecord)`
   - **Tool Execution Plane**: `SYNCED (ToolGateway, ToolRegistry, IdempotencyStore, Schema Validation, Timeout Enforcer, Observation Recording)`
-  - **Automated Test Suites**: `100% PASSED (289/289 tests passing across 128 test files)`
+  - **Native Tools Plane**: `SYNCED (Filesystem, Search, Process/Shell, Git, Worktree, Artifact, Memory, Network/Browser, Path Containment)`
+  - **Automated Test Suites**: `100% PASSED (306/306 tests passing across 138 test files)`
   - **Quality Scorecard**: `1000/1000 CERTIFIED GOLD STANDARD`
