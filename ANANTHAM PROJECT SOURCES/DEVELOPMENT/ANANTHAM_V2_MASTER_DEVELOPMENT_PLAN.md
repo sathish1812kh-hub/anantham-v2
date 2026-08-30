@@ -273,9 +273,9 @@ Every update MUST include:
 - [x] provider health
 - [x] cooldown/fairness
 - [x] retry/failover
-- [ ] OpenRouter
-- [ ] direct providers
-- [ ] custom/local endpoints
+- [x] OpenRouter
+- [x] direct providers
+- [x] custom/local endpoints
 - [x] streaming
 - [x] tool calling
 - [x] usage accounting

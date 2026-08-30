@@ -7,3 +7,8 @@ export * from "./model-router.js";
 export * from "./secret-store.js";
 export * from "./provider-health-tracker.js";
 export * from "./key-pool-manager.js";
+export * from "./provider-registry.js";
+export * from "./adapters/openai-compatible-adapter.js";
+export * from "./adapters/anthropic-compatible-adapter.js";
+export * from "./adapters/gemini-adapter.js";
+export * from "./adapters/openrouter-adapter.js";

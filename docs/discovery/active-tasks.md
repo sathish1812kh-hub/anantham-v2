@@ -4,17 +4,23 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ---
 
-## 1. Active Phase Backlog (P3 — Model / Provider / Credential Plane)
+## 1. Active Phase Backlog (P4 — Policy / Tools / Execution)
 
-### [P3.5 — OpenRouter, Direct Providers & Custom Endpoints](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P4.1 — Policy Engine, Risk Classification & Approval Gates](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Principal Integrations Architect
-- **Description**: Implement OpenRouter aggregation adapter, direct vendor adapters (OpenAI, Anthropic, Gemini), and local/custom endpoints (Ollama/vLLM) with streaming and tool normalization.
-- **Dependencies**: `P3.1`, `P3.2`, `P3.3`, `P3.4`.
+- **Owner**: Principal Security & Policy Architect
+- **Description**: Implement authoritative policy engine, data sensitivity evaluation, risk classification, human-in-the-loop approval gates, audit recording, and project isolation.
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P3.5-INTEGRATIONS — OpenRouter, Direct Providers & Custom Endpoints](file:///C:/herness/src/models/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Integrations Architect
+- **Completed Date**: 2026-08-31
+- **Verification**: 244/244 tests passing across 108 test suites in Vitest. First-class ProviderAdapters for OpenRouter, OpenAI, Anthropic, Gemini, DeepSeek, Local/Custom (vLLM/Ollama), and OpenAI-compatible gateways. Complete streaming SSE parsing, tool call normalization, token accounting, typed error mappings, SSRF scheme boundary enforcement, prototype pollution defense, and zero-secret leakage.
 
 ### [TASK-P3.4-AUTH-HEALTH — Auth Profiles, Key Pools, Rate Limits & Provider Health](file:///C:/herness/src/models/index.ts)
 - **Status**: `COMPLETED`
