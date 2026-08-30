@@ -30,7 +30,7 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 - **Status**: `COMPLETED`
 - **Owner**: Principal Recovery Architect
 - **Completed Date**: 2026-08-30
-- **Verification**: 75/75 tests passing across 28 test suites in Vitest. Checkpoint manifests, cryptographic validation, LeaseManager, OrphanDetector, and CrashRecoveryEngine.
+- **Verification**: 77/77 tests passing across 29 test suites in Vitest. Checkpoint manifests, cryptographic validation, LeaseManager, OrphanDetector, and CrashRecoveryEngine with real disk failure matrix simulation.
 
 ### [TASK-P1.3-EVENT-STATE — EventStore, Reducers, Projections & Branching](file:///C:/herness/src/event-state/index.ts)
 - **Status**: `COMPLETED`

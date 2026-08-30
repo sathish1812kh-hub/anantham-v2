@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\governance\\scorecard.json": {
-    "mtime": 1788105416.8164687,
-    "ast_hash": "23d682284185036caecf18c255d8da74",
+    "mtime": 1788105922.7871356,
+    "ast_hash": "da52462c92a4f1395966678a781e337c",
     "semantic_hash": ""
   },
   "C:\\herness\\scripts\\certification-scorecard.ps1": {
@@ -419,6 +419,11 @@
     "ast_hash": "4fc67931fab8ee498400cfca0653805a",
     "semantic_hash": ""
   },
+  "C:\\herness\\tests\\recovery\\crash-simulation-disk.test.ts": {
+    "mtime": 1788105847.3299208,
+    "ast_hash": "2f5e47fff026b6931012141dbfb2b3b3",
+    "semantic_hash": ""
+  },
   "C:\\herness\\tests\\recovery\\lease-manager.test.ts": {
     "mtime": 1788104586.81828,
     "ast_hash": "7ee980349027290cba3da0074dd428c4",
@@ -475,8 +480,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\ANANTHAM PROJECT SOURCES\\DEVELOPMENT\\ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md": {
-    "mtime": 1788104709.8751183,
-    "ast_hash": "5d1ca3523704feda2c2f57a34e29279f",
+    "mtime": 1788105905.6051636,
+    "ast_hash": "79be72e73b58d3de294e68192d8776b1",
     "semantic_hash": ""
   },
   "C:\\herness\\ANANTHAM PROJECT SOURCES\\prd\\ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md": {
@@ -495,13 +500,13 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\active-tasks.md": {
-    "mtime": 1788104717.8309634,
-    "ast_hash": "f968ec1a0aa34b0f646143b91f56717d",
+    "mtime": 1788105889.1612718,
+    "ast_hash": "d386afa818a74e099b657b30a2c0697f",
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\current-state.md": {
-    "mtime": 1788104745.8863635,
-    "ast_hash": "5efcfcc82ee599f67956971bc11808ec",
+    "mtime": 1788105883.7720108,
+    "ast_hash": "de916321aef9d6a952716f5eb3ad1f90",
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\decision-log.md": {

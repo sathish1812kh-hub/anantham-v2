@@ -4,8 +4,8 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `aa88813`
-- **Generated**: `2026-08-30T21:27:03Z`
+- **Project Commit**: `6724f75`
+- **Generated**: `2026-08-30T21:35:31Z`
 - **Current Release**: `v2.0.0-alpha.1`
 - **Current Phase**: `P1 — DURABLE RUNTIME FOUNDATION`
 - **Current Task**: `P1.5 — Durable Session Resume Engine (/resume, durable reconstruction, task/workflow restoration, pending approval restoration, artifact/worktree restoration)`
@@ -28,5 +28,5 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
   - **Projections**: `SYNCED (SessionSummaryProjection, TaskBoardProjection)`
   - **Session Tree**: `SYNCED (Hierarchical zero-parent-mutation branching)`
   - **Recovery Engine**: `SYNCED (CheckpointManifestBuilder, CheckpointValidator, LeaseManager, OrphanDetector, CrashRecoveryEngine)`
-  - **Automated Test Suites**: `100% PASSED (75/75 tests passing across 28 test files)`
+  - **Automated Test Suites**: `100% PASSED (77/77 tests passing across 29 test files)`
   - **Quality Scorecard**: `1000/1000 CERTIFIED GOLD STANDARD`

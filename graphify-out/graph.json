@@ -1080,7 +1080,7 @@
       "source_file": "src/domain/artifact.ts",
       "source_location": "L1",
       "id": "src_domain_artifact_ts",
-      "community": 8,
+      "community": 44,
       "norm_label": "artifact.ts"
     },
     {
@@ -1089,7 +1089,7 @@
       "source_file": "src/domain/artifact.ts",
       "source_location": "L7",
       "id": "domain_artifact_artifacttypeschema",
-      "community": 8,
+      "community": 44,
       "norm_label": "artifacttypeschema"
     },
     {
@@ -1098,7 +1098,7 @@
       "source_file": "src/domain/artifact.ts",
       "source_location": "L28",
       "id": "domain_artifact_artifacttype",
-      "community": 8,
+      "community": 44,
       "norm_label": "artifacttype"
     },
     {
@@ -1107,7 +1107,7 @@
       "source_file": "src/domain/artifact.ts",
       "source_location": "L33",
       "id": "domain_artifact_artifactverificationschema",
-      "community": 8,
+      "community": 44,
       "norm_label": "artifactverificationschema"
     },
     {
@@ -1116,7 +1116,7 @@
       "source_file": "src/domain/artifact.ts",
       "source_location": "L39",
       "id": "domain_artifact_artifactverification",
-      "community": 8,
+      "community": 44,
       "norm_label": "artifactverification"
     },
     {
@@ -1125,7 +1125,7 @@
       "source_file": "src/domain/artifact.ts",
       "source_location": "L45",
       "id": "domain_artifact_artifactschema",
-      "community": 8,
+      "community": 44,
       "norm_label": "artifactschema"
     },
     {
@@ -1134,7 +1134,7 @@
       "source_file": "src/domain/artifact.ts",
       "source_location": "L60",
       "id": "domain_artifact_artifact",
-      "community": 8,
+      "community": 44,
       "norm_label": "artifact"
     },
     {
@@ -1521,7 +1521,7 @@
       "source_file": "src/domain/event.ts",
       "source_location": "L110",
       "id": "domain_event_freezeevent",
-      "community": 5,
+      "community": 20,
       "norm_label": "freezeevent()"
     },
     {
@@ -1530,7 +1530,7 @@
       "source_file": "src/domain/event.ts",
       "source_location": "L131",
       "id": "domain_event_iseventfrozen",
-      "community": 5,
+      "community": 21,
       "norm_label": "iseventfrozen()"
     },
     {
@@ -1881,7 +1881,7 @@
       "source_file": "src/domain/task.ts",
       "source_location": "L31",
       "id": "domain_task_taskpriority",
-      "community": 11,
+      "community": 5,
       "norm_label": "taskpriority"
     },
     {
@@ -1935,7 +1935,7 @@
       "source_file": "src/event-state/event-store.ts",
       "source_location": "L1",
       "id": "src_event_state_event_store_ts",
-      "community": 4,
+      "community": 20,
       "norm_label": "event-store.ts"
     },
     {
@@ -1944,7 +1944,7 @@
       "source_file": "src/event-state/event-store.ts",
       "source_location": "L5",
       "id": "event_state_event_store_streamqueryoptions",
-      "community": 4,
+      "community": 20,
       "norm_label": "streamqueryoptions"
     },
     {
@@ -1953,7 +1953,7 @@
       "source_file": "src/event-state/event-store.ts",
       "source_location": "L12",
       "id": "event_state_event_store_eventsubscriptionfilter",
-      "community": 4,
+      "community": 20,
       "norm_label": "eventsubscriptionfilter"
     },
     {
@@ -1962,7 +1962,7 @@
       "source_file": "src/event-state/event-store.ts",
       "source_location": "L18",
       "id": "event_state_event_store_eventlistener",
-      "community": 4,
+      "community": 20,
       "norm_label": "eventlistener"
     },
     {
@@ -1971,7 +1971,7 @@
       "source_file": "src/event-state/event-store.ts",
       "source_location": "L20",
       "id": "event_state_event_store_activesubscription",
-      "community": 4,
+      "community": 20,
       "norm_label": "activesubscription"
     },
     {
@@ -2196,7 +2196,7 @@
       "source_file": "src/event-state/projections/session-summary-projection.ts",
       "source_location": "L17",
       "id": "projections_session_summary_projection_sessionsummaryprojection",
-      "community": 20,
+      "community": 256,
       "norm_label": "sessionsummaryprojection"
     },
     {
@@ -2205,7 +2205,7 @@
       "source_file": "src/event-state/projections/session-summary-projection.ts",
       "source_location": "L21",
       "id": "projections_session_summary_projection_sessionsummaryprojection_reset",
-      "community": 20,
+      "community": 256,
       "norm_label": ".reset()"
     },
     {
@@ -2214,7 +2214,7 @@
       "source_file": "src/event-state/projections/session-summary-projection.ts",
       "source_location": "L25",
       "id": "projections_session_summary_projection_sessionsummaryprojection_handleevent",
-      "community": 20,
+      "community": 256,
       "norm_label": ".handleevent()"
     },
     {
@@ -2223,7 +2223,7 @@
       "source_file": "src/event-state/projections/session-summary-projection.ts",
       "source_location": "L85",
       "id": "projections_session_summary_projection_sessionsummaryprojection_rebuild",
-      "community": 20,
+      "community": 256,
       "norm_label": ".rebuild()"
     },
     {
@@ -2232,7 +2232,7 @@
       "source_file": "src/event-state/projections/session-summary-projection.ts",
       "source_location": "L92",
       "id": "projections_session_summary_projection_sessionsummaryprojection_getstate",
-      "community": 20,
+      "community": 256,
       "norm_label": ".getstate()"
     },
     {
@@ -2241,7 +2241,7 @@
       "source_file": "src/event-state/projections/session-summary-projection.ts",
       "source_location": "L97",
       "id": "projections_session_summary_projection_sessionsummaryprojection_getallstates",
-      "community": 20,
+      "community": 256,
       "norm_label": ".getallstates()"
     },
     {
@@ -2502,7 +2502,7 @@
       "source_file": "src/persistence/index.ts",
       "source_location": "L1",
       "id": "src_persistence_index_ts",
-      "community": 4,
+      "community": 38,
       "norm_label": "index.ts"
     },
     {
@@ -2583,7 +2583,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L1",
       "id": "src_persistence_sqlite_engine_ts",
-      "community": 7,
+      "community": 14,
       "norm_label": "sqlite-engine.ts"
     },
     {
@@ -2592,7 +2592,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L5",
       "id": "persistence_sqlite_engine_databaseconfig",
-      "community": 7,
+      "community": 14,
       "norm_label": "databaseconfig"
     },
     {
@@ -2601,7 +2601,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L24",
       "id": "persistence_sqlite_engine_integritycheckresult",
-      "community": 7,
+      "community": 14,
       "norm_label": "integritycheckresult"
     },
     {
@@ -2610,7 +2610,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L33",
       "id": "persistence_sqlite_engine_sqliteengine",
-      "community": 7,
+      "community": 14,
       "norm_label": "sqliteengine"
     },
     {
@@ -2619,7 +2619,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L37",
       "id": "persistence_sqlite_engine_sqliteengine_constructor",
-      "community": 7,
+      "community": 14,
       "norm_label": ".constructor()"
     },
     {
@@ -2628,7 +2628,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L49",
       "id": "persistence_sqlite_engine_sqliteengine_open",
-      "community": 7,
+      "community": 14,
       "norm_label": ".open()"
     },
     {
@@ -2637,7 +2637,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L77",
       "id": "persistence_sqlite_engine_sqliteengine_raw",
-      "community": 7,
+      "community": 14,
       "norm_label": ".raw()"
     },
     {
@@ -2646,7 +2646,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L87",
       "id": "persistence_sqlite_engine_sqliteengine_isopen",
-      "community": 7,
+      "community": 14,
       "norm_label": ".isopen()"
     },
     {
@@ -2655,7 +2655,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L94",
       "id": "persistence_sqlite_engine_sqliteengine_close",
-      "community": 7,
+      "community": 14,
       "norm_label": ".close()"
     },
     {
@@ -2664,7 +2664,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L106",
       "id": "persistence_sqlite_engine_sqliteengine_transaction",
-      "community": 7,
+      "community": 14,
       "norm_label": ".transaction()"
     },
     {
@@ -2673,7 +2673,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L129",
       "id": "persistence_sqlite_engine_sqliteengine_integritycheck",
-      "community": 7,
+      "community": 14,
       "norm_label": ".integritycheck()"
     },
     {
@@ -2682,7 +2682,7 @@
       "source_file": "src/persistence/sqlite-engine.ts",
       "source_location": "L145",
       "id": "persistence_sqlite_engine_sqliteengine_foreignkeycheck",
-      "community": 7,
+      "community": 14,
       "norm_label": ".foreignkeycheck()"
     },
     {
@@ -2727,7 +2727,7 @@
       "source_file": "src/persistence/repositories/artifact-repository.ts",
       "source_location": "L1",
       "id": "src_persistence_repositories_artifact_repository_ts",
-      "community": 8,
+      "community": 43,
       "norm_label": "artifact-repository.ts"
     },
     {
@@ -2736,7 +2736,7 @@
       "source_file": "src/persistence/repositories/artifact-repository.ts",
       "source_location": "L4",
       "id": "repositories_artifact_repository_artifactrow",
-      "community": 8,
+      "community": 43,
       "norm_label": "artifactrow"
     },
     {
@@ -2979,7 +2979,7 @@
       "source_file": "src/persistence/repositories/event-repository.ts",
       "source_location": "L1",
       "id": "src_persistence_repositories_event_repository_ts",
-      "community": 5,
+      "community": 20,
       "norm_label": "event-repository.ts"
     },
     {
@@ -2988,7 +2988,7 @@
       "source_file": "src/persistence/repositories/event-repository.ts",
       "source_location": "L4",
       "id": "repositories_event_repository_eventrow",
-      "community": 5,
+      "community": 20,
       "norm_label": "eventrow"
     },
     {
@@ -2997,7 +2997,7 @@
       "source_file": "src/persistence/repositories/event-repository.ts",
       "source_location": "L19",
       "id": "repositories_event_repository_eventrepository",
-      "community": 44,
+      "community": 20,
       "norm_label": "eventrepository"
     },
     {
@@ -3006,7 +3006,7 @@
       "source_file": "src/persistence/repositories/event-repository.ts",
       "source_location": "L22",
       "id": "repositories_event_repository_eventrepository_constructor",
-      "community": 44,
+      "community": 20,
       "norm_label": ".constructor()"
     },
     {
@@ -3015,7 +3015,7 @@
       "source_file": "src/persistence/repositories/event-repository.ts",
       "source_location": "L26",
       "id": "repositories_event_repository_eventrepository_rowtoevent",
-      "community": 44,
+      "community": 20,
       "norm_label": ".rowtoevent()"
     },
     {
@@ -3024,7 +3024,7 @@
       "source_file": "src/persistence/repositories/event-repository.ts",
       "source_location": "L49",
       "id": "repositories_event_repository_eventrepository_append",
-      "community": 44,
+      "community": 20,
       "norm_label": ".append()"
     },
     {
@@ -3033,7 +3033,7 @@
       "source_file": "src/persistence/repositories/event-repository.ts",
       "source_location": "L78",
       "id": "repositories_event_repository_eventrepository_findbyid",
-      "community": 44,
+      "community": 20,
       "norm_label": ".findbyid()"
     },
     {
@@ -3042,7 +3042,7 @@
       "source_file": "src/persistence/repositories/event-repository.ts",
       "source_location": "L86",
       "id": "repositories_event_repository_eventrepository_listbysession",
-      "community": 44,
+      "community": 20,
       "norm_label": ".listbysession()"
     },
     {
@@ -3051,7 +3051,7 @@
       "source_file": "src/persistence/repositories/event-repository.ts",
       "source_location": "L114",
       "id": "repositories_event_repository_eventrepository_countbysession",
-      "community": 44,
+      "community": 20,
       "norm_label": ".countbysession()"
     },
     {
@@ -3159,7 +3159,7 @@
       "source_file": "src/persistence/repositories/project-repository.ts",
       "source_location": "L20",
       "id": "repositories_project_repository_projectrepository",
-      "community": 56,
+      "community": 255,
       "norm_label": "projectrepository"
     },
     {
@@ -3168,7 +3168,7 @@
       "source_file": "src/persistence/repositories/project-repository.ts",
       "source_location": "L23",
       "id": "repositories_project_repository_projectrepository_constructor",
-      "community": 56,
+      "community": 255,
       "norm_label": ".constructor()"
     },
     {
@@ -3177,7 +3177,7 @@
       "source_file": "src/persistence/repositories/project-repository.ts",
       "source_location": "L27",
       "id": "repositories_project_repository_projectrepository_rowtoproject",
-      "community": 56,
+      "community": 255,
       "norm_label": ".rowtoproject()"
     },
     {
@@ -3186,7 +3186,7 @@
       "source_file": "src/persistence/repositories/project-repository.ts",
       "source_location": "L46",
       "id": "repositories_project_repository_projectrepository_save",
-      "community": 56,
+      "community": 255,
       "norm_label": ".save()"
     },
     {
@@ -3195,7 +3195,7 @@
       "source_file": "src/persistence/repositories/project-repository.ts",
       "source_location": "L85",
       "id": "repositories_project_repository_projectrepository_findbyid",
-      "community": 56,
+      "community": 255,
       "norm_label": ".findbyid()"
     },
     {
@@ -3204,7 +3204,7 @@
       "source_file": "src/persistence/repositories/project-repository.ts",
       "source_location": "L93",
       "id": "repositories_project_repository_projectrepository_list",
-      "community": 56,
+      "community": 255,
       "norm_label": ".list()"
     },
     {
@@ -3213,7 +3213,7 @@
       "source_file": "src/persistence/repositories/project-repository.ts",
       "source_location": "L108",
       "id": "repositories_project_repository_projectrepository_delete",
-      "community": 56,
+      "community": 255,
       "norm_label": ".delete()"
     },
     {
@@ -3402,7 +3402,7 @@
       "source_file": "src/recovery/checkpoint-manifest.ts",
       "source_location": "L26",
       "id": "recovery_checkpoint_manifest_checkpointmanifestbuilder",
-      "community": 21,
+      "community": 43,
       "norm_label": "checkpointmanifestbuilder"
     },
     {
@@ -3411,7 +3411,7 @@
       "source_file": "src/recovery/checkpoint-manifest.ts",
       "source_location": "L30",
       "id": "recovery_checkpoint_manifest_checkpointmanifestbuilder_computemanifestsha256",
-      "community": 21,
+      "community": 43,
       "norm_label": ".computemanifestsha256()"
     },
     {
@@ -3420,7 +3420,7 @@
       "source_file": "src/recovery/checkpoint-manifest.ts",
       "source_location": "L39",
       "id": "recovery_checkpoint_manifest_checkpointmanifestbuilder_createcheckpoint",
-      "community": 21,
+      "community": 43,
       "norm_label": ".createcheckpoint()"
     },
     {
@@ -3429,7 +3429,7 @@
       "source_file": "src/recovery/checkpoint-validator.ts",
       "source_location": "L1",
       "id": "src_recovery_checkpoint_validator_ts",
-      "community": 21,
+      "community": 43,
       "norm_label": "checkpoint-validator.ts"
     },
     {
@@ -3438,7 +3438,7 @@
       "source_file": "src/recovery/checkpoint-validator.ts",
       "source_location": "L7",
       "id": "recovery_checkpoint_validator_checkpointvalidationresult",
-      "community": 21,
+      "community": 43,
       "norm_label": "checkpointvalidationresult"
     },
     {
@@ -3447,7 +3447,7 @@
       "source_file": "src/recovery/checkpoint-validator.ts",
       "source_location": "L18",
       "id": "recovery_checkpoint_validator_checkpointvalidator",
-      "community": 21,
+      "community": 43,
       "norm_label": "checkpointvalidator"
     },
     {
@@ -3456,7 +3456,7 @@
       "source_file": "src/recovery/checkpoint-validator.ts",
       "source_location": "L22",
       "id": "recovery_checkpoint_validator_checkpointvalidator_validateintegrity",
-      "community": 21,
+      "community": 43,
       "norm_label": ".validateintegrity()"
     },
     {
@@ -3465,7 +3465,7 @@
       "source_file": "src/recovery/checkpoint-validator.ts",
       "source_location": "L56",
       "id": "recovery_checkpoint_validator_checkpointvalidator_validatecomplete",
-      "community": 21,
+      "community": 43,
       "norm_label": ".validatecomplete()"
     },
     {
@@ -3492,7 +3492,7 @@
       "source_file": "src/recovery/crash-recovery-engine.ts",
       "source_location": "L24",
       "id": "recovery_crash_recovery_engine_crashrecoveryengine",
-      "community": 20,
+      "community": 7,
       "norm_label": "crashrecoveryengine"
     },
     {
@@ -3501,7 +3501,7 @@
       "source_file": "src/recovery/crash-recovery-engine.ts",
       "source_location": "L33",
       "id": "recovery_crash_recovery_engine_crashrecoveryengine_constructor",
-      "community": 20,
+      "community": 7,
       "norm_label": ".constructor()"
     },
     {
@@ -3510,7 +3510,7 @@
       "source_file": "src/recovery/crash-recovery-engine.ts",
       "source_location": "L47",
       "id": "recovery_crash_recovery_engine_crashrecoveryengine_executerecovery",
-      "community": 20,
+      "community": 7,
       "norm_label": ".executerecovery()"
     },
     {
@@ -3726,7 +3726,7 @@
       "source_file": "tests/domain/artifact.test.ts",
       "source_location": "L1",
       "id": "tests_domain_artifact_test_ts",
-      "community": 8,
+      "community": 44,
       "norm_label": "artifact.test.ts"
     },
     {
@@ -3735,7 +3735,7 @@
       "source_file": "tests/domain/artifact.test.ts",
       "source_location": "L9",
       "id": "domain_artifact_test_samplesha256",
-      "community": 8,
+      "community": 44,
       "norm_label": "samplesha256"
     },
     {
@@ -3744,7 +3744,7 @@
       "source_file": "tests/domain/artifact.test.ts",
       "source_location": "L12",
       "id": "domain_artifact_test_artifact",
-      "community": 8,
+      "community": 44,
       "norm_label": "artifact"
     },
     {
@@ -3753,7 +3753,7 @@
       "source_file": "tests/domain/artifact.test.ts",
       "source_location": "L33",
       "id": "domain_artifact_test_parsed",
-      "community": 8,
+      "community": 44,
       "norm_label": "parsed"
     },
     {
@@ -3762,7 +3762,7 @@
       "source_file": "tests/domain/artifact.test.ts",
       "source_location": "L38",
       "id": "domain_artifact_test_types",
-      "community": 8,
+      "community": 44,
       "norm_label": "types"
     },
     {
@@ -3969,7 +3969,7 @@
       "source_file": "tests/domain/immutability.test.ts",
       "source_location": "L1",
       "id": "tests_domain_immutability_test_ts",
-      "community": 5,
+      "community": 21,
       "norm_label": "immutability.test.ts"
     },
     {
@@ -3978,7 +3978,7 @@
       "source_file": "tests/domain/immutability.test.ts",
       "source_location": "L7",
       "id": "domain_immutability_test_event",
-      "community": 5,
+      "community": 21,
       "norm_label": "event"
     },
     {
@@ -3987,7 +3987,7 @@
       "source_file": "tests/domain/immutability.test.ts",
       "source_location": "L22",
       "id": "domain_immutability_test_frozen",
-      "community": 5,
+      "community": 21,
       "norm_label": "frozen"
     },
     {
@@ -3996,7 +3996,7 @@
       "source_file": "tests/domain/immutability.test.ts",
       "source_location": "L45",
       "id": "domain_immutability_test_samplesha",
-      "community": 5,
+      "community": 21,
       "norm_label": "samplesha"
     },
     {
@@ -4005,7 +4005,7 @@
       "source_file": "tests/domain/immutability.test.ts",
       "source_location": "L46",
       "id": "domain_immutability_test_checkpoint",
-      "community": 5,
+      "community": 21,
       "norm_label": "checkpoint"
     },
     {
@@ -4572,7 +4572,7 @@
       "source_file": "tests/event-state/projections.test.ts",
       "source_location": "L1",
       "id": "tests_event_state_projections_test_ts",
-      "community": 4,
+      "community": 38,
       "norm_label": "projections.test.ts"
     },
     {
@@ -4581,7 +4581,7 @@
       "source_file": "tests/event-state/projections.test.ts",
       "source_location": "L17",
       "id": "event_state_projections_test_migrator",
-      "community": 4,
+      "community": 38,
       "norm_label": "migrator"
     },
     {
@@ -4590,7 +4590,7 @@
       "source_file": "tests/event-state/projections.test.ts",
       "source_location": "L20",
       "id": "event_state_projections_test_projectrepo",
-      "community": 4,
+      "community": 38,
       "norm_label": "projectrepo"
     },
     {
@@ -4599,7 +4599,7 @@
       "source_file": "tests/event-state/projections.test.ts",
       "source_location": "L36",
       "id": "event_state_projections_test_sessionrepo",
-      "community": 4,
+      "community": 38,
       "norm_label": "sessionrepo"
     },
     {
@@ -4608,7 +4608,7 @@
       "source_file": "tests/event-state/projections.test.ts",
       "source_location": "L96",
       "id": "event_state_projections_test_summary",
-      "community": 4,
+      "community": 38,
       "norm_label": "summary"
     },
     {
@@ -4617,7 +4617,7 @@
       "source_file": "tests/event-state/projections.test.ts",
       "source_location": "L101",
       "id": "event_state_projections_test_board",
-      "community": 4,
+      "community": 38,
       "norm_label": "board"
     },
     {
@@ -4626,7 +4626,7 @@
       "source_file": "tests/event-state/projections.test.ts",
       "source_location": "L142",
       "id": "event_state_projections_test_prewipesummary",
-      "community": 4,
+      "community": 38,
       "norm_label": "prewipesummary"
     },
     {
@@ -4635,7 +4635,7 @@
       "source_file": "tests/event-state/projections.test.ts",
       "source_location": "L143",
       "id": "event_state_projections_test_prewipeboard",
-      "community": 4,
+      "community": 38,
       "norm_label": "prewipeboard"
     },
     {
@@ -4644,7 +4644,7 @@
       "source_file": "tests/event-state/projections.test.ts",
       "source_location": "L155",
       "id": "event_state_projections_test_postrebuildsummary",
-      "community": 4,
+      "community": 38,
       "norm_label": "postrebuildsummary"
     },
     {
@@ -4653,7 +4653,7 @@
       "source_file": "tests/event-state/projections.test.ts",
       "source_location": "L156",
       "id": "event_state_projections_test_postrebuildboard",
-      "community": 4,
+      "community": 38,
       "norm_label": "postrebuildboard"
     },
     {
@@ -4788,7 +4788,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L1",
       "id": "tests_persistence_durability_test_ts",
-      "community": 14,
+      "community": 32,
       "norm_label": "durability.test.ts"
     },
     {
@@ -4797,7 +4797,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L10",
       "id": "persistence_durability_test_testdbdir",
-      "community": 14,
+      "community": 32,
       "norm_label": "testdbdir"
     },
     {
@@ -4806,7 +4806,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L11",
       "id": "persistence_durability_test_testdbpath",
-      "community": 14,
+      "community": 32,
       "norm_label": "testdbpath"
     },
     {
@@ -4815,7 +4815,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L28",
       "id": "persistence_durability_test_engine1",
-      "community": 14,
+      "community": 32,
       "norm_label": "engine1"
     },
     {
@@ -4824,7 +4824,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L30",
       "id": "persistence_durability_test_migrator1",
-      "community": 14,
+      "community": 32,
       "norm_label": "migrator1"
     },
     {
@@ -4833,7 +4833,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L33",
       "id": "persistence_durability_test_projectrepo1",
-      "community": 14,
+      "community": 32,
       "norm_label": "projectrepo1"
     },
     {
@@ -4842,7 +4842,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L53",
       "id": "persistence_durability_test_engine2",
-      "community": 14,
+      "community": 32,
       "norm_label": "engine2"
     },
     {
@@ -4851,7 +4851,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L56",
       "id": "persistence_durability_test_integrity",
-      "community": 14,
+      "community": 32,
       "norm_label": "integrity"
     },
     {
@@ -4860,7 +4860,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L59",
       "id": "persistence_durability_test_projectrepo2",
-      "community": 14,
+      "community": 32,
       "norm_label": "projectrepo2"
     },
     {
@@ -4869,7 +4869,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L60",
       "id": "persistence_durability_test_restored",
-      "community": 14,
+      "community": 32,
       "norm_label": "restored"
     },
     {
@@ -4878,7 +4878,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L70",
       "id": "persistence_durability_test_engine",
-      "community": 14,
+      "community": 32,
       "norm_label": "engine"
     },
     {
@@ -4887,7 +4887,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L72",
       "id": "persistence_durability_test_migrator",
-      "community": 14,
+      "community": 32,
       "norm_label": "migrator"
     },
     {
@@ -4896,7 +4896,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L75",
       "id": "persistence_durability_test_projectrepo",
-      "community": 14,
+      "community": 32,
       "norm_label": "projectrepo"
     },
     {
@@ -4905,7 +4905,7 @@
       "source_file": "tests/persistence/durability.test.ts",
       "source_location": "L91",
       "id": "persistence_durability_test_eventrepo",
-      "community": 14,
+      "community": 32,
       "norm_label": "eventrepo"
     },
     {
@@ -5130,7 +5130,7 @@
       "source_file": "tests/persistence/sqlite-engine.test.ts",
       "source_location": "L1",
       "id": "tests_persistence_sqlite_engine_test_ts",
-      "community": 7,
+      "community": 14,
       "norm_label": "sqlite-engine.test.ts"
     },
     {
@@ -5139,7 +5139,7 @@
       "source_file": "tests/persistence/sqlite-engine.test.ts",
       "source_location": "L18",
       "id": "persistence_sqlite_engine_test_result",
-      "community": 7,
+      "community": 14,
       "norm_label": "result"
     },
     {
@@ -5148,7 +5148,7 @@
       "source_file": "tests/persistence/sqlite-engine.test.ts",
       "source_location": "L34",
       "id": "persistence_sqlite_engine_test_rows",
-      "community": 7,
+      "community": 14,
       "norm_label": "rows"
     },
     {
@@ -5157,7 +5157,7 @@
       "source_file": "tests/recovery/checkpoint.test.ts",
       "source_location": "L1",
       "id": "tests_recovery_checkpoint_test_ts",
-      "community": 21,
+      "community": 43,
       "norm_label": "checkpoint.test.ts"
     },
     {
@@ -5166,7 +5166,7 @@
       "source_file": "tests/recovery/checkpoint.test.ts",
       "source_location": "L30",
       "id": "recovery_checkpoint_test_migrator",
-      "community": 21,
+      "community": 43,
       "norm_label": "migrator"
     },
     {
@@ -5175,7 +5175,7 @@
       "source_file": "tests/recovery/checkpoint.test.ts",
       "source_location": "L76",
       "id": "recovery_checkpoint_test_checkpoint",
-      "community": 21,
+      "community": 43,
       "norm_label": "checkpoint"
     },
     {
@@ -5184,7 +5184,7 @@
       "source_file": "tests/recovery/checkpoint.test.ts",
       "source_location": "L89",
       "id": "recovery_checkpoint_test_integrity",
-      "community": 21,
+      "community": 43,
       "norm_label": "integrity"
     },
     {
@@ -5193,7 +5193,7 @@
       "source_file": "tests/recovery/checkpoint.test.ts",
       "source_location": "L103",
       "id": "recovery_checkpoint_test_tampered",
-      "community": 21,
+      "community": 43,
       "norm_label": "tampered"
     },
     {
@@ -5202,7 +5202,7 @@
       "source_file": "tests/recovery/checkpoint.test.ts",
       "source_location": "L118",
       "id": "recovery_checkpoint_test_artifactsha",
-      "community": 21,
+      "community": 43,
       "norm_label": "artifactsha"
     },
     {
@@ -5211,7 +5211,7 @@
       "source_file": "tests/recovery/checkpoint.test.ts",
       "source_location": "L141",
       "id": "recovery_checkpoint_test_loaded",
-      "community": 21,
+      "community": 43,
       "norm_label": "loaded"
     },
     {
@@ -5276,6 +5276,195 @@
       "id": "recovery_crash_recovery_test_board",
       "community": 20,
       "norm_label": "board"
+    },
+    {
+      "label": "crash-simulation-disk.test.ts",
+      "file_type": "code",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L1",
+      "id": "tests_recovery_crash_simulation_disk_test_ts",
+      "community": 23,
+      "norm_label": "crash-simulation-disk.test.ts"
+    },
+    {
+      "label": "migrator",
+      "file_type": "code",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L29",
+      "id": "recovery_crash_simulation_disk_test_migrator",
+      "community": 23,
+      "norm_label": "migrator"
+    },
+    {
+      "label": "projectRepo",
+      "file_type": "code",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L41",
+      "id": "recovery_crash_simulation_disk_test_projectrepo",
+      "community": 23,
+      "norm_label": "projectrepo"
+    },
+    {
+      "label": "sessionRepo",
+      "file_type": "code",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L42",
+      "id": "recovery_crash_simulation_disk_test_sessionrepo",
+      "community": 23,
+      "norm_label": "sessionrepo"
+    },
+    {
+      "label": "taskRepo",
+      "file_type": "code",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L43",
+      "id": "recovery_crash_simulation_disk_test_taskrepo",
+      "community": 23,
+      "norm_label": "taskrepo"
+    },
+    {
+      "label": "artifactRepo",
+      "file_type": "code",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L44",
+      "id": "recovery_crash_simulation_disk_test_artifactrepo",
+      "community": 23,
+      "norm_label": "artifactrepo"
+    },
+    {
+      "label": "checkpointRepo",
+      "file_type": "code",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L45",
+      "id": "recovery_crash_simulation_disk_test_checkpointrepo",
+      "community": 23,
+      "norm_label": "checkpointrepo"
+    },
+    {
+      "label": "eventStore",
+      "file_type": "code",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L46",
+      "id": "recovery_crash_simulation_disk_test_eventstore",
+      "community": 23,
+      "norm_label": "eventstore"
+    },
+    {
+      "label": "artSha",
+      "file_type": "code",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L92",
+      "id": "recovery_crash_simulation_disk_test_artsha",
+      "community": 23,
+      "norm_label": "artsha"
+    },
+    {
+      "label": "leaseManager",
+      "file_type": "code",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L128",
+      "id": "recovery_crash_simulation_disk_test_leasemanager",
+      "community": 23,
+      "norm_label": "leasemanager"
+    },
+    {
+      "label": "checkpoint",
+      "file_type": "code",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L131",
+      "id": "recovery_crash_simulation_disk_test_checkpoint",
+      "community": 23,
+      "norm_label": "checkpoint"
+    },
+    {
+      "label": "reopenedEngine",
+      "file_type": "code",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L149",
+      "id": "recovery_crash_simulation_disk_test_reopenedengine",
+      "community": 23,
+      "norm_label": "reopenedengine"
+    },
+    {
+      "label": "reopenedTaskRepo",
+      "file_type": "code",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L152",
+      "id": "recovery_crash_simulation_disk_test_reopenedtaskrepo",
+      "community": 23,
+      "norm_label": "reopenedtaskrepo"
+    },
+    {
+      "label": "reopenedCheckpointRepo",
+      "file_type": "code",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L153",
+      "id": "recovery_crash_simulation_disk_test_reopenedcheckpointrepo",
+      "community": 23,
+      "norm_label": "reopenedcheckpointrepo"
+    },
+    {
+      "label": "reopenedArtifactRepo",
+      "file_type": "code",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L154",
+      "id": "recovery_crash_simulation_disk_test_reopenedartifactrepo",
+      "community": 23,
+      "norm_label": "reopenedartifactrepo"
+    },
+    {
+      "label": "reopenedEventStore",
+      "file_type": "code",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L155",
+      "id": "recovery_crash_simulation_disk_test_reopenedeventstore",
+      "community": 23,
+      "norm_label": "reopenedeventstore"
+    },
+    {
+      "label": "reopenedProjectionManager",
+      "file_type": "code",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L156",
+      "id": "recovery_crash_simulation_disk_test_reopenedprojectionmanager",
+      "community": 23,
+      "norm_label": "reopenedprojectionmanager"
+    },
+    {
+      "label": "reopenedLeaseManager",
+      "file_type": "code",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L157",
+      "id": "recovery_crash_simulation_disk_test_reopenedleasemanager",
+      "community": 23,
+      "norm_label": "reopenedleasemanager"
+    },
+    {
+      "label": "recoveryEngine",
+      "file_type": "code",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L159",
+      "id": "recovery_crash_simulation_disk_test_recoveryengine",
+      "community": 23,
+      "norm_label": "recoveryengine"
+    },
+    {
+      "label": "sessionSummary",
+      "file_type": "code",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L178",
+      "id": "recovery_crash_simulation_disk_test_sessionsummary",
+      "community": 23,
+      "norm_label": "sessionsummary"
+    },
+    {
+      "label": "taskBoard",
+      "file_type": "code",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L181",
+      "id": "recovery_crash_simulation_disk_test_taskboard",
+      "community": 23,
+      "norm_label": "taskboard"
     },
     {
       "label": "lease-manager.test.ts",
@@ -5373,7 +5562,7 @@
       "source_file": "tests/recovery/orphan-detector.test.ts",
       "source_location": "L1",
       "id": "tests_recovery_orphan_detector_test_ts",
-      "community": 7,
+      "community": 14,
       "norm_label": "orphan-detector.test.ts"
     },
     {
@@ -5382,7 +5571,7 @@
       "source_file": "tests/recovery/orphan-detector.test.ts",
       "source_location": "L24",
       "id": "recovery_orphan_detector_test_migrator",
-      "community": 7,
+      "community": 14,
       "norm_label": "migrator"
     },
     {
@@ -5391,7 +5580,7 @@
       "source_file": "tests/recovery/orphan-detector.test.ts",
       "source_location": "L67",
       "id": "recovery_orphan_detector_test_report",
-      "community": 7,
+      "community": 14,
       "norm_label": "report"
     },
     {
@@ -5985,7 +6174,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L462",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_11_phase_2_understand",
-      "community": 339,
+      "community": 2,
       "norm_label": "11. phase 2 \u2014 understand"
     },
     {
@@ -5994,7 +6183,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L466",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_22",
-      "community": 339,
+      "community": 2,
       "norm_label": "code:text (what requirement requires this?)"
     },
     {
@@ -6165,7 +6354,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L658",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_19_durability",
-      "community": 351,
+      "community": 2,
       "norm_label": "19. durability"
     },
     {
@@ -6174,7 +6363,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L664",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_34",
-      "community": 351,
+      "community": 2,
       "norm_label": "code:text (event committed)"
     },
     {
@@ -6255,7 +6444,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L770",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_23_checkpoints",
-      "community": 2,
+      "community": 325,
       "norm_label": "23. checkpoints"
     },
     {
@@ -6264,7 +6453,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L776",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_40",
-      "community": 2,
+      "community": 325,
       "norm_label": "code:text (event offset)"
     },
     {
@@ -6408,7 +6597,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L959",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_28_multimodal_safety",
-      "community": 2,
+      "community": 326,
       "norm_label": "28. multimodal safety"
     },
     {
@@ -6417,7 +6606,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L963",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_52",
-      "community": 2,
+      "community": 326,
       "norm_label": "code:text (validate mime/signature)"
     },
     {
@@ -6471,7 +6660,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L1025",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_31_security_authority",
-      "community": 2,
+      "community": 336,
       "norm_label": "31. security authority"
     },
     {
@@ -6480,7 +6669,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L1031",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_56",
-      "community": 2,
+      "community": 336,
       "norm_label": "code:text (system)"
     },
     {
@@ -6786,7 +6975,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L1363",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_45_model_switching",
-      "community": 356,
+      "community": 2,
       "norm_label": "45. model switching"
     },
     {
@@ -6795,7 +6984,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L1367",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_77",
-      "community": 356,
+      "community": 2,
       "norm_label": "code:text (context budget)"
     },
     {
@@ -7209,7 +7398,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L1799",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_66_remote_data_handling",
-      "community": 2,
+      "community": 339,
       "norm_label": "66. remote data handling"
     },
     {
@@ -7218,7 +7407,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L1803",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_103",
-      "community": 2,
+      "community": 339,
       "norm_label": "code:text (persist checkpoint)"
     },
     {
@@ -7272,7 +7461,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L1864",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_69_mcp",
-      "community": 297,
+      "community": 2,
       "norm_label": "69. mcp"
     },
     {
@@ -7281,7 +7470,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L1872",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_107",
-      "community": 297,
+      "community": 2,
       "norm_label": "code:text (mcp)"
     },
     {
@@ -7290,7 +7479,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L1888",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_70_mcp_content",
-      "community": 2,
+      "community": 343,
       "norm_label": "70. mcp content"
     },
     {
@@ -7299,7 +7488,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L1894",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_108",
-      "community": 2,
+      "community": 343,
       "norm_label": "code:text (validation)"
     },
     {
@@ -7317,7 +7506,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L1913",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_72_mcp_failure",
-      "community": 2,
+      "community": 351,
       "norm_label": "72. mcp failure"
     },
     {
@@ -7326,7 +7515,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L1917",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_109",
-      "community": 2,
+      "community": 351,
       "norm_label": "code:text (connection failure)"
     },
     {
@@ -7353,7 +7542,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L1951",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_74_plugin_trust",
-      "community": 2,
+      "community": 356,
       "norm_label": "74. plugin trust"
     },
     {
@@ -7362,7 +7551,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L1955",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_111",
-      "community": 2,
+      "community": 356,
       "norm_label": "code:text (publisher/source)"
     },
     {
@@ -7371,7 +7560,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L1971",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_75_plugin_lifecycle",
-      "community": 2,
+      "community": 368,
       "norm_label": "75. plugin lifecycle"
     },
     {
@@ -7380,7 +7569,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L1975",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_112",
-      "community": 2,
+      "community": 368,
       "norm_label": "code:text (commands)"
     },
     {
@@ -7398,7 +7587,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L1996",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_77_skills",
-      "community": 2,
+      "community": 377,
       "norm_label": "77. skills"
     },
     {
@@ -7407,7 +7596,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2002",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_113",
-      "community": 2,
+      "community": 377,
       "norm_label": "code:text (memory = what is known)"
     },
     {
@@ -7416,7 +7605,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2011",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_78_skill_dependencies",
-      "community": 318,
+      "community": 2,
       "norm_label": "78. skill dependencies"
     },
     {
@@ -7425,7 +7614,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2015",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_114",
-      "community": 318,
+      "community": 2,
       "norm_label": "code:text (tools)"
     },
     {
@@ -7470,7 +7659,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2070",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_82_workflow_versioning",
-      "community": 298,
+      "community": 2,
       "norm_label": "82. workflow versioning"
     },
     {
@@ -7479,7 +7668,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2074",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_116",
-      "community": 298,
+      "community": 2,
       "norm_label": "code:text (workflow version)"
     },
     {
@@ -7542,7 +7731,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2154",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_86_resource_hierarchy",
-      "community": 300,
+      "community": 2,
       "norm_label": "86. resource hierarchy"
     },
     {
@@ -7551,7 +7740,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2158",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_120",
-      "community": 300,
+      "community": 2,
       "norm_label": "code:text (global)"
     },
     {
@@ -7704,7 +7893,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2339",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_94_failure_analysis",
-      "community": 313,
+      "community": 2,
       "norm_label": "94. failure analysis"
     },
     {
@@ -7713,7 +7902,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2343",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_130",
-      "community": 313,
+      "community": 2,
       "norm_label": "code:text (what failed)"
     },
     {
@@ -7722,7 +7911,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2357",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_95_recoverability_classification",
-      "community": 303,
+      "community": 2,
       "norm_label": "95. recoverability classification"
     },
     {
@@ -7731,7 +7920,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2361",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_131",
-      "community": 303,
+      "community": 2,
       "norm_label": "code:text (recoverable)"
     },
     {
@@ -7812,7 +8001,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2440",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_99_human_acceptance",
-      "community": 2,
+      "community": 379,
       "norm_label": "99. human acceptance"
     },
     {
@@ -7821,7 +8010,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2446",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_137",
-      "community": 2,
+      "community": 379,
       "norm_label": "code:text (automated verification)"
     },
     {
@@ -7947,7 +8136,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2541",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_102_crash_testing",
-      "community": 314,
+      "community": 2,
       "norm_label": "102. crash testing"
     },
     {
@@ -7956,7 +8145,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2545",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_144",
-      "community": 314,
+      "community": 2,
       "norm_label": "code:text (before transaction)"
     },
     {
@@ -8082,7 +8271,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2691",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_109_provider_failure_testing",
-      "community": 2,
+      "community": 264,
       "norm_label": "109. provider failure testing"
     },
     {
@@ -8091,7 +8280,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2695",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_152",
-      "community": 2,
+      "community": 264,
       "norm_label": "code:text (invalid credential)"
     },
     {
@@ -8199,7 +8388,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2822",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_115_team_evaluation",
-      "community": 255,
+      "community": 2,
       "norm_label": "115. team evaluation"
     },
     {
@@ -8208,7 +8397,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2826",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_159",
-      "community": 255,
+      "community": 2,
       "norm_label": "code:text (coordination overhead)"
     },
     {
@@ -8217,7 +8406,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2841",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_116_parallelism_evaluation",
-      "community": 256,
+      "community": 2,
       "norm_label": "116. parallelism evaluation"
     },
     {
@@ -8226,7 +8415,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2845",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_160",
-      "community": 256,
+      "community": 2,
       "norm_label": "code:text (serial duration)"
     },
     {
@@ -8235,7 +8424,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2857",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_117_router_evaluation",
-      "community": 32,
+      "community": 2,
       "norm_label": "117. router evaluation"
     },
     {
@@ -8244,7 +8433,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2861",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_161",
-      "community": 32,
+      "community": 2,
       "norm_label": "code:text (static routing)"
     },
     {
@@ -8289,7 +8478,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2917",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_120_storage_engineering",
-      "community": 2,
+      "community": 265,
       "norm_label": "120. storage engineering"
     },
     {
@@ -8298,7 +8487,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2921",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_164",
-      "community": 2,
+      "community": 265,
       "norm_label": "code:text (temporary file)"
     },
     {
@@ -8325,7 +8514,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2957",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_122_index_rebuild",
-      "community": 2,
+      "community": 266,
       "norm_label": "122. index rebuild"
     },
     {
@@ -8334,7 +8523,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2961",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_166",
-      "community": 2,
+      "community": 266,
       "norm_label": "code:text (stop affected operation)"
     },
     {
@@ -8343,7 +8532,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2970",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_123_database_repair",
-      "community": 321,
+      "community": 2,
       "norm_label": "123. database repair"
     },
     {
@@ -8352,7 +8541,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2974",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_167",
-      "community": 321,
+      "community": 2,
       "norm_label": "code:text (identify affected object)"
     },
     {
@@ -8379,7 +8568,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3005",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_125_active_run_pinning",
-      "community": 322,
+      "community": 2,
       "norm_label": "125. active-run pinning"
     },
     {
@@ -8388,7 +8577,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3009",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_169",
-      "community": 322,
+      "community": 2,
       "norm_label": "code:text (workflow version)"
     },
     {
@@ -8451,7 +8640,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3072",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_129_error_compatibility",
-      "community": 2,
+      "community": 272,
       "norm_label": "129. error compatibility"
     },
     {
@@ -8460,7 +8649,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3078",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_173",
-      "community": 2,
+      "community": 272,
       "norm_label": "code:text (error code)"
     },
     {
@@ -8496,7 +8685,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3120",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_131_machine_readable_output",
-      "community": 2,
+      "community": 281,
       "norm_label": "131. machine-readable output"
     },
     {
@@ -8505,7 +8694,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3124",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_176",
-      "community": 2,
+      "community": 281,
       "norm_label": "code:text (json)"
     },
     {
@@ -8523,7 +8712,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3144",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_133_headless_mode",
-      "community": 260,
+      "community": 2,
       "norm_label": "133. headless mode"
     },
     {
@@ -8532,7 +8721,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3148",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_177",
-      "community": 260,
+      "community": 2,
       "norm_label": "code:text (tui prompts)"
     },
     {
@@ -8541,7 +8730,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3158",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_134_approvals",
-      "community": 325,
+      "community": 2,
       "norm_label": "134. approvals"
     },
     {
@@ -8550,7 +8739,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3164",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_178",
-      "community": 325,
+      "community": 2,
       "norm_label": "code:text (task)"
     },
     {
@@ -8604,7 +8793,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3215",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_138_user_change_protection",
-      "community": 2,
+      "community": 294,
       "norm_label": "138. user change protection"
     },
     {
@@ -8613,7 +8802,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3221",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_181",
-      "community": 2,
+      "community": 294,
       "norm_label": "code:text (stop)"
     },
     {
@@ -8667,7 +8856,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3270",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_141_observability_principle",
-      "community": 326,
+      "community": 2,
       "norm_label": "141. observability principle"
     },
     {
@@ -8676,7 +8865,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3274",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_185",
-      "community": 326,
+      "community": 2,
       "norm_label": "code:text (what happened?)"
     },
     {
@@ -8712,7 +8901,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3318",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_143_health_checks",
-      "community": 266,
+      "community": 2,
       "norm_label": "143. health checks"
     },
     {
@@ -8721,7 +8910,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3322",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_188",
-      "community": 266,
+      "community": 2,
       "norm_label": "code:text (healthy)"
     },
     {
@@ -8766,7 +8955,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3373",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_146_single_writer_safety",
-      "community": 2,
+      "community": 297,
       "norm_label": "146. single-writer safety"
     },
     {
@@ -8775,7 +8964,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3379",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_191",
-      "community": 2,
+      "community": 297,
       "norm_label": "code:text (process lock)"
     },
     {
@@ -8802,7 +8991,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3404",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_148_security_review_checklist",
-      "community": 264,
+      "community": 2,
       "norm_label": "148. security review checklist"
     },
     {
@@ -8811,7 +9000,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3408",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_193",
-      "community": 264,
+      "community": 2,
       "norm_label": "code:text (does it introduce a new trust boundary?)"
     },
     {
@@ -8883,7 +9072,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3492",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_152_supply_chain_safety",
-      "community": 265,
+      "community": 2,
       "norm_label": "152. supply-chain safety"
     },
     {
@@ -8892,7 +9081,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3496",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_198",
-      "community": 265,
+      "community": 2,
       "norm_label": "code:text (source)"
     },
     {
@@ -8901,7 +9090,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3511",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_153_resource_exhaustion",
-      "community": 2,
+      "community": 298,
       "norm_label": "153. resource exhaustion"
     },
     {
@@ -8910,7 +9099,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3515",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_199",
-      "community": 2,
+      "community": 298,
       "norm_label": "code:text (unbounded recursion)"
     },
     {
@@ -8973,7 +9162,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3589",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_157_production_completion_rule",
-      "community": 2,
+      "community": 300,
       "norm_label": "157. production-completion rule"
     },
     {
@@ -8982,7 +9171,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3593",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_203",
-      "community": 2,
+      "community": 300,
       "norm_label": "code:text (state durability)"
     },
     {
@@ -9009,7 +9198,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3629",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_159_implementation_order",
-      "community": 2,
+      "community": 303,
       "norm_label": "159. implementation order"
     },
     {
@@ -9018,7 +9207,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3635",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_205",
-      "community": 2,
+      "community": 303,
       "norm_label": "code:text (1. durable state)"
     },
     {
@@ -9171,7 +9360,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3824",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_167_domain_service_rule",
-      "community": 2,
+      "community": 313,
       "norm_label": "167. domain service rule"
     },
     {
@@ -9180,7 +9369,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3828",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_215",
-      "community": 2,
+      "community": 313,
       "norm_label": "code:text (tui rendering)"
     },
     {
@@ -9189,7 +9378,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3842",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_168_adapter_rule",
-      "community": 336,
+      "community": 2,
       "norm_label": "168. adapter rule"
     },
     {
@@ -9198,7 +9387,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3846",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_216",
-      "community": 336,
+      "community": 2,
       "norm_label": "code:text (provideradapter)"
     },
     {
@@ -9261,7 +9450,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3919",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_172_notification_deduplication",
-      "community": 2,
+      "community": 314,
       "norm_label": "172. notification deduplication"
     },
     {
@@ -9270,7 +9459,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3923",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_220",
-      "community": 2,
+      "community": 314,
       "norm_label": "code:text (event fingerprint)"
     },
     {
@@ -9279,7 +9468,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3933",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_173_research_workflows",
-      "community": 294,
+      "community": 2,
       "norm_label": "173. research workflows"
     },
     {
@@ -9288,7 +9477,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3937",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_221",
-      "community": 294,
+      "community": 2,
       "norm_label": "code:text (question)"
     },
     {
@@ -9297,7 +9486,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3951",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_174_browser_workflows",
-      "community": 272,
+      "community": 2,
       "norm_label": "174. browser workflows"
     },
     {
@@ -9306,7 +9495,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3955",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_222",
-      "community": 272,
+      "community": 2,
       "norm_label": "code:text (screenshots)"
     },
     {
@@ -9441,7 +9630,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L4102",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_182_review_process",
-      "community": 343,
+      "community": 2,
       "norm_label": "182. review process"
     },
     {
@@ -9450,7 +9639,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L4106",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_230",
-      "community": 343,
+      "community": 2,
       "norm_label": "code:text (requirement mapping)"
     },
     {
@@ -9657,7 +9846,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L4314",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_192_model_authority",
-      "community": 2,
+      "community": 318,
       "norm_label": "192. model authority"
     },
     {
@@ -9666,7 +9855,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L4318",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_244",
-      "community": 2,
+      "community": 318,
       "norm_label": "code:text (grant permissions)"
     },
     {
@@ -9774,7 +9963,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L4430",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_198_active_state_preservation",
-      "community": 281,
+      "community": 2,
       "norm_label": "198. active state preservation"
     },
     {
@@ -9783,7 +9972,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L4434",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_251",
-      "community": 281,
+      "community": 2,
       "norm_label": "code:text (preserve current state)"
     },
     {
@@ -9891,7 +10080,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L4571",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_203_final_implementation_loop",
-      "community": 2,
+      "community": 321,
       "norm_label": "203. final implementation loop"
     },
     {
@@ -9900,7 +10089,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L4575",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_259",
-      "community": 2,
+      "community": 321,
       "norm_label": "code:text (\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510)"
     },
     {
@@ -9981,7 +10170,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L4721",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_206_master_principle",
-      "community": 2,
+      "community": 322,
       "norm_label": "206. master principle"
     },
     {
@@ -9990,7 +10179,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L4727",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_266",
-      "community": 2,
+      "community": 322,
       "norm_label": "code:text (understand)"
     },
     {
@@ -11025,7 +11214,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
       "source_location": "L49",
       "id": "development_anantham_v2_master_development_plan_2_global_completion_gates",
-      "community": 23,
+      "community": 25,
       "norm_label": "2. global completion gates"
     },
     {
@@ -11034,7 +11223,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
       "source_location": "L51",
       "id": "development_anantham_v2_master_development_plan_g0_requirements_architecture",
-      "community": 23,
+      "community": 25,
       "norm_label": "g0 \u2014 requirements & architecture"
     },
     {
@@ -11043,7 +11232,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
       "source_location": "L59",
       "id": "development_anantham_v2_master_development_plan_g1_durability",
-      "community": 23,
+      "community": 25,
       "norm_label": "g1 \u2014 durability"
     },
     {
@@ -11052,7 +11241,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
       "source_location": "L72",
       "id": "development_anantham_v2_master_development_plan_g2_security",
-      "community": 23,
+      "community": 25,
       "norm_label": "g2 \u2014 security"
     },
     {
@@ -11061,7 +11250,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
       "source_location": "L86",
       "id": "development_anantham_v2_master_development_plan_g3_execution",
-      "community": 23,
+      "community": 25,
       "norm_label": "g3 \u2014 execution"
     },
     {
@@ -11070,7 +11259,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
       "source_location": "L98",
       "id": "development_anantham_v2_master_development_plan_g4_verification",
-      "community": 23,
+      "community": 25,
       "norm_label": "g4 \u2014 verification"
     },
     {
@@ -11493,7 +11682,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
       "source_location": "L591",
       "id": "development_anantham_v2_master_development_plan_5_change_log",
-      "community": 25,
+      "community": 260,
       "norm_label": "5. change log"
     },
     {
@@ -11502,7 +11691,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
       "source_location": "L595",
       "id": "development_anantham_v2_master_development_plan_2026_08_30_21_15_task_p1_4_checkpoints_recovery",
-      "community": 25,
+      "community": 260,
       "norm_label": "2026-08-30 21:15 \u2014 task-p1.4-checkpoints-recovery"
     },
     {
@@ -11511,7 +11700,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
       "source_location": "L607",
       "id": "development_anantham_v2_master_development_plan_2026_08_30_21_00_task_p1_3_event_state",
-      "community": 25,
+      "community": 260,
       "norm_label": "2026-08-30 21:00 \u2014 task-p1.3-event-state"
     },
     {
@@ -11520,7 +11709,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
       "source_location": "L643",
       "id": "development_anantham_v2_master_development_plan_codeblock_1",
-      "community": 25,
+      "community": 260,
       "norm_label": "code:text (## yyyy-mm-dd hh:mm \u2014 task-id)"
     },
     {
@@ -12366,7 +12555,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L960",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_26_incremental_indexing",
-      "community": 3,
+      "community": 399,
       "norm_label": "26. incremental indexing"
     },
     {
@@ -12375,7 +12564,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L964",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_25",
-      "community": 3,
+      "community": 399,
       "norm_label": "code:text (file changed)"
     },
     {
@@ -12447,7 +12636,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1052",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_30_project_remove_semantics",
-      "community": 3,
+      "community": 401,
       "norm_label": "30. project remove semantics"
     },
     {
@@ -12456,7 +12645,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1058",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_29",
-      "community": 3,
+      "community": 401,
       "norm_label": "code:text (remove registry entry)"
     },
     {
@@ -12483,7 +12672,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1113",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_33_project_instructions",
-      "community": 414,
+      "community": 3,
       "norm_label": "33. project instructions"
     },
     {
@@ -12492,7 +12681,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1117",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_30",
-      "community": 414,
+      "community": 3,
       "norm_label": "code:text (anantham.md)"
     },
     {
@@ -12501,7 +12690,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1130",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_34_project_trust",
-      "community": 3,
+      "community": 407,
       "norm_label": "34. project trust"
     },
     {
@@ -12510,7 +12699,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1134",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_31",
-      "community": 3,
+      "community": 407,
       "norm_label": "code:text (untrusted)"
     },
     {
@@ -12555,7 +12744,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1202",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_37_event_sourced_session",
-      "community": 415,
+      "community": 3,
       "norm_label": "37. event-sourced session"
     },
     {
@@ -12564,7 +12753,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1206",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_34",
-      "community": 415,
+      "community": 3,
       "norm_label": "code:text (user)"
     },
     {
@@ -12591,7 +12780,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1251",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_39_required_session_events",
-      "community": 3,
+      "community": 414,
       "norm_label": "39. required session events"
     },
     {
@@ -12600,7 +12789,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1253",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_36",
-      "community": 3,
+      "community": 414,
       "norm_label": "code:text (session.created)"
     },
     {
@@ -12609,7 +12798,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1306",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_40_event_immutability",
-      "community": 379,
+      "community": 3,
       "norm_label": "40. event immutability"
     },
     {
@@ -12618,7 +12807,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1314",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_37",
-      "community": 379,
+      "community": 3,
       "norm_label": "code:text (memory.written)"
     },
     {
@@ -12636,7 +12825,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1341",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_42_checkpoint_types",
-      "community": 3,
+      "community": 415,
       "norm_label": "42. checkpoint types"
     },
     {
@@ -12645,7 +12834,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1343",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_38",
-      "community": 3,
+      "community": 415,
       "norm_label": "code:text (automatic)"
     },
     {
@@ -12672,7 +12861,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1374",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_44_zero_data_loss_architecture",
-      "community": 384,
+      "community": 3,
       "norm_label": "44. zero-data-loss architecture"
     },
     {
@@ -12681,7 +12870,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1376",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_39",
-      "community": 384,
+      "community": 3,
       "norm_label": "code:text (user/action)"
     },
     {
@@ -12942,7 +13131,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1696",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_59_context_reconstruction",
-      "community": 388,
+      "community": 3,
       "norm_label": "59. context reconstruction"
     },
     {
@@ -12951,7 +13140,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1702",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_53",
-      "community": 388,
+      "community": 3,
       "norm_label": "code:text (authoritative history)"
     },
     {
@@ -13041,7 +13230,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1825",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_65_memory_write_policy",
-      "community": 389,
+      "community": 3,
       "norm_label": "65. memory write policy"
     },
     {
@@ -13050,7 +13239,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1829",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_58",
-      "community": 389,
+      "community": 3,
       "norm_label": "code:text (model proposes)"
     },
     {
@@ -13248,7 +13437,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2024",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_75_context_engine",
-      "community": 3,
+      "community": 422,
       "norm_label": "75. context engine"
     },
     {
@@ -13257,7 +13446,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2028",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_71",
-      "community": 3,
+      "community": 422,
       "norm_label": "code:text (task)"
     },
     {
@@ -13266,7 +13455,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2056",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_76_context_plan",
-      "community": 422,
+      "community": 3,
       "norm_label": "76. context plan"
     },
     {
@@ -13275,7 +13464,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2058",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_72",
-      "community": 422,
+      "community": 3,
       "norm_label": "code:ts (interface contextplan {)"
     },
     {
@@ -13437,7 +13626,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2229",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_82_context",
-      "community": 424,
+      "community": 3,
       "norm_label": "82. `/context`"
     },
     {
@@ -13446,7 +13635,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2233",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_80",
-      "community": 424,
+      "community": 3,
       "norm_label": "code:text (/context)"
     },
     {
@@ -13455,7 +13644,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2250",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_83_tool_schema_budget",
-      "community": 394,
+      "community": 3,
       "norm_label": "83. tool schema budget"
     },
     {
@@ -13464,7 +13653,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2256",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_81",
-      "community": 394,
+      "community": 3,
       "norm_label": "code:text (catalog descriptions)"
     },
     {
@@ -13491,7 +13680,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2286",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_85_attachment_aware_context",
-      "community": 401,
+      "community": 3,
       "norm_label": "85. attachment-aware context"
     },
     {
@@ -13500,7 +13689,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2290",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_83",
-      "community": 401,
+      "community": 3,
       "norm_label": "code:text (pdf pages)"
     },
     {
@@ -13563,7 +13752,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2348",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_88_compact",
-      "community": 395,
+      "community": 3,
       "norm_label": "88. `/compact`"
     },
     {
@@ -13572,7 +13761,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2352",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_87",
-      "community": 395,
+      "community": 3,
       "norm_label": "code:text (/compact)"
     },
     {
@@ -13770,7 +13959,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2563",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_98_artifact_lineage",
-      "community": 3,
+      "community": 424,
       "norm_label": "98. artifact lineage"
     },
     {
@@ -13779,7 +13968,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2565",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_96",
-      "community": 3,
+      "community": 424,
       "norm_label": "code:text (artifact)"
     },
     {
@@ -13851,7 +14040,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2665",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_102_task_priority",
-      "community": 3,
+      "community": 384,
       "norm_label": "102. task priority"
     },
     {
@@ -13860,7 +14049,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2669",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_101",
-      "community": 3,
+      "community": 384,
       "norm_label": "code:text (critical)"
     },
     {
@@ -13869,7 +14058,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2680",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_103_task_dependencies",
-      "community": 399,
+      "community": 3,
       "norm_label": "103. task dependencies"
     },
     {
@@ -13878,7 +14067,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2684",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_102",
-      "community": 399,
+      "community": 3,
       "norm_label": "code:text (a)"
     },
     {
@@ -13923,7 +14112,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2734",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_106_working_directory",
-      "community": 3,
+      "community": 388,
       "norm_label": "106. working directory"
     },
     {
@@ -13932,7 +14121,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2740",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_105",
-      "community": 3,
+      "community": 388,
       "norm_label": "code:text (wd: d:/projects/video-editor)"
     },
     {
@@ -14004,7 +14193,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2815",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_111_edit_transactions",
-      "community": 368,
+      "community": 3,
       "norm_label": "111. edit transactions"
     },
     {
@@ -14013,7 +14202,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2819",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_109",
-      "community": 368,
+      "community": 3,
       "norm_label": "code:text (prepare)"
     },
     {
@@ -14085,7 +14274,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2890",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_115_search_indexes",
-      "community": 3,
+      "community": 389,
       "norm_label": "115. search indexes"
     },
     {
@@ -14094,7 +14283,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2894",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_114",
-      "community": 3,
+      "community": 389,
       "norm_label": "code:text (sqlite fts5:)"
     },
     {
@@ -14211,7 +14400,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L3026",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_121_context_trust_boundaries",
-      "community": 407,
+      "community": 3,
       "norm_label": "121. context trust boundaries"
     },
     {
@@ -14220,7 +14409,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L3030",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_122",
-      "community": 407,
+      "community": 3,
       "norm_label": "code:text ([project instruction])"
     },
     {
@@ -14499,7 +14688,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L3305",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_136_resource_governance",
-      "community": 3,
+      "community": 394,
       "norm_label": "136. resource governance"
     },
     {
@@ -14508,7 +14697,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L3309",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_137",
-      "community": 3,
+      "community": 394,
       "norm_label": "code:text (max iterations)"
     },
     {
@@ -14652,7 +14841,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L3517",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_143_database_tables_part_1",
-      "community": 377,
+      "community": 3,
       "norm_label": "143. database tables \u2014 part 1"
     },
     {
@@ -14661,7 +14850,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L3519",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_141",
-      "community": 377,
+      "community": 3,
       "norm_label": "code:text (projects)"
     },
     {
@@ -14706,7 +14895,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L3603",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_147_part_1_completion_test",
-      "community": 3,
+      "community": 395,
       "norm_label": "147. part 1 completion test"
     },
     {
@@ -14715,7 +14904,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L3607",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_143",
-      "community": 3,
+      "community": 395,
       "norm_label": "code:text (where does project state live?)"
     },
     {
@@ -23589,7 +23778,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L1897",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_92_json_output",
-      "community": 0,
+      "community": 1004,
       "norm_label": "92. json output"
     },
     {
@@ -23598,7 +23787,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L1901",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_102",
-      "community": 0,
+      "community": 1004,
       "norm_label": "code:json ({)"
     },
     {
@@ -24399,7 +24588,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L2604",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_131_parallel_scheduler_performance",
-      "community": 0,
+      "community": 747,
       "norm_label": "131. parallel scheduler performance"
     },
     {
@@ -24408,7 +24597,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L2608",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_149",
-      "community": 0,
+      "community": 747,
       "norm_label": "code:text (100 active tasks)"
     },
     {
@@ -25182,7 +25371,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L3311",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_181_adr_process",
-      "community": 747,
+      "community": 0,
       "norm_label": "181. adr process"
     },
     {
@@ -25191,7 +25380,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L3315",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_186",
-      "community": 747,
+      "community": 0,
       "norm_label": "code:text (id)"
     },
     {
@@ -25236,7 +25425,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L3354",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_184_ci_gates",
-      "community": 0,
+      "community": 768,
       "norm_label": "184. ci gates"
     },
     {
@@ -25245,7 +25434,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L3358",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_189",
-      "community": 0,
+      "community": 768,
       "norm_label": "code:text (typecheck)"
     },
     {
@@ -25938,7 +26127,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L3931",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_228_document_review_artifact",
-      "community": 0,
+      "community": 806,
       "norm_label": "228. document review artifact"
     },
     {
@@ -25947,7 +26136,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L3935",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_223",
-      "community": 0,
+      "community": 806,
       "norm_label": "code:text (document)"
     },
     {
@@ -26010,7 +26199,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L3988",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_233_repairable_database",
-      "community": 768,
+      "community": 0,
       "norm_label": "233. repairable database"
     },
     {
@@ -26019,7 +26208,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L3992",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_226",
-      "community": 768,
+      "community": 0,
       "norm_label": "code:text (rebuild projection)"
     },
     {
@@ -26667,7 +26856,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L4510",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_274_multimodal_target",
-      "community": 0,
+      "community": 829,
       "norm_label": "274. multimodal target"
     },
     {
@@ -26676,7 +26865,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L4514",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_258",
-      "community": 0,
+      "community": 829,
       "norm_label": "code:text (>= 95% correct representation selection)"
     },
     {
@@ -27099,7 +27288,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L4873",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_301_profile_system",
-      "community": 0,
+      "community": 930,
       "norm_label": "301. profile system"
     },
     {
@@ -27108,7 +27297,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L4877",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_279",
-      "community": 0,
+      "community": 930,
       "norm_label": "code:text (minimal)"
     },
     {
@@ -27369,7 +27558,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L5105",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_316_custom_shortcuts",
-      "community": 806,
+      "community": 0,
       "norm_label": "316. custom shortcuts"
     },
     {
@@ -27378,7 +27567,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L5109",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_294",
-      "community": 806,
+      "community": 0,
       "norm_label": "code:text (ctrl+shift+u -> /ultrareview)"
     },
     {
@@ -27414,7 +27603,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L5133",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_319_web_ui_requirements",
-      "community": 930,
+      "community": 0,
       "norm_label": "319. web ui requirements"
     },
     {
@@ -27423,7 +27612,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L5137",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_296",
-      "community": 930,
+      "community": 0,
       "norm_label": "code:text (projects)"
     },
     {
@@ -28467,7 +28656,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L5938",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_384_event_replay_test",
-      "community": 829,
+      "community": 0,
       "norm_label": "384. event replay test"
     },
     {
@@ -28476,7 +28665,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_3_CLI_SECURITY_UX_EVALUATION_IMPLEMENTATION.md",
       "source_location": "L5942",
       "id": "prd_anantham_prd_v2_part_3_cli_security_ux_evaluation_implementation_codeblock_348",
-      "community": 829,
+      "community": 0,
       "norm_label": "code:text (task state)"
     },
     {
@@ -29622,9 +29811,9 @@
       "source_file": "package.json",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "herness_package_scripts",
-      "target": "herness_package_scripts_sync_all",
-      "confidence_score": 1.0
+      "target": "herness_package_scripts_sync_all"
     },
     {
       "relation": "contains",
@@ -29632,9 +29821,9 @@
       "source_file": "package.json",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "herness_package_scripts",
-      "target": "herness_package_scripts_sync_codegraph",
-      "confidence_score": 1.0
+      "target": "herness_package_scripts_sync_codegraph"
     },
     {
       "relation": "contains",
@@ -29642,9 +29831,9 @@
       "source_file": "package.json",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "herness_package_scripts",
-      "target": "herness_package_scripts_sync_graphify",
-      "confidence_score": 1.0
+      "target": "herness_package_scripts_sync_graphify"
     },
     {
       "relation": "contains",
@@ -29652,9 +29841,9 @@
       "source_file": "package.json",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "herness_package_scripts",
-      "target": "herness_package_scripts_sync_neo4j",
-      "confidence_score": 1.0
+      "target": "herness_package_scripts_sync_neo4j"
     },
     {
       "relation": "contains",
@@ -29662,9 +29851,9 @@
       "source_file": "package.json",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "herness_package_scripts",
-      "target": "herness_package_scripts_sync_graphiti",
-      "confidence_score": 1.0
+      "target": "herness_package_scripts_sync_graphiti"
     },
     {
       "relation": "contains",
@@ -29672,9 +29861,9 @@
       "source_file": "package.json",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "herness_package_scripts",
-      "target": "herness_package_scripts_sync_git",
-      "confidence_score": 1.0
+      "target": "herness_package_scripts_sync_git"
     },
     {
       "relation": "contains",
@@ -30282,9 +30471,9 @@
       "source_file": "scripts/export-cypher.mjs",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_export_cypher_mjs",
-      "target": "scripts_export_cypher_data",
-      "confidence_score": 1.0
+      "target": "scripts_export_cypher_data"
     },
     {
       "relation": "contains",
@@ -30292,9 +30481,9 @@
       "source_file": "scripts/export-cypher.mjs",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_export_cypher_mjs",
-      "target": "scripts_export_cypher_cypherlines",
-      "confidence_score": 1.0
+      "target": "scripts_export_cypher_cypherlines"
     },
     {
       "relation": "contains",
@@ -30302,9 +30491,9 @@
       "source_file": "scripts/export-cypher.mjs",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_export_cypher_mjs",
-      "target": "scripts_export_cypher_id",
-      "confidence_score": 1.0
+      "target": "scripts_export_cypher_id"
     },
     {
       "relation": "contains",
@@ -30312,9 +30501,9 @@
       "source_file": "scripts/export-cypher.mjs",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_export_cypher_mjs",
-      "target": "scripts_export_cypher_label",
-      "confidence_score": 1.0
+      "target": "scripts_export_cypher_label"
     },
     {
       "relation": "contains",
@@ -30322,9 +30511,9 @@
       "source_file": "scripts/export-cypher.mjs",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_export_cypher_mjs",
-      "target": "scripts_export_cypher_filetype",
-      "confidence_score": 1.0
+      "target": "scripts_export_cypher_filetype"
     },
     {
       "relation": "contains",
@@ -30332,9 +30521,9 @@
       "source_file": "scripts/export-cypher.mjs",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_export_cypher_mjs",
-      "target": "scripts_export_cypher_sourcefile",
-      "confidence_score": 1.0
+      "target": "scripts_export_cypher_sourcefile"
     },
     {
       "relation": "contains",
@@ -30342,9 +30531,9 @@
       "source_file": "scripts/export-cypher.mjs",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_export_cypher_mjs",
-      "target": "scripts_export_cypher_source",
-      "confidence_score": 1.0
+      "target": "scripts_export_cypher_source"
     },
     {
       "relation": "contains",
@@ -30352,9 +30541,9 @@
       "source_file": "scripts/export-cypher.mjs",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_export_cypher_mjs",
-      "target": "scripts_export_cypher_target",
-      "confidence_score": 1.0
+      "target": "scripts_export_cypher_target"
     },
     {
       "relation": "contains",
@@ -30362,9 +30551,9 @@
       "source_file": "scripts/export-cypher.mjs",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_export_cypher_mjs",
-      "target": "scripts_export_cypher_outfile",
-      "confidence_score": 1.0
+      "target": "scripts_export_cypher_outfile"
     },
     {
       "relation": "contains",
@@ -30424,9 +30613,9 @@
       "source_file": "scripts/sync-graphiti.mjs",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_sync_graphiti_mjs",
-      "target": "scripts_sync_graphiti_changedfiles",
-      "confidence_score": 1.0
+      "target": "scripts_sync_graphiti_changedfiles"
     },
     {
       "relation": "contains",
@@ -30434,9 +30623,9 @@
       "source_file": "scripts/sync-graphiti.mjs",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_sync_graphiti_mjs",
-      "target": "scripts_sync_graphiti_status",
-      "confidence_score": 1.0
+      "target": "scripts_sync_graphiti_status"
     },
     {
       "relation": "contains",
@@ -30444,9 +30633,9 @@
       "source_file": "scripts/sync-graphiti.mjs",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_sync_graphiti_mjs",
-      "target": "scripts_sync_graphiti_match",
-      "confidence_score": 1.0
+      "target": "scripts_sync_graphiti_match"
     },
     {
       "relation": "contains",
@@ -30454,9 +30643,9 @@
       "source_file": "scripts/sync-graphiti.mjs",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_sync_graphiti_mjs",
-      "target": "scripts_sync_graphiti_sc",
-      "confidence_score": 1.0
+      "target": "scripts_sync_graphiti_sc"
     },
     {
       "relation": "contains",
@@ -30464,9 +30653,9 @@
       "source_file": "scripts/sync-graphiti.mjs",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_sync_graphiti_mjs",
-      "target": "scripts_sync_graphiti_episode",
-      "confidence_score": 1.0
+      "target": "scripts_sync_graphiti_episode"
     },
     {
       "relation": "contains",
@@ -33407,6 +33596,17 @@
       "target": "src_event_state_event_store_ts"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "src_event_state_event_store_ts",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/event-state/event-store.ts",
@@ -33575,6 +33775,17 @@
       "target": "event_state_event_store_eventstore"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "event_state_event_store_eventstore",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -33706,6 +33917,17 @@
       "target": "src_event_state_projections_projection_manager_ts"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "src_event_state_projections_projection_manager_ts",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/event-state/projections/projection-manager.ts",
@@ -33828,6 +34050,17 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_crash_recovery_test_ts",
       "target": "projections_projection_manager_projectionmanager"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "projections_projection_manager_projectionmanager",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -34690,6 +34923,17 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "src_persistence_migration_engine_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/recovery/lease-manager.test.ts",
       "source_location": "L6",
       "weight": 1.0,
@@ -34867,6 +35111,17 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_crash_recovery_test_ts",
       "target": "persistence_migration_engine_migrationengine"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "persistence_migration_engine_migrationengine",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -35194,6 +35449,17 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_crash_recovery_test_ts",
       "target": "src_persistence_sqlite_engine_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "src_persistence_sqlite_engine_ts",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -35532,6 +35798,17 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "persistence_sqlite_engine_sqliteengine",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/recovery/lease-manager.test.ts",
       "source_location": "L5",
       "weight": 1.0,
@@ -35667,6 +35944,17 @@
       "target": "src_persistence_repositories_artifact_repository_ts"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "src_persistence_repositories_artifact_repository_ts",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/persistence/repositories/artifact-repository.ts",
@@ -35779,6 +36067,17 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_crash_recovery_test_ts",
       "target": "repositories_artifact_repository_artifactrepository"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "repositories_artifact_repository_artifactrepository",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -35958,6 +36257,17 @@
       "target": "src_persistence_repositories_checkpoint_repository_ts"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "src_persistence_repositories_checkpoint_repository_ts",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/persistence/repositories/checkpoint-repository.ts",
@@ -36051,6 +36361,17 @@
       "target": "repositories_checkpoint_repository_checkpointrepository"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "repositories_checkpoint_repository_checkpointrepository",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -36124,6 +36445,17 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_crash_recovery_test_ts",
       "target": "src_persistence_repositories_event_repository_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "src_persistence_repositories_event_repository_ts",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -36217,6 +36549,17 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_crash_recovery_test_ts",
       "target": "repositories_event_repository_eventrepository"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "repositories_event_repository_eventrepository",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -36366,6 +36709,17 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "src_persistence_repositories_project_repository_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/recovery/lease-manager.test.ts",
       "source_location": "L8",
       "weight": 1.0,
@@ -36470,6 +36824,17 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "repositories_project_repository_projectrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/recovery/lease-manager.test.ts",
       "source_location": "L8",
       "weight": 1.0,
@@ -36540,6 +36905,17 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_crash_recovery_test_ts",
       "target": "src_persistence_repositories_session_repository_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "src_persistence_repositories_session_repository_ts",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -36649,6 +37025,17 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "repositories_session_repository_sessionrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/recovery/lease-manager.test.ts",
       "source_location": "L9",
       "weight": 1.0,
@@ -36719,6 +37106,17 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_crash_recovery_test_ts",
       "target": "src_persistence_repositories_task_repository_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "src_persistence_repositories_task_repository_ts",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -36812,6 +37210,17 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_crash_recovery_test_ts",
       "target": "repositories_task_repository_taskrepository"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "repositories_task_repository_taskrepository",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -36911,6 +37320,17 @@
       "target": "src_recovery_checkpoint_manifest_ts"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "src_recovery_checkpoint_manifest_ts",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/recovery/checkpoint-manifest.ts",
@@ -36962,6 +37382,17 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_crash_recovery_test_ts",
       "target": "recovery_checkpoint_manifest_checkpointmanifestbuilder"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "recovery_checkpoint_manifest_checkpointmanifestbuilder",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -37189,6 +37620,17 @@
       "target": "src_recovery_crash_recovery_engine_ts"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "src_recovery_crash_recovery_engine_ts",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/recovery/crash-recovery-engine.ts",
@@ -37218,6 +37660,17 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_crash_recovery_test_ts",
       "target": "recovery_crash_recovery_engine_crashrecoveryengine"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "recovery_crash_recovery_engine_crashrecoveryengine",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -37259,6 +37712,17 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_crash_recovery_test_ts",
       "target": "src_recovery_lease_manager_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "src_recovery_lease_manager_ts",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -37341,6 +37805,17 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_crash_recovery_test_ts",
       "target": "recovery_lease_manager_leasemanager"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "recovery_lease_manager_leasemanager",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -38977,6 +39452,206 @@
       "confidence_score": 1.0,
       "source": "tests_recovery_crash_recovery_test_ts",
       "target": "recovery_crash_recovery_test_board"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "recovery_crash_simulation_disk_test_migrator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L188",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "recovery_crash_simulation_disk_test_projectrepo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L189",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "recovery_crash_simulation_disk_test_sessionrepo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "recovery_crash_simulation_disk_test_taskrepo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L235",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "recovery_crash_simulation_disk_test_artifactrepo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L234",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "recovery_crash_simulation_disk_test_checkpointrepo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "recovery_crash_simulation_disk_test_eventstore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "recovery_crash_simulation_disk_test_artsha",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L128",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "recovery_crash_simulation_disk_test_leasemanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L131",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "recovery_crash_simulation_disk_test_checkpoint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L149",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "recovery_crash_simulation_disk_test_reopenedengine",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L152",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "recovery_crash_simulation_disk_test_reopenedtaskrepo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L153",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "recovery_crash_simulation_disk_test_reopenedcheckpointrepo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L154",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "recovery_crash_simulation_disk_test_reopenedartifactrepo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L155",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "recovery_crash_simulation_disk_test_reopenedeventstore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L156",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "recovery_crash_simulation_disk_test_reopenedprojectionmanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L157",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "recovery_crash_simulation_disk_test_reopenedleasemanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L237",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "recovery_crash_simulation_disk_test_recoveryengine",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L178",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "recovery_crash_simulation_disk_test_sessionsummary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/recovery/crash-simulation-disk.test.ts",
+      "source_location": "L181",
+      "weight": 1.0,
+      "source": "tests_recovery_crash_simulation_disk_test_ts",
+      "target": "recovery_crash_simulation_disk_test_taskboard",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -65570,5 +66245,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "aa8881356557500b9f540e8ae006a1cfc35cc97f"
+  "built_at_commit": "6724f75a03f82df6c402664662212f4cf7ec0ff4"
 }

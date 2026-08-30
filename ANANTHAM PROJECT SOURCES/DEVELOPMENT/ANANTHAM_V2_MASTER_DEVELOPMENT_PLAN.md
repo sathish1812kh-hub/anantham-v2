@@ -597,9 +597,9 @@ Antigravity MUST append an entry after every completed work package:
 Status: VERIFIED COMPLETE
 What changed: Implemented the Checkpoint and Crash Recovery subsystem. Added CheckpointManifestBuilder for cryptographic manifest generation with SHA-256 integrity digests, CheckpointValidator for structural and persistent artifact/offset validation, LeaseManager for exclusive task claims, heartbeats, and stale lease reclamation, OrphanDetector for referential integrity scans across SQLite tables, and CrashRecoveryEngine for deterministic startup recovery, PRAGMA checks, lease reclamation, orphan sweep, and projection synchronization.
 Files: src/recovery/*.ts, src/index.ts, tests/recovery/*.test.ts
-Tests: 75 automated tests passing across 28 test suites in Vitest (checkpoint creation, manifest hashing, tampering detection, lease exclusivity/renewal/expiration/eviction, orphan detection, clean and corrupted crash recovery, projection rebuilds).
-Verification: npm run typecheck (0 errors under strict: true), npm test (75/75 passing), npm run build (successful), npm run scorecard (1000/1000 Certified Perfect).
-Commit/Revision: Initial P1.4 implementation
+Tests: 77 automated tests passing across 29 test suites in Vitest (checkpoint creation, manifest canonical JSON hashing, tampering detection, lease exclusivity/renewal/expiration/eviction, orphan detection, clean and corrupted crash recovery, projection rebuilds from event store, and real disk crash simulations).
+Verification: npm run typecheck (0 errors under strict: true), npm test (77/77 passing), npm run build (successful), npm run scorecard (1000/1000 Certified Perfect), multi-engine sync (CodeGraph, Graphify, Neo4j, Graphiti, Git).
+Commit/Revision: 6724f75
 Risks: None.
 Unresolved: None.
 Next: P1.5 Resume (/resume, durable reconstruction, task/workflow restoration, pending approval restoration, artifact/worktree restoration).
