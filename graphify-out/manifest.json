@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\governance\\scorecard.json": {
-    "mtime": 1788105922.7871356,
-    "ast_hash": "da52462c92a4f1395966678a781e337c",
+    "mtime": 1788106111.5571182,
+    "ast_hash": "fe1632c245a6b3c48d1570e5b0f2226a",
     "semantic_hash": ""
   },
   "C:\\herness\\scripts\\certification-scorecard.ps1": {
@@ -504,9 +504,14 @@
     "ast_hash": "d386afa818a74e099b657b30a2c0697f",
     "semantic_hash": ""
   },
+  "C:\\herness\\docs\\discovery\\CHATGPT_ORCHESTRATION_KT.md": {
+    "mtime": 1788106084.6535249,
+    "ast_hash": "660ca4cf052e54dfbc2e7a7b11542d9d",
+    "semantic_hash": ""
+  },
   "C:\\herness\\docs\\discovery\\current-state.md": {
-    "mtime": 1788105883.7720108,
-    "ast_hash": "de916321aef9d6a952716f5eb3ad1f90",
+    "mtime": 1788106092.9828382,
+    "ast_hash": "269861f2cbe4f461e01a6669885cd1a3",
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\decision-log.md": {

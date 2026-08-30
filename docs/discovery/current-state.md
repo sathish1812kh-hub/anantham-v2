@@ -4,8 +4,8 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `6724f75`
-- **Generated**: `2026-08-30T21:35:31Z`
+- **Project Commit**: `297269b`
+- **Generated**: `2026-08-30T21:38:40Z`
 - **Current Release**: `v2.0.0-alpha.1`
 - **Current Phase**: `P1 — DURABLE RUNTIME FOUNDATION`
 - **Current Task**: `P1.5 — Durable Session Resume Engine (/resume, durable reconstruction, task/workflow restoration, pending approval restoration, artifact/worktree restoration)`
@@ -21,6 +21,7 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
   - [P1.2-PERSISTENCE-ENGINE](file:///C:/herness/src/persistence/index.ts) (Native `node:sqlite` engine, WAL mode, synchronous=FULL RPO-0 durability, MigrationEngine, 8 repositories)
   - [P1.3-EVENT-STATE-ENGINE](file:///C:/herness/src/event-state/index.ts) (Append-only EventStore, Session/Task state reconstruction reducers, ProjectionManager, SessionTreeManager)
   - [P1.4-CHECKPOINTS-RECOVERY](file:///C:/herness/src/recovery/index.ts) (CheckpointManifestBuilder, CheckpointValidator, LeaseManager, OrphanDetector, CrashRecoveryEngine)
+  - [CHATGPT-ORCHESTRATION-KT](file:///C:/herness/docs/discovery/CHATGPT_ORCHESTRATION_KT.md) (Complete Knowledge Transfer package, 7 Pillars, 11-Phase Lifecycle, Source Hierarchy, commands)
 - **Synchronization Status**:
   - **Type Safety**: `100% PASSED (0 TypeScript compilation errors under strict: true)`
   - **SQLite Durability**: `SYNCED (Native DatabaseSync, WAL mode, synchronous=FULL, foreign_keys=ON)`
