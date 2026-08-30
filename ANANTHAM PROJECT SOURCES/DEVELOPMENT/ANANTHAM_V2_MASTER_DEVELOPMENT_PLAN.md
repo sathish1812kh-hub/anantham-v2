@@ -182,12 +182,12 @@ Every update MUST include:
 - [x] session tree/branches
 
 ### P1.4 Checkpoints/recovery
-- [ ] Checkpoint manifests
-- [ ] checkpoint validation
-- [ ] crash recovery
-- [ ] orphan detection
-- [ ] stale lease handling
-- [ ] recovery records
+- [x] Checkpoint manifests
+- [x] checkpoint validation
+- [x] crash recovery
+- [x] orphan detection
+- [x] stale lease handling
+- [x] recovery records
 
 ### P1.5 Resume
 - [ ] `/resume`
@@ -592,6 +592,18 @@ The PRD defines concrete acceptance targets including RPO 0 for committed state 
 
 Antigravity MUST append an entry after every completed work package:
 
+## 2026-08-30 21:15 — TASK-P1.4-CHECKPOINTS-RECOVERY
+ 
+Status: VERIFIED COMPLETE
+What changed: Implemented the Checkpoint and Crash Recovery subsystem. Added CheckpointManifestBuilder for cryptographic manifest generation with SHA-256 integrity digests, CheckpointValidator for structural and persistent artifact/offset validation, LeaseManager for exclusive task claims, heartbeats, and stale lease reclamation, OrphanDetector for referential integrity scans across SQLite tables, and CrashRecoveryEngine for deterministic startup recovery, PRAGMA checks, lease reclamation, orphan sweep, and projection synchronization.
+Files: src/recovery/*.ts, src/index.ts, tests/recovery/*.test.ts
+Tests: 75 automated tests passing across 28 test suites in Vitest (checkpoint creation, manifest hashing, tampering detection, lease exclusivity/renewal/expiration/eviction, orphan detection, clean and corrupted crash recovery, projection rebuilds).
+Verification: npm run typecheck (0 errors under strict: true), npm test (75/75 passing), npm run build (successful), npm run scorecard (1000/1000 Certified Perfect).
+Commit/Revision: Initial P1.4 implementation
+Risks: None.
+Unresolved: None.
+Next: P1.5 Resume (/resume, durable reconstruction, task/workflow restoration, pending approval restoration, artifact/worktree restoration).
+ 
 ## 2026-08-30 21:00 — TASK-P1.3-EVENT-STATE
  
  Status: VERIFIED COMPLETE

@@ -9,7 +9,17 @@
     "build": "tsc",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "verify": "powershell -ExecutionPolicy Bypass -File scripts/verify-all.ps1",
+    "scorecard": "powershell -ExecutionPolicy Bypass -File scripts/certification-scorecard.ps1",
+    "sync-state": "powershell -ExecutionPolicy Bypass -File scripts/sync-state.ps1",
+    "sync:all": "powershell -ExecutionPolicy Bypass -File scripts/post-task-sync.ps1",
+    "sync:codegraph": "powershell -ExecutionPolicy Bypass -File scripts/sync-codegraph.ps1",
+    "sync:graphify": "powershell -ExecutionPolicy Bypass -File scripts/sync-graphify.ps1",
+    "sync:neo4j": "powershell -ExecutionPolicy Bypass -File scripts/sync-neo4j.ps1",
+    "sync:graphiti": "node scripts/sync-graphiti.mjs",
+    "sync:git": "powershell -ExecutionPolicy Bypass -File scripts/sync-git.ps1",
+    "verdict": "node scripts/generate-verdict.mjs"
   },
   "keywords": [
     "ai",
