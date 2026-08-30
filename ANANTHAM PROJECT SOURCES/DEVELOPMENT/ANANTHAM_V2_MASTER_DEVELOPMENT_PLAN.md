@@ -266,12 +266,12 @@ Every update MUST include:
 - [x] capability resolver
 - [x] ModelRouter
 - [x] routing explanation
-- [ ] auth profiles
-- [ ] secure credential storage
-- [ ] key pools
-- [ ] rate/concurrency limits
-- [ ] provider health
-- [ ] cooldown/fairness
+- [x] auth profiles
+- [x] secure credential storage
+- [x] key pools
+- [x] rate/concurrency limits
+- [x] provider health
+- [x] cooldown/fairness
 - [x] retry/failover
 - [ ] OpenRouter
 - [ ] direct providers

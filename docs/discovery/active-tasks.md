@@ -6,15 +6,21 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P3 — Model / Provider / Credential Plane)
 
-### [P3.4 — Auth Profiles, Key Pools, Rate Limits & Provider Health](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P3.5 — OpenRouter, Direct Providers & Custom Endpoints](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Principal Security & Infrastructure Architect
-- **Description**: Implement secure auth profiles, encrypted credential storage, rotating API key pools, concurrency/rate limit tracking, provider health monitoring, and cooldown fairness.
-- **Dependencies**: `P3.1`, `P3.2`, `P3.3`.
+- **Owner**: Principal Integrations Architect
+- **Description**: Implement OpenRouter aggregation adapter, direct vendor adapters (OpenAI, Anthropic, Gemini), and local/custom endpoints (Ollama/vLLM) with streaming and tool normalization.
+- **Dependencies**: `P3.1`, `P3.2`, `P3.3`, `P3.4`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P3.4-AUTH-HEALTH — Auth Profiles, Key Pools, Rate Limits & Provider Health](file:///C:/herness/src/models/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Security & Infrastructure Architect
+- **Completed Date**: 2026-08-31
+- **Verification**: 218/218 tests passing across 98 test suites in Vitest. Zero-secret-leakage CredentialReference contracts, SecretStore boundary, KeyPoolManager with per-key concurrency and rate-limiting lease management, stale lease recovery, independent Provider/Model/Credential health state machines, ModelRouter integration, and P3 Gate zero-state-loss SQLite durability.
 
 ### [TASK-P3.3-ROUTER — ModelRouter, Explainability & Bounded Failover Cascades](file:///C:/herness/src/models/index.ts)
 - **Status**: `COMPLETED`

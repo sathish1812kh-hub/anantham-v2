@@ -118,6 +118,12 @@ export class KeyPoolManager {
     // 2. Deterministic selection: least busy (lowest concurrencyCount)
     eligible.sort((a, b) => a.concurrencyCount - b.concurrencyCount);
     const selected = eligible[0];
+    if (!selected) {
+      return {
+        success: false,
+        rejectionReason: `No eligible candidate found for provider '${providerId}'`,
+      };
+    }
 
     // 3. Acquire Lease
     const leaseId = `lease_${randomUUID().slice(0, 8)}`;

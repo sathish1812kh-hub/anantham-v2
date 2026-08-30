@@ -4,18 +4,18 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `363f8c2`
-- **Generated**: `2026-08-31T00:56:36Z`
+- **Project Commit**: `cc46c95`
+- **Generated**: `2026-08-31T01:06:27Z`
 - **Current Release**: `v2.0.0-alpha.1`
 - **Current Phase**: `P3 — MODEL / PROVIDER / CREDENTIAL PLANE`
-- **Current Task**: `P3.4 — Auth Profiles, Key Pools, Rate Limits & Provider Health`
-- **Last Completed Task**: `TASK-P3.3-ROUTER — ModelRouter, Explainability & Bounded Failover Cascades`
+- **Current Task**: `P3.5 — OpenRouter, Direct Providers & Custom Endpoints`
+- **Last Completed Task**: `TASK-P3.4-AUTH-HEALTH — Auth Profiles, Key Pools, Rate Limits & Provider Health`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`
   - `0 type check errors under strict: true.`
 - **Pending Approvals**:
-  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.3 Implemented Clean & Verified).`
+  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.4 Implemented Clean & Verified).`
 - **Recently Completed Milestones**:
   - [P1.1-CORE-DOMAIN](file:///C:/herness/src/domain/index.ts) (12 core domain models, runtime Zod validation schemas, state machines, immutability)
   - [P1.2-PERSISTENCE-ENGINE](file:///C:/herness/src/persistence/index.ts) (Native `node:sqlite` engine, WAL mode, synchronous=FULL RPO-0 durability, MigrationEngine, 8 repositories)
@@ -31,6 +31,7 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
   - [P3.1-ADAPTERS](file:///C:/herness/src/models/index.ts) (Unified ModelRequest/Response schemas, MockProviderAdapter unary/streaming execution, normalized tool calling, token/cost accounting, structured error hierarchy, P3 Gate SQLite durability)
   - [P3.2-CAPABILITY](file:///C:/herness/src/models/index.ts) (ModelInput/Output capabilities, execution features, limits, CapabilityProfile status lifecycle, CapabilityResolver deterministic negotiation, RepresentationSelector integration, Capability != Authorization boundary)
   - [P3.3-ROUTER](file:///C:/herness/src/models/index.ts) (Deterministic ModelRouter, capability-first candidate filtering, explicit preference/priority ranking, structured RoutingDecision explanations, bounded failover cascades, non-retryable error safety, zero-state-loss model switching)
+  - [P3.4-AUTH-HEALTH](file:///C:/herness/src/models/index.ts) (Zero-secret-leakage CredentialReference, SecretStore boundary, KeyPoolManager concurrency/rate-limit leasing, stale lease recovery, independent Provider/Model/Credential health state machines)
   - [CHATGPT-ORCHESTRATION-KT](file:///C:/herness/docs/discovery/CHATGPT_ORCHESTRATION_KT.md) (Complete Knowledge Transfer package, 7 Pillars, 11-Phase Lifecycle, Source Hierarchy, commands)
 - **Synchronization Status**:
   - **Type Safety**: `100% PASSED (0 TypeScript compilation errors under strict: true)`
@@ -45,6 +46,6 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
   - **Context Engine**: `SYNCED (ContextEngine, ToolResultPruner, ContextPlan)`
   - **Compaction Engine**: `SYNCED (CompactionEngine, CompactionSummary, CompactionPreview)`
   - **Memory Subsystem**: `SYNCED (MemoryManager, MemoryIndexManager, MemoryRetrievalEngine, FTS5 Index)`
-  - **Model Plane**: `SYNCED (ModelAdapter, ProviderAdapter, MockProviderAdapter, CapabilityResolver, CapabilityProfiles, ModelRouter)`
-  - **Automated Test Suites**: `100% PASSED (203/203 tests passing across 90 test files)`
+  - **Model Plane**: `SYNCED (ModelAdapter, ProviderAdapter, MockProviderAdapter, CapabilityResolver, CapabilityProfiles, ModelRouter, KeyPoolManager, SecretStore, ProviderHealthTracker)`
+  - **Automated Test Suites**: `100% PASSED (218/218 tests passing across 98 test files)`
   - **Quality Scorecard**: `1000/1000 CERTIFIED GOLD STANDARD`
