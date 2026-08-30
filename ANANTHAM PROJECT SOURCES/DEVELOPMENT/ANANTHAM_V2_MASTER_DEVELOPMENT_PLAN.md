@@ -599,7 +599,7 @@ Antigravity MUST append an entry after every completed work package:
  Files: src/persistence/sqlite-engine.ts, src/persistence/migration-engine.ts, src/persistence/migrations/001_initial_core_schema.ts, src/persistence/repositories/*.ts, src/persistence/index.ts, src/index.ts, tests/persistence/*.test.ts
  Tests: 51 automated tests passing across 19 test suites (durability, crash recovery, foreign key cascading, migration idempotency/tamper detection, repository CRUD, and state transitions).
  Verification: npm run typecheck (0 errors under strict: true), npm test (51/51 passing), npm run build (successful).
- Commit/Revision: Pending git commit
+ Commit/Revision: e7d7c56
  Risks: None.
  Unresolved: None.
  Next: P1.3 Event/state (Event store stream projections, state reconstruction, projection rebuild, session tree branching).
