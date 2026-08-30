@@ -4,8 +4,8 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `d54037d`
-- **Generated**: `2026-08-31T02:16:48Z`
+- **Project Commit**: `d471cc1`
+- **Generated**: `2026-08-31T02:34:15Z`
 - **Current Release**: `v2.0.0-alpha.1`
 - **Current Phase**: `P4 — POLICY / TOOLS / EXECUTION`
 - **Current Task**: `P4.5 — Side Effects (Retry Classification, Global Retry Budget, Duplicate Protection, Divergence Detection)`

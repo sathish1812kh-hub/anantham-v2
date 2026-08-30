@@ -10,6 +10,9 @@ import { type PolicyEngine } from "../policy/policy-engine.js";
 import { type ApprovalManager } from "../policy/approval-manager.js";
 import { type EventStore } from "../event-state/event-store.js";
 import { EventTypes } from "../domain/event.js";
+import { type SideEffectJournal } from "../side-effects/side-effect-journal.js";
+import { type SideEffectClassifier } from "../side-effects/side-effect-classifier.js";
+import { type FileDivergenceDetector } from "../side-effects/file-divergence-detector.js";
 
 export interface ToolGatewayOptions {
   registry: ToolRegistry;
@@ -17,6 +20,9 @@ export interface ToolGatewayOptions {
   approvalManager?: ApprovalManager;
   eventStore?: EventStore;
   idempotencyStore?: IdempotencyStore;
+  sideEffectJournal?: SideEffectJournal;
+  sideEffectClassifier?: SideEffectClassifier;
+  fileDivergenceDetector?: FileDivergenceDetector;
   defaultTimeoutMs?: number;
 }
 
@@ -26,6 +32,9 @@ export class ToolGateway {
   private readonly approvalManager?: ApprovalManager;
   private readonly eventStore?: EventStore;
   private readonly idempotencyStore?: IdempotencyStore;
+  private readonly sideEffectJournal?: SideEffectJournal;
+  private readonly sideEffectClassifier?: SideEffectClassifier;
+  private readonly fileDivergenceDetector?: FileDivergenceDetector;
   private readonly defaultTimeoutMs: number;
 
   constructor(options: ToolGatewayOptions) {
@@ -34,6 +43,9 @@ export class ToolGateway {
     this.approvalManager = options.approvalManager;
     this.eventStore = options.eventStore;
     this.idempotencyStore = options.idempotencyStore;
+    this.sideEffectJournal = options.sideEffectJournal;
+    this.sideEffectClassifier = options.sideEffectClassifier;
+    this.fileDivergenceDetector = options.fileDivergenceDetector;
     this.defaultTimeoutMs = options.defaultTimeoutMs || 30000;
   }
 
@@ -312,7 +324,28 @@ export class ToolGateway {
       }
     }
 
-    // 6. Execution Boundary with Timeout & Cancellation
+    // 6. File Divergence Verification
+    if (this.fileDivergenceDetector && typeof req.arguments.baseHash === "string" && typeof req.arguments.path === "string") {
+      try {
+        this.fileDivergenceDetector.assertNoDivergence(req.arguments.path, req.arguments.baseHash);
+      } catch (divErr: any) {
+        releaseLockIfHeld();
+        return ToolObservationSchema.parse({
+          callId: req.callId,
+          toolName: req.toolName,
+          status: "failure",
+          error: {
+            code: "FILE_DIVERGENCE_ERROR",
+            message: divErr.message,
+            retryable: false,
+          },
+          durationMs: Date.now() - startTime,
+          executedAt,
+        });
+      }
+    }
+
+    // 7. Execution Boundary with Timeout & Cancellation
     const timeoutMs = req.timeoutMs || definition.timeoutMs || this.defaultTimeoutMs;
     const controller = new AbortController();
 
@@ -355,6 +388,22 @@ export class ToolGateway {
 
       if (definition.isIdempotent && req.idempotencyKey && this.idempotencyStore) {
         this.idempotencyStore.set(req.project.id, req.toolName, req.idempotencyKey, observation);
+      }
+
+      if (this.sideEffectJournal) {
+        const category = this.sideEffectClassifier?.classify(req.toolName, req.arguments, definition) || (definition.isIdempotent ? "idempotent_write" : "unknown");
+        this.sideEffectJournal.record({
+          projectId: req.project.id,
+          sessionId: req.session?.id,
+          taskId: req.task?.id,
+          callId: req.callId,
+          toolName: req.toolName,
+          category,
+          outcomeCertainty: "known_succeeded",
+          idempotencyKey: req.idempotencyKey,
+          args: req.arguments,
+          responseStatus: "success",
+        });
       }
 
       if (this.eventStore) {
@@ -404,6 +453,22 @@ export class ToolGateway {
         idempotencyKey: req.idempotencyKey,
         approvalId: req.approvalId,
       });
+
+      if (this.sideEffectJournal) {
+        const category = this.sideEffectClassifier?.classify(req.toolName, req.arguments, definition) || (definition.isIdempotent ? "idempotent_write" : "unknown");
+        this.sideEffectJournal.record({
+          projectId: req.project.id,
+          sessionId: req.session?.id,
+          taskId: req.task?.id,
+          callId: req.callId,
+          toolName: req.toolName,
+          category,
+          outcomeCertainty: isTimeout ? "unknown" : "known_failed",
+          idempotencyKey: req.idempotencyKey,
+          args: req.arguments,
+          responseStatus: status,
+        });
+      }
 
       if (this.eventStore) {
         this.eventStore.append({

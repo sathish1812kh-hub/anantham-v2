@@ -50,6 +50,14 @@ export const EventTypes = {
   TOOL_COMPLETED: "tool.completed",
   TOOL_FAILED: "tool.failed",
 
+  // Side effect plane
+  SIDE_EFFECT_REQUESTED: "side_effect.requested",
+  SIDE_EFFECT_STARTED: "side_effect.started",
+  SIDE_EFFECT_COMPLETED: "side_effect.completed",
+  SIDE_EFFECT_FAILED: "side_effect.failed",
+  SIDE_EFFECT_UNKNOWN: "side_effect.unknown",
+  SIDE_EFFECT_DIVERGENCE: "side_effect.divergence",
+
   // MCP plane
   MCP_CONNECTED: "mcp.connected",
   MCP_DISCONNECTED: "mcp.disconnected",

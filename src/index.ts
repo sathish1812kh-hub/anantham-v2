@@ -17,3 +17,4 @@ export * from "./models/index.js";
 export * from "./policy/index.js";
 export * from "./tools/index.js";
 export * from "./execution/index.js";
+export * from "./side-effects/index.js";
