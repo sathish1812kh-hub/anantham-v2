@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\governance\\scorecard.json": {
-    "mtime": 1788110781.467242,
-    "ast_hash": "8053c5f9f87d3830edf8aedbccbfb4c4",
+    "mtime": 1788111029.8221397,
+    "ast_hash": "d65a45d6f3efa12e1dbf0a730e9cfdbe",
     "semantic_hash": ""
   },
   "C:\\herness\\scripts\\certification-scorecard.ps1": {
@@ -45,8 +45,13 @@
     "semantic_hash": ""
   },
   "C:\\herness\\scripts\\start-neo4j.ps1": {
-    "mtime": 1788110731.9545922,
-    "ast_hash": "f8432ea6eb04e6aed8978a6f54df63c5",
+    "mtime": 1788110934.7754931,
+    "ast_hash": "364d9ed864e276045c92b4b82edb1ba1",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\scripts\\stop-neo4j.ps1": {
+    "mtime": 1788110866.0357697,
+    "ast_hash": "678ab66a60d104cf630a90087f3fca86",
     "semantic_hash": ""
   },
   "C:\\herness\\scripts\\sync-codegraph.ps1": {
@@ -675,8 +680,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\current-state.md": {
-    "mtime": 1788109822.09657,
-    "ast_hash": "e1d6877d48ff84a4780ebc60a54eeafe",
+    "mtime": 1788110942.1539538,
+    "ast_hash": "5ed7a80f74ca92e318b531145674ee4e",
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\decision-log.md": {

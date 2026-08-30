@@ -4,8 +4,8 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `81c7e7d`
-- **Generated**: `2026-08-30T22:59:02Z`
+- **Project Commit**: `b6ca201`
+- **Generated**: `2026-08-30T23:04:17Z`
 - **Current Release**: `v2.0.0-alpha.1`
 - **Current Phase**: `P2 — CONTENT / CONTEXT / MEMORY / RETRIEVAL`
 - **Current Task**: `P2.2 — Content Security, MIME Validation & Provenance`
