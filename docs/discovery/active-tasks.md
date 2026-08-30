@@ -4,17 +4,23 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ---
 
-## 1. Active Phase Backlog (P2 — Content / Context / Memory / Retrieval)
+## 1. Active Phase Backlog (P3 — Model / Provider / Credential Plane)
 
-### [P2.6 — Memory / Retrieval (Scoped Memory, Provenance, Search, FTS Indexes)](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P3.1 — ModelAdapter & ProviderAdapter (Streaming, Tools, Modalities)](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Principal Retrieval & Knowledge Engineer
-- **Description**: Implement scoped memory stores, memory item provenance, deterministic search/retrieval, FTS5 indexes, and rebuildable vector/text indexes.
-- **Dependencies**: `P2.1`, `P2.2`, `P2.3`, `P2.4`, `P2.5`.
+- **Owner**: Principal Model & Integrations Architect
+- **Description**: Implement unified ModelAdapter, ProviderAdapter interface, streaming lifecycle, tool calling normalization, multimodal payload formatting, and rate-limit backoff.
+- **Dependencies**: `P1.1-P1.5`, `P2.1-P2.6`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P2.6-MEMORY — Scoped Memory, Provenance, SQLite FTS5 & Rebuildable Retrieval](file:///C:/herness/src/memory/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Retrieval & Knowledge Engineer
+- **Completed Date**: 2026-08-31
+- **Verification**: 161/161 tests passing across 70 test suites in Vitest. Scoped memory stores, memory item provenance, SQLite FTS5 full-text indexing, composite ranking (BM25 + confidence + priority), 100% index rebuildability from authoritative memory_items, ContextEngine integration, and Data != Policy security isolation.
 
 ### [TASK-P2.5-COMPACTION — Session Compaction, Preview, Undo & History Preservation](file:///C:/herness/src/compaction/index.ts)
 - **Status**: `COMPLETED`

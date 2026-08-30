@@ -4,18 +4,18 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `ab3c348`
-- **Generated**: `2026-08-31T00:10:26Z`
+- **Project Commit**: `5566e31`
+- **Generated**: `2026-08-31T00:30:19Z`
 - **Current Release**: `v2.0.0-alpha.1`
-- **Current Phase**: `P2 — CONTENT / CONTEXT / MEMORY / RETRIEVAL`
-- **Current Task**: `P2.6 — Memory / Retrieval (Scoped Memory, Provenance, Search, FTS Indexes)`
-- **Last Completed Task**: `TASK-P2.5-COMPACTION — Session Compaction, Preview, Undo & History Preservation`
+- **Current Phase**: `P3 — MODEL / PROVIDER / CREDENTIAL PLANE`
+- **Current Task**: `P3.1 — ModelAdapter & ProviderAdapter (Streaming, Tools, Modalities)`
+- **Last Completed Task**: `TASK-P2.6-MEMORY — Scoped Memory, Provenance, SQLite FTS5 & Rebuildable Retrieval`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`
   - `0 type check errors under strict: true.`
 - **Pending Approvals**:
-  - `None (P1.1-P1.5, P2.1-P2.5 Implemented Clean & Verified).`
+  - `None (P1.1-P1.5, P2.1-P2.6 Implemented Clean & Verified).`
 - **Recently Completed Milestones**:
   - [P1.1-CORE-DOMAIN](file:///C:/herness/src/domain/index.ts) (12 core domain models, runtime Zod validation schemas, state machines, immutability)
   - [P1.2-PERSISTENCE-ENGINE](file:///C:/herness/src/persistence/index.ts) (Native `node:sqlite` engine, WAL mode, synchronous=FULL RPO-0 durability, MigrationEngine, 8 repositories)
@@ -27,6 +27,7 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
   - [P2.3-ARTIFACTS](file:///C:/herness/src/artifacts/index.ts) (ArtifactManager atomic durable writes, SHA-256 integrity verification, ArtifactRepository metadata persistence, verification lifecycle, storage path traversal prevention, cross-project isolation)
   - [P2.4-CONTEXT](file:///C:/herness/src/context/index.ts) (ContextEngine deterministic ContextPlan assembly, relevance & priority ranking, capability matching via RepresentationSelector, token budgeting, ToolResultPruner, /context inspection)
   - [P2.5-COMPACTION](file:///C:/herness/src/compaction/index.ts) (CompactionEngine preview, /compact execution emitting context.compacted events, structured CompactionSummary, /compact undo rollback, auto-compact token pressure trigger, zero-history-loss invariant)
+  - [P2.6-MEMORY-RETRIEVAL](file:///C:/herness/src/memory/index.ts) (MemoryManager scoped persistence, SQLite FTS5 index migration, MemoryIndexManager 100% rebuildability, MemoryRetrievalEngine composite BM25/confidence ranking, ContextEngine candidate integration, Data != Policy prompt injection isolation)
   - [CHATGPT-ORCHESTRATION-KT](file:///C:/herness/docs/discovery/CHATGPT_ORCHESTRATION_KT.md) (Complete Knowledge Transfer package, 7 Pillars, 11-Phase Lifecycle, Source Hierarchy, commands)
 - **Synchronization Status**:
   - **Type Safety**: `100% PASSED (0 TypeScript compilation errors under strict: true)`
@@ -40,5 +41,6 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
   - **Artifact Subsystem**: `SYNCED (ArtifactManager, ArtifactReferenceValidator, ArtifactRepository)`
   - **Context Engine**: `SYNCED (ContextEngine, ToolResultPruner, ContextPlan)`
   - **Compaction Engine**: `SYNCED (CompactionEngine, CompactionSummary, CompactionPreview)`
-  - **Automated Test Suites**: `100% PASSED (153/153 tests passing across 64 test files)`
+  - **Memory Subsystem**: `SYNCED (MemoryManager, MemoryIndexManager, MemoryRetrievalEngine, FTS5 Index)`
+  - **Automated Test Suites**: `100% PASSED (161/161 tests passing across 70 test files)`
   - **Quality Scorecard**: `1000/1000 CERTIFIED GOLD STANDARD`

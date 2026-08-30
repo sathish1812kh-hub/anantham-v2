@@ -248,11 +248,11 @@ Every update MUST include:
 - [x] authoritative-history preservation
 
 ### P2.6 Memory/retrieval
-- [ ] scoped memory
-- [ ] memory provenance
-- [ ] search/retrieval
-- [ ] FTS/indexes
-- [ ] rebuildable indexes
+- [x] scoped memory
+- [x] memory provenance
+- [x] search/retrieval
+- [x] FTS/indexes
+- [x] rebuildable indexes
 
 **P2 GATE:** ingest → persist → retrieve → context → compact → resume.
 
