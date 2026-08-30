@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\governance\\scorecard.json": {
-    "mtime": 1788106850.348344,
-    "ast_hash": "ef5ba98bc28738f7a3e494392ef60467",
+    "mtime": 1788109014.5999885,
+    "ast_hash": "dac5e15c752805867261a5145a69de4d",
     "semantic_hash": ""
   },
   "C:\\herness\\scripts\\certification-scorecard.ps1": {
@@ -464,9 +464,19 @@
     "ast_hash": "48a615c7a9e8cda9ab2f1be14bfcb1c2",
     "semantic_hash": ""
   },
+  "C:\\herness\\tests\\resume\\isolation-and-security.test.ts": {
+    "mtime": 1788108971.2518413,
+    "ast_hash": "79b7705a17951b37d7b1de7e9bd3c1c3",
+    "semantic_hash": ""
+  },
   "C:\\herness\\tests\\resume\\pending-approvals.test.ts": {
     "mtime": 1788106732.027869,
     "ast_hash": "b4befc8d9036723c3354caf393bf86cc",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\resume\\recovery-edge-cases.test.ts": {
+    "mtime": 1788108978.3657348,
+    "ast_hash": "872a06920aee5e661fc79fffc15dc0e6",
     "semantic_hash": ""
   },
   "C:\\herness\\tests\\resume\\resume-engine.test.ts": {
@@ -555,8 +565,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\current-state.md": {
-    "mtime": 1788106812.5342624,
-    "ast_hash": "8980a139b4a831e7d29a3fb0cb5fc49b",
+    "mtime": 1788108997.8017244,
+    "ast_hash": "06c6f412ef549cfe5001c5c87df386ab",
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\decision-log.md": {

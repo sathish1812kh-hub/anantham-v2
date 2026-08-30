@@ -4,8 +4,8 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `5a89f90`
-- **Generated**: `2026-08-30T21:50:59Z`
+- **Project Commit**: `c2dfd66`
+- **Generated**: `2026-08-30T22:27:03Z`
 - **Current Release**: `v2.0.0-alpha.1`
 - **Current Phase**: `P1 — DURABLE RUNTIME FOUNDATION (P1 GATE COMPLETED)`
 - **Current Task**: `P2.1 — Multimodal Content Ingestion & Parsers`
@@ -31,5 +31,5 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
   - **Session Tree**: `SYNCED (Hierarchical zero-parent-mutation branching)`
   - **Recovery Engine**: `SYNCED (CheckpointManifestBuilder, CheckpointValidator, LeaseManager, OrphanDetector, CrashRecoveryEngine)`
   - **Resume Engine**: `SYNCED (SessionResumeEngine, TaskDagRestorer, PendingApprovalRestorer)`
-  - **Automated Test Suites**: `100% PASSED (86/86 tests passing across 33 test files)`
+  - **Automated Test Suites**: `100% PASSED (90/90 tests passing across 35 test files)`
   - **Quality Scorecard**: `1000/1000 CERTIFIED GOLD STANDARD`
