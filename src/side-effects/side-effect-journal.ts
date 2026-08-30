@@ -36,7 +36,12 @@ export class SideEffectJournal {
   }
 
   public computeRequestHash(toolName: string, args: Record<string, unknown>): string {
-    const serialized = JSON.stringify({ toolName, args }, Object.keys(args).sort());
+    const sortedKeys = Object.keys(args).sort();
+    const sortedObj: Record<string, unknown> = {};
+    for (const key of sortedKeys) {
+      sortedObj[key] = args[key];
+    }
+    const serialized = JSON.stringify({ toolName, args: sortedObj });
     return crypto.createHash("sha256").update(serialized).digest("hex");
   }
 
@@ -75,7 +80,7 @@ export class SideEffectJournal {
     this.entries.set(journalId, entry);
 
     if (this.eventStore) {
-      let eventType = EventTypes.SIDE_EFFECT_COMPLETED;
+      let eventType: string = EventTypes.SIDE_EFFECT_COMPLETED;
       if (options.outcomeCertainty === "unknown") {
         eventType = EventTypes.SIDE_EFFECT_UNKNOWN;
       } else if (options.outcomeCertainty === "known_failed") {

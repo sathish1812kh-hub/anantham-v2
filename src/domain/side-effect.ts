@@ -39,7 +39,7 @@ export const RetryDecisionSchema = z.object({
   attemptNumber: z.number().int().nonnegative(),
   maxAttempts: z.number().int().positive(),
   budgetRemaining: z.number().int().nonnegative(),
-  recommendedDelayMs: z.number().int().nonnegative().optional().default(0),
+  recommendedDelayMs: z.number().int().nonnegative().optional(),
   reconciliationAction: z.string().optional(),
 });
 export type RetryDecision = z.infer<typeof RetryDecisionSchema>;

@@ -325,10 +325,10 @@ Every update MUST include:
 - [x] process lifecycle
 
 ### P4.5 Side effects
-- [ ] retry classification
-- [ ] global retry budget
-- [ ] duplicate-side-effect protection
-- [ ] file divergence detection
+- [x] retry classification
+- [x] global retry budget
+- [x] duplicate-side-effect protection
+- [x] file divergence detection
 
 **P4 GATE:** no tool can bypass policy; sandbox/resource/security tests pass.
 

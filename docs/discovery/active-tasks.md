@@ -4,17 +4,23 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ---
 
-## 1. Active Phase Backlog (P4 — Policy / Tools / Execution)
+## 1. Active Phase Backlog (P5 — MCP / Plugins / Skills / Hooks)
 
-### [P4.5 — Side Effects (Retry Classification, Global Retry Budget, Duplicate Protection, Divergence Detection)](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P5.1 — MCP (Registry, Client, Discovery, Tools, Resources, Prompts)](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Principal Reliability & Fault-Tolerance Architect
-- **Description**: Implement idempotent side effect safety, retry classification, global project/session retry budgets, duplicate side-effect prevention, and filesystem divergence detection.
-- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.4`.
+- **Owner**: Principal Protocol & Integration Architect
+- **Description**: Implement first-class Model Context Protocol (MCP) subsystem: dynamic registry, client lifecycle, server discovery, schema translation, resource reading, and prompt template expansion.
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P4.5-SIDE-EFFECTS — Side Effects & Retry Plane](file:///C:/herness/src/side-effects/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Reliability & Fault-Tolerance Architect
+- **Completed Date**: 2026-08-31
+- **Verification**: 355/355 tests passing across 158 test suites in Vitest. First-class Side Effects plane: SideEffectClassifier (read_only, idempotent_write, reversible_write, non_idempotent_write, unknown), RetryDecisionEngine (deterministic evaluation, non-retryable rejection, approval expiry check, UNKNOWN != RETRYABLE safety), RetryBudgetManager (hierarchical multi-layer global/task/operation budgets preventing retry multiplication), FileDivergenceDetector (base hash vs current disk hash verification, preventing user change overwrites), WorktreeDivergenceDetector (git working tree inspection and destructive reset guards), SideEffectJournal (audit tracking and immutable SQLite EventStore durability).
 
 ### [TASK-P4.4-EXECUTORS — Execution Infrastructure Plane](file:///C:/herness/src/execution/index.ts)
 - **Status**: `COMPLETED`

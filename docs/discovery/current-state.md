@@ -4,18 +4,18 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `d471cc1`
-- **Generated**: `2026-08-31T02:34:15Z`
+- **Project Commit**: `cc435a2`
+- **Generated**: `2026-08-31T02:43:41Z`
 - **Current Release**: `v2.0.0-alpha.1`
-- **Current Phase**: `P4 — POLICY / TOOLS / EXECUTION`
-- **Current Task**: `P4.5 — Side Effects (Retry Classification, Global Retry Budget, Duplicate Protection, Divergence Detection)`
-- **Last Completed Task**: `TASK-P4.4-EXECUTORS — Execution Infrastructure Plane`
+- **Current Phase**: `P5 — MCP / PLUGINS / SKILLS / HOOKS`
+- **Current Task**: `P5.1 — MCP (Registry, Client, Discovery, Tools, Resources, Prompts)`
+- **Last Completed Task**: `TASK-P4.5-SIDE-EFFECTS — Side Effects & Retry Plane`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`
   - `0 type check errors under strict: true.`
 - **Pending Approvals**:
-  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.5, P4.1-P4.4 Implemented Clean & Verified).`
+  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.5, P4.1-P4.5 Implemented Clean & Verified).`
 - **Recently Completed Milestones**:
   - [P1.1-CORE-DOMAIN](file:///C:/herness/src/domain/index.ts) (12 core domain models, runtime Zod validation schemas, state machines, immutability)
   - [P1.2-PERSISTENCE-ENGINE](file:///C:/herness/src/persistence/index.ts) (Native `node:sqlite` engine, WAL mode, synchronous=FULL RPO-0 durability, MigrationEngine, 8 repositories)
@@ -37,6 +37,7 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
   - [P4.2-TOOLGATEWAY](file:///C:/herness/src/tools/index.ts) (Authoritative ToolGateway boundary, ToolRegistry, strict runtime schema validation, AbortController timeouts, IdempotencyStore caching/deduplication, normalized error mappings, and immutable SQLite event recording)
   - [P4.3-NATIVE-TOOLS](file:///C:/herness/src/tools/native/index.ts) (Filesystem, Search, Process/Shell, Git, Worktree, Artifact, Memory, and Network/Browser tools, safe path containment, SSRF defense, secret scrubbing, and SQLite audit durability)
   - [P4.4-EXECUTORS](file:///C:/herness/src/execution/index.ts) (LocalExecutor, DockerSandboxExecutor, RemoteExecutor, ProcessSupervisor lifecycle state machine, cross-platform process tree termination, sandbox isolation, output truncation, secret redaction, and SQLite durability)
+  - [P4.5-SIDE-EFFECTS](file:///C:/herness/src/side-effects/index.ts) (SideEffectClassifier, RetryDecisionEngine, RetryBudgetManager hierarchical multi-layer budgets, FileDivergenceDetector user change protection, WorktreeDivergenceDetector git reset guards, SideEffectJournal, and SQLite durability)
   - [CHATGPT-ORCHESTRATION-KT](file:///C:/herness/docs/discovery/CHATGPT_ORCHESTRATION_KT.md) (Complete Knowledge Transfer package, 7 Pillars, 11-Phase Lifecycle, Source Hierarchy, commands)
 - **Synchronization Status**:
   - **Type Safety**: `100% PASSED (0 TypeScript compilation errors under strict: true)`
@@ -56,5 +57,6 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
   - **Tool Execution Plane**: `SYNCED (ToolGateway, ToolRegistry, IdempotencyStore, Schema Validation, Timeout Enforcer, Observation Recording)`
   - **Native Tools Plane**: `SYNCED (Filesystem, Search, Process/Shell, Git, Worktree, Artifact, Memory, Network/Browser, Path Containment)`
   - **Execution Infrastructure Plane**: `SYNCED (LocalExecutor, DockerSandboxExecutor, RemoteExecutor, ProcessSupervisor, ProcessTreeKiller, ExecutorRegistry)`
-  - **Automated Test Suites**: `100% PASSED (325/325 tests passing across 148 test files)`
+  - **Side Effects Plane**: `SYNCED (SideEffectClassifier, RetryDecisionEngine, RetryBudgetManager, FileDivergenceDetector, WorktreeDivergenceDetector, SideEffectJournal)`
+  - **Automated Test Suites**: `100% PASSED (355/355 tests passing across 158 test files)`
   - **Quality Scorecard**: `1000/1000 CERTIFIED GOLD STANDARD`

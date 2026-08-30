@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\governance\\scorecard.json": {
-    "mtime": 1788123475.953025,
-    "ast_hash": "e98a7694b19079b2c425538244b63331",
+    "mtime": 1788124102.9946392,
+    "ast_hash": "5ce5a8f42e5f45c70ff1309ef6551910",
     "semantic_hash": ""
   },
   "C:\\herness\\scripts\\certification-scorecard.ps1": {
@@ -90,8 +90,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\src\\index.ts": {
-    "mtime": 1788123143.7072175,
-    "ast_hash": "e55ce932e14124bdc320f246fba589dd",
+    "mtime": 1788123818.6013951,
+    "ast_hash": "351f5fe77476dc2568746d6d1ea81721",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\artifacts\\artifact-manager.ts": {
@@ -250,8 +250,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\src\\domain\\event.ts": {
-    "mtime": 1788103222.712172,
-    "ast_hash": "5acba17e6b934cafef959f6c99ce1f34",
+    "mtime": 1788123762.7039723,
+    "ast_hash": "60a2ffa7670aa8e8b5ab6a5fd377b70c",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\domain\\execution.ts": {
@@ -260,8 +260,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\src\\domain\\index.ts": {
-    "mtime": 1788123104.5096843,
-    "ast_hash": "f06af874ef24372a37d827ff008ef69c",
+    "mtime": 1788123767.4099267,
+    "ast_hash": "cda79def59dd92b61324568613b0530a",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\domain\\memory.ts": {
@@ -302,6 +302,11 @@
   "C:\\herness\\src\\domain\\session.ts": {
     "mtime": 1788103235.2569995,
     "ast_hash": "684d03a68841a24f0a82a94f8840b6b5",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\domain\\side-effect.ts": {
+    "mtime": 1788123908.1052115,
+    "ast_hash": "859d96972281704fb80f247f95c47b5d",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\domain\\task.ts": {
@@ -634,6 +639,41 @@
     "ast_hash": "db0f099f89be1b18cedecdc78d7afaf7",
     "semantic_hash": ""
   },
+  "C:\\herness\\src\\side-effects\\file-divergence-detector.ts": {
+    "mtime": 1788123798.242863,
+    "ast_hash": "233bfca6091245850c1c9eb8c1676a2c",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\side-effects\\index.ts": {
+    "mtime": 1788123811.155102,
+    "ast_hash": "41c6196e3c91e3cd1cd9532e8ae5f864",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\side-effects\\retry-budget-manager.ts": {
+    "mtime": 1788123784.4408154,
+    "ast_hash": "c2a87aebf854a7814f52b49a82afcdc8",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\side-effects\\retry-decision-engine.ts": {
+    "mtime": 1788123789.0854945,
+    "ast_hash": "e5ebab7017e1598876d1a7b7246c2cd3",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\side-effects\\side-effect-classifier.ts": {
+    "mtime": 1788123779.9113245,
+    "ast_hash": "4e36d4c0f9dbc5203b7e8f478db5d0e6",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\side-effects\\side-effect-journal.ts": {
+    "mtime": 1788123957.58544,
+    "ast_hash": "9de098b006fae59fb168f8b3b54d95af",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\side-effects\\worktree-divergence-detector.ts": {
+    "mtime": 1788123802.8549323,
+    "ast_hash": "1e446fcb954eb5f9609223d197144dc2",
+    "semantic_hash": ""
+  },
   "C:\\herness\\src\\tools\\idempotency-store.ts": {
     "mtime": 1788121060.8568296,
     "ast_hash": "e344757566e888e4e460a6d228773b1a",
@@ -645,8 +685,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\src\\tools\\tool-gateway.ts": {
-    "mtime": 1788121169.565045,
-    "ast_hash": "658bfa5d2adb6c073bec0e69423d7022",
+    "mtime": 1788123855.0540636,
+    "ast_hash": "7ace06288ed9b156e37ddf666e609070",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\tools\\tool-registry.ts": {
@@ -1329,6 +1369,56 @@
     "ast_hash": "42b91b37d9b40c7e4462aa5188cbd90c",
     "semantic_hash": ""
   },
+  "C:\\herness\\tests\\side-effects\\duplicate-side-effect-protection.test.ts": {
+    "mtime": 1788123881.9182692,
+    "ast_hash": "0dc415b1744f079e80f0bcc8f960143b",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\side-effects\\file-divergence-detector.test.ts": {
+    "mtime": 1788124001.9991255,
+    "ast_hash": "dd6b3e42a61be05038c2b0025892f6ae",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\side-effects\\retry-budget-hierarchy.test.ts": {
+    "mtime": 1788123875.2444553,
+    "ast_hash": "e0547c2e277973625dd89ab189ac6fa9",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\side-effects\\retry-decision-engine.test.ts": {
+    "mtime": 1788123871.6508906,
+    "ast_hash": "153a9ead8509530945a77cef65671d8d",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\side-effects\\side-effect-classifier.test.ts": {
+    "mtime": 1788123866.4481635,
+    "ast_hash": "02641fb795a54ab85602ced1ba0b3c88",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\side-effects\\side-effect-concurrency.test.ts": {
+    "mtime": 1788123892.0506265,
+    "ast_hash": "8ba6c735ef0f839a43f5c58a94bbd52b",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\side-effects\\side-effect-contracts-validation.test.ts": {
+    "mtime": 1788123860.4551082,
+    "ast_hash": "b2c10acf40063c6db42800cacc473dab",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\side-effects\\side-effect-durability-zero-state-loss.test.ts": {
+    "mtime": 1788123896.6530075,
+    "ast_hash": "36985d30c9f86e7623fb44b23e6f3dd0",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\side-effects\\unknown-outcome-safety.test.ts": {
+    "mtime": 1788123878.482995,
+    "ast_hash": "a34fabed67f51ccec7ca3f67c4f1cb08",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\side-effects\\worktree-divergence-detector.test.ts": {
+    "mtime": 1788123889.1356022,
+    "ast_hash": "43c97ff8ed8d67805d2bd2c820c694ec",
+    "semantic_hash": ""
+  },
   "C:\\herness\\tests\\tools\\tool-contracts-validation.test.ts": {
     "mtime": 1788121200.256757,
     "ast_hash": "540473664a486bdcb34d7eac6ea90b7d",
@@ -1475,8 +1565,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\ANANTHAM PROJECT SOURCES\\DEVELOPMENT\\ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md": {
-    "mtime": 1788123350.1171534,
-    "ast_hash": "883d82eb9773a2336b11b8b2687644fa",
+    "mtime": 1788124050.7176678,
+    "ast_hash": "c322d97eb9cb3653be0086a96b64fdbe",
     "semantic_hash": ""
   },
   "C:\\herness\\ANANTHAM PROJECT SOURCES\\prd\\ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md": {
@@ -1495,8 +1585,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\active-tasks.md": {
-    "mtime": 1788123405.084414,
-    "ast_hash": "1a45d54e12f96ea6877d6e73f2fe3df0",
+    "mtime": 1788124057.7305455,
+    "ast_hash": "7cfa7857817f87dc2f12b1607757c381",
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\CHATGPT_ORCHESTRATION_KT.md": {
@@ -1505,8 +1595,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\current-state.md": {
-    "mtime": 1788123414.6580396,
-    "ast_hash": "43c5e5a9ec7d1f62b98395e720a48d8e",
+    "mtime": 1788124070.1492536,
+    "ast_hash": "434535006df18f0a68a48e0360fc65cf",
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\decision-log.md": {
