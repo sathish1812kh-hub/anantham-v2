@@ -4,17 +4,23 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ---
 
-## 1. Active Phase Backlog (P6 — Agents / Teams / Parallel Execution)
+## 1. Active Phase Backlog (P7 — Knowledge Indexing & Retrieval Plane)
 
-### [P6.4 — Parallel Execution, Worktree Isolation & Conflict Detection](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P7.1 — Knowledge Indexing & Retrieval Engine](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Principal Parallel Systems & Execution Architect
-- **Description**: Implement isolated parallel agent execution in dedicated worktrees, concurrent write conflict detection, and duplicate work elimination.
-- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.3`.
+- **Owner**: Principal Knowledge Systems & Retrieval Architect
+- **Description**: Implement multi-strategy indexing, semantic and hybrid retrieval, and knowledge graph ingestion pipelines.
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.4`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P6.4-PARALLEL-WORKTREE-CONFLICT — Parallel Execution, Worktree Isolation & Conflict Detection](file:///C:/herness/src/execution/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Parallel Systems & Execution Architect
+- **Completed Date**: 2026-08-31
+- **Verification**: 511/511 tests passing across 251 test suites in Vitest. First-class Parallel Execution & Worktree Isolation Subsystem: ExecutionWorkspaceSchema, ChangeSetMetadataSchema, ConflictClassificationSchema (12 deterministic conflict categories), ConflictReportSchema, IntegrationRequestSchema, IntegrationResultSchema, WorkspaceQuarantineRecordSchema. GitWorktreeManager (isolated branch worktrees under `.anantham/worktrees/<workspaceId>`, path traversal defenses, working tree inspection, user change preservation `assertCleanWorkingTree`). ChangeSetCalculator (SHA-256 file hashes, unified patch calculation, deterministic `changeSetHash`, domain/migration/index export symbol modification extraction). ConflictDetector (detects `USER_CHANGE_CONFLICT`, `BASE_DIVERGENCE`, `FILE_CONFLICT`, `DELETE_MODIFY_CONFLICT`, `RENAME_CONFLICT`, `ADD_ADD_CONFLICT`, `CONTRACT_CONFLICT`, `MIGRATION_CONFLICT`, `EVENT_SCHEMA_CONFLICT`, `PUBLIC_API_CONFLICT`). WorkspaceManager (ownership/lease verification, project concurrency limits, worktree creation, status tracking). WorkspaceIntegrator (pre-integration checks, lease fencing verification, verification gates, atomic merge, audit events). ParallelOrchestrator (parallel execution coordinator, serialization fallback with rebase). WorkspaceRecoveryEngine (stale lease scanner, quarantine dirty worktree preservation into patch artifacts, clean removal of empty worktrees). SQLite migration `005_workspaces_parallel.ts`, `WorkspaceRepository`, and SQLite WAL `EventStore` audit durability.
 
 ### [TASK-P6.3-SUBAGENTS-TEAMS-TOPOLOGIES-HANDOFF — Subagents, Teams, Topologies & Handoffs](file:///C:/herness/src/teams/index.ts)
 - **Status**: `COMPLETED`

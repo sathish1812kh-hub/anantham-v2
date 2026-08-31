@@ -152,6 +152,19 @@ export const EventTypes = {
   HANDOFF_ACCEPTED: "handoff.accepted",
   HANDOFF_REJECTED: "handoff.rejected",
 
+  // Workspace & Parallel Execution plane
+  WORKSPACE_CREATED: "workspace.created",
+  WORKSPACE_ACTIVATED: "workspace.activated",
+  WORKSPACE_CHANGED: "workspace.changed",
+  WORKSPACE_CONFLICT_DETECTED: "workspace.conflict_detected",
+  WORKSPACE_INTEGRATION_STARTED: "workspace.integration_started",
+  WORKSPACE_INTEGRATED: "workspace.integrated",
+  WORKSPACE_INTEGRATION_REJECTED: "workspace.integration_rejected",
+  WORKSPACE_QUARANTINED: "workspace.quarantined",
+  WORKSPACE_RECOVERED: "workspace.recovered",
+  WORKSPACE_CLEANED: "workspace.cleaned",
+  WORKSPACE_FAILED: "workspace.failed",
+
   // Checkpoint plane
   CHECKPOINT_CREATED: "checkpoint.created",
   CHECKPOINT_RESTORED: "checkpoint.restored",
