@@ -195,6 +195,25 @@ export const EventTypes = {
   JOB_FAILED: "job.failed",
   JOB_RECOVERY_REQUIRED: "job.recovery_required",
 
+  // Remote & Multi-Node Execution plane (P7.4)
+  NODE_REGISTERED: "node.registered",
+  NODE_CONNECTED: "node.connected",
+  NODE_DISCONNECTED: "node.disconnected",
+  NODE_HEARTBEAT: "node.heartbeat",
+  NODE_DRAINING: "node.draining",
+  NODE_QUARANTINED: "node.quarantined",
+  DISPATCH_CREATED: "dispatch.created",
+  DISPATCH_SENT: "dispatch.sent",
+  DISPATCH_ACCEPTED: "dispatch.accepted",
+  DISPATCH_REJECTED: "dispatch.rejected",
+  DISPATCH_COMPLETED: "dispatch.completed",
+  DISPATCH_FAILED: "dispatch.failed",
+  DISPATCH_TIMED_OUT: "dispatch.timed_out",
+  DISPATCH_RECLAIMED: "dispatch.reclaimed",
+  REMOTE_RESULT_RECEIVED: "remote.result_received",
+  REMOTE_RESULT_REJECTED: "remote.result_rejected",
+  REMOTE_SPLIT_BRAIN_DETECTED: "remote.split_brain_detected",
+
   // Checkpoint plane
   CHECKPOINT_CREATED: "checkpoint.created",
   CHECKPOINT_RESTORED: "checkpoint.restored",

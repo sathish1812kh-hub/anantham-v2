@@ -167,4 +167,21 @@ This document records architectural decisions, their trade-offs, and compliance 
   7. *Classified Bounded Retries*: Reuses `WorkflowRetryHandler` to retry transient failures with exponential backoff while failing closed immediately on non-retryable policy or schema denials.
 - **Consequences**: Zero loss of background task state across process crashes, strict protection against zombie worker overwrites via generation fencing, full budget containment, and complete RPO-0 ACID durability.
 
+---
+
+## ADR-016: Remote Agents, Multi-Node Execution, Generation Fencing & Split-Brain Prevention
+
+- **Status**: `ACCEPTED`
+- **Date**: 2026-08-31
+- **Context**: Scaling agent workloads across multiple nodes requires distributed task dispatch, node registration, capability matching, and remote execution without compromising security boundaries, budget limits, or allowing split-brain zombie writes.
+- **Decision**: Implement the Remote Agent & Multi-Node Execution Subsystem (`src/domain/node.ts`, `src/persistence/migrations/008_remote_nodes_dispatch.ts`, `NodeRepository`, `RemoteDispatchRepository`, `NodeRegistry`, `RemoteAuthVerifier`, `RemoteDispatchManager`, `RemoteNodeClient`, `RemoteRecoveryReconciler`):
+  1. *Zero Authority Delegation*: Remote placement is an execution location, NOT a permission authority. Remote nodes cannot alter permissions, capabilities, or bypass `ToolGateway` / `PolicyEngine`.
+  2. *Controller as Authoritative State Authority*: All state mutations are committed to SQLite on the controller with WAL mode and `synchronous = FULL`. Remote worker output is treated as untrusted data until verified.
+  3. *Monotonic Generation Fencing*: Every remote dispatch carries an exclusive lease and generation token ($g_n$). Partitioned or stale workers attempting late heartbeats, completions, or checkpoints after controller reclamation ($g_n < g_{n+1}$) are strictly rejected with `FENCING_VIOLATION` / `SPLIT_BRAIN_REJECTED`.
+  4. *Idempotent Dispatches*: Dispatches carry `dispatchId` and `idempotencyKey` to guarantee *effectively-once* state transitions over *at-least-once* network transports.
+  5. *7-Step Remote Result Acceptance*: Enforces schema validation, HMAC signature authentication, project scope verification, generation fencing, task status validation, artifact hash verification, and transactional commit.
+  6. *Post-Crash & Partition Reconciler*: `RemoteRecoveryReconciler` cleans up orphaned leases and reconciles active dispatches across controller crashes or network partitions.
+- **Consequences**: Zero split-brain data corruption across partitions, zero privilege escalation on remote workers, robust idempotent deduplication, and complete RPO-0 ACID durability.
+
+
 

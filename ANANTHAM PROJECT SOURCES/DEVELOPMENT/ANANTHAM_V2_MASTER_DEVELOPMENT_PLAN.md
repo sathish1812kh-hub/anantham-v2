@@ -428,11 +428,11 @@ Every update MUST include:
 - [x] workflow versioning
 - [x] active-run pinning
 - [x] background agents
-- [ ] remote execution
-- [ ] remote output durability
-- [ ] remote recovery
+- [x] remote execution
+- [x] remote output durability
+- [x] remote recovery
 
-**P7 GATE:** plan → execute → parallelize → verify → crash → resume.
+**P7 GATE:** plan → execute → parallelize → verify → crash → resume. [SEALED & VERIFIED]
 
 ---
 
@@ -590,6 +590,18 @@ The PRD defines concrete acceptance targets including RPO 0 for committed state 
 # 5. CHANGE LOG
 
 Antigravity MUST append an entry after every completed work package:
+
+## 2026-08-31 23:24 — TASK-P7.4-REMOTE-AGENTS-MULTI-NODE-DISTRIBUTED-STATE
+
+Status: VERIFIED COMPLETE
+What changed: Implemented the authoritative Remote Agent & Multi-Node Execution Subsystem (`NodeRegistry`, `RemoteAuthVerifier`, `RemoteDispatchManager`, `RemoteNodeClient`, `RemoteRecoveryReconciler`). Defined `NodeIdentitySchema`, `NodeStatusSchema` (`REGISTERED`, `ONLINE`, `BUSY`, `DRAINING`, `OFFLINE`, `QUARANTINED`), `RemoteWorkRequestSchema`, and `RemoteResultSchema`. Created SQLite migration `008_remote_nodes_dispatch.ts`, `NodeRepository`, and `RemoteDispatchRepository` with WAL mode ACID durability. Implemented strict Zero Authority Delegation (remote nodes cannot alter permissions, capabilities, or bypass `ToolGateway` / `PolicyEngine`). Built monotonic generation fencing token validation on remote heartbeats and completions, rejecting stale/partitioned worker results with `FENCING_VIOLATION` / `SPLIT_BRAIN_REJECTED`. Implemented 7-step cryptographic/schema verification pipeline for untrusted remote results, project tenant isolation, idempotent dispatch keys, and post-crash orphan reconciliation.
+Files: src/domain/node.ts, src/domain/event.ts, src/domain/index.ts, src/persistence/migrations/008_remote_nodes_dispatch.ts, src/persistence/migrations/001_initial_core_schema.ts, src/persistence/repositories/node-repository.ts, src/persistence/repositories/remote-dispatch-repository.ts, src/persistence/index.ts, src/remote/remote-auth-verifier.ts, src/remote/node-registry.ts, src/remote/remote-dispatch-manager.ts, src/remote/remote-node-client.ts, src/remote/remote-recovery-reconciler.ts, src/remote/index.ts, src/index.ts, tests/remote/*.test.ts
+Tests: 607 automated tests passing across 296 test suites in Vitest (NodeIdentity contracts validation, node registration with runtime version compatibility checks, capability matching as untrusted data, cryptographic HMAC signatures and tampering defense, remote dispatch lifecycle, monotonic generation fencing tokens, remote heartbeats, mandatory split-brain prevention test, duplicate dispatch protection, cancellation propagation, project tenant isolation, post-crash orphan reconciliation, and end-to-end multi-node execution acceptance).
+Verification: npm run typecheck (0 errors under strict: true), npm test (607/607 passing), npm run build (clean), npm run scorecard (1000/1000 Certified Perfect), multi-engine sync (CodeGraph, Graphify, Neo4j, Graphiti, Git).
+Commit/Revision: Active
+Risks: None.
+Unresolved: None.
+Next: P8.1 CLI Foundation & Interactive Session Loop.
 
 ## 2026-08-31 21:43 — TASK-P7.3-BACKGROUND-TASKS-JOBS
 

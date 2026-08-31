@@ -4,17 +4,23 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ---
 
-## 1. Active Phase Backlog (P7 — WORKFLOW / ORCHESTRATION / BACKGROUND / REMOTE)
+## 1. Active Phase Backlog (P8 — CLI / TUI / API / INTEGRATIONS)
 
-### [P7.4 — Remote Agents, Multi-Node Execution & Distributed State](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P8.1 — CLI Foundation & Interactive Session Loop](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Principal Distributed Systems Architect
-- **Description**: Implement remote agent connectors, distributed lease management, multi-node task routing, distributed event replication, network partition handling, and split-brain resolution.
-- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.4`, `P7.1–P7.3`.
+- **Owner**: Lead CLI & Platform Architect
+- **Description**: Implement CLI foundation, interactive REPL loop, terminal formatting, flag parsing, command registration, and interactive agent communication.
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.4`, `P7.1–P7.4`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P7.4-REMOTE-AGENTS-MULTI-NODE-DISTRIBUTED-STATE — Remote Agents, Multi-Node Execution & Distributed State](file:///C:/herness/src/remote/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Distributed Systems Architect
+- **Completed Date**: 2026-08-31
+- **Verification**: 607/607 tests passing across 296 test suites in Vitest. First-class Remote & Multi-Node Execution Subsystem: NodeIdentitySchema and NodeStatusSchema (`REGISTERED`, `ONLINE`, `BUSY`, `DRAINING`, `OFFLINE`, `QUARANTINED`). RemoteWorkRequestSchema and RemoteResultSchema. SQLite migration `008_remote_nodes_dispatch.ts`, `NodeRepository`, and `RemoteDispatchRepository` with WAL mode ACID durability. `NodeRegistry` (node registration, version compatibility checks, capability matching as untrusted data, heartbeat monitoring, stalled node offline detection). `RemoteAuthVerifier` (cryptographic HMAC-SHA256 request/result signatures and project isolation validation). `RemoteDispatchManager` (central controller dispatcher, idempotency checks, lease generation fencing tokens, periodic heartbeat processing, 7-step untrusted result verification, durable cancellation cascades). `RemoteNodeClient` (worker execution client, AgentStartupPlan lock, ToolGateway routing, automated heartbeats, signed result generation). `RemoteRecoveryReconciler` (post-crash orphan and partition reconciler). Verified mandatory split-brain rejection scenario (Node A partition -> Controller reclaim -> Node B gen N+1 -> Node A reconnect rejection). Full acceptance scenario matrix.
 
 ### [TASK-P7.3-BACKGROUND-TASKS-JOBS — Background Tasks, Long-Running Jobs, Heartbeats & Cancellation](file:///C:/herness/src/jobs/index.ts)
 - **Status**: `COMPLETED`

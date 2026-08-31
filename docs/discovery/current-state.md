@@ -4,19 +4,20 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `559e5b7`
-- **Generated**: `2026-08-31T21:50:22Z`
+- **Project Commit**: `c36aff5`
+- **Generated**: `2026-08-31T23:30:34Z`
 - **Current Release**: `v2.0.0-alpha.1`
-- **Current Phase**: `P7 — WORKFLOW / ORCHESTRATION / BACKGROUND / REMOTE`
-- **Current Task**: `P7.4 — Remote Agents, Multi-Node Execution & Distributed State`
-- **Last Completed Task**: `TASK-P7.3-BACKGROUND-TASKS-JOBS — Background Tasks, Long-Running Jobs, Heartbeats & Cancellation`
+- **Current Phase**: `P8 — CLI / TUI / API / INTEGRATIONS`
+- **Current Task**: `P8.1 — CLI Foundation & Interactive Session Loop`
+- **Last Completed Task**: `TASK-P7.4-REMOTE-AGENTS-MULTI-NODE-DISTRIBUTED-STATE — Remote Agents, Multi-Node Execution & Distributed State`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`
   - `0 type check errors under strict: true.`
 - **Pending Approvals**:
-  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.5, P4.1-P4.5, P5.1-P5.4, P6.1-P6.4, P7.1-P7.3 Implemented Clean & Verified).`
+  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.5, P4.1-P4.5, P5.1-P5.4, P6.1-P6.4, P7.1-P7.4 Implemented Clean & Verified).`
 - **Recently Completed Milestones**:
+  - [P7.4-REMOTE-AGENTS](file:///C:/herness/src/remote/index.ts) (Authoritative NodeRegistry, RemoteDispatchManager, RemoteNodeClient, RemoteRecoveryReconciler, RemoteAuthVerifier, SQLite migration 008, NodeRepository, RemoteDispatchRepository, monotonic generation fencing, split-brain prevention, 7-step untrusted result acceptance, project isolation, idempotent dispatches, EventStore durability)
   - [P7.3-BACKGROUND-TASKS](file:///C:/herness/src/jobs/index.ts) (Authoritative BackgroundJobManager, BackgroundJobSupervisor detached worker pool, BackgroundJobRecoveryReconciler crash recovery, generation-fenced leases, heartbeat renewals, durable cancellation cascades, deadline supervision, checkpoint integration, SQLite migration 007, JobRepository, EventStore durability)
   - [P7.2-WORKFLOW-EXECUTION](file:///C:/herness/src/workflow/index.ts) (Authoritative WorkflowEngine lifecycle, WorkflowExecutor wave DAG execution, WorkflowBudgetTracker hierarchical limits, WorkflowRetryHandler classified retries, WorkflowRecoveryReconciler crash recovery, parallel concurrency pooling, bounded foreach expansion, objective verification gates, restart-safe approval gates WAITING_APPROVAL, SQLite WAL persistence, EventStore durability)
   - [P1.1-CORE-DOMAIN](file:///C:/herness/src/domain/index.ts) (12 core domain models, runtime Zod validation schemas, state machines, immutability)
