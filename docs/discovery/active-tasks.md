@@ -6,15 +6,21 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P6 — Agents / Teams / Parallel Execution)
 
-### [P6.3 — Team Definition, Roles, Topologies & Handoff Communication](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P6.4 — Parallel Execution, Worktree Isolation & Conflict Detection](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Principal Multi-Agent & Orchestration Architect
-- **Description**: Implement multi-agent team hierarchies, role assignments, communication topologies (hierarchical, peer-to-peer, pipeline), and structured handoff protocols.
-- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.2`.
+- **Owner**: Principal Parallel Systems & Execution Architect
+- **Description**: Implement isolated parallel agent execution in dedicated worktrees, concurrent write conflict detection, and duplicate work elimination.
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.3`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P6.3-SUBAGENTS-TEAMS-TOPOLOGIES-HANDOFF — Subagents, Teams, Topologies & Handoffs](file:///C:/herness/src/teams/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Multi-Agent & Orchestration Architect
+- **Completed Date**: 2026-08-31
+- **Verification**: 498/498 tests passing across 234 test suites in Vitest. First-class Subagent & Team Coordination Subsystem: TeamDefinitionSchema, TeamRoleSchema, TeamTopologySchema, PeerMessageSchema, AgentHandoffSchema, DelegationRequestSchema, DelegationResultSchema, TeamFailurePolicySchema. SubagentManager & DelegationGuard (depth limits <= 4, fan-out limits <= 8, anti-privilege escalation subset verification, budget containment, project scope lock). TeamManager (lifecycle, version pinning, capacity limits, member status transitions, failure policies: RETRY/FAIL_TEAM, cancellation cascading, restart recovery). TeamTopologyEvaluator (coordinator_workers, pipeline, peer_to_peer, specialist_pool). PeerMessenger (sender/recipient validation, topology rules, payload size bounds <= 64KB, artifact references). AgentHandoffManager (authoritative task handoffs, atomic SQLite transaction lease transfer, monotonic generation token increment, fencing source agent, receiver revalidation, rejection handling). SQLite migration 004_teams_subagents, TeamRepository, PeerMessageRepository, HandoffRepository, and append-only EventStore durability.
 
 ### [TASK-P6.2-TASK-BOARD-CLAIMS-LEASES-HEARTBEATS — Task Board, Claims, Leases & Recovery](file:///C:/herness/src/tasks/index.ts)
 - **Status**: `COMPLETED`

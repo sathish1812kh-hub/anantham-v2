@@ -344,35 +344,63 @@ export class TaskClaimManager {
    * Complete task and release exclusive lease.
    */
   public completeTask(
-    taskId: string,
-    leaseId: string,
-    generation: number,
+    taskIdOrParams:
+      | string
+      | {
+          taskId: string;
+          leaseId: string;
+          generation: number;
+          resultMetadata?: Record<string, unknown>;
+          agentId?: string;
+        },
+    leaseId?: string,
+    generation?: number,
     resultMetadata?: Record<string, unknown>,
     agentId?: string
   ): boolean {
-    if (!this.verifyOwnership(taskId, leaseId, generation, agentId)) {
+    let tId: string;
+    let lId: string;
+    let gen: number;
+    let resMeta: Record<string, unknown> | undefined;
+    let aId: string | undefined;
+
+    if (typeof taskIdOrParams === "object") {
+      tId = taskIdOrParams.taskId;
+      lId = taskIdOrParams.leaseId;
+      gen = taskIdOrParams.generation;
+      resMeta = taskIdOrParams.resultMetadata;
+      aId = taskIdOrParams.agentId;
+    } else {
+      tId = taskIdOrParams;
+      lId = leaseId!;
+      gen = generation!;
+      resMeta = resultMetadata;
+      aId = agentId;
+    }
+
+    if (!this.verifyOwnership(tId, lId, gen, aId)) {
       return false;
     }
 
     this.engine.transaction(() => {
-      this.taskRepo.updateStatus(taskId, "completed");
-      this.leaseRepo.updateStatus(leaseId, "RELEASED");
+      this.taskRepo.updateStatus(tId, "completed");
+      this.leaseRepo.updateStatus(lId, "RELEASED");
     });
 
-    const lease = this.leaseRepo.findById(leaseId);
+    const lease = this.leaseRepo.findById(lId);
     this.emitEvent(EventTypes.TASK_COMPLETED, {
-      taskId,
-      leaseId,
-      generation,
+      taskId: tId,
+      leaseId: lId,
+      generation: gen,
       agentId: lease?.agentId,
       projectId: lease?.projectId,
       sessionId: lease?.sessionId,
-      result: resultMetadata,
+      result: resMeta,
     });
 
     this.emitEvent(EventTypes.TASK_RELEASED, {
-      taskId,
-      leaseId,
+      taskId: tId,
+      leaseId: lId,
       agentId: lease?.agentId,
       projectId: lease?.projectId,
       sessionId: lease?.sessionId,
@@ -386,35 +414,63 @@ export class TaskClaimManager {
    * Fail task and release lease.
    */
   public failTask(
-    taskId: string,
-    leaseId: string,
-    generation: number,
-    error: string,
+    taskIdOrParams:
+      | string
+      | {
+          taskId: string;
+          leaseId: string;
+          generation: number;
+          error: string;
+          agentId?: string;
+        },
+    leaseId?: string,
+    generation?: number,
+    error?: string,
     agentId?: string
   ): boolean {
-    if (!this.verifyOwnership(taskId, leaseId, generation, agentId)) {
+    let tId: string;
+    let lId: string;
+    let gen: number;
+    let errStr: string;
+    let aId: string | undefined;
+
+    if (typeof taskIdOrParams === "object") {
+      tId = taskIdOrParams.taskId;
+      lId = taskIdOrParams.leaseId;
+      gen = taskIdOrParams.generation;
+      errStr = taskIdOrParams.error;
+      aId = taskIdOrParams.agentId;
+    } else {
+      tId = taskIdOrParams;
+      lId = leaseId!;
+      gen = generation!;
+      errStr = error!;
+      aId = agentId;
+    }
+
+    if (!this.verifyOwnership(tId, lId, gen, aId)) {
       return false;
     }
 
     this.engine.transaction(() => {
-      this.taskRepo.updateStatus(taskId, "failed");
-      this.leaseRepo.updateStatus(leaseId, "RELEASED");
+      this.taskRepo.updateStatus(tId, "failed");
+      this.leaseRepo.updateStatus(lId, "RELEASED");
     });
 
-    const lease = this.leaseRepo.findById(leaseId);
+    const lease = this.leaseRepo.findById(lId);
     this.emitEvent(EventTypes.TASK_FAILED, {
-      taskId,
-      leaseId,
-      generation,
+      taskId: tId,
+      leaseId: lId,
+      generation: gen,
       agentId: lease?.agentId,
       projectId: lease?.projectId,
       sessionId: lease?.sessionId,
-      error,
+      error: errStr,
     });
 
     this.emitEvent(EventTypes.TASK_RELEASED, {
-      taskId,
-      leaseId,
+      taskId: tId,
+      leaseId: lId,
       agentId: lease?.agentId,
       projectId: lease?.projectId,
       sessionId: lease?.sessionId,
@@ -425,32 +481,60 @@ export class TaskClaimManager {
   }
 
   /**
-   * Release task back to queued state.
+   * Voluntarily release an active lease and return task to queued.
    */
   public releaseTask(
-    taskId: string,
-    leaseId: string,
-    generation: number,
+    taskIdOrParams:
+      | string
+      | {
+          taskId: string;
+          leaseId: string;
+          generation: number;
+          reason?: string;
+          agentId?: string;
+        },
+    leaseId?: string,
+    generation?: number,
+    reason: string = "VOLUNTARY_RELEASE",
     agentId?: string
   ): boolean {
-    if (!this.verifyOwnership(taskId, leaseId, generation, agentId)) {
+    let tId: string;
+    let lId: string;
+    let gen: number;
+    let releaseReason: string;
+    let aId: string | undefined;
+
+    if (typeof taskIdOrParams === "object") {
+      tId = taskIdOrParams.taskId;
+      lId = taskIdOrParams.leaseId;
+      gen = taskIdOrParams.generation;
+      releaseReason = taskIdOrParams.reason ?? "VOLUNTARY_RELEASE";
+      aId = taskIdOrParams.agentId;
+    } else {
+      tId = taskIdOrParams;
+      lId = leaseId!;
+      gen = generation!;
+      releaseReason = reason;
+      aId = agentId;
+    }
+
+    if (!this.verifyOwnership(tId, lId, gen, aId)) {
       return false;
     }
 
     this.engine.transaction(() => {
-      this.taskRepo.updateStatus(taskId, "queued");
-      this.leaseRepo.updateStatus(leaseId, "RELEASED");
+      this.taskRepo.updateStatus(tId, "queued");
+      this.leaseRepo.updateStatus(lId, "RELEASED");
     });
 
-    const lease = this.leaseRepo.findById(leaseId);
+    const lease = this.leaseRepo.findById(lId);
     this.emitEvent(EventTypes.TASK_RELEASED, {
-      taskId,
-      leaseId,
-      generation,
+      taskId: tId,
+      leaseId: lId,
       agentId: lease?.agentId,
       projectId: lease?.projectId,
       sessionId: lease?.sessionId,
-      reason: "VOLUNTARY_RELEASE",
+      reason: releaseReason,
     });
 
     return true;

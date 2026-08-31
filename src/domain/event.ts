@@ -134,6 +134,24 @@ export const EventTypes = {
   AGENT_STOPPED: "agent.stopped",
   AGENT_REMOVED: "agent.removed",
 
+  // Subagent & Team plane
+  SUBAGENT_SPAWNED: "subagent.spawned",
+  SUBAGENT_DELEGATED: "subagent.delegated",
+  SUBAGENT_COMPLETED: "subagent.completed",
+  SUBAGENT_FAILED: "subagent.failed",
+  TEAM_CREATED: "team.created",
+  TEAM_UPDATED: "team.updated",
+  TEAM_STARTED: "team.started",
+  TEAM_PAUSED: "team.paused",
+  TEAM_COMPLETED: "team.completed",
+  TEAM_CANCELLED: "team.cancelled",
+  TEAM_MEMBER_JOINED: "team.member.joined",
+  TEAM_MEMBER_LEFT: "team.member.left",
+  PEER_MESSAGE_SENT: "peer.message.sent",
+  HANDOFF_PREPARED: "handoff.prepared",
+  HANDOFF_ACCEPTED: "handoff.accepted",
+  HANDOFF_REJECTED: "handoff.rejected",
+
   // Checkpoint plane
   CHECKPOINT_CREATED: "checkpoint.created",
   CHECKPOINT_RESTORED: "checkpoint.restored",

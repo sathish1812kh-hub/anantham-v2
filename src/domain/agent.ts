@@ -113,6 +113,7 @@ export const AgentStartupPlanSchema = z.object({
   sessionId: z.string().min(1),
   taskId: z.string().optional(),
   resolvedAt: z.string().datetime(),
+  metadata: z.record(z.unknown()).optional(),
 });
 export type AgentStartupPlan = z.infer<typeof AgentStartupPlanSchema>;
 

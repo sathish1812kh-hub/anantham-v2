@@ -102,6 +102,17 @@ This document records architectural decisions, their trade-offs, and compliance 
 - **Decision**: Implement a durable Task Board, Claim, and Lease subsystem (`TaskBoard`, `TaskClaimManager`, `StalledAgentRecoveryEngine`, `LeaseRepository` in SQLite). All claims execute in single SQLite ACID transactions. Every lease has a strictly monotonic `generation` fencing token; mutations and heartbeats from stale or reclaimed owners are rejected with `FENCING_VIOLATION`. Heartbeats extend leases up to bounded max renewals. Stalled agents are swept and classified (`AGENT_CRASHED`, `HEARTBEAT_TIMEOUT`, `MAX_DURATION_EXCEEDED`) and tasks are reclaimed for bounded retries (default: 3) or failed deterministically. All transitions are recorded in the append-only SQLite WAL `EventStore`.
 - **Consequences**: Zero double-claims, zero split-brain/zombie writes, deterministic failure recovery, RPO-0 durability, and complete project isolation.
 
+---
+
+## ADR-011: Subagents, Team Definition, Roles, Topologies & Handoff Communication
+
+- **Status**: `ACCEPTED`
+- **Date**: 2026-08-31
+- **Context**: Multi-agent coordination requires explicit runtime concepts for parent/child delegation, team definitions, role topologies, peer messaging, and structured handoffs. Delegation must prevent uncontrolled recursive spawning and privilege escalation. Handoffs must be authoritative state transitions rather than prompt transcripts.
+- **Decision**: Implement subagent delegation and team runtime (`SubagentManager`, `DelegationGuard`, `TeamManager`, `TeamTopologyEvaluator`, `PeerMessenger`, `AgentHandoffManager`, `TeamRepository`, `PeerMessageRepository`, `HandoffRepository`). Subagents are strictly bounded: delegation depth $\le 4$, active children per agent $\le 8$, budget strictly contained within parent limits, and child granted permissions must be a subset of parent permissions ($\mathcal{P}_{child} \subseteq \mathcal{P}_{parent}$). Teams have versioned definitions, explicit roles (`coordinator`, `planner`, `implementer`, `reviewer`, `verifier`, `specialist`), and topology-enforced communication (`coordinator_workers`, `pipeline`, `peer_to_peer`, `specialist_pool`). Peer messages validate membership and topology rules, utilizing Artifact references instead of large transcript dumps. Handoffs atomically transfer task leases via SQLite transactions, incrementing the monotonic generation fencing token to fence previous owners. All coordination events are committed to the SQLite WAL `EventStore`.
+- **Consequences**: Controlled bounded subagent spawning, zero privilege escalation, topology-enforced communication safety, authoritative atomic task ownership transfers, artifact-first information exchange, and complete crash/restart recoverability.
+
+
 
 
 

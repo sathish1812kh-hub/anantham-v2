@@ -17,6 +17,7 @@ import {
 
 export interface AgentManagerOptions {
   registry?: AgentRegistry;
+  agentRegistry?: AgentRegistry;
   resolver?: AgentStartupResolver;
   eventStore?: EventStore;
 }
@@ -33,7 +34,7 @@ export class AgentManager {
   private instances = new Map<string, AgentRuntimeState>();
 
   constructor(options: AgentManagerOptions = {}) {
-    this.registry = options.registry || new AgentRegistry();
+    this.registry = options.registry || options.agentRegistry || new AgentRegistry();
     this.resolver = options.resolver || new AgentStartupResolver();
     this.eventStore = options.eventStore;
   }
