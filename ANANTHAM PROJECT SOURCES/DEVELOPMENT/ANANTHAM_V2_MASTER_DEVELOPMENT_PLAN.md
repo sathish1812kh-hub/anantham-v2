@@ -337,18 +337,18 @@ Every update MUST include:
 ## P5 — MCP / PLUGINS / SKILLS / HOOKS
 
 ### P5.1 MCP
-- [ ] registry
-- [ ] client
-- [ ] discovery
-- [ ] tools
-- [ ] resources
-- [ ] prompts
-- [ ] auth
-- [ ] lifecycle
-- [ ] health/reconnect
-- [ ] circuit breaker
-- [ ] normalized ToolDefinition/ContentObject
-- [ ] malicious-output protection
+- [x] registry
+- [x] client
+- [x] discovery
+- [x] tools
+- [x] resources
+- [x] prompts
+- [x] auth
+- [x] lifecycle
+- [x] health/reconnect
+- [x] circuit breaker
+- [x] normalized ToolDefinition/ContentObject
+- [x] malicious-output protection
 
 ### P5.2 Plugins
 - [ ] manifest

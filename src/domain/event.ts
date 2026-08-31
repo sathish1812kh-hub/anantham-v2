@@ -59,10 +59,17 @@ export const EventTypes = {
   SIDE_EFFECT_DIVERGENCE: "side_effect.divergence",
 
   // MCP plane
+  MCP_REGISTERED: "mcp.registered",
+  MCP_DEREGISTERED: "mcp.deregistered",
   MCP_CONNECTED: "mcp.connected",
   MCP_DISCONNECTED: "mcp.disconnected",
+  MCP_DISCOVERED: "mcp.discovered",
+  MCP_HEALTH_CHANGED: "mcp.health_changed",
+  MCP_CIRCUIT_BROKEN: "mcp.circuit_broken",
   MCP_TOOL_CALLED: "mcp.tool.called",
   MCP_RESOURCE_READ: "mcp.resource.read",
+  MCP_PROMPT_RETRIEVED: "mcp.prompt.retrieved",
+  MCP_FAILED: "mcp.failed",
 
   // Checkpoint plane
   CHECKPOINT_CREATED: "checkpoint.created",

@@ -4,12 +4,12 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `cc435a2`
-- **Generated**: `2026-08-31T02:43:41Z`
+- **Project Commit**: `9a4f843`
+- **Generated**: `2026-08-31T12:48:48Z`
 - **Current Release**: `v2.0.0-alpha.1`
 - **Current Phase**: `P5 — MCP / PLUGINS / SKILLS / HOOKS`
-- **Current Task**: `P5.1 — MCP (Registry, Client, Discovery, Tools, Resources, Prompts)`
-- **Last Completed Task**: `TASK-P4.5-SIDE-EFFECTS — Side Effects & Retry Plane`
+- **Current Task**: `P5.2 — Plugins (Manifest, Checksum, Capabilities, Permissions, Lifecycle, Isolation)`
+- **Last Completed Task**: `TASK-P5.1-MCP — Model Context Protocol (MCP) Integration Plane`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`
@@ -38,6 +38,7 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
   - [P4.3-NATIVE-TOOLS](file:///C:/herness/src/tools/native/index.ts) (Filesystem, Search, Process/Shell, Git, Worktree, Artifact, Memory, and Network/Browser tools, safe path containment, SSRF defense, secret scrubbing, and SQLite audit durability)
   - [P4.4-EXECUTORS](file:///C:/herness/src/execution/index.ts) (LocalExecutor, DockerSandboxExecutor, RemoteExecutor, ProcessSupervisor lifecycle state machine, cross-platform process tree termination, sandbox isolation, output truncation, secret redaction, and SQLite durability)
   - [P4.5-SIDE-EFFECTS](file:///C:/herness/src/side-effects/index.ts) (SideEffectClassifier, RetryDecisionEngine, RetryBudgetManager hierarchical multi-layer budgets, FileDivergenceDetector user change protection, WorktreeDivergenceDetector git reset guards, SideEffectJournal, and SQLite durability)
+  - [P5.1-MCP](file:///C:/herness/src/mcp/index.ts) (MCPRegistry server management/caching/project isolation, MCPClient JSON-RPC handshake/tools/resources/prompts/disconnect, MCPCircuitBreaker 3-state resilience, MCPToolNormalizer with prototype defenses, MCPResourceNormalizer ContentObject pipeline, MCPPromptManager non-authoritative boundary, MCPOutputSanitizer, and full ToolGateway enforcement)
   - [CHATGPT-ORCHESTRATION-KT](file:///C:/herness/docs/discovery/CHATGPT_ORCHESTRATION_KT.md) (Complete Knowledge Transfer package, 7 Pillars, 11-Phase Lifecycle, Source Hierarchy, commands)
 - **Synchronization Status**:
   - **Type Safety**: `100% PASSED (0 TypeScript compilation errors under strict: true)`

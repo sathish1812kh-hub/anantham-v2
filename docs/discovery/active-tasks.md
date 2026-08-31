@@ -6,15 +6,21 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P5 — MCP / Plugins / Skills / Hooks)
 
-### [P5.1 — MCP (Registry, Client, Discovery, Tools, Resources, Prompts)](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P5.2 — Plugins (Manifest, Checksum, Capabilities, Permissions, Lifecycle, Isolation)](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Principal Protocol & Integration Architect
-- **Description**: Implement first-class Model Context Protocol (MCP) subsystem: dynamic registry, client lifecycle, server discovery, schema translation, resource reading, and prompt template expansion.
-- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`.
+- **Owner**: Principal Extensibility & Systems Architect
+- **Description**: Implement first-class Plugin Engine: manifest verification, checksum validation, capability negotiation, scoped permission enforcement, installation/uninstallation, hot-reloading, and failure isolation.
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P5.1-MCP — Model Context Protocol (MCP) Integration Plane](file:///C:/herness/src/mcp/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Protocol & Integration Architect
+- **Completed Date**: 2026-08-31
+- **Verification**: 377/377 tests passing across 168 test suites in Vitest. First-class Model Context Protocol (MCP) integration plane: MCPRegistry (server management, client caching, project isolation), MCPClient (connect, initialize, ping, tool calling, resource reading, prompt retrieval, graceful disconnect), MCPCircuitBreaker (deterministic 3-state resilience), MCPToolNormalizer (ToolDefinition translation with prototype pollution defenses), MCPResourceNormalizer (ContentObject normalization with SHA-256 provenance), MCPPromptManager (non-authoritative prompt templates), MCPOutputSanitizer (secret scrubbing, byte truncation), and full ToolGateway enforcement.
 
 ### [TASK-P4.5-SIDE-EFFECTS — Side Effects & Retry Plane](file:///C:/herness/src/side-effects/index.ts)
 - **Status**: `COMPLETED`

@@ -41,3 +41,13 @@ This document records architectural decisions, their trade-offs, and compliance 
 - **Context**: Dynamic data crossing network, storage, or agent boundaries can introduce subtle type corruption or prototype poisoning.
 - **Decision**: Define runtime Zod schemas for all 12 domain entities (`Project`, `Session`, `Task`, `HarnessEvent`, `Checkpoint`, `ContentObject`, `Attachment`, `Artifact`, `MemoryItem`, `ContextPlan`, `Provenance`, `SecurityMetadata`) and apply `Object.freeze` deeply on constructed entities.
 - **Consequences**: Complete runtime type safety, guaranteed domain immutability, zero unauthorized state mutation.
+
+---
+
+## ADR-005: Model Context Protocol (MCP) Adapter & Zero Policy Bypass Architecture
+
+- **Status**: `ACCEPTED`
+- **Date**: 2026-08-31
+- **Context**: External tools, resources, and prompt templates from Model Context Protocol (MCP) servers must be ingested safely without introducing alternative execution pathways or bypassing security gates.
+- **Decision**: Treat MCP strictly as an external integration adapter layer over existing Anantham infrastructure (`ToolGateway`, `PolicyEngine`, `ContentEngine`, `EventStore`). Normalize discovered MCP tools into `ToolDefinition` contracts registered in `ToolRegistry` behind `ToolGateway`, normalize discovered MCP resources into `ContentObject` pipelines with `Provenance` and `ContentGuards`, enforce non-authoritative boundary on MCP prompt templates (`isAuthoritative: false`), and protect the runtime using a 3-state `MCPCircuitBreaker` and `MCPOutputSanitizer`.
+- **Consequences**: Zero policy bypass, complete auditability via SQLite WAL `EventStore`, prompt injection defense, and resilience against external server failures.
