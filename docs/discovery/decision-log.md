@@ -150,3 +150,21 @@ This document records architectural decisions, their trade-offs, and compliance 
   6. *Crash Recovery & Reconciler*: `WorkflowRecoveryReconciler` scans uncompleted runs on process restart, reconciles orphaned running tasks, leaves `WAITING_APPROVAL` gates intact, and preserves complete audit trails in the append-only `EventStore`.
 - **Consequences**: Zero loss of workflow state across process crashes, zero unconstrained runaway foreach loops, strict enforcement of human approval authority, full budget containment, and complete RPO-0 ACID durability.
 
+---
+
+## ADR-015: Background Tasks, Long-Running Jobs, Worker Ownership & Generation-Fenced Lease Heartbeats
+
+- **Status**: `ACCEPTED`
+- **Date**: 2026-08-31
+- **Context**: Asynchronous, detached agent workloads require background execution capabilities that operate independently of interactive client connections while guaranteeing durable ownership, heartbeats, cancellation, timeout enforcement, bounded concurrency, crash recovery, and protection against split-brain zombie writes.
+- **Decision**: Implement the Background Job Subsystem (`src/domain/job.ts`, `src/persistence/migrations/007_background_jobs.ts`, `JobRepository`, `BackgroundJobManager`, `BackgroundJobSupervisor`, `BackgroundJobRecoveryReconciler`):
+  1. *Durable Job Contract & State Machine*: 13-state authoritative state machine (`CREATED`, `QUEUED`, `CLAIMING`, `RUNNING`, `PAUSED`, `CANCEL_REQUESTED`, `CANCELLED`, `COMPLETING`, `COMPLETED`, `FAILED`, `TIMED_OUT`, `ORPHANED`, `RECOVERY_REQUIRED`).
+  2. *Worker Ownership & Monotonic Fencing*: Integrates with `TaskClaimManager` and `LeaseRepository`. Every claim produces an exclusive lease with a monotonic `generation` token. Any stale worker presenting an outdated generation token on heartbeats, checkpoints, or completion is rejected with `FENCING_VIOLATION`.
+  3. *Durable Heartbeat Protocol*: Validates worker identity, lease ID, and generation token, with bounded renewal limits. Execution deadlines are strictly enforced during heartbeats.
+  4. *Durable Cancellation Cascades*: Cancellation is an ACID state transition committed to SQLite WAL immediately (`CANCELLED`), notifying active workers and releasing leases.
+  5. *Detached Supervisor Worker Pool*: `BackgroundJobSupervisor` manages asynchronous execution loops, automated heartbeats, deadline supervision, and project-level concurrency limits.
+  6. *Post-Crash Recovery & Orphan Reconciler*: `BackgroundJobRecoveryReconciler` scans uncompleted jobs on startup, cleans up orphaned leases, preserves checkpoint progress, and prepares jobs for restart.
+  7. *Classified Bounded Retries*: Reuses `WorkflowRetryHandler` to retry transient failures with exponential backoff while failing closed immediately on non-retryable policy or schema denials.
+- **Consequences**: Zero loss of background task state across process crashes, strict protection against zombie worker overwrites via generation fencing, full budget containment, and complete RPO-0 ACID durability.
+
+

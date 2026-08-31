@@ -4,19 +4,20 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `82a8c58`
-- **Generated**: `2026-08-31T20:54:25Z`
+- **Project Commit**: `559e5b7`
+- **Generated**: `2026-08-31T21:50:22Z`
 - **Current Release**: `v2.0.0-alpha.1`
 - **Current Phase**: `P7 — WORKFLOW / ORCHESTRATION / BACKGROUND / REMOTE`
-- **Current Task**: `P7.3 — Background Tasks, Long-Running Jobs, Heartbeats & Cancellation`
-- **Last Completed Task**: `TASK-P7.2-WORKFLOW-EXECUTION-ORCHESTRATION — Workflow Execution Engine, Parallel Branching, Foreach, Budgets, Approvals, Retries & Timeout`
+- **Current Task**: `P7.4 — Remote Agents, Multi-Node Execution & Distributed State`
+- **Last Completed Task**: `TASK-P7.3-BACKGROUND-TASKS-JOBS — Background Tasks, Long-Running Jobs, Heartbeats & Cancellation`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`
   - `0 type check errors under strict: true.`
 - **Pending Approvals**:
-  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.5, P4.1-P4.5, P5.1-P5.4, P6.1-P6.4, P7.1, P7.2 Implemented Clean & Verified).`
+  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.5, P4.1-P4.5, P5.1-P5.4, P6.1-P6.4, P7.1-P7.3 Implemented Clean & Verified).`
 - **Recently Completed Milestones**:
+  - [P7.3-BACKGROUND-TASKS](file:///C:/herness/src/jobs/index.ts) (Authoritative BackgroundJobManager, BackgroundJobSupervisor detached worker pool, BackgroundJobRecoveryReconciler crash recovery, generation-fenced leases, heartbeat renewals, durable cancellation cascades, deadline supervision, checkpoint integration, SQLite migration 007, JobRepository, EventStore durability)
   - [P7.2-WORKFLOW-EXECUTION](file:///C:/herness/src/workflow/index.ts) (Authoritative WorkflowEngine lifecycle, WorkflowExecutor wave DAG execution, WorkflowBudgetTracker hierarchical limits, WorkflowRetryHandler classified retries, WorkflowRecoveryReconciler crash recovery, parallel concurrency pooling, bounded foreach expansion, objective verification gates, restart-safe approval gates WAITING_APPROVAL, SQLite WAL persistence, EventStore durability)
   - [P1.1-CORE-DOMAIN](file:///C:/herness/src/domain/index.ts) (12 core domain models, runtime Zod validation schemas, state machines, immutability)
   - [P1.2-PERSISTENCE-ENGINE](file:///C:/herness/src/persistence/index.ts) (Native `node:sqlite` engine, WAL mode, synchronous=FULL RPO-0 durability, MigrationEngine, 8 repositories)

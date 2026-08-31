@@ -6,15 +6,21 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P7 — WORKFLOW / ORCHESTRATION / BACKGROUND / REMOTE)
 
-### [P7.3 — Background Tasks, Long-Running Jobs, Heartbeats & Cancellation](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P7.4 — Remote Agents, Multi-Node Execution & Distributed State](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Principal Workflow & Distributed Systems Architect
-- **Description**: Implement background task manager, non-blocking execution, heartbeat monitoring, timeout supervisor, cancellation propagation, progress reporting, and task notification integration.
-- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.4`, `P7.1`, `P7.2`.
+- **Owner**: Principal Distributed Systems Architect
+- **Description**: Implement remote agent connectors, distributed lease management, multi-node task routing, distributed event replication, network partition handling, and split-brain resolution.
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.4`, `P7.1–P7.3`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P7.3-BACKGROUND-TASKS-JOBS — Background Tasks, Long-Running Jobs, Heartbeats & Cancellation](file:///C:/herness/src/jobs/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Distributed Systems & Workflow Architect
+- **Completed Date**: 2026-08-31
+- **Verification**: 585/585 tests passing across 285 test suites in Vitest. First-class Background Task & Job Execution Subsystem: 13-state BackgroundJobSchema and state machine (`CREATED`, `QUEUED`, `CLAIMING`, `RUNNING`, `PAUSED`, `CANCEL_REQUESTED`, `CANCELLED`, `COMPLETING`, `COMPLETED`, `FAILED`, `TIMED_OUT`, `ORPHANED`, `RECOVERY_REQUIRED`). SQLite migration `007_background_jobs.ts` and `JobRepository` with WAL mode durability. `BackgroundJobManager` (job creation, underlying task binding, lease acquisition via `TaskClaimManager` with monotonic `generation` fencing token, periodic heartbeats, progress checkpointing, idempotent completions, classified bounded retries with exponential backoff, immediate fail-closed on policy denials, durable cancellation cascades). `BackgroundJobSupervisor` (detached worker pool, automated periodic heartbeats, execution deadline supervisor, project-level and global concurrency limits). `BackgroundJobRecoveryReconciler` (post-crash orphan and state reconciler, stale lease reclamation, checkpoint preservation). Complete test matrix covering full acceptance scenarios A through H.
 
 ### [TASK-P7.2-WORKFLOW-EXECUTION-ORCHESTRATION — Workflow Execution Engine, Parallel Branching, Foreach, Budgets, Approvals, Retries & Timeout](file:///C:/herness/src/workflow/index.ts)
 - **Status**: `COMPLETED`

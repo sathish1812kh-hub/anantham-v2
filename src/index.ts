@@ -26,3 +26,5 @@ export * from "./agents/index.js";
 export * from "./tasks/index.js";
 export * from "./teams/index.js";
 export * from "./workflow/index.js";
+export * from "./jobs/index.js";
+

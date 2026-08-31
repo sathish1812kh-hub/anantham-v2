@@ -179,6 +179,22 @@ export const EventTypes = {
   WORKFLOW_FAILED: "workflow.failed",
   WORKFLOW_CANCELLED: "workflow.cancelled",
 
+  // Background Job & Detached Execution plane (P7.3)
+  JOB_CREATED: "job.created",
+  JOB_QUEUED: "job.queued",
+  JOB_CLAIMED: "job.claimed",
+  JOB_STARTED: "job.started",
+  JOB_HEARTBEAT: "job.heartbeat",
+  JOB_CHECKPOINTED: "job.checkpointed",
+  JOB_CANCEL_REQUESTED: "job.cancel_requested",
+  JOB_CANCELLED: "job.cancelled",
+  JOB_TIMED_OUT: "job.timed_out",
+  JOB_RECLAIMED: "job.reclaimed",
+  JOB_RETRYING: "job.retrying",
+  JOB_COMPLETED: "job.completed",
+  JOB_FAILED: "job.failed",
+  JOB_RECOVERY_REQUIRED: "job.recovery_required",
+
   // Checkpoint plane
   CHECKPOINT_CREATED: "checkpoint.created",
   CHECKPOINT_RESTORED: "checkpoint.restored",
