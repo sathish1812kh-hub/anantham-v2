@@ -4,18 +4,18 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `1b2e98e`
-- **Generated**: `2026-08-31T13:19:27Z`
+- **Project Commit**: `a18213d`
+- **Generated**: `2026-08-31T13:37:02Z`
 - **Current Release**: `v2.0.0-alpha.1`
 - **Current Phase**: `P5 — MCP / PLUGINS / SKILLS / HOOKS`
-- **Current Task**: `P5.4 — Hooks (Lifecycle Engine, Deterministic Execution, Safety Policies)`
-- **Last Completed Task**: `TASK-P5.3-SKILLS — Procedural Knowledge & Skill Engine`
+- **Current Task**: `P6.1 — Agent Identity, Configuration & Startup Resolution`
+- **Last Completed Task**: `TASK-P5.4-HOOKS — Lifecycle Engine & Deterministic Automation`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`
   - `0 type check errors under strict: true.`
 - **Pending Approvals**:
-  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.5, P4.1-P4.5, P5.1-P5.3 Implemented Clean & Verified).`
+  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.5, P4.1-P4.5, P5.1-P5.4 Implemented Clean & Verified).`
 - **Recently Completed Milestones**:
   - [P1.1-CORE-DOMAIN](file:///C:/herness/src/domain/index.ts) (12 core domain models, runtime Zod validation schemas, state machines, immutability)
   - [P1.2-PERSISTENCE-ENGINE](file:///C:/herness/src/persistence/index.ts) (Native `node:sqlite` engine, WAL mode, synchronous=FULL RPO-0 durability, MigrationEngine, 8 repositories)
@@ -41,6 +41,7 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
   - [P5.1-MCP](file:///C:/herness/src/mcp/index.ts) (MCPRegistry server management/caching/project isolation, MCPClient JSON-RPC handshake/tools/resources/prompts/disconnect, MCPCircuitBreaker 3-state resilience, MCPToolNormalizer with prototype defenses, MCPResourceNormalizer ContentObject pipeline, MCPPromptManager non-authoritative boundary, MCPOutputSanitizer, and full ToolGateway enforcement)
   - [P5.2-PLUGINS](file:///C:/herness/src/plugins/index.ts) (PluginManifestSchema, SemVer validation, SHA-256 checksum verification, PluginCompatibilityChecker, PluginDependencyResolver, PluginPermissionsManager, PluginTrustManager anti-self-promotion, PluginInstaller staged install, PluginManager lifecycle engine, PluginRegistry project pinning, PluginStateManager migrations, PluginDoctor diagnostics, and EventStore durability)
   - [P5.3-SKILLS](file:///C:/herness/src/skills/index.ts) (SkillFrontmatterSchema, SkillMetadataSchema, SkillProcedureSchema, SkillManifestSchema, SkillParser, SkillCompatibilityChecker, SkillDependencyResolver, SkillRelevanceMatcher, SkillProgressiveLoader 3-phase disclosure, SkillTestRunner deterministic fixtures, SkillRegistry project pinning, SkillManager lifecycle engine, SkillSecurityGuard prompt injection defense, and EventStore durability)
+  - [P5.4-HOOKS](file:///C:/herness/src/hooks/index.ts) (HookTriggerTypeSchema, HookActionSchema, HookPolicySchema, HookManifestSchema, HookRecordSchema, HookRegistry, HookMatcher, HookRecursionGuard, HookSecurityGuard, HookExecutor, HookTestRunner, and EventStore durability)
   - [CHATGPT-ORCHESTRATION-KT](file:///C:/herness/docs/discovery/CHATGPT_ORCHESTRATION_KT.md) (Complete Knowledge Transfer package, 7 Pillars, 11-Phase Lifecycle, Source Hierarchy, commands)
 - **Synchronization Status**:
   - **Type Safety**: `100% PASSED (0 TypeScript compilation errors under strict: true)`

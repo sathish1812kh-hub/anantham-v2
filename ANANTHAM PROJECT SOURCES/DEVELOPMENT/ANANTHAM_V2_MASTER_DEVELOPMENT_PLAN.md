@@ -373,13 +373,13 @@ Every update MUST include:
 - [x] execution provenance
 
 ### P5.4 Hooks
-- [ ] lifecycle engine
-- [ ] deterministic behavior
-- [ ] ordering
-- [ ] failure policy
-- [ ] security-sensitive hooks fail safely
+- [x] lifecycle engine
+- [x] deterministic behavior
+- [x] ordering
+- [x] failure policy
+- [x] security-sensitive hooks fail safely
 
-**P5 GATE:** malicious MCP/plugin/skill cannot bypass policy.
+**P5 GATE:** malicious MCP/plugin/skill cannot bypass policy. [SEALED & VERIFIED]
 
 ---
 

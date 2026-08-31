@@ -99,6 +99,19 @@ export const EventTypes = {
   SKILL_FAILED: "skill.failed",
   SKILL_REMOVED: "skill.removed",
 
+  // Hook plane
+  HOOK_REGISTERED: "hook.registered",
+  HOOK_VALIDATED: "hook.validated",
+  HOOK_ENABLED: "hook.enabled",
+  HOOK_DISABLED: "hook.disabled",
+  HOOK_TRIGGERED: "hook.triggered",
+  HOOK_STARTED: "hook.started",
+  HOOK_COMPLETED: "hook.completed",
+  HOOK_FAILED: "hook.failed",
+  HOOK_TIMED_OUT: "hook.timed_out",
+  HOOK_BLOCKED: "hook.blocked",
+  HOOK_REMOVED: "hook.removed",
+
   // Checkpoint plane
   CHECKPOINT_CREATED: "checkpoint.created",
   CHECKPOINT_RESTORED: "checkpoint.restored",

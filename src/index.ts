@@ -21,5 +21,7 @@ export * from "./side-effects/index.js";
 export * from "./mcp/index.js";
 export * from "./plugins/index.js";
 export * from "./skills/index.js";
+export * from "./hooks/index.js";
+
 
 

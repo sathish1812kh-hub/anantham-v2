@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\governance\\scorecard.json": {
-    "mtime": 1788162253.0607011,
-    "ast_hash": "c07283ae578f8a97c5a2d80dd5ea05db",
+    "mtime": 1788163355.308647,
+    "ast_hash": "d2b69c24db05291c1103da53520eb009",
     "semantic_hash": ""
   },
   "C:\\herness\\scripts\\certification-scorecard.ps1": {
@@ -90,8 +90,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\src\\index.ts": {
-    "mtime": 1788162050.6149874,
-    "ast_hash": "4fe069eebddd6a36247f0856f7127fae",
+    "mtime": 1788162969.1230335,
+    "ast_hash": "c45e5f98e52022ddfae0f0f3b07d93a3",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\artifacts\\artifact-manager.ts": {
@@ -250,8 +250,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\src\\domain\\event.ts": {
-    "mtime": 1788161984.1431868,
-    "ast_hash": "1367d4eb2bf9e464f80de4396d444f5c",
+    "mtime": 1788162908.9543571,
+    "ast_hash": "7b36a79cefc171a74a3a01ff63e5f968",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\domain\\execution.ts": {
@@ -259,9 +259,14 @@
     "ast_hash": "9c56d337ea23af0584a86c8076c44dbe",
     "semantic_hash": ""
   },
+  "C:\\herness\\src\\domain\\hook.ts": {
+    "mtime": 1788162902.7031548,
+    "ast_hash": "a18427079156b00543d34d3acaa295b6",
+    "semantic_hash": ""
+  },
   "C:\\herness\\src\\domain\\index.ts": {
-    "mtime": 1788161989.4076145,
-    "ast_hash": "ba5928aafdc166e491ef5850ea82d901",
+    "mtime": 1788162916.5895996,
+    "ast_hash": "0f836537ca331ad5ed58d9c8963e1d16",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\domain\\mcp.ts": {
@@ -412,6 +417,46 @@
   "C:\\herness\\src\\execution\\remote-executor.ts": {
     "mtime": 1788123245.4029057,
     "ast_hash": "02a83113ba3494afe27292c956878d13",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\hooks\\hook-executor.ts": {
+    "mtime": 1788163161.2581344,
+    "ast_hash": "513e8f85d5ae350d3db01ea59e87031d",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\hooks\\hook-manager.ts": {
+    "mtime": 1788162958.811746,
+    "ast_hash": "187f1f16f1fbd76240cc101f1ac81ccf",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\hooks\\hook-matcher.ts": {
+    "mtime": 1788162925.2500904,
+    "ast_hash": "e16214042f0e43e2bc26309514a577f7",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\hooks\\hook-recursion-guard.ts": {
+    "mtime": 1788162931.489029,
+    "ast_hash": "fe8156ee840349ed763c009f04155e71",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\hooks\\hook-registry.ts": {
+    "mtime": 1788162920.6130261,
+    "ast_hash": "6e163693aaa50a875e1605c8642c6ce4",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\hooks\\hook-security.ts": {
+    "mtime": 1788162937.0399835,
+    "ast_hash": "1f21b1918c3cb813891dde555893977c",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\hooks\\hook-test-runner.ts": {
+    "mtime": 1788162951.8802295,
+    "ast_hash": "0072f89ed78d6f9c204e935c53565e2d",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\hooks\\index.ts": {
+    "mtime": 1788162962.2599409,
+    "ast_hash": "3287d339ea0ed79c97609207cbf24962",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\mcp\\index.ts": {
@@ -1189,6 +1234,56 @@
     "ast_hash": "f4bd8c7883eeb9f236797d744296938f",
     "semantic_hash": ""
   },
+  "C:\\herness\\tests\\hooks\\hook-contracts-validation.test.ts": {
+    "mtime": 1788162973.8252938,
+    "ast_hash": "df611fc955ca7b91c36efff96e507f0f",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\hooks\\hook-deterministic-ordering.test.ts": {
+    "mtime": 1788162982.5162778,
+    "ast_hash": "900426aacf40fa2b36aa6ff1a7ab0d5c",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\hooks\\hook-durability-zero-state-loss.test.ts": {
+    "mtime": 1788163017.195668,
+    "ast_hash": "9b38a41a839405455b5b57b602927a45",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\hooks\\hook-error-policy-fail-closed.test.ts": {
+    "mtime": 1788162989.348047,
+    "ast_hash": "cbc1447f79a62848cd65bbccdba3df36",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\hooks\\hook-project-isolation.test.ts": {
+    "mtime": 1788163007.0366707,
+    "ast_hash": "6b5c32d1e93b326e91703f16b8e5cf00",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\hooks\\hook-recursion-cascade-protection.test.ts": {
+    "mtime": 1788162999.0364063,
+    "ast_hash": "4731272bdc1db2ebe8c4f0c0d4dec9b7",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\hooks\\hook-security-adversarial.test.ts": {
+    "mtime": 1788163011.9721222,
+    "ast_hash": "4588bd8512f08714bd89916e3e921578",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\hooks\\hook-timeout-retry-concurrency.test.ts": {
+    "mtime": 1788163222.0967188,
+    "ast_hash": "ad97644188fb3ed04326f352f4d641c9",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\hooks\\hook-toolgateway-enforcement.test.ts": {
+    "mtime": 1788162994.3855033,
+    "ast_hash": "831fb2209a007553855be27d312b68d1",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\hooks\\hook-trigger-matching.test.ts": {
+    "mtime": 1788162977.776314,
+    "ast_hash": "fd17c766f772f3bda60f86a02f154e63",
+    "semantic_hash": ""
+  },
   "C:\\herness\\tests\\mcp\\mcp-circuit-breaker.test.ts": {
     "mtime": 1788160026.7001038,
     "ast_hash": "f32858973e1a989ad2d9badab2bfefd6",
@@ -1875,8 +1970,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\ANANTHAM PROJECT SOURCES\\DEVELOPMENT\\ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md": {
-    "mtime": 1788162186.8033717,
-    "ast_hash": "477eb0573ac9c44024480ab6b5e38389",
+    "mtime": 1788163287.6120188,
+    "ast_hash": "6ff271f47196f0ed6a113743ec9e13d5",
     "semantic_hash": ""
   },
   "C:\\herness\\ANANTHAM PROJECT SOURCES\\prd\\ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md": {
@@ -1895,8 +1990,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\active-tasks.md": {
-    "mtime": 1788162194.9716847,
-    "ast_hash": "b69534dbb626a3c07d7292969a2ffe8b",
+    "mtime": 1788163296.8506207,
+    "ast_hash": "ba1cf87b9a495a43381f8f68db26fac5",
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\CHATGPT_ORCHESTRATION_KT.md": {
@@ -1905,13 +2000,13 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\current-state.md": {
-    "mtime": 1788162206.5798824,
-    "ast_hash": "cb10af3dbdac36eb22ed20eeeba6a5d6",
+    "mtime": 1788163306.4594865,
+    "ast_hash": "91c3ef460bd96b0874079c24eda3667a",
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\decision-log.md": {
-    "mtime": 1788162214.1372187,
-    "ast_hash": "8cbb8b2fd29a09a6acd36b26d38cf836",
+    "mtime": 1788163318.7809238,
+    "ast_hash": "c8b15134c0f143993247a98862bf80e0",
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\dependency-registry.md": {

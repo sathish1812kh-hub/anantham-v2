@@ -4,17 +4,23 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ---
 
-## 1. Active Phase Backlog (P5 — MCP / Plugins / Skills / Hooks)
+## 1. Active Phase Backlog (P6 — Agents / Teams / Parallel Execution)
 
-### [P5.4 — Hooks (Lifecycle Engine, Deterministic Execution, Safety Policies)](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P6.1 — Agent Identity, Configuration & Startup Resolution](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Principal Lifecycle & Automation Architect
-- **Description**: Implement first-class Hook Engine: deterministic event-driven lifecycle automation, hook registry, ordered execution pipelines, timeout enforcement, fail-safe security policies, and SQLite audit durability.
-- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1`, `P5.2`, `P5.3`.
+- **Owner**: Principal Multi-Agent & Orchestration Architect
+- **Description**: Implement first-class Agent runtime: agent identity/configuration, startup capability/policy resolution, budget enforcement, task board integration, task claims, leases, heartbeats, and stalled-agent recovery.
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P5.4-HOOKS — Lifecycle Engine & Deterministic Automation](file:///C:/herness/src/hooks/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Lifecycle & Automation Architect
+- **Completed Date**: 2026-08-31
+- **Verification**: 441/441 tests passing across 198 test suites in Vitest. First-class Hook Runtime: HookTriggerTypeSchema (22 lifecycle events), HookActionSchema, HookPolicySchema (fail-closed, fail-open, warn), HookManifestSchema, HookRecordSchema, HookRegistry (global/project scoping), HookMatcher (deterministic priority & ID sorting, toolName/pathPattern/payload filters), HookRecursionGuard (depth <= 5, causation cycle detection, fan-out limits), HookSecurityGuard (prompt injection defense, dangerous shell command filtering), HookExecutor (ToolGateway routing, timeouts, bounded retries), HookTestRunner (fixture testing /hooks test), and SQLite WAL EventStore audit durability.
 
 ### [TASK-P5.3-SKILLS — Procedural Knowledge & Skill Engine](file:///C:/herness/src/skills/index.ts)
 - **Status**: `COMPLETED`

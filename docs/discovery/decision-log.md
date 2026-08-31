@@ -72,4 +72,15 @@ This document records architectural decisions, their trade-offs, and compliance 
 - **Decision**: Skills are defined strictly as data/procedural guidance parsed from `SKILL.md` (YAML frontmatter + Markdown body). Enforce a 3-phase progressive disclosure pipeline: (1) cheap metadata indexing at startup, (2) BM25/tag relevance matching against task goals, and (3) token-budgeted full procedure injection into `ContextPlan`. All required tools and MCP dependencies are resolved against `ToolRegistry` and `MCPRegistry`; missing dependencies prevent activation rather than executing with partial unknown capability. Untrusted skill content is wrapped with non-authoritative boundary tags, and prompt injection attempts are rejected by `SkillSecurityGuard`. Project-level skill version pinning and SQLite WAL audit durability are strictly enforced.
 - **Consequences**: Zero token bloat at startup, full prompt injection defense, strict ToolGateway enforcement, and deterministic skill execution provenance.
 
+---
+
+## ADR-008: Hook Deterministic Lifecycle Automation & Zero Bypass Architecture
+
+- **Status**: `ACCEPTED`
+- **Date**: 2026-08-31
+- **Context**: Lifecycle triggers (e.g. `BeforeTool`, `AfterTool`, `BeforeCommand`, `BeforePush`, `BeforeDeploy`) require deterministic runtime automation, but arbitrary hook actions must not bypass `ToolGateway`, `PolicyEngine`, approval gates, or cause infinite recursion loops.
+- **Decision**: Hooks are implemented as deterministic runtime automation (`HookManifestSchema`, `HookRecordSchema`, `HookRegistry`, `HookMatcher`). All capability actions declared by hooks route strictly through `ToolGateway` (never direct `child_process.exec()`). Recursion and cyclic cascade protection is enforced by `HookRecursionGuard` (`depth <= 5`, `maxFanOut <= 20`, causation chain cycle checks). Hooks declare explicit error policies: `fail-closed` (blocks the triggering operation on failure), `fail-open` (logs warning, proceeds), and `warn`. All hook lifecycle transitions emit durable audit events to the SQLite WAL `EventStore`.
+- **Consequences**: Deterministic lifecycle automation, zero security policy bypass, complete recursion protection, and durable auditability.
+
+
 
