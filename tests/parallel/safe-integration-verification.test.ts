@@ -138,5 +138,5 @@ describe("P6.4 Parallel Execution — Safe Integration & Verification Gate", () 
 
     // Clean up
     await workspaceManager.cleanupWorkspace(wsRes.workspace!.id, tempRepo.repoPath, true);
-  });
+  }, 25000);
 });

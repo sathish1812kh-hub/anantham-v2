@@ -149,12 +149,23 @@ export class LocalExecutor {
         isSettled = true;
         clearTimeout(timeoutId);
 
-        const status = code === 0 ? "completed" : signal ? "killed" : "failed";
-        this.supervisor.transition(
-          validated.executionId,
-          status === "completed" ? "completed" : "failed",
-          { code, signal }
-        );
+        const currentHandle = this.supervisor.getHandle(validated.executionId);
+        const terminalStates = ["completed", "failed", "timed_out", "cancelled", "killed", "lost"];
+
+        let status: ExecutionResult["status"] = code === 0 ? "completed" : signal ? "killed" : "failed";
+        if (currentHandle?.state === "cancelled") {
+          status = "cancelled";
+        } else if (currentHandle?.state === "timed_out") {
+          status = "timed_out";
+        }
+
+        if (currentHandle && !terminalStates.includes(currentHandle.state)) {
+          this.supervisor.transition(
+            validated.executionId,
+            status === "completed" ? "completed" : "failed",
+            { code, signal }
+          );
+        }
         this.supervisor.cleanup(validated.executionId);
 
         resolve({

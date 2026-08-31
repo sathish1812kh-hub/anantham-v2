@@ -165,6 +165,20 @@ export const EventTypes = {
   WORKSPACE_CLEANED: "workspace.cleaned",
   WORKSPACE_FAILED: "workspace.failed",
 
+  // Workflow & Orchestration plane
+  WORKFLOW_REGISTERED: "workflow.registered",
+  WORKFLOW_VALIDATED: "workflow.validated",
+  WORKFLOW_STARTED: "workflow.started",
+  WORKFLOW_PAUSED: "workflow.paused",
+  WORKFLOW_RESUMED: "workflow.resumed",
+  WORKFLOW_TASK_STARTED: "workflow.task_started",
+  WORKFLOW_TASK_COMPLETED: "workflow.task_completed",
+  WORKFLOW_TASK_FAILED: "workflow.task_failed",
+  WORKFLOW_CONDITION_EVALUATED: "workflow.condition_evaluated",
+  WORKFLOW_COMPLETED: "workflow.completed",
+  WORKFLOW_FAILED: "workflow.failed",
+  WORKFLOW_CANCELLED: "workflow.cancelled",
+
   // Checkpoint plane
   CHECKPOINT_CREATED: "checkpoint.created",
   CHECKPOINT_RESTORED: "checkpoint.restored",

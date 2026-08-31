@@ -410,12 +410,12 @@ Every update MUST include:
 
 ## P7 — WORKFLOW / ORCHESTRATION / BACKGROUND / REMOTE
 
-- [ ] workflow model
-- [ ] executable TypeScript workflow
-- [ ] DAG
-- [ ] dependencies
-- [ ] cycle detection
-- [ ] conditions
+- [x] workflow model
+- [x] executable TypeScript workflow
+- [x] DAG
+- [x] dependencies
+- [x] cycle detection
+- [x] conditions
 - [ ] parallel branches
 - [ ] foreach
 - [ ] budgets
@@ -425,8 +425,8 @@ Every update MUST include:
 - [ ] artifact passing
 - [ ] verification nodes
 - [ ] dry run
-- [ ] workflow versioning
-- [ ] active-run pinning
+- [x] workflow versioning
+- [x] active-run pinning
 - [ ] background agents
 - [ ] remote execution
 - [ ] remote output durability

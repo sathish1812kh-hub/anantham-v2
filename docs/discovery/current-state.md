@@ -4,18 +4,18 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `8947713`
-- **Generated**: `2026-08-31T15:17:25Z`
+- **Project Commit**: `4ef8384`
+- **Generated**: `2026-08-31T20:27:22Z`
 - **Current Release**: `v2.0.0-alpha.1`
-- **Current Phase**: `P6 — AGENTS / TEAMS / PARALLEL EXECUTION (COMPLETED)`
-- **Current Task**: `P7.1 — Knowledge Indexing & Retrieval Plane`
-- **Last Completed Task**: `TASK-P6.4-PARALLEL-WORKTREE-CONFLICT — Parallel Execution, Worktree Isolation & Conflict Detection`
+- **Current Phase**: `P7 — WORKFLOW / ORCHESTRATION / BACKGROUND / REMOTE`
+- **Current Task**: `P7.2 — Workflow Execution Engine, Parallel Branching, Foreach, Budgets, Approvals, Retries & Timeout`
+- **Last Completed Task**: `TASK-P7.1-WORKFLOW-MODEL-DAG-DSL — Workflow Model, DSL, DAG Engine & Cycle Detection`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`
   - `0 type check errors under strict: true.`
 - **Pending Approvals**:
-  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.5, P4.1-P4.5, P5.1-P5.4, P6.1-P6.4 Implemented Clean & Verified).`
+  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.5, P4.1-P4.5, P5.1-P5.4, P6.1-P6.4, P7.1 Implemented Clean & Verified).`
 - **Recently Completed Milestones**:
   - [P1.1-CORE-DOMAIN](file:///C:/herness/src/domain/index.ts) (12 core domain models, runtime Zod validation schemas, state machines, immutability)
   - [P1.2-PERSISTENCE-ENGINE](file:///C:/herness/src/persistence/index.ts) (Native `node:sqlite` engine, WAL mode, synchronous=FULL RPO-0 durability, MigrationEngine, 8 repositories)
@@ -44,6 +44,9 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
   - [P5.4-HOOKS](file:///C:/herness/src/hooks/index.ts) (HookTriggerTypeSchema, HookActionSchema, HookPolicySchema, HookManifestSchema, HookRecordSchema, HookRegistry, HookMatcher, HookRecursionGuard, HookSecurityGuard, HookExecutor, HookTestRunner, and EventStore durability)
   - [P6.1-AGENTS](file:///C:/herness/src/agents/index.ts) (AgentManifestSchema, AgentStartupPlanSchema, AgentRuntimeStateSchema, AgentBudgetSchema, AgentContextScopeSchema, AgentMemoryScopeSchema, AgentRegistry, AgentSecurityGuard, AgentStartupResolver, AgentManager, and EventStore durability)
   - [P6.2-TASKS](file:///C:/herness/src/tasks/index.ts) (TaskBoard deterministic query, TaskClaimManager atomic transaction claims, LeaseRepository SQLite persistence, monotonic generation fencing tokens, heartbeat renewals, StalledAgentRecoveryEngine classification & bounded retry recovery, EventStore audit durability)
+  - [P6.3-SUBAGENTS-TEAMS](file:///C:/herness/src/teams/index.ts) (SubagentManager bounded delegation, TeamManager roles/topologies, PeerMessenger artifact messaging, AgentHandoffManager atomic lease transfer, EventStore durability)
+  - [P6.4-PARALLEL-EXECUTION](file:///C:/herness/src/execution/index.ts) (GitWorktreeManager worktree isolation, ChangeSetCalculator diff parsing, ConflictDetector 12 conflict categories, WorkspaceManager, WorkspaceIntegrator, ParallelOrchestrator serialization fallback, WorkspaceRecoveryEngine quarantine, WorkspaceRepository SQLite migration 005)
+  - [P7.1-WORKFLOW-MODEL-DAG-DSL](file:///C:/herness/src/workflow/index.ts) (WorkflowDefinitionSchema, Task/Parallel/Foreach/Verify/Approve nodes, defineWorkflow fluent DSL, DAGEngine Kahn cycle detection, topological wave levels, ConditionEvaluator safe AST logic, WorkflowRegistry scoped resolution project>profile>global>built-in, active-run version pinning, WorkflowRepository SQLite migration 006, EventStore durability)
   - [CHATGPT-ORCHESTRATION-KT](file:///C:/herness/docs/discovery/CHATGPT_ORCHESTRATION_KT.md) (Complete Knowledge Transfer package, 7 Pillars, 11-Phase Lifecycle, Source Hierarchy, commands)
 - **Synchronization Status**:
   - **Type Safety**: `100% PASSED (0 TypeScript compilation errors under strict: true)`
@@ -65,5 +68,6 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
   - **Execution Infrastructure Plane**: `SYNCED (LocalExecutor, DockerSandboxExecutor, RemoteExecutor, ProcessSupervisor, ProcessTreeKiller, ExecutorRegistry)`
   - **Side Effects Plane**: `SYNCED (SideEffectClassifier, RetryDecisionEngine, RetryBudgetManager, FileDivergenceDetector, WorktreeDivergenceDetector, SideEffectJournal)`
   - **Agents & Task Execution Plane**: `SYNCED (AgentRegistry, AgentStartupResolver, AgentSecurityGuard, AgentManager, TaskBoard, TaskClaimManager, LeaseRepository, StalledAgentRecoveryEngine, SubagentManager, TeamManager, PeerMessenger, AgentHandoffManager, GitWorktreeManager, ChangeSetCalculator, ConflictDetector, WorkspaceManager, WorkspaceIntegrator, ParallelOrchestrator, WorkspaceRecoveryEngine)`
-  - **Automated Test Suites**: `100% PASSED (511/511 tests passing across 251 test files)`
+  - **Workflow & Orchestration Plane**: `SYNCED (WorkflowDefinition, WorkflowDSL, DAGEngine, CycleDetector, ConditionEvaluator, WorkflowValidator, WorkflowRegistry, PinnedVersions, WorkflowRepository, Migration 006)`
+  - **Automated Test Suites**: `100% PASSED (547/547 tests passing across 260 test files)`
   - **Quality Scorecard**: `1000/1000 CERTIFIED GOLD STANDARD`

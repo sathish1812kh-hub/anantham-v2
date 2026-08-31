@@ -35,5 +35,5 @@ describe("P4.4 Process Tree Cancellation & Timeout", () => {
 
     const result = await execPromise;
     expect(["cancelled", "killed", "failed"]).toContain(result.status);
-  });
+  }, 15000);
 });

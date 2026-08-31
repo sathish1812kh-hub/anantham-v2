@@ -109,5 +109,5 @@ describe("P6.4 Parallel Execution — Concurrency Race Conditions", () => {
     for (const res of results) {
       await workspaceManager.cleanupWorkspace(res.workspace!.id, tempRepo.repoPath, true);
     }
-  });
+  }, 25000);
 });

@@ -216,5 +216,6 @@ import { migration002 } from "./002_memory_fts.js";
 import { migration003 } from "./003_task_leases.js";
 import { migration004 } from "./004_teams_subagents.js";
 import { migration005 } from "./005_workspaces_parallel.js";
+import { migration006 } from "./006_workflows_orchestration.js";
 
-export const allMigrations: Migration[] = [migration001, migration002, migration003, migration004, migration005];
+export const allMigrations: Migration[] = [migration001, migration002, migration003, migration004, migration005, migration006];

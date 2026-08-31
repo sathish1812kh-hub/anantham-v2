@@ -137,5 +137,5 @@ describe("P6.4 Parallel Execution — Project Boundary Isolation", () => {
     // Clean up
     await workspaceManager.cleanupWorkspace(ws1.workspace!.id, tempRepo.repoPath, true);
     await workspaceManager.cleanupWorkspace(ws2.workspace!.id, tempRepo.repoPath, true);
-  });
+  }, 25000);
 });

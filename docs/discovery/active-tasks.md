@@ -4,19 +4,23 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ---
 
-## 1. Active Phase Backlog (P7 — Knowledge Indexing & Retrieval Plane)
+## 1. Active Phase Backlog (P7 — WORKFLOW / ORCHESTRATION / BACKGROUND / REMOTE)
 
-### [P7.1 — Knowledge Indexing & Retrieval Engine](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P7.2 — Workflow Execution Engine, Parallel Branching, Foreach, Budgets, Approvals, Retries & Timeout](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Principal Knowledge Systems & Retrieval Architect
-- **Description**: Implement multi-strategy indexing, semantic and hybrid retrieval, and knowledge graph ingestion pipelines.
-- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.4`.
+- **Owner**: Principal Workflow & Distributed Systems Architect
+- **Description**: Implement runtime execution engine for workflows, parallel branch synchronization, foreach iteration, step-level timeouts and retries, budget tracking, approval gates, and artifact passing.
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.4`, `P7.1`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
 
-### [TASK-P6.4-PARALLEL-WORKTREE-CONFLICT — Parallel Execution, Worktree Isolation & Conflict Detection](file:///C:/herness/src/execution/index.ts)
+### [TASK-P7.1-WORKFLOW-MODEL-DAG-DSL — Workflow Model, DSL, DAG Engine & Cycle Detection](file:///C:/herness/src/workflow/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Workflow & Distributed Systems Architect
+- **Completed Date**: 2026-08-31
+- **Verification**: 547/547 tests passing across 260 test suites in Vitest. First-class Workflow as Code Subsystem: WorkflowDefinitionSchema, WorkflowTaskNodeSchema, WorkflowParallelNodeSchema, WorkflowForeachNodeSchema, WorkflowVerifyNodeSchema, WorkflowApproveNodeSchema, WorkflowDAGSchema, WorkflowRunSchema. defineWorkflow fluent DSL primitives (task, parallel, foreach, verify, approve). DAGEngine with Kahn's topological sort and cycle detection (detects 3-node cycles, self-dependencies, duplicate IDs, partitions into parallel execution wave levels, computes transitive prerequisites and dependents). ConditionEvaluator (safe deterministic boolean/AST evaluation without eval, supports artifact existence, task status, compound operators, blocks prototype pollution). WorkflowValidator (deep structural and security validation, path traversal defense). WorkflowRegistry (scoped resolution: project > profile > global > built-in, active-run version pinning snapshotting). SQLite migration `006_workflows_orchestration.ts`, `WorkflowRepository`, and SQLite WAL `EventStore` audit durability.
 - **Status**: `COMPLETED`
 - **Owner**: Principal Parallel Systems & Execution Architect
 - **Completed Date**: 2026-08-31

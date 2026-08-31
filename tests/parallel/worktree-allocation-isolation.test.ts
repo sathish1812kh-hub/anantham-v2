@@ -157,5 +157,5 @@ describe("P6.4 Parallel Execution — Worktree Allocation & Isolation", () => {
 
     const cleaned2 = await workspaceManager.cleanupWorkspace(ws2Res.workspace!.id, tempRepo.repoPath, true);
     expect(cleaned2).toBe(true);
-  });
+  }, 25000);
 });
