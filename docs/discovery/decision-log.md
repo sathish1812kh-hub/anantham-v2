@@ -82,5 +82,16 @@ This document records architectural decisions, their trade-offs, and compliance 
 - **Decision**: Hooks are implemented as deterministic runtime automation (`HookManifestSchema`, `HookRecordSchema`, `HookRegistry`, `HookMatcher`). All capability actions declared by hooks route strictly through `ToolGateway` (never direct `child_process.exec()`). Recursion and cyclic cascade protection is enforced by `HookRecursionGuard` (`depth <= 5`, `maxFanOut <= 20`, causation chain cycle checks). Hooks declare explicit error policies: `fail-closed` (blocks the triggering operation on failure), `fail-open` (logs warning, proceeds), and `warn`. All hook lifecycle transitions emit durable audit events to the SQLite WAL `EventStore`.
 - **Consequences**: Deterministic lifecycle automation, zero security policy bypass, complete recursion protection, and durable auditability.
 
+---
+
+## ADR-009: Agent Identity, 10-Step Deterministic Startup Resolution & Pre-Execution Safety
+
+- **Status**: `ACCEPTED`
+- **Date**: 2026-08-31
+- **Context**: An Agent represents a bounded execution identity. In order to avoid runtime crashes, privilege escalations, or model-capability mismatch during execution, all requirements (Model, Capability, Tool, Skill, Permission, Executor, Budget, Context, and Memory) must be verified and resolved into an immutable blueprint before an agent is allowed to start.
+- **Decision**: Agents are defined by declarative manifests (`AgentManifestSchema`). An Agent never starts in an unresolved state. The `AgentStartupResolver` executes a deterministic 10-step resolution pipeline: (1) security/prompt injection validation, (2) model & provider routing, (3) tool verification against `ToolRegistry`, (4) skill verification against `SkillRegistry`, (5) permission resolution against `PolicyEngine`, (6) executor profile resolution, (7) budget and resource boundary calculation, (8) context token & path scoping, (9) memory namespace isolation, and (10) emission of an immutable `AgentStartupPlan`. Running instances pin this immutable plan to preserve execution stability across hot reloads. All lifecycle events are committed to the SQLite WAL `EventStore`.
+- **Consequences**: Zero start-in-unresolved-state risks, complete anti-self-promotion protection, deterministic execution provenance, and active-run configuration pinning.
+
+
 
 

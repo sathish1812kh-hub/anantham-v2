@@ -385,9 +385,9 @@ Every update MUST include:
 
 ## P6 — AGENTS / TEAMS / PARALLEL EXECUTION
 
-- [ ] Agent identity/configuration
-- [ ] startup capability/policy resolution
-- [ ] agent budget
+- [x] Agent identity/configuration
+- [x] startup capability/policy resolution
+- [x] agent budget
 - [ ] task board
 - [ ] task claims
 - [ ] leases

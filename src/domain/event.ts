@@ -112,6 +112,20 @@ export const EventTypes = {
   HOOK_BLOCKED: "hook.blocked",
   HOOK_REMOVED: "hook.removed",
 
+  // Agent plane
+  AGENT_REGISTERED: "agent.registered",
+  AGENT_CONFIGURED: "agent.configured",
+  AGENT_RESOLVING: "agent.resolving",
+  AGENT_READY: "agent.ready",
+  AGENT_STARTED: "agent.started",
+  AGENT_PAUSED: "agent.paused",
+  AGENT_RESUMED: "agent.resumed",
+  AGENT_BLOCKED: "agent.blocked",
+  AGENT_FAILED: "agent.failed",
+  AGENT_COMPLETED: "agent.completed",
+  AGENT_STOPPED: "agent.stopped",
+  AGENT_REMOVED: "agent.removed",
+
   // Checkpoint plane
   CHECKPOINT_CREATED: "checkpoint.created",
   CHECKPOINT_RESTORED: "checkpoint.restored",

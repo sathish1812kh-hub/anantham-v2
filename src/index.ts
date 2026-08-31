@@ -22,6 +22,7 @@ export * from "./mcp/index.js";
 export * from "./plugins/index.js";
 export * from "./skills/index.js";
 export * from "./hooks/index.js";
+export * from "./agents/index.js";
 
 
 

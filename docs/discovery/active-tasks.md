@@ -6,15 +6,21 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P6 — Agents / Teams / Parallel Execution)
 
-### [P6.1 — Agent Identity, Configuration & Startup Resolution](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P6.2 — Task Board, Task Claims, Leases, Heartbeats & Stalled-Agent Recovery](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
 - **Owner**: Principal Multi-Agent & Orchestration Architect
-- **Description**: Implement first-class Agent runtime: agent identity/configuration, startup capability/policy resolution, budget enforcement, task board integration, task claims, leases, heartbeats, and stalled-agent recovery.
-- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`.
+- **Description**: Implement distributed task coordination: task board, atomic task claims, lease renewals, heartbeat monitoring, and stalled-agent crash recovery.
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P6.1-AGENT-IDENTITY-CONFIG-STARTUP — Agent Identity & Startup Subsystem](file:///C:/herness/src/agents/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Multi-Agent & Orchestration Architect
+- **Completed Date**: 2026-08-31
+- **Verification**: 460/460 tests passing across 209 test suites in Vitest. First-class Agent Runtime: AgentManifestSchema, AgentStartupPlanSchema, AgentRuntimeStateSchema, AgentBudgetSchema, AgentContextScopeSchema, AgentMemoryScopeSchema, AgentRegistry (project/global scoping), AgentSecurityGuard (prompt injection defense, privilege escalation prevention), AgentStartupResolver (deterministic 10-step resolution pipeline: Model, Capability, Tool, Skill, Permission, Executor, Budget, Context Scope, Memory Scope, Immutable Startup Plan), AgentManager (lifecycle engine, active instance pinning, consumption accounting), and SQLite WAL EventStore audit durability.
 
 ### [TASK-P5.4-HOOKS — Lifecycle Engine & Deterministic Automation](file:///C:/herness/src/hooks/index.ts)
 - **Status**: `COMPLETED`
