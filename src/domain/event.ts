@@ -86,6 +86,19 @@ export const EventTypes = {
   PLUGIN_HEALTH_CHANGED: "plugin.health_changed",
   PLUGIN_FAILED: "plugin.failed",
 
+  // Skill plane
+  SKILL_DISCOVERED: "skill.discovered",
+  SKILL_VALIDATED: "skill.validated",
+  SKILL_INSTALLED: "skill.installed",
+  SKILL_ENABLED: "skill.enabled",
+  SKILL_DISABLED: "skill.disabled",
+  SKILL_LOADED: "skill.loaded",
+  SKILL_EXECUTED: "skill.executed",
+  SKILL_TESTED: "skill.tested",
+  SKILL_RELOADED: "skill.reloaded",
+  SKILL_FAILED: "skill.failed",
+  SKILL_REMOVED: "skill.removed",
+
   // Checkpoint plane
   CHECKPOINT_CREATED: "checkpoint.created",
   CHECKPOINT_RESTORED: "checkpoint.restored",

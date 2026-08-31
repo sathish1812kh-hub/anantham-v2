@@ -6,15 +6,21 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P5 — MCP / Plugins / Skills / Hooks)
 
-### [P5.3 — Skills (Registry, Metadata, Progressive Loading, Versioning)](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P5.4 — Hooks (Lifecycle Engine, Deterministic Execution, Safety Policies)](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Principal Agent & Skills Architect
-- **Description**: Implement first-class Skill Engine: progressive skill loading, metadata indexing, semantic relevance retrieval, versioning, dependency negotiation, and context-bounded prompt generation.
-- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1`, `P5.2`.
+- **Owner**: Principal Lifecycle & Automation Architect
+- **Description**: Implement first-class Hook Engine: deterministic event-driven lifecycle automation, hook registry, ordered execution pipelines, timeout enforcement, fail-safe security policies, and SQLite audit durability.
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1`, `P5.2`, `P5.3`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P5.3-SKILLS — Procedural Knowledge & Skill Engine](file:///C:/herness/src/skills/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Agent & Skills Architect
+- **Completed Date**: 2026-08-31
+- **Verification**: 422/422 tests passing across 188 test suites in Vitest. First-class Skill Runtime: SkillFrontmatterSchema, SkillMetadataSchema, SkillProcedureSchema, SkillManifestSchema, SkillParser (SKILL.md parsing), SkillCompatibilityChecker (model capabilities, runtime), SkillDependencyResolver (required tools, MCP, sub-skills, cycle detection), SkillRelevanceMatcher (BM25 keyword/tag scoring), SkillProgressiveLoader (3-phase progressive disclosure & token budgeting), SkillTestRunner (deterministic fixtures /skills test), SkillRegistry (project-level version locks), SkillManager (lifecycle state machine: discover, install, enable, disable, reload, remove, execute, test), SkillSecurityGuard (prompt injection defense & non-authoritative boundary wrapping), and SQLite WAL EventStore audit durability.
 
 ### [TASK-P5.2-PLUGINS — Plugin Extension Runtime](file:///C:/herness/src/plugins/index.ts)
 - **Status**: `COMPLETED`

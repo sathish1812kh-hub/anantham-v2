@@ -62,3 +62,14 @@ This document records architectural decisions, their trade-offs, and compliance 
 - **Decision**: Plugins are classified strictly as extensions (`PluginClass`). Manifests request permissions and capabilities; runtime `PolicyEngine` and `PluginTrustManager` retain sole authority. Manifests require SemVer compliance, SHA-256 package checksum verification, and compatibility checks (OS, Node, Anantham runtime). The `PluginManager` implements a strict lifecycle state machine (`discovered -> inspected -> validated -> resolved -> reviewed -> installed -> active`). Disabling or unloading a plugin synchronously invalidates and unregisters all tools and hooks from active registries. State migrations are managed with deterministic version step chains.
 - **Consequences**: Zero stale registrations, strict supply-chain security, failure isolation, and project-level version lock stability.
 
+---
+
+## ADR-007: Skill Procedural Knowledge, Progressive Loading & Untrusted Boundary Architecture
+
+- **Status**: `ACCEPTED`
+- **Date**: 2026-08-31
+- **Context**: Skills provide procedural guidance (*"How should this task be performed?"*) in contrast to Memory (*"What is known?"*). However, arbitrary skill markdown files must not be treated as executable code or security authorities, must not bypass `ToolGateway`, and must not overwhelm token budgets with eager startup loading.
+- **Decision**: Skills are defined strictly as data/procedural guidance parsed from `SKILL.md` (YAML frontmatter + Markdown body). Enforce a 3-phase progressive disclosure pipeline: (1) cheap metadata indexing at startup, (2) BM25/tag relevance matching against task goals, and (3) token-budgeted full procedure injection into `ContextPlan`. All required tools and MCP dependencies are resolved against `ToolRegistry` and `MCPRegistry`; missing dependencies prevent activation rather than executing with partial unknown capability. Untrusted skill content is wrapped with non-authoritative boundary tags, and prompt injection attempts are rejected by `SkillSecurityGuard`. Project-level skill version pinning and SQLite WAL audit durability are strictly enforced.
+- **Consequences**: Zero token bloat at startup, full prompt injection defense, strict ToolGateway enforcement, and deterministic skill execution provenance.
+
+

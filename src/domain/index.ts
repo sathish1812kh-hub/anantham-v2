@@ -25,4 +25,6 @@ export * from "./execution.js";
 export * from "./side-effect.js";
 export * from "./mcp.js";
 export * from "./plugin.js";
+export * from "./skill.js";
+
 

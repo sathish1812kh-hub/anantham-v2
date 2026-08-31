@@ -364,13 +364,13 @@ Every update MUST include:
 - [x] failure isolation
 
 ### P5.3 Skills
-- [ ] registry
-- [ ] metadata
-- [ ] progressive loading
-- [ ] versioning
-- [ ] dependency checks
-- [ ] compatibility
-- [ ] execution provenance
+- [x] registry
+- [x] metadata
+- [x] progressive loading
+- [x] versioning
+- [x] dependency checks
+- [x] compatibility
+- [x] execution provenance
 
 ### P5.4 Hooks
 - [ ] lifecycle engine
