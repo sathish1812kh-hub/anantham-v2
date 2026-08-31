@@ -4,18 +4,18 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `ae19f17`
-- **Generated**: `2026-08-31T13:58:39Z`
+- **Project Commit**: `4fbdd1a`
+- **Generated**: `2026-08-31T14:16:25Z`
 - **Current Release**: `v2.0.0-alpha.1`
-- **Current Phase**: `P5 — MCP / PLUGINS / SKILLS / HOOKS`
-- **Current Task**: `P6.2 — Task Board, Task Claims, Leases, Heartbeats & Stalled-Agent Recovery`
-- **Last Completed Task**: `TASK-P6.1-AGENT-IDENTITY-CONFIG-STARTUP — Agent Identity & Startup Subsystem`
+- **Current Phase**: `P6 — AGENTS / TEAMS / PARALLEL EXECUTION`
+- **Current Task**: `P6.3 — Team Definition, Roles, Topologies & Handoff Communication`
+- **Last Completed Task**: `TASK-P6.2-TASK-BOARD-CLAIMS-LEASES-HEARTBEATS — Task Board, Task Claims, Leases, Heartbeats & Stalled Recovery`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`
   - `0 type check errors under strict: true.`
 - **Pending Approvals**:
-  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.5, P4.1-P4.5, P5.1-P5.4, P6.1 Implemented Clean & Verified).`
+  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.5, P4.1-P4.5, P5.1-P5.4, P6.1, P6.2 Implemented Clean & Verified).`
 - **Recently Completed Milestones**:
   - [P1.1-CORE-DOMAIN](file:///C:/herness/src/domain/index.ts) (12 core domain models, runtime Zod validation schemas, state machines, immutability)
   - [P1.2-PERSISTENCE-ENGINE](file:///C:/herness/src/persistence/index.ts) (Native `node:sqlite` engine, WAL mode, synchronous=FULL RPO-0 durability, MigrationEngine, 8 repositories)
@@ -43,6 +43,7 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
   - [P5.3-SKILLS](file:///C:/herness/src/skills/index.ts) (SkillFrontmatterSchema, SkillMetadataSchema, SkillProcedureSchema, SkillManifestSchema, SkillParser, SkillCompatibilityChecker, SkillDependencyResolver, SkillRelevanceMatcher, SkillProgressiveLoader 3-phase disclosure, SkillTestRunner deterministic fixtures, SkillRegistry project pinning, SkillManager lifecycle engine, SkillSecurityGuard prompt injection defense, and EventStore durability)
   - [P5.4-HOOKS](file:///C:/herness/src/hooks/index.ts) (HookTriggerTypeSchema, HookActionSchema, HookPolicySchema, HookManifestSchema, HookRecordSchema, HookRegistry, HookMatcher, HookRecursionGuard, HookSecurityGuard, HookExecutor, HookTestRunner, and EventStore durability)
   - [P6.1-AGENTS](file:///C:/herness/src/agents/index.ts) (AgentManifestSchema, AgentStartupPlanSchema, AgentRuntimeStateSchema, AgentBudgetSchema, AgentContextScopeSchema, AgentMemoryScopeSchema, AgentRegistry, AgentSecurityGuard, AgentStartupResolver, AgentManager, and EventStore durability)
+  - [P6.2-TASKS](file:///C:/herness/src/tasks/index.ts) (TaskBoard deterministic query, TaskClaimManager atomic transaction claims, LeaseRepository SQLite persistence, monotonic generation fencing tokens, heartbeat renewals, StalledAgentRecoveryEngine classification & bounded retry recovery, EventStore audit durability)
   - [CHATGPT-ORCHESTRATION-KT](file:///C:/herness/docs/discovery/CHATGPT_ORCHESTRATION_KT.md) (Complete Knowledge Transfer package, 7 Pillars, 11-Phase Lifecycle, Source Hierarchy, commands)
 - **Synchronization Status**:
   - **Type Safety**: `100% PASSED (0 TypeScript compilation errors under strict: true)`
@@ -50,7 +51,7 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
   - **Event Sourcing**: `SYNCED (Immutable stream, correlation/parent tracing)`
   - **Projections**: `SYNCED (SessionSummaryProjection, TaskBoardProjection)`
   - **Session Tree**: `SYNCED (Hierarchical zero-parent-mutation branching)`
-  - **Recovery Engine**: `SYNCED (CheckpointManifestBuilder, CheckpointValidator, LeaseManager, OrphanDetector, CrashRecoveryEngine)`
+  - **Recovery Engine**: `SYNCED (CheckpointManifestBuilder, CheckpointValidator, LeaseManager, OrphanDetector, CrashRecoveryEngine, StalledAgentRecoveryEngine)`
   - **Resume Engine**: `SYNCED (SessionResumeEngine, TaskDagRestorer, PendingApprovalRestorer)`
   - **Content Engine**: `SYNCED (ContentIngestionEngine, RepresentationSelector, ContentReferenceManager, ContentAccessValidator, ContentSanitizer, ProvenanceManager)`
   - **Artifact Subsystem**: `SYNCED (ArtifactManager, ArtifactReferenceValidator, ArtifactRepository)`
@@ -63,5 +64,6 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
   - **Native Tools Plane**: `SYNCED (Filesystem, Search, Process/Shell, Git, Worktree, Artifact, Memory, Network/Browser, Path Containment)`
   - **Execution Infrastructure Plane**: `SYNCED (LocalExecutor, DockerSandboxExecutor, RemoteExecutor, ProcessSupervisor, ProcessTreeKiller, ExecutorRegistry)`
   - **Side Effects Plane**: `SYNCED (SideEffectClassifier, RetryDecisionEngine, RetryBudgetManager, FileDivergenceDetector, WorktreeDivergenceDetector, SideEffectJournal)`
-  - **Automated Test Suites**: `100% PASSED (355/355 tests passing across 158 test files)`
+  - **Agents & Task Execution Plane**: `SYNCED (AgentRegistry, AgentStartupResolver, AgentSecurityGuard, AgentManager, TaskBoard, TaskClaimManager, LeaseRepository, StalledAgentRecoveryEngine)`
+  - **Automated Test Suites**: `100% PASSED (480/480 tests passing across 220 test files)`
   - **Quality Scorecard**: `1000/1000 CERTIFIED GOLD STANDARD`

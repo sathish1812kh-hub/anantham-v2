@@ -213,5 +213,6 @@ export const migration001: Migration = {
 };
 
 import { migration002 } from "./002_memory_fts.js";
+import { migration003 } from "./003_task_leases.js";
 
-export const allMigrations: Migration[] = [migration001, migration002];
+export const allMigrations: Migration[] = [migration001, migration002, migration003];

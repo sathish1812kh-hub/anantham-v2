@@ -2,15 +2,18 @@ import { z } from "zod";
 
 /**
  * Durable Task lifecycle status.
- * PRD Part 1 Section 100.
+ * PRD Part 1 Section 100, PRD Part 2 Section 34.
  */
 export const TaskStatusSchema = z.enum([
   "queued",
+  "available",
   "claimed",
   "running",
   "waiting_approval",
+  "waiting_resource",
   "blocked",
   "paused",
+  "review",
   "verifying",
   "completed",
   "failed",
@@ -60,18 +63,32 @@ export type Task = z.infer<typeof TaskSchema>;
 
 /**
  * Allowed valid task state transitions.
- * PRD Part 1 Section 101: "Invalid transitions must be rejected."
+ * PRD Part 1 Section 101, PRD Part 2 Section 34.
  */
 const VALID_TRANSITIONS: Record<TaskStatus, TaskStatus[]> = {
-  queued: ["claimed", "cancelled"],
-  claimed: ["running", "queued", "blocked", "cancelled"],
-  running: ["waiting_approval", "blocked", "paused", "verifying", "completed", "failed", "cancelled"],
+  queued: ["available", "claimed", "cancelled", "blocked"],
+  available: ["claimed", "queued", "cancelled", "blocked"],
+  claimed: ["running", "queued", "available", "blocked", "cancelled", "completed", "failed"],
+  running: [
+    "waiting_approval",
+    "waiting_resource",
+    "blocked",
+    "paused",
+    "review",
+    "verifying",
+    "completed",
+    "failed",
+    "cancelled",
+    "queued",
+  ],
   waiting_approval: ["running", "blocked", "cancelled", "failed"],
-  blocked: ["queued", "claimed", "running", "cancelled"],
+  waiting_resource: ["running", "queued", "blocked", "cancelled", "failed"],
+  blocked: ["queued", "available", "claimed", "running", "cancelled"],
   paused: ["running", "cancelled"],
+  review: ["verifying", "completed", "failed", "running"],
   verifying: ["completed", "failed", "running"],
   completed: [], // Terminal
-  failed: ["queued"], // Recoverable retry creates explicit transition
+  failed: ["queued", "available"], // Recoverable retry creates explicit transition
   cancelled: [], // Terminal
 };
 

@@ -6,15 +6,21 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P6 — Agents / Teams / Parallel Execution)
 
-### [P6.2 — Task Board, Task Claims, Leases, Heartbeats & Stalled-Agent Recovery](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P6.3 — Team Definition, Roles, Topologies & Handoff Communication](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
 - **Owner**: Principal Multi-Agent & Orchestration Architect
-- **Description**: Implement distributed task coordination: task board, atomic task claims, lease renewals, heartbeat monitoring, and stalled-agent crash recovery.
-- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1`.
+- **Description**: Implement multi-agent team hierarchies, role assignments, communication topologies (hierarchical, peer-to-peer, pipeline), and structured handoff protocols.
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.2`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P6.2-TASK-BOARD-CLAIMS-LEASES-HEARTBEATS — Task Board, Claims, Leases & Recovery](file:///C:/herness/src/tasks/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Multi-Agent & Orchestration Architect
+- **Completed Date**: 2026-08-31
+- **Verification**: 480/480 tests passing across 220 test suites in Vitest. First-class Task Board, Claims, and Recovery Subsystem: TaskLeaseSchema, TaskClaimRequestSchema, TaskHeartbeatRequestSchema, StalledClassificationSchema, TaskRecoveryRecordSchema, TaskBoard (deterministic query and multi-dimensional eligibility checks: dependency satisfaction, role/model/permission matching, budget checks, priority sorting), TaskClaimManager (atomic SQLite transaction claims, exclusive lease creation, monotonic generation fencing tokens, heartbeat renewals with max bounds, ownership verification, complete/fail/release lifecycle), LeaseRepository (SQLite table `leases` with foreign key cascades and WAL mode durability), StalledAgentRecoveryEngine (stale lease scanner, stall classification: AGENT_CRASHED/HEARTBEAT_TIMEOUT/MAX_DURATION_EXCEEDED, bounded retries before failing task), and SQLite WAL EventStore audit durability.
 
 ### [TASK-P6.1-AGENT-IDENTITY-CONFIG-STARTUP — Agent Identity & Startup Subsystem](file:///C:/herness/src/agents/index.ts)
 - **Status**: `COMPLETED`

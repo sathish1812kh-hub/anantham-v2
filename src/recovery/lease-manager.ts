@@ -1,7 +1,7 @@
 import { z } from "zod";
 import type { TaskRepository } from "../persistence/repositories/task-repository.js";
 
-export const TaskLeaseSchema = z.object({
+export const RecoveryLeaseSchema = z.object({
   leaseId: z.string().min(1),
   taskId: z.string().min(1),
   agentId: z.string().min(1),
@@ -11,10 +11,10 @@ export const TaskLeaseSchema = z.object({
   ttlMs: z.number().int().positive(),
   status: z.enum(["ACTIVE", "RELEASED", "EXPIRED", "REVOKED"]),
 });
-export type TaskLease = z.infer<typeof TaskLeaseSchema>;
+export type RecoveryLease = z.infer<typeof RecoveryLeaseSchema>;
 
 export class LeaseManager {
-  private readonly leases = new Map<string, TaskLease>(); // leaseId -> TaskLease
+  private readonly leases = new Map<string, RecoveryLease>(); // leaseId -> RecoveryLease
   private readonly taskToLease = new Map<string, string>(); // taskId -> leaseId
   private readonly taskRepo?: TaskRepository;
   private readonly defaultTtlMs: number;
@@ -31,7 +31,7 @@ export class LeaseManager {
     taskId: string,
     agentId: string,
     ttlMs: number = this.defaultTtlMs
-  ): { success: boolean; lease?: TaskLease; reason?: string } {
+  ): { success: boolean; lease?: RecoveryLease; reason?: string } {
     const now = Date.now();
 
     // Check if there is an existing lease for this task
@@ -58,7 +58,7 @@ export class LeaseManager {
     }
 
     const leaseId = `lease_${taskId}_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
-    const lease: TaskLease = {
+    const lease: RecoveryLease = {
       leaseId,
       taskId,
       agentId,
@@ -81,7 +81,7 @@ export class LeaseManager {
   public heartbeat(
     leaseId: string,
     extensionMs?: number
-  ): { success: boolean; lease?: TaskLease; reason?: string } {
+  ): { success: boolean; lease?: RecoveryLease; reason?: string } {
     const lease = this.leases.get(leaseId);
     if (!lease) {
       return { success: false, reason: `Lease '${leaseId}' not found.` };
@@ -117,7 +117,7 @@ export class LeaseManager {
   /**
    * Gets the active lease for a task if one exists and is unexpired.
    */
-  public getActiveLease(taskId: string): TaskLease | null {
+  public getActiveLease(taskId: string): RecoveryLease | null {
     const leaseId = this.taskToLease.get(taskId);
     if (!leaseId) return null;
 
@@ -136,9 +136,9 @@ export class LeaseManager {
   /**
    * Scans and evicts all expired leases, resetting task states if taskRepo is provided.
    */
-  public reclaimStaleLeases(): { evictedCount: number; evictedLeases: TaskLease[] } {
+  public reclaimStaleLeases(): { evictedCount: number; evictedLeases: RecoveryLease[] } {
     const now = Date.now();
-    const evictedLeases: TaskLease[] = [];
+    const evictedLeases: RecoveryLease[] = [];
 
     for (const lease of this.leases.values()) {
       if (lease.status === "ACTIVE" && lease.expiresAt <= now) {

@@ -28,6 +28,7 @@ export * from "./plugin.js";
 export * from "./skill.js";
 export * from "./hook.js";
 export * from "./agent.js";
+export * from "./lease.js";
 
 
 

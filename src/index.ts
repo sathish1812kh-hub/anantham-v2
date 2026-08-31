@@ -23,6 +23,7 @@ export * from "./plugins/index.js";
 export * from "./skills/index.js";
 export * from "./hooks/index.js";
 export * from "./agents/index.js";
+export * from "./tasks/index.js";
 
 
 
