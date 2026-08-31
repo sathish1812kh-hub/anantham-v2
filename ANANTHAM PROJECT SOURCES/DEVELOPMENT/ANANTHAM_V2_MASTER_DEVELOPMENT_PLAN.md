@@ -351,17 +351,17 @@ Every update MUST include:
 - [x] malicious-output protection
 
 ### P5.2 Plugins
-- [ ] manifest
-- [ ] identity/version
-- [ ] checksum
-- [ ] dependencies
-- [ ] capabilities
-- [ ] permissions
-- [ ] install
-- [ ] enable/disable
-- [ ] unload/reload
-- [ ] update/rollback
-- [ ] failure isolation
+- [x] manifest
+- [x] identity/version
+- [x] checksum
+- [x] dependencies
+- [x] capabilities
+- [x] permissions
+- [x] install
+- [x] enable/disable
+- [x] unload/reload
+- [x] update/rollback
+- [x] failure isolation
 
 ### P5.3 Skills
 - [ ] registry

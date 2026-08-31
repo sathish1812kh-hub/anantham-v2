@@ -19,3 +19,5 @@ export * from "./tools/index.js";
 export * from "./execution/index.js";
 export * from "./side-effects/index.js";
 export * from "./mcp/index.js";
+export * from "./plugins/index.js";
+

@@ -51,3 +51,14 @@ This document records architectural decisions, their trade-offs, and compliance 
 - **Context**: External tools, resources, and prompt templates from Model Context Protocol (MCP) servers must be ingested safely without introducing alternative execution pathways or bypassing security gates.
 - **Decision**: Treat MCP strictly as an external integration adapter layer over existing Anantham infrastructure (`ToolGateway`, `PolicyEngine`, `ContentEngine`, `EventStore`). Normalize discovered MCP tools into `ToolDefinition` contracts registered in `ToolRegistry` behind `ToolGateway`, normalize discovered MCP resources into `ContentObject` pipelines with `Provenance` and `ContentGuards`, enforce non-authoritative boundary on MCP prompt templates (`isAuthoritative: false`), and protect the runtime using a 3-state `MCPCircuitBreaker` and `MCPOutputSanitizer`.
 - **Consequences**: Zero policy bypass, complete auditability via SQLite WAL `EventStore`, prompt injection defense, and resilience against external server failures.
+
+---
+
+## ADR-006: Plugin Extension Runtime, Scoped Permissions & Zero-Stale-Registration Lifecycle
+
+- **Status**: `ACCEPTED`
+- **Date**: 2026-08-31
+- **Context**: Plugins provide third-party and custom extensibility (tools, skills, providers, hooks, commands, MCP adapters) but must not become alternative authorities, self-promote trust, bypass system policies, or leave stale registrations upon unload.
+- **Decision**: Plugins are classified strictly as extensions (`PluginClass`). Manifests request permissions and capabilities; runtime `PolicyEngine` and `PluginTrustManager` retain sole authority. Manifests require SemVer compliance, SHA-256 package checksum verification, and compatibility checks (OS, Node, Anantham runtime). The `PluginManager` implements a strict lifecycle state machine (`discovered -> inspected -> validated -> resolved -> reviewed -> installed -> active`). Disabling or unloading a plugin synchronously invalidates and unregisters all tools and hooks from active registries. State migrations are managed with deterministic version step chains.
+- **Consequences**: Zero stale registrations, strict supply-chain security, failure isolation, and project-level version lock stability.
+

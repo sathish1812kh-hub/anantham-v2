@@ -6,15 +6,21 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P5 — MCP / Plugins / Skills / Hooks)
 
-### [P5.2 — Plugins (Manifest, Checksum, Capabilities, Permissions, Lifecycle, Isolation)](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P5.3 — Skills (Registry, Metadata, Progressive Loading, Versioning)](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Principal Extensibility & Systems Architect
-- **Description**: Implement first-class Plugin Engine: manifest verification, checksum validation, capability negotiation, scoped permission enforcement, installation/uninstallation, hot-reloading, and failure isolation.
-- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1`.
+- **Owner**: Principal Agent & Skills Architect
+- **Description**: Implement first-class Skill Engine: progressive skill loading, metadata indexing, semantic relevance retrieval, versioning, dependency negotiation, and context-bounded prompt generation.
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1`, `P5.2`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P5.2-PLUGINS — Plugin Extension Runtime](file:///C:/herness/src/plugins/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Extensibility & Systems Architect
+- **Completed Date**: 2026-08-31
+- **Verification**: 401/401 tests passing across 178 test suites in Vitest. First-class Plugin Runtime: PluginManifestSchema, SemVer validation, SHA-256 package verification, PluginCompatibilityChecker (OS/Node/Runtime), PluginDependencyResolver (topological sort, cycle detection), PluginPermissionsManager (network, filesystem, credentials, tools, subprocess review), PluginTrustManager (deterministic transitions, anti-self-promotion), PluginInstaller (staged atomic install with rollback), PluginManager (lifecycle state machine: discover, install, activate, disable, unload, reload, update, rollback), PluginRegistry (project-level version pinning), PluginStateManager (versioned migrations), PluginDoctor (/plugins doctor diagnostics), and SQLite WAL EventStore audit durability.
 
 ### [TASK-P5.1-MCP — Model Context Protocol (MCP) Integration Plane](file:///C:/herness/src/mcp/index.ts)
 - **Status**: `COMPLETED`

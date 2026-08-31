@@ -71,6 +71,21 @@ export const EventTypes = {
   MCP_PROMPT_RETRIEVED: "mcp.prompt.retrieved",
   MCP_FAILED: "mcp.failed",
 
+  // Plugin plane
+  PLUGIN_DISCOVERED: "plugin.discovered",
+  PLUGIN_INSPECTED: "plugin.inspected",
+  PLUGIN_VALIDATED: "plugin.validated",
+  PLUGIN_INSTALLED: "plugin.installed",
+  PLUGIN_ACTIVATED: "plugin.activated",
+  PLUGIN_DEACTIVATED: "plugin.deactivated",
+  PLUGIN_DISABLED: "plugin.disabled",
+  PLUGIN_UNLOADED: "plugin.unloaded",
+  PLUGIN_RELOADED: "plugin.reloaded",
+  PLUGIN_UPDATED: "plugin.updated",
+  PLUGIN_ROLLED_BACK: "plugin.rolled_back",
+  PLUGIN_HEALTH_CHANGED: "plugin.health_changed",
+  PLUGIN_FAILED: "plugin.failed",
+
   // Checkpoint plane
   CHECKPOINT_CREATED: "checkpoint.created",
   CHECKPOINT_RESTORED: "checkpoint.restored",
