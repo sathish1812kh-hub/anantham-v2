@@ -4,8 +4,8 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `a18213d`
-- **Generated**: `2026-08-31T13:37:02Z`
+- **Project Commit**: `ae19f17`
+- **Generated**: `2026-08-31T13:58:39Z`
 - **Current Release**: `v2.0.0-alpha.1`
 - **Current Phase**: `P5 — MCP / PLUGINS / SKILLS / HOOKS`
 - **Current Task**: `P6.2 — Task Board, Task Claims, Leases, Heartbeats & Stalled-Agent Recovery`
