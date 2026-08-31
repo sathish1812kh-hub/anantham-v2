@@ -217,6 +217,71 @@ export const PinnedVersionsSchema = z.object({
 export type PinnedVersions = z.infer<typeof PinnedVersionsSchema>;
 
 /**
+ * Workflow Node Execution Status lifecycle.
+ */
+export const WorkflowNodeStatusSchema = z.enum([
+  "PENDING",
+  "READY",
+  "RUNNING",
+  "WAITING_APPROVAL",
+  "COMPLETED",
+  "FAILED",
+  "SKIPPED",
+  "TIMED_OUT",
+  "CANCELLED",
+]);
+export type WorkflowNodeStatus = z.infer<typeof WorkflowNodeStatusSchema>;
+
+/**
+ * Detailed state tracking per node.
+ */
+export const WorkflowNodeStateSchema = z.object({
+  status: WorkflowNodeStatusSchema.default("PENDING"),
+  attempts: z.number().int().min(0).default(0),
+  startedAt: z.string().optional(),
+  completedAt: z.string().optional(),
+  error: z.string().optional(),
+  result: z.unknown().optional(),
+});
+export type WorkflowNodeState = z.infer<typeof WorkflowNodeStateSchema>;
+
+/**
+ * Budget and resource consumption tracking for active workflow runs.
+ */
+export const WorkflowBudgetConsumptionSchema = z.object({
+  tokens: z.number().int().min(0).default(0),
+  costUsd: z.number().min(0).default(0),
+  durationMs: z.number().int().min(0).default(0),
+  toolCalls: z.number().int().min(0).default(0),
+});
+export type WorkflowBudgetConsumption = z.infer<typeof WorkflowBudgetConsumptionSchema>;
+
+/**
+ * Per-node Foreach execution state.
+ */
+export const WorkflowForeachStateSchema = z.object({
+  totalItems: z.number().int().min(0).default(0),
+  completedItems: z.number().int().min(0).default(0),
+  failedItems: z.number().int().min(0).default(0),
+  itemResults: z.record(z.unknown()).default({}),
+});
+export type WorkflowForeachState = z.infer<typeof WorkflowForeachStateSchema>;
+
+/**
+ * Active Approval Gate state attached to workflow run.
+ */
+export const WorkflowApprovalGateSchema = z.object({
+  nodeId: z.string(),
+  message: z.string(),
+  requiredRole: z.string().optional(),
+  requestedAt: z.string(),
+  approvedAt: z.string().optional(),
+  approvedBy: z.string().optional(),
+  decision: z.enum(["APPROVED", "REJECTED"]).optional(),
+});
+export type WorkflowApprovalGate = z.infer<typeof WorkflowApprovalGateSchema>;
+
+/**
  * Workflow Run instance state.
  * PRD Part 2 Section 113.
  */
@@ -231,9 +296,19 @@ export const WorkflowRunSchema = z.object({
   failedTasks: z.array(z.string()).default([]),
   runningTasks: z.array(z.string()).default([]),
   taskResults: z.record(z.unknown()).default({}),
+  nodeStates: z.record(WorkflowNodeStateSchema).default({}),
+  budgetConsumption: WorkflowBudgetConsumptionSchema.default({
+    tokens: 0,
+    costUsd: 0,
+    durationMs: 0,
+    toolCalls: 0,
+  }),
+  foreachStates: z.record(WorkflowForeachStateSchema).default({}),
+  approvalGate: WorkflowApprovalGateSchema.optional(),
   pinnedVersions: PinnedVersionsSchema,
   startedAt: z.string().min(1),
   completedAt: z.string().optional(),
   errorMessage: z.string().optional(),
 });
 export type WorkflowRun = z.infer<typeof WorkflowRunSchema>;
+

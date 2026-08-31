@@ -6,15 +6,21 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P7 — WORKFLOW / ORCHESTRATION / BACKGROUND / REMOTE)
 
-### [P7.2 — Workflow Execution Engine, Parallel Branching, Foreach, Budgets, Approvals, Retries & Timeout](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P7.3 — Background Tasks, Long-Running Jobs, Heartbeats & Cancellation](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
 - **Owner**: Principal Workflow & Distributed Systems Architect
-- **Description**: Implement runtime execution engine for workflows, parallel branch synchronization, foreach iteration, step-level timeouts and retries, budget tracking, approval gates, and artifact passing.
-- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.4`, `P7.1`.
+- **Description**: Implement background task manager, non-blocking execution, heartbeat monitoring, timeout supervisor, cancellation propagation, progress reporting, and task notification integration.
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.4`, `P7.1`, `P7.2`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P7.2-WORKFLOW-EXECUTION-ORCHESTRATION — Workflow Execution Engine, Parallel Branching, Foreach, Budgets, Approvals, Retries & Timeout](file:///C:/herness/src/workflow/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Workflow & Distributed Systems Architect
+- **Completed Date**: 2026-08-31
+- **Verification**: 570/570 tests passing across 275 test suites in Vitest. First-class Workflow Execution Engine: WorkflowEngine lifecycle coordinator (start, pause, resume, cancel, approveGate, getRunStatus), WorkflowExecutor wave-based DAG coordinator, WorkflowBudgetTracker (hierarchical limits: min(workflow, agent, team, global)), WorkflowRetryHandler (classified failures: POLICY_DENIAL, INVALID_SCHEMA, RATE_LIMIT, TIMEOUT, NETWORK_ERROR, TRANSIENT_TOOL_ERROR with bounded exponential backoff), WorkflowRecoveryReconciler (post-crash recovery, orphaned running task cleanup, preservation of WAITING_APPROVAL runs), parallel branch concurrency pools, bounded foreach expansion (capped at max 50 items to prevent DoS), objective verification gates, restart-safe human approval gates, SQLite WAL durability, and EventStore audit trail.
 
 ### [TASK-P7.1-WORKFLOW-MODEL-DAG-DSL — Workflow Model, DSL, DAG Engine & Cycle Detection](file:///C:/herness/src/workflow/index.ts)
 - **Status**: `COMPLETED`

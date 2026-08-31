@@ -37,6 +37,10 @@ interface WorkflowRunRow {
   failed_tasks_json: string;
   running_tasks_json: string;
   task_results_json: string;
+  node_states_json: string | null;
+  budget_consumption_json: string | null;
+  foreach_states_json: string | null;
+  approval_gate_json: string | null;
   pinned_versions_json: string;
   started_at: string;
   completed_at: string | null;
@@ -174,8 +178,9 @@ export class WorkflowRepository {
       INSERT INTO workflow_runs (
         id, workflow_id, project_id, session_id, status, current_step_index,
         completed_tasks_json, failed_tasks_json, running_tasks_json, task_results_json,
+        node_states_json, budget_consumption_json, foreach_states_json, approval_gate_json,
         pinned_versions_json, started_at, completed_at, error_message
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       ON CONFLICT(id) DO UPDATE SET
         status = excluded.status,
         current_step_index = excluded.current_step_index,
@@ -183,6 +188,10 @@ export class WorkflowRepository {
         failed_tasks_json = excluded.failed_tasks_json,
         running_tasks_json = excluded.running_tasks_json,
         task_results_json = excluded.task_results_json,
+        node_states_json = excluded.node_states_json,
+        budget_consumption_json = excluded.budget_consumption_json,
+        foreach_states_json = excluded.foreach_states_json,
+        approval_gate_json = excluded.approval_gate_json,
         pinned_versions_json = excluded.pinned_versions_json,
         completed_at = excluded.completed_at,
         error_message = excluded.error_message;
@@ -199,6 +208,10 @@ export class WorkflowRepository {
       JSON.stringify(validated.failedTasks),
       JSON.stringify(validated.runningTasks),
       JSON.stringify(validated.taskResults),
+      JSON.stringify(validated.nodeStates),
+      JSON.stringify(validated.budgetConsumption),
+      JSON.stringify(validated.foreachStates),
+      validated.approvalGate ? JSON.stringify(validated.approvalGate) : null,
       JSON.stringify(validated.pinnedVersions),
       validated.startedAt,
       validated.completedAt ?? null,
@@ -288,6 +301,12 @@ export class WorkflowRepository {
       failedTasks: JSON.parse(row.failed_tasks_json),
       runningTasks: JSON.parse(row.running_tasks_json),
       taskResults: JSON.parse(row.task_results_json),
+      nodeStates: row.node_states_json ? JSON.parse(row.node_states_json) : {},
+      budgetConsumption: row.budget_consumption_json
+        ? JSON.parse(row.budget_consumption_json)
+        : { tokens: 0, costUsd: 0, durationMs: 0, toolCalls: 0 },
+      foreachStates: row.foreach_states_json ? JSON.parse(row.foreach_states_json) : {},
+      approvalGate: row.approval_gate_json ? JSON.parse(row.approval_gate_json) : undefined,
       pinnedVersions: JSON.parse(row.pinned_versions_json),
       startedAt: row.started_at,
       completedAt: row.completed_at ?? undefined,

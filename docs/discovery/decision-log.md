@@ -133,3 +133,20 @@ This document records architectural decisions, their trade-offs, and compliance 
   5. *Active-Run Version Pinning*: Active runs freeze an immutable snapshot (`PinnedVersions`) of workflow version, plugin versions, skill versions, agent versions, and model profiles (PRD Part 2 Section 112).
   6. *SQLite Durability & Event Sourcing*: Workflows and execution run states persist to SQLite in WAL mode via migration `006_workflows_orchestration.ts` and emit canonical audit events (`workflow.registered`, `workflow.started`, etc.) to `EventStore`.
 - **Consequences**: Zero circular deadlocks, zero untrusted code execution in workflow logic, robust active-run stability against hot reload drift, scope resolution precedence enforcement, and full RPO-0 durability.
+
+---
+
+## ADR-014: Authoritative Workflow Execution Engine, Parallel Branching, Foreach, Budgets & Restart-Safe Approval Gates
+
+- **Status**: `ACCEPTED`
+- **Date**: 2026-08-31
+- **Context**: Executing complex multi-agent workflows requires an authoritative, durable execution engine that can coordinate DAG waves, parallel tasks, foreach collections, conditional routing, objective verification gates, external human approvals, hierarchical budgets, timeouts, retries, cancellation, and crash recovery. Crucially, model output is NEVER authoritative workflow state, and running workflows must survive process crashes and restarts without state loss or duplicate side effects.
+- **Decision**: Implement the Workflow Execution Engine (`WorkflowEngine`, `WorkflowExecutor`, `WorkflowBudgetTracker`, `WorkflowRetryHandler`, `WorkflowRecoveryReconciler`):
+  1. *Authoritative Wave Execution*: Evaluates DAG topological waves computed by `DAGEngine`. Dispatches ready nodes when upstream prerequisites are completed/skipped.
+  2. *Parallel & Foreach Bounded Coordination*: Executes parallel branches with bounded concurrency (`maxParallelTasks`). Foreach collections are bounded (capped at max 50 items to prevent DoS) with deterministic per-item state tracking (`item_0`, `item_1`, ...) and aggregate state persistence.
+  3. *Objective Verification Gates*: `verify` nodes execute deterministic AST expression assertions against actual outputs and exit codes, rejecting unproven model assertions.
+  4. *Restart-Safe Approval Gates*: `approve` nodes transition the workflow run into `WAITING_APPROVAL` status, recording gate metadata and pausing execution. State is transactionally committed to SQLite WAL and survives process crashes. Resumption requires an authoritative call to `WorkflowEngine.approveGate()` with valid credentials.
+  5. *Hierarchical Budgets & Bounded Retries*: `WorkflowBudgetTracker` enforces token, cost, duration, and concurrency limits (`effectiveLimit = min(workflow, agent, team, global)`). `WorkflowRetryHandler` classifies failures (`POLICY_DENIAL`, `INVALID_SCHEMA`, `RATE_LIMIT`, `TIMEOUT`, `NETWORK_ERROR`); non-retryable policy or schema denials fail closed immediately without retries, while transient errors retry with exponential backoff.
+  6. *Crash Recovery & Reconciler*: `WorkflowRecoveryReconciler` scans uncompleted runs on process restart, reconciles orphaned running tasks, leaves `WAITING_APPROVAL` gates intact, and preserves complete audit trails in the append-only `EventStore`.
+- **Consequences**: Zero loss of workflow state across process crashes, zero unconstrained runaway foreach loops, strict enforcement of human approval authority, full budget containment, and complete RPO-0 ACID durability.
+

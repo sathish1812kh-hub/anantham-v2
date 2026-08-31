@@ -4,19 +4,20 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `4ef8384`
-- **Generated**: `2026-08-31T20:27:22Z`
+- **Project Commit**: `82a8c58`
+- **Generated**: `2026-08-31T20:54:25Z`
 - **Current Release**: `v2.0.0-alpha.1`
 - **Current Phase**: `P7 — WORKFLOW / ORCHESTRATION / BACKGROUND / REMOTE`
-- **Current Task**: `P7.2 — Workflow Execution Engine, Parallel Branching, Foreach, Budgets, Approvals, Retries & Timeout`
-- **Last Completed Task**: `TASK-P7.1-WORKFLOW-MODEL-DAG-DSL — Workflow Model, DSL, DAG Engine & Cycle Detection`
+- **Current Task**: `P7.3 — Background Tasks, Long-Running Jobs, Heartbeats & Cancellation`
+- **Last Completed Task**: `TASK-P7.2-WORKFLOW-EXECUTION-ORCHESTRATION — Workflow Execution Engine, Parallel Branching, Foreach, Budgets, Approvals, Retries & Timeout`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`
   - `0 type check errors under strict: true.`
 - **Pending Approvals**:
-  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.5, P4.1-P4.5, P5.1-P5.4, P6.1-P6.4, P7.1 Implemented Clean & Verified).`
+  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.5, P4.1-P4.5, P5.1-P5.4, P6.1-P6.4, P7.1, P7.2 Implemented Clean & Verified).`
 - **Recently Completed Milestones**:
+  - [P7.2-WORKFLOW-EXECUTION](file:///C:/herness/src/workflow/index.ts) (Authoritative WorkflowEngine lifecycle, WorkflowExecutor wave DAG execution, WorkflowBudgetTracker hierarchical limits, WorkflowRetryHandler classified retries, WorkflowRecoveryReconciler crash recovery, parallel concurrency pooling, bounded foreach expansion, objective verification gates, restart-safe approval gates WAITING_APPROVAL, SQLite WAL persistence, EventStore durability)
   - [P1.1-CORE-DOMAIN](file:///C:/herness/src/domain/index.ts) (12 core domain models, runtime Zod validation schemas, state machines, immutability)
   - [P1.2-PERSISTENCE-ENGINE](file:///C:/herness/src/persistence/index.ts) (Native `node:sqlite` engine, WAL mode, synchronous=FULL RPO-0 durability, MigrationEngine, 8 repositories)
   - [P1.3-EVENT-STATE-ENGINE](file:///C:/herness/src/event-state/index.ts) (Append-only EventStore, Session/Task state reconstruction reducers, ProjectionManager, SessionTreeManager)

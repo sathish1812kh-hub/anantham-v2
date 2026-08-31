@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\governance\\scorecard.json": {
-    "mtime": 1788187923.4690893,
-    "ast_hash": "f28427ad02835988a9738e2804ffed5f",
+    "mtime": 1788189568.0182922,
+    "ast_hash": "5f5c8be1098c1835730f693a51c7599b",
     "semantic_hash": ""
   },
   "C:\\herness\\scripts\\certification-scorecard.ps1": {
@@ -390,8 +390,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\src\\domain\\workflow.ts": {
-    "mtime": 1788187353.79573,
-    "ast_hash": "8320f736d8dcb1ab32e924cd97d549fa",
+    "mtime": 1788189076.0865107,
+    "ast_hash": "b1453687e3b4a14d674d070fbe991e22",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\domain\\workspace.ts": {
@@ -730,8 +730,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\src\\persistence\\migrations\\006_workflows_orchestration.ts": {
-    "mtime": 1788187374.2568078,
-    "ast_hash": "fcf76682f48248de6600fcb1359eeb52",
+    "mtime": 1788189083.9265363,
+    "ast_hash": "7cc0078d5614cf4ff66ca11e91a8bdb3",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\persistence\\repositories\\artifact-repository.ts": {
@@ -795,8 +795,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\src\\persistence\\repositories\\workflow-repository.ts": {
-    "mtime": 1788187473.686702,
-    "ast_hash": "9302f07cf131a66c6565410fbbe60749",
+    "mtime": 1788189126.4417963,
+    "ast_hash": "d0251bb40e7fcf1e739fe1c46bb55fec",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\persistence\\repositories\\workspace-repository.ts": {
@@ -1150,8 +1150,13 @@
     "semantic_hash": ""
   },
   "C:\\herness\\src\\workflow\\index.ts": {
-    "mtime": 1788187438.238488,
-    "ast_hash": "8d3b03e116aee31d54e8916d65e59d1c",
+    "mtime": 1788189180.0531907,
+    "ast_hash": "b89f6c52219553817378a43a0c5b6690",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\workflow\\workflow-budget-tracker.ts": {
+    "mtime": 1788189139.3306873,
+    "ast_hash": "00dc5aa6edf6bacd87083a6df299a58b",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\workflow\\workflow-dsl.ts": {
@@ -1159,9 +1164,29 @@
     "ast_hash": "b9e15c9184390077e61c3d8a2499abeb",
     "semantic_hash": ""
   },
+  "C:\\herness\\src\\workflow\\workflow-engine.ts": {
+    "mtime": 1788189397.0285294,
+    "ast_hash": "a4abcc47f4021392f5e9ab3952723c91",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\workflow\\workflow-executor.ts": {
+    "mtime": 1788189380.375456,
+    "ast_hash": "a7c628bc938e9304b6fd3c3544e8da99",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\workflow\\workflow-recovery-reconciler.ts": {
+    "mtime": 1788189230.3011515,
+    "ast_hash": "4db9d0cadaddb9fb5ae41b4729879fe5",
+    "semantic_hash": ""
+  },
   "C:\\herness\\src\\workflow\\workflow-registry.ts": {
     "mtime": 1788187433.3726604,
     "ast_hash": "773a5ad9ec5678220f42e3e97ee26e3c",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\workflow\\workflow-retry-handler.ts": {
+    "mtime": 1788189193.9588645,
+    "ast_hash": "a6a9e3ded0b9ce3d5415928acd62764a",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\workflow\\workflow-validator.ts": {
@@ -2459,6 +2484,81 @@
     "ast_hash": "8c55b52d823e28f70b0d9106fbcebe06",
     "semantic_hash": ""
   },
+  "C:\\herness\\tests\\workflow\\execution\\real-workflow-acceptance.test.ts": {
+    "mtime": 1788189355.1048903,
+    "ast_hash": "0558269fa390bdda120c199cc294dfba",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\workflow\\execution\\workflow-approval-gates.test.ts": {
+    "mtime": 1788189277.3520555,
+    "ast_hash": "ed80847c544f6398788d437e2c4048ba",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\workflow\\execution\\workflow-budget-enforcement.test.ts": {
+    "mtime": 1788189282.368548,
+    "ast_hash": "3ba43211b23df3169be03b51c82e1e89",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\workflow\\execution\\workflow-cancellation-cascade.test.ts": {
+    "mtime": 1788189370.6940277,
+    "ast_hash": "7ca55a464534675f4625254c184ea6de",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\workflow\\execution\\workflow-condition-branching.test.ts": {
+    "mtime": 1788189267.2624023,
+    "ast_hash": "5fdf1032836089a3ee50952ebf177f8f",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\workflow\\execution\\workflow-crash-recovery.test.ts": {
+    "mtime": 1788189302.3290253,
+    "ast_hash": "70921146faa04369adf5b2d562dfda65",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\workflow\\execution\\workflow-dag-execution.test.ts": {
+    "mtime": 1788189251.6155722,
+    "ast_hash": "f4706dc497c2b7eed4a8a61181ff3105",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\workflow\\execution\\workflow-engine-lifecycle.test.ts": {
+    "mtime": 1788189365.4022884,
+    "ast_hash": "39a9e83d6dc7f00587d54ccc4e8622a1",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\workflow\\execution\\workflow-foreach-execution.test.ts": {
+    "mtime": 1788189262.409142,
+    "ast_hash": "eeaf5a75071600606ed3beaaaac393f3",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\workflow\\execution\\workflow-parallel-branching.test.ts": {
+    "mtime": 1788189256.642775,
+    "ast_hash": "e3e28beae821d0405cb0f33f88c40ad5",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\workflow\\execution\\workflow-retries-classification.test.ts": {
+    "mtime": 1788189291.830646,
+    "ast_hash": "49b96ae6d67342926958590f9471673f",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\workflow\\execution\\workflow-security-adversarial.test.ts": {
+    "mtime": 1788189314.371909,
+    "ast_hash": "fead07a8ae66e4862d2dd771924a54e6",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\workflow\\execution\\workflow-task-agent-integration.test.ts": {
+    "mtime": 1788189309.6171713,
+    "ast_hash": "3d627ef0ff3fd39ef2e92b27955c16f3",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\workflow\\execution\\workflow-timeout-handling.test.ts": {
+    "mtime": 1788189286.8700135,
+    "ast_hash": "cd137f38a3d11a78f34c95c2d4330845",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\workflow\\execution\\workflow-verification-nodes.test.ts": {
+    "mtime": 1788189272.5037923,
+    "ast_hash": "41cf5c07134f0f2d8dcccf758570f999",
+    "semantic_hash": ""
+  },
   "C:\\herness\\GEMINI.md": {
     "mtime": 1788105317.850001,
     "ast_hash": "46d9bdfe3ff123297adbb16f63f138a8",
@@ -2505,8 +2605,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\ANANTHAM PROJECT SOURCES\\DEVELOPMENT\\ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md": {
-    "mtime": 1788187873.7913594,
-    "ast_hash": "dc244c53817ebcc091d8f6a9a4d84f16",
+    "mtime": 1788189515.5237725,
+    "ast_hash": "737cd00a36449071e1236b36b9fd7d04",
     "semantic_hash": ""
   },
   "C:\\herness\\ANANTHAM PROJECT SOURCES\\prd\\ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md": {
@@ -2525,8 +2625,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\active-tasks.md": {
-    "mtime": 1788187858.7645087,
-    "ast_hash": "3f0a026e2b2c34a6a66d6ae9f7cc43a6",
+    "mtime": 1788189487.6201427,
+    "ast_hash": "ca2299a79bf38f0d39b3d93cbc511e05",
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\CHATGPT_ORCHESTRATION_KT.md": {
@@ -2535,13 +2635,13 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\current-state.md": {
-    "mtime": 1788187852.4073477,
-    "ast_hash": "6bbf0348b63d538e7c7173d9eb1124cc",
+    "mtime": 1788189479.7924566,
+    "ast_hash": "a84f589341f8b50e1a40a4af2d7d0e4c",
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\decision-log.md": {
-    "mtime": 1788187834.9930034,
-    "ast_hash": "57f2e61fffd3d905c5a639e8145859de",
+    "mtime": 1788189473.346784,
+    "ast_hash": "ba46e111dc09c65fe1c70809acd53a94",
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\dependency-registry.md": {
