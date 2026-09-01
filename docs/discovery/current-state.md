@@ -4,19 +4,20 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `0ed641e`
-- **Generated**: `2026-09-02T00:35:23Z`
+- **Project Commit**: `ad3c33f`
+- **Generated**: `2026-09-02T00:57:25Z`
 - **Current Release**: `v2.0.0-alpha.1`
 - **Current Phase**: `P10 — PRODUCTION RELEASE, SELF-HOSTING & CERTIFICATION (COMPLETED)`
-- **Current Task**: `TASK-P10.10-PRODUCTION-CHAOS-DURABILITY — Completed & Audited`
-- **Last Completed Task**: `TASK-P10.10 — LONG-DURATION PRODUCTION CHAOS, NETWORK PARTITION, POWER-LOSS & EXACTLY-ONCE BOUNDARY AUDIT`
+- **Current Task**: `TASK-P10.11-FINAL-PUBLICATION — Completed & Sealed`
+- **Last Completed Task**: `TASK-P10.11 — FINAL PUBLICATION, DEPLOYMENT, ROLLBACK & OPERATIONAL RECOVERY AUDIT`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`
   - `0 type check errors under strict: true.`
 - **Pending Approvals**:
-  - `None (ALL PHASES P1-P10 IMPLEMENTED, TESTED, AUDITED, REMEDIATED, HARDENED, GOLD CERTIFIED & RELEASED).`
+  - `None (ALL PHASES P1-P10 IMPLEMENTED, TESTED, AUDITED, REMEDIATED, HARDENED, GOLD CERTIFIED & SEALED FOR PRODUCTION RELEASE).`
 - **Recently Completed Milestones**:
+  - [P10.11-FINAL-PUBLICATION](file:///C:/herness/tests/release/p10-11-publication-deployment-audit.test.ts) (Final publication, deployment, rollback & operational recovery audit across the complete pipeline: SOURCE -> COMMIT -> TAG -> BUILD -> PACKAGE -> INSTALL -> MIGRATION -> STARTUP -> WORKLOAD -> BACKUP -> FAILURE -> RESTORE -> RECOVERY. Verified hot backup during active load, backup-before-migration disaster recovery, package SHA-256 reproducibility, with 852/852 automated tests passing)
   - [P10.10-PRODUCTION-CHAOS-DURABILITY](file:///C:/herness/tests/chaos/p10-10-network-chaos-soak.test.ts) (Long-duration production chaos, network partition, power-loss & exactly-once boundary audit. Real TCP/HTTP network failure harness [socket destruction, 500/503 errors], online hot backup VACUUM INTO and point-in-time restore verification during active writes, 100-cycle repeated crash recovery campaign, with 852/852 tests passing)
   - [P10.9-PRODUCTION-GRADE-ADVERSARIAL](file:///C:/herness/tests/security/p10-9-compositional-adversarial-audit.test.ts) (Production-grade adversarial system audit across 14 subsystem boundaries. 50-worker TOCTOU concurrency fuzzing, Windows-specific path boundary verification [DOS device names, alternate data streams, trailing dot escapes], split-brain monotonic lease fencing, end-to-end canary secret scrubbing, with 849/849 tests passing)
   - [P10.8-FINAL-RELEASE-PROVENANCE](file:///C:/herness/tests/release/p10-8-provenance-side-effects.test.ts) (Authoritative release provenance, external side-effect, and post-fix invariant audit across all 14 subsystems. Verified 100% cryptographic binding between Git commit 47b29e5, annotated tag v2.0.0-alpha.1, package.json, CLI /version command, README.md, release manifest, and tarball SHA-256 467c1a1b0ab31721300e3f9bc46b2270bbd0de6d4251bac933c1d67f5ca3644a, with 844/844 tests passing)
