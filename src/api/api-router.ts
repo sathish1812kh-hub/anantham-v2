@@ -446,6 +446,51 @@ export class ApiRouter {
         return;
       }
 
+      // --- Observability & Audit Trails ---
+      if (pathname === "/v1/observability/audit" && method === "GET") {
+        const projectId = url.searchParams.get("projectId") ?? undefined;
+        if (projectId && !ApiAuthorizer.authorizeProject(auth, projectId)) {
+          throw new Error(`Forbidden: Access to project '${projectId}' audit records denied.`);
+        }
+
+        const { AuditLogger } = await import("../observability/audit-logger.js");
+        const auditLogger = new AuditLogger();
+        const records = auditLogger.query({ projectId });
+        this.sendJson(res, 200, { success: true, data: records });
+        return;
+      }
+
+      if (pathname === "/v1/observability/metrics" && method === "GET") {
+        const projectId = url.searchParams.get("projectId") ?? undefined;
+        if (projectId && !ApiAuthorizer.authorizeProject(auth, projectId)) {
+          throw new Error(`Forbidden: Access to project '${projectId}' metrics denied.`);
+        }
+
+        const { TelemetryEngine } = await import("../observability/telemetry-engine.js");
+        const telemetry = new TelemetryEngine();
+        const summaries = telemetry.getMetricSummaries(projectId);
+        this.sendJson(res, 200, { success: true, data: summaries });
+        return;
+      }
+
+      if (pathname === "/v1/observability/compliance" && method === "GET") {
+        const projectId = url.searchParams.get("projectId") ?? undefined;
+        if (!projectId) {
+          throw new Error("Validation Error: Missing required 'projectId' query parameter.");
+        }
+        if (!ApiAuthorizer.authorizeProject(auth, projectId)) {
+          throw new Error(`Forbidden: Access to project '${projectId}' compliance report denied.`);
+        }
+
+        const { AuditLogger } = await import("../observability/audit-logger.js");
+        const { ComplianceExporter } = await import("../observability/compliance-exporter.js");
+        const auditLogger = new AuditLogger();
+        const exporter = new ComplianceExporter(auditLogger);
+        const report = exporter.exportReport(projectId);
+        this.sendJson(res, 200, { success: true, data: report });
+        return;
+      }
+
       // 404 Route Not Found
       throw new Error(`Not Found: Endpoint '${method} ${pathname}' does not exist.`);
     } catch (err) {

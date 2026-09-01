@@ -144,6 +144,13 @@ export class TaskRepository {
     return rows.map((r) => this.rowToTask(r));
   }
 
+  public listByStatus(status: TaskStatus): Task[] {
+    const stmt = this.engine.raw.prepare("SELECT * FROM tasks WHERE status = ? ORDER BY created_at ASC;");
+    const rows = stmt.all(status) as unknown as TaskRow[];
+    return rows.map((r) => this.rowToTask(r));
+  }
+
+
   public updateStatus(id: string, newStatus: TaskStatus): void {
     const task = this.findById(id);
     if (!task) {

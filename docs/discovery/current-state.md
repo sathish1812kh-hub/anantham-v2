@@ -4,20 +4,22 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `ad3f71e`
-- **Generated**: `2026-09-01T14:15:53Z`
+- **Project Commit**: `f523440`
+- **Generated**: `2026-09-01T14:44:43Z`
 - **Current Release**: `v2.0.0-alpha.1`
-- **Current Phase**: `P8 — CLI / TUI / API / INTEGRATIONS`
-- **Current Task**: `P8.5 — Security, Governance & Observability (Audit Logging, Telemetry & Compliance)`
-- **Last Completed Task**: `TASK-P8.4-INTEGRATIONS-EXTERNAL-SYSTEMS-WEBHOOKS-CICD-IDE — Integrations (External Systems, Webhooks, CI/CD, IDE Extensions)`
+- **Current Phase**: `P9 — BENCHMARKS, EVALUATION & RELEASE HARNESS`
+- **Current Task**: `P9.1 — Benchmark Datasets, Scenarios & Evaluation Harness`
+- **Last Completed Task**: `TASK-P8.5-SECURITY-GOVERNANCE-OBSERVABILITY — Security, Governance & Observability (Audit Logging, Telemetry & Compliance)`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`
   - `0 type check errors under strict: true.`
 - **Pending Approvals**:
-  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.5, P4.1-P4.5, P5.1-P5.4, P6.1-P6.4, P7.1-P7.4, P8.1, P8.2, P8.3, P8.4 Implemented Clean & Verified).`
+  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.5, P4.1-P4.5, P5.1-P5.4, P6.1-P6.4, P7.1-P7.4, P8.1-P8.5 Implemented Clean & Verified).`
 - **Recently Completed Milestones**:
+  - [P8.5-OBSERVABILITY](file:///C:/herness/src/observability/index.ts) (Authoritative ObservabilityManager container, AuditLogger cryptographic SHA-256 hash chaining & tamper evidence verification, SecurityEventClassifier deterministic anomaly & denial classification, TelemetryEngine metrics counters/gauges/histograms & execution spans, DiagnosticInspector SQLite WAL integrity & migration checks, ComplianceExporter machine-verifiable governance audit bundles, ContentSanitizer recursive credential scrubbing)
   - [P8.4-INTEGRATIONS](file:///C:/herness/src/integrations/index.ts) (Authoritative IntegrationManager container, WebhookIngestionEngine HMAC-SHA256 verification & replay deduplication, WebhookDispatcher durable EventStore subscriber & outbound delivery with exponential backoff retries, CicdAdapter GitHub Actions/GitLab CI pipeline trigger bridge, IdeAdapter JSON-RPC protocol adapter, SQLite migration 009, IntegrationRepository, WebhookSubscriptionRepository, WebhookDeliveryRepository)
+
   - [P8.3-API-SDK](file:///C:/herness/src/api/index.ts) (Authoritative ApiServer native node:http container, ApiRouter REST dispatching, ApiAuthenticator Bearer/API-key validation, ApiAuthorizer project tenant containment, ApiIdempotencyManager Idempotency-Key deduplication, ApiErrorMapper classified error preservation, OpenApiGenerator OpenAPI 3.1.0 document, AnanthamClient typed TypeScript SDK, bin/anantham --server entrypoint)
   - [P8.2-TUI-REALTIME-PROJECTIONS](file:///C:/herness/src/tui/index.ts) (Authoritative TuiApplication container, TuiStateAdapter real-time event consumer & projection synchronizer with subscriber isolation, TuiRenderer 9 core views [Dashboard, Session, Tasks, Workflows, Agents, Jobs, Nodes, Approvals, Events, Help], TerminalLayout ANSI box-drawing & tables, TuiSanitizer escape sequence stripper & control-character defense, TuiController keyboard navigation & CommandRegistry bridge, render coalescing, bin/anantham --tui entrypoint)
   - [P8.1-CLI-FOUNDATION](file:///C:/herness/src/cli/index.ts) (Authoritative CliApplication container, CommandParser safe tokenizer, CommandRegistry slash command suite, SessionController tenant boundary enforcer, OutputRenderer text/table/json/jsonl with automated secret masking, CliErrorHandler classified error formatter, SignalHandler SIGINT/SIGTERM cancellation dispatcher, InteractiveSessionLoop REPL, bin/anantham executable entrypoint)

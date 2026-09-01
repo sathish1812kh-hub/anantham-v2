@@ -155,4 +155,38 @@ export class ContentSanitizer {
       findingsCount: totalFindings,
     };
   }
+
+  /**
+   * Recursively sanitizes any data structure (objects, arrays, strings) for secret-safe logging.
+   */
+  public static sanitize(value: unknown): any {
+    if (value === null || value === undefined) {
+      return value;
+    }
+
+    if (typeof value === "string") {
+      return ContentSanitizer.redactSecrets(value).redactedText;
+    }
+
+    if (Array.isArray(value)) {
+      return value.map((item) => ContentSanitizer.sanitize(item));
+    }
+
+    if (typeof value === "object") {
+      const result: Record<string, unknown> = {};
+      const SENSITIVE_KEY_REGEX = /(api[_-]?key|password|secret|auth|token|credential|bearer)/i;
+
+      for (const [k, v] of Object.entries(value as Record<string, unknown>)) {
+        if (SENSITIVE_KEY_REGEX.test(k)) {
+          result[k] = "[REDACTED]";
+        } else {
+          result[k] = ContentSanitizer.sanitize(v);
+        }
+      }
+      return result;
+    }
+
+
+    return value;
+  }
 }

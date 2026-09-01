@@ -485,6 +485,16 @@ Every update MUST include:
 - [x] connectors
 - [x] notifications
 
+### P8.5 Security, Governance & Observability
+- [x] audit log model
+- [x] tamper-evident cryptographic hash chaining
+- [x] security event classification
+- [x] correlation & causality tracking
+- [x] secret-safe sanitization
+- [x] telemetry engine (metrics & spans)
+- [x] diagnostic inspector
+- [x] compliance audit export
+
 
 **P8 GATE:** all interfaces project the same runtime state and do not duplicate business logic.
 
@@ -591,6 +601,18 @@ The PRD defines concrete acceptance targets including RPO 0 for committed state 
 # 5. CHANGE LOG
 
 Antigravity MUST append an entry after every completed work package:
+
+## 2026-09-01 14:32 — TASK-P8.5-SECURITY-GOVERNANCE-OBSERVABILITY
+
+Status: VERIFIED COMPLETE
+What changed: Implemented the authoritative Observability, Security, Audit & Governance Subsystem (`src/domain/observability.ts`, `AuditLogger`, `SecurityEventClassifier`, `TelemetryEngine`, `DiagnosticInspector`, `ComplianceExporter`, `ObservabilityManager`). Established pure observability architecture ensuring observability is not authority and never weakens policy or authorization. Defined `SecurityEventClassificationSchema`, `SecurityAuditRecordSchema`, `TelemetryMetricSchema`, `TelemetrySpanSchema`, `DiagnosticReportSchema`, `ComplianceReportSchema`. Implemented `AuditLogger` with canonical JSON serialization and cryptographic SHA-256 hash chaining over authoritative `EventStore` streams with tamper-evident verification (`verifyChain`). Implemented `SecurityEventClassifier` providing deterministic classification for policy denials, prompt injections, credential leakage, signature forgery, replay attempts, and project isolation violations. Implemented `TelemetryEngine` managing counters, gauges, histograms (min/max/avg/p95), and execution spans. Implemented `DiagnosticInspector` performing deep SQLite WAL integrity checks, migration verifications, active lease scans, and orphaned task sweeps. Implemented `ComplianceExporter` generating machine-verifiable compliance audit bundles with cryptographic digest verification. Implemented `ContentSanitizer.sanitize` with recursive secret-safe redaction. Wired `/v1/observability/audit`, `/v1/observability/metrics`, and `/v1/observability/compliance` into `ApiRouter`.
+Files: src/domain/observability.ts, src/domain/index.ts, src/content/content-sanitizer.ts, src/persistence/repositories/task-repository.ts, src/persistence/repositories/lease-repository.ts, src/observability/security-event-classifier.ts, src/observability/audit-logger.ts, src/observability/telemetry-engine.ts, src/observability/diagnostic-inspector.ts, src/observability/compliance-exporter.ts, src/observability/observability-manager.ts, src/observability/index.ts, src/api/api-router.ts, src/index.ts, tests/observability/*.test.ts
+Tests: 736 automated tests passing across 352 test suites in Vitest (domain contracts validation, cryptographic SHA-256 hash chaining and tamper detection, deterministic security event classification, unbroken correlation and causality tracking, telemetry counters/gauges/histograms and execution spans, secret-safe logging and automated credential redaction, strict project tenant isolation boundary, diagnostic inspection and SQLite WAL health, machine-verifiable compliance audit exports, and full end-to-end observability acceptance scenario).
+Verification: npm run typecheck (0 errors under strict: true), npm test (736/736 passing), npm run build (clean), npm run scorecard (1000/1000 Certified Perfect), multi-engine sync (CodeGraph, Graphify, Neo4j, Graphiti, Git).
+Commit/Revision: Active
+Risks: None.
+Unresolved: None.
+Next: P9.1 Benchmark Datasets, Scenarios & Evaluation Harness.
 
 ## 2026-09-01 14:03 — TASK-P8.4-INTEGRATIONS-EXTERNAL-SYSTEMS-WEBHOOKS-CICD-IDE
 

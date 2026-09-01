@@ -246,6 +246,23 @@ This document records architectural decisions, their trade-offs, and compliance 
   5. *Project Tenant Containment*: Enforces strict project boundaries, ensuring events from Project A cannot be dispatched to Project B webhooks or accessed by Project B integrations.
 - **Consequences**: Robust integration security, zero untrusted execution, reliable delivery guarantees across restarts, and full RPO-0 durability.
 
+---
+
+## ADR-021: Security, Governance, Tamper-Evident Audit Logging & Telemetry Engine
+
+- **Status**: `ACCEPTED`
+- **Date**: 2026-09-01
+- **Context**: Anantham V2 requires verifiable security evidence, structured operational telemetry, and compliance reporting. Observability must strictly observe without granting authority, influencing policy decisions, or leaking secrets.
+- **Decision**: Implement the Observability Subsystem (`src/domain/observability.ts`, `AuditLogger`, `SecurityEventClassifier`, `TelemetryEngine`, `DiagnosticInspector`, `ComplianceExporter`, `ObservabilityManager`):
+  1. *Observability is Not Authority*: Observability tools never grant permissions or alter policy evaluations. `PolicyEngine` and `ToolGateway` remain authoritative.
+  2. *Cryptographic SHA-256 Chaining & Tamper Evidence*: `AuditLogger` constructs a linked digest chain linking each audit record to its predecessor. Historical tamper detection is verifiable via `AuditLogger.verifyChain()`.
+  3. *Deterministic Security Event Classification*: `SecurityEventClassifier` standardizes classification across policy denials, prompt injections, signature failures, and tenant violations.
+  4. *Correlation & Causality Lineage*: Every audit record preserves `correlationId`, `parentEventId`, `causationId`, `actor`, and `projectId`.
+  5. *Secret-Safe Sanitization*: Automated recursive scrubbing ensures raw API keys, bearer tokens, and credentials never enter audit digests or telemetry.
+  6. *Machine-Verifiable Compliance Bundles*: `ComplianceExporter` produces cryptographically signed compliance audit reports for external auditing.
+- **Consequences**: Provable audit integrity, zero credential leakage, robust system diagnostics, and full compliance readiness.
+
+
 
 
 

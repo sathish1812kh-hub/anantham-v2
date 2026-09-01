@@ -133,6 +133,17 @@ export class LeaseRepository {
     return rows.map((r) => this.rowToLease(r));
   }
 
+  public listAllActive(): TaskLease[] {
+    const stmt = this.engine.raw.prepare(`
+      SELECT * FROM leases
+      WHERE status = 'ACTIVE'
+      ORDER BY acquired_at ASC;
+    `);
+    const rows = stmt.all() as unknown as LeaseRow[];
+    return rows.map((r) => this.rowToLease(r));
+  }
+
+
   public updateStatus(id: string, status: LeaseStatus): void {
     const stmt = this.engine.raw.prepare(`
       UPDATE leases

@@ -25,8 +25,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\governance\\scorecard.json": {
-    "mtime": 1788251715.2278821,
-    "ast_hash": "5208654ec35cfc9b4280844cdb3c4f40",
+    "mtime": 1788253453.1292417,
+    "ast_hash": "faf3a21c47f1b3fc68ea9a4cf4b74e14",
     "semantic_hash": ""
   },
   "C:\\herness\\scripts\\certification-scorecard.ps1": {
@@ -95,8 +95,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\src\\index.ts": {
-    "mtime": 1788251040.5523517,
-    "ast_hash": "9ef3616f8364091669e40fb9971754f2",
+    "mtime": 1788252864.0923908,
+    "ast_hash": "29a08bc163a5101971428da0070dd17b",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\agents\\agent-manager.ts": {
@@ -155,8 +155,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\src\\api\\api-router.ts": {
-    "mtime": 1788251158.6856768,
-    "ast_hash": "f6f9688fca2bea86e65e50884dab8c90",
+    "mtime": 1788253103.4510686,
+    "ast_hash": "9b896c972bf741de77f6b112a1cc6981",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\api\\api-server.ts": {
@@ -270,8 +270,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\src\\content\\content-sanitizer.ts": {
-    "mtime": 1788111492.1111586,
-    "ast_hash": "57c500003e210beeaa4863b370eb5b18",
+    "mtime": 1788253018.975006,
+    "ast_hash": "d39a4394aa6d131f60ef3b2d87f6a359",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\content\\index.ts": {
@@ -405,8 +405,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\src\\domain\\index.ts": {
-    "mtime": 1788250919.0531456,
-    "ast_hash": "e2447812eaa158ba4338ac010bb43e50",
+    "mtime": 1788252797.7119908,
+    "ast_hash": "36ff4188f6a7d2018ee8fcc3c7814915",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\domain\\integration.ts": {
@@ -442,6 +442,11 @@
   "C:\\herness\\src\\domain\\node.ts": {
     "mtime": 1788198547.8505962,
     "ast_hash": "5e064b8a79a6b55990fc3a1cda6545da",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\domain\\observability.ts": {
+    "mtime": 1788252789.4716587,
+    "ast_hash": "dabf49ae6b43168c386ce0d73efe0b1e",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\domain\\plugin.ts": {
@@ -859,6 +864,41 @@
     "ast_hash": "7ec4e71cb291561cde5cc4f774951cf4",
     "semantic_hash": ""
   },
+  "C:\\herness\\src\\observability\\audit-logger.ts": {
+    "mtime": 1788253138.83612,
+    "ast_hash": "6fe0cbf40266170f5bf2252e46f34cf0",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\observability\\compliance-exporter.ts": {
+    "mtime": 1788252846.10901,
+    "ast_hash": "581c3dc472dd4c3adedc06f4986a4540",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\observability\\diagnostic-inspector.ts": {
+    "mtime": 1788253155.4364831,
+    "ast_hash": "8da76ba15d7b8c2c81a86da0a0f6e21e",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\observability\\index.ts": {
+    "mtime": 1788252855.935665,
+    "ast_hash": "2c9aed760e806f45675987648f1b512c",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\observability\\observability-manager.ts": {
+    "mtime": 1788252851.5371883,
+    "ast_hash": "fd84641889e62944394469031139a51d",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\observability\\security-event-classifier.ts": {
+    "mtime": 1788252804.3270211,
+    "ast_hash": "656b4c7c2b1197b19ab595282173a9d0",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\observability\\telemetry-engine.ts": {
+    "mtime": 1788252833.7325876,
+    "ast_hash": "bca0d85c5b932e302ec8cb8261774628",
+    "semantic_hash": ""
+  },
   "C:\\herness\\src\\persistence\\index.ts": {
     "mtime": 1788250992.2630484,
     "ast_hash": "32a8fd235eae37157a14a24a9e7c8c72",
@@ -955,8 +995,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\src\\persistence\\repositories\\lease-repository.ts": {
-    "mtime": 1788165438.1858654,
-    "ast_hash": "7937d4d0c961829075827a3c4d81bc78",
+    "mtime": 1788253134.7605784,
+    "ast_hash": "9c78e555c33e8daa7327ed76a847fd1c",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\persistence\\repositories\\memory-repository.ts": {
@@ -990,8 +1030,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\src\\persistence\\repositories\\task-repository.ts": {
-    "mtime": 1788103473.9770164,
-    "ast_hash": "883686e089b065070beea48b3d3ea327",
+    "mtime": 1788253052.9582791,
+    "ast_hash": "7ff0ff798df78eab0f888e62fcae6b93",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\persistence\\repositories\\team-repository.ts": {
@@ -2354,6 +2394,51 @@
     "ast_hash": "180b884e480bf3a89296b2bf5ea22b50",
     "semantic_hash": ""
   },
+  "C:\\herness\\tests\\observability\\audit-logger-tamper-evidence.test.ts": {
+    "mtime": 1788252876.615975,
+    "ast_hash": "a8b53b58f4181c1395c1285ab20f162e",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\observability\\compliance-exporter.test.ts": {
+    "mtime": 1788252912.967521,
+    "ast_hash": "72349cdf16f2deb36ce734cfccbc1c43",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\observability\\correlation-causality-tracking.test.ts": {
+    "mtime": 1788252886.9264102,
+    "ast_hash": "457a2227711fa5d113d29c14d79ec545",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\observability\\diagnostic-inspector.test.ts": {
+    "mtime": 1788253028.034567,
+    "ast_hash": "e654f4c3772f9bf9ebaaa9e6cdd6f891",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\observability\\observability-contracts.test.ts": {
+    "mtime": 1788252871.168815,
+    "ast_hash": "00fad1df96e4b0124908ebfe0b101b6f",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\observability\\project-tenant-isolation.test.ts": {
+    "mtime": 1788252902.3560474,
+    "ast_hash": "8eacfd03f4ab09eb5b003613dfb3a8f0",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\observability\\real-observability-acceptance.test.ts": {
+    "mtime": 1788252923.4908366,
+    "ast_hash": "6fac8ceb080a34ff551457afef9f9a1a",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\observability\\security-event-classification.test.ts": {
+    "mtime": 1788252881.6183069,
+    "ast_hash": "f4c807b87a09e24276851c78d598d49b",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\observability\\telemetry-metrics-spans.test.ts": {
+    "mtime": 1788252891.7321587,
+    "ast_hash": "d250a0b077f2a18cd46f3fa0ea351bda",
+    "semantic_hash": ""
+  },
   "C:\\herness\\tests\\parallel\\abandoned-workspace-quarantine.test.ts": {
     "mtime": 1788168777.693905,
     "ast_hash": "aa039a8e0b9d8f2ba4210ad314b85a7b",
@@ -3230,8 +3315,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\ANANTHAM PROJECT SOURCES\\DEVELOPMENT\\ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md": {
-    "mtime": 1788251594.1289787,
-    "ast_hash": "ce5a0c9dc6074d1393eeacae78f90d48",
+    "mtime": 1788253348.818413,
+    "ast_hash": "9ce3de0feedc2876277f675def96b188",
     "semantic_hash": ""
   },
   "C:\\herness\\ANANTHAM PROJECT SOURCES\\prd\\ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md": {
@@ -3250,8 +3335,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\active-tasks.md": {
-    "mtime": 1788251576.4434035,
-    "ast_hash": "4fbf875b7afee08637c6e9f7ab342006",
+    "mtime": 1788253327.402746,
+    "ast_hash": "2db89bbcd16a96aa128ce90740dec7f7",
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\CHATGPT_ORCHESTRATION_KT.md": {
@@ -3260,13 +3345,13 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\current-state.md": {
-    "mtime": 1788251567.6706874,
-    "ast_hash": "b75aa05168fd9275501d41a8ad1b037c",
+    "mtime": 1788253314.807626,
+    "ast_hash": "0f2bbc173c2741b098e7ca7601a661e3",
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\decision-log.md": {
-    "mtime": 1788251559.5511518,
-    "ast_hash": "e067ed4b01b9e76a36c955b202cc4306",
+    "mtime": 1788253299.7512097,
+    "ast_hash": "23fddbc2cacc172c1b27f7450d0b0dc1",
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\dependency-registry.md": {
