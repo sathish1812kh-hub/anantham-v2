@@ -114,6 +114,15 @@ export class GitWorktreeManager {
     baseCommit: string,
     repoPath: string = this.projectRoot
   ): Promise<{ worktreePath: string; branchName: string; baseCommit: string }> {
+    // 1. Strict ref format validation (Zero shell injection defense)
+    if (!branchName || !/^[a-zA-Z0-9_\-\./]+$/.test(branchName) || branchName.startsWith("-") || branchName.includes("..")) {
+      throw new Error(`SECURITY_INVALID_REF: Branch name "${branchName}" contains forbidden shell or traversal characters.`);
+    }
+
+    if (!baseCommit || !/^[a-zA-Z0-9_\-\.]+$/.test(baseCommit) || baseCommit.startsWith("-")) {
+      throw new Error(`SECURITY_INVALID_REF: Base commit "${baseCommit}" contains forbidden shell characters.`);
+    }
+
     const worktreePath = this.getWorktreePath(workspaceId, repoPath);
 
     // Ensure parent dir exists

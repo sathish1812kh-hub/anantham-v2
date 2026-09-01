@@ -82,7 +82,7 @@ export type PolicyDecision = z.infer<typeof PolicyDecisionSchema>;
 /**
  * Lifecycle status of a human approval gate.
  */
-export const ApprovalStatusSchema = z.enum(["pending", "approved", "rejected", "expired", "cancelled"]);
+export const ApprovalStatusSchema = z.enum(["pending", "approved", "rejected", "expired", "cancelled", "consumed"]);
 export type ApprovalStatus = z.infer<typeof ApprovalStatusSchema>;
 
 /**
@@ -103,6 +103,7 @@ export const ApprovalRecordSchema = z.object({
   decidedAt: z.string().optional(),
   decidedBy: z.string().optional(),
   decisionReason: z.string().optional(),
-  policyVersion: z.string().min(1),
+  consumedAt: z.string().optional(),
+  policyVersion: z.string().min(1).default("1.0.0"),
 });
 export type ApprovalRecord = z.infer<typeof ApprovalRecordSchema>;

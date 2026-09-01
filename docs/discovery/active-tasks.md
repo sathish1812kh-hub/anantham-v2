@@ -6,16 +6,23 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P10 — PRODUCTION RELEASE, SELF-HOSTING & CERTIFICATION)
 
-### [TASK-P10.5 — DEEP COMPOSITIONAL RED-TEAM AUDIT & FAILURE-INJECTION CAMPAIGN](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [TASK-P10.6 — SYSTEM INVARIANT BREAKING AUDIT, CONCURRENCY FUZZING & FAILURE-INJECTION](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `COMPLETED`
-- **Owner**: Principal Red-Team Evaluator & Distributed Systems Architect
+- **Owner**: Principal Security Architect & Reliability Engineer
 - **Completed Date**: 2026-09-01
-- **Description**: Deep compositional adversarial audit & failure-injection campaign completed. Discovered, reproduced, and surgically remediated 4 cross-subsystem weaknesses (W-P10.5-01 ToolGateway lease fencing, W-P10.5-02 ConditionEvaluator quote-aware parsing, W-P10.5-03 Single-transaction atomicity & nested transaction support in SqliteEngine/RemoteDispatch/JobManager, W-P10.5-04 RemoteAuthVerifier canonical serialization). 825/825 tests passing.
-- **Artifact**: `dist/release/anantham-v2-2.0.0-alpha.1.tgz` (SHA-256: `ff1001919ae479e1340b9c58cd5a3ae5a1869b01fe5af852be6d33c6827494bf`).
+- **Description**: Invariant-breaking adversarial audit & failure-injection campaign completed. Discovered, reproduced, and surgically remediated 4 cross-subsystem weaknesses (W-P10.6-01 ApprovalManager single-use token consumption, W-P10.6-02 GitWorktreeManager strict branch/commit ref format validation, W-P10.6-03 CrashRecoveryEngine clean atomic state recovery without synthetic event dependencies, W-P10.6-04 TaskClaimManager heartbeat expiration deadlock prevention via immediate task status reset). 830/830 tests passing.
+- **Artifact**: `dist/release/anantham-v2-2.0.0-alpha.1.tgz` (SHA-256: `848be68c535253246e052ad6f54b04ba2a7ac7f5e2641cf74b43493e0ec33e43`).
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P10.6 — SYSTEM INVARIANT BREAKING AUDIT, CONCURRENCY FUZZING & FAILURE-INJECTION](file:///C:/herness/tests/policy/approval-replay-prevention.test.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Security Architect & Reliability Engineer
+- **Completed Date**: 2026-09-01
+- **Verification**: 4 dedicated adversarial regression suites (`tests/policy/approval-replay-prevention.test.ts`, `tests/execution/git-worktree-injection.test.ts`, `tests/recovery/crash-recovery-event-divergence.test.ts`, `tests/tasks/task-heartbeat-expiry-reclaim.test.ts`), 830/830 tests passing across 397 suites, 0 type errors.
+
 
 ### [TASK-P10.5 — DEEP COMPOSITIONAL RED-TEAM AUDIT & FAILURE-INJECTION CAMPAIGN](file:///C:/herness/tests/tools/tool-gateway-lease-fencing.test.ts)
 - **Status**: `COMPLETED`

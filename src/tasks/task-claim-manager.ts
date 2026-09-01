@@ -254,10 +254,21 @@ export class TaskClaimManager {
         const expTime = new Date(lease.expiresAt).getTime();
         if (now >= expTime) {
           this.leaseRepo.updateStatus(lease.id, "EXPIRED");
+          this.taskRepo.updateStatus(lease.taskId, "queued");
+          const ev = this.createAndAppendEventInTx(EventTypes.TASK_RELEASED, {
+            leaseId: lease.id,
+            taskId: lease.taskId,
+            agentId: lease.agentId,
+            instanceId: lease.instanceId,
+            projectId: lease.projectId,
+            sessionId: lease.sessionId,
+            reason: "HEARTBEAT_LEASE_EXPIRED",
+          });
           return {
             success: false,
             errorCode: "LEASE_EXPIRED",
             errorMessage: `Lease "${request.leaseId}" expired at ${lease.expiresAt}`,
+            committedEvents: ev ? [ev] : [],
           };
         }
 

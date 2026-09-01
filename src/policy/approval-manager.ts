@@ -285,6 +285,15 @@ export class ApprovalManager {
       };
     }
 
+    // 4. Atomically consume approval token (Single-use enforcement to prevent replay attacks)
+    const nowIso = new Date().toISOString();
+    const consumedRecord: ApprovalRecord = {
+      ...record,
+      status: "consumed",
+      consumedAt: nowIso,
+    };
+    this.approvals.set(approvalId, consumedRecord);
+
     return { valid: true };
   }
 
