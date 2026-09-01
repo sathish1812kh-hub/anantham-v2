@@ -30,6 +30,8 @@ export * from "./jobs/index.js";
 export * from "./remote/index.js";
 export * from "./cli/index.js";
 export * from "./tui/index.js";
+export * from "./api/index.js";
+export * from "./sdk/index.js";
 
 
 

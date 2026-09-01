@@ -216,6 +216,22 @@ This document records architectural decisions, their trade-offs, and compliance 
   7. *Command Bridge*: Integrates directly with `CommandRegistry` for slash command execution from the TUI command bar.
 - **Consequences**: Pure presentation decoupling, robust terminal security, zero event transaction interference, and full RPO-0 ACID durability.
 
+---
+
+## ADR-019: Programmatic Runtime Access, REST API Subsystem, OpenAPI 3.1 & Typed Client SDK
+
+- **Status**: `ACCEPTED`
+- **Date**: 2026-09-01
+- **Context**: External services, programmatic pipelines, and developer tooling require structured HTTP access to Anantham V2. The API layer must strictly remain an interface/adaptation boundary without duplicating business logic, competing with existing runtime engines, or violating project tenant isolation.
+- **Decision**: Implement the API & SDK Subsystems (`src/domain/api.ts`, `ApiAuthenticator`, `ApiAuthorizer`, `ApiErrorMapper`, `ApiIdempotencyManager`, `ApiRouter`, `ApiServer`, `OpenApiGenerator`, `AnanthamClient`, `bin/anantham.ts --server`):
+  1. *Interface Boundary Invariant*: The API delegates all authoritative actions to existing runtime services (`ProjectRepository`, `SessionRepository`, `TaskClaimManager`, `JobRepository`, `EventStore`, `NodeRepository`, `CrashRecoveryEngine`).
+  2. *Authentication & Project Tenant Isolation*: `ApiAuthenticator` validates Bearer tokens/API keys; `ApiAuthorizer` enforces tenant containment, strictly preventing cross-project resource access (`403 Forbidden`).
+  3. *Idempotency & Deduplication*: Mutating endpoints check `Idempotency-Key` headers via `ApiIdempotencyManager` to prevent duplicate side effects on retries.
+  4. *Error Classification*: Maps runtime exceptions to standard HTTP status codes and structured classification codes (`VALIDATION_ERROR`, `UNAUTHORIZED`, `FORBIDDEN`, `NOT_FOUND`, `CONFLICT`, `LEASE_FENCING_ERROR`, `INTERNAL_ERROR`).
+  5. *OpenAPI 3.1 & Typed SDK Parity*: `OpenApiGenerator` outputs valid OpenAPI 3.1.0 specifications; `AnanthamClient` provides typed promises, automatic authentication, error unrolling (`AnanthamApiError`), and pagination helpers.
+- **Consequences**: Pure interface decoupling, robust tenant containment, zero business logic drift, high-performance programmatic access, and full RPO-0 ACID durability.
+
+
 
 
 

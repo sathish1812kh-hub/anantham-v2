@@ -3,6 +3,7 @@
 import path from "node:path";
 import { CliApplication } from "../src/cli/cli-application.js";
 import { TuiApplication } from "../src/tui/tui-application.js";
+import { ApiServer } from "../src/api/api-server.js";
 import { type CliOutputMode } from "../src/domain/cli.js";
 
 async function main(): Promise<void> {
@@ -13,6 +14,8 @@ async function main(): Promise<void> {
   let initialProjectId: string | undefined;
   let initialSessionId: string | undefined;
   let isTuiMode = false;
+  let isServerMode = false;
+  let serverPort = 3000;
 
   for (let i = 0; i < args.length; i++) {
     const arg = args[i]!;
@@ -20,6 +23,10 @@ async function main(): Promise<void> {
       dbPath = args[++i]!;
     } else if (arg === "--tui") {
       isTuiMode = true;
+    } else if (arg === "--server") {
+      isServerMode = true;
+    } else if (arg === "--port" && args[i + 1]) {
+      serverPort = parseInt(args[++i]!, 10);
     } else if (arg === "--json") {
       outputMode = "json";
     } else if (arg === "--jsonl") {
@@ -34,6 +41,15 @@ async function main(): Promise<void> {
       executeCmd = args.slice(i).join(" ");
       break;
     }
+  }
+
+  if (isServerMode) {
+    const server = new ApiServer({ dbPath });
+    await server.initialize();
+    const info = await server.listen(serverPort);
+    console.log(`Anantham V2 REST API Server running at ${info.url}`);
+    console.log(`OpenAPI specification available at ${info.url}/openapi.json`);
+    return;
   }
 
   if (isTuiMode) {

@@ -4,19 +4,20 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `70b5b90`
-- **Generated**: `2026-09-01T13:19:04Z`
+- **Project Commit**: `196fd10`
+- **Generated**: `2026-09-01T13:47:54Z`
 - **Current Release**: `v2.0.0-alpha.1`
 - **Current Phase**: `P8 — CLI / TUI / API / INTEGRATIONS`
-- **Current Task**: `P8.3 — API & SDK (Programmatic Runtime Access, OpenAPI & Client SDKs)`
-- **Last Completed Task**: `TASK-P8.2-TUI-REALTIME-PROJECTIONS — TUI / Terminal User Interface & Real-Time Projections`
+- **Current Task**: `P8.4 — Integrations (External Systems, Webhooks, CI/CD, IDE Extensions)`
+- **Last Completed Task**: `TASK-P8.3-API-SDK-PROGRAMMATIC-RUNTIME-ACCESS — API & SDK / Programmatic Runtime Access`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`
   - `0 type check errors under strict: true.`
 - **Pending Approvals**:
-  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.5, P4.1-P4.5, P5.1-P5.4, P6.1-P6.4, P7.1-P7.4, P8.1, P8.2 Implemented Clean & Verified).`
+  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.5, P4.1-P4.5, P5.1-P5.4, P6.1-P6.4, P7.1-P7.4, P8.1, P8.2, P8.3 Implemented Clean & Verified).`
 - **Recently Completed Milestones**:
+  - [P8.3-API-SDK](file:///C:/herness/src/api/index.ts) (Authoritative ApiServer native node:http container, ApiRouter REST dispatching, ApiAuthenticator Bearer/API-key validation, ApiAuthorizer project tenant containment, ApiIdempotencyManager Idempotency-Key deduplication, ApiErrorMapper classified error preservation, OpenApiGenerator OpenAPI 3.1.0 document, AnanthamClient typed TypeScript SDK, bin/anantham --server entrypoint)
   - [P8.2-TUI-REALTIME-PROJECTIONS](file:///C:/herness/src/tui/index.ts) (Authoritative TuiApplication container, TuiStateAdapter real-time event consumer & projection synchronizer with subscriber isolation, TuiRenderer 9 core views [Dashboard, Session, Tasks, Workflows, Agents, Jobs, Nodes, Approvals, Events, Help], TerminalLayout ANSI box-drawing & tables, TuiSanitizer escape sequence stripper & control-character defense, TuiController keyboard navigation & CommandRegistry bridge, render coalescing, bin/anantham --tui entrypoint)
   - [P8.1-CLI-FOUNDATION](file:///C:/herness/src/cli/index.ts) (Authoritative CliApplication container, CommandParser safe tokenizer, CommandRegistry slash command suite, SessionController tenant boundary enforcer, OutputRenderer text/table/json/jsonl with automated secret masking, CliErrorHandler classified error formatter, SignalHandler SIGINT/SIGTERM cancellation dispatcher, InteractiveSessionLoop REPL, bin/anantham executable entrypoint)
   - [P7.4-REMOTE-AGENTS](file:///C:/herness/src/remote/index.ts) (Authoritative NodeRegistry, RemoteDispatchManager, RemoteNodeClient, RemoteRecoveryReconciler, RemoteAuthVerifier, SQLite migration 008, NodeRepository, RemoteDispatchRepository, monotonic generation fencing, split-brain prevention, 7-step untrusted result acceptance, project isolation, idempotent dispatches, EventStore durability)

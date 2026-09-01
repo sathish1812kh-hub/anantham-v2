@@ -6,15 +6,21 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P8 — CLI / TUI / API / INTEGRATIONS)
 
-### [P8.3 — API & SDK (Programmatic Runtime Access, OpenAPI & Client SDKs)](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P8.4 — Integrations (External Systems, Webhooks, CI/CD, IDE Extensions)](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Lead API & SDK Architect
-- **Description**: Implement programmatic runtime HTTP/WebSocket API server, OpenAPI specification, client SDKs (TypeScript / Python), and secure RPC endpoints.
-- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.4`, `P7.1–P7.4`, `P8.1`, `P8.2`.
+- **Owner**: Lead Integrations & Developer Tools Architect
+- **Description**: Implement external systems integration, webhook event dispatching, CI/CD runners, and IDE extension protocols.
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.4`, `P7.1–P7.4`, `P8.1`, `P8.2`, `P8.3`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P8.3-API-SDK-PROGRAMMATIC-RUNTIME-ACCESS — API & SDK / Programmatic Runtime Access](file:///C:/herness/src/api/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Lead API & SDK Architect
+- **Completed Date**: 2026-09-01
+- **Verification**: 696/696 tests passing across 331 test suites in Vitest. Programmatic runtime-access boundary delegating all authoritative operations to existing runtime engines. Domain contracts in `src/domain/api.ts` (`CreateProjectRequestSchema`, `CreateSessionRequestSchema`, `CreateTaskRequestSchema`, `ClaimTaskRequestSchema`, `CreateBackgroundJobRequestSchema`, `QueryEventsRequestSchema`, `ApiErrorResponseSchema`, `ApiAuthContextSchema`). `ApiAuthenticator` (Bearer token & API-key validation). `ApiAuthorizer` (project tenant containment & role checks). `ApiIdempotencyManager` (deduplication via `Idempotency-Key`). `ApiErrorMapper` (structured error classifications). `ApiRouter` (REST route dispatcher for `/v1/health`, `/v1/doctor`, `/v1/projects`, `/v1/sessions`, `/v1/tasks`, `/v1/tasks/:id/claim`, `/v1/jobs`, `/v1/nodes`, `/v1/artifacts`, `/v1/events`). `ApiServer` (native `node:http` container). `OpenApiGenerator` (OpenAPI 3.1.0 document). `AnanthamClient` (typed TypeScript client SDK with promise unwrapping and error unrolling). `--server` CLI flag in `bin/anantham.ts`. Full automated test matrix across 13 test suites.
 
 ### [TASK-P8.2-TUI-REALTIME-PROJECTIONS — TUI / Terminal User Interface & Real-Time Projections](file:///C:/herness/src/tui/index.ts)
 - **Status**: `COMPLETED`
