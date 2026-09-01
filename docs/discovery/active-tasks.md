@@ -6,16 +6,22 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P10 — PRODUCTION RELEASE, SELF-HOSTING & CERTIFICATION)
 
-### [TASK-P10.11 — FINAL PUBLICATION, DEPLOYMENT, ROLLBACK & OPERATIONAL RECOVERY AUDIT](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [TASK-P10.12 — PRODUCTION PUBLICATION & DEPLOYMENT ACCEPTANCE GATE](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `COMPLETED`
-- **Owner**: Principal Release Engineer & Production Operations Auditor
+- **Owner**: Principal Release Engineer, Production Reliability Engineer & Deployment Auditor
 - **Completed Date**: 2026-09-02
-- **Description**: Final publication, deployment, rollback and operational recovery audit completed across the complete release boundary: SOURCE -> COMMIT -> TAG -> BUILD -> PACKAGE -> INSTALL -> MIGRATION -> STARTUP -> WORKLOAD -> BACKUP -> FAILURE -> RESTORE -> RECOVERY. Verified hot backup (VACUUM INTO), forward-only migration policy with backup-before-migration disaster recovery, package SHA-256 reproducibility, and runtime/package metadata agreement. 852/852 automated tests passing.
+- **Description**: Production publication and deployment acceptance gate completed. Verified immutable release provenance chain (commit d8ac43f -> tag v2.0.0-alpha.1 -> tarball SHA-256 a673adfb793c6f421d3ada2a99c460b860046e7796b46b72bc13f6ab2b20ef81), established objective proof for P10.10 -> P10.11 hash invariance (documentation/test exclusions in package.json), verified Node.js >=22.0.0 engine contract with native SQLite WAL, executed full production smoke workload directly from extracted package, and confirmed active hot backup, crash recovery, and security gates. 852/852 automated tests passing, 31/31 release smoke tests passing.
 - **Artifact**: `dist/release/anantham-v2-2.0.0-alpha.1.tgz`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P10.12 — PRODUCTION PUBLICATION & DEPLOYMENT ACCEPTANCE GATE](file:///C:/herness/tests/release/p10-12-production-deployment-acceptance.test.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Release Engineer & Deployment Auditor
+- **Completed Date**: 2026-09-02
+- **Verification**: 1 new dedicated acceptance test suite (`tests/release/p10-12-production-deployment-acceptance.test.ts`), 852/852 Vitest tests passing across 403 suites, 31/31 release tests passing, 0 type errors, 1000/1000 scorecard.
 
 ### [TASK-P10.11 — FINAL PUBLICATION, DEPLOYMENT, ROLLBACK & OPERATIONAL RECOVERY AUDIT](file:///C:/herness/tests/release/p10-11-publication-deployment-audit.test.ts)
 - **Status**: `COMPLETED`
