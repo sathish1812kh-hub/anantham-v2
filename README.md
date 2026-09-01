@@ -18,18 +18,34 @@ Anantham V2 is an event-sourced, durable, autonomous multi-agent runtime built w
 
 ## Installation & Quickstart
 
-```bash
-# Global installation
-npm install -g anantham-v2
+### 1. Global Installation
 
+```bash
+# Option A: Install from GitHub directly
+npm install -g git+https://github.com/sathish1812kh-hub/anantham-v2.git
+
+# Option B: Install from local repository checkout
+npm install -g .
+
+# Option C: Install from local release package
+npm install -g dist/release/anantham-v2-2.0.0-alpha.1.tgz
+```
+
+### 2. Quickstart Commands
+
+```bash
 # Start interactive CLI session
 anantham
 
-# Start background server
+# Start background REST API server
 anantham --server --port 3000
 
-# Start Terminal UI
+# Start Terminal User Interface (TUI)
 anantham --tui
+
+# Show version & options
+anantham --version
+anantham --help
 ```
 
 ---
