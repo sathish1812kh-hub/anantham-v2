@@ -1,5 +1,7 @@
 # Anantham V2 — Programmable AI Agent Operating Environment
 
+**Version**: `2.0.0-alpha.1` | **Release Channel**: `alpha` | **Durability**: `RPO 0 (SQLite WAL)`
+
 Anantham V2 is an event-sourced, durable, autonomous multi-agent runtime built with RPO 0 durability, strict capability-based security boundaries (ToolGateway), deterministic state reconstruction reducers, and native SQLite WAL storage.
 
 ---

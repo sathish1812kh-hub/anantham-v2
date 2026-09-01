@@ -606,7 +606,25 @@ The PRD defines concrete acceptance targets including RPO 0 for committed state 
 
 Antigravity MUST append an entry after every completed work package:
 
+## 2026-09-01 23:07 — TASK-P10.8 — FINAL RELEASE PROVENANCE, EXTERNAL SIDE-EFFECT & POST-FIX INVARIANT AUDIT
+
+Status: VERIFIED COMPLETE (RELEASE AUTHORIZED & PROVENANCE SEALED)
+What changed: Conducted comprehensive post-P10.7 release provenance, external side-effect, and post-fix invariant audit.
+1. Verified 100% cryptographic and metadata parity across Git commit, annotated tag v2.0.0-alpha.1, package.json, CLI /version command, README.md, release-manifest.json, CycloneDX & SPDX SBOMs, and tarball SHA-256.
+2. Formally disaggregated internal SQLite ACID transactional guarantees from external network side effects (webhooks, remote dispatches, CI/CD).
+3. Directly tested lease revocation boundary race conditions in ToolGateway.
+4. Registered /version command in CommandRegistry and bound version badge in README.md.
+5. Implemented dedicated release provenance test suite (tests/release/p10-8-provenance-side-effects.test.ts).
+Files: src/cli/command-registry.ts, README.md, tests/release/p10-8-provenance-side-effects.test.ts, docs/discovery/current-state.md, docs/discovery/active-tasks.md
+Tests: 844 automated tests passing across 400 test suites in Vitest (25 release smoke tests).
+Verification: npm run typecheck (0 errors under strict: true), npm test (844/844 passing), npm run build (clean), npm run scorecard (1000/1000 Certified Perfect), multi-engine sync (CodeGraph, Graphify, Neo4j, Graphiti, Git).
+Commit/Revision: Active
+Risks: None.
+Unresolved: None.
+Next: Production Release Publication & Deployment.
+
 ## 2026-09-01 22:50 — TASK-P10.7 — PRE-PRODUCTION FINAL RED-TEAM, OPERATIONAL CHAOS & RELEASE-BLOCKER AUDIT
+
 
 Status: VERIFIED COMPLETE (RELEASE AUTHORIZED)
 What changed: Conducted comprehensive pre-production red-team evaluation, failure injection, and release-blocker audit immediately prior to production release.

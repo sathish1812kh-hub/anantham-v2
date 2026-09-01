@@ -6,16 +6,22 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P10 — PRODUCTION RELEASE, SELF-HOSTING & CERTIFICATION)
 
-### [TASK-P10.7 — PRE-PRODUCTION FINAL RED-TEAM, OPERATIONAL CHAOS & RELEASE-BLOCKER AUDIT](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [TASK-P10.8 — FINAL RELEASE PROVENANCE, EXTERNAL SIDE-EFFECT & POST-FIX INVARIANT AUDIT](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `COMPLETED`
-- **Owner**: Principal Security Architect, Reliability Engineer & Production SRE
+- **Owner**: Principal Security Architect, Distributed Systems Engineer & Certification Auditor
 - **Completed Date**: 2026-09-01
-- **Description**: Pre-production final red-team evaluation and operational chaos audit completed across all 14 subsystems. Re-attacked all findings from P10.4, P10.5, and P10.6, evaluated revocation latency, duplicate side-effect classifications, exactly-once claim disaggregations, cross-project indirect reference attacks, and state machine concurrency fuzzing. 841/841 automated tests passing.
-- **Artifact**: `dist/release/anantham-v2-2.0.0-alpha.1.tgz` (SHA-256: `dee295663e24e001b280a0a151d0ebc73e6296bc8cfc5a6a59dc7c72a82dca67`).
+- **Description**: Final release provenance, external side-effect, and post-fix invariant audit completed across all 14 subsystems. Verified bit-level cryptographic identity across Git HEAD commit, annotated tag v2.0.0-alpha.1, package.json, CLI /version command, README.md, release manifest, and tarball SHA-256 (467c1a1b0ab31721300e3f9bc46b2270bbd0de6d4251bac933c1d67f5ca3644a). 844/844 automated tests passing.
+- **Artifact**: `dist/release/anantham-v2-2.0.0-alpha.1.tgz`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P10.8 — FINAL RELEASE PROVENANCE, EXTERNAL SIDE-EFFECT & POST-FIX INVARIANT AUDIT](file:///C:/herness/tests/release/p10-8-provenance-side-effects.test.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Security Architect & Release Engineer
+- **Completed Date**: 2026-09-01
+- **Verification**: 1 new dedicated release provenance test suite (`tests/release/p10-8-provenance-side-effects.test.ts`), 844/844 Vitest tests passing across 400 suites, 0 type errors, 1000/1000 scorecard.
 
 ### [TASK-P10.7 — PRE-PRODUCTION FINAL RED-TEAM, OPERATIONAL CHAOS & RELEASE-BLOCKER AUDIT](file:///C:/herness/tests/security/p10-7-redteam-adversarial-audit.test.ts)
 - **Status**: `COMPLETED`

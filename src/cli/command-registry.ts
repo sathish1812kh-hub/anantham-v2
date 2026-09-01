@@ -557,5 +557,28 @@ export class CommandRegistry {
         };
       }
     );
+
+    // 12. /version
+    this.registerCommand(
+      {
+        name: "version",
+        description: "Display the Anantham V2 platform version",
+        aliases: ["v", "--version", "-v"],
+        usage: "/version",
+        options: [],
+      },
+      () => {
+        return {
+          success: true,
+          commandName: "version",
+          message: "Anantham V2 v2.0.0-alpha.1",
+          data: {
+            version: "2.0.0-alpha.1",
+            releaseChannel: "alpha",
+          },
+          exitRequested: false,
+        };
+      }
+    );
   }
 }

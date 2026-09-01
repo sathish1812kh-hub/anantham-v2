@@ -4,12 +4,12 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `b48ed7b`
-- **Generated**: `2026-09-01T23:00:16Z`
+- **Project Commit**: `47b29e5`
+- **Generated**: `2026-09-01T23:16:27Z`
 - **Current Release**: `v2.0.0-alpha.1`
 - **Current Phase**: `P10 — PRODUCTION RELEASE, SELF-HOSTING & CERTIFICATION (COMPLETED)`
-- **Current Task**: `TASK-P10.7-PRE-PRODUCTION-FINAL-RED-TEAM — Completed & Verified`
-- **Last Completed Task**: `TASK-P10.7 — PRE-PRODUCTION FINAL RED-TEAM, OPERATIONAL CHAOS & RELEASE-BLOCKER AUDIT`
+- **Current Task**: `TASK-P10.8-FINAL-RELEASE-PROVENANCE — Completed & Audited`
+- **Last Completed Task**: `TASK-P10.8 — FINAL RELEASE PROVENANCE, EXTERNAL SIDE-EFFECT & POST-FIX INVARIANT AUDIT`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`
@@ -17,11 +17,12 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 - **Pending Approvals**:
   - `None (ALL PHASES P1-P10 IMPLEMENTED, TESTED, AUDITED, REMEDIATED, HARDENED, GOLD CERTIFIED & RELEASED).`
 - **Recently Completed Milestones**:
+  - [P10.8-FINAL-RELEASE-PROVENANCE](file:///C:/herness/tests/release/p10-8-provenance-side-effects.test.ts) (Authoritative release provenance, external side-effect, and post-fix invariant audit across all 14 subsystems. Verified 100% cryptographic binding between Git commit 47b29e5, annotated tag v2.0.0-alpha.1, package.json, CLI /version command, README.md, release manifest, and tarball SHA-256 467c1a1b0ab31721300e3f9bc46b2270bbd0de6d4251bac933c1d67f5ca3644a, with 844/844 tests passing)
   - [P10.7-PRE-PRODUCTION-FINAL-RED-TEAM](file:///C:/herness/tests/security/p10-7-redteam-adversarial-audit.test.ts) (Pre-production final red-team, operational chaos, and release-blocker audit across all 14 subsystem boundaries. Re-attacked all findings from P10.4, P10.5, and P10.6, evaluated revocation latency, duplicate side effects, exactly-once claim disaggregation, cross-project indirect reference isolation, and state machine concurrency fuzzing with 841/841 tests passing)
   - [P10.6-SYSTEM-INVARIANT-BREAKING](file:///C:/herness/tests/policy/approval-replay-prevention.test.ts) (System invariant breaking audit, concurrency fuzzing & failure-injection campaign across all 14 subsystems. Discovered, reproduced, and remediated W-P10.6-01 ApprovalManager single-use consumption to prevent replay attacks, W-P10.6-02 GitWorktreeManager strict branch/commit ref format validation to prevent shell injection, W-P10.6-03 CrashRecoveryEngine clean atomic state recovery without synthetic event foreign key dependencies, and W-P10.6-04 TaskClaimManager heartbeat expiration deadlock prevention via immediate task status reset to queued, with 830/830 tests passing)
   - [P10.5-COMPOSITIONAL-RED-TEAM](file:///C:/herness/tests/tools/tool-gateway-lease-fencing.test.ts) (Deep compositional red-team audit & failure-injection campaign across all 14 subsystems. Discovered, reproduced, and remediated W-P10.5-01 ToolGateway side-effect lease fencing, W-P10.5-02 ConditionEvaluator quote-aware operator extraction, W-P10.5-03 Single-transaction atomicity in RemoteDispatchManager, BackgroundJobManager, and SqliteEngine nested transactions, and W-P10.5-04 RemoteAuthVerifier canonical JSON signature serialization, with 825/825 tests passing)
   - [P10.4-POST-RELEASE-ADVERSARIAL](file:///C:/herness/tests/security/path-traversal-sibling.test.ts) (Independent adversarial weakness discovery across 14 subsystems, identifying and surgically remediating W-01 Sibling Directory Path Traversal in ArtifactReferenceValidator & GitWorktreeManager, W-02 TOCTOU race condition in TaskClaimManager mutations inside SQLite transactions, W-03 Idempotency key cross-route collision & payload mutation blindness, and W-04 Webhook post-restart replay deduplication via persistent EventStore checks, with 820/820 tests passing)
-  - [P10.3-TAG-AND-RELEASE](file:///C:/herness/dist/release/release-manifest.json) (Annotated Git Tag v2.0.0-alpha.1, bit-identical reproducible release package dist/release/anantham-v2-2.0.0-alpha.1.tgz with SHA-256 dee295663e24e001b280a0a151d0ebc73e6296bc8cfc5a6a59dc7c72a82dca67, CycloneDX 1.5 & SPDX 2.3 SBOMs, 100% compliant OSS licenses, zero vulnerabilities, zero secret leaks, full release support bundle)
+  - [P10.3-TAG-AND-RELEASE](file:///C:/herness/dist/release/release-manifest.json) (Annotated Git Tag v2.0.0-alpha.1, bit-identical reproducible release package dist/release/anantham-v2-2.0.0-alpha.1.tgz, CycloneDX 1.5 & SPDX 2.3 SBOMs, 100% compliant OSS licenses, zero vulnerabilities, zero secret leaks, full release support bundle)
   - [P10.2.1-CERTIFICATION-INTEGRITY-AUDIT](file:///C:/herness/scripts/release-engineering.mjs) (Exhaustive independent audit of P10.2 gold certification report, overclaim grounding, bit-identical reproducibility fix)
   - [P10.2-GOLD-CERTIFICATION](file:///C:/herness/scripts/release-engineering.mjs) (Exhaustive independent gold certification across all 30 production dimensions, strict evidence classification DIRECTLY_TESTED across 815 tests, zero security vulnerabilities, full WAL RPO-0 state authority, monotonic fencing, and long-duration stability)
   - [P10.1-SELF-HOSTING-VALIDATION](file:///C:/herness/tests/release/self-hosting-validation.test.ts) (Clean-environment execution of packaged release tarball dist/release/anantham-v2-2.0.0-alpha.1.tgz with zero source-tree imports, verifying CLI, API, SQLite WAL migrations 001-010, EventStore restart consistency, lease fencing, memory search, artifact integrity, and crash recovery)
