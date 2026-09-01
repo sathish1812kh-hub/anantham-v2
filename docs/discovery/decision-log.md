@@ -317,7 +317,20 @@ This document records architectural decisions, their trade-offs, and compliance 
   3. *Token Budget Enforcement*: `RepresentationSelector` enforces `maxTokensPerItem` to prevent context-window explosion, truncating oversized items deterministically with explicit metadata markers.
   4. *Unknown Binary Preservation & Durability*: Raw binary payloads are preserved byte-for-byte with exact SHA-256 digests and zero fabricated parser outputs, verified durable across SQLite restarts.
   5. *MIME Spoofing & Archive Safety*: Magic byte detection strictly overrides user- or model-claimed MIME types; archive decompression ratio checks (100:1) and Zip Slip path traversal checks are enforced.
-- **Consequences**: Provable resource containment, deterministic multimodal routing, zero silent binary corruption, and tamper-resistant content ingestion.
+---
+
+## ADR-026: System-Level Evaluation Scenarios & Objective Release Gates
+
+- **Status**: `ACCEPTED`
+- **Date**: 2026-09-01
+- **Context**: Declaring production readiness requires machine-verifiable, reproducible evidence across all operational dimensions (/resume state recovery, /compact history preservation, multimodal ingestion, provider routing and failover cascades, parallel task execution, memory retrieval, false completion detection, security tenant containment, cost budgeting, and crash recovery durability).
+- **Decision**: Establish `dataset_system_evaluation_v1` in `BenchmarkRegistry` and run system-level release verification through `EvaluationManager`:
+  1. *Comprehensive Release Dataset*: Preload 10 objective benchmark cases covering the entire PRD Part 3 acceptance criteria.
+  2. *Deterministic Scoring & Provenance*: Record evaluation runs, case results, and execution provenance immutably to SQLite (`eval_runs` and `eval_case_results`).
+  3. *Objective Assertion Verification*: Use `AssertionEvaluator` to verify physical database PRAGMA integrity, state equality, event existence, artifact existence, and policy decisions without trusting unverified in-memory claims.
+  4. *Regression Comparison*: `RegressionEngine` computes score deltas, new failures, and fixed failures against established baseline runs to prevent silent quality regressions.
+- **Consequences**: Provable machine-verifiable release gates, automated regression detection, and authoritative audit evidence before production certification.
+
 
 
 
