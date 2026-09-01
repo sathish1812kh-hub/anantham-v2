@@ -2,6 +2,7 @@
 
 import path from "node:path";
 import { CliApplication } from "../src/cli/cli-application.js";
+import { TuiApplication } from "../src/tui/tui-application.js";
 import { type CliOutputMode } from "../src/domain/cli.js";
 
 async function main(): Promise<void> {
@@ -11,11 +12,14 @@ async function main(): Promise<void> {
   let executeCmd: string | undefined;
   let initialProjectId: string | undefined;
   let initialSessionId: string | undefined;
+  let isTuiMode = false;
 
   for (let i = 0; i < args.length; i++) {
     const arg = args[i]!;
     if (arg === "--db" && args[i + 1]) {
       dbPath = args[++i]!;
+    } else if (arg === "--tui") {
+      isTuiMode = true;
     } else if (arg === "--json") {
       outputMode = "json";
     } else if (arg === "--jsonl") {
@@ -30,6 +34,21 @@ async function main(): Promise<void> {
       executeCmd = args.slice(i).join(" ");
       break;
     }
+  }
+
+  if (isTuiMode) {
+    const tuiApp = new TuiApplication({
+      dbPath,
+      initialProjectId,
+      initialSessionId,
+    });
+    await tuiApp.initialize();
+    try {
+      await tuiApp.start();
+    } finally {
+      tuiApp.shutdown();
+    }
+    return;
   }
 
   const app = new CliApplication({

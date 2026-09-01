@@ -6,15 +6,21 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P8 — CLI / TUI / API / INTEGRATIONS)
 
-### [P8.2 — TUI (Terminal User Interface & Real-Time Projections)](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P8.3 — API & SDK (Programmatic Runtime Access, OpenAPI & Client SDKs)](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Lead TUI & Frontend Architect
-- **Description**: Implement terminal user interface, real-time runtime state projections, task/agent monitor, interactive approvals, live context display, and notification pane.
-- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.4`, `P7.1–P7.4`, `P8.1`.
+- **Owner**: Lead API & SDK Architect
+- **Description**: Implement programmatic runtime HTTP/WebSocket API server, OpenAPI specification, client SDKs (TypeScript / Python), and secure RPC endpoints.
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.4`, `P7.1–P7.4`, `P8.1`, `P8.2`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P8.2-TUI-REALTIME-PROJECTIONS — TUI / Terminal User Interface & Real-Time Projections](file:///C:/herness/src/tui/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Lead TUI & Frontend Architect
+- **Completed Date**: 2026-09-01
+- **Verification**: 670/670 tests passing across 318 test suites in Vitest. Pure presentation layer consuming authoritative state and derived rebuildable projections. Domain contracts in `src/domain/tui.ts` (`TuiViewModeSchema`, `TuiDimensionsSchema`, `TuiStatusSchema`, `DashboardViewModelSchema`). `TuiSanitizer` (ANSI escape code & OSC stripper, control character sanitizer). `TerminalLayout` (box-drawing with borders, status headers, tab bars, and tables). `TuiStateAdapter` (real-time `EventStore` subscriber with error isolation, projection consumer). `TuiRenderer` (9 core visual views: Dashboard, Session, Tasks, Workflows, Agents, Jobs, Nodes, Approvals, Events, Help, with automatic secret masking). `TuiController` (keyboard navigation `1`-`9`, command bar bridge to `CommandRegistry`, render coalescing/backpressure). `TuiApplication` container with stream injection. `--tui` CLI flag in `bin/anantham.ts`. Full automated test matrix across 11 test suites.
 
 ### [TASK-P8.1-CLI-FOUNDATION-INTERACTIVE-SESSION — CLI Foundation & Interactive Session Loop](file:///C:/herness/src/cli/index.ts)
 - **Status**: `COMPLETED`

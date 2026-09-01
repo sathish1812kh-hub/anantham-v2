@@ -199,6 +199,24 @@ This document records architectural decisions, their trade-offs, and compliance 
   6. *Durable Signal Dispatcher*: SIGINT/SIGTERM trigger cooperative runtime cancellation callbacks rather than abrupt process termination.
 - **Consequences**: Pure interface separation, zero business logic duplication, robust cross-tenant isolation, safe headless and interactive scriptability, and full RPO-0 ACID durability.
 
+---
+
+## ADR-018: TUI Presentation Layer, Real-Time Projection Adapters & Terminal Security
+
+- **Status**: `ACCEPTED`
+- **Date**: 2026-09-01
+- **Context**: A full terminal user interface (TUI) is required for real-time visualization of sessions, tasks, workflows, background jobs, remote nodes, agents, approvals, and canonical event streams. The TUI must remain strictly a presentation layer without becoming a second persistence, event store, task scheduler, workflow engine, or recovery system.
+- **Decision**: Implement the TUI Subsystem (`src/domain/tui.ts`, `TuiSanitizer`, `TerminalLayout`, `TuiStateAdapter`, `TuiRenderer`, `TuiController`, `TuiApplication`, `bin/anantham.ts --tui`):
+  1. *Presentation Layer Invariant*: The TUI consumes authoritative state and rebuildable derived projections (`TaskBoardProjection`, `SessionSummaryProjection`). It maintains ephemeral in-memory view models and never writes directly to SQLite or alters leases.
+  2. *Real-Time Event Adapter*: `TuiStateAdapter` subscribes to `EventStore` with strict error isolation so subscriber exceptions never break authoritative transactions.
+  3. *9 Core Visual Views*: Dashboard, Session hierarchy, Kanban Task Board (with leases & generation tokens), Workflow DAG runs, Agent directory, Background jobs, Remote nodes, Pending approvals, and Live Event Log.
+  4. *Terminal Escape Injection Defense*: `TuiSanitizer` strips ANSI escape codes, OSC sequences, and dangerous control characters from all untrusted runtime strings.
+  5. *Automated Secret Redaction*: Recursive masking of passwords, tokens, credentials, and API keys.
+  6. *Render Coalescing & Backpressure*: Debounces high-frequency event bursts to prevent render storms and CPU saturation.
+  7. *Command Bridge*: Integrates directly with `CommandRegistry` for slash command execution from the TUI command bar.
+- **Consequences**: Pure presentation decoupling, robust terminal security, zero event transaction interference, and full RPO-0 ACID durability.
+
+
 
 
 
