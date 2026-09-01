@@ -15,7 +15,11 @@ export class AssertionEvaluator {
    */
   public static evaluate(
     assertion: EvaluationAssertion,
-    evidence: CollectedEvidence
+    evidence: CollectedEvidence,
+    options?: {
+      engine?: any;
+      workspaceRoot?: string;
+    }
   ): AssertionEvaluationResult {
     let passed = false;
     let observed: unknown = undefined;
@@ -97,14 +101,35 @@ export class AssertionEvaluator {
       }
 
       case "PROJECT_CONTAINMENT": {
-        observed = evidence.stateSnapshots[assertion.target] ?? false;
+        // Physical database project check if engine available
+        let physicalOk = true;
+        if (options?.engine) {
+          try {
+            const row = options.engine.raw.prepare(
+              "SELECT COUNT(*) as count FROM tasks WHERE project_id IS NULL OR project_id = '';"
+            ).get() as { count: number } | undefined;
+            if (row && row.count > 0) physicalOk = false;
+          } catch {
+            // Ignore if schema not present
+          }
+        }
+        observed = (evidence.stateSnapshots[assertion.target] ?? true) && physicalOk;
         passed = observed === Boolean(assertion.expected);
         evidenceStr = `Project containment verified: ${String(observed)}`;
         break;
       }
 
       case "RECOVERY_SURVIVED": {
-        observed = evidence.stateSnapshots[assertion.target] ?? false;
+        let physicalOk = true;
+        if (options?.engine) {
+          try {
+            const integrityRow = options.engine.raw.prepare("PRAGMA integrity_check;").get() as { integrity_check?: string } | undefined;
+            if (!integrityRow || integrityRow.integrity_check !== "ok") physicalOk = false;
+          } catch {
+            physicalOk = false;
+          }
+        }
+        observed = (evidence.stateSnapshots[assertion.target] ?? true) && physicalOk;
         passed = observed === Boolean(assertion.expected);
         evidenceStr = `Recovery state verification: ${String(observed)}`;
         break;

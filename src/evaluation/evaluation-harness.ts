@@ -205,10 +205,11 @@ export class EvaluationHarness {
     const completedAt = new Date().toISOString();
     const evidence = evidenceCollector.getEvidence();
 
-    // Evaluate assertions
+    // Evaluate assertions with physical engine verification
     const assertionResults = benchCase.assertions.map((a) =>
-      AssertionEvaluator.evaluate(a, evidence)
+      AssertionEvaluator.evaluate(a, evidence, { engine: this.engine })
     );
+
 
     const criticalFailed = assertionResults.some((r) => r.criticality === "CRITICAL" && !r.passed);
     const optionalFailed = assertionResults.some((r) => r.criticality === "OPTIONAL" && !r.passed);

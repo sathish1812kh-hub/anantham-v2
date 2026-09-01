@@ -83,26 +83,104 @@ export class CrashRecoveryEngine {
       }
     }
 
-    // 3. Stale Lease Reclamation
+    // 3. Stale Lease Reclamation (Authoritative SQLite persistent leases)
+    const nowIso = new Date().toISOString();
+    let evictedLeaseCount = 0;
+    try {
+      const expiredLeasesStmt = this.engine.raw.prepare(
+        "SELECT id, task_id, agent_id, expires_at FROM leases WHERE status = 'ACTIVE' AND expires_at <= ?;"
+      );
+      const expiredLeaseRows = expiredLeasesStmt.all(nowIso) as Array<{
+        id: string;
+        task_id: string;
+        agent_id: string;
+        expires_at: string;
+      }>;
+
+      if (expiredLeaseRows.length > 0) {
+        const updateLeaseStmt = this.engine.raw.prepare("UPDATE leases SET status = 'EXPIRED' WHERE id = ?;");
+        this.engine.transaction(() => {
+          for (const row of expiredLeaseRows) {
+            updateLeaseStmt.run(row.id);
+          }
+        });
+        evictedLeaseCount = expiredLeaseRows.length;
+        for (const evicted of expiredLeaseRows) {
+          anomalies.push({
+            type: "STALE_LEASE",
+            entityId: evicted.id,
+            description: `Evicted expired persistent task lease '${evicted.id}' for task '${evicted.task_id}' assigned to agent '${evicted.agent_id}'`,
+            actionTaken: "EVICTED",
+            timestamp: nowIso,
+          });
+        }
+      }
+    } catch {
+      // Table may not exist in early tests
+    }
+
+    // Also run in-memory LeaseManager check for backwards compatibility
     const leaseResult = this.leaseManager.reclaimStaleLeases();
+    evictedLeaseCount += leaseResult.evictedCount;
     for (const evicted of leaseResult.evictedLeases) {
       anomalies.push({
         type: "STALE_LEASE",
         entityId: evicted.leaseId,
-        description: `Evicted expired task lease for task '${evicted.taskId}' assigned to agent '${evicted.agentId}'`,
+        description: `Evicted expired in-memory task lease for task '${evicted.taskId}' assigned to agent '${evicted.agentId}'`,
         actionTaken: "EVICTED",
-        timestamp: new Date().toISOString(),
+        timestamp: nowIso,
       });
     }
 
-    // 4. Orphan Entity Detection
+    // 4. Interrupted Task Recovery (Sweep stuck running/claimed tasks)
+    try {
+      const interruptedTasksStmt = this.engine.raw.prepare(`
+        SELECT t.id, t.status, t.project_id, t.session_id
+        FROM tasks t
+        WHERE t.status IN ('running', 'claimed', 'verifying')
+        AND NOT EXISTS (
+          SELECT 1 FROM leases l
+          WHERE l.task_id = t.id AND l.status = 'ACTIVE' AND l.expires_at > ?
+        );
+      `);
+      const interruptedRows = interruptedTasksStmt.all(nowIso) as Array<{
+        id: string;
+        status: string;
+        project_id: string;
+        session_id: string;
+      }>;
+
+      if (interruptedRows.length > 0) {
+        const resetTaskStmt = this.engine.raw.prepare(
+          "UPDATE tasks SET status = 'queued', updated_at = ? WHERE id = ?;"
+        );
+        this.engine.transaction(() => {
+          for (const row of interruptedRows) {
+            resetTaskStmt.run(nowIso, row.id);
+          }
+        });
+        for (const row of interruptedRows) {
+          anomalies.push({
+            type: "UNCOMMITTED_TASK",
+            entityId: row.id,
+            description: `Reset interrupted task '${row.id}' from status '${row.status}' back to 'queued'.`,
+            actionTaken: "REPAIRED",
+            timestamp: nowIso,
+          });
+        }
+      }
+    } catch {
+      // Tasks table may not exist in early mock tests
+    }
+
+    // 5. Orphan Entity Detection
     const orphanReport = this.orphanDetector.detectOrphans();
     anomalies.push(...orphanReport.anomalies);
     if (orphanReport.totalOrphansCount > 0 && status === "SUCCESS") {
       status = "WARNING";
     }
 
-    // 5. Checkpoint Verification (if checkpointRepo available)
+    // 6. Checkpoint Verification (if checkpointRepo available)
     if (this.checkpointRepo) {
       const allCheckpointsStmt = this.engine.raw.prepare(
         "SELECT id, manifest_json, sha256, validation_checksum, type, project_id, session_id, created_at FROM checkpoints ORDER BY created_at DESC LIMIT 50;"
@@ -168,7 +246,7 @@ export class CrashRecoveryEngine {
       databaseIntegrityPassed: isIntegrityOk && fkRows.length === 0,
       eventsValidatedCount,
       projectionsRebuiltCount,
-      staleLeasesEvictedCount: leaseResult.evictedCount,
+      staleLeasesEvictedCount: evictedLeaseCount,
       orphansDetectedCount: orphanReport.totalOrphansCount,
       anomalies,
       message:

@@ -4,20 +4,22 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `de6bf08`
-- **Generated**: `2026-09-01T15:10:41Z`
+- **Project Commit**: `8194019`
+- **Generated**: `2026-09-01T15:49:36Z`
 - **Current Release**: `v2.0.0-alpha.1`
 - **Current Phase**: `P9 — BENCHMARKS, EVALUATION & RELEASE HARNESS`
-- **Current Task**: `P9.2 — Recovery, Chaos, Interruption & Durability Evaluation`
-- **Last Completed Task**: `TASK-P9.1-BENCHMARK-DATASETS-SCENARIOS-EVALUATION-HARNESS — Benchmark Datasets, Scenarios & Evaluation Harness`
+- **Current Task**: `P9.3 — Security, Vulnerability & Adversarial Hardening`
+- **Last Completed Task**: `TASK-P9.2-RECOVERY-CHAOS-INTERRUPTION-DURABILITY — Recovery, Chaos, Interruption & Durability Evaluation`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`
   - `0 type check errors under strict: true.`
 - **Pending Approvals**:
-  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.5, P4.1-P4.5, P5.1-P5.4, P6.1-P6.4, P7.1-P7.4, P8.1-P8.5, P9.1 Implemented Clean & Verified).`
+  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.5, P4.1-P4.5, P5.1-P5.4, P6.1-P6.4, P7.1-P7.4, P8.1-P8.5, P9.1, P9.2 Implemented Clean & Verified).`
 - **Recently Completed Milestones**:
+  - [P9.2-RECOVERY-CHAOS-DURABILITY](file:///C:/herness/src/recovery/crash-recovery-engine.ts) (Pre-flight adversarial architecture audit, CrashRecoveryEngine persistent SQLite lease reclamation, automated interrupted task sweep & recovery for stuck running/claimed tasks, AssertionEvaluator physical database PRAGMA integrity & schema verification, idempotent repeated recovery cycles)
   - [P9.1-BENCHMARKS-EVALUATION](file:///C:/herness/src/evaluation/index.ts) (Authoritative EvaluationManager container, BenchmarkRegistry with preloaded standard suites [dataset_core_v1, dataset_security_v1, dataset_recovery_v1], AssertionEvaluator objective machine-verifiable assertions, EvidenceCollector immutable runtime provenance, RegressionEngine baseline comparison & regression detection, EvaluationHarness isolated project/session sandboxes, SQLite migration 010, EvaluationRepository)
+
   - [P8.5-OBSERVABILITY](file:///C:/herness/src/observability/index.ts) (Authoritative ObservabilityManager container, AuditLogger cryptographic SHA-256 hash chaining & tamper evidence verification, SecurityEventClassifier deterministic anomaly & denial classification, TelemetryEngine metrics counters/gauges/histograms & execution spans, DiagnosticInspector SQLite WAL integrity & migration checks, ComplianceExporter machine-verifiable governance audit bundles, ContentSanitizer recursive credential scrubbing)
 
   - [P8.4-INTEGRATIONS](file:///C:/herness/src/integrations/index.ts) (Authoritative IntegrationManager container, WebhookIngestionEngine HMAC-SHA256 verification & replay deduplication, WebhookDispatcher durable EventStore subscriber & outbound delivery with exponential backoff retries, CicdAdapter GitHub Actions/GitLab CI pipeline trigger bridge, IdeAdapter JSON-RPC protocol adapter, SQLite migration 009, IntegrationRepository, WebhookSubscriptionRepository, WebhookDeliveryRepository)

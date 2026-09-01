@@ -6,21 +6,28 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P9 — BENCHMARKS, EVALUATION & RELEASE HARNESS)
 
-### [P9.2 — Recovery, Chaos, Interruption & Durability Evaluation](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P9.3 — Security, Vulnerability & Adversarial Hardening](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Lead Reliability & Chaos Engineering Architect
-- **Description**: Build crash recovery, SIGKILL simulations, database interruption, and provider outage benchmarks.
-- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.4`, `P7.1–P7.4`, `P8.1–P8.5`, `P9.1`.
+- **Owner**: Lead Security & Red Team Architect
+- **Description**: Build prompt injection defense, tool-policy bypass, path traversal, command injection, secret leakage, and malicious attachment/MCP test harnesses.
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.4`, `P7.1–P7.4`, `P8.1–P8.5`, `P9.1`, `P9.2`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P9.2-RECOVERY-CHAOS-INTERRUPTION-DURABILITY — Recovery, Chaos, Interruption & Durability Evaluation](file:///C:/herness/src/recovery/crash-recovery-engine.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Lead Reliability & Chaos Engineering Architect
+- **Completed Date**: 2026-09-01
+- **Verification**: 759/759 tests passing across 366 test suites in Vitest. Pre-flight adversarial architecture audit performed, identifying 3 critical durability/recovery gaps. Implemented persistent SQLite lease reclamation in `CrashRecoveryEngine` (directly expiring expired rows in the `leases` table on startup). Implemented interrupted task sweep & recovery in `CrashRecoveryEngine` (resetting crashed `running`/`claimed` tasks without active leases back to `queued` with repaired anomaly classification). Upgraded `AssertionEvaluator` with physical SQLite `PRAGMA integrity_check` and schema containment verification. Verified repeated recovery idempotency across consecutive crash cycles (`Crash -> Recovery -> Crash -> Recovery`). Full automated test matrix across dedicated test suites in `tests/recovery/` and `tests/durability/`.
 
 ### [TASK-P9.1-BENCHMARK-DATASETS-SCENARIOS-EVALUATION-HARNESS — Benchmark Datasets, Scenarios & Evaluation Harness](file:///C:/herness/src/evaluation/index.ts)
 - **Status**: `COMPLETED`
 - **Owner**: Lead Quality, Evaluation & Release Architect
 - **Completed Date**: 2026-09-01
 - **Verification**: 755/755 tests passing across 362 test suites in Vitest. Authoritative Benchmarking, Evaluation & Quality Harness subsystem. Domain contracts in `src/domain/evaluation.ts` (`BenchmarkCategorySchema`, `EvaluationAssertionTypeSchema`, `EvaluationAssertionSchema`, `BenchmarkCaseSchema`, `BenchmarkDatasetSchema`, `AssertionEvaluationResultSchema`, `EvaluationCaseResultSchema`, `EvaluationRunSchema`, `RegressionComparisonSchema`, `EvaluationReportSchema`). SQLite migration 010 with tables `eval_runs` and `eval_case_results`. `EvaluationRepository` (CRUD and transactional persistence for evaluation runs and case results). `BenchmarkRegistry` (preloaded versioned standard datasets: `dataset_core_v1`, `dataset_security_v1`, `dataset_recovery_v1`). `AssertionEvaluator` (objective machine verification for `STATE_EQUALS`, `EVENT_EXISTS`, `ARTIFACT_EXISTS`, `POLICY_DECISION`, `TOOL_COUNT_LIMIT`, `RESOURCE_LIMIT`, `SECRET_ABSENT`, `PROJECT_CONTAINMENT`, `RECOVERY_SURVIVED`). `EvidenceCollector` (immutable runtime evidence gathering). `RegressionEngine` (run comparison against baseline, calculating score deltas and new/fixed failures). `EvaluationHarness` (isolated project/session sandboxes, test execution, scoring, and cleanup). `EvaluationManager` central container. REST endpoints `/v1/evaluation/datasets`, `/v1/evaluation/runs`, `/v1/evaluation/runs/:id`, and `/v1/evaluation/runs/:id/report` in `ApiRouter`. Full automated test matrix across 10 test suites.
+
 
 ### [TASK-P8.5-SECURITY-GOVERNANCE-OBSERVABILITY — Security, Governance & Observability (Audit Logging, Telemetry & Compliance)](file:///C:/herness/src/observability/index.ts)
 - **Status**: `COMPLETED`
