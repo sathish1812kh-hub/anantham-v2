@@ -6,15 +6,28 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P10 — PRODUCTION RELEASE, SELF-HOSTING & CERTIFICATION)
 
-### [TASK-P10.1-SELF-HOSTING-VALIDATION — Self-Hosting Validation & Release Staging](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [TASK-P10.3-TAG-AND-RELEASE — Tag & Release Authorization](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Lead Release Engineering & Self-Hosting Architect
-- **Description**: Self-host Anantham V2 within its own agentic execution runtime, run dogfooding pipelines, and verify production release readiness.
-- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.4`, `P7.1–P7.4`, `P8.1–P8.5`, `P9.1–P9.7`.
+- **Owner**: Lead Release Engineering & Operations Architect
+- **Description**: Final tag creation, release artifact publication, and production deployment authorization.
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.4`, `P7.1–P7.4`, `P8.1–P8.5`, `P9.1–P9.7`, `P10.1`, `P10.2`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P10.2-GOLD-CERTIFICATION — Gold Certification](file:///C:/herness/scripts/release-engineering.mjs)
+- **Status**: `COMPLETED`
+- **Owner**: Lead Reliability & Certification Architect
+- **Completed Date**: 2026-09-01
+- **Verification**: Exhaustive gold certification audit across all 30 production dimensions. Directly tested in two isolated clean-room environments. Verified RPO-0 state authority, state/event atomicity, crash recovery, monotonic generation fencing, tool authority, credential isolation, project tenant boundaries, artifact SHA-256 integrity, workflow/background job lifecycles, observability hash chains, and long-duration stability. 815/815 automated tests passing across 385 test suites in Vitest under strict TypeScript compilation with 1000/1000 scorecard.
+
+### [TASK-P10.1-SELF-HOSTING-VALIDATION — Self-Hosting Validation](file:///C:/herness/tests/release/self-hosting-validation.test.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Lead Release Engineering & Self-Hosting Architect
+- **Completed Date**: 2026-09-01
+- **Verification**: Clean-environment execution of packaged release tarball `dist/release/anantham-v2-2.0.0-alpha.1.tgz` with zero source-tree imports.
+
 
 ### [TASK-P9.7-FINAL-RELEASE-CANDIDATE-ADVERSARIAL-AUDIT — Final Release-Candidate Adversarial Audit](file:///C:/herness/scripts/release-engineering.mjs)
 - **Status**: `COMPLETED`
