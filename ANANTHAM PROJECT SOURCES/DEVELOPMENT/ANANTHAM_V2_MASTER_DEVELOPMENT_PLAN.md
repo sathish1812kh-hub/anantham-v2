@@ -606,7 +606,24 @@ The PRD defines concrete acceptance targets including RPO 0 for committed state 
 
 Antigravity MUST append an entry after every completed work package:
 
+## 2026-09-01 20:45 — TASK-P10.4 — POST-RELEASE ADVERSARIAL WEAKNESS DISCOVERY & REMEDIATION
+
+Status: VERIFIED COMPLETE (REMEDIATED & PASSING)
+What changed: Conducted exhaustive independent adversarial audit across all 14 subsystem boundaries. Located, reproduced, and remediated 4 weaknesses:
+1. W-01 (Path Prefix Sibling Directory Traversal - HIGH): Fixed `validateStoragePath` in `ArtifactReferenceValidator`, `GitWorktreeManager`, and `PluginPackageVerifier` to enforce strict relative directory containment and prevent sibling folder prefix escapes.
+2. W-02 (TOCTOU Race Condition in Task Claim Mutations - HIGH): Moved `verifyOwnership` inside `engine.transaction` in `TaskClaimManager.completeTask`, `failTask`, and `releaseTask` to prevent stale worker writes.
+3. W-03 (ApiIdempotencyManager Context Scoping & Payload Mutation Blindness - MEDIUM): Scoped idempotency cache keys by `(method, pathname, bodyHash)` and return HTTP 409 `IdempotencyConflictError` on key reuse across disparate endpoints or mutated payloads.
+4. W-04 (Webhook Persistent Deduplication Across Restarts - MEDIUM): Added persistent `EventStore` duplicate checks and bounded in-memory cache to `WebhookIngestionEngine` to prevent post-restart replay attacks.
+Files: src/artifacts/artifact-reference-validator.ts, src/execution/git-worktree-manager.ts, src/plugins/plugin-package.ts, src/tasks/task-claim-manager.ts, src/api/api-idempotency-manager.ts, src/api/api-router.ts, src/api/api-error-mapper.ts, src/integrations/webhook-ingestion-engine.ts, tests/security/path-traversal-sibling.test.ts, tests/tasks/task-claim-race-toctou.test.ts, tests/api/api-idempotency-collision.test.ts, tests/integrations/webhook-durability-replay.test.ts
+Tests: 820 automated tests passing across 389 test suites in Vitest.
+Verification: npm run typecheck (0 errors under strict: true), npm test (820/820 passing), npm run build (clean), npm run scorecard (1000/1000 Certified Perfect), multi-engine sync (CodeGraph, Graphify, Neo4j, Graphiti, Git).
+Commit/Revision: Active
+Risks: None.
+Unresolved: None.
+Next: Post-Release Operations & Continuous Monitoring.
+
 ## 2026-09-01 19:35 — TASK-P10.3-TAG-AND-RELEASE
+
 
 Status: VERIFIED COMPLETE (RELEASE PUBLISHED)
 What changed: Completed final release gate, packaging, supply-chain verification, cryptographic binding, and release tagging for Anantham V2 (`v2.0.0-alpha.1`). Generated bit-identical reproducible release artifact `dist/release/anantham-v2-2.0.0-alpha.1.tgz` (SHA-256: `ec952a429a7861f8807c41dbe2af14d25fbc312da427370712214dcb742643c5`, size: 601,132 bytes across 1,199 files). Generated CycloneDX 1.5 & SPDX 2.3 SBOMs, 100% compliant OSS license audit, vulnerability analysis (0 CVEs), automated secret scan (0 leaked credentials), release manifest (`dist/release/release-manifest.json`), and release support bundle (`dist/release/release-support-bundle.json`). Verified clean-environment installation and smoke test with zero source dependencies.

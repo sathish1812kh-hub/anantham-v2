@@ -113,7 +113,7 @@ export class WebhookIngestionEngine {
 
     const payload: InboundWebhookPayload = parsed.data;
 
-    // 4. Replay & Duplicate Protection
+    // 4. Replay & Duplicate Protection (In-Memory + Persistent EventStore Check)
     const replayKey = `${integrationId}:${payload.deliveryId}`;
     if (this.processedDeliveryIds.has(replayKey)) {
       return {
@@ -121,6 +121,29 @@ export class WebhookIngestionEngine {
         deliveryId: payload.deliveryId,
         errorMessage: `Duplicate webhook rejected: deliveryId '${payload.deliveryId}' already processed.`,
       };
+    }
+
+    // Check persistent EventStore to defend against post-restart replay attacks
+    const existingEvents = this.eventStore.getEventsByProject(integration.projectId, {
+      type: EventTypes.INTEGRATION_WEBHOOK_RECEIVED,
+    });
+    const isPersistentDuplicate = existingEvents.some(
+      (e) => (e.payload as any)?.integrationId === integrationId && (e.payload as any)?.deliveryId === payload.deliveryId
+    );
+
+    if (isPersistentDuplicate) {
+      this.processedDeliveryIds.add(replayKey);
+      return {
+        accepted: false,
+        deliveryId: payload.deliveryId,
+        errorMessage: `Duplicate webhook rejected: deliveryId '${payload.deliveryId}' already processed.`,
+      };
+    }
+
+    // Bound memory cache to prevent unbounded growth
+    if (this.processedDeliveryIds.size >= 10000) {
+      const firstKey = this.processedDeliveryIds.values().next().value;
+      if (firstKey) this.processedDeliveryIds.delete(firstKey);
     }
     this.processedDeliveryIds.add(replayKey);
 

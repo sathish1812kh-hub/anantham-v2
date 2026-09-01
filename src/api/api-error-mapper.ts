@@ -28,6 +28,10 @@ export class ApiErrorMapper {
       statusCode = 404;
       classification = "NOT_FOUND";
       code = "not_found";
+    } else if (lower.includes("idempotency")) {
+      statusCode = 409;
+      classification = "IDEMPOTENCY_CONFLICT";
+      code = "conflict";
     } else if (lower.includes("fencing") || lower.includes("stale") || lower.includes("conflict")) {
       statusCode = 409;
       classification = "LEASE_FENCING_ERROR";

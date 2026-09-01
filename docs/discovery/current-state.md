@@ -4,23 +4,25 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `e99bbed`
-- **Generated**: `2026-09-01T20:30:24Z`
+- **Project Commit**: `aaa61ee`
+- **Generated**: `2026-09-01T20:55:09Z`
 - **Current Release**: `v2.0.0-alpha.1`
 - **Current Phase**: `P10 — PRODUCTION RELEASE, SELF-HOSTING & CERTIFICATION (COMPLETED)`
-- **Current Task**: `TASK-P10.3-TAG-AND-RELEASE — Final Tagging & Release Complete`
-- **Last Completed Task**: `TASK-P10.3-TAG-AND-RELEASE — Final Release Tagging, Artifact Publication & Release Integrity Gate`
+- **Current Task**: `TASK-P10.4-POST-RELEASE-ADVERSARIAL — Completed & Remediated`
+- **Last Completed Task**: `TASK-P10.4 — POST-RELEASE ADVERSARIAL WEAKNESS DISCOVERY & REMEDIATION`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`
   - `0 type check errors under strict: true.`
 - **Pending Approvals**:
-  - `None (ALL PHASES P1-P10 IMPLEMENTED, TESTED, AUDITED, GOLD CERTIFIED & RELEASED).`
+  - `None (ALL PHASES P1-P10 IMPLEMENTED, TESTED, AUDITED, REMEDIATED, GOLD CERTIFIED & RELEASED).`
 - **Recently Completed Milestones**:
-  - [P10.3-TAG-AND-RELEASE](file:///C:/herness/dist/release/release-manifest.json) (Annotated Git Tag v2.0.0-alpha.1, bit-identical reproducible release package dist/release/anantham-v2-2.0.0-alpha.1.tgz with SHA-256 ec952a429a7861f8807c41dbe2af14d25fbc312da427370712214dcb742643c5, CycloneDX 1.5 & SPDX 2.3 SBOMs, 100% compliant OSS licenses, zero vulnerabilities, zero secret leaks, full release support bundle)
+  - [P10.4-POST-RELEASE-ADVERSARIAL](file:///C:/herness/tests/security/path-traversal-sibling.test.ts) (Independent adversarial weakness discovery across 14 subsystems, identifying and surgically remediating W-01 Sibling Directory Path Traversal in ArtifactReferenceValidator & GitWorktreeManager, W-02 TOCTOU race condition in TaskClaimManager mutations inside SQLite transactions, W-03 Idempotency key cross-route collision & payload mutation blindness, and W-04 Webhook post-restart replay deduplication via persistent EventStore checks, with 820/820 tests passing)
+  - [P10.3-TAG-AND-RELEASE](file:///C:/herness/dist/release/release-manifest.json) (Annotated Git Tag v2.0.0-alpha.1, bit-identical reproducible release package dist/release/anantham-v2-2.0.0-alpha.1.tgz with SHA-256 e8499e66a0a44b60d4f2918c3f2f23f7797f916ed2f5d8283a76d4077e3d54f4, CycloneDX 1.5 & SPDX 2.3 SBOMs, 100% compliant OSS licenses, zero vulnerabilities, zero secret leaks, full release support bundle)
   - [P10.2.1-CERTIFICATION-INTEGRITY-AUDIT](file:///C:/herness/scripts/release-engineering.mjs) (Exhaustive independent audit of P10.2 gold certification report, overclaim grounding, bit-identical reproducibility fix)
   - [P10.2-GOLD-CERTIFICATION](file:///C:/herness/scripts/release-engineering.mjs) (Exhaustive independent gold certification across all 30 production dimensions, strict evidence classification DIRECTLY_TESTED across 815 tests, zero security vulnerabilities, full WAL RPO-0 state authority, monotonic fencing, and long-duration stability)
   - [P10.1-SELF-HOSTING-VALIDATION](file:///C:/herness/tests/release/self-hosting-validation.test.ts) (Clean-environment execution of packaged release tarball dist/release/anantham-v2-2.0.0-alpha.1.tgz with zero source-tree imports, verifying CLI, API, SQLite WAL migrations 001-010, EventStore restart consistency, lease fencing, memory search, artifact integrity, and crash recovery)
+
   - [P9.7-FINAL-RELEASE-CANDIDATE-ADVERSARIAL-AUDIT](file:///C:/herness/scripts/release-engineering.mjs) (Complete cross-subsystem adversarial audit across 20+ dimensions, state/event consistency verification, monotonic generation fencing tokens, objective physical artifact hashing, zero secret leakage, full reproducible release verification)
 
   - [P9.6-RELEASE-ENGINEERING-PACKAGING](file:///C:/herness/scripts/release-engineering.mjs) (Authoritative release engineering engine, license compliance audit, dual CycloneDX 1.5 & SPDX 2.3 SBOM generation, secret & vulnerability scanning, npm package tarball creation, release manifest, and clean-environment runtime smoke test)

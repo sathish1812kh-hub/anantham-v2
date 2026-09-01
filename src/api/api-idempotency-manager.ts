@@ -6,6 +6,22 @@ export interface CachedResponse {
   statusCode: number;
   responseBody: unknown;
   timestamp: string;
+  method?: string;
+  pathname?: string;
+  bodyHash?: string;
+}
+
+export interface RequestIdempotencyContext {
+  method: string;
+  pathname: string;
+  bodyHash?: string;
+}
+
+export class IdempotencyConflictError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "IdempotencyConflictError";
+  }
 }
 
 export class ApiIdempotencyManager {
@@ -16,7 +32,7 @@ export class ApiIdempotencyManager {
     this.ttlMs = options.ttlMs ?? 300_000; // 5 minutes default
   }
 
-  public get(key: string): CachedResponse | undefined {
+  public get(key: string, context?: RequestIdempotencyContext): CachedResponse | undefined {
     const cached = this.cache.get(key);
     if (!cached) return undefined;
 
@@ -26,14 +42,34 @@ export class ApiIdempotencyManager {
       return undefined;
     }
 
+    if (context && cached.method && cached.pathname) {
+      const methodMatch = cached.method === context.method;
+      const pathMatch = cached.pathname === context.pathname;
+      const bodyMatch = !cached.bodyHash || !context.bodyHash || cached.bodyHash === context.bodyHash;
+
+      if (!methodMatch || !pathMatch || !bodyMatch) {
+        throw new IdempotencyConflictError(
+          `Idempotency-Key '${key}' is already bound to a different request (${cached.method} ${cached.pathname}).`
+        );
+      }
+    }
+
     return cached;
   }
 
-  public set(key: string, statusCode: number, responseBody: unknown): void {
+  public set(
+    key: string,
+    statusCode: number,
+    responseBody: unknown,
+    context?: RequestIdempotencyContext
+  ): void {
     this.cache.set(key, {
       statusCode,
       responseBody,
       timestamp: new Date().toISOString(),
+      method: context?.method,
+      pathname: context?.pathname,
+      bodyHash: context?.bodyHash,
     });
   }
 

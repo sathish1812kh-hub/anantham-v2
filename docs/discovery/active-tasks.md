@@ -6,16 +6,23 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P10 — PRODUCTION RELEASE, SELF-HOSTING & CERTIFICATION)
 
-### [TASK-P10.3-TAG-AND-RELEASE — Final Tagging & Release Complete](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [TASK-P10.4 — POST-RELEASE ADVERSARIAL WEAKNESS DISCOVERY & REMEDIATION](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `COMPLETED`
-- **Owner**: Lead Release Engineering & Operations Architect
+- **Owner**: Independent Principal Security Architect & Red-Team Evaluator
 - **Completed Date**: 2026-09-01
-- **Description**: Final tag creation, release artifact publication, and production deployment authorization completed and verified.
-- **Artifact**: `dist/release/anantham-v2-2.0.0-alpha.1.tgz` (SHA-256: `ec952a429a7861f8807c41dbe2af14d25fbc312da427370712214dcb742643c5`).
+- **Description**: Independent post-release adversarial audit completed. Discovered, reproduced, and surgically remediated 4 weaknesses (W-01 Sibling path traversal, W-02 Task claim mutation TOCTOU, W-03 Idempotency cross-route collision & payload blindness, W-04 Webhook replay persistence). 820/820 tests passing.
+- **Artifact**: `dist/release/anantham-v2-2.0.0-alpha.1.tgz` (SHA-256: `e8499e66a0a44b60d4f2918c3f2f23f7797f916ed2f5d8283a76d4077e3d54f4`).
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P10.4 — POST-RELEASE ADVERSARIAL WEAKNESS DISCOVERY & REMEDIATION](file:///C:/herness/tests/security/path-traversal-sibling.test.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Independent Principal Security Architect & Red-Team Evaluator
+- **Completed Date**: 2026-09-01
+- **Verification**: 4 dedicated adversarial regression suites (`tests/security/path-traversal-sibling.test.ts`, `tests/tasks/task-claim-race-toctou.test.ts`, `tests/api/api-idempotency-collision.test.ts`, `tests/integrations/webhook-durability-replay.test.ts`), 820/820 tests passing, 0 type errors.
+
 
 ### [TASK-P10.3-TAG-AND-RELEASE — Tag & Release Authorization](file:///C:/herness/dist/release/release-manifest.json)
 - **Status**: `COMPLETED`

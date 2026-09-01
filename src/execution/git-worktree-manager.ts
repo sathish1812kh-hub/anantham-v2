@@ -42,7 +42,8 @@ export class GitWorktreeManager {
     const targetDir = path.join(root, ".anantham", "worktrees", sanitizedId);
     
     // Path traversal defense
-    if (!targetDir.startsWith(root)) {
+    const rel = path.relative(root, targetDir);
+    if (rel.startsWith("..") || path.isAbsolute(rel)) {
       throw new Error(`SECURITY_PATH_TRAVERSAL: Worktree path "${targetDir}" escapes project root "${root}"`);
     }
     return targetDir;

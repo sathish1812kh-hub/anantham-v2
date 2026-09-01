@@ -388,12 +388,12 @@ export class TaskClaimManager {
       aId = agentId;
     }
 
-    if (!this.verifyOwnership(tId, lId, gen, aId)) {
-      return false;
-    }
-
     const committedEvents: any[] = [];
-    this.engine.transaction(() => {
+    const success = this.engine.transaction(() => {
+      if (!this.verifyOwnership(tId, lId, gen, aId)) {
+        return false;
+      }
+
       this.taskRepo.updateStatus(tId, "completed");
       this.leaseRepo.updateStatus(lId, "RELEASED");
       const lease = this.leaseRepo.findById(lId);
@@ -418,7 +418,13 @@ export class TaskClaimManager {
         reason: "COMPLETED",
       });
       if (ev2) committedEvents.push(ev2);
+
+      return true;
     });
+
+    if (!success) {
+      return false;
+    }
 
     if (this.eventStore && committedEvents.length > 0) {
       this.eventStore.notifyCommitted(committedEvents);
@@ -465,12 +471,12 @@ export class TaskClaimManager {
       aId = agentId;
     }
 
-    if (!this.verifyOwnership(tId, lId, gen, aId)) {
-      return false;
-    }
-
     const committedEvents: any[] = [];
-    this.engine.transaction(() => {
+    const success = this.engine.transaction(() => {
+      if (!this.verifyOwnership(tId, lId, gen, aId)) {
+        return false;
+      }
+
       this.taskRepo.updateStatus(tId, "failed");
       this.leaseRepo.updateStatus(lId, "RELEASED");
       const lease = this.leaseRepo.findById(lId);
@@ -495,7 +501,13 @@ export class TaskClaimManager {
         reason: "FAILED",
       });
       if (ev2) committedEvents.push(ev2);
+
+      return true;
     });
+
+    if (!success) {
+      return false;
+    }
 
     if (this.eventStore && committedEvents.length > 0) {
       this.eventStore.notifyCommitted(committedEvents);
@@ -542,12 +554,12 @@ export class TaskClaimManager {
       aId = agentId;
     }
 
-    if (!this.verifyOwnership(tId, lId, gen, aId)) {
-      return false;
-    }
-
     const committedEvents: any[] = [];
-    this.engine.transaction(() => {
+    const success = this.engine.transaction(() => {
+      if (!this.verifyOwnership(tId, lId, gen, aId)) {
+        return false;
+      }
+
       this.taskRepo.updateStatus(tId, "queued");
       this.leaseRepo.updateStatus(lId, "RELEASED");
       const lease = this.leaseRepo.findById(lId);
@@ -561,7 +573,13 @@ export class TaskClaimManager {
         reason: releaseReason,
       });
       if (ev) committedEvents.push(ev);
+
+      return true;
     });
+
+    if (!success) {
+      return false;
+    }
 
     if (this.eventStore && committedEvents.length > 0) {
       this.eventStore.notifyCommitted(committedEvents);

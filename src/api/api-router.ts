@@ -1,4 +1,4 @@
-import { randomUUID } from "node:crypto";
+import { randomUUID, createHash } from "node:crypto";
 import { type IncomingMessage, type ServerResponse } from "node:http";
 
 import {
@@ -130,19 +130,20 @@ export class ApiRouter {
       return;
     }
 
-    // 5. Idempotency Check for Mutating Requests
-    const idempotencyKey = req.headers["idempotency-key"] as string | undefined;
-    if (idempotencyKey && (method === "POST" || method === "PUT" || method === "DELETE")) {
-      const cached = this.idempotencyManager.get(idempotencyKey);
-      if (cached) {
-        this.sendJson(res, cached.statusCode, cached.responseBody);
-        return;
-      }
-    }
-
-    // 6. Route Dispatch
+    // 5. Route Dispatch & Body Read
     try {
-      const body = await this.readRequestBody(req);
+      const { body, bodyHash } = await this.readRequestBody(req);
+
+      // Idempotency Check for Mutating Requests
+      const idempotencyKey = req.headers["idempotency-key"] as string | undefined;
+      const idempotencyContext = { method, pathname, bodyHash };
+      if (idempotencyKey && (method === "POST" || method === "PUT" || method === "DELETE")) {
+        const cached = this.idempotencyManager.get(idempotencyKey, idempotencyContext);
+        if (cached) {
+          this.sendJson(res, cached.statusCode, cached.responseBody);
+          return;
+        }
+      }
 
       // --- Projects ---
       if (pathname === "/v1/projects" && method === "GET") {
@@ -177,7 +178,7 @@ export class ApiRouter {
         const responseData = { success: true, data: project };
 
         if (idempotencyKey) {
-          this.idempotencyManager.set(idempotencyKey, 201, responseData);
+          this.idempotencyManager.set(idempotencyKey, 201, responseData, idempotencyContext);
         }
 
         this.sendJson(res, 201, responseData);
@@ -225,7 +226,7 @@ export class ApiRouter {
         const responseData = { success: true, data: session };
 
         if (idempotencyKey) {
-          this.idempotencyManager.set(idempotencyKey, 201, responseData);
+          this.idempotencyManager.set(idempotencyKey, 201, responseData, idempotencyContext);
         }
 
         this.sendJson(res, 201, responseData);
@@ -270,7 +271,7 @@ export class ApiRouter {
         const responseData = { success: true, data: task };
 
         if (idempotencyKey) {
-          this.idempotencyManager.set(idempotencyKey, 201, responseData);
+          this.idempotencyManager.set(idempotencyKey, 201, responseData, idempotencyContext);
         }
 
         this.sendJson(res, 201, responseData);
@@ -309,7 +310,7 @@ export class ApiRouter {
 
         const responseData = { success: true, data: claimRes.lease };
         if (idempotencyKey) {
-          this.idempotencyManager.set(idempotencyKey, 200, responseData);
+          this.idempotencyManager.set(idempotencyKey, 200, responseData, idempotencyContext);
         }
 
         this.sendJson(res, 200, responseData);
@@ -365,7 +366,7 @@ export class ApiRouter {
         const responseData = { success: true, data: job };
 
         if (idempotencyKey) {
-          this.idempotencyManager.set(idempotencyKey, 201, responseData);
+          this.idempotencyManager.set(idempotencyKey, 201, responseData, idempotencyContext);
         }
 
         this.sendJson(res, 201, responseData);
@@ -565,7 +566,7 @@ export class ApiRouter {
     this.sendJson(res, statusCode, mapped.response);
   }
 
-  private async readRequestBody(req: IncomingMessage): Promise<unknown> {
+  private async readRequestBody(req: IncomingMessage): Promise<{ body: unknown; bodyHash: string }> {
     return new Promise((resolve, reject) => {
       let body = "";
       req.on("data", (chunk) => {
@@ -576,12 +577,13 @@ export class ApiRouter {
         }
       });
       req.on("end", () => {
+        const bodyHash = createHash("sha256").update(body).digest("hex");
         if (!body.trim()) {
-          resolve({});
+          resolve({ body: {}, bodyHash });
           return;
         }
         try {
-          resolve(JSON.parse(body));
+          resolve({ body: JSON.parse(body), bodyHash });
         } catch {
           reject(new Error("Validation Error: Malformed JSON payload."));
         }

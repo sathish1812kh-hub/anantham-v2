@@ -49,7 +49,8 @@ export class PluginPackageVerifier {
     const resolvedBase = path.resolve(baseDir);
     const targetPath = path.resolve(resolvedBase, pluginId, relativePath);
 
-    if (!targetPath.startsWith(resolvedBase)) {
+    const rel = path.relative(resolvedBase, targetPath);
+    if (rel.startsWith("..") || path.isAbsolute(rel)) {
       throw new Error(`Path traversal violation: Plugin path "${relativePath}" escapes root "${baseDir}".`);
     }
 

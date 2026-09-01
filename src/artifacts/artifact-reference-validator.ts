@@ -1,4 +1,4 @@
-import { normalize, resolve } from "node:path";
+import { normalize, resolve, relative, isAbsolute } from "node:path";
 import type { Artifact } from "../domain/artifact.js";
 
 export interface ArtifactAccessContext {
@@ -26,7 +26,8 @@ export class ArtifactReferenceValidator {
     const normalizedBase = resolve(normalize(allowedBaseDir));
     const normalizedTarget = resolve(normalize(filePath));
 
-    if (!normalizedTarget.startsWith(normalizedBase)) {
+    const rel = relative(normalizedBase, normalizedTarget);
+    if (rel.startsWith("..") || isAbsolute(rel)) {
       return {
         isValid: false,
         reason: `Path traversal detected: target '${filePath}' escapes base directory '${allowedBaseDir}'.`,
