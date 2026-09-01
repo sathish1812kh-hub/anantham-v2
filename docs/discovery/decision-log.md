@@ -183,5 +183,22 @@ This document records architectural decisions, their trade-offs, and compliance 
   6. *Post-Crash & Partition Reconciler*: `RemoteRecoveryReconciler` cleans up orphaned leases and reconciles active dispatches across controller crashes or network partitions.
 - **Consequences**: Zero split-brain data corruption across partitions, zero privilege escalation on remote workers, robust idempotent deduplication, and complete RPO-0 ACID durability.
 
+---
+
+## ADR-017: CLI Foundation, Interactive Session Loop, Command Routing & Tenant Isolation
+
+- **Status**: `ACCEPTED`
+- **Date**: 2026-09-01
+- **Context**: An interactive terminal and scripted command-line interface is required to operate Anantham V2. The CLI must function strictly as an interface, delegating all operations to existing runtime services while preserving system invariants, tenant isolation boundaries, secret protection, error classifications, and durable signal handling.
+- **Decision**: Implement the CLI Subsystem (`src/domain/cli.ts`, `CommandParser`, `OutputRenderer`, `CliErrorHandler`, `SessionController`, `SignalHandler`, `CommandRegistry`, `InteractiveSessionLoop`, `CliApplication`, `bin/anantham.ts`):
+  1. *Interface Boundary Invariant*: The CLI does not implement custom persistence, policy, scheduling, or execution logic. It delegates strictly to `ProjectRepository`, `SessionRepository`, `TaskRepository`, `TaskClaimManager`, `SessionResumeEngine`, `CrashRecoveryEngine`, `PolicyEngine`, and `ToolRegistry`.
+  2. *Command Tokenizer & Injection Defense*: Safe tokenization supporting quotes, flags, and negative numbers without shell string concatenation or raw `child_process.exec`.
+  3. *Session Controller & Tenant Boundary*: Active project and session context are maintained in `SessionController`. Switching or accessing sessions across project boundaries is strictly rejected.
+  4. *Structured Output & Automated Redaction*: Supports `text`, `json`, and `jsonl` output modes with recursive secret/credential key masking.
+  5. *Classified Error Preservations*: Error messages preserve runtime classification categories (`POLICY_DENIAL`, `PERMISSION_DENIED`, `VALIDATION_ERROR`, `NOT_FOUND`, `LEASE_FENCING_ERROR`, `PERSISTENCE_ERROR`, `RECOVERY_ERROR`, `USER_CANCELLATION`).
+  6. *Durable Signal Dispatcher*: SIGINT/SIGTERM trigger cooperative runtime cancellation callbacks rather than abrupt process termination.
+- **Consequences**: Pure interface separation, zero business logic duplication, robust cross-tenant isolation, safe headless and interactive scriptability, and full RPO-0 ACID durability.
+
+
 
 

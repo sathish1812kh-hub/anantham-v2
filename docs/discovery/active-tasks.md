@@ -6,15 +6,21 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P8 — CLI / TUI / API / INTEGRATIONS)
 
-### [P8.1 — CLI Foundation & Interactive Session Loop](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P8.2 — TUI (Terminal User Interface & Real-Time Projections)](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Lead CLI & Platform Architect
-- **Description**: Implement CLI foundation, interactive REPL loop, terminal formatting, flag parsing, command registration, and interactive agent communication.
-- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.4`, `P7.1–P7.4`.
+- **Owner**: Lead TUI & Frontend Architect
+- **Description**: Implement terminal user interface, real-time runtime state projections, task/agent monitor, interactive approvals, live context display, and notification pane.
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.4`, `P7.1–P7.4`, `P8.1`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P8.1-CLI-FOUNDATION-INTERACTIVE-SESSION — CLI Foundation & Interactive Session Loop](file:///C:/herness/src/cli/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Lead CLI & Platform Architect
+- **Completed Date**: 2026-09-01
+- **Verification**: 641/641 tests passing across 307 test suites in Vitest. Pure interface architecture delegating authoritative behavior to runtime engines. Domain contracts in `src/domain/cli.ts` (`ParsedCommandSchema`, `CommandExecutionResultSchema`, `CliContextSchema`, `CliOutputModeSchema`). `CommandParser` (safe tokenizer with quotes, flags, and negative numbers without shell concatenation). `CommandRegistry` with full built-in slash command portfolio (`/help`, `/exit`, `/project`, `/session`, `/task`, `/plan`, `/resume`, `/artifacts`, `/doctor`, `/tools`, `/policy`). `SessionController` enforcing project tenant isolation. `OutputRenderer` (`text`, `table`, `json`, `jsonl` with automatic credential masking). `CliErrorHandler` (preserving runtime error classification categories). `SignalHandler` (cooperative SIGINT/SIGTERM cancellation dispatching). `InteractiveSessionLoop` (REPL over Node.js readline). `CliApplication` container wiring all engines. `bin/anantham.ts` executable entrypoint. Full automated test matrix across 11 test suites.
 
 ### [TASK-P7.4-REMOTE-AGENTS-MULTI-NODE-DISTRIBUTED-STATE — Remote Agents, Multi-Node Execution & Distributed State](file:///C:/herness/src/remote/index.ts)
 - **Status**: `COMPLETED`

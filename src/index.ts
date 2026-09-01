@@ -28,5 +28,7 @@ export * from "./teams/index.js";
 export * from "./workflow/index.js";
 export * from "./jobs/index.js";
 export * from "./remote/index.js";
+export * from "./cli/index.js";
+
 
 
