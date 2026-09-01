@@ -98,28 +98,41 @@ export class SqliteEngine {
     }
   }
 
+  private transactionDepth = 0;
+
   /**
    * Executes a callback within a transactional boundary.
    * If the callback throws, the transaction is automatically rolled back.
    * If the callback succeeds, the transaction is committed.
+   * Supports nested transaction invocations cleanly.
    */
   public transaction<T>(fn: () => T): T {
     if (!this.db) {
       throw new Error("Cannot run transaction on closed database.");
     }
 
-    this.db.exec("BEGIN IMMEDIATE TRANSACTION;");
+    const isOuter = this.transactionDepth === 0;
+    this.transactionDepth++;
+    if (isOuter) {
+      this.db.exec("BEGIN IMMEDIATE TRANSACTION;");
+    }
     try {
       const result = fn();
-      this.db.exec("COMMIT;");
+      if (isOuter) {
+        this.db.exec("COMMIT;");
+      }
       return result;
     } catch (error) {
-      try {
-        this.db.exec("ROLLBACK;");
-      } catch {
-        // Rollback error secondary to original throw
+      if (isOuter) {
+        try {
+          this.db.exec("ROLLBACK;");
+        } catch {
+          // Rollback error secondary to original throw
+        }
       }
       throw error;
+    } finally {
+      this.transactionDepth--;
     }
   }
 

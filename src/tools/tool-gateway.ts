@@ -13,6 +13,7 @@ import { EventTypes } from "../domain/event.js";
 import { type SideEffectJournal } from "../side-effects/side-effect-journal.js";
 import { type SideEffectClassifier } from "../side-effects/side-effect-classifier.js";
 import { type FileDivergenceDetector } from "../side-effects/file-divergence-detector.js";
+import { type TaskClaimManager } from "../tasks/task-claim-manager.js";
 
 export interface ToolGatewayOptions {
   registry: ToolRegistry;
@@ -23,6 +24,7 @@ export interface ToolGatewayOptions {
   sideEffectJournal?: SideEffectJournal;
   sideEffectClassifier?: SideEffectClassifier;
   fileDivergenceDetector?: FileDivergenceDetector;
+  claimManager?: TaskClaimManager;
   defaultTimeoutMs?: number;
 }
 
@@ -35,6 +37,7 @@ export class ToolGateway {
   private readonly sideEffectJournal?: SideEffectJournal;
   private readonly sideEffectClassifier?: SideEffectClassifier;
   private readonly fileDivergenceDetector?: FileDivergenceDetector;
+  private readonly claimManager?: TaskClaimManager;
   private readonly defaultTimeoutMs: number;
 
   constructor(options: ToolGatewayOptions) {
@@ -46,6 +49,7 @@ export class ToolGateway {
     this.sideEffectJournal = options.sideEffectJournal;
     this.sideEffectClassifier = options.sideEffectClassifier;
     this.fileDivergenceDetector = options.fileDivergenceDetector;
+    this.claimManager = options.claimManager;
     this.defaultTimeoutMs = options.defaultTimeoutMs || 30000;
   }
 
@@ -221,6 +225,31 @@ export class ToolGateway {
         hasLock = false;
       }
     };
+
+    // 4.5 Task Lease Fencing Verification
+    if (this.claimManager && req.task?.id && req.task.leaseId && req.task.generation !== undefined) {
+      const isOwner = this.claimManager.verifyOwnership(
+        req.task.id,
+        req.task.leaseId,
+        req.task.generation,
+        req.actor.id
+      );
+      if (!isOwner) {
+        releaseLockIfHeld();
+        return ToolObservationSchema.parse({
+          callId: req.callId,
+          toolName: req.toolName,
+          status: "denied",
+          error: {
+            code: "LEASE_FENCING_ERROR",
+            message: `Task lease expired, revoked, or generation mismatch for task "${req.task.id}". Side-effect execution blocked.`,
+            retryable: false,
+          },
+          durationMs: Date.now() - startTime,
+          executedAt,
+        });
+      }
+    }
 
     // 5. Policy & Approval Evaluation
     if (this.policyEngine) {

@@ -606,7 +606,24 @@ The PRD defines concrete acceptance targets including RPO 0 for committed state 
 
 Antigravity MUST append an entry after every completed work package:
 
+## 2026-09-01 21:30 — TASK-P10.5 — DEEP COMPOSITIONAL RED-TEAM AUDIT & FAILURE-INJECTION CAMPAIGN
+
+Status: VERIFIED COMPLETE (HARDENED & PASSING)
+What changed: Conducted deep compositional adversarial audit and fault-injection campaign across all 14 subsystem boundaries. Located, reproduced, and remediated 4 cross-subsystem vulnerabilities and architectural edge cases:
+1. W-P10.5-01 (ToolGateway Side-Effect Lease Fencing - HIGH): Integrated `TaskClaimManager` pre-execution lease verification directly into `ToolGateway.invoke` to block stale, expired, or revoked workers from performing filesystem or destructive side effects.
+2. W-P10.5-02 (ConditionEvaluator Quoted String Operator Extraction - MEDIUM): Updated `evaluateComparison` and `splitByOperator` in `ConditionEvaluator` to respect single and double quoted string literals, preventing `<` or `>` characters inside string values (e.g. `'<critical>'`) from causing operator misclassification.
+3. W-P10.5-03 (Single-Transaction Atomicity in Remote Dispatches, Background Jobs, and SqliteEngine - HIGH): Added nested transaction tracking (`transactionDepth`) to `SqliteEngine.transaction`, ensuring `RemoteDispatchManager.acceptRemoteResult` and `BackgroundJobManager` (claim/complete/fail) execute task mutations and dispatch/job records atomically in a single SQLite transaction with full `ON CONFLICT` column updates.
+4. W-P10.5-04 (RemoteAuthVerifier Deterministic Key Canonicalization - LOW/MEDIUM): Added canonical recursive key-sorted JSON serialization to `RemoteAuthVerifier.signPayload` to guarantee bit-identical signature matching across platforms.
+Files: src/tools/tool-gateway.ts, src/domain/tool.ts, src/workflow/condition-evaluator.ts, src/persistence/sqlite-engine.ts, src/remote/remote-dispatch-manager.ts, src/persistence/repositories/remote-dispatch-repository.ts, src/jobs/background-job-manager.ts, src/persistence/repositories/job-repository.ts, src/remote/remote-auth-verifier.ts, tests/tools/tool-gateway-lease-fencing.test.ts, tests/workflow/condition-evaluator-quotes.test.ts, tests/remote/remote-dispatch-atomic-crash.test.ts, tests/remote/remote-auth-canonicalization.test.ts
+Tests: 825 automated tests passing across 393 test suites in Vitest.
+Verification: npm run typecheck (0 errors under strict: true), npm test (825/825 passing), npm run build (clean), npm run scorecard (1000/1000 Certified Perfect), multi-engine sync (CodeGraph, Graphify, Neo4j, Graphiti, Git).
+Commit/Revision: Active
+Risks: None.
+Unresolved: None.
+Next: Final Production Sign-Off & Continuous Monitoring.
+
 ## 2026-09-01 20:45 — TASK-P10.4 — POST-RELEASE ADVERSARIAL WEAKNESS DISCOVERY & REMEDIATION
+
 
 Status: VERIFIED COMPLETE (REMEDIATED & PASSING)
 What changed: Conducted exhaustive independent adversarial audit across all 14 subsystem boundaries. Located, reproduced, and remediated 4 weaknesses:

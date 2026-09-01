@@ -153,33 +153,33 @@ export class BackgroundJobManager {
       throw new Error(`Cannot claim job "${jobId}" in status "${job.status}". Expected "QUEUED" or "RECOVERY_REQUIRED".`);
     }
 
-    // Acquire exclusive lease via TaskClaimManager
-    const claimRes = this.claimManager.claimTask({
-      taskId: job.taskId,
-      agentId: worker.agentId,
-      instanceId: worker.instanceId,
-      projectId: job.projectId,
-      sessionId: job.sessionId,
-      ttlMs: worker.ttlMs,
-      maxRenewals: worker.maxRenewals,
-    });
-
-    if (!claimRes.success || !claimRes.lease) {
-      throw new Error(`Failed to claim underlying task "${job.taskId}": ${claimRes.errorMessage || "Lease acquisition failed."}`);
-    }
-
-    const now = new Date().toISOString();
-    job.status = "RUNNING";
-    job.startedAt = job.startedAt || now;
-    job.heartbeatAt = claimRes.lease.lastHeartbeatAt;
-    job.leaseId = claimRes.lease.id;
-    job.generation = claimRes.lease.generation; // Monotonic fencing token
-    job.agentId = worker.agentId;
-    job.instanceId = worker.instanceId;
-    job.attempt = job.attempt + 1;
-
+    let claimRes: any;
     const committedEvents: any[] = [];
     this.jobRepo.sqliteEngine.transaction(() => {
+      claimRes = this.claimManager.claimTask({
+        taskId: job.taskId,
+        agentId: worker.agentId,
+        instanceId: worker.instanceId,
+        projectId: job.projectId,
+        sessionId: job.sessionId,
+        ttlMs: worker.ttlMs,
+        maxRenewals: worker.maxRenewals,
+      });
+
+      if (!claimRes.success || !claimRes.lease) {
+        throw new Error(`Failed to claim underlying task "${job.taskId}": ${claimRes.errorMessage || "Lease acquisition failed."}`);
+      }
+
+      const now = new Date().toISOString();
+      job.status = "RUNNING";
+      job.startedAt = job.startedAt || now;
+      job.heartbeatAt = claimRes.lease.lastHeartbeatAt;
+      job.leaseId = claimRes.lease.id;
+      job.generation = claimRes.lease.generation; // Monotonic fencing token
+      job.agentId = worker.agentId;
+      job.instanceId = worker.instanceId;
+      job.attempt = job.attempt + 1;
+
       this.jobRepo.saveJob(job);
       const ev1 = this.createAndAppendEventInTx(EventTypes.JOB_CLAIMED, job, {
         leaseId: claimRes.lease!.id,
@@ -339,30 +339,30 @@ export class BackgroundJobManager {
       throw new Error(`FENCING_VIOLATION: Completion rejected. Worker lease or generation mismatch.`);
     }
 
-    // Complete underlying task and release lease
-    const success = this.claimManager.completeTask(job.taskId, leaseId, generation);
-    if (!success) {
-      throw new Error(`Failed to complete underlying task: lease verification failed.`);
-    }
-
-    const now = new Date().toISOString();
-    job.status = "COMPLETED";
-    job.completedAt = now;
-    job.resultArtifacts = result?.artifacts || [];
-    job.resultData = result?.data;
-
-    if (result) {
-      const tracker = new WorkflowBudgetTracker(job.budget);
-      job.consumption = tracker.recordConsumption(job.consumption, {
-        tokens: result.tokensUsed,
-        costUsd: result.costUsd,
-        durationMs: result.durationMs,
-        toolCalls: result.toolCalls,
-      });
-    }
-
     const committedEvents: any[] = [];
     this.jobRepo.sqliteEngine.transaction(() => {
+      // Complete underlying task and release lease
+      const success = this.claimManager.completeTask(job.taskId, leaseId, generation, undefined, job.agentId);
+      if (!success) {
+        throw new Error(`Failed to complete underlying task: lease verification failed.`);
+      }
+
+      const now = new Date().toISOString();
+      job.status = "COMPLETED";
+      job.completedAt = now;
+      job.resultArtifacts = result?.artifacts || [];
+      job.resultData = result?.data;
+
+      if (result) {
+        const tracker = new WorkflowBudgetTracker(job.budget);
+        job.consumption = tracker.recordConsumption(job.consumption, {
+          tokens: result.tokensUsed,
+          costUsd: result.costUsd,
+          durationMs: result.durationMs,
+          toolCalls: result.toolCalls,
+        });
+      }
+
       this.jobRepo.saveJob(job);
       const ev = this.createAndAppendEventInTx(EventTypes.JOB_COMPLETED, job, {
         resultArtifacts: job.resultArtifacts,
@@ -401,16 +401,16 @@ export class BackgroundJobManager {
     const now = new Date().toISOString();
     const errStr = error instanceof Error ? error.message : String(error);
 
-    if (retryDecision.shouldRetry) {
-      // Release lease for retry
-      this.claimManager.releaseTask(job.taskId, leaseId, generation, "RETRY_TRIGGERED");
+    const committedEvents: any[] = [];
+    this.jobRepo.sqliteEngine.transaction(() => {
+      if (retryDecision.shouldRetry) {
+        // Release lease for retry
+        this.claimManager.releaseTask(job.taskId, leaseId, generation, "RETRY_TRIGGERED", job.agentId);
 
-      job.status = "QUEUED";
-      job.failureClassification = classification;
-      job.errorMessage = errStr;
+        job.status = "QUEUED";
+        job.failureClassification = classification;
+        job.errorMessage = errStr;
 
-      const committedEvents: any[] = [];
-      this.jobRepo.sqliteEngine.transaction(() => {
         this.jobRepo.saveJob(job);
         const ev = this.createAndAppendEventInTx(EventTypes.JOB_RETRYING, job, {
           attempt: job.attempt,
@@ -419,37 +419,23 @@ export class BackgroundJobManager {
           classification,
         });
         if (ev) committedEvents.push(ev);
-      });
+      } else {
+        // Mark task failed
+        this.claimManager.failTask(job.taskId, leaseId, generation, errStr, job.agentId);
 
-      if (this.eventStore && committedEvents.length > 0) {
-        this.eventStore.notifyCommitted(committedEvents);
+        job.status = "FAILED";
+        job.completedAt = now;
+        job.failureClassification = classification;
+        job.errorMessage = errStr;
+
+        this.jobRepo.saveJob(job);
+        const ev = this.createAndAppendEventInTx(EventTypes.JOB_FAILED, job, {
+          attempt: job.attempt,
+          classification,
+          error: errStr,
+        });
+        if (ev) committedEvents.push(ev);
       }
-
-      return {
-        status: "QUEUED",
-        retrying: true,
-        backoffMs: retryDecision.backoffMs,
-        classification,
-      };
-    }
-
-    // Non-retryable or attempts exhausted: Mark FAILED
-    this.claimManager.failTask(job.taskId, leaseId, generation, errStr);
-
-    job.status = "FAILED";
-    job.completedAt = now;
-    job.failureClassification = classification;
-    job.errorMessage = errStr;
-
-    const committedEvents: any[] = [];
-    this.jobRepo.sqliteEngine.transaction(() => {
-      this.jobRepo.saveJob(job);
-      const ev = this.createAndAppendEventInTx(EventTypes.JOB_FAILED, job, {
-        attempt: job.attempt,
-        classification,
-        error: job.errorMessage,
-      });
-      if (ev) committedEvents.push(ev);
     });
 
     if (this.eventStore && committedEvents.length > 0) {
@@ -457,8 +443,9 @@ export class BackgroundJobManager {
     }
 
     return {
-      status: "FAILED",
-      retrying: false,
+      status: retryDecision.shouldRetry ? "QUEUED" : "FAILED",
+      retrying: retryDecision.shouldRetry,
+      backoffMs: retryDecision.shouldRetry ? retryDecision.backoffMs : undefined,
       classification,
     };
   }

@@ -4,21 +4,22 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `aaa61ee`
-- **Generated**: `2026-09-01T20:55:09Z`
+- **Project Commit**: `2dcc628`
+- **Generated**: `2026-09-01T21:43:07Z`
 - **Current Release**: `v2.0.0-alpha.1`
 - **Current Phase**: `P10 — PRODUCTION RELEASE, SELF-HOSTING & CERTIFICATION (COMPLETED)`
-- **Current Task**: `TASK-P10.4-POST-RELEASE-ADVERSARIAL — Completed & Remediated`
-- **Last Completed Task**: `TASK-P10.4 — POST-RELEASE ADVERSARIAL WEAKNESS DISCOVERY & REMEDIATION`
+- **Current Task**: `TASK-P10.5-COMPOSITIONAL-RED-TEAM — Completed & Hardened`
+- **Last Completed Task**: `TASK-P10.5 — DEEP COMPOSITIONAL RED-TEAM AUDIT & FAILURE-INJECTION CAMPAIGN`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`
   - `0 type check errors under strict: true.`
 - **Pending Approvals**:
-  - `None (ALL PHASES P1-P10 IMPLEMENTED, TESTED, AUDITED, REMEDIATED, GOLD CERTIFIED & RELEASED).`
+  - `None (ALL PHASES P1-P10 IMPLEMENTED, TESTED, AUDITED, REMEDIATED, HARDENED, GOLD CERTIFIED & RELEASED).`
 - **Recently Completed Milestones**:
+  - [P10.5-COMPOSITIONAL-RED-TEAM](file:///C:/herness/tests/tools/tool-gateway-lease-fencing.test.ts) (Deep compositional red-team audit & failure-injection campaign across all 14 subsystems. Discovered, reproduced, and remediated W-P10.5-01 ToolGateway side-effect lease fencing, W-P10.5-02 ConditionEvaluator quote-aware operator extraction, W-P10.5-03 Single-transaction atomicity in RemoteDispatchManager, BackgroundJobManager, and SqliteEngine nested transactions, and W-P10.5-04 RemoteAuthVerifier canonical JSON signature serialization, with 825/825 tests passing)
   - [P10.4-POST-RELEASE-ADVERSARIAL](file:///C:/herness/tests/security/path-traversal-sibling.test.ts) (Independent adversarial weakness discovery across 14 subsystems, identifying and surgically remediating W-01 Sibling Directory Path Traversal in ArtifactReferenceValidator & GitWorktreeManager, W-02 TOCTOU race condition in TaskClaimManager mutations inside SQLite transactions, W-03 Idempotency key cross-route collision & payload mutation blindness, and W-04 Webhook post-restart replay deduplication via persistent EventStore checks, with 820/820 tests passing)
-  - [P10.3-TAG-AND-RELEASE](file:///C:/herness/dist/release/release-manifest.json) (Annotated Git Tag v2.0.0-alpha.1, bit-identical reproducible release package dist/release/anantham-v2-2.0.0-alpha.1.tgz with SHA-256 e8499e66a0a44b60d4f2918c3f2f23f7797f916ed2f5d8283a76d4077e3d54f4, CycloneDX 1.5 & SPDX 2.3 SBOMs, 100% compliant OSS licenses, zero vulnerabilities, zero secret leaks, full release support bundle)
+  - [P10.3-TAG-AND-RELEASE](file:///C:/herness/dist/release/release-manifest.json) (Annotated Git Tag v2.0.0-alpha.1, bit-identical reproducible release package dist/release/anantham-v2-2.0.0-alpha.1.tgz with SHA-256 ff1001919ae479e1340b9c58cd5a3ae5a1869b01fe5af852be6d33c6827494bf, CycloneDX 1.5 & SPDX 2.3 SBOMs, 100% compliant OSS licenses, zero vulnerabilities, zero secret leaks, full release support bundle)
   - [P10.2.1-CERTIFICATION-INTEGRITY-AUDIT](file:///C:/herness/scripts/release-engineering.mjs) (Exhaustive independent audit of P10.2 gold certification report, overclaim grounding, bit-identical reproducibility fix)
   - [P10.2-GOLD-CERTIFICATION](file:///C:/herness/scripts/release-engineering.mjs) (Exhaustive independent gold certification across all 30 production dimensions, strict evidence classification DIRECTLY_TESTED across 815 tests, zero security vulnerabilities, full WAL RPO-0 state authority, monotonic fencing, and long-duration stability)
   - [P10.1-SELF-HOSTING-VALIDATION](file:///C:/herness/tests/release/self-hosting-validation.test.ts) (Clean-environment execution of packaged release tarball dist/release/anantham-v2-2.0.0-alpha.1.tgz with zero source-tree imports, verifying CLI, API, SQLite WAL migrations 001-010, EventStore restart consistency, lease fencing, memory search, artifact integrity, and crash recovery)

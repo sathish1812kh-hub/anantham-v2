@@ -40,7 +40,11 @@ export const ToolInvocationRequestSchema = z.object({
     id: z.string().min(1),
   }),
   session: z.object({ id: z.string() }).optional(),
-  task: z.object({ id: z.string() }).optional(),
+  task: z.object({
+    id: z.string(),
+    leaseId: z.string().optional(),
+    generation: z.number().optional(),
+  }).optional(),
   approvalId: z.string().optional(),
   idempotencyKey: z.string().optional(),
   timeoutMs: z.number().int().positive().optional(),

@@ -99,27 +99,47 @@ export class ConditionEvaluator {
   }
 
   private evaluateComparison(clause: string, context: EvaluationContext): boolean {
-    const operators = ["==", "!=", "<=", ">=", "<", ">"];
     let matchedOp: string | null = null;
+    let opIndex = -1;
 
-    for (const op of operators) {
-      if (clause.includes(op)) {
-        matchedOp = op;
-        break;
+    let inSingleQuote = false;
+    let inDoubleQuote = false;
+
+    for (let i = 0; i < clause.length; i++) {
+      const char = clause[i];
+      if (char === "'" && !inDoubleQuote) {
+        inSingleQuote = !inSingleQuote;
+      } else if (char === '"' && !inSingleQuote) {
+        inDoubleQuote = !inDoubleQuote;
+      } else if (!inSingleQuote && !inDoubleQuote) {
+        // Check 2-character operators first
+        const twoChar = clause.substring(i, i + 2);
+        if (twoChar === "==" || twoChar === "!=" || twoChar === "<=" || twoChar === ">=") {
+          matchedOp = twoChar;
+          opIndex = i;
+          break;
+        }
+        // Check 1-character operators
+        const oneChar = clause.substring(i, i + 1);
+        if (oneChar === "<" || oneChar === ">") {
+          matchedOp = oneChar;
+          opIndex = i;
+          break;
+        }
       }
     }
 
-    if (!matchedOp) {
+    if (!matchedOp || opIndex === -1) {
       // Single truthy identifier
       const val = this.resolveValue(clause.trim(), context);
       return Boolean(val);
     }
 
-    const parts = clause.split(matchedOp);
-    if (parts.length !== 2) return false;
+    const leftRaw = clause.substring(0, opIndex).trim();
+    const rightRaw = clause.substring(opIndex + matchedOp.length).trim();
 
-    const leftVal = this.resolveValue(parts[0]!.trim(), context);
-    const rightVal = this.resolveValue(parts[1]!.trim(), context);
+    const leftVal = this.resolveValue(leftRaw, context);
+    const rightVal = this.resolveValue(rightRaw, context);
 
     switch (matchedOp) {
       case "==":
@@ -187,14 +207,23 @@ export class ConditionEvaluator {
     const parts: string[] = [];
     let depth = 0;
     let lastIndex = 0;
+    let inSingleQuote = false;
+    let inDoubleQuote = false;
 
     for (let i = 0; i < str.length; i++) {
-      if (str[i] === "(") depth++;
-      else if (str[i] === ")") depth--;
-      else if (depth === 0 && str.startsWith(op, i)) {
-        parts.push(str.substring(lastIndex, i));
-        lastIndex = i + op.length;
-        i += op.length - 1;
+      const char = str[i];
+      if (char === "'" && !inDoubleQuote) {
+        inSingleQuote = !inSingleQuote;
+      } else if (char === '"' && !inSingleQuote) {
+        inDoubleQuote = !inDoubleQuote;
+      } else if (!inSingleQuote && !inDoubleQuote) {
+        if (char === "(") depth++;
+        else if (char === ")") depth--;
+        else if (depth === 0 && str.startsWith(op, i)) {
+          parts.push(str.substring(lastIndex, i));
+          lastIndex = i + op.length;
+          i += op.length - 1;
+        }
       }
     }
 

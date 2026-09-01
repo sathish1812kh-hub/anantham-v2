@@ -6,16 +6,23 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P10 — PRODUCTION RELEASE, SELF-HOSTING & CERTIFICATION)
 
-### [TASK-P10.4 — POST-RELEASE ADVERSARIAL WEAKNESS DISCOVERY & REMEDIATION](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [TASK-P10.5 — DEEP COMPOSITIONAL RED-TEAM AUDIT & FAILURE-INJECTION CAMPAIGN](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `COMPLETED`
-- **Owner**: Independent Principal Security Architect & Red-Team Evaluator
+- **Owner**: Principal Red-Team Evaluator & Distributed Systems Architect
 - **Completed Date**: 2026-09-01
-- **Description**: Independent post-release adversarial audit completed. Discovered, reproduced, and surgically remediated 4 weaknesses (W-01 Sibling path traversal, W-02 Task claim mutation TOCTOU, W-03 Idempotency cross-route collision & payload blindness, W-04 Webhook replay persistence). 820/820 tests passing.
-- **Artifact**: `dist/release/anantham-v2-2.0.0-alpha.1.tgz` (SHA-256: `e8499e66a0a44b60d4f2918c3f2f23f7797f916ed2f5d8283a76d4077e3d54f4`).
+- **Description**: Deep compositional adversarial audit & failure-injection campaign completed. Discovered, reproduced, and surgically remediated 4 cross-subsystem weaknesses (W-P10.5-01 ToolGateway lease fencing, W-P10.5-02 ConditionEvaluator quote-aware parsing, W-P10.5-03 Single-transaction atomicity & nested transaction support in SqliteEngine/RemoteDispatch/JobManager, W-P10.5-04 RemoteAuthVerifier canonical serialization). 825/825 tests passing.
+- **Artifact**: `dist/release/anantham-v2-2.0.0-alpha.1.tgz` (SHA-256: `ff1001919ae479e1340b9c58cd5a3ae5a1869b01fe5af852be6d33c6827494bf`).
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P10.5 — DEEP COMPOSITIONAL RED-TEAM AUDIT & FAILURE-INJECTION CAMPAIGN](file:///C:/herness/tests/tools/tool-gateway-lease-fencing.test.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Red-Team Evaluator & Distributed Systems Architect
+- **Completed Date**: 2026-09-01
+- **Verification**: 4 dedicated adversarial regression suites (`tests/tools/tool-gateway-lease-fencing.test.ts`, `tests/workflow/condition-evaluator-quotes.test.ts`, `tests/remote/remote-dispatch-atomic-crash.test.ts`, `tests/remote/remote-auth-canonicalization.test.ts`), 825/825 tests passing across 393 suites, 0 type errors.
+
 
 ### [TASK-P10.4 — POST-RELEASE ADVERSARIAL WEAKNESS DISCOVERY & REMEDIATION](file:///C:/herness/tests/security/path-traversal-sibling.test.ts)
 - **Status**: `COMPLETED`

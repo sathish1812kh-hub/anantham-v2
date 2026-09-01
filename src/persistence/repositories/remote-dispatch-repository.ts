@@ -36,6 +36,10 @@ interface RemoteDispatchRow {
 export class RemoteDispatchRepository {
   constructor(private readonly engine: SqliteEngine) {}
 
+  public get sqliteEngine(): SqliteEngine {
+    return this.engine;
+  }
+
   public saveDispatch(dispatch: RemoteWorkRequest): void {
     const validated = RemoteWorkRequestSchema.parse(dispatch);
     const stmt = this.engine.raw.prepare(`

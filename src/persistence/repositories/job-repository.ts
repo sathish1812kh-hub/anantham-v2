@@ -61,6 +61,8 @@ export class JobRepository {
         result_artifacts_json, result_data_json, checkpoint_id, metadata_json
       ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       ON CONFLICT(id) DO UPDATE SET
+        agent_id = excluded.agent_id,
+        instance_id = excluded.instance_id,
         status = excluded.status,
         started_at = excluded.started_at,
         completed_at = excluded.completed_at,

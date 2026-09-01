@@ -16,10 +16,27 @@ export class RemoteAuthVerifier {
   }
 
   /**
+   * Deterministic canonical JSON serialization with sorted object keys.
+   */
+  public static canonicalize(val: unknown): string {
+    if (typeof val !== "object" || val === null) {
+      return JSON.stringify(val);
+    }
+    if (Array.isArray(val)) {
+      return "[" + val.map((item) => RemoteAuthVerifier.canonicalize(item)).join(",") + "]";
+    }
+    const keys = Object.keys(val).sort();
+    const entries = keys.map(
+      (k) => JSON.stringify(k) + ":" + RemoteAuthVerifier.canonicalize((val as Record<string, unknown>)[k])
+    );
+    return "{" + entries.join(",") + "}";
+  }
+
+  /**
    * Compute HMAC-SHA256 signature for a payload.
    */
   public signPayload(payload: unknown): string {
-    const serialized = typeof payload === "string" ? payload : JSON.stringify(payload);
+    const serialized = typeof payload === "string" ? payload : RemoteAuthVerifier.canonicalize(payload);
     return createHmac("sha256", this.secretKey).update(serialized).digest("hex");
   }
 

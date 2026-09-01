@@ -265,21 +265,27 @@ export class RemoteDispatchManager {
       return { success: false, reason: `Task "${dispatch.taskId}" has already been cancelled.` };
     }
 
-    // Step 6 & 7: Commit completion or failure to SQLite WAL
+    // Step 6 & 7: Commit completion or failure to SQLite WAL in a single atomic transaction
     if (res.status === "SUCCESS") {
-      const compSuccess = this.claimManager.completeTask(
-        dispatch.taskId,
-        dispatch.leaseId,
-        dispatch.generation,
-        { artifacts: res.artifacts, data: res.data }
-      );
+      let compSuccess = false;
+      this.dispatchRepo.sqliteEngine.transaction(() => {
+        compSuccess = this.claimManager.completeTask(
+          dispatch.taskId,
+          dispatch.leaseId,
+          dispatch.generation,
+          { artifacts: res.artifacts, data: res.data },
+          dispatch.agentId
+        );
+
+        if (compSuccess) {
+          dispatch.status = "COMPLETED";
+          this.dispatchRepo.saveDispatch(dispatch);
+        }
+      });
 
       if (!compSuccess) {
         return { success: false, reason: "Failed to complete task in claim manager." };
       }
-
-      dispatch.status = "COMPLETED";
-      this.dispatchRepo.saveDispatch(dispatch);
 
       this.emitEvent(EventTypes.DISPATCH_COMPLETED, dispatch, {
         artifacts: res.artifacts,
@@ -289,15 +295,18 @@ export class RemoteDispatchManager {
 
       return { success: true };
     } else {
-      this.claimManager.failTask(
-        dispatch.taskId,
-        dispatch.leaseId,
-        dispatch.generation,
-        res.error || "Remote execution failed."
-      );
+      this.dispatchRepo.sqliteEngine.transaction(() => {
+        this.claimManager.failTask(
+          dispatch.taskId,
+          dispatch.leaseId,
+          dispatch.generation,
+          res.error || "Remote execution failed.",
+          dispatch.agentId
+        );
 
-      dispatch.status = "FAILED";
-      this.dispatchRepo.saveDispatch(dispatch);
+        dispatch.status = "FAILED";
+        this.dispatchRepo.saveDispatch(dispatch);
+      });
 
       this.emitEvent(EventTypes.DISPATCH_FAILED, dispatch, { error: res.error });
       return { success: true };
