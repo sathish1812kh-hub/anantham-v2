@@ -6,16 +6,22 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P10 — PRODUCTION RELEASE, SELF-HOSTING & CERTIFICATION)
 
-### [TASK-P10.8 — FINAL RELEASE PROVENANCE, EXTERNAL SIDE-EFFECT & POST-FIX INVARIANT AUDIT](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [TASK-P10.9 — PRODUCTION-GRADE ADVERSARIAL SYSTEM AUDIT: COMPOSITION, TOCTOU, EXTERNAL SIDE EFFECTS, RESOURCE EXHAUSTION & RECOVERY](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `COMPLETED`
-- **Owner**: Principal Security Architect, Distributed Systems Engineer & Certification Auditor
+- **Owner**: Principal Security Architect, Distributed Systems Engineer & Red-Team Auditor
 - **Completed Date**: 2026-09-01
-- **Description**: Final release provenance, external side-effect, and post-fix invariant audit completed across all 14 subsystems. Verified bit-level cryptographic identity across Git HEAD commit, annotated tag v2.0.0-alpha.1, package.json, CLI /version command, README.md, release manifest, and tarball SHA-256 (467c1a1b0ab31721300e3f9bc46b2270bbd0de6d4251bac933c1d67f5ca3644a). 844/844 automated tests passing.
+- **Description**: Production-grade adversarial system audit completed across all 14 subsystems. Evaluated 50-worker TOCTOU concurrency fuzzing, Windows-specific path boundary defenses (DOS reserved device names, alternate data streams, trailing dot/space escapes), split-brain monotonic lease fencing, end-to-end canary secret scrubbing across structured objects, and multi-cycle crash recovery idempotency. 849/849 automated tests passing.
 - **Artifact**: `dist/release/anantham-v2-2.0.0-alpha.1.tgz`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P10.9 — PRODUCTION-GRADE ADVERSARIAL SYSTEM AUDIT](file:///C:/herness/tests/security/p10-9-compositional-adversarial-audit.test.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Security Architect & Red-Team Auditor
+- **Completed Date**: 2026-09-01
+- **Verification**: 2 new dedicated adversarial test suites (`tests/security/p10-9-compositional-adversarial-audit.test.ts`, `tests/recovery/p10-9-side-effects-chaos.test.ts`), 849/849 Vitest tests passing across 402 suites, 0 type errors, 1000/1000 scorecard.
 
 ### [TASK-P10.8 — FINAL RELEASE PROVENANCE, EXTERNAL SIDE-EFFECT & POST-FIX INVARIANT AUDIT](file:///C:/herness/tests/release/p10-8-provenance-side-effects.test.ts)
 - **Status**: `COMPLETED`

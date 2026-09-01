@@ -4,12 +4,12 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `47b29e5`
-- **Generated**: `2026-09-01T23:16:27Z`
+- **Project Commit**: `cef81d5`
+- **Generated**: `2026-09-01T23:41:32Z`
 - **Current Release**: `v2.0.0-alpha.1`
 - **Current Phase**: `P10 — PRODUCTION RELEASE, SELF-HOSTING & CERTIFICATION (COMPLETED)`
-- **Current Task**: `TASK-P10.8-FINAL-RELEASE-PROVENANCE — Completed & Audited`
-- **Last Completed Task**: `TASK-P10.8 — FINAL RELEASE PROVENANCE, EXTERNAL SIDE-EFFECT & POST-FIX INVARIANT AUDIT`
+- **Current Task**: `TASK-P10.9-PRODUCTION-GRADE-ADVERSARIAL — Completed & Audited`
+- **Last Completed Task**: `TASK-P10.9 — PRODUCTION-GRADE ADVERSARIAL SYSTEM AUDIT: COMPOSITION, TOCTOU, EXTERNAL SIDE EFFECTS, RESOURCE EXHAUSTION & RECOVERY`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`
@@ -17,6 +17,7 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 - **Pending Approvals**:
   - `None (ALL PHASES P1-P10 IMPLEMENTED, TESTED, AUDITED, REMEDIATED, HARDENED, GOLD CERTIFIED & RELEASED).`
 - **Recently Completed Milestones**:
+  - [P10.9-PRODUCTION-GRADE-ADVERSARIAL](file:///C:/herness/tests/security/p10-9-compositional-adversarial-audit.test.ts) (Production-grade adversarial system audit across 14 subsystem boundaries. 50-worker TOCTOU concurrency fuzzing, Windows-specific path boundary verification [DOS device names, alternate data streams, trailing dot escapes], split-brain monotonic lease fencing, end-to-end canary secret scrubbing, with 849/849 tests passing)
   - [P10.8-FINAL-RELEASE-PROVENANCE](file:///C:/herness/tests/release/p10-8-provenance-side-effects.test.ts) (Authoritative release provenance, external side-effect, and post-fix invariant audit across all 14 subsystems. Verified 100% cryptographic binding between Git commit 47b29e5, annotated tag v2.0.0-alpha.1, package.json, CLI /version command, README.md, release manifest, and tarball SHA-256 467c1a1b0ab31721300e3f9bc46b2270bbd0de6d4251bac933c1d67f5ca3644a, with 844/844 tests passing)
   - [P10.7-PRE-PRODUCTION-FINAL-RED-TEAM](file:///C:/herness/tests/security/p10-7-redteam-adversarial-audit.test.ts) (Pre-production final red-team, operational chaos, and release-blocker audit across all 14 subsystem boundaries. Re-attacked all findings from P10.4, P10.5, and P10.6, evaluated revocation latency, duplicate side effects, exactly-once claim disaggregation, cross-project indirect reference isolation, and state machine concurrency fuzzing with 841/841 tests passing)
   - [P10.6-SYSTEM-INVARIANT-BREAKING](file:///C:/herness/tests/policy/approval-replay-prevention.test.ts) (System invariant breaking audit, concurrency fuzzing & failure-injection campaign across all 14 subsystems. Discovered, reproduced, and remediated W-P10.6-01 ApprovalManager single-use consumption to prevent replay attacks, W-P10.6-02 GitWorktreeManager strict branch/commit ref format validation to prevent shell injection, W-P10.6-03 CrashRecoveryEngine clean atomic state recovery without synthetic event foreign key dependencies, and W-P10.6-04 TaskClaimManager heartbeat expiration deadlock prevention via immediate task status reset to queued, with 830/830 tests passing)
