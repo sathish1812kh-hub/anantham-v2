@@ -4,8 +4,8 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `e8af2cd`
-- **Generated**: `2026-09-01T19:44:52Z`
+- **Project Commit**: `e99bbed`
+- **Generated**: `2026-09-01T20:30:24Z`
 - **Current Release**: `v2.0.0-alpha.1`
 - **Current Phase**: `P10 — PRODUCTION RELEASE, SELF-HOSTING & CERTIFICATION (COMPLETED)`
 - **Current Task**: `TASK-P10.3-TAG-AND-RELEASE — Final Tagging & Release Complete`
