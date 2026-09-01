@@ -152,18 +152,24 @@ export class ContentGuards {
       }
     }
 
-    // 3. Text Heuristic Check (UTF-8 valid without null bytes)
+    // 3. Text Heuristic Check (Printable ASCII / standard whitespace without null or control bytes)
     const checkLength = Math.min(buffer.length, 1024);
-    let isAsciiText = true;
+    let nonPrintableCount = 0;
+    let hasNull = false;
     for (let i = 0; i < checkLength; i++) {
-      const byte = buffer[i];
+      const byte = buffer[i]!;
       if (byte === 0x00) {
-        isAsciiText = false;
+        hasNull = true;
         break;
+      }
+      if (byte < 0x09 || (byte > 0x0d && byte < 0x20) || byte > 0x7e) {
+        nonPrintableCount++;
       }
     }
 
-    if (isAsciiText) {
+    const isText = !hasNull && checkLength > 0 && nonPrintableCount / checkLength < 0.1;
+
+    if (isText) {
       // Check if it starts with { or [ for JSON
       const sample = buffer.toString("utf8", 0, Math.min(buffer.length, 256)).trim();
       if (sample.startsWith("{") || sample.startsWith("[")) {

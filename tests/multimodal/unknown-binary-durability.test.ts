@@ -32,7 +32,7 @@ describe("P9.4 Multimodal — Unknown Binary Preservation & Durability Across Re
     const artifactRepo1 = new ArtifactRepository(engine1);
 
     // 1. Generate arbitrary unknown binary data (1KB)
-    const rawBinary = randomBytes(1024);
+    const rawBinary = Buffer.concat([Buffer.from([0x00, 0xff, 0x01, 0xfe, 0x02, 0xfd]), randomBytes(1024)]);
     const expectedSha256 = createHash("sha256").update(rawBinary).digest("hex");
 
     // 2. Ingest via ContentIngestionEngine
