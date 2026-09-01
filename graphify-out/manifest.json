@@ -1,7 +1,7 @@
 {
   "C:\\herness\\package.json": {
-    "mtime": 1788266792.4694963,
-    "ast_hash": "a1d3a144c6afdc2cb4e356fa4a8f5354",
+    "mtime": 1788270422.3170185,
+    "ast_hash": "fb9d208618ff7698a8bf96b7f71735b3",
     "semantic_hash": ""
   },
   "C:\\herness\\tsconfig.json": {
@@ -25,8 +25,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\governance\\scorecard.json": {
-    "mtime": 1788269694.4115138,
-    "ast_hash": "45f236e5c55509ac851c5d3efd7fd51c",
+    "mtime": 1788270595.0352013,
+    "ast_hash": "422e6ce25173442fb9ddb5e52c54f7b2",
     "semantic_hash": ""
   },
   "C:\\herness\\scripts\\certification-scorecard.ps1": {
@@ -3560,8 +3560,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\current-state.md": {
-    "mtime": 1788269592.5406895,
-    "ast_hash": "6efe084b3683f3e4b366d2f4ddb61bae",
+    "mtime": 1788270154.548627,
+    "ast_hash": "063f56ce57a12b5baab09c5051b9e858",
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\decision-log.md": {

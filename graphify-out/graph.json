@@ -97,7 +97,7 @@
       "label": "scripts",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L16",
+      "source_location": "L17",
       "id": "herness_package_scripts",
       "community": 9,
       "norm_label": "scripts"
@@ -106,7 +106,7 @@
       "label": "build",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L18",
       "id": "herness_package_scripts_build",
       "community": 9,
       "norm_label": "build"
@@ -115,7 +115,7 @@
       "label": "typecheck",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L19",
       "id": "herness_package_scripts_typecheck",
       "community": 9,
       "norm_label": "typecheck"
@@ -124,7 +124,7 @@
       "label": "test",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L20",
       "id": "herness_package_scripts_test",
       "community": 9,
       "norm_label": "test"
@@ -133,7 +133,7 @@
       "label": "test:watch",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L20",
+      "source_location": "L21",
       "id": "herness_package_scripts_test_watch",
       "community": 9,
       "norm_label": "test:watch"
@@ -142,7 +142,7 @@
       "label": "release:build",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L21",
+      "source_location": "L22",
       "id": "herness_package_scripts_release_build",
       "community": 9,
       "norm_label": "release:build"
@@ -151,7 +151,7 @@
       "label": "release:audit",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L23",
       "id": "herness_package_scripts_release_audit",
       "community": 9,
       "norm_label": "release:audit"
@@ -160,7 +160,7 @@
       "label": "release:verify",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L23",
+      "source_location": "L24",
       "id": "herness_package_scripts_release_verify",
       "community": 9,
       "norm_label": "release:verify"
@@ -169,7 +169,7 @@
       "label": "verify",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L25",
       "id": "herness_package_scripts_verify",
       "community": 9,
       "norm_label": "verify"
@@ -178,7 +178,7 @@
       "label": "scorecard",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L26",
       "id": "herness_package_scripts_scorecard",
       "community": 9,
       "norm_label": "scorecard"
@@ -187,7 +187,7 @@
       "label": "sync-state",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L26",
+      "source_location": "L27",
       "id": "herness_package_scripts_sync_state",
       "community": 9,
       "norm_label": "sync-state"
@@ -196,7 +196,7 @@
       "label": "sync:all",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L27",
+      "source_location": "L28",
       "id": "herness_package_scripts_sync_all",
       "community": 9,
       "norm_label": "sync:all"
@@ -205,7 +205,7 @@
       "label": "sync:codegraph",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L28",
+      "source_location": "L29",
       "id": "herness_package_scripts_sync_codegraph",
       "community": 9,
       "norm_label": "sync:codegraph"
@@ -214,7 +214,7 @@
       "label": "sync:graphify",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L29",
+      "source_location": "L30",
       "id": "herness_package_scripts_sync_graphify",
       "community": 9,
       "norm_label": "sync:graphify"
@@ -223,7 +223,7 @@
       "label": "sync:neo4j",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L31",
       "id": "herness_package_scripts_sync_neo4j",
       "community": 9,
       "norm_label": "sync:neo4j"
@@ -232,7 +232,7 @@
       "label": "sync:graphiti",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L32",
       "id": "herness_package_scripts_sync_graphiti",
       "community": 9,
       "norm_label": "sync:graphiti"
@@ -241,7 +241,7 @@
       "label": "sync:git",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L32",
+      "source_location": "L33",
       "id": "herness_package_scripts_sync_git",
       "community": 9,
       "norm_label": "sync:git"
@@ -250,7 +250,7 @@
       "label": "verdict",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L34",
       "id": "herness_package_scripts_verdict",
       "community": 9,
       "norm_label": "verdict"
@@ -259,7 +259,7 @@
       "label": "keywords",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L35",
+      "source_location": "L36",
       "id": "herness_package_keywords",
       "community": 9,
       "norm_label": "keywords"
@@ -268,7 +268,7 @@
       "label": "author",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L44",
+      "source_location": "L45",
       "id": "herness_package_author",
       "community": 9,
       "norm_label": "author"
@@ -277,7 +277,7 @@
       "label": "license",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L45",
+      "source_location": "L46",
       "id": "herness_package_license",
       "community": 9,
       "norm_label": "license"
@@ -286,7 +286,7 @@
       "label": "dependencies",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L46",
+      "source_location": "L47",
       "id": "herness_package_dependencies",
       "community": 9,
       "norm_label": "dependencies"
@@ -295,7 +295,7 @@
       "label": "zod",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L47",
+      "source_location": "L48",
       "id": "herness_package_dependencies_zod",
       "community": 9,
       "norm_label": "zod"
@@ -304,7 +304,7 @@
       "label": "devDependencies",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L49",
+      "source_location": "L50",
       "id": "herness_package_devdependencies",
       "community": 9,
       "norm_label": "devdependencies"
@@ -313,7 +313,7 @@
       "label": "@types/node",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L50",
+      "source_location": "L51",
       "id": "herness_package_devdependencies_types_node",
       "community": 9,
       "norm_label": "@types/node"
@@ -322,7 +322,7 @@
       "label": "typescript",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L51",
+      "source_location": "L52",
       "id": "herness_package_devdependencies_typescript",
       "community": 9,
       "norm_label": "typescript"
@@ -331,7 +331,7 @@
       "label": "vitest",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L52",
+      "source_location": "L53",
       "id": "herness_package_devdependencies_vitest",
       "community": 9,
       "norm_label": "vitest"
@@ -5364,7 +5364,7 @@
       "source_file": "src/domain/evaluation.ts",
       "source_location": "L190",
       "id": "domain_evaluation_evaluationreportschema",
-      "community": 1083,
+      "community": 1122,
       "norm_label": "evaluationreportschema"
     },
     {
@@ -5373,7 +5373,7 @@
       "source_file": "src/domain/evaluation.ts",
       "source_location": "L197",
       "id": "domain_evaluation_evaluationreport",
-      "community": 1083,
+      "community": 1122,
       "norm_label": "evaluationreport"
     },
     {
@@ -5841,7 +5841,7 @@
       "source_file": "src/domain/hook.ts",
       "source_location": "L133",
       "id": "domain_hook_hookexecutionresultschema",
-      "community": 821,
+      "community": 867,
       "norm_label": "hookexecutionresultschema"
     },
     {
@@ -9324,7 +9324,7 @@
       "source_file": "src/evaluation/evaluation-harness.ts",
       "source_location": "L17",
       "id": "evaluation_evaluation_harness_benchmarkcaseexecutor",
-      "community": 1083,
+      "community": 1122,
       "norm_label": "benchmarkcaseexecutor"
     },
     {
@@ -9378,7 +9378,7 @@
       "source_file": "src/evaluation/evaluation-manager.ts",
       "source_location": "L1",
       "id": "src_evaluation_evaluation_manager_ts",
-      "community": 1083,
+      "community": 1122,
       "norm_label": "evaluation-manager.ts"
     },
     {
@@ -9387,7 +9387,7 @@
       "source_file": "src/evaluation/evaluation-manager.ts",
       "source_location": "L14",
       "id": "evaluation_evaluation_manager_evaluationmanageroptions",
-      "community": 1083,
+      "community": 1122,
       "norm_label": "evaluationmanageroptions"
     },
     {
@@ -11214,7 +11214,7 @@
       "source_file": "src/hooks/hook-matcher.ts",
       "source_location": "L16",
       "id": "hooks_hook_matcher_hookmatcher",
-      "community": 1138,
+      "community": 867,
       "norm_label": "hookmatcher"
     },
     {
@@ -11223,7 +11223,7 @@
       "source_file": "src/hooks/hook-matcher.ts",
       "source_location": "L20",
       "id": "hooks_hook_matcher_hookmatcher_match",
-      "community": 1138,
+      "community": 867,
       "norm_label": ".match()"
     },
     {
@@ -13995,7 +13995,7 @@
       "source_file": "src/observability/diagnostic-inspector.ts",
       "source_location": "L1",
       "id": "src_observability_diagnostic_inspector_ts",
-      "community": 425,
+      "community": 276,
       "norm_label": "diagnostic-inspector.ts"
     },
     {
@@ -14004,7 +14004,7 @@
       "source_file": "src/observability/diagnostic-inspector.ts",
       "source_location": "L12",
       "id": "observability_diagnostic_inspector_diagnosticinspectoroptions",
-      "community": 425,
+      "community": 276,
       "norm_label": "diagnosticinspectoroptions"
     },
     {
@@ -14013,7 +14013,7 @@
       "source_file": "src/observability/diagnostic-inspector.ts",
       "source_location": "L23",
       "id": "observability_diagnostic_inspector_diagnosticinspector",
-      "community": 425,
+      "community": 749,
       "norm_label": "diagnosticinspector"
     },
     {
@@ -14022,7 +14022,7 @@
       "source_file": "src/observability/diagnostic-inspector.ts",
       "source_location": "L29",
       "id": "observability_diagnostic_inspector_diagnosticinspector_constructor",
-      "community": 425,
+      "community": 749,
       "norm_label": ".constructor()"
     },
     {
@@ -14031,7 +14031,7 @@
       "source_file": "src/observability/diagnostic-inspector.ts",
       "source_location": "L39",
       "id": "observability_diagnostic_inspector_diagnosticinspector_inspect",
-      "community": 425,
+      "community": 749,
       "norm_label": ".inspect()"
     },
     {
@@ -14049,7 +14049,7 @@
       "source_file": "src/observability/observability-manager.ts",
       "source_location": "L1",
       "id": "src_observability_observability_manager_ts",
-      "community": 425,
+      "community": 749,
       "norm_label": "observability-manager.ts"
     },
     {
@@ -14058,7 +14058,7 @@
       "source_file": "src/observability/observability-manager.ts",
       "source_location": "L12",
       "id": "observability_observability_manager_observabilitymanageroptions",
-      "community": 425,
+      "community": 749,
       "norm_label": "observabilitymanageroptions"
     },
     {
@@ -14067,7 +14067,7 @@
       "source_file": "src/observability/observability-manager.ts",
       "source_location": "L24",
       "id": "observability_observability_manager_observabilitymanager",
-      "community": 425,
+      "community": 749,
       "norm_label": "observabilitymanager"
     },
     {
@@ -14076,7 +14076,7 @@
       "source_file": "src/observability/observability-manager.ts",
       "source_location": "L32",
       "id": "observability_observability_manager_observabilitymanager_constructor",
-      "community": 425,
+      "community": 749,
       "norm_label": ".constructor()"
     },
     {
@@ -14085,7 +14085,7 @@
       "source_file": "src/observability/observability-manager.ts",
       "source_location": "L45",
       "id": "observability_observability_manager_observabilitymanager_start",
-      "community": 425,
+      "community": 749,
       "norm_label": ".start()"
     },
     {
@@ -14094,7 +14094,7 @@
       "source_file": "src/observability/observability-manager.ts",
       "source_location": "L76",
       "id": "observability_observability_manager_observabilitymanager_stop",
-      "community": 425,
+      "community": 749,
       "norm_label": ".stop()"
     },
     {
@@ -15723,7 +15723,7 @@
       "source_file": "src/persistence/repositories/project-repository.ts",
       "source_location": "L1",
       "id": "src_persistence_repositories_project_repository_ts",
-      "community": 276,
+      "community": 911,
       "norm_label": "project-repository.ts"
     },
     {
@@ -15732,7 +15732,7 @@
       "source_file": "src/persistence/repositories/project-repository.ts",
       "source_location": "L4",
       "id": "repositories_project_repository_projectrow",
-      "community": 276,
+      "community": 911,
       "norm_label": "projectrow"
     },
     {
@@ -25326,7 +25326,7 @@
       "source_file": "tests/durability/task-event-atomicity.test.ts",
       "source_location": "L1",
       "id": "tests_durability_task_event_atomicity_test_ts",
-      "community": 276,
+      "community": 911,
       "norm_label": "task-event-atomicity.test.ts"
     },
     {
@@ -25335,7 +25335,7 @@
       "source_file": "tests/durability/task-event-atomicity.test.ts",
       "source_location": "L23",
       "id": "durability_task_event_atomicity_test_migrator",
-      "community": 276,
+      "community": 911,
       "norm_label": "migrator"
     },
     {
@@ -25344,7 +25344,7 @@
       "source_file": "tests/durability/task-event-atomicity.test.ts",
       "source_location": "L33",
       "id": "durability_task_event_atomicity_test_now",
-      "community": 276,
+      "community": 911,
       "norm_label": "now"
     },
     {
@@ -25353,7 +25353,7 @@
       "source_file": "tests/durability/task-event-atomicity.test.ts",
       "source_location": "L87",
       "id": "durability_task_event_atomicity_test_claimres",
-      "community": 276,
+      "community": 911,
       "norm_label": "claimres"
     },
     {
@@ -25362,7 +25362,7 @@
       "source_file": "tests/durability/task-event-atomicity.test.ts",
       "source_location": "L98",
       "id": "durability_task_event_atomicity_test_compres",
-      "community": 276,
+      "community": 911,
       "norm_label": "compres"
     },
     {
@@ -25371,7 +25371,7 @@
       "source_file": "tests/durability/task-event-atomicity.test.ts",
       "source_location": "L108",
       "id": "durability_task_event_atomicity_test_task",
-      "community": 276,
+      "community": 911,
       "norm_label": "task"
     },
     {
@@ -25380,7 +25380,7 @@
       "source_file": "tests/durability/task-event-atomicity.test.ts",
       "source_location": "L112",
       "id": "durability_task_event_atomicity_test_events",
-      "community": 276,
+      "community": 911,
       "norm_label": "events"
     },
     {
@@ -25389,7 +25389,7 @@
       "source_file": "tests/durability/task-event-atomicity.test.ts",
       "source_location": "L113",
       "id": "durability_task_event_atomicity_test_completionevents",
-      "community": 276,
+      "community": 911,
       "norm_label": "completionevents"
     },
     {
@@ -25668,7 +25668,7 @@
       "source_file": "tests/evaluation/persistence-durability.test.ts",
       "source_location": "L1",
       "id": "tests_evaluation_persistence_durability_test_ts",
-      "community": 1125,
+      "community": 1083,
       "norm_label": "persistence-durability.test.ts"
     },
     {
@@ -25677,7 +25677,7 @@
       "source_file": "tests/evaluation/persistence-durability.test.ts",
       "source_location": "L14",
       "id": "evaluation_persistence_durability_test_migrator",
-      "community": 1125,
+      "community": 1083,
       "norm_label": "migrator"
     },
     {
@@ -25686,7 +25686,7 @@
       "source_file": "tests/evaluation/persistence-durability.test.ts",
       "source_location": "L24",
       "id": "evaluation_persistence_durability_test_run",
-      "community": 1125,
+      "community": 1083,
       "norm_label": "run"
     },
     {
@@ -25695,7 +25695,7 @@
       "source_file": "tests/evaluation/persistence-durability.test.ts",
       "source_location": "L73",
       "id": "evaluation_persistence_durability_test_fetched",
-      "community": 1125,
+      "community": 1083,
       "norm_label": "fetched"
     },
     {
@@ -26640,7 +26640,7 @@
       "source_file": "tests/hooks/hook-deterministic-ordering.test.ts",
       "source_location": "L1",
       "id": "tests_hooks_hook_deterministic_ordering_test_ts",
-      "community": 1138,
+      "community": 1060,
       "norm_label": "hook-deterministic-ordering.test.ts"
     },
     {
@@ -26649,7 +26649,7 @@
       "source_file": "tests/hooks/hook-deterministic-ordering.test.ts",
       "source_location": "L6",
       "id": "hooks_hook_deterministic_ordering_test_registry",
-      "community": 1138,
+      "community": 1060,
       "norm_label": "registry"
     },
     {
@@ -26658,7 +26658,7 @@
       "source_file": "tests/hooks/hook-deterministic-ordering.test.ts",
       "source_location": "L7",
       "id": "hooks_hook_deterministic_ordering_test_matcher",
-      "community": 1138,
+      "community": 1060,
       "norm_label": "matcher"
     },
     {
@@ -26667,7 +26667,7 @@
       "source_file": "tests/hooks/hook-deterministic-ordering.test.ts",
       "source_location": "L54",
       "id": "hooks_hook_deterministic_ordering_test_matched",
-      "community": 1138,
+      "community": 1060,
       "norm_label": "matched"
     },
     {
@@ -26676,7 +26676,7 @@
       "source_file": "tests/hooks/hook-durability-zero-state-loss.test.ts",
       "source_location": "L1",
       "id": "tests_hooks_hook_durability_zero_state_loss_test_ts",
-      "community": 267,
+      "community": 991,
       "norm_label": "hook-durability-zero-state-loss.test.ts"
     },
     {
@@ -26685,7 +26685,7 @@
       "source_file": "tests/hooks/hook-durability-zero-state-loss.test.ts",
       "source_location": "L18",
       "id": "hooks_hook_durability_zero_state_loss_test_now",
-      "community": 267,
+      "community": 991,
       "norm_label": "now"
     },
     {
@@ -26694,7 +26694,7 @@
       "source_file": "tests/hooks/hook-durability-zero-state-loss.test.ts",
       "source_location": "L42",
       "id": "hooks_hook_durability_zero_state_loss_test_manager",
-      "community": 267,
+      "community": 991,
       "norm_label": "manager"
     },
     {
@@ -26703,7 +26703,7 @@
       "source_file": "tests/hooks/hook-durability-zero-state-loss.test.ts",
       "source_location": "L64",
       "id": "hooks_hook_durability_zero_state_loss_test_events",
-      "community": 267,
+      "community": 991,
       "norm_label": "events"
     },
     {
@@ -26712,7 +26712,7 @@
       "source_file": "tests/hooks/hook-durability-zero-state-loss.test.ts",
       "source_location": "L67",
       "id": "hooks_hook_durability_zero_state_loss_test_registered",
-      "community": 267,
+      "community": 991,
       "norm_label": "registered"
     },
     {
@@ -26721,7 +26721,7 @@
       "source_file": "tests/hooks/hook-durability-zero-state-loss.test.ts",
       "source_location": "L68",
       "id": "hooks_hook_durability_zero_state_loss_test_disabled",
-      "community": 267,
+      "community": 991,
       "norm_label": "disabled"
     },
     {
@@ -26730,7 +26730,7 @@
       "source_file": "tests/hooks/hook-durability-zero-state-loss.test.ts",
       "source_location": "L69",
       "id": "hooks_hook_durability_zero_state_loss_test_enabled",
-      "community": 267,
+      "community": 991,
       "norm_label": "enabled"
     },
     {
@@ -26739,7 +26739,7 @@
       "source_file": "tests/hooks/hook-durability-zero-state-loss.test.ts",
       "source_location": "L70",
       "id": "hooks_hook_durability_zero_state_loss_test_triggered",
-      "community": 267,
+      "community": 991,
       "norm_label": "triggered"
     },
     {
@@ -26748,7 +26748,7 @@
       "source_file": "tests/hooks/hook-durability-zero-state-loss.test.ts",
       "source_location": "L71",
       "id": "hooks_hook_durability_zero_state_loss_test_completed",
-      "community": 267,
+      "community": 991,
       "norm_label": "completed"
     },
     {
@@ -28782,7 +28782,7 @@
       "source_file": "tests/memory/memory-crud-lifecycle.test.ts",
       "source_location": "L1",
       "id": "tests_memory_memory_crud_lifecycle_test_ts",
-      "community": 267,
+      "community": 911,
       "norm_label": "memory-crud-lifecycle.test.ts"
     },
     {
@@ -28791,7 +28791,7 @@
       "source_file": "tests/memory/memory-crud-lifecycle.test.ts",
       "source_location": "L22",
       "id": "memory_memory_crud_lifecycle_test_now",
-      "community": 267,
+      "community": 911,
       "norm_label": "now"
     },
     {
@@ -28800,7 +28800,7 @@
       "source_file": "tests/memory/memory-crud-lifecycle.test.ts",
       "source_location": "L23",
       "id": "memory_memory_crud_lifecycle_test_projectrepo",
-      "community": 267,
+      "community": 911,
       "norm_label": "projectrepo"
     },
     {
@@ -28809,7 +28809,7 @@
       "source_file": "tests/memory/memory-crud-lifecycle.test.ts",
       "source_location": "L24",
       "id": "memory_memory_crud_lifecycle_test_sessionrepo",
-      "community": 267,
+      "community": 911,
       "norm_label": "sessionrepo"
     },
     {
@@ -28818,7 +28818,7 @@
       "source_file": "tests/memory/memory-crud-lifecycle.test.ts",
       "source_location": "L84",
       "id": "memory_memory_crud_lifecycle_test_stored",
-      "community": 267,
+      "community": 911,
       "norm_label": "stored"
     },
     {
@@ -28827,7 +28827,7 @@
       "source_file": "tests/memory/memory-crud-lifecycle.test.ts",
       "source_location": "L89",
       "id": "memory_memory_crud_lifecycle_test_events",
-      "community": 267,
+      "community": 911,
       "norm_label": "events"
     },
     {
@@ -30258,7 +30258,7 @@
       "source_file": "tests/models/state-durability-fault-tolerance.test.ts",
       "source_location": "L1",
       "id": "tests_models_state_durability_fault_tolerance_test_ts",
-      "community": 276,
+      "community": 267,
       "norm_label": "state-durability-fault-tolerance.test.ts"
     },
     {
@@ -30267,7 +30267,7 @@
       "source_file": "tests/models/state-durability-fault-tolerance.test.ts",
       "source_location": "L20",
       "id": "models_state_durability_fault_tolerance_test_now",
-      "community": 276,
+      "community": 267,
       "norm_label": "now"
     },
     {
@@ -30276,7 +30276,7 @@
       "source_file": "tests/models/state-durability-fault-tolerance.test.ts",
       "source_location": "L21",
       "id": "models_state_durability_fault_tolerance_test_projectrepo",
-      "community": 276,
+      "community": 267,
       "norm_label": "projectrepo"
     },
     {
@@ -30285,7 +30285,7 @@
       "source_file": "tests/models/state-durability-fault-tolerance.test.ts",
       "source_location": "L22",
       "id": "models_state_durability_fault_tolerance_test_sessionrepo",
-      "community": 276,
+      "community": 267,
       "norm_label": "sessionrepo"
     },
     {
@@ -30294,7 +30294,7 @@
       "source_file": "tests/models/state-durability-fault-tolerance.test.ts",
       "source_location": "L76",
       "id": "models_state_durability_fault_tolerance_test_adapter",
-      "community": 276,
+      "community": 267,
       "norm_label": "adapter"
     },
     {
@@ -30303,7 +30303,7 @@
       "source_file": "tests/models/state-durability-fault-tolerance.test.ts",
       "source_location": "L89",
       "id": "models_state_durability_fault_tolerance_test_eventsafter",
-      "community": 276,
+      "community": 267,
       "norm_label": "eventsafter"
     },
     {
@@ -30816,7 +30816,7 @@
       "source_file": "tests/observability/diagnostic-inspector.test.ts",
       "source_location": "L1",
       "id": "tests_observability_diagnostic_inspector_test_ts",
-      "community": 425,
+      "community": 276,
       "norm_label": "diagnostic-inspector.test.ts"
     },
     {
@@ -30825,7 +30825,7 @@
       "source_file": "tests/observability/diagnostic-inspector.test.ts",
       "source_location": "L24",
       "id": "observability_diagnostic_inspector_test_migrator",
-      "community": 425,
+      "community": 276,
       "norm_label": "migrator"
     },
     {
@@ -30834,7 +30834,7 @@
       "source_file": "tests/observability/diagnostic-inspector.test.ts",
       "source_location": "L78",
       "id": "observability_diagnostic_inspector_test_report",
-      "community": 425,
+      "community": 276,
       "norm_label": "report"
     },
     {
@@ -30915,7 +30915,7 @@
       "source_file": "tests/observability/real-observability-acceptance.test.ts",
       "source_location": "L1",
       "id": "tests_observability_real_observability_acceptance_test_ts",
-      "community": 425,
+      "community": 749,
       "norm_label": "real-observability-acceptance.test.ts"
     },
     {
@@ -30924,7 +30924,7 @@
       "source_file": "tests/observability/real-observability-acceptance.test.ts",
       "source_location": "L22",
       "id": "observability_real_observability_acceptance_test_migrator",
-      "community": 425,
+      "community": 749,
       "norm_label": "migrator"
     },
     {
@@ -30933,7 +30933,7 @@
       "source_file": "tests/observability/real-observability-acceptance.test.ts",
       "source_location": "L123",
       "id": "observability_real_observability_acceptance_test_auditrecords",
-      "community": 425,
+      "community": 749,
       "norm_label": "auditrecords"
     },
     {
@@ -30942,7 +30942,7 @@
       "source_file": "tests/observability/real-observability-acceptance.test.ts",
       "source_location": "L128",
       "id": "observability_real_observability_acceptance_test_metricsummaries",
-      "community": 425,
+      "community": 749,
       "norm_label": "metricsummaries"
     },
     {
@@ -30951,7 +30951,7 @@
       "source_file": "tests/observability/real-observability-acceptance.test.ts",
       "source_location": "L132",
       "id": "observability_real_observability_acceptance_test_diagreport",
-      "community": 425,
+      "community": 749,
       "norm_label": "diagreport"
     },
     {
@@ -30960,7 +30960,7 @@
       "source_file": "tests/observability/real-observability-acceptance.test.ts",
       "source_location": "L136",
       "id": "observability_real_observability_acceptance_test_compreport",
-      "community": 425,
+      "community": 749,
       "norm_label": "compreport"
     },
     {
@@ -32373,7 +32373,7 @@
       "source_file": "tests/plugins/plugin-durability-zero-state-loss.test.ts",
       "source_location": "L1",
       "id": "tests_plugins_plugin_durability_zero_state_loss_test_ts",
-      "community": 276,
+      "community": 267,
       "norm_label": "plugin-durability-zero-state-loss.test.ts"
     },
     {
@@ -32382,7 +32382,7 @@
       "source_file": "tests/plugins/plugin-durability-zero-state-loss.test.ts",
       "source_location": "L18",
       "id": "plugins_plugin_durability_zero_state_loss_test_now",
-      "community": 276,
+      "community": 267,
       "norm_label": "now"
     },
     {
@@ -32391,7 +32391,7 @@
       "source_file": "tests/plugins/plugin-durability-zero-state-loss.test.ts",
       "source_location": "L42",
       "id": "plugins_plugin_durability_zero_state_loss_test_manager",
-      "community": 276,
+      "community": 267,
       "norm_label": "manager"
     },
     {
@@ -32400,7 +32400,7 @@
       "source_file": "tests/plugins/plugin-durability-zero-state-loss.test.ts",
       "source_location": "L44",
       "id": "plugins_plugin_durability_zero_state_loss_test_manifest",
-      "community": 276,
+      "community": 267,
       "norm_label": "manifest"
     },
     {
@@ -32409,7 +32409,7 @@
       "source_file": "tests/plugins/plugin-durability-zero-state-loss.test.ts",
       "source_location": "L55",
       "id": "plugins_plugin_durability_zero_state_loss_test_events",
-      "community": 276,
+      "community": 267,
       "norm_label": "events"
     },
     {
@@ -32418,7 +32418,7 @@
       "source_file": "tests/plugins/plugin-durability-zero-state-loss.test.ts",
       "source_location": "L58",
       "id": "plugins_plugin_durability_zero_state_loss_test_installed",
-      "community": 276,
+      "community": 267,
       "norm_label": "installed"
     },
     {
@@ -32427,7 +32427,7 @@
       "source_file": "tests/plugins/plugin-durability-zero-state-loss.test.ts",
       "source_location": "L59",
       "id": "plugins_plugin_durability_zero_state_loss_test_activated",
-      "community": 276,
+      "community": 267,
       "norm_label": "activated"
     },
     {
@@ -32436,7 +32436,7 @@
       "source_file": "tests/plugins/plugin-durability-zero-state-loss.test.ts",
       "source_location": "L60",
       "id": "plugins_plugin_durability_zero_state_loss_test_disabled",
-      "community": 276,
+      "community": 267,
       "norm_label": "disabled"
     },
     {
@@ -35766,7 +35766,7 @@
       "source_file": "tests/resume/task-dag-restorer.test.ts",
       "source_location": "L1",
       "id": "tests_resume_task_dag_restorer_test_ts",
-      "community": 276,
+      "community": 911,
       "norm_label": "task-dag-restorer.test.ts"
     },
     {
@@ -35775,7 +35775,7 @@
       "source_file": "tests/resume/task-dag-restorer.test.ts",
       "source_location": "L19",
       "id": "resume_task_dag_restorer_test_migrator",
-      "community": 276,
+      "community": 911,
       "norm_label": "migrator"
     },
     {
@@ -35784,7 +35784,7 @@
       "source_file": "tests/resume/task-dag-restorer.test.ts",
       "source_location": "L61",
       "id": "resume_task_dag_restorer_test_t1",
-      "community": 276,
+      "community": 911,
       "norm_label": "t1"
     },
     {
@@ -35793,7 +35793,7 @@
       "source_file": "tests/resume/task-dag-restorer.test.ts",
       "source_location": "L75",
       "id": "resume_task_dag_restorer_test_t2",
-      "community": 276,
+      "community": 911,
       "norm_label": "t2"
     },
     {
@@ -35802,7 +35802,7 @@
       "source_file": "tests/resume/task-dag-restorer.test.ts",
       "source_location": "L89",
       "id": "resume_task_dag_restorer_test_t3",
-      "community": 276,
+      "community": 911,
       "norm_label": "t3"
     },
     {
@@ -35811,7 +35811,7 @@
       "source_file": "tests/resume/task-dag-restorer.test.ts",
       "source_location": "L107",
       "id": "resume_task_dag_restorer_test_dag",
-      "community": 276,
+      "community": 911,
       "norm_label": "dag"
     },
     {
@@ -35820,7 +35820,7 @@
       "source_file": "tests/resume/task-dag-restorer.test.ts",
       "source_location": "L118",
       "id": "resume_task_dag_restorer_test_trunning",
-      "community": 276,
+      "community": 911,
       "norm_label": "trunning"
     },
     {
@@ -36612,7 +36612,7 @@
       "source_file": "tests/skills/skill-durability-zero-state-loss.test.ts",
       "source_location": "L1",
       "id": "tests_skills_skill_durability_zero_state_loss_test_ts",
-      "community": 276,
+      "community": 267,
       "norm_label": "skill-durability-zero-state-loss.test.ts"
     },
     {
@@ -36621,7 +36621,7 @@
       "source_file": "tests/skills/skill-durability-zero-state-loss.test.ts",
       "source_location": "L18",
       "id": "skills_skill_durability_zero_state_loss_test_now",
-      "community": 276,
+      "community": 267,
       "norm_label": "now"
     },
     {
@@ -36630,7 +36630,7 @@
       "source_file": "tests/skills/skill-durability-zero-state-loss.test.ts",
       "source_location": "L42",
       "id": "skills_skill_durability_zero_state_loss_test_manager",
-      "community": 276,
+      "community": 267,
       "norm_label": "manager"
     },
     {
@@ -36639,7 +36639,7 @@
       "source_file": "tests/skills/skill-durability-zero-state-loss.test.ts",
       "source_location": "L67",
       "id": "skills_skill_durability_zero_state_loss_test_events",
-      "community": 276,
+      "community": 267,
       "norm_label": "events"
     },
     {
@@ -36648,7 +36648,7 @@
       "source_file": "tests/skills/skill-durability-zero-state-loss.test.ts",
       "source_location": "L70",
       "id": "skills_skill_durability_zero_state_loss_test_installed",
-      "community": 276,
+      "community": 267,
       "norm_label": "installed"
     },
     {
@@ -36657,7 +36657,7 @@
       "source_file": "tests/skills/skill-durability-zero-state-loss.test.ts",
       "source_location": "L71",
       "id": "skills_skill_durability_zero_state_loss_test_disabled",
-      "community": 276,
+      "community": 267,
       "norm_label": "disabled"
     },
     {
@@ -36666,7 +36666,7 @@
       "source_file": "tests/skills/skill-durability-zero-state-loss.test.ts",
       "source_location": "L72",
       "id": "skills_skill_durability_zero_state_loss_test_enabled",
-      "community": 276,
+      "community": 267,
       "norm_label": "enabled"
     },
     {
@@ -36675,7 +36675,7 @@
       "source_file": "tests/skills/skill-durability-zero-state-loss.test.ts",
       "source_location": "L73",
       "id": "skills_skill_durability_zero_state_loss_test_executed",
-      "community": 276,
+      "community": 267,
       "norm_label": "executed"
     },
     {
@@ -37845,7 +37845,7 @@
       "source_file": "tests/teams/agent-handoff-revalidation.test.ts",
       "source_location": "L1",
       "id": "tests_teams_agent_handoff_revalidation_test_ts",
-      "community": 286,
+      "community": 1005,
       "norm_label": "agent-handoff-revalidation.test.ts"
     },
     {
@@ -37854,7 +37854,7 @@
       "source_file": "tests/teams/agent-handoff-revalidation.test.ts",
       "source_location": "L30",
       "id": "teams_agent_handoff_revalidation_test_migrator",
-      "community": 286,
+      "community": 1005,
       "norm_label": "migrator"
     },
     {
@@ -37863,7 +37863,7 @@
       "source_file": "tests/teams/agent-handoff-revalidation.test.ts",
       "source_location": "L137",
       "id": "teams_agent_handoff_revalidation_test_claimres",
-      "community": 286,
+      "community": 1005,
       "norm_label": "claimres"
     },
     {
@@ -37872,7 +37872,7 @@
       "source_file": "tests/teams/agent-handoff-revalidation.test.ts",
       "source_location": "L147",
       "id": "teams_agent_handoff_revalidation_test_prepres",
-      "community": 286,
+      "community": 1005,
       "norm_label": "prepres"
     },
     {
@@ -37881,7 +37881,7 @@
       "source_file": "tests/teams/agent-handoff-revalidation.test.ts",
       "source_location": "L167",
       "id": "teams_agent_handoff_revalidation_test_rejected",
-      "community": 286,
+      "community": 1005,
       "norm_label": "rejected"
     },
     {
@@ -37890,7 +37890,7 @@
       "source_file": "tests/teams/agent-handoff-revalidation.test.ts",
       "source_location": "L170",
       "id": "teams_agent_handoff_revalidation_test_updatedhandoff",
-      "community": 286,
+      "community": 1005,
       "norm_label": "updatedhandoff"
     },
     {
@@ -37899,7 +37899,7 @@
       "source_file": "tests/teams/agent-handoff-revalidation.test.ts",
       "source_location": "L175",
       "id": "teams_agent_handoff_revalidation_test_sourcelease",
-      "community": 286,
+      "community": 1005,
       "norm_label": "sourcelease"
     },
     {
@@ -37908,7 +37908,7 @@
       "source_file": "tests/teams/peer-messaging-authorization.test.ts",
       "source_location": "L1",
       "id": "tests_teams_peer_messaging_authorization_test_ts",
-      "community": 749,
+      "community": 286,
       "norm_label": "peer-messaging-authorization.test.ts"
     },
     {
@@ -37917,7 +37917,7 @@
       "source_file": "tests/teams/peer-messaging-authorization.test.ts",
       "source_location": "L18",
       "id": "teams_peer_messaging_authorization_test_migrator",
-      "community": 749,
+      "community": 286,
       "norm_label": "migrator"
     },
     {
@@ -37926,7 +37926,7 @@
       "source_file": "tests/teams/peer-messaging-authorization.test.ts",
       "source_location": "L78",
       "id": "teams_peer_messaging_authorization_test_validsend",
-      "community": 749,
+      "community": 286,
       "norm_label": "validsend"
     },
     {
@@ -37935,7 +37935,7 @@
       "source_file": "tests/teams/peer-messaging-authorization.test.ts",
       "source_location": "L92",
       "id": "teams_peer_messaging_authorization_test_savedmsgs",
-      "community": 749,
+      "community": 286,
       "norm_label": "savedmsgs"
     },
     {
@@ -37944,7 +37944,7 @@
       "source_file": "tests/teams/peer-messaging-authorization.test.ts",
       "source_location": "L97",
       "id": "teams_peer_messaging_authorization_test_unauthsend",
-      "community": 749,
+      "community": 286,
       "norm_label": "unauthsend"
     },
     {
@@ -37953,7 +37953,7 @@
       "source_file": "tests/teams/peer-messaging-authorization.test.ts",
       "source_location": "L113",
       "id": "teams_peer_messaging_authorization_test_oversizedpayload",
-      "community": 749,
+      "community": 286,
       "norm_label": "oversizedpayload"
     },
     {
@@ -37962,7 +37962,7 @@
       "source_file": "tests/teams/peer-messaging-authorization.test.ts",
       "source_location": "L114",
       "id": "teams_peer_messaging_authorization_test_oversizedsend",
-      "community": 749,
+      "community": 286,
       "norm_label": "oversizedsend"
     },
     {
@@ -42219,7 +42219,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L395",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_9_required_implementation_loop",
-      "community": 1107,
+      "community": 2,
       "norm_label": "9. required implementation loop"
     },
     {
@@ -42228,7 +42228,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L399",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_19",
-      "community": 1107,
+      "community": 2,
       "norm_label": "code:text (inspect)"
     },
     {
@@ -43020,7 +43020,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L1313",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_43_capability_resolution",
-      "community": 2,
+      "community": 1086,
       "norm_label": "43. capability resolution"
     },
     {
@@ -43029,7 +43029,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L1317",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_74",
-      "community": 2,
+      "community": 1086,
       "norm_label": "code:text (task requirements)"
     },
     {
@@ -43128,7 +43128,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L1427",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_48_agent_memory",
-      "community": 1080,
+      "community": 2,
       "norm_label": "48. agent memory"
     },
     {
@@ -43137,7 +43137,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L1435",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_81",
-      "community": 1080,
+      "community": 2,
       "norm_label": "code:text (agent)"
     },
     {
@@ -43434,7 +43434,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L1745",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_63_docker",
-      "community": 2,
+      "community": 1092,
       "norm_label": "63. docker"
     },
     {
@@ -43443,7 +43443,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L1751",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_100",
-      "community": 2,
+      "community": 1092,
       "norm_label": "code:text (image)"
     },
     {
@@ -43551,7 +43551,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L1864",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_69_mcp",
-      "community": 2,
+      "community": 1101,
       "norm_label": "69. mcp"
     },
     {
@@ -43560,7 +43560,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L1872",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_107",
-      "community": 2,
+      "community": 1101,
       "norm_label": "code:text (mcp)"
     },
     {
@@ -43731,7 +43731,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2047",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_81_workflows",
-      "community": 1085,
+      "community": 2,
       "norm_label": "81. workflows"
     },
     {
@@ -43740,7 +43740,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2053",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_115",
-      "community": 1085,
+      "community": 2,
       "norm_label": "code:text (tasks)"
     },
     {
@@ -43749,7 +43749,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2070",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_82_workflow_versioning",
-      "community": 1086,
+      "community": 2,
       "norm_label": "82. workflow versioning"
     },
     {
@@ -43758,7 +43758,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2074",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_116",
-      "community": 1086,
+      "community": 2,
       "norm_label": "code:text (workflow version)"
     },
     {
@@ -43767,7 +43767,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2086",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_83_workflow_validation",
-      "community": 2,
+      "community": 1107,
       "norm_label": "83. workflow validation"
     },
     {
@@ -43776,7 +43776,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2090",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_117",
-      "community": 2,
+      "community": 1107,
       "norm_label": "code:text (syntax)"
     },
     {
@@ -43803,7 +43803,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2131",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_85_resource_governance",
-      "community": 2,
+      "community": 1112,
       "norm_label": "85. resource governance"
     },
     {
@@ -43812,7 +43812,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2137",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_119",
-      "community": 2,
+      "community": 1112,
       "norm_label": "code:text (agents)"
     },
     {
@@ -43821,7 +43821,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2154",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_86_resource_hierarchy",
-      "community": 1092,
+      "community": 2,
       "norm_label": "86. resource hierarchy"
     },
     {
@@ -43830,7 +43830,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2158",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_120",
-      "community": 1092,
+      "community": 2,
       "norm_label": "code:text (global)"
     },
     {
@@ -43875,7 +43875,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2208",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_89_observability",
-      "community": 2,
+      "community": 1121,
       "norm_label": "89. observability"
     },
     {
@@ -43884,7 +43884,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2214",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_123",
-      "community": 2,
+      "community": 1121,
       "norm_label": "code:text (request id)"
     },
     {
@@ -44046,7 +44046,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2400",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_97_false_completion_defense",
-      "community": 1101,
+      "community": 2,
       "norm_label": "97. false completion defense"
     },
     {
@@ -44055,7 +44055,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2404",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_134",
-      "community": 1101,
+      "community": 2,
       "norm_label": "code:text (model says done)"
     },
     {
@@ -44622,7 +44622,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2970",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_123_database_repair",
-      "community": 991,
+      "community": 2,
       "norm_label": "123. database repair"
     },
     {
@@ -44631,7 +44631,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2974",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_167",
-      "community": 991,
+      "community": 2,
       "norm_label": "code:text (identify affected object)"
     },
     {
@@ -44640,7 +44640,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2987",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_124_configuration",
-      "community": 2,
+      "community": 1024,
       "norm_label": "124. configuration"
     },
     {
@@ -44649,7 +44649,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L2993",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_168",
-      "community": 2,
+      "community": 1024,
       "norm_label": "code:text (global configuration)"
     },
     {
@@ -44712,7 +44712,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3053",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_128_api_compatibility",
-      "community": 2,
+      "community": 1050,
       "norm_label": "128. api compatibility"
     },
     {
@@ -44721,7 +44721,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3059",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_172",
-      "community": 2,
+      "community": 1050,
       "norm_label": "code:text (find consumers)"
     },
     {
@@ -45027,7 +45027,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3356",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_145_safe_shutdown",
-      "community": 2,
+      "community": 1051,
       "norm_label": "145. safe shutdown"
     },
     {
@@ -45036,7 +45036,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3360",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_190",
-      "community": 2,
+      "community": 1051,
       "norm_label": "code:text (stop new task admission)"
     },
     {
@@ -45045,7 +45045,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3373",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_146_single_writer_safety",
-      "community": 1005,
+      "community": 2,
       "norm_label": "146. single-writer safety"
     },
     {
@@ -45054,7 +45054,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3379",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_191",
-      "community": 1005,
+      "community": 2,
       "norm_label": "code:text (process lock)"
     },
     {
@@ -45081,7 +45081,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3404",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_148_security_review_checklist",
-      "community": 1024,
+      "community": 2,
       "norm_label": "148. security review checklist"
     },
     {
@@ -45090,7 +45090,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3408",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_193",
-      "community": 1024,
+      "community": 2,
       "norm_label": "code:text (does it introduce a new trust boundary?)"
     },
     {
@@ -45126,7 +45126,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3450",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_150_project_isolation",
-      "community": 2,
+      "community": 1065,
       "norm_label": "150. project isolation"
     },
     {
@@ -45135,7 +45135,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3456",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_196",
-      "community": 2,
+      "community": 1065,
       "norm_label": "code:text (memory)"
     },
     {
@@ -45306,7 +45306,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3661",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_160_feature_slice_strategy",
-      "community": 1050,
+      "community": 2,
       "norm_label": "160. feature slice strategy"
     },
     {
@@ -45315,7 +45315,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3667",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_206",
-      "community": 1050,
+      "community": 2,
       "norm_label": "code:text (request)"
     },
     {
@@ -45324,7 +45324,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3689",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_161_smallest_safe_change",
-      "community": 2,
+      "community": 1077,
       "norm_label": "161. smallest safe change"
     },
     {
@@ -45333,7 +45333,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3693",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_207",
-      "community": 2,
+      "community": 1077,
       "norm_label": "code:text (understand current abstraction)"
     },
     {
@@ -45486,7 +45486,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3859",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_169_external_api_integration",
-      "community": 1051,
+      "community": 2,
       "norm_label": "169. external api integration"
     },
     {
@@ -45495,7 +45495,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3863",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_217",
-      "community": 1051,
+      "community": 2,
       "norm_label": "code:text (authentication)"
     },
     {
@@ -45576,7 +45576,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3951",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_174_browser_workflows",
-      "community": 2,
+      "community": 1078,
       "norm_label": "174. browser workflows"
     },
     {
@@ -45585,7 +45585,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L3955",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_222",
-      "community": 2,
+      "community": 1078,
       "norm_label": "code:text (screenshots)"
     },
     {
@@ -45684,7 +45684,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L4069",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_180_model_nondeterminism",
-      "community": 1065,
+      "community": 2,
       "norm_label": "180. model nondeterminism"
     },
     {
@@ -45693,7 +45693,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L4073",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_228",
-      "community": 1065,
+      "community": 2,
       "norm_label": "code:text (temperature)"
     },
     {
@@ -45828,7 +45828,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L4211",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_187_documentation",
-      "community": 1077,
+      "community": 2,
       "norm_label": "187. documentation"
     },
     {
@@ -45837,7 +45837,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L4215",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_237",
-      "community": 1077,
+      "community": 2,
       "norm_label": "code:text (architecture)"
     },
     {
@@ -45990,7 +45990,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L4367",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_195_background_execution",
-      "community": 2,
+      "community": 1080,
       "norm_label": "195. background execution"
     },
     {
@@ -45999,7 +45999,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L4371",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_247",
-      "community": 2,
+      "community": 1080,
       "norm_label": "code:text (task)"
     },
     {
@@ -46035,7 +46035,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L4412",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_197_model_agent_migration",
-      "community": 1078,
+      "community": 2,
       "norm_label": "197. model/agent migration"
     },
     {
@@ -46044,7 +46044,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L4416",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_250",
-      "community": 1078,
+      "community": 2,
       "norm_label": "code:text (model)"
     },
     {
@@ -46071,7 +46071,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L4444",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_199_maintenance_mode",
-      "community": 2,
+      "community": 1085,
       "norm_label": "199. maintenance mode"
     },
     {
@@ -46080,7 +46080,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/00_ANANTHAM_ENGINEERING_PLAYBOOK.md",
       "source_location": "L4450",
       "id": "anantham_project_sources_00_anantham_engineering_playbook_codeblock_252",
-      "community": 2,
+      "community": 1085,
       "norm_label": "code:text (normal)"
     },
     {
@@ -48573,7 +48573,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L622",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_13_any_format_requirement",
-      "community": 1123,
+      "community": 3,
       "norm_label": "13. \"any format\" requirement"
     },
     {
@@ -48582,7 +48582,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L630",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_13",
-      "community": 1123,
+      "community": 3,
       "norm_label": "code:text (detect signature)"
     },
     {
@@ -48627,7 +48627,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L696",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_15_context_references",
-      "community": 1124,
+      "community": 3,
       "norm_label": "15. `@` context references"
     },
     {
@@ -48636,7 +48636,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L702",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_16",
-      "community": 1124,
+      "community": 3,
       "norm_label": "code:text (@src/auth.ts)"
     },
     {
@@ -48735,7 +48735,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L816",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_19_attachment_security",
-      "community": 3,
+      "community": 1131,
       "norm_label": "19. attachment security"
     },
     {
@@ -48744,7 +48744,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L820",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_20",
-      "community": 3,
+      "community": 1131,
       "norm_label": "code:text (signature validation)"
     },
     {
@@ -48753,7 +48753,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L834",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_20_content_cache",
-      "community": 1127,
+      "community": 3,
       "norm_label": "20. content cache"
     },
     {
@@ -48762,7 +48762,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L850",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_21",
-      "community": 1127,
+      "community": 3,
       "norm_label": "code:text (sha256)"
     },
     {
@@ -48771,7 +48771,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L860",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_21_content_provenance",
-      "community": 3,
+      "community": 1133,
       "norm_label": "21. content provenance"
     },
     {
@@ -48780,7 +48780,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L864",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_22",
-      "community": 3,
+      "community": 1133,
       "norm_label": "code:json ({)"
     },
     {
@@ -48870,7 +48870,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L982",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_27_project_knowledge_graph",
-      "community": 1129,
+      "community": 3,
       "norm_label": "27. project knowledge graph"
     },
     {
@@ -48879,7 +48879,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L986",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_26",
-      "community": 1129,
+      "community": 3,
       "norm_label": "code:text (project)"
     },
     {
@@ -48969,7 +48969,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1113",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_33_project_instructions",
-      "community": 3,
+      "community": 1149,
       "norm_label": "33. project instructions"
     },
     {
@@ -48978,7 +48978,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1117",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_30",
-      "community": 3,
+      "community": 1149,
       "norm_label": "code:text (anantham.md)"
     },
     {
@@ -48987,7 +48987,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1130",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_34_project_trust",
-      "community": 1130,
+      "community": 3,
       "norm_label": "34. project trust"
     },
     {
@@ -48996,7 +48996,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1134",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_31",
-      "community": 1130,
+      "community": 3,
       "norm_label": "code:text (untrusted)"
     },
     {
@@ -49194,7 +49194,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1411",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_46_atomic_artifact_writes",
-      "community": 3,
+      "community": 1154,
       "norm_label": "46. atomic artifact writes"
     },
     {
@@ -49203,7 +49203,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1415",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_41",
-      "community": 3,
+      "community": 1154,
       "norm_label": "code:text (write temp)"
     },
     {
@@ -49221,7 +49221,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1441",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_48_crash_recovery",
-      "community": 1131,
+      "community": 3,
       "norm_label": "48. crash recovery"
     },
     {
@@ -49230,7 +49230,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1445",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_42",
-      "community": 1131,
+      "community": 3,
       "norm_label": "code:text (open db)"
     },
     {
@@ -49599,7 +49599,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1901",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_68_memory_ttl",
-      "community": 3,
+      "community": 1166,
       "norm_label": "68. memory ttl"
     },
     {
@@ -49608,7 +49608,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1907",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_63",
-      "community": 3,
+      "community": 1166,
       "norm_label": "code:text (dev server port = 3000)"
     },
     {
@@ -49626,7 +49626,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1931",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_70_agent_specific_memory",
-      "community": 1133,
+      "community": 3,
       "norm_label": "70. agent-specific memory"
     },
     {
@@ -49635,7 +49635,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L1937",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_64",
-      "community": 1133,
+      "community": 3,
       "norm_label": "code:text (agent/security-reviewer/project-video-editor)"
     },
     {
@@ -49941,7 +49941,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2250",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_83_tool_schema_budget",
-      "community": 1149,
+      "community": 3,
       "norm_label": "83. tool schema budget"
     },
     {
@@ -49950,7 +49950,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2256",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_81",
-      "community": 1149,
+      "community": 3,
       "norm_label": "code:text (catalog descriptions)"
     },
     {
@@ -50067,7 +50067,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2368",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_89_compaction_algorithm",
-      "community": 1154,
+      "community": 3,
       "norm_label": "89. compaction algorithm"
     },
     {
@@ -50076,7 +50076,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2370",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_88",
-      "community": 1154,
+      "community": 3,
       "norm_label": "code:text (1. freeze current context revision)"
     },
     {
@@ -50274,7 +50274,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2578",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_99_artifact_first_task_view",
-      "community": 3,
+      "community": 1177,
       "norm_label": "99. artifact-first task view"
     },
     {
@@ -50283,7 +50283,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2580",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_97",
-      "community": 3,
+      "community": 1177,
       "norm_label": "code:text (task: add authentication)"
     },
     {
@@ -50355,7 +50355,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2680",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_103_task_dependencies",
-      "community": 3,
+      "community": 1123,
       "norm_label": "103. task dependencies"
     },
     {
@@ -50364,7 +50364,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2684",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_102",
-      "community": 3,
+      "community": 1123,
       "norm_label": "code:text (a)"
     },
     {
@@ -50391,7 +50391,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2714",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_105_steering",
-      "community": 1112,
+      "community": 3,
       "norm_label": "105. steering"
     },
     {
@@ -50400,7 +50400,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2720",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_104",
-      "community": 1112,
+      "community": 3,
       "norm_label": "code:text (task.steered)"
     },
     {
@@ -50409,7 +50409,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2734",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_106_working_directory",
-      "community": 3,
+      "community": 1124,
       "norm_label": "106. working directory"
     },
     {
@@ -50418,7 +50418,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2740",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_105",
-      "community": 3,
+      "community": 1124,
       "norm_label": "code:text (wd: d:/projects/video-editor)"
     },
     {
@@ -50427,7 +50427,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2750",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_107_multi_root_workspace",
-      "community": 1121,
+      "community": 3,
       "norm_label": "107. multi-root workspace"
     },
     {
@@ -50436,7 +50436,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2754",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_106",
-      "community": 1121,
+      "community": 3,
       "norm_label": "code:text (repo-a)"
     },
     {
@@ -50454,7 +50454,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2779",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_109_file_watching",
-      "community": 3,
+      "community": 1127,
       "norm_label": "109. file watching"
     },
     {
@@ -50463,7 +50463,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L2783",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_107",
-      "community": 3,
+      "community": 1127,
       "norm_label": "code:text (create)"
     },
     {
@@ -51156,7 +51156,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L3542",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_144_required_adrs_before_implementation",
-      "community": 3,
+      "community": 1129,
       "norm_label": "144. required adrs before implementation"
     },
     {
@@ -51165,7 +51165,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L3546",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_142",
-      "community": 3,
+      "community": 1129,
       "norm_label": "code:text (adr-0001 event-sourced durable state)"
     },
     {
@@ -51192,7 +51192,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L3603",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_147_part_1_completion_test",
-      "community": 3,
+      "community": 1130,
       "norm_label": "147. part 1 completion test"
     },
     {
@@ -51201,7 +51201,7 @@
       "source_file": "ANANTHAM PROJECT SOURCES/prd/ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md",
       "source_location": "L3607",
       "id": "prd_anantham_prd_v2_part_1_product_and_architecture_codeblock_143",
-      "community": 3,
+      "community": 1130,
       "norm_label": "code:text (where does project state live?)"
     },
     {
@@ -176900,9 +176900,9 @@
       "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
       "source_location": "L609",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "development_anantham_v2_master_development_plan_5_change_log",
-      "target": "development_anantham_v2_master_development_plan_2026_09_01_19_05_task_p10_2_gold_certification",
-      "confidence_score": 1.0
+      "target": "development_anantham_v2_master_development_plan_2026_09_01_19_05_task_p10_2_gold_certification"
     },
     {
       "relation": "contains",
@@ -177110,9 +177110,9 @@
       "source_file": "ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md",
       "source_location": "L866",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "development_anantham_v2_master_development_plan_5_change_log",
-      "target": "development_anantham_v2_master_development_plan_2026_08_31_14_35_task_p6_3_subagents_teams_topologies_handoff_866",
-      "confidence_score": 1.0
+      "target": "development_anantham_v2_master_development_plan_2026_08_31_14_35_task_p6_3_subagents_teams_topologies_handoff_866"
     },
     {
       "relation": "contains",
@@ -196700,9 +196700,9 @@
       "source_file": "docs/discovery/active-tasks.md",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "discovery_active_tasks_1_active_phase_backlog_p10_production_release_self_hosting_certification",
-      "target": "discovery_active_tasks_task_p10_3_tag_and_release_tag_release_authorization_file_c_herness_docs_discovery_current_state_md_l10",
-      "confidence_score": 1.0
+      "target": "discovery_active_tasks_task_p10_3_tag_and_release_tag_release_authorization_file_c_herness_docs_discovery_current_state_md_l10"
     },
     {
       "relation": "contains",
@@ -196720,9 +196720,9 @@
       "source_file": "docs/discovery/active-tasks.md",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "discovery_active_tasks_2_completed_milestones_recent",
-      "target": "discovery_active_tasks_task_p10_2_gold_certification_gold_certification_file_c_herness_scripts_release_engineering_mjs",
-      "confidence_score": 1.0
+      "target": "discovery_active_tasks_task_p10_2_gold_certification_gold_certification_file_c_herness_scripts_release_engineering_mjs"
     },
     {
       "relation": "contains",
@@ -196730,9 +196730,9 @@
       "source_file": "docs/discovery/active-tasks.md",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "discovery_active_tasks_2_completed_milestones_recent",
-      "target": "discovery_active_tasks_task_p10_1_self_hosting_validation_self_hosting_validation_file_c_herness_tests_release_self_hosting_validation_test_ts",
-      "confidence_score": 1.0
+      "target": "discovery_active_tasks_task_p10_1_self_hosting_validation_self_hosting_validation_file_c_herness_tests_release_self_hosting_validation_test_ts"
     },
     {
       "relation": "contains",
@@ -198326,5 +198326,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "9c2f2c42e40590c976af22faacacca69959e3a4a"
+  "built_at_commit": "7c9bb3fc0b86e4c162edf5280a946f26a9ea850c"
 }

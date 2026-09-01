@@ -1,16 +1,16 @@
 # Graph Report - herness  (2026-09-01)
 
 ## Corpus Check
-- 720 files · ~281,741 words
+- 720 files · ~281,742 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 7471 nodes · 12531 edges · 1219 communities (443 shown, 776 thin omitted)
+- 7471 nodes · 12531 edges · 1221 communities (445 shown, 776 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 6 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `9c2f2c42`
+- Built from commit: `7c9bb3fc`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -1145,6 +1145,7 @@
 - [[_COMMUNITY_Community 1163|Community 1163]]
 - [[_COMMUNITY_Community 1164|Community 1164]]
 - [[_COMMUNITY_Community 1165|Community 1165]]
+- [[_COMMUNITY_Community 1166|Community 1166]]
 - [[_COMMUNITY_Community 1167|Community 1167]]
 - [[_COMMUNITY_Community 1168|Community 1168]]
 - [[_COMMUNITY_Community 1171|Community 1171]]
@@ -1153,6 +1154,7 @@
 - [[_COMMUNITY_Community 1174|Community 1174]]
 - [[_COMMUNITY_Community 1175|Community 1175]]
 - [[_COMMUNITY_Community 1176|Community 1176]]
+- [[_COMMUNITY_Community 1177|Community 1177]]
 - [[_COMMUNITY_Community 1178|Community 1178]]
 - [[_COMMUNITY_Community 1179|Community 1179]]
 - [[_COMMUNITY_Community 1180|Community 1180]]
@@ -1217,7 +1219,7 @@
 - `registerNativeTools()` --calls--> `createNetworkTools()`  [EXTRACTED]
   src/tools/native/register-native-tools.ts → src/tools/native/network-tools.ts
 
-## Communities (1219 total, 776 thin omitted)
+## Communities (1221 total, 776 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.02
@@ -1229,11 +1231,11 @@ Nodes (93): 108. ORCHESTRATOR REQUIREMENTS, 119. BUDGET REBALANCING, 133. RPC AU
 
 ### Community 2 - "Community 2"
 Cohesion: 0.02
-Nodes (80): 102. CRASH TESTING, 104. SECURITY TESTING, 117. ROUTER EVALUATION, 120. STORAGE ENGINEERING, 124. CONFIGURATION, 126. HOT CONFIGURATION, 128. API COMPATIBILITY, 12. PHASE 3 — ARCHITECTURE (+72 more)
+Nodes (80): 102. CRASH TESTING, 104. SECURITY TESTING, 117. ROUTER EVALUATION, 120. STORAGE ENGINEERING, 123. DATABASE REPAIR, 126. HOT CONFIGURATION, 12. PHASE 3 — ARCHITECTURE, 132. API/RPC (+72 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.03
-Nodes (67): 102. TASK PRIORITY, 103. TASK DEPENDENCIES, 106. WORKING DIRECTORY, 108. MONOREPO SUPPORT, 109. FILE WATCHING, 113. GIT-AWARE STATE, 115. SEARCH INDEXES, 122. ZERO-LOSS REQUIREMENT MATRIX (+59 more)
+Nodes (67): 102. TASK PRIORITY, 105. STEERING, 107. MULTI-ROOT WORKSPACE, 108. MONOREPO SUPPORT, 113. GIT-AWARE STATE, 115. SEARCH INDEXES, 122. ZERO-LOSS REQUIREMENT MATRIX, 128. GARBAGE COLLECTION (+59 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.12
@@ -2229,7 +2231,7 @@ Nodes (21): claimMgr1, claimMgr2, engine1, engine2, eventStore1, eventStore2, jo
 
 ### Community 267 - "Community 267"
 Cohesion: 0.03
-Nodes (84): ActorTypeSchema, EventType, EventTypes, HarnessEvent, HarnessEventSchema, actors, parsed, userEvent (+76 more)
+Nodes (90): ActorTypeSchema, EventType, EventTypes, HarnessEvent, HarnessEventSchema, actors, parsed, userEvent (+82 more)
 
 ### Community 269 - "Community 269"
 Cohesion: 0.08
@@ -2245,7 +2247,7 @@ Nodes (10): dependentTask, eligible, migrator, parentTask, startupPlan, taskCrit
 
 ### Community 276 - "Community 276"
 Cohesion: 0.02
-Nodes (122): newManager, newRepo, now, payload, projectRepo, sessionRepo, filePath, filePath (+114 more)
+Nodes (92): newManager, newRepo, now, payload, projectRepo, sessionRepo, filePath, filePath (+84 more)
 
 ### Community 279 - "Community 279"
 Cohesion: 0.14
@@ -2269,7 +2271,7 @@ Nodes (35): events, migrator, projectRepo, sessionRepo, traceLog, wf, workflowEn
 
 ### Community 286 - "Community 286"
 Cohesion: 0.08
-Nodes (21): acceptRes, claimRes, migrator, prepRes, prevLeaseState, staleComplete, staleHeartbeat, claimRes (+13 more)
+Nodes (21): acceptRes, claimRes, migrator, prepRes, prevLeaseState, staleComplete, staleHeartbeat, migrator (+13 more)
 
 ### Community 287 - "Community 287"
 Cohesion: 0.14
@@ -2504,8 +2506,8 @@ Cohesion: 0.14
 Nodes (15): Migration, migration001, migration002, migration003, migration004, migration005, migration006, migration007 (+7 more)
 
 ### Community 425 - "Community 425"
-Cohesion: 0.03
-Nodes (62): BackgroundJob, BackgroundJobSchema, JobFailureClassification, JobStatus, EventStore, BackgroundJobManagerOptions, ReconciledJobSummary, cancelledJob (+54 more)
+Cohesion: 0.04
+Nodes (51): BackgroundJob, BackgroundJobSchema, JobFailureClassification, JobStatus, EventStore, BackgroundJobManagerOptions, ReconciledJobSummary, cancelledJob (+43 more)
 
 ### Community 426 - "Community 426"
 Cohesion: 0.24
@@ -2572,8 +2574,8 @@ Cohesion: 0.25
 Nodes (6): MCPPrompt, client, manager, mcpPrompt, MCPPromptManager, MCPPromptRenderResult
 
 ### Community 749 - "Community 749"
-Cohesion: 0.29
-Nodes (6): migrator, oversizedPayload, oversizedSend, savedMsgs, unauthSend, validSend
+Cohesion: 0.14
+Nodes (8): DiagnosticInspector, ObservabilityManager, ObservabilityManagerOptions, auditRecords, compReport, diagReport, metricSummaries, migrator
 
 ### Community 751 - "Community 751"
 Cohesion: 0.09
@@ -2621,7 +2623,7 @@ Nodes (6): 1. Active Phase Backlog (P4 — Policy / Tools / Execution), [P4.1 �
 
 ### Community 821 - "Community 821"
 Cohesion: 0.11
-Nodes (21): HookAction, HookActionSchema, HookActionType, HookActionTypeSchema, HookErrorPolicy, HookErrorPolicySchema, HookExecutionResultSchema, HookFilter (+13 more)
+Nodes (20): HookAction, HookActionSchema, HookActionType, HookActionTypeSchema, HookErrorPolicy, HookErrorPolicySchema, HookFilter, HookFilterSchema (+12 more)
 
 ### Community 824 - "Community 824"
 Cohesion: 0.33
@@ -2648,8 +2650,8 @@ Cohesion: 0.09
 Nodes (20): PendingApprovalRestorer, events, nowMs, result, PendingApprovalItem, PendingApprovalItemSchema, RestoredPendingApprovals, RestoredPendingApprovalsSchema (+12 more)
 
 ### Community 867 - "Community 867"
-Cohesion: 0.27
-Nodes (9): HookExecutionResult, HookRecord, HookTriggerType, HookExecutionContext, HookManagerOptions, HookMatchContext, HookTestFixture, HookTestReport (+1 more)
+Cohesion: 0.21
+Nodes (11): HookExecutionResult, HookExecutionResultSchema, HookRecord, HookTriggerType, HookExecutionContext, HookManagerOptions, HookMatchContext, HookMatcher (+3 more)
 
 ### Community 887 - "Community 887"
 Cohesion: 0.33
@@ -2661,7 +2663,7 @@ Nodes (5): OpenAICompatibleAdapterOptions, OpenRouterProviderAdapter, OpenRouter
 
 ### Community 911 - "Community 911"
 Cohesion: 0.03
-Nodes (52): now, projectRepo, sessionRepo, CompactionEngine, now, projectRepo, sessionRepo, validated (+44 more)
+Nodes (71): now, projectRepo, sessionRepo, CompactionEngine, now, projectRepo, sessionRepo, validated (+63 more)
 
 ### Community 949 - "Community 949"
 Cohesion: 0.33
@@ -2691,9 +2693,17 @@ Nodes (23): child1Res, child2Res, child3Res, depthExceededRes, grandChildRes, gr
 Cohesion: 0.5
 Nodes (4): 1. Active Phase Backlog (P7 — WORKFLOW / ORCHESTRATION / BACKGROUND / REMOTE), [P7.2 — Workflow Execution Engine, Parallel Branching, Foreach, Budgets, Approvals, Retries & Timeout](file:///C:/herness/docs/discovery/current-state.md#L10), [P7.3 — Background Tasks, Long-Running Jobs, Heartbeats & Cancellation](file:///C:/herness/docs/discovery/current-state.md#L10), [P7.4 — Remote Agents, Multi-Node Execution & Distributed State](file:///C:/herness/docs/discovery/current-state.md#L10)
 
+### Community 991 - "Community 991"
+Cohesion: 0.22
+Nodes (8): completed, disabled, enabled, events, manager, now, registered, triggered
+
 ### Community 992 - "Community 992"
 Cohesion: 0.33
 Nodes (5): adapter, compactOut, defaultOut, renderer, standardOut
+
+### Community 1005 - "Community 1005"
+Cohesion: 0.29
+Nodes (6): claimRes, migrator, prepRes, rejected, sourceLease, updatedHandoff
 
 ### Community 1031 - "Community 1031"
 Cohesion: 0.25
@@ -2723,6 +2733,10 @@ Nodes (3): manager, HookManager, manager
 Cohesion: 0.27
 Nodes (5): RemoteDispatchStatus, RemoteWorkRequest, ReconciledDispatchSummary, RemoteRecoveryReconciler, RemoteDispatchRow
 
+### Community 1060 - "Community 1060"
+Cohesion: 0.18
+Nodes (4): matched, matcher, registry, HookRegistry
+
 ### Community 1061 - "Community 1061"
 Cohesion: 0.17
 Nodes (6): cyclicCheck, guard, manager, recursionGuard, HookInvocationFrame, HookRecursionGuard
@@ -2744,8 +2758,8 @@ Cohesion: 0.22
 Nodes (6): eventStore, migrator, projectRepo, sessionRepo, wf, workflowEngine
 
 ### Community 1083 - "Community 1083"
-Cohesion: 0.17
-Nodes (11): EvaluationReport, EvaluationReportSchema, EvaluationRun, RegressionComparison, RegressionComparisonSchema, BenchmarkCaseExecutor, EvaluationManagerOptions, baselineRun (+3 more)
+Cohesion: 0.16
+Nodes (10): EvaluationRun, RegressionComparison, RegressionComparisonSchema, fetched, migrator, run, baselineRun, currentRun (+2 more)
 
 ### Community 1088 - "Community 1088"
 Cohesion: 0.29
@@ -2784,12 +2798,8 @@ Cohesion: 0.11
 Nodes (21): AssertionEvaluationResult, AssertionEvaluationResultSchema, BenchmarkCaseSchema, BenchmarkCategory, BenchmarkCategorySchema, EvaluationAssertion, EvaluationAssertionSchema, EvaluationAssertionType (+13 more)
 
 ### Community 1122 - "Community 1122"
-Cohesion: 0.18
-Nodes (7): EvaluationManager, caseIds, caseResults, dataset, migrator, persisted, report
-
-### Community 1125 - "Community 1125"
-Cohesion: 0.2
-Nodes (4): fetched, migrator, run, EvaluationRepository
+Cohesion: 0.13
+Nodes (11): EvaluationReport, EvaluationReportSchema, BenchmarkCaseExecutor, EvaluationManager, EvaluationManagerOptions, caseIds, caseResults, dataset (+3 more)
 
 ### Community 1128 - "Community 1128"
 Cohesion: 0.16
@@ -2800,8 +2810,8 @@ Cohesion: 0.22
 Nodes (8): activeLease, claimRes, completedTask, completeRes, hbRes, migrator, releasedLease, task
 
 ### Community 1138 - "Community 1138"
-Cohesion: 0.17
-Nodes (9): matched, matcher, registry, HookMatcher, matched, matcher, matchFail, matchSuccess (+1 more)
+Cohesion: 0.33
+Nodes (5): matched, matcher, matchFail, matchSuccess, registry
 
 ### Community 1142 - "Community 1142"
 Cohesion: 0.25
@@ -2831,11 +2841,11 @@ Nodes (4): 1. Active Phase Backlog (P9 — BENCHMARKS, EVALUATION & RELEASE HARN
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `EventStore` connect `Community 425` to `Community 407`, `Community 259`, `Community 261`, `Community 262`, `Community 265`, `Community 267`, `Community 12`, `Community 911`, `Community 784`, `Community 18`, `Community 276`, `Community 21`, `Community 22`, `Community 23`, `Community 279`, `Community 281`, `Community 282`, `Community 666`, `Community 1045`, `Community 1048`, `Community 30`, `Community 284`, `Community 1056`, `Community 1066`, `Community 304`, `Community 305`, `Community 1073`, `Community 54`, `Community 1083`, `Community 315`, `Community 317`, `Community 957`, `Community 77`, `Community 335`, `Community 1105`, `Community 725`, `Community 1109`, `Community 728`, `Community 347`, `Community 348`, `Community 349`, `Community 351`, `Community 97`, `Community 1122`, `Community 867`, `Community 740`, `Community 354`, `Community 486`, `Community 610`, `Community 1128`, `Community 751`, `Community 755`, `Community 375`, `Community 378`, `Community 379`, `Community 252`?**
+- **Why does `EventStore` connect `Community 425` to `Community 407`, `Community 259`, `Community 261`, `Community 262`, `Community 265`, `Community 267`, `Community 12`, `Community 911`, `Community 784`, `Community 18`, `Community 276`, `Community 21`, `Community 22`, `Community 23`, `Community 279`, `Community 281`, `Community 282`, `Community 666`, `Community 1045`, `Community 1048`, `Community 30`, `Community 284`, `Community 1056`, `Community 1066`, `Community 304`, `Community 305`, `Community 1073`, `Community 54`, `Community 315`, `Community 317`, `Community 957`, `Community 77`, `Community 335`, `Community 1105`, `Community 725`, `Community 1109`, `Community 728`, `Community 347`, `Community 348`, `Community 349`, `Community 991`, `Community 351`, `Community 97`, `Community 1122`, `Community 867`, `Community 740`, `Community 354`, `Community 486`, `Community 610`, `Community 1128`, `Community 749`, `Community 751`, `Community 755`, `Community 375`, `Community 378`, `Community 379`, `Community 252`?**
   _High betweenness centrality (0.049) - this node is a cross-community bridge._
-- **Why does `SqliteEngine` connect `Community 276` to `Community 256`, `Community 259`, `Community 261`, `Community 262`, `Community 8`, `Community 265`, `Community 267`, `Community 911`, `Community 272`, `Community 784`, `Community 18`, `Community 1045`, `Community 279`, `Community 1048`, `Community 281`, `Community 666`, `Community 411`, `Community 284`, `Community 407`, `Community 286`, `Community 1056`, `Community 416`, `Community 289`, `Community 37`, `Community 422`, `Community 425`, `Community 1066`, `Community 299`, `Community 303`, `Community 816`, `Community 1073`, `Community 54`, `Community 311`, `Community 310`, `Community 1083`, `Community 315`, `Community 317`, `Community 957`, `Community 320`, `Community 324`, `Community 964`, `Community 584`, `Community 330`, `Community 332`, `Community 77`, `Community 1102`, `Community 1105`, `Community 725`, `Community 1109`, `Community 728`, `Community 347`, `Community 348`, `Community 1117`, `Community 349`, `Community 351`, `Community 1122`, `Community 354`, `Community 610`, `Community 1125`, `Community 486`, `Community 1128`, `Community 749`, `Community 1134`, `Community 755`, `Community 252`, `Community 1142`, `Community 1143`, `Community 761`, `Community 378`, `Community 379`, `Community 1148`, `Community 382`?**
+- **Why does `SqliteEngine` connect `Community 276` to `Community 256`, `Community 259`, `Community 261`, `Community 262`, `Community 8`, `Community 265`, `Community 267`, `Community 911`, `Community 272`, `Community 784`, `Community 18`, `Community 1045`, `Community 279`, `Community 1048`, `Community 281`, `Community 666`, `Community 411`, `Community 284`, `Community 407`, `Community 286`, `Community 1056`, `Community 416`, `Community 289`, `Community 37`, `Community 422`, `Community 425`, `Community 1066`, `Community 299`, `Community 303`, `Community 816`, `Community 1073`, `Community 54`, `Community 311`, `Community 310`, `Community 1083`, `Community 315`, `Community 317`, `Community 957`, `Community 320`, `Community 324`, `Community 964`, `Community 584`, `Community 330`, `Community 332`, `Community 77`, `Community 1102`, `Community 1105`, `Community 725`, `Community 1109`, `Community 728`, `Community 347`, `Community 348`, `Community 1117`, `Community 349`, `Community 991`, `Community 351`, `Community 1122`, `Community 354`, `Community 610`, `Community 486`, `Community 1128`, `Community 749`, `Community 1134`, `Community 1005`, `Community 755`, `Community 252`, `Community 1142`, `Community 1143`, `Community 761`, `Community 378`, `Community 379`, `Community 1148`, `Community 382`?**
   _High betweenness centrality (0.036) - this node is a cross-community bridge._
-- **Why does `EventTypes` connect `Community 267` to `Community 259`, `Community 12`, `Community 911`, `Community 784`, `Community 18`, `Community 276`, `Community 21`, `Community 22`, `Community 23`, `Community 1045`, `Community 281`, `Community 666`, `Community 282`, `Community 1048`, `Community 30`, `Community 287`, `Community 1056`, `Community 425`, `Community 1066`, `Community 304`, `Community 305`, `Community 77`, `Community 335`, `Community 348`, `Community 349`, `Community 351`, `Community 97`, `Community 867`, `Community 740`, `Community 1128`, `Community 751`, `Community 375`, `Community 379`, `Community 252`?**
+- **Why does `EventTypes` connect `Community 267` to `Community 259`, `Community 12`, `Community 911`, `Community 784`, `Community 18`, `Community 276`, `Community 21`, `Community 22`, `Community 23`, `Community 1045`, `Community 281`, `Community 666`, `Community 282`, `Community 1048`, `Community 30`, `Community 287`, `Community 1056`, `Community 425`, `Community 1066`, `Community 304`, `Community 305`, `Community 77`, `Community 335`, `Community 348`, `Community 349`, `Community 991`, `Community 351`, `Community 97`, `Community 867`, `Community 740`, `Community 1128`, `Community 749`, `Community 751`, `Community 375`, `Community 379`, `Community 252`?**
   _High betweenness centrality (0.018) - this node is a cross-community bridge._
 - **What connects `name`, `version`, `description` to the rest of the system?**
   _3961 weakly-connected nodes found - possible documentation gaps or missing edges._

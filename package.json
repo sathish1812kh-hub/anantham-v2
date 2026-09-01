@@ -10,6 +10,7 @@
   },
   "files": [
     "dist",
+    "!dist/release",
     "README.md",
     "LICENSE"
   ],
