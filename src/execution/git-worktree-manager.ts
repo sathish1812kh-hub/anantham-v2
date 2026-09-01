@@ -105,6 +105,12 @@ export class GitWorktreeManager {
     }
   }
 
+  public static validateRef(ref: string, fieldName: string = "ref"): void {
+    if (!ref || !/^[a-zA-Z0-9_\-\./]+$/.test(ref) || ref.startsWith("-") || ref.includes("..")) {
+      throw new Error(`SECURITY_INVALID_REF: ${fieldName} "${ref}" contains forbidden shell or traversal characters.`);
+    }
+  }
+
   /**
    * Create an isolated Git worktree for an agent.
    */
@@ -115,13 +121,8 @@ export class GitWorktreeManager {
     repoPath: string = this.projectRoot
   ): Promise<{ worktreePath: string; branchName: string; baseCommit: string }> {
     // 1. Strict ref format validation (Zero shell injection defense)
-    if (!branchName || !/^[a-zA-Z0-9_\-\./]+$/.test(branchName) || branchName.startsWith("-") || branchName.includes("..")) {
-      throw new Error(`SECURITY_INVALID_REF: Branch name "${branchName}" contains forbidden shell or traversal characters.`);
-    }
-
-    if (!baseCommit || !/^[a-zA-Z0-9_\-\.]+$/.test(baseCommit) || baseCommit.startsWith("-")) {
-      throw new Error(`SECURITY_INVALID_REF: Base commit "${baseCommit}" contains forbidden shell characters.`);
-    }
+    GitWorktreeManager.validateRef(branchName, "Branch name");
+    GitWorktreeManager.validateRef(baseCommit, "Base commit");
 
     const worktreePath = this.getWorktreePath(workspaceId, repoPath);
 

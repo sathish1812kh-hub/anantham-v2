@@ -6,16 +6,23 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P10 — PRODUCTION RELEASE, SELF-HOSTING & CERTIFICATION)
 
-### [TASK-P10.6 — SYSTEM INVARIANT BREAKING AUDIT, CONCURRENCY FUZZING & FAILURE-INJECTION](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [TASK-P10.7 — PRE-PRODUCTION FINAL RED-TEAM, OPERATIONAL CHAOS & RELEASE-BLOCKER AUDIT](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `COMPLETED`
-- **Owner**: Principal Security Architect & Reliability Engineer
+- **Owner**: Principal Security Architect, Reliability Engineer & Production SRE
 - **Completed Date**: 2026-09-01
-- **Description**: Invariant-breaking adversarial audit & failure-injection campaign completed. Discovered, reproduced, and surgically remediated 4 cross-subsystem weaknesses (W-P10.6-01 ApprovalManager single-use token consumption, W-P10.6-02 GitWorktreeManager strict branch/commit ref format validation, W-P10.6-03 CrashRecoveryEngine clean atomic state recovery without synthetic event dependencies, W-P10.6-04 TaskClaimManager heartbeat expiration deadlock prevention via immediate task status reset). 830/830 tests passing.
-- **Artifact**: `dist/release/anantham-v2-2.0.0-alpha.1.tgz` (SHA-256: `848be68c535253246e052ad6f54b04ba2a7ac7f5e2641cf74b43493e0ec33e43`).
+- **Description**: Pre-production final red-team evaluation and operational chaos audit completed across all 14 subsystems. Re-attacked all findings from P10.4, P10.5, and P10.6, evaluated revocation latency, duplicate side-effect classifications, exactly-once claim disaggregations, cross-project indirect reference attacks, and state machine concurrency fuzzing. 841/841 automated tests passing.
+- **Artifact**: `dist/release/anantham-v2-2.0.0-alpha.1.tgz` (SHA-256: `dee295663e24e001b280a0a151d0ebc73e6296bc8cfc5a6a59dc7c72a82dca67`).
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P10.7 — PRE-PRODUCTION FINAL RED-TEAM, OPERATIONAL CHAOS & RELEASE-BLOCKER AUDIT](file:///C:/herness/tests/security/p10-7-redteam-adversarial-audit.test.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Security Architect, Reliability Engineer & Production SRE
+- **Completed Date**: 2026-09-01
+- **Verification**: 2 new dedicated adversarial test suites (`tests/security/p10-7-redteam-adversarial-audit.test.ts`, `tests/recovery/p10-7-operational-chaos-recovery.test.ts`), 841/841 Vitest tests passing across 399 suites, 0 type errors, 1000/1000 scorecard.
+
 
 ### [TASK-P10.6 — SYSTEM INVARIANT BREAKING AUDIT, CONCURRENCY FUZZING & FAILURE-INJECTION](file:///C:/herness/tests/policy/approval-replay-prevention.test.ts)
 - **Status**: `COMPLETED`

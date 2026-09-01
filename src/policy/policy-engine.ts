@@ -156,7 +156,7 @@ export class PolicyEngine {
   }
 
   private matchesRule(rule: PolicyRule, ctx: PolicyEvaluationContext): boolean {
-    const scope = rule.scope;
+    const scope = rule.scope || {};
     if (scope.projectId && scope.projectId !== ctx.project.id) return false;
     if (scope.actorType && scope.actorType !== ctx.actor.type) return false;
     if (scope.toolName && scope.toolName !== ctx.operation.toolName) return false;
