@@ -8,11 +8,19 @@
   "bin": {
     "anantham": "./dist/bin/anantham.js"
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
+    "release:build": "node scripts/release-engineering.mjs build",
+    "release:audit": "node scripts/release-engineering.mjs audit",
+    "release:verify": "node scripts/release-engineering.mjs verify",
     "verify": "powershell -ExecutionPolicy Bypass -File scripts/verify-all.ps1",
     "scorecard": "powershell -ExecutionPolicy Bypass -File scripts/certification-scorecard.ps1",
     "sync-state": "powershell -ExecutionPolicy Bypass -File scripts/sync-state.ps1",

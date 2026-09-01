@@ -329,7 +329,21 @@ This document records architectural decisions, their trade-offs, and compliance 
   2. *Deterministic Scoring & Provenance*: Record evaluation runs, case results, and execution provenance immutably to SQLite (`eval_runs` and `eval_case_results`).
   3. *Objective Assertion Verification*: Use `AssertionEvaluator` to verify physical database PRAGMA integrity, state equality, event existence, artifact existence, and policy decisions without trusting unverified in-memory claims.
   4. *Regression Comparison*: `RegressionEngine` computes score deltas, new failures, and fixed failures against established baseline runs to prevent silent quality regressions.
-- **Consequences**: Provable machine-verifiable release gates, automated regression detection, and authoritative audit evidence before production certification.
+---
+
+## ADR-027: Release Engineering, Supply-Chain Security & Reproducible Packaging Architecture
+
+- **Status**: `ACCEPTED`
+- **Date**: 2026-09-01
+- **Context**: Release artifacts must be trustworthy, verifiable, reproducible, and tamper-evident. Packaging must strictly prevent inclusion of development/test files, unverified dependencies, leaked credentials, or undeclared local machine state.
+- **Decision**: Establish an authoritative release engineering pipeline (`scripts/release-engineering.mjs`):
+  1. *Production Dependency Isolation*: Production dependencies are strictly restricted to `zod` and native Node.js core modules (`node:sqlite`, `node:crypto`, `node:fs`, `node:http`); dev dependencies (`typescript`, `vitest`, `@types/node`) are excluded from release packages.
+  2. *Cryptographic Digest Manifests*: Every release tarball is sealed with SHA-256 and SHA-512 digests in an authoritative `release-manifest.json`; modifying even a single byte triggers deterministic tamper detection failure.
+  3. *Dual SBOM Documents*: Emits standardized CycloneDX 1.5 and SPDX 2.3 JSON SBOMs tracking all components, versions, licenses, and direct/transitive relationships.
+  4. *Multi-Pattern Secret Scanning*: Automated scanning of all source files, build artifacts (`dist/`), manifests, and support bundles against API keys, Bearer tokens, private RSA keys, and database URIs.
+  5. *Clean-Environment Verification*: Release artifacts are verified in isolated environments without relying on workspace state or global ambient tools.
+- **Consequences**: Provable supply-chain integrity, cryptographic tamper resistance, reproducible release artifacts, and machine-verifiable compliance documentation.
+
 
 
 

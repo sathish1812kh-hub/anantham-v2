@@ -4,8 +4,8 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `aec9f88`
-- **Generated**: `2026-09-01T18:10:42Z`
+- **Project Commit**: `1bdfd65`
+- **Generated**: `2026-09-01T18:29:54Z`
 - **Current Release**: `v2.0.0-alpha.1`
 - **Current Phase**: `P9 — BENCHMARKS, EVALUATION & RELEASE HARNESS`
 - **Current Task**: `P9.3 — Security, Vulnerability & Adversarial Hardening`

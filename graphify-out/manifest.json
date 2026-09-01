@@ -1,7 +1,7 @@
 {
   "C:\\herness\\package.json": {
-    "mtime": 1788246820.1813984,
-    "ast_hash": "1a988a62141374d4746a54718271cd2d",
+    "mtime": 1788266792.4694963,
+    "ast_hash": "a1d3a144c6afdc2cb4e356fa4a8f5354",
     "semantic_hash": ""
   },
   "C:\\herness\\tsconfig.json": {
@@ -25,8 +25,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\governance\\scorecard.json": {
-    "mtime": 1788266127.58009,
-    "ast_hash": "96e1a23fa4acf7fc350feb7c7a0bf665",
+    "mtime": 1788267193.509338,
+    "ast_hash": "a1e979ed84e2f28201827c913d19f6b5",
     "semantic_hash": ""
   },
   "C:\\herness\\scripts\\certification-scorecard.ps1": {
@@ -47,6 +47,11 @@
   "C:\\herness\\scripts\\post-task-sync.ps1": {
     "mtime": 1788105404.6503463,
     "ast_hash": "f37defdbabdb7692c75f939487698558",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\scripts\\release-engineering.mjs": {
+    "mtime": 1788266824.9359915,
+    "ast_hash": "f6c72ccf8385a37375c02c3f36629689",
     "semantic_hash": ""
   },
   "C:\\herness\\scripts\\start-neo4j.ps1": {
@@ -187,6 +192,11 @@
   "C:\\herness\\src\\artifacts\\index.ts": {
     "mtime": 1788112447.6967828,
     "ast_hash": "7fef6d74aea76e3536bf6bd10fcf3a64",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\src\\bin\\anantham.ts": {
+    "mtime": 1788266956.2918098,
+    "ast_hash": "fc17a0f575224f0bf9112db88b97e79f",
     "semantic_hash": ""
   },
   "C:\\herness\\src\\cli\\cli-application.ts": {
@@ -2834,6 +2844,26 @@
     "ast_hash": "d8fa56157ffae5fb1fe15466c2950b43",
     "semantic_hash": ""
   },
+  "C:\\herness\\tests\\release\\artifact-integrity-and-tamper.test.ts": {
+    "mtime": 1788266860.1487856,
+    "ast_hash": "86aaa9869d5d99c1b2d7083e305293ac",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\release\\clean-environment-smoke.test.ts": {
+    "mtime": 1788266974.4863682,
+    "ast_hash": "25a878bbf3e87a8cd8568bfb7ff2d27c",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\release\\license-and-sbom.test.ts": {
+    "mtime": 1788266849.559284,
+    "ast_hash": "d5f12947699e754a42dcd85280bdee7f",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\release\\reproducible-build.test.ts": {
+    "mtime": 1788266873.254174,
+    "ast_hash": "b06815ee57bac4cb3398a67e2bbc2d68",
+    "semantic_hash": ""
+  },
   "C:\\herness\\tests\\remote\\authenticated-communication.test.ts": {
     "mtime": 1788198681.177531,
     "ast_hash": "a3185d113331e7191dbc0baa811d75ff",
@@ -3449,6 +3479,11 @@
     "ast_hash": "46d9bdfe3ff123297adbb16f63f138a8",
     "semantic_hash": ""
   },
+  "C:\\herness\\README.md": {
+    "mtime": 1788266780.3763182,
+    "ast_hash": "a9059e49eb48ab7c3accad94507dc7cd",
+    "semantic_hash": ""
+  },
   "C:\\herness\\.agents\\skills\\anantham-playbook-orchestrator\\SKILL.md": {
     "mtime": 1788105328.9649992,
     "ast_hash": "be09fc102eb252ce009dd726c9c3e68a",
@@ -3490,8 +3525,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\ANANTHAM PROJECT SOURCES\\DEVELOPMENT\\ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md": {
-    "mtime": 1788266054.8050802,
-    "ast_hash": "0fd0174bc0d66428ff880d1f23982321",
+    "mtime": 1788267117.8291836,
+    "ast_hash": "8516802a69a5269569617a5216fab59d",
     "semantic_hash": ""
   },
   "C:\\herness\\ANANTHAM PROJECT SOURCES\\prd\\ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md": {
@@ -3520,13 +3555,13 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\current-state.md": {
-    "mtime": 1788263840.9079185,
-    "ast_hash": "a2c8b0801b08fa08c93bfc20f0e35d4a",
+    "mtime": 1788266443.0072167,
+    "ast_hash": "7b0c715ad4fcc415f67bd0f69654318c",
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\decision-log.md": {
-    "mtime": 1788266034.0774395,
-    "ast_hash": "10270ca74db226e5c80d9a8f218794ff",
+    "mtime": 1788267094.3471725,
+    "ast_hash": "2e83423c8d4ae559896c7d3f3c15188d",
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\dependency-registry.md": {
