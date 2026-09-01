@@ -4,20 +4,25 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `1bdfd65`
-- **Generated**: `2026-09-01T18:29:54Z`
+- **Project Commit**: `ca72d82`
+- **Generated**: `2026-09-01T19:00:06Z`
 - **Current Release**: `v2.0.0-alpha.1`
-- **Current Phase**: `P9 — BENCHMARKS, EVALUATION & RELEASE HARNESS`
-- **Current Task**: `P9.3 — Security, Vulnerability & Adversarial Hardening`
-- **Last Completed Task**: `TASK-P9.2-RECOVERY-CHAOS-INTERRUPTION-DURABILITY — Recovery, Chaos, Interruption & Durability Evaluation`
+- **Current Phase**: `P10 — PRODUCTION RELEASE, SELF-HOSTING & CERTIFICATION`
+- **Current Task**: `TASK-P10.1-SELF-HOSTING-VALIDATION — Self-Hosting Validation & Release Staging`
+- **Last Completed Task**: `TASK-P9.7-FINAL-RELEASE-CANDIDATE-ADVERSARIAL-AUDIT — Final Release-Candidate Adversarial Audit`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`
   - `0 type check errors under strict: true.`
 - **Pending Approvals**:
-  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.5, P4.1-P4.5, P5.1-P5.4, P6.1-P6.4, P7.1-P7.4, P8.1-P8.5, P9.1, P9.2 Implemented Clean & Verified).`
+  - `None (P1.1-P1.5, P2.1-P2.6, P3.1-P3.5, P4.1-P4.5, P5.1-P5.4, P6.1-P6.4, P7.1-P7.4, P8.1-P8.5, P9.1-P9.7 Implemented Clean & Verified).`
 - **Recently Completed Milestones**:
-  - [P9.2-RECOVERY-CHAOS-DURABILITY](file:///C:/herness/src/recovery/crash-recovery-engine.ts) (Pre-flight adversarial architecture audit, CrashRecoveryEngine persistent SQLite lease reclamation, automated interrupted task sweep & recovery for stuck running/claimed tasks, AssertionEvaluator physical database PRAGMA integrity & schema verification, idempotent repeated recovery cycles)
+  - [P9.7-FINAL-RELEASE-CANDIDATE-ADVERSARIAL-AUDIT](file:///C:/herness/scripts/release-engineering.mjs) (Complete cross-subsystem adversarial audit across 20+ dimensions, state/event consistency verification, monotonic generation fencing tokens, objective physical artifact hashing, zero secret leakage, full reproducible release verification)
+  - [P9.6-RELEASE-ENGINEERING-PACKAGING](file:///C:/herness/scripts/release-engineering.mjs) (Authoritative release engineering engine, license compliance audit, dual CycloneDX 1.5 & SPDX 2.3 SBOM generation, secret & vulnerability scanning, npm package tarball creation, release manifest, and clean-environment runtime smoke test)
+  - [P9.5-SYSTEM-LEVEL-EVALUATION](file:///C:/herness/src/evaluation/benchmark-registry.ts) (Comprehensive release dataset dataset_system_evaluation_v1, end-to-end evaluation covering resume, compaction, multimodal, provider failover, parallelism, retrieval, false completion, security, cost, and recovery)
+  - [P9.4-MULTIMODAL-ROBUSTNESS](file:///C:/herness/src/content/content-ingestion-engine.ts) (Multimodal fixture red-team matrix across 10 content types, RepresentationSelector token budget bounding, unknown binary byte preservation across SQLite restart, parser failure isolation, and capability resolution)
+  - [P9.3-SECURITY-VULNERABILITY](file:///C:/herness/src/policy/policy-engine.ts) (Prompt injection red-team defenses, tool policy bypass & path traversal prevention, secret exfiltration & credential masking, subagent permission escalation & TOCTOU approval expiration, and malicious MCP output / plugin checksum validation)
+
   - [P9.1-BENCHMARKS-EVALUATION](file:///C:/herness/src/evaluation/index.ts) (Authoritative EvaluationManager container, BenchmarkRegistry with preloaded standard suites [dataset_core_v1, dataset_security_v1, dataset_recovery_v1], AssertionEvaluator objective machine-verifiable assertions, EvidenceCollector immutable runtime provenance, RegressionEngine baseline comparison & regression detection, EvaluationHarness isolated project/session sandboxes, SQLite migration 010, EvaluationRepository)
 
   - [P8.5-OBSERVABILITY](file:///C:/herness/src/observability/index.ts) (Authoritative ObservabilityManager container, AuditLogger cryptographic SHA-256 hash chaining & tamper evidence verification, SecurityEventClassifier deterministic anomaly & denial classification, TelemetryEngine metrics counters/gauges/histograms & execution spans, DiagnosticInspector SQLite WAL integrity & migration checks, ComplianceExporter machine-verifiable governance audit bundles, ContentSanitizer recursive credential scrubbing)

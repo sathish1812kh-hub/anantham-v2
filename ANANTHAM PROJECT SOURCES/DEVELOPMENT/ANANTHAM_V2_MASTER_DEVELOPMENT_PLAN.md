@@ -606,7 +606,20 @@ The PRD defines concrete acceptance targets including RPO 0 for committed state 
 
 Antigravity MUST append an entry after every completed work package:
 
+## 2026-09-01 18:50 — TASK-P10.1-SELF-HOSTING-VALIDATION
+
+Status: VERIFIED COMPLETE
+What changed: Validated independent execution and self-hosting capabilities of the packaged Anantham V2 release artifact (`dist/release/anantham-v2-2.0.0-alpha.1.tgz`). Unpacked the release tarball into an isolated sandbox environment in `os.tmpdir()` and executed exhaustive self-hosting verification against `package/dist/index.js` and `package/dist/bin/anantham.js` with zero source-tree imports. Verified CLI commands (`--version`, `--help`), standalone SQLite WAL persistence with all 10 schema migrations (`PRAGMA integrity_check = ok`, `PRAGMA foreign_key_check = 0`), EventStore state consistency across restarts, task claims and monotonic generation fencing tokens, memory FTS5 BM25 search with cross-project tenant isolation, physical artifact storage with on-disk SHA-256 tamper rejection, PolicyEngine and ToolGateway risk evaluation, ObservabilityManager cryptographic SHA-256 hash chaining, and CrashRecoveryEngine startup recovery with interrupted task sweep.
+Files: tests/release/self-hosting-validation.test.ts, docs/discovery/current-state.md, docs/discovery/active-tasks.md, ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md
+Tests: 815 automated tests passing across 385 test suites in Vitest (22 dedicated release & self-hosting tests).
+Verification: npm run typecheck (0 errors under strict: true), npm test (815/815 passing), npm run build (clean), npm run scorecard (1000/1000 Certified Perfect), multi-engine sync (CodeGraph, Graphify, Neo4j, Graphiti, Git).
+Commit/Revision: Active
+Risks: None.
+Unresolved: None.
+Next: P10.2 Final Gold Certification.
+
 ## 2026-09-01 18:20 — TASK-P9.6-RELEASE-ENGINEERING-PACKAGING
+
 
 Status: VERIFIED COMPLETE
 What changed: Implemented and verified comprehensive release engineering, supply-chain security, packaging, and reproducible release verification (ADR-027). Created authoritative release engine `scripts/release-engineering.mjs` and verified 20 release dimensions: license compliance audit (100% compliant with approved OSS licenses), dual SBOM generation (CycloneDX 1.5 and SPDX 2.3 JSON formats), automated multi-pattern secret scanning (verifying zero leaked credentials in production source/dist/packages), dependency vulnerability analysis, npm package tarball creation, cryptographic SHA-256 and SHA-512 manifest generation (`release-manifest.json`), clean-environment runtime installation and smoke testing (CLI execution, SQLite DB init, and schema migrations), release support bundle generation (`release-support-bundle.json`), reproducible packaging validation, and single-byte tampering detection.

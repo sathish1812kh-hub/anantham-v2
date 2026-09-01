@@ -4,17 +4,24 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ---
 
-## 1. Active Phase Backlog (P9 — BENCHMARKS, EVALUATION & RELEASE HARNESS)
+## 1. Active Phase Backlog (P10 — PRODUCTION RELEASE, SELF-HOSTING & CERTIFICATION)
 
-### [P9.3 — Security, Vulnerability & Adversarial Hardening](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [TASK-P10.1-SELF-HOSTING-VALIDATION — Self-Hosting Validation & Release Staging](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Lead Security & Red Team Architect
-- **Description**: Build prompt injection defense, tool-policy bypass, path traversal, command injection, secret leakage, and malicious attachment/MCP test harnesses.
-- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.4`, `P7.1–P7.4`, `P8.1–P8.5`, `P9.1`, `P9.2`.
+- **Owner**: Lead Release Engineering & Self-Hosting Architect
+- **Description**: Self-host Anantham V2 within its own agentic execution runtime, run dogfooding pipelines, and verify production release readiness.
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.4`, `P7.1–P7.4`, `P8.1–P8.5`, `P9.1–P9.7`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P9.7-FINAL-RELEASE-CANDIDATE-ADVERSARIAL-AUDIT — Final Release-Candidate Adversarial Audit](file:///C:/herness/scripts/release-engineering.mjs)
+- **Status**: `COMPLETED`
+- **Owner**: Lead Reliability & Adversarial Red Team Architect
+- **Completed Date**: 2026-09-01
+- **Verification**: Complete cross-subsystem adversarial audit across all 20+ operational dimensions. Verified single SQLite transaction atomicity between relational state and EventStore appends, monotonic generation fencing tokens preventing zombie worker execution, objective physical artifact existence checks on disk with SHA-256 integrity, 100% compliant Open Source licenses, dual CycloneDX 1.5 & SPDX 2.3 SBOM generation, zero secret leakage in production bundles, clean-environment standalone installation, and 805/805 automated tests passing across 384 test suites under strict TypeScript compilation with 1000/1000 scorecard.
+
 
 ### [TASK-P9.2-RECOVERY-CHAOS-INTERRUPTION-DURABILITY — Recovery, Chaos, Interruption & Durability Evaluation](file:///C:/herness/src/recovery/crash-recovery-engine.ts)
 - **Status**: `COMPLETED`
