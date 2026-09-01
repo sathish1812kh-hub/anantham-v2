@@ -1,16 +1,16 @@
 # Graph Report - herness  (2026-09-01)
 
 ## Corpus Check
-- 701 files · ~270,959 words
+- 703 files · ~272,518 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 7245 nodes · 12217 edges · 1204 communities (431 shown, 773 thin omitted)
+- 7266 nodes · 12270 edges · 1221 communities (444 shown, 777 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 6 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `81940191`
+- Built from commit: `432bdc42`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -1142,20 +1142,32 @@
 - [[_COMMUNITY_Community 1159|Community 1159]]
 - [[_COMMUNITY_Community 1161|Community 1161]]
 - [[_COMMUNITY_Community 1162|Community 1162]]
+- [[_COMMUNITY_Community 1163|Community 1163]]
 - [[_COMMUNITY_Community 1164|Community 1164]]
+- [[_COMMUNITY_Community 1165|Community 1165]]
+- [[_COMMUNITY_Community 1166|Community 1166]]
 - [[_COMMUNITY_Community 1167|Community 1167]]
 - [[_COMMUNITY_Community 1168|Community 1168]]
+- [[_COMMUNITY_Community 1171|Community 1171]]
 - [[_COMMUNITY_Community 1172|Community 1172]]
 - [[_COMMUNITY_Community 1173|Community 1173]]
 - [[_COMMUNITY_Community 1174|Community 1174]]
 - [[_COMMUNITY_Community 1175|Community 1175]]
 - [[_COMMUNITY_Community 1176|Community 1176]]
 - [[_COMMUNITY_Community 1177|Community 1177]]
+- [[_COMMUNITY_Community 1178|Community 1178]]
 - [[_COMMUNITY_Community 1179|Community 1179]]
 - [[_COMMUNITY_Community 1180|Community 1180]]
+- [[_COMMUNITY_Community 1181|Community 1181]]
+- [[_COMMUNITY_Community 1182|Community 1182]]
 - [[_COMMUNITY_Community 1184|Community 1184]]
+- [[_COMMUNITY_Community 1185|Community 1185]]
+- [[_COMMUNITY_Community 1186|Community 1186]]
 - [[_COMMUNITY_Community 1187|Community 1187]]
+- [[_COMMUNITY_Community 1189|Community 1189]]
 - [[_COMMUNITY_Community 1190|Community 1190]]
+- [[_COMMUNITY_Community 1191|Community 1191]]
+- [[_COMMUNITY_Community 1192|Community 1192]]
 - [[_COMMUNITY_Community 1193|Community 1193]]
 - [[_COMMUNITY_Community 1194|Community 1194]]
 - [[_COMMUNITY_Community 1195|Community 1195]]
@@ -1177,24 +1189,29 @@
 - [[_COMMUNITY_Community 1212|Community 1212]]
 - [[_COMMUNITY_Community 1213|Community 1213]]
 - [[_COMMUNITY_Community 1214|Community 1214]]
+- [[_COMMUNITY_Community 1216|Community 1216]]
+- [[_COMMUNITY_Community 1217|Community 1217]]
+- [[_COMMUNITY_Community 1218|Community 1218]]
+- [[_COMMUNITY_Community 1219|Community 1219]]
+- [[_COMMUNITY_Community 1220|Community 1220]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `SqliteEngine` - 205 edges
-2. `MigrationEngine` - 162 edges
-3. `EventStore` - 146 edges
-4. `ProjectRepository` - 117 edges
-5. `SessionRepository` - 98 edges
-6. `TaskRepository` - 81 edges
+1. `SqliteEngine` - 207 edges
+2. `MigrationEngine` - 164 edges
+3. `EventStore` - 149 edges
+4. `ProjectRepository` - 119 edges
+5. `SessionRepository` - 100 edges
+6. `TaskRepository` - 82 edges
 7. `EventTypes` - 74 edges
-8. `TaskClaimManager` - 67 edges
-9. `LeaseRepository` - 59 edges
+8. `TaskClaimManager` - 69 edges
+9. `LeaseRepository` - 60 edges
 10. `2. Completed Milestones (Recent)` - 41 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `registerNativeTools()` --calls--> `createFilesystemTools()`  [EXTRACTED]
-  src/tools/native/register-native-tools.ts → src/tools/native/filesystem-tools.ts
 - `registerNativeTools()` --calls--> `createArtifactTools()`  [EXTRACTED]
   src/tools/native/register-native-tools.ts → src/tools/native/artifact-tools.ts
+- `registerNativeTools()` --calls--> `createFilesystemTools()`  [EXTRACTED]
+  src/tools/native/register-native-tools.ts → src/tools/native/filesystem-tools.ts
 - `registerNativeTools()` --calls--> `createGitTools()`  [EXTRACTED]
   src/tools/native/register-native-tools.ts → src/tools/native/git-tools.ts
 - `registerNativeTools()` --calls--> `createMemoryTools()`  [EXTRACTED]
@@ -1202,7 +1219,7 @@
 - `registerNativeTools()` --calls--> `createNetworkTools()`  [EXTRACTED]
   src/tools/native/register-native-tools.ts → src/tools/native/network-tools.ts
 
-## Communities (1204 total, 773 thin omitted)
+## Communities (1221 total, 777 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.02
@@ -1214,15 +1231,15 @@ Nodes (93): 108. ORCHESTRATOR REQUIREMENTS, 119. BUDGET REBALANCING, 133. RPC AU
 
 ### Community 2 - "Community 2"
 Cohesion: 0.02
-Nodes (80): 101. RESTART TESTING, 102. CRASH TESTING, 104. SECURITY TESTING, 117. ROUTER EVALUATION, 120. STORAGE ENGINEERING, 126. HOT CONFIGURATION, 12. PHASE 3 — ARCHITECTURE, 132. API/RPC (+72 more)
+Nodes (80): 102. CRASH TESTING, 104. SECURITY TESTING, 117. ROUTER EVALUATION, 120. STORAGE ENGINEERING, 124. CONFIGURATION, 126. HOT CONFIGURATION, 128. API COMPATIBILITY, 12. PHASE 3 — ARCHITECTURE (+72 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.03
-Nodes (67): 104. USER INTERRUPT MODEL, 105. STEERING, 107. MULTI-ROOT WORKSPACE, 108. MONOREPO SUPPORT, 113. GIT-AWARE STATE, 114. SESSION MEMORY VS HISTORY, 115. SEARCH INDEXES, 122. ZERO-LOSS REQUIREMENT MATRIX (+59 more)
+Nodes (67): 102. TASK PRIORITY, 105. STEERING, 107. MULTI-ROOT WORKSPACE, 108. MONOREPO SUPPORT, 113. GIT-AWARE STATE, 115. SEARCH INDEXES, 117. PROVENANCE MODEL, 119. INSTRUCTION AUTHORITY (+59 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.18
-Nodes (16): SkillExecutionRecord, SkillExecutionRecordSchema, SkillLifecycleState, SkillLifecycleStateSchema, SkillManifest, SkillPinMap, SkillPinMapSchema, SkillProcedure (+8 more)
+Cohesion: 0.12
+Nodes (22): SkillExecutionRecord, SkillExecutionRecordSchema, SkillFrontmatter, SkillFrontmatterSchema, SkillLifecycleState, SkillLifecycleStateSchema, SkillManifestSchema, SkillMetadataSchema (+14 more)
 
 ### Community 5 - "Community 5"
 Cohesion: 0.11
@@ -1237,8 +1254,8 @@ Cohesion: 0.08
 Nodes (40): AnthropicAdapterOptions, GeminiAdapterOptions, OpenAICompatibleAdapterOptions, OpenRouterProviderAdapterOptions, ModelFinishReason, ModelFinishReasonSchema, ModelMessage, ModelMessageSchema (+32 more)
 
 ### Community 8 - "Community 8"
-Cohesion: 0.09
-Nodes (19): CandidateContextItem, MemoryItem, MemoryItemSchema, MemoryPriority, MemoryPrioritySchema, MemoryScope, MemoryScopeSchema, memory (+11 more)
+Cohesion: 0.11
+Nodes (26): CandidateContextItem, MemoryItem, MemoryItemSchema, MemoryPriority, MemoryPrioritySchema, MemoryScope, MemoryScopeSchema, memory (+18 more)
 
 ### Community 9 - "Community 9"
 Cohesion: 0.06
@@ -1249,12 +1266,12 @@ Cohesion: 0.09
 Nodes (22): 11. Native Tools, 14. Skills, 15. Hooks, 1. Stack Overview, 21. Security Stack, 26. Code Intelligence Stack, 2. High-Level Architecture, 31. Implementation Priority (+14 more)
 
 ### Community 11 - "Community 11"
-Cohesion: 0.11
-Nodes (19): ExecutionResultSchema, ExecutionStatus, ExecutionStatusSchema, ExecutorType, ExecutorTypeSchema, NetworkPolicy, NetworkPolicySchema, ProcessLifecycleState (+11 more)
+Cohesion: 0.12
+Nodes (18): ExecutionResultSchema, ExecutionStatus, ExecutionStatusSchema, ExecutorType, ExecutorTypeSchema, NetworkPolicy, NetworkPolicySchema, ProcessLifecycleStateSchema (+10 more)
 
 ### Community 12 - "Community 12"
 Cohesion: 0.06
-Nodes (51): PinnedVersionsSchema, WorkflowApprovalGate, WorkflowApprovalGateSchema, WorkflowApproveNode, WorkflowApproveNodeSchema, WorkflowBudget, WorkflowBudgetConsumption, WorkflowConcurrency (+43 more)
+Nodes (50): PinnedVersionsSchema, WorkflowApprovalGate, WorkflowApprovalGateSchema, WorkflowApproveNode, WorkflowApproveNodeSchema, WorkflowBudget, WorkflowBudgetConsumption, WorkflowConcurrency (+42 more)
 
 ### Community 13 - "Community 13"
 Cohesion: 0.2
@@ -1262,7 +1279,7 @@ Nodes (9): cypherLines, data, fileType, id, label, outFile, source, sourceFile (
 
 ### Community 14 - "Community 14"
 Cohesion: 0.12
-Nodes (19): PluginClass, PluginClassSchema, PluginCompatibilitySchema, PluginDependencySchema, PluginHealthState, PluginHealthStateSchema, PluginLifecycleState, PluginLifecycleStateSchema (+11 more)
+Nodes (17): PluginClass, PluginClassSchema, PluginCompatibilitySchema, PluginDependencySchema, PluginHealthState, PluginHealthStateSchema, PluginLifecycleState, PluginLifecycleStateSchema (+9 more)
 
 ### Community 15 - "Community 15"
 Cohesion: 0.11
@@ -1277,32 +1294,32 @@ Cohesion: 0.11
 Nodes (18): 403. IMPLEMENTATION ORDER — PART 2, code:text (ModelAdapter), code:text (credential manager), code:text (agent roles), code:text (ToolDefinition), code:text (MCP registry), code:text (local), code:text (task board) (+10 more)
 
 ### Community 18 - "Community 18"
-Cohesion: 0.05
-Nodes (36): ActorType, ToolSpec, executor, policyEngine, slowHook, toolGateway, toolRegistry, events (+28 more)
+Cohesion: 0.06
+Nodes (26): executor, manager, policyEngine, toolGateway, toolRegistry, gateway, registry, ToolGateway (+18 more)
 
 ### Community 19 - "Community 19"
-Cohesion: 0.06
-Nodes (41): ChangeSetMetadata, ChangeSetMetadataSchema, ConflictClassification, ConflictClassificationSchema, ConflictReport, ConflictReportSchema, ExecutionWorkspaceSchema, IntegrationRequestSchema (+33 more)
+Cohesion: 0.14
+Nodes (12): ConflictReport, ConflictReportSchema, ConflictDetector, GitWorkingTreeStatus, conflict, cs1, cs2, detector (+4 more)
 
 ### Community 20 - "Community 20"
 Cohesion: 0.07
-Nodes (28): AuthProfile, AuthProfileSchema, CredentialReference, CredentialReferenceSchema, CredentialStatus, CredentialStatusSchema, HealthStatus, HealthStatusSchema (+20 more)
+Nodes (30): AuthProfile, AuthProfileSchema, CredentialReference, CredentialReferenceSchema, CredentialStatus, CredentialStatusSchema, HealthStatus, HealthStatusSchema (+22 more)
 
 ### Community 21 - "Community 21"
-Cohesion: 0.02
-Nodes (82): newManager, newRepo, now, payload, projectRepo, sessionRepo, now, projectRepo (+74 more)
+Cohesion: 0.06
+Nodes (25): now, projectRepo, sessionRepo, CompactionEngine, now, projectRepo, sessionRepo, validated (+17 more)
 
 ### Community 22 - "Community 22"
-Cohesion: 0.08
-Nodes (25): ContextAssemblyRequest, ContextInspectionReport, ToolResultEntry, ToolSchemaEntry, report, validated, item, omittedReasons (+17 more)
+Cohesion: 0.09
+Nodes (24): ContextAssemblyRequest, ContextInspectionReport, ToolResultEntry, ToolSchemaEntry, report, validated, item, omittedReasons (+16 more)
 
 ### Community 23 - "Community 23"
 Cohesion: 0.09
 Nodes (22): ToolExecutionError, ToolExecutionErrorSchema, ToolExecutionStatus, ToolExecutionStatusSchema, ToolInvocationRequest, ToolInvocationRequestSchema, ToolMetadata, ToolObservation (+14 more)
 
 ### Community 24 - "Community 24"
-Cohesion: 0.14
-Nodes (13): art, att, chk, cont, ctx, evt, mem, proj (+5 more)
+Cohesion: 0.08
+Nodes (19): art, att, chk, cont, ctx, evt, mem, proj (+11 more)
 
 ### Community 25 - "Community 25"
 Cohesion: 0.25
@@ -1313,20 +1330,20 @@ Cohesion: 0.33
 Nodes (5): changedFiles, episode, match, sc, status
 
 ### Community 28 - "Community 28"
-Cohesion: 0.07
-Nodes (34): readRes, retrieveRes, [saveArtifact, readArtifact], saveRes, [storeMemory, retrieveMemory], storeRes, ArtifactToolsOptions, createArtifactTools() (+26 more)
+Cohesion: 0.06
+Nodes (45): ActorType, ToolSpec, readRes, retrieveRes, [saveArtifact, readArtifact], saveRes, [storeMemory, retrieveMemory], storeRes (+37 more)
 
 ### Community 29 - "Community 29"
 Cohesion: 0.15
 Nodes (13): 401. PART 2 ACCEPTANCE CRITERIA, Agents, API keys, Execution, Hooks, Integrations, MCP, Models (+5 more)
 
 ### Community 30 - "Community 30"
-Cohesion: 0.14
-Nodes (18): FileDivergenceRecordSchema, OutcomeCertainty, OutcomeCertaintySchema, RetryBudgetConfig, RetryBudgetConfigSchema, RetryBudgetUsage, RetryBudgetUsageSchema, RetryDecision (+10 more)
+Cohesion: 0.1
+Nodes (23): FileDivergenceRecordSchema, OutcomeCertainty, OutcomeCertaintySchema, RetryBudgetConfig, RetryBudgetConfigSchema, RetryBudgetUsage, RetryBudgetUsageSchema, RetryDecision (+15 more)
 
 ### Community 31 - "Community 31"
-Cohesion: 0.11
-Nodes (17): AccessRequestContext, AccessValidationResult, ContentAccessValidator, checkDenied, checkHigherPermitted, checkPermitted, checkUntrustedDenied, AuthorityClassSchema (+9 more)
+Cohesion: 0.14
+Nodes (8): ContentAccessValidator, ContentIngestionEngine, binData, largeBuffer, checkDenied, checkHigherPermitted, checkPermitted, checkUntrustedDenied
 
 ### Community 32 - "Community 32"
 Cohesion: 0.13
@@ -1349,12 +1366,12 @@ Cohesion: 0.2
 Nodes (10): 401. MASTER DEFINITION OF DONE, Agents, Code intelligence, Models, Operations, Orchestration, Product, Security (+2 more)
 
 ### Community 37 - "Community 37"
-Cohesion: 0.03
-Nodes (76): ExecutionWorkspace, IntegrationRequest, IntegrationResult, WorkspaceStatus, execAsync, GitWorktreeManager, GitWorktreeManagerOptions, execAsync (+68 more)
+Cohesion: 0.04
+Nodes (57): execAsync, GitWorktreeManager, GitWorktreeManagerOptions, WorkspaceIntegrator, WorkspaceManager, WorkspaceRecoveryEngineOptions, WorkspaceRecoverySummary, claim (+49 more)
 
 ### Community 38 - "Community 38"
-Cohesion: 0.21
-Nodes (3): GeminiProviderAdapter, adapter, ContentFilterError
+Cohesion: 0.12
+Nodes (6): GeminiProviderAdapter, adapter, ContentFilterError, antAdapter, gemAdapter, oaAdapter
 
 ### Community 39 - "Community 39"
 Cohesion: 0.22
@@ -1369,16 +1386,12 @@ Cohesion: 0.25
 Nodes (7): Anantham V2 — Project Rules & Ingestion Governance, code:text (1. System/security invariants (RPO-0 durability, ToolGateway), code:text (======================================================), Core Operational Constraints, Mandatory Boot Protocol (Phase 0), Mandatory Engineering Verdict Format, Source Authority Hierarchy
 
 ### Community 43 - "Community 43"
-Cohesion: 0.5
-Nodes (3): accumulatedText, adapter, chunks
+Cohesion: 0.12
+Nodes (10): manifest, resolver, result, router, MockProviderAdapter, accumulatedText, adapter, chunks (+2 more)
 
 ### Community 44 - "Community 44"
-Cohesion: 0.07
-Nodes (28): manifest, record, registry, resolver, result, manifest, resolver, result (+20 more)
-
-### Community 45 - "Community 45"
-Cohesion: 0.1
-Nodes (19): HarnessEvent, IProjection, SessionSummaryProjection, SessionSummaryState, TaskBoardItem, TaskBoardProjection, TaskBoardSnapshot, TaskBoardState (+11 more)
+Cohesion: 0.06
+Nodes (43): manifest, record, registry, resolver, result, manifest, resolver, result (+35 more)
 
 ### Community 46 - "Community 46"
 Cohesion: 0.29
@@ -1413,16 +1426,16 @@ Cohesion: 0.29
 Nodes (6): 1. System Identity & Mission, 2. Core Architectural Pillars, 3. Technology Stack & Directory Structure, 4. Invariant Rules, code:text (C:/herness/), Project Context — Anantham V2
 
 ### Community 54 - "Community 54"
-Cohesion: 0.1
-Nodes (16): CrashRecoveryEngine, migrator, now, past, postClaim, preClaim, recoveredTask, migrator (+8 more)
+Cohesion: 0.04
+Nodes (36): completed, disabled, enabled, events, manager, now, registered, triggered (+28 more)
 
 ### Community 55 - "Community 55"
 Cohesion: 0.19
 Nodes (7): PluginStateManager, StateMigration, newState, rolledBack, updated, v1Manifest, v2Manifest
 
 ### Community 56 - "Community 56"
-Cohesion: 0.13
-Nodes (8): SecurityEventClassification, DiagnosticInspector, ObservabilityManager, ObservabilityManagerOptions, classification, replayClass, sigClass, SecurityEventClassifier
+Cohesion: 0.29
+Nodes (5): SecurityEventClassification, classification, replayClass, sigClass, SecurityEventClassifier
 
 ### Community 57 - "Community 57"
 Cohesion: 0.33
@@ -1581,8 +1594,8 @@ Cohesion: 0.5
 Nodes (4): 17. Git / Parallel Development, code:text (main), code:text (read current state), code:text (stop)
 
 ### Community 97 - "Community 97"
-Cohesion: 0.13
-Nodes (13): executor, supervisor, events, executor, now, supervisor, LocalExecutor, LocalExecutorOptions (+5 more)
+Cohesion: 0.15
+Nodes (10): ProcessLifecycleState, executor, supervisor, LocalExecutor, LocalExecutorOptions, ActiveExecutionHandle, execPromise, executor (+2 more)
 
 ### Community 99 - "Community 99"
 Cohesion: 0.5
@@ -2177,172 +2190,180 @@ Cohesion: 0.67
 Nodes (3): 342. WORKFLOW ROUTE EXPLANATION, code:text (/orchestrate inspect), code:text (tasks)
 
 ### Community 251 - "Community 251"
-Cohesion: 0.12
-Nodes (16): DashboardViewModel, DashboardViewModelSchema, TuiDimensions, TuiDimensionsSchema, TuiStatus, TuiStatusSchema, TuiViewMode, TuiViewModeSchema (+8 more)
+Cohesion: 0.11
+Nodes (18): NodeIdentity, DashboardViewModel, DashboardViewModelSchema, TuiDimensions, TuiDimensionsSchema, TuiStatus, TuiStatusSchema, TuiViewMode (+10 more)
 
 ### Community 252 - "Community 252"
-Cohesion: 0.11
-Nodes (15): FileDivergenceRecord, createFilesystemTools(), FilesystemToolsOptions, delRes, listRes, readRes, statRes, writeRes (+7 more)
+Cohesion: 0.19
+Nodes (8): FileDivergenceRecord, FileDivergenceDetector, baseHash, filePath, fsTools, gateway, record, registry
 
 ### Community 255 - "Community 255"
 Cohesion: 0.13
 Nodes (10): ProviderDefinition, ProviderDefinitionSchema, ProviderProtocol, ProviderProtocolSchema, ProviderRegistry, validateEndpointUrl(), def, registry (+2 more)
 
 ### Community 256 - "Community 256"
-Cohesion: 0.06
-Nodes (26): OutboundWebhookSubscription, WebhookDeliveryRecord, IntegrationManagerOptions, activeSubs, found, list, migrator, now (+18 more)
+Cohesion: 0.04
+Nodes (42): OutboundWebhookSubscription, WebhookDeliveryRecord, IntegrationManagerOptions, activeSubs, found, list, migrator, now (+34 more)
 
 ### Community 259 - "Community 259"
-Cohesion: 0.07
-Nodes (31): PinnedVersions, WorkflowRun, WorkflowRunSchema, WorkflowRunStatus, WorkflowScope, WorkflowStatus, initialRun, migrator (+23 more)
+Cohesion: 0.08
+Nodes (26): PinnedVersions, WorkflowRun, WorkflowRunSchema, WorkflowRunStatus, WorkflowScope, WorkflowStatus, eventStore, migrator (+18 more)
 
 ### Community 260 - "Community 260"
 Cohesion: 0.06
-Nodes (31): 2026-08-30 21:00 — TASK-P1.3-EVENT-STATE, 2026-08-30 21:15 — TASK-P1.4-CHECKPOINTS-RECOVERY, 2026-08-30 21:50 — TASK-P1.5-RESUME-ENGINE, 2026-08-30 22:30 — TASK-P2.1-CONTENT-INGESTION, 2026-08-30 22:35 — TASK-P2.1-CONTENT-FOUNDATION, 2026-08-31 14:10 — TASK-P6.2-TASK-BOARD-CLAIMS-LEASES-HEARTBEATS, 2026-08-31 14:35 — TASK-P6.3-SUBAGENTS-TEAMS-TOPOLOGIES-HANDOFF, 2026-08-31 14:35 — TASK-P6.3-SUBAGENTS-TEAMS-TOPOLOGIES-HANDOFF (+23 more)
+Nodes (31): 2026-08-30 21:15 — TASK-P1.4-CHECKPOINTS-RECOVERY, 2026-08-30 21:50 — TASK-P1.5-RESUME-ENGINE, 2026-08-30 22:30 — TASK-P2.1-CONTENT-INGESTION, 2026-08-30 22:35 — TASK-P2.1-CONTENT-FOUNDATION, 2026-08-31 14:10 — TASK-P6.2-TASK-BOARD-CLAIMS-LEASES-HEARTBEATS, 2026-08-31 14:35 — TASK-P6.3-SUBAGENTS-TEAMS-TOPOLOGIES-HANDOFF, 2026-08-31 14:35 — TASK-P6.3-SUBAGENTS-TEAMS-TOPOLOGIES-HANDOFF, 2026-08-31 14:35 — TASK-P6.3-SUBAGENTS-TEAMS-TOPOLOGIES-HANDOFF (+23 more)
 
 ### Community 261 - "Community 261"
-Cohesion: 0.08
-Nodes (23): claimMgr1, claimMgr2, dispatch, dispatchMgr1, dispatchRepo1, dispatchRepo2, engine1, engine2 (+15 more)
+Cohesion: 0.02
+Nodes (74): RemoteDispatchStatus, RemoteWorkRequest, cancelledDispatch, dispatch, lateRes, lease, migrator, projectRepo (+66 more)
 
 ### Community 262 - "Community 262"
-Cohesion: 0.04
-Nodes (43): migrator, sessions, cmd, list, migrator, TaskBoardFilter, assertValidTaskTransition(), isValidTaskTransition() (+35 more)
+Cohesion: 0.13
+Nodes (15): assertValidTaskTransition(), isValidTaskTransition(), Task, TaskPriority, TaskPrioritySchema, TaskSchema, TaskStatus, TaskStatusSchema (+7 more)
 
 ### Community 263 - "Community 263"
 Cohesion: 0.13
 Nodes (8): AgentRegistry, instance, manager, manifest, registry, res, resolver, stopped
 
 ### Community 265 - "Community 265"
-Cohesion: 0.15
-Nodes (16): CliApplicationOptions, CommandHandler, CommandRegistryOptions, OutputRendererOptions, SessionControllerOptions, CliContext, CliContextSchema, CliOutputMode (+8 more)
+Cohesion: 0.09
+Nodes (28): CliApplicationOptions, migrator, sessions, CommandParser, parsed, parser, CommandHandler, CommandRegistryOptions (+20 more)
 
 ### Community 267 - "Community 267"
-Cohesion: 0.17
-Nodes (9): BenchmarkCase, EvaluationHarness, EvaluationHarnessOptions, benchCase, migrator, isoCase, migrator, policyEngine (+1 more)
+Cohesion: 0.06
+Nodes (25): memoryCandidates, now, projectRepo, sessionRepo, now, projectRepo, sessionRepo, integrityBefore (+17 more)
 
 ### Community 269 - "Community 269"
-Cohesion: 0.07
-Nodes (27): eventStore, executedNodes, migrator, projectRepo, sessionRepo, wf, workflowEngine, eventStore (+19 more)
+Cohesion: 0.06
+Nodes (26): initialRun, migrator, projectRepo, sessionRepo, stored, wf, eventStore, migrator (+18 more)
 
 ### Community 270 - "Community 270"
 Cohesion: 0.09
 Nodes (21): ApiAuthorizer, err, parsed, valid, ApiErrorMapper, res, ApiAuthContext, ApiErrorResponse (+13 more)
 
 ### Community 272 - "Community 272"
-Cohesion: 0.12
-Nodes (11): dependentTask, eligible, migrator, parentTask, startupPlan, taskCritical, taskHigh1, taskHigh2 (+3 more)
+Cohesion: 0.18
+Nodes (10): dependentTask, eligible, migrator, parentTask, startupPlan, taskCritical, taskHigh1, taskHigh2 (+2 more)
 
 ### Community 278 - "Community 278"
 Cohesion: 0.23
 Nodes (11): AutoCompactParams, CompactionOptions, ExecuteCompactionParams, CompactionArtifactRef, CompactionArtifactRefSchema, CompactionPreview, CompactionPreviewSchema, CompactionResult (+3 more)
-
-### Community 279 - "Community 279"
-Cohesion: 0.19
-Nodes (4): AgentManager, manager, manifest, result
 
 ### Community 280 - "Community 280"
 Cohesion: 0.14
 Nodes (8): cached, journal, key1, key2, key3, observation, store, SideEffectJournal
 
 ### Community 281 - "Community 281"
-Cohesion: 0.17
-Nodes (16): NodeHeartbeatRequest, NodeHeartbeatRequestSchema, NodeIdentity, NodeIdentitySchema, NodeRegistrationRequest, NodeRegistrationRequestSchema, NodeStatus, NodeStatusSchema (+8 more)
+Cohesion: 0.13
+Nodes (18): NodeHeartbeatRequest, NodeHeartbeatRequestSchema, NodeIdentitySchema, NodeRegistrationRequest, NodeRegistrationRequestSchema, NodeStatus, NodeStatusSchema, RemoteDispatchStatusSchema (+10 more)
 
 ### Community 282 - "Community 282"
-Cohesion: 0.13
-Nodes (21): MCPConnectionState, MCPConnectionStateSchema, MCPDiscoveryResult, MCPHealthStatus, MCPHealthStatusSchema, MCPPromptArgument, MCPPromptArgumentSchema, MCPResource (+13 more)
+Cohesion: 0.1
+Nodes (26): MCPConnectionStateSchema, MCPDiscoveryResult, MCPDiscoveryResultSchema, MCPHealthStatusSchema, MCPPromptArgument, MCPPromptArgumentSchema, MCPPromptSchema, MCPResourceSchema (+18 more)
 
 ### Community 284 - "Community 284"
-Cohesion: 0.07
-Nodes (19): events, migrator, projectRepo, sessionRepo, traceLog, wf, workflowEngine, eventStore (+11 more)
+Cohesion: 0.1
+Nodes (18): events, migrator, projectRepo, sessionRepo, traceLog, wf, workflowEngine, approve() (+10 more)
 
 ### Community 286 - "Community 286"
-Cohesion: 0.18
-Nodes (10): dispatch, lease, migrator, projectRepo, res, sessionRepo, task, updatedDispatch (+2 more)
+Cohesion: 0.09
+Nodes (20): claimRes, migrator, prepRes, rejected, sourceLease, updatedHandoff, migrator, oversizedPayload (+12 more)
 
 ### Community 287 - "Community 287"
 Cohesion: 0.11
-Nodes (13): ApiServer, ApiServerOptions, authenticator, keys, ClaimTaskRequest, CreateBackgroundJobRequest, CreateSessionRequest, CreateTaskRequest (+5 more)
+Nodes (10): ApiServer, ClaimTaskRequest, CreateProjectRequest, CreateSessionRequest, CreateTaskRequest, AnanthamClient, AnanthamClientOptions, q (+2 more)
 
 ### Community 289 - "Community 289"
-Cohesion: 0.04
-Nodes (51): ActorTypeSchema, EventType, EventTypes, HarnessEventSchema, actors, parsed, userEvent, ActiveSubscription (+43 more)
+Cohesion: 0.02
+Nodes (101): ActorTypeSchema, EventType, EventTypes, HarnessEvent, HarnessEventSchema, actors, parsed, userEvent (+93 more)
 
 ### Community 292 - "Community 292"
-Cohesion: 0.08
-Nodes (18): executor, manager, policyEngine, toolGateway, toolRegistry, decision, engine, PolicyEngine (+10 more)
+Cohesion: 0.1
+Nodes (15): checkpointRepo, eventRepo, migrator, decision, engine, PolicyEngine, PolicyEngineOptions, decision (+7 more)
 
 ### Community 293 - "Community 293"
 Cohesion: 0.17
 Nodes (8): PluginPermissions, PermissionReviewResult, PluginPermissionsManager, dangerousPermissions, elevatedPermissions, manager, permissions, review
 
+### Community 295 - "Community 295"
+Cohesion: 0.13
+Nodes (6): adapter, compactOut, defaultOut, renderer, standardOut, TuiRenderer
+
 ### Community 296 - "Community 296"
-Cohesion: 0.22
-Nodes (10): RemoteDispatchStatus, RemoteResult, RemoteResultSchema, RemoteWorkRequest, RemoteWorkRequestSchema, DispatchTaskOptions, RemoteDispatchManagerOptions, RemoteNodeClientOptions (+2 more)
+Cohesion: 0.13
+Nodes (10): TaskBoardFilter, PRIORITY_WEIGHTS, TaskBoard, TaskBoardColumns, TaskBoardOptions, betaStartupPlan, crossClaim, eligible (+2 more)
 
 ### Community 297 - "Community 297"
 Cohesion: 0.14
 Nodes (8): TerminalLayout, boxed, headers, lines, rows, statusBar, tabBar, table
 
 ### Community 298 - "Community 298"
-Cohesion: 0.15
-Nodes (10): auth, authenticator, keys, req, ApiAuthenticator, ApiAuthenticatorOptions, authenticator, clientA (+2 more)
+Cohesion: 0.13
+Nodes (12): auth, authenticator, keys, req, ApiAuthenticator, ApiAuthenticatorOptions, authenticator, clientA (+4 more)
 
 ### Community 299 - "Community 299"
-Cohesion: 0.15
-Nodes (10): claimRes, classification, futureTime, instance, manifest, migrator, resolveRes, stalled (+2 more)
+Cohesion: 0.2
+Nodes (9): claimRes, classification, futureTime, instance, manifest, migrator, resolveRes, stalled (+1 more)
 
 ### Community 303 - "Community 303"
-Cohesion: 0.2
-Nodes (6): RetryDecisionEngine, RetryEvaluationContext, decision, engine, decision, engine
+Cohesion: 0.15
+Nodes (9): IntegrationRequest, IntegrationResult, execAsync, ParallelOrchestrator, ParallelOrchestratorOptions, execAsync, WorkspaceIntegratorOptions, AllocateWorkspaceRequest (+1 more)
 
 ### Community 304 - "Community 304"
 Cohesion: 0.16
 Nodes (8): authVerifier, isValid, originalPayload, payload, signature, tamperedPayload, AuthVerifierOptions, RemoteAuthVerifier
+
+### Community 306 - "Community 306"
+Cohesion: 0.19
+Nodes (5): adapter, controller, outStream, renderer, TuiController
 
 ### Community 310 - "Community 310"
 Cohesion: 0.19
 Nodes (8): ConditionEvaluator, context, evaluator, result1, result2, resultCompleted, resultFailed, resultNotFailed
 
 ### Community 311 - "Community 311"
-Cohesion: 0.05
-Nodes (31): filePath, base, now, projectRepo, result, traversalPath, ArtifactAccessDeniedError, ArtifactIntegrityError (+23 more)
+Cohesion: 0.07
+Nodes (27): remainingFiles, filePath, base, now, projectRepo, result, traversalPath, ArtifactAccessDeniedError (+19 more)
 
 ### Community 315 - "Community 315"
 Cohesion: 0.17
 Nodes (11): byProject, committed, committed1, committed2, e1, e2, event, migrator (+3 more)
 
 ### Community 324 - "Community 324"
-Cohesion: 0.31
-Nodes (7): Session, SessionSchema, SessionStatus, SessionStatusSchema, parsed, session, statuses
+Cohesion: 0.23
+Nodes (9): Session, SessionSchema, SessionStatus, SessionStatusSchema, parsed, session, statuses, ForkSessionOptions (+1 more)
+
+### Community 327 - "Community 327"
+Cohesion: 0.15
+Nodes (7): newManager, newRepo, now, payload, projectRepo, sessionRepo, ArtifactRepository
 
 ### Community 328 - "Community 328"
-Cohesion: 0.13
-Nodes (6): fetched, migrator, node, stalledIds, updatedNode, NodeRepository
+Cohesion: 0.16
+Nodes (9): check, rawBinary, result, zipHeader, ArchiveEntry, ArchiveParser, ArchiveParseResult, BinaryParser (+1 more)
 
 ### Community 330 - "Community 330"
-Cohesion: 0.06
-Nodes (31): claimRes, completionEvents, compRes, events, migrator, now, task, depResult (+23 more)
+Cohesion: 0.22
+Nodes (8): depResult, migrator, missingResult, result, savedLease, task, unMetDepTask, updatedTask
 
 ### Community 331 - "Community 331"
-Cohesion: 0.05
-Nodes (45): CapabilityProfileStatus, CapabilityProfileStatusSchema, CapabilityRequirement, CapabilityRequirementSchema, CapabilityResolutionResult, CapabilityResolutionResultSchema, InsufficientLimit, InsufficientLimitSchema (+37 more)
+Cohesion: 0.1
+Nodes (25): CapabilityProfileStatus, CapabilityProfileStatusSchema, CapabilityRequirement, CapabilityRequirementSchema, CapabilityResolutionResult, CapabilityResolutionResultSchema, InsufficientLimit, InsufficientLimitSchema (+17 more)
 
 ### Community 335 - "Community 335"
-Cohesion: 0.14
-Nodes (13): SkillMetadata, SkillCompatibilityChecker, SkillCompatibilityResult, checker, metadata, result, LoadedSkillContext, ProgressiveLoadOptions (+5 more)
+Cohesion: 0.13
+Nodes (14): SkillMetadata, SkillCompatibilityChecker, SkillCompatibilityResult, checker, metadata, result, LoadedSkillContext, ProgressiveLoadOptions (+6 more)
 
 ### Community 343 - "Community 343"
 Cohesion: 0.23
 Nodes (10): Project, ProjectSchema, ProjectStatus, ProjectStatusSchema, parsed, profiles, project, statuses (+2 more)
 
 ### Community 344 - "Community 344"
-Cohesion: 0.12
-Nodes (17): AssertionEvaluationResult, AssertionEvaluationResultSchema, EvaluationAssertion, AssertionEvaluator, artAsrt, cleanEvidence, cleanRes, eventAsrt (+9 more)
+Cohesion: 0.13
+Nodes (13): AssertionEvaluator, artAsrt, cleanEvidence, cleanRes, eventAsrt, evidence, leakedEvidence, leakedRes (+5 more)
 
 ### Community 347 - "Community 347"
-Cohesion: 0.09
-Nodes (23): foreach(), parallel(), t, wf, verify(), engine1, engine2, eventStore1 (+15 more)
+Cohesion: 0.13
+Nodes (14): engine1, engine2, eventStore1, migrator1, projectRepo1, reconstructedWf, registry1, regRes (+6 more)
 
 ### Community 348 - "Community 348"
 Cohesion: 0.07
@@ -2353,56 +2374,52 @@ Cohesion: 0.09
 Nodes (21): claimMgr1, claimMgr2, engine1, engine2, eventStore1, eventStore2, job, jobMgr1 (+13 more)
 
 ### Community 351 - "Community 351"
-Cohesion: 0.05
-Nodes (42): checkpointRepo, eventRepo, migrator, Checkpoint, CheckpointManifest, CheckpointManifestSchema, CheckpointSchema, CheckpointType (+34 more)
+Cohesion: 0.09
+Nodes (25): Checkpoint, CheckpointManifest, CheckpointManifestSchema, CheckpointSchema, CheckpointType, CheckpointTypeSchema, checkpoint, parsed (+17 more)
 
 ### Community 354 - "Community 354"
-Cohesion: 0.18
-Nodes (10): MCPDiscoveryResultSchema, MCPPromptSchema, MCPResourceSchema, MCPToolSchema, discovery, prompt, record, resource (+2 more)
+Cohesion: 0.16
+Nodes (7): ContentReferenceManager, StoredBlobDescriptor, descriptor, payload, rawPath, readBuffer, testDir
 
 ### Community 356 - "Community 356"
-Cohesion: 0.05
-Nodes (30): check, rawBinary, result, zipHeader, entries, excessiveEntries, maliciousEntries, result (+22 more)
+Cohesion: 0.07
+Nodes (23): entries, excessiveEntries, maliciousEntries, result, safeEntries, ArchiveBombOptions, ArchiveEntryMeta, ContentGuards (+15 more)
 
 ### Community 365 - "Community 365"
-Cohesion: 0.15
-Nodes (7): PluginTrustState, PluginInstaller, installer, manifest, tamperedBytes, trustManager, PluginTrustManager
+Cohesion: 0.19
+Nodes (6): PluginTrustState, installer, manifest, tamperedBytes, trustManager, PluginTrustManager
 
 ### Community 366 - "Community 366"
 Cohesion: 0.07
-Nodes (31): ContentIngestRequest, SecretDetectionResult, SecretFinding, buffer, pngHeader, result, wavBuffer, sampleImageContent (+23 more)
+Nodes (33): AccessRequestContext, AccessValidationResult, ContentIngestRequest, SecretDetectionResult, SecretFinding, buffer, pngHeader, result (+25 more)
 
 ### Community 369 - "Community 369"
-Cohesion: 0.22
-Nodes (6): eventStore, migrator, projectRepo, sessionRepo, wf, workflowEngine
+Cohesion: 0.16
+Nodes (7): freezeEvent(), isEventFrozen(), checkpoint, event, frozen, sampleSha, EventRepository
 
 ### Community 375 - "Community 375"
 Cohesion: 0.07
 Nodes (32): ApprovalRecord, ApprovalRecordSchema, ApprovalStatus, ApprovalStatusSchema, PolicyDecision, PolicyDecisionSchema, PolicyDecisionType, PolicyDecisionTypeSchema (+24 more)
 
-### Community 378 - "Community 378"
-Cohesion: 0.09
-Nodes (7): eventStore, migrator, projectRepo, sessionRepo, wf, workflowEngine, WorkflowRepository
-
 ### Community 379 - "Community 379"
-Cohesion: 0.06
-Nodes (38): LeaseStatus, LeaseStatusSchema, StalledClassification, StalledClassificationSchema, TaskBoardFilterSchema, TaskClaimRequest, TaskClaimRequestSchema, TaskClaimResult (+30 more)
+Cohesion: 0.11
+Nodes (17): LeaseStatus, LeaseStatusSchema, StalledClassification, StalledClassificationSchema, TaskBoardFilterSchema, TaskClaimRequest, TaskClaimRequestSchema, TaskClaimResult (+9 more)
 
 ### Community 380 - "Community 380"
 Cohesion: 0.2
 Nodes (3): MCPCircuitBreaker, MCPCircuitBreakerOptions, breaker
 
 ### Community 381 - "Community 381"
-Cohesion: 0.13
-Nodes (9): AnthropicCompatibleAdapter, adapter, chunks, createReadableStream(), mockFetch(), sseLines, antAdapter, gemAdapter (+1 more)
+Cohesion: 0.22
+Nodes (6): AnthropicCompatibleAdapter, adapter, chunks, createReadableStream(), mockFetch(), sseLines
 
 ### Community 382 - "Community 382"
-Cohesion: 0.27
-Nodes (5): CliErrorHandler, handler, res, InteractiveSessionLoopOptions, CommandExecutionResultSchema
+Cohesion: 0.19
+Nodes (12): ConflictClassification, ExecutionWorkspace, WorkspaceCleanupState, WorkspaceCleanupStateSchema, WorkspaceQuarantineRecord, WorkspaceQuarantineRecordSchema, WorkspaceStatus, WorkspaceStatusSchema (+4 more)
 
 ### Community 383 - "Community 383"
-Cohesion: 0.1
-Nodes (19): BackgroundJob, JobClaimRequest, JobClaimRequestSchema, JobCreationRequest, JobCreationRequestSchema, JobFailureClassificationSchema, JobStatus, JobStatusSchema (+11 more)
+Cohesion: 0.13
+Nodes (17): BackgroundJob, BackgroundJobSchema, JobClaimRequest, JobClaimRequestSchema, JobCreationRequest, JobCreationRequestSchema, JobFailureClassificationSchema, JobStatusSchema (+9 more)
 
 ### Community 384 - "Community 384"
 Cohesion: 0.18
@@ -2433,16 +2450,16 @@ Cohesion: 0.18
 Nodes (3): handle, supervisor, ProcessSupervisor
 
 ### Community 403 - "Community 403"
-Cohesion: 0.22
-Nodes (6): SkillTestRunner, failingFixture, fixture, manifest, parser, runner
+Cohesion: 0.16
+Nodes (10): SkillManifest, SkillTestFixture, SkillTestResult, SkillTestResultSchema, SkillTestRunner, failingFixture, fixture, manifest (+2 more)
 
 ### Community 404 - "Community 404"
-Cohesion: 0.1
-Nodes (13): ApprovalManager, allEvents, context, manager1, manager2, now, req, restored (+5 more)
+Cohesion: 0.16
+Nodes (7): ApprovalManager, approvalManager, events, gateway, now, policyEngine, registry
 
 ### Community 407 - "Community 407"
-Cohesion: 0.15
-Nodes (8): ContentIngestionEngine, binData, largeBuffer, ContentSanitizer, { redactedText, findings }, { sanitized, secretsFound }, scanResult, textRep
+Cohesion: 0.24
+Nodes (5): ContentSanitizer, { redactedText, findings }, { sanitized, secretsFound }, scanResult, textRep
 
 ### Community 411 - "Community 411"
 Cohesion: 0.12
@@ -2453,8 +2470,8 @@ Cohesion: 0.18
 Nodes (8): eventStore, itemLogs, largeList, migrator, projectRepo, sessionRepo, wf, workflowEngine
 
 ### Community 415 - "Community 415"
-Cohesion: 0.19
-Nodes (13): DiagnosticReport, DiagnosticReportSchema, MetricType, MetricTypeSchema, SecurityAuditRecordSchema, SecurityEventClassificationSchema, TelemetryMetric, TelemetryMetricSchema (+5 more)
+Cohesion: 0.18
+Nodes (14): ComplianceReportSchema, DiagnosticReport, DiagnosticReportSchema, MetricType, MetricTypeSchema, SecurityAuditRecordSchema, SecurityEventClassificationSchema, TelemetryMetric (+6 more)
 
 ### Community 416 - "Community 416"
 Cohesion: 0.14
@@ -2465,16 +2482,16 @@ Cohesion: 0.2
 Nodes (5): checksum, valid, verifier, PackageVerificationOptions, PluginPackageVerifier
 
 ### Community 420 - "Community 420"
-Cohesion: 0.12
-Nodes (13): BenchmarkDataset, BenchmarkDatasetSchema, BenchmarkRegistry, STANDARD_CORE_DATASET, STANDARD_RECOVERY_DATASET, STANDARD_SECURITY_DATASET, benchCase, core (+5 more)
+Cohesion: 0.15
+Nodes (12): BenchmarkDataset, BenchmarkDatasetSchema, STANDARD_CORE_DATASET, STANDARD_RECOVERY_DATASET, STANDARD_SECURITY_DATASET, benchCase, core, customDs (+4 more)
 
 ### Community 422 - "Community 422"
 Cohesion: 0.14
 Nodes (15): Migration, migration001, migration002, migration003, migration004, migration005, migration006, migration007 (+7 more)
 
 ### Community 425 - "Community 425"
-Cohesion: 0.03
-Nodes (56): ApiRouterOptions, BackgroundJobSchema, JobFailureClassification, BackgroundJobManager, BackgroundJobManagerOptions, cancelledJob, hbRes, job (+48 more)
+Cohesion: 0.02
+Nodes (106): ApiIdempotencyManager, CachedResponse, ApiRouterOptions, ApiServerOptions, JobFailureClassification, JobStatus, TaskLease, TaskLeaseSchema (+98 more)
 
 ### Community 426 - "Community 426"
 Cohesion: 0.24
@@ -2493,36 +2510,40 @@ Cohesion: 0.15
 Nodes (6): TelemetryEngine, completed, counter, hist, spanId, summaries
 
 ### Community 584 - "Community 584"
-Cohesion: 0.1
+Cohesion: 0.09
 Nodes (16): allMigrations, builtInWf, globalWf, migrator, projectWf, resolvedGlobal, resolvedProject, retrieved (+8 more)
 
 ### Community 586 - "Community 586"
-Cohesion: 0.18
-Nodes (3): EvidenceCollector, cleared, evidence
+Cohesion: 0.17
+Nodes (4): CollectedEvidence, EvidenceCollector, cleared, evidence
 
 ### Community 651 - "Community 651"
 Cohesion: 0.22
 Nodes (9): 1. Active Phase Backlog (P1 — Durable Runtime Foundation), 1. Active Phase Backlog (P2 — Content / Context / Memory / Retrieval), [P1.5 — Durable Session Resume Engine (`/resume`)](file:///C:/herness/docs/discovery/current-state.md#L10), [P2.1 — Multimodal Content Ingestion & Parsers](file:///C:/herness/docs/discovery/current-state.md#L10), [P2.2 — Content Security, MIME Validation & Provenance](file:///C:/herness/docs/discovery/current-state.md#L10), [P2.3 — Artifacts (Durable Writes, Hashes, Metadata & References)](file:///C:/herness/docs/discovery/current-state.md#L10), [P2.4 — Context (ContextPlan, Relevance, Capabilities, Token Budget, /context)](file:///C:/herness/docs/discovery/current-state.md#L10), [P2.5 — Compaction (/compact, preview, undo, auto-compact, authoritative history)](file:///C:/herness/docs/discovery/current-state.md#L10) (+1 more)
 
 ### Community 666 - "Community 666"
-Cohesion: 0.05
-Nodes (33): CheckpointValidator, CrashRecoveryOptions, artifactRepo, artSha, checkpoint, checkpointRepo, eventStore, leaseManager (+25 more)
+Cohesion: 0.1
+Nodes (20): artifactRepo, artSha, checkpoint, checkpointRepo, eventStore, leaseManager, migrator, projectRepo (+12 more)
 
 ### Community 667 - "Community 667"
-Cohesion: 0.2
-Nodes (9): PluginDependency, PluginManifest, DependencyResolutionResult, PluginDependencyResolver, pluginA, pluginB, resolver, result (+1 more)
+Cohesion: 0.22
+Nodes (7): PluginDependency, DependencyResolutionResult, PluginDependencyResolver, pluginA, pluginB, resolver, result
 
 ### Community 724 - "Community 724"
-Cohesion: 0.12
-Nodes (15): dataWithSecrets, failRes, jsonlOut, jsonlRenderer, jsonOut, jsonRenderer, parsed, parsedJson (+7 more)
+Cohesion: 0.1
+Nodes (16): OutputRenderer, dataWithSecrets, failRes, jsonlOut, jsonlRenderer, jsonOut, jsonRenderer, parsed (+8 more)
+
+### Community 728 - "Community 728"
+Cohesion: 0.21
+Nodes (9): CrashRecoveryOptions, OrphanDetectionReport, OrphanDetector, RecoveryAnomaly, RecoveryAnomalySchema, RecoveryAnomalyType, RecoveryAnomalyTypeSchema, RecoveryRecord (+1 more)
 
 ### Community 730 - "Community 730"
 Cohesion: 0.25
 Nodes (5): PluginCompatibility, CompatibilityCheckResult, PluginCompatibilityChecker, checker, result
 
 ### Community 740 - "Community 740"
-Cohesion: 0.18
-Nodes (8): MCPTransportAdapter, client, mockTransport, client, mcpResource, mockTransport, normalizer, MCPResourceNormalizer
+Cohesion: 0.14
+Nodes (13): MCPConnectionState, MCPHealthStatus, MCPResource, MCPTool, MCPClientOptions, MCPTransportAdapter, client, mockTransport (+5 more)
 
 ### Community 746 - "Community 746"
 Cohesion: 0.22
@@ -2532,13 +2553,9 @@ Nodes (6): MCPOutputSanitizer, MCPOutputSanitizerOptions, cleaned, client, hugeT
 Cohesion: 0.25
 Nodes (6): MCPPrompt, client, manager, mcpPrompt, MCPPromptManager, MCPPromptRenderResult
 
-### Community 749 - "Community 749"
-Cohesion: 0.08
-Nodes (19): boardA, boardB, migrator, projectRepo, sessionRepo, streamA, streamB, summaryA (+11 more)
-
 ### Community 751 - "Community 751"
-Cohesion: 0.09
-Nodes (31): invalid, manifest, parsed, parsedPlan, parsedState, plan, state, AgentManagerOptions (+23 more)
+Cohesion: 0.1
+Nodes (19): invalid, manifest, parsed, parsedPlan, parsedState, plan, state, DelegationGuard (+11 more)
 
 ### Community 754 - "Community 754"
 Cohesion: 0.17
@@ -2547,6 +2564,10 @@ Nodes (9): allSkills, resolver, result, skillA, skillB, skillWithMissingTool, to
 ### Community 755 - "Community 755"
 Cohesion: 0.1
 Nodes (17): engine1, engine2, eventStore2, migrator1, projectRepo1, reconciler, recoveredRun1, recoveredRun2 (+9 more)
+
+### Community 761 - "Community 761"
+Cohesion: 0.12
+Nodes (11): migrator, savedTeam, v1Team, v2Team, TeamManager, invalidRoleRes, m1Res, m2Res (+3 more)
 
 ### Community 784 - "Community 784"
 Cohesion: 0.28
@@ -2561,8 +2582,8 @@ Cohesion: 0.25
 Nodes (3): effectiveForAlpha, effectiveForBeta, PluginRegistry
 
 ### Community 816 - "Community 816"
-Cohesion: 0.22
-Nodes (8): SkillMetadataSchema, SkillProcedureSchema, SkillTestFixtureSchema, execution, manifest, metadata, record, validFrontmatter
+Cohesion: 0.15
+Nodes (12): dbPath, messageRepo, migrator, projectRepo, recMsgRepo, recoveredDb, recoveredMsgs, recovery (+4 more)
 
 ### Community 817 - "Community 817"
 Cohesion: 0.29
@@ -2581,16 +2602,16 @@ Cohesion: 0.11
 Nodes (20): HookAction, HookActionSchema, HookActionType, HookActionTypeSchema, HookErrorPolicy, HookErrorPolicySchema, HookFilter, HookFilterSchema (+12 more)
 
 ### Community 826 - "Community 826"
-Cohesion: 0.15
-Nodes (11): SkillFrontmatter, SkillFrontmatterSchema, SkillManifestSchema, SkillParser, manifest, parser, loader, parser (+3 more)
+Cohesion: 0.18
+Nodes (8): SkillParser, manifest, parser, alphaSkill, betaSkill, manifest, parser, registry
 
 ### Community 827 - "Community 827"
 Cohesion: 0.29
 Nodes (3): inputChars, inStream, TuiApplication
 
-### Community 832 - "Community 832"
-Cohesion: 0.15
-Nodes (10): acceptance, completedDispatch, completedTask, migrator, projectRepo, releasedLease, remoteClient, sessionRepo (+2 more)
+### Community 831 - "Community 831"
+Cohesion: 0.2
+Nodes (6): SkillProgressiveLoader, loader, parser, result, skillA, skillB
 
 ### Community 837 - "Community 837"
 Cohesion: 0.22
@@ -2600,57 +2621,57 @@ Nodes (6): audit, manager, securityGuard, wrapped, SkillSecurityAuditResult, Ski
 Cohesion: 0.22
 Nodes (7): eventStore, groupResult, migrator, projectRepo, sessionRepo, wf, workflowEngine
 
-### Community 846 - "Community 846"
-Cohesion: 0.16
-Nodes (6): SkillRegistry, alphaSkill, betaSkill, manifest, parser, registry
-
 ### Community 865 - "Community 865"
-Cohesion: 0.07
-Nodes (32): Task, TaskPriority, TaskStatus, events, state, ReconstructedSessionState, reconstructSessionState(), ReconstructedTaskState (+24 more)
+Cohesion: 0.08
+Nodes (27): events, state, ReconstructedSessionState, reconstructSessionState(), reconstructTaskState(), PendingApprovalRestorer, events, nowMs (+19 more)
 
 ### Community 867 - "Community 867"
 Cohesion: 0.21
 Nodes (11): HookExecutionResult, HookExecutionResultSchema, HookRecord, HookTriggerType, HookExecutionContext, HookManagerOptions, HookMatchContext, HookMatcher (+3 more)
 
 ### Community 887 - "Community 887"
-Cohesion: 0.22
-Nodes (8): gptProfile, imageContent, localProfile, resGpt, resLocal, resLocalText, selGpt, selLocal
+Cohesion: 0.18
+Nodes (5): LeaseManager, RecoveryLease, RecoveryLeaseSchema, TaskLease, TaskLeaseSchema
 
 ### Community 889 - "Community 889"
-Cohesion: 0.29
-Nodes (4): ComplianceReport, ComplianceReportSchema, ComplianceExporter, report
+Cohesion: 0.22
+Nodes (6): ComplianceReport, SecurityAuditRecord, AuditQueryOptions, VerificationResult, ComplianceExporter, report
 
 ### Community 911 - "Community 911"
-Cohesion: 0.02
-Nodes (119): remainingFiles, filePath, migrator, session, migrator, report1, report2, migrator (+111 more)
+Cohesion: 0.03
+Nodes (59): migrator, session, BenchmarkCase, EvaluationHarnessOptions, fetched, migrator, run, migrator (+51 more)
 
 ### Community 949 - "Community 949"
-Cohesion: 0.29
-Nodes (4): SideEffectCategory, SideEffectCategorySchema, SideEffectClassifier, classifier
+Cohesion: 0.21
+Nodes (6): StalledAgentRecoveryEngine, finalTask, futureTime, migrator, records, task
 
 ### Community 956 - "Community 956"
-Cohesion: 0.07
-Nodes (26): manifest, resolver, result, router, events, now, cred, jsonStr (+18 more)
+Cohesion: 0.05
+Nodes (41): invalidProfile, res, resNormal, resStrict, staleProfile, unknownProfile, CLAUDE_3_5_SONNET_PROFILE, GEMINI_1_5_PRO_PROFILE (+33 more)
 
 ### Community 957 - "Community 957"
 Cohesion: 0.15
 Nodes (8): abortController, executor, migrator, projectRepo, run, sessionRepo, wf, WorkflowExecutor
 
 ### Community 964 - "Community 964"
-Cohesion: 0.07
-Nodes (23): child1Res, child2Res, child3Res, depthExceededRes, grandChildRes, greatGrandChildRes, migrator, rootInstance (+15 more)
+Cohesion: 0.12
+Nodes (13): escalateRes, migrator, parentInstance, readOnlyParent, startupRes, cancelled, childInstance, childRes (+5 more)
 
 ### Community 974 - "Community 974"
 Cohesion: 0.4
 Nodes (5): 1. Active Phase Backlog (P5 — MCP / Plugins / Skills / Hooks), [P5.1 — MCP (Registry, Client, Discovery, Tools, Resources, Prompts)](file:///C:/herness/docs/discovery/current-state.md#L10), [P5.2 — Plugins (Manifest, Checksum, Capabilities, Permissions, Lifecycle, Isolation)](file:///C:/herness/docs/discovery/current-state.md#L10), [P5.3 — Skills (Registry, Metadata, Progressive Loading, Versioning)](file:///C:/herness/docs/discovery/current-state.md#L10), [P5.4 — Hooks (Lifecycle Engine, Deterministic Execution, Safety Policies)](file:///C:/herness/docs/discovery/current-state.md#L10)
 
 ### Community 991 - "Community 991"
-Cohesion: 0.38
-Nodes (3): CommandParser, parsed, parser
+Cohesion: 0.18
+Nodes (10): ConflictClassificationSchema, ExecutionWorkspaceSchema, IntegrationRequestSchema, IntegrationResultSchema, categories, changeSet, record, req (+2 more)
 
 ### Community 992 - "Community 992"
 Cohesion: 0.1
 Nodes (20): artifactRepo, checkpointRepo, chk, eventStore, freshArtifactRepo, freshCheckpointRepo, freshEngine, freshEventRepo (+12 more)
+
+### Community 1005 - "Community 1005"
+Cohesion: 0.22
+Nodes (4): CommandRegistry, cmd, list, migrator
 
 ### Community 1024 - "Community 1024"
 Cohesion: 0.17
@@ -2673,16 +2694,20 @@ Cohesion: 0.22
 Nodes (8): logger, rec1, rec2, rec3, records, rootEvent, taskEvent, toolEvent
 
 ### Community 1048 - "Community 1048"
-Cohesion: 0.22
-Nodes (7): SecurityAuditRecord, AuditQueryOptions, VerificationResult, metricsA, metricsB, recordsA, recordsB
+Cohesion: 0.4
+Nodes (4): metricsA, metricsB, recordsA, recordsB
+
+### Community 1050 - "Community 1050"
+Cohesion: 0.18
+Nodes (10): child1Res, child2Res, child3Res, depthExceededRes, grandChildRes, greatGrandChildRes, migrator, rootInstance (+2 more)
 
 ### Community 1053 - "Community 1053"
 Cohesion: 0.18
 Nodes (3): manager, HookManager, manager
 
 ### Community 1060 - "Community 1060"
-Cohesion: 0.18
-Nodes (4): matched, matcher, registry, HookRegistry
+Cohesion: 0.15
+Nodes (6): HookRegistry, matched, matcher, matchFail, matchSuccess, registry
 
 ### Community 1061 - "Community 1061"
 Cohesion: 0.17
@@ -2696,33 +2721,45 @@ Nodes (6): 1. Active Phase Backlog (P8 — CLI / TUI / API / INTEGRATIONS), [P8.
 Cohesion: 0.2
 Nodes (8): HookManifest, audit, dangerousManifest, injectionManifest, manager, securityGuard, HookSecurityAuditResult, HookSecurityGuard
 
+### Community 1064 - "Community 1064"
+Cohesion: 0.2
+Nodes (6): HookExecutor, executor, policyEngine, slowHook, toolGateway, toolRegistry
+
 ### Community 1066 - "Community 1066"
-Cohesion: 0.05
-Nodes (34): CicdTriggerPayload, CicdTriggerPayloadSchema, IdeProtocolMessage, IdeProtocolMessageSchema, InboundWebhookPayload, InboundWebhookPayloadSchema, IntegrationDefinition, IntegrationDefinitionSchema (+26 more)
+Cohesion: 0.11
+Nodes (20): CicdTriggerPayload, CicdTriggerPayloadSchema, IdeProtocolMessage, IdeProtocolMessageSchema, InboundWebhookPayload, InboundWebhookPayloadSchema, IntegrationDefinition, IntegrationDefinitionSchema (+12 more)
 
 ### Community 1073 - "Community 1073"
 Cohesion: 0.29
 Nodes (3): OpenRouterProviderAdapter, adapter, capturedHeaders
 
+### Community 1077 - "Community 1077"
+Cohesion: 0.31
+Nodes (6): PluginManifest, PluginRecord, PluginRecordSchema, InstallOptions, PluginInstaller, PluginManagerOptions
+
+### Community 1078 - "Community 1078"
+Cohesion: 0.2
+Nodes (6): CicdAdapter, events, migrator, payload, sessions, task
+
 ### Community 1080 - "Community 1080"
-Cohesion: 0.22
-Nodes (5): EvaluationReport, EvaluationReportSchema, BenchmarkCaseExecutor, EvaluationManager, EvaluationManagerOptions
+Cohesion: 0.17
+Nodes (6): EvaluationReport, EvaluationReportSchema, BenchmarkCaseExecutor, EvaluationHarness, EvaluationManager, EvaluationManagerOptions
 
 ### Community 1083 - "Community 1083"
-Cohesion: 0.16
-Nodes (10): EvaluationRun, RegressionComparison, RegressionComparisonSchema, fetched, migrator, run, baselineRun, currentRun (+2 more)
+Cohesion: 0.24
+Nodes (7): EvaluationRun, RegressionComparison, RegressionComparisonSchema, baselineRun, currentRun, regression, RegressionEngine
 
 ### Community 1088 - "Community 1088"
 Cohesion: 0.2
 Nodes (8): badJson, buffer, jsonStr, result, rows, tableRep, StructuredDataParser, StructuredParseResult
 
 ### Community 1102 - "Community 1102"
-Cohesion: 0.33
-Nodes (5): adapter, compactOut, defaultOut, renderer, standardOut
+Cohesion: 0.2
+Nodes (9): claimA, claimB, completeStale, completeValid, futureTime, hbStale, migrator, recoveryRecords (+1 more)
 
 ### Community 1105 - "Community 1105"
-Cohesion: 0.12
-Nodes (8): engineWithCustomDispatcher, eventStore, executionOrder, migrator, projectRepo, sessionRepo, wf, WorkflowRegistry
+Cohesion: 0.08
+Nodes (14): eventStore, migrator, projectRepo, sessionRepo, wf, workflowEngine, engineWithCustomDispatcher, eventStore (+6 more)
 
 ### Community 1106 - "Community 1106"
 Cohesion: 0.29
@@ -2741,41 +2778,73 @@ Cohesion: 0.4
 Nodes (5): 1. Active Phase Backlog (P6 — Agents / Teams / Parallel Execution), [P6.1 — Agent Identity, Configuration & Startup Resolution](file:///C:/herness/docs/discovery/current-state.md#L10), [P6.2 — Task Board, Task Claims, Leases, Heartbeats & Stalled-Agent Recovery](file:///C:/herness/docs/discovery/current-state.md#L10), [P6.3 — Team Definition, Roles, Topologies & Handoff Communication](file:///C:/herness/docs/discovery/current-state.md#L10), [P6.4 — Parallel Execution, Worktree Isolation & Conflict Detection](file:///C:/herness/docs/discovery/current-state.md#L10)
 
 ### Community 1117 - "Community 1117"
-Cohesion: 0.13
-Nodes (18): BenchmarkCaseSchema, BenchmarkCategory, BenchmarkCategorySchema, EvaluationAssertionSchema, EvaluationAssertionType, EvaluationAssertionTypeSchema, EvaluationCaseResult, EvaluationCaseResultSchema (+10 more)
+Cohesion: 0.11
+Nodes (21): AssertionEvaluationResult, AssertionEvaluationResultSchema, BenchmarkCaseSchema, BenchmarkCategory, BenchmarkCategorySchema, EvaluationAssertion, EvaluationAssertionSchema, EvaluationAssertionType (+13 more)
+
+### Community 1121 - "Community 1121"
+Cohesion: 0.2
+Nodes (9): acceptRev, acceptVer, claimRes, completeRes, devStaleHeartbeat, finalTask, hoToRev, hoToVer (+1 more)
 
 ### Community 1123 - "Community 1123"
+Cohesion: 0.22
+Nodes (7): eventStore, executedNodes, migrator, projectRepo, sessionRepo, wf, workflowEngine
+
+### Community 1124 - "Community 1124"
+Cohesion: 0.22
+Nodes (7): eventStore, executedPayloads, migrator, projectRepo, sessionRepo, wf, workflowEngine
+
+### Community 1133 - "Community 1133"
+Cohesion: 0.22
+Nodes (8): conflict, csAdd1, csAdd2, csDelete, csModify, csRename1, csRename2, detector
+
+### Community 1134 - "Community 1134"
+Cohesion: 0.22
+Nodes (8): activeLease, claimRes, completedTask, completeRes, hbRes, migrator, releasedLease, task
+
+### Community 1136 - "Community 1136"
+Cohesion: 0.32
+Nodes (5): ChangeSetMetadata, ChangeSetMetadataSchema, ChangeSetCalculator, execAsync, SymbolModification
+
+### Community 1142 - "Community 1142"
 Cohesion: 0.25
-Nodes (7): cancelledDispatch, dispatch, lateRes, lease, migrator, projectRepo, sessionRepo
+Nodes (7): agents, conflicts, currentLease, migrator, results, successes, task
+
+### Community 1143 - "Community 1143"
+Cohesion: 0.25
+Nodes (7): claimRes, hb1, hb2, hb3, invalidInstHb, migrator, task
+
+### Community 1148 - "Community 1148"
+Cohesion: 0.25
+Nodes (7): attackerComplete, claimRes, forgedGenHb, forgedLeaseHb, legitComplete, migrator, task
+
+### Community 1149 - "Community 1149"
+Cohesion: 0.25
+Nodes (7): acceptRes, claimRes, migrator, prepRes, prevLeaseState, staleComplete, staleHeartbeat
+
+### Community 1158 - "Community 1158"
+Cohesion: 0.5
+Nodes (3): matched, matcher, registry
 
 ### Community 1161 - "Community 1161"
 Cohesion: 0.33
 Nodes (6): 2. GLOBAL COMPLETION GATES, G0 — Requirements & Architecture, G1 — Durability, G2 — Security, G3 — Execution, G4 — Verification
 
-### Community 1164 - "Community 1164"
-Cohesion: 0.33
-Nodes (5): matched, matcher, matchFail, matchSuccess, registry
-
-### Community 1190 - "Community 1190"
-Cohesion: 0.4
-Nodes (4): adapter, controller, outStream, renderer
-
 ## Knowledge Gaps
-- **3770 isolated node(s):** `name`, `version`, `description`, `type`, `main` (+3765 more)
+- **3783 isolated node(s):** `name`, `version`, `description`, `type`, `main` (+3778 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **773 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **777 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `EventStore` connect `Community 289` to `Community 256`, `Community 1024`, `Community 259`, `Community 4`, `Community 261`, `Community 262`, `Community 8`, `Community 265`, `Community 267`, `Community 12`, `Community 1035`, `Community 269`, `Community 911`, `Community 18`, `Community 404`, `Community 21`, `Community 278`, `Community 23`, `Community 281`, `Community 666`, `Community 282`, `Community 284`, `Community 413`, `Community 286`, `Community 287`, `Community 37`, `Community 296`, `Community 425`, `Community 1066`, `Community 45`, `Community 54`, `Community 56`, `Community 1080`, `Community 315`, `Community 956`, `Community 957`, `Community 832`, `Community 328`, `Community 840`, `Community 330`, `Community 1105`, `Community 1112`, `Community 347`, `Community 348`, `Community 349`, `Community 351`, `Community 992`, `Community 97`, `Community 865`, `Community 867`, `Community 1123`, `Community 749`, `Community 751`, `Community 369`, `Community 755`, `Community 378`, `Community 379`, `Community 383`?**
+- **Why does `SqliteEngine` connect `Community 911` to `Community 256`, `Community 1024`, `Community 259`, `Community 389`, `Community 261`, `Community 8`, `Community 265`, `Community 1035`, `Community 267`, `Community 269`, `Community 272`, `Community 404`, `Community 21`, `Community 666`, `Community 411`, `Community 1050`, `Community 284`, `Community 286`, `Community 413`, `Community 416`, `Community 289`, `Community 292`, `Community 37`, `Community 422`, `Community 296`, `Community 425`, `Community 299`, `Community 816`, `Community 949`, `Community 54`, `Community 311`, `Community 1080`, `Community 1078`, `Community 315`, `Community 957`, `Community 964`, `Community 327`, `Community 584`, `Community 840`, `Community 330`, `Community 1102`, `Community 1105`, `Community 1112`, `Community 728`, `Community 347`, `Community 348`, `Community 1117`, `Community 349`, `Community 351`, `Community 992`, `Community 865`, `Community 1121`, `Community 1123`, `Community 1124`, `Community 486`, `Community 1005`, `Community 1134`, `Community 755`, `Community 1142`, `Community 1143`, `Community 761`, `Community 251`, `Community 1148`, `Community 1149`, `Community 382`?**
   _High betweenness centrality (0.043) - this node is a cross-community bridge._
-- **Why does `SqliteEngine` connect `Community 911` to `Community 256`, `Community 1024`, `Community 259`, `Community 389`, `Community 262`, `Community 261`, `Community 8`, `Community 265`, `Community 267`, `Community 1035`, `Community 269`, `Community 272`, `Community 18`, `Community 404`, `Community 21`, `Community 281`, `Community 666`, `Community 411`, `Community 284`, `Community 413`, `Community 286`, `Community 287`, `Community 416`, `Community 289`, `Community 37`, `Community 422`, `Community 296`, `Community 425`, `Community 1066`, `Community 299`, `Community 45`, `Community 54`, `Community 311`, `Community 1080`, `Community 56`, `Community 1083`, `Community 315`, `Community 956`, `Community 957`, `Community 832`, `Community 964`, `Community 328`, `Community 584`, `Community 330`, `Community 840`, `Community 1105`, `Community 1112`, `Community 347`, `Community 348`, `Community 1117`, `Community 349`, `Community 351`, `Community 992`, `Community 865`, `Community 97`, `Community 1123`, `Community 486`, `Community 749`, `Community 369`, `Community 755`, `Community 378`, `Community 379`?**
+- **Why does `EventStore` connect `Community 289` to `Community 256`, `Community 1024`, `Community 259`, `Community 261`, `Community 265`, `Community 1035`, `Community 12`, `Community 267`, `Community 269`, `Community 911`, `Community 404`, `Community 21`, `Community 278`, `Community 23`, `Community 282`, `Community 666`, `Community 284`, `Community 413`, `Community 30`, `Community 292`, `Community 37`, `Community 425`, `Community 44`, `Community 303`, `Community 1077`, `Community 54`, `Community 1078`, `Community 1080`, `Community 315`, `Community 957`, `Community 324`, `Community 840`, `Community 335`, `Community 1105`, `Community 728`, `Community 1112`, `Community 347`, `Community 348`, `Community 349`, `Community 992`, `Community 97`, `Community 865`, `Community 867`, `Community 740`, `Community 1123`, `Community 1124`, `Community 751`, `Community 755`, `Community 375`, `Community 251`?**
   _High betweenness centrality (0.041) - this node is a cross-community bridge._
-- **Why does `EventTypes` connect `Community 289` to `Community 256`, `Community 1024`, `Community 259`, `Community 4`, `Community 262`, `Community 8`, `Community 1035`, `Community 12`, `Community 911`, `Community 18`, `Community 21`, `Community 278`, `Community 23`, `Community 281`, `Community 282`, `Community 287`, `Community 37`, `Community 296`, `Community 425`, `Community 1066`, `Community 45`, `Community 315`, `Community 956`, `Community 348`, `Community 351`, `Community 992`, `Community 865`, `Community 97`, `Community 867`, `Community 749`, `Community 751`, `Community 379`, `Community 383`?**
-  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+- **Why does `MigrationEngine` connect `Community 911` to `Community 256`, `Community 1024`, `Community 259`, `Community 261`, `Community 265`, `Community 1035`, `Community 267`, `Community 269`, `Community 272`, `Community 404`, `Community 21`, `Community 666`, `Community 411`, `Community 1050`, `Community 284`, `Community 286`, `Community 413`, `Community 416`, `Community 289`, `Community 292`, `Community 37`, `Community 422`, `Community 296`, `Community 425`, `Community 299`, `Community 816`, `Community 949`, `Community 54`, `Community 311`, `Community 1078`, `Community 315`, `Community 957`, `Community 964`, `Community 327`, `Community 584`, `Community 840`, `Community 330`, `Community 1102`, `Community 1105`, `Community 1112`, `Community 347`, `Community 349`, `Community 351`, `Community 992`, `Community 1121`, `Community 1123`, `Community 1124`, `Community 486`, `Community 1005`, `Community 1134`, `Community 755`, `Community 1142`, `Community 1143`, `Community 761`, `Community 251`, `Community 1148`, `Community 1149`?**
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **What connects `name`, `version`, `description` to the rest of the system?**
-  _3770 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _3783 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.02 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**

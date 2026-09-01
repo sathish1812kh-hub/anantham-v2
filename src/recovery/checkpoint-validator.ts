@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import * as fs from "node:fs";
 import { type Checkpoint } from "../domain/checkpoint.js";
 import { CheckpointManifestBuilder } from "./checkpoint-manifest.js";
 import type { ArtifactRepository } from "../persistence/repositories/artifact-repository.js";
@@ -51,13 +52,16 @@ export class CheckpointValidator {
   }
 
   /**
-   * Performs full structural and persistent validation against database repositories.
+   * Performs full structural, persistent, and physical disk validation against database repositories and storage.
    */
   public static async validateComplete(
     checkpoint: Checkpoint,
     repositories?: {
       artifactRepo?: ArtifactRepository;
       eventRepo?: EventRepository;
+    },
+    options?: {
+      verifyPhysicalDisk?: boolean;
     }
   ): Promise<CheckpointValidationResult> {
     const integrity = CheckpointValidator.validateIntegrity(checkpoint);
@@ -81,9 +85,38 @@ export class CheckpointValidator {
           errors.push(
             `Artifact '${artifactId}' hash mismatch: manifest recorded ${expectedHash}, database has ${artifact.sha256}.`
           );
+        } else if (options?.verifyPhysicalDisk) {
+          const rawUri = artifact.contentUri || (artifact as any).path;
+          let diskPath = rawUri;
+          if (rawUri?.startsWith("file://")) {
+            diskPath = rawUri.replace(/^file:\/\//, "");
+            // Handle Windows file:///C:/ or file://C:/
+            if (process.platform === "win32" && diskPath.startsWith("/")) {
+              diskPath = diskPath.slice(1);
+            }
+          }
+          if (diskPath) {
+            // Physical filesystem validation
+            if (!fs.existsSync(diskPath)) {
+              missingArtifactIds.push(artifactId);
+              artifactsValid = false;
+              errors.push(`Referenced physical artifact file '${diskPath}' does not exist on disk.`);
+            } else {
+              const diskHash = createHash("sha256").update(fs.readFileSync(diskPath)).digest("hex");
+              if (diskHash !== expectedHash) {
+                mismatchedArtifactIds.push(artifactId);
+                artifactsValid = false;
+                errors.push(
+                  `Artifact '${artifactId}' physical file on disk hash mismatch: manifest recorded ${expectedHash}, disk file has ${diskHash}.`
+                );
+              }
+            }
+          }
         }
+
       }
     }
+
 
     // Validate event offset if eventRepo is provided
     let eventOffsetValid = true;

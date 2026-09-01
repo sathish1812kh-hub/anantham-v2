@@ -50,7 +50,12 @@ interface WorkflowRunRow {
 export class WorkflowRepository {
   constructor(private readonly engine: SqliteEngine) {}
 
+  public get sqliteEngine(): SqliteEngine {
+    return this.engine;
+  }
+
   public saveWorkflow(workflow: WorkflowDefinition): void {
+
     const validated = WorkflowDefinitionSchema.parse(workflow);
     const stmt = this.engine.raw.prepare(`
       INSERT INTO workflows (

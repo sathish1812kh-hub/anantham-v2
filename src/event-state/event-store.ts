@@ -60,6 +60,24 @@ export class EventStore {
   }
 
   /**
+   * Appends an immutable event directly within an existing caller-managed SQLite transaction.
+   * Guarantees atomic RPO-0 consistency between relational table mutations and EventStore.
+   */
+  public appendWithinTransaction(event: HarnessEvent): Readonly<HarnessEvent> {
+    return this.eventRepo.append(event);
+  }
+
+  /**
+   * Safely dispatches ephemeral notifications for events committed in an outer transaction.
+   */
+  public notifyCommitted(events: Readonly<HarnessEvent>[]): void {
+    for (const ev of events) {
+      this.notifySubscribers(ev);
+    }
+  }
+
+
+  /**
    * Reads all events for a given session in strictly chronological order.
    */
   public getEventsBySession(

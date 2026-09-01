@@ -44,7 +44,12 @@ interface BackgroundJobRow {
 export class JobRepository {
   constructor(private readonly engine: SqliteEngine) {}
 
+  public get sqliteEngine(): SqliteEngine {
+    return this.engine;
+  }
+
   public saveJob(job: BackgroundJob): void {
+
     const validated = BackgroundJobSchema.parse(job);
     const stmt = this.engine.raw.prepare(`
       INSERT INTO background_jobs (

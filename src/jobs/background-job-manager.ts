@@ -121,10 +121,18 @@ export class BackgroundJobManager {
       metadata: validatedReq.metadata || {},
     });
 
-    this.jobRepo.saveJob(job);
+    const committedEvents: any[] = [];
+    this.jobRepo.sqliteEngine.transaction(() => {
+      this.jobRepo.saveJob(job);
+      const ev1 = this.createAndAppendEventInTx(EventTypes.JOB_CREATED, job, { objective: validatedReq.objective });
+      if (ev1) committedEvents.push(ev1);
+      const ev2 = this.createAndAppendEventInTx(EventTypes.JOB_QUEUED, job, {});
+      if (ev2) committedEvents.push(ev2);
+    });
 
-    this.emitEvent(EventTypes.JOB_CREATED, job, { objective: validatedReq.objective });
-    this.emitEvent(EventTypes.JOB_QUEUED, job, {});
+    if (this.eventStore && committedEvents.length > 0) {
+      this.eventStore.notifyCommitted(committedEvents);
+    }
 
     return job;
   }
@@ -170,15 +178,23 @@ export class BackgroundJobManager {
     job.instanceId = worker.instanceId;
     job.attempt = job.attempt + 1;
 
-    this.jobRepo.saveJob(job);
-
-    this.emitEvent(EventTypes.JOB_CLAIMED, job, {
-      leaseId: claimRes.lease.id,
-      generation: claimRes.lease.generation,
+    const committedEvents: any[] = [];
+    this.jobRepo.sqliteEngine.transaction(() => {
+      this.jobRepo.saveJob(job);
+      const ev1 = this.createAndAppendEventInTx(EventTypes.JOB_CLAIMED, job, {
+        leaseId: claimRes.lease!.id,
+        generation: claimRes.lease!.generation,
+      });
+      if (ev1) committedEvents.push(ev1);
+      const ev2 = this.createAndAppendEventInTx(EventTypes.JOB_STARTED, job, {});
+      if (ev2) committedEvents.push(ev2);
     });
-    this.emitEvent(EventTypes.JOB_STARTED, job, {});
 
-    return { job, lease: claimRes.lease };
+    if (this.eventStore && committedEvents.length > 0) {
+      this.eventStore.notifyCommitted(committedEvents);
+    }
+
+    return { job, lease: claimRes.lease! };
   }
 
   /**
@@ -205,8 +221,18 @@ export class BackgroundJobManager {
       job.status = "TIMED_OUT";
       job.completedAt = new Date().toISOString();
       job.errorMessage = `Job exceeded execution deadline of ${job.deadline}.`;
-      this.jobRepo.saveJob(job);
-      this.emitEvent(EventTypes.JOB_TIMED_OUT, job, { deadline: job.deadline });
+      
+      const committedEvents: any[] = [];
+      this.jobRepo.sqliteEngine.transaction(() => {
+        this.jobRepo.saveJob(job);
+        const ev = this.createAndAppendEventInTx(EventTypes.JOB_TIMED_OUT, job, { deadline: job.deadline });
+        if (ev) committedEvents.push(ev);
+      });
+
+      if (this.eventStore && committedEvents.length > 0) {
+        this.eventStore.notifyCommitted(committedEvents);
+      }
+
       return { success: false, timedOut: true, reason: job.errorMessage };
     }
 
@@ -231,13 +257,22 @@ export class BackgroundJobManager {
     }
 
     job.heartbeatAt = renewRes.lease.lastHeartbeatAt;
-    this.jobRepo.saveJob(job);
 
-    this.emitEvent(EventTypes.JOB_HEARTBEAT, job, {
-      leaseId,
-      generation,
-      renewalCount: renewRes.lease.renewalCount,
+    const committedEvents: any[] = [];
+    this.jobRepo.sqliteEngine.transaction(() => {
+      this.jobRepo.saveJob(job);
+      const ev = this.createAndAppendEventInTx(EventTypes.JOB_HEARTBEAT, job, {
+        leaseId,
+        generation,
+        renewalCount: renewRes.lease!.renewalCount,
+      });
+      if (ev) committedEvents.push(ev);
     });
+
+
+    if (this.eventStore && committedEvents.length > 0) {
+      this.eventStore.notifyCommitted(committedEvents);
+    }
 
     return { success: true, lease: renewRes.lease };
   }
@@ -261,9 +296,17 @@ export class BackgroundJobManager {
     }
 
     job.checkpointId = checkpointId;
-    this.jobRepo.saveJob(job);
 
-    this.emitEvent(EventTypes.JOB_CHECKPOINTED, job, { checkpointId });
+    const committedEvents: any[] = [];
+    this.jobRepo.sqliteEngine.transaction(() => {
+      this.jobRepo.saveJob(job);
+      const ev = this.createAndAppendEventInTx(EventTypes.JOB_CHECKPOINTED, job, { checkpointId });
+      if (ev) committedEvents.push(ev);
+    });
+
+    if (this.eventStore && committedEvents.length > 0) {
+      this.eventStore.notifyCommitted(committedEvents);
+    }
   }
 
   /**
@@ -318,12 +361,19 @@ export class BackgroundJobManager {
       });
     }
 
-    this.jobRepo.saveJob(job);
-
-    this.emitEvent(EventTypes.JOB_COMPLETED, job, {
-      resultArtifacts: job.resultArtifacts,
-      consumption: job.consumption,
+    const committedEvents: any[] = [];
+    this.jobRepo.sqliteEngine.transaction(() => {
+      this.jobRepo.saveJob(job);
+      const ev = this.createAndAppendEventInTx(EventTypes.JOB_COMPLETED, job, {
+        resultArtifacts: job.resultArtifacts,
+        consumption: job.consumption,
+      });
+      if (ev) committedEvents.push(ev);
     });
+
+    if (this.eventStore && committedEvents.length > 0) {
+      this.eventStore.notifyCommitted(committedEvents);
+    }
 
     return job;
   }
@@ -358,14 +408,22 @@ export class BackgroundJobManager {
       job.status = "QUEUED";
       job.failureClassification = classification;
       job.errorMessage = errStr;
-      this.jobRepo.saveJob(job);
 
-      this.emitEvent(EventTypes.JOB_RETRYING, job, {
-        attempt: job.attempt,
-        maxAttempts: job.maxAttempts,
-        backoffMs: retryDecision.backoffMs,
-        classification,
+      const committedEvents: any[] = [];
+      this.jobRepo.sqliteEngine.transaction(() => {
+        this.jobRepo.saveJob(job);
+        const ev = this.createAndAppendEventInTx(EventTypes.JOB_RETRYING, job, {
+          attempt: job.attempt,
+          maxAttempts: job.maxAttempts,
+          backoffMs: retryDecision.backoffMs,
+          classification,
+        });
+        if (ev) committedEvents.push(ev);
       });
+
+      if (this.eventStore && committedEvents.length > 0) {
+        this.eventStore.notifyCommitted(committedEvents);
+      }
 
       return {
         status: "QUEUED",
@@ -382,13 +440,21 @@ export class BackgroundJobManager {
     job.completedAt = now;
     job.failureClassification = classification;
     job.errorMessage = errStr;
-    this.jobRepo.saveJob(job);
 
-    this.emitEvent(EventTypes.JOB_FAILED, job, {
-      attempt: job.attempt,
-      classification,
-      error: job.errorMessage,
+    const committedEvents: any[] = [];
+    this.jobRepo.sqliteEngine.transaction(() => {
+      this.jobRepo.saveJob(job);
+      const ev = this.createAndAppendEventInTx(EventTypes.JOB_FAILED, job, {
+        attempt: job.attempt,
+        classification,
+        error: job.errorMessage,
+      });
+      if (ev) committedEvents.push(ev);
     });
+
+    if (this.eventStore && committedEvents.length > 0) {
+      this.eventStore.notifyCommitted(committedEvents);
+    }
 
     return {
       status: "FAILED",
@@ -421,10 +487,18 @@ export class BackgroundJobManager {
       this.claimManager.releaseTask(job.taskId, job.leaseId, job.generation, reason);
     }
 
-    this.jobRepo.saveJob(job);
+    const committedEvents: any[] = [];
+    this.jobRepo.sqliteEngine.transaction(() => {
+      this.jobRepo.saveJob(job);
+      const ev1 = this.createAndAppendEventInTx(EventTypes.JOB_CANCEL_REQUESTED, job, { reason, requestedBy });
+      if (ev1) committedEvents.push(ev1);
+      const ev2 = this.createAndAppendEventInTx(EventTypes.JOB_CANCELLED, job, { reason, requestedBy });
+      if (ev2) committedEvents.push(ev2);
+    });
 
-    this.emitEvent(EventTypes.JOB_CANCEL_REQUESTED, job, { reason, requestedBy });
-    this.emitEvent(EventTypes.JOB_CANCELLED, job, { reason, requestedBy });
+    if (this.eventStore && committedEvents.length > 0) {
+      this.eventStore.notifyCommitted(committedEvents);
+    }
 
     return job;
   }
@@ -436,9 +510,9 @@ export class BackgroundJobManager {
     return this.jobRepo.findJobById(jobId);
   }
 
-  private emitEvent(type: string, job: BackgroundJob, payload: Record<string, unknown>): void {
-    if (!this.eventStore) return;
-    this.eventStore.append({
+  private createAndAppendEventInTx(type: string, job: BackgroundJob, payload: Record<string, unknown>): any {
+    if (!this.eventStore) return null;
+    return this.eventStore.appendWithinTransaction({
       id: randomUUID(),
       schemaVersion: 1,
       actor: "system",
@@ -457,3 +531,4 @@ export class BackgroundJobManager {
     });
   }
 }
+

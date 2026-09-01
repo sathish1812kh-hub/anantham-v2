@@ -1,9 +1,11 @@
+import * as fs from "node:fs";
 import {
   type EvaluationAssertion,
   type AssertionEvaluationResult,
   AssertionEvaluationResultSchema,
 } from "../domain/evaluation.js";
 import { type CollectedEvidence } from "./evidence-collector.js";
+
 
 /**
  * Objective Assertion Evaluator.
@@ -27,7 +29,20 @@ export class AssertionEvaluator {
 
     switch (assertion.type) {
       case "STATE_EQUALS": {
-        observed = evidence.stateSnapshots[assertion.target];
+        let physicalVal: unknown = undefined;
+        if (options?.engine && assertion.target.includes(".")) {
+          try {
+            const [table, col] = assertion.target.split(".");
+            const safeTable = table === "task" || table === "tasks" ? "tasks" : table === "session" || table === "sessions" ? "sessions" : null;
+            if (safeTable && (col === "status" || col === "priority")) {
+              const row = options.engine.raw.prepare(`SELECT ${col} as val FROM ${safeTable} LIMIT 1;`).get() as { val: unknown } | undefined;
+              if (row) physicalVal = row.val;
+            }
+          } catch {
+            // Fall back to evidence snapshots
+          }
+        }
+        observed = physicalVal !== undefined ? physicalVal : evidence.stateSnapshots[assertion.target];
         passed = observed === assertion.expected;
         evidenceStr = `Observed state '${assertion.target}' = '${String(observed)}' (expected: '${String(assertion.expected)}')`;
         break;
@@ -43,13 +58,22 @@ export class AssertionEvaluator {
 
       case "ARTIFACT_EXISTS": {
         const found = evidence.artifacts.find((a) => a.path === assertion.target || a.id === assertion.target);
-        observed = found !== undefined;
+        let physicalFileOk = true;
+        if (found && options?.workspaceRoot && found.path) {
+          try {
+            physicalFileOk = fs.existsSync(found.path);
+          } catch {
+            physicalFileOk = false;
+          }
+        }
+        observed = found !== undefined && physicalFileOk;
         passed = observed === Boolean(assertion.expected);
         evidenceStr = found
-          ? `Artifact '${assertion.target}' found (hash: ${found.hash ?? "none"})`
+          ? `Artifact '${assertion.target}' found (physical: ${physicalFileOk}, hash: ${found.hash ?? "none"})`
           : `Artifact '${assertion.target}' not found`;
         break;
       }
+
 
       case "POLICY_DECISION": {
         observed = evidence.policyDecisions[evidence.policyDecisions.length - 1] ?? "NONE";

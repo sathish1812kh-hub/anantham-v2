@@ -104,19 +104,26 @@ export class WorkflowEngine {
     }
 
     run.status = "PAUSED";
-    this.workflowRepo.saveWorkflowRun(run);
 
-    if (this.eventStore) {
-      this.eventStore.append({
-        id: randomUUID(),
-        schemaVersion: 1,
-        actor: "system",
-        timestamp: new Date().toISOString(),
-        type: EventTypes.WORKFLOW_PAUSED,
-        projectId: run.projectId,
-        sessionId: run.sessionId,
-        payload: { runId, reason },
-      });
+    let committedEvent: any = null;
+    this.workflowRepo.sqliteEngine.transaction(() => {
+      this.workflowRepo.saveWorkflowRun(run);
+      if (this.eventStore) {
+        committedEvent = this.eventStore.appendWithinTransaction({
+          id: randomUUID(),
+          schemaVersion: 1,
+          actor: "system",
+          timestamp: new Date().toISOString(),
+          type: EventTypes.WORKFLOW_PAUSED,
+          projectId: run.projectId,
+          sessionId: run.sessionId,
+          payload: { runId, reason },
+        });
+      }
+    });
+
+    if (this.eventStore && committedEvent) {
+      this.eventStore.notifyCommitted([committedEvent]);
     }
 
     return run;
@@ -141,19 +148,26 @@ export class WorkflowEngine {
     }
 
     run.status = "RUNNING";
-    this.workflowRepo.saveWorkflowRun(run);
 
-    if (this.eventStore) {
-      this.eventStore.append({
-        id: randomUUID(),
-        schemaVersion: 1,
-        actor: "system",
-        timestamp: new Date().toISOString(),
-        type: EventTypes.WORKFLOW_RESUMED,
-        projectId: run.projectId,
-        sessionId: run.sessionId,
-        payload: { runId },
-      });
+    let committedEvent: any = null;
+    this.workflowRepo.sqliteEngine.transaction(() => {
+      this.workflowRepo.saveWorkflowRun(run);
+      if (this.eventStore) {
+        committedEvent = this.eventStore.appendWithinTransaction({
+          id: randomUUID(),
+          schemaVersion: 1,
+          actor: "system",
+          timestamp: new Date().toISOString(),
+          type: EventTypes.WORKFLOW_RESUMED,
+          projectId: run.projectId,
+          sessionId: run.sessionId,
+          payload: { runId },
+        });
+      }
+    });
+
+    if (this.eventStore && committedEvent) {
+      this.eventStore.notifyCommitted([committedEvent]);
     }
 
     return this.executor.execute(run, workflow);
@@ -192,23 +206,30 @@ export class WorkflowEngine {
     }
     run.runningTasks = [];
 
-    this.workflowRepo.saveWorkflowRun(run);
+    let committedEvent: any = null;
+    this.workflowRepo.sqliteEngine.transaction(() => {
+      this.workflowRepo.saveWorkflowRun(run);
+      if (this.eventStore) {
+        committedEvent = this.eventStore.appendWithinTransaction({
+          id: randomUUID(),
+          schemaVersion: 1,
+          actor: "system",
+          timestamp: new Date().toISOString(),
+          type: EventTypes.WORKFLOW_CANCELLED,
+          projectId: run.projectId,
+          sessionId: run.sessionId,
+          payload: { runId, reason },
+        });
+      }
+    });
 
-    if (this.eventStore) {
-      this.eventStore.append({
-        id: randomUUID(),
-        schemaVersion: 1,
-        actor: "system",
-        timestamp: new Date().toISOString(),
-        type: EventTypes.WORKFLOW_CANCELLED,
-        projectId: run.projectId,
-        sessionId: run.sessionId,
-        payload: { runId, reason },
-      });
+    if (this.eventStore && committedEvent) {
+      this.eventStore.notifyCommitted([committedEvent]);
     }
 
     return run;
   }
+
 
   /**
    * Authoritative external human approval resolution for a waiting gate.

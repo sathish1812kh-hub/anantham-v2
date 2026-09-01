@@ -277,25 +277,20 @@ This document records architectural decisions, their trade-offs, and compliance 
   5. *Isolated Execution Context*: Each evaluation run executes inside dedicated temporary projects and sessions, ensuring zero pollution of production or user workspaces.
   6. *Durable Evaluation Records*: SQLite Migration 010 persists `eval_runs` and `eval_case_results` transactionally.
   7. *Regression Detection*: `RegressionEngine` computes score deltas, new failures, and fixed failures against prior baseline runs.
-- **Consequences**: Objective, reproducible verification across runtime updates, provable defense against regressions, and complete benchmark traceability.
-
 ---
 
 ## ADR-023: Recovery, Chaos, Interruption & Durability Evaluation
 
 - **Status**: `ACCEPTED`
 - **Date**: 2026-09-01
-- **Context**: The pre-flight adversarial architecture audit revealed that prior crash recovery assumptions suffered from three critical vulnerabilities: in-memory disconnected recovery lease management, permanent task stagnation when in-progress tasks were interrupted, and mock-based assertion evaluation that bypassed physical database state.
-- **Decision**: Harden recovery and evaluation systems across Anantham V2:
-  1. *Persistent SQLite Lease Reclamation*: `CrashRecoveryEngine` queries the authoritative `leases` table directly and transitions expired rows to `EXPIRED` status on engine startup.
-  2. *Interrupted In-Progress Task Sweep*: `CrashRecoveryEngine` sweeps orphaned tasks stuck in `running`, `claimed`, or `verifying` state with expired or missing active leases and resets them to `queued`, allowing subsequent workers to claim them with incremented generation tokens.
-  3. *Physical Database & Filesystem Assertion Verification*: `AssertionEvaluator` executes real physical SQL checks (`PRAGMA integrity_check`, referential constraints, disk digests) rather than relying on in-memory dictionary flags.
-  4. *Idempotent Repeated Recovery*: Verified that consecutive crash-recovery cycles (`Crash -> Recovery -> Crash -> Recovery`) execute without duplicating tasks, leases, or corrupting state.
-- **Consequences**: Real crash resilience, guaranteed un-jamming of crashed tasks, hardened generation fencing, and tamper-resistant objective evaluation metrics.
-
-
-
-
+- **Context**: The pre-flight and post-remediation adversarial architecture audits revealed that prior crash recovery and durability architectures suffered from four critical vulnerabilities: split dual-transactions between relational table mutations and EventStore appends, in-memory disconnected recovery lease management, permanent task stagnation when in-progress tasks were interrupted, and mock-based assertion / checkpoint evaluation that bypassed physical database and disk state.
+- **Decision**: Harden recovery and durability systems across Anantham V2:
+  1. *Unified Single-Transaction State & Event Atomicity (WR-01, WR-04, WR-05)*: `TaskClaimManager`, `WorkflowEngine`, and `BackgroundJobManager` execute relational table updates and `EventStore.appendWithinTransaction` within the **SAME physical SQLite transaction**. All `try...catch` error swallows on event persistence are eliminated; any event persistence failure aborts and rolls back the entire relational mutation.
+  2. *Persistent SQLite Lease Reclamation (WR-03)*: `CrashRecoveryEngine` queries the authoritative `leases` table directly and transitions expired rows to `EXPIRED` status on engine startup.
+  3. *Interrupted In-Progress Task Sweep (WR-02)*: `CrashRecoveryEngine` sweeps orphaned tasks stuck in `running`, `claimed`, or `verifying` state without active unexpired leases and resets them to `queued`, allowing subsequent workers to claim them with incremented generation tokens.
+  4. *Physical Database & Filesystem Assertion / Checkpoint Verification (WR-07, WR-10)*: `AssertionEvaluator` executes real physical SQL checks (`PRAGMA integrity_check`, referential constraints, schema checks), and `CheckpointValidator.validateComplete` validates physical disk existence (`fs.existsSync`) and streaming SHA-256 digests of artifact files on disk.
+  5. *Idempotent Repeated Recovery*: Verified that consecutive crash-recovery cycles (`Crash -> Recovery -> Crash -> Recovery`) execute without duplicating tasks, leases, or corrupting state.
+- **Consequences**: Provable RPO-0 durability, guaranteed un-jamming of crashed tasks, hardened generation fencing, atomic state/event consistency, and tamper-resistant objective evaluation metrics.
 
 
 

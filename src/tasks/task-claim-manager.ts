@@ -153,42 +153,48 @@ export class TaskClaimManager {
         // 8. Update Task Status -> claimed
         this.taskRepo.updateStatus(task.id, "claimed");
 
+        // 9. Emit durable audit events within the SAME authoritative transaction
+        const committedEvents: any[] = [];
+        const ev1 = this.createAndAppendEventInTx(EventTypes.TASK_CLAIMED, {
+          taskId: request.taskId,
+          agentId: request.agentId,
+          instanceId: request.instanceId,
+          leaseId: lease.id,
+          generation: lease.generation,
+          projectId: request.projectId,
+          sessionId: request.sessionId,
+          expiresAt: lease.expiresAt,
+        });
+        if (ev1) committedEvents.push(ev1);
+
+        const ev2 = this.createAndAppendEventInTx(EventTypes.TASK_LEASE_ACQUIRED, {
+          leaseId: lease.id,
+          taskId: request.taskId,
+          agentId: request.agentId,
+          instanceId: request.instanceId,
+          generation: lease.generation,
+          projectId: request.projectId,
+          sessionId: request.sessionId,
+          ttlMs,
+        });
+        if (ev2) committedEvents.push(ev2);
+
         return {
           success: true,
           lease,
+          committedEvents,
         };
       });
+
+      if (claimResult.success && (claimResult as any).committedEvents) {
+        this.eventStore?.notifyCommitted((claimResult as any).committedEvents);
+      }
     } catch (err: any) {
       return {
         success: false,
         errorCode: "TRANSACTION_ERROR",
         errorMessage: err.message,
       };
-    }
-
-    // 9. Emit durable audit events
-    if (claimResult.success && claimResult.lease) {
-      this.emitEvent(EventTypes.TASK_CLAIMED, {
-        taskId: request.taskId,
-        agentId: request.agentId,
-        instanceId: request.instanceId,
-        leaseId: claimResult.lease.id,
-        generation: claimResult.lease.generation,
-        projectId: request.projectId,
-        sessionId: request.sessionId,
-        expiresAt: claimResult.lease.expiresAt,
-      });
-
-      this.emitEvent(EventTypes.TASK_LEASE_ACQUIRED, {
-        leaseId: claimResult.lease.id,
-        taskId: request.taskId,
-        agentId: request.agentId,
-        instanceId: request.instanceId,
-        generation: claimResult.lease.generation,
-        projectId: request.projectId,
-        sessionId: request.sessionId,
-        ttlMs,
-      });
     }
 
     return claimResult;
@@ -281,34 +287,38 @@ export class TaskClaimManager {
 
         this.leaseRepo.save(lease);
 
+        // Atomic audit event within transaction
+        const ev = this.createAndAppendEventInTx(EventTypes.TASK_HEARTBEAT, {
+          leaseId: lease.id,
+          taskId: lease.taskId,
+          agentId: lease.agentId,
+          instanceId: lease.instanceId,
+          projectId: lease.projectId,
+          sessionId: lease.sessionId,
+          generation: lease.generation,
+          renewalCount: lease.renewalCount,
+          expiresAt: lease.expiresAt,
+          currentAction: request.currentAction,
+          lastTool: request.lastTool,
+          lastModelRequest: request.lastModelRequest,
+        });
+
         return {
           success: true,
           lease,
+          committedEvents: ev ? [ev] : [],
         };
       });
+
+      if (heartbeatResult.success && (heartbeatResult as any).committedEvents) {
+        this.eventStore?.notifyCommitted((heartbeatResult as any).committedEvents);
+      }
     } catch (err: any) {
       return {
         success: false,
         errorCode: "TRANSACTION_ERROR",
         errorMessage: err.message,
       };
-    }
-
-    if (heartbeatResult.success && heartbeatResult.lease) {
-      this.emitEvent(EventTypes.TASK_HEARTBEAT, {
-        leaseId: heartbeatResult.lease.id,
-        taskId: heartbeatResult.lease.taskId,
-        agentId: heartbeatResult.lease.agentId,
-        instanceId: heartbeatResult.lease.instanceId,
-        projectId: heartbeatResult.lease.projectId,
-        sessionId: heartbeatResult.lease.sessionId,
-        generation: heartbeatResult.lease.generation,
-        renewalCount: heartbeatResult.lease.renewalCount,
-        expiresAt: heartbeatResult.lease.expiresAt,
-        currentAction: request.currentAction,
-        lastTool: request.lastTool,
-        lastModelRequest: request.lastModelRequest,
-      });
     }
 
     return heartbeatResult;
@@ -382,30 +392,37 @@ export class TaskClaimManager {
       return false;
     }
 
+    const committedEvents: any[] = [];
     this.engine.transaction(() => {
       this.taskRepo.updateStatus(tId, "completed");
       this.leaseRepo.updateStatus(lId, "RELEASED");
+      const lease = this.leaseRepo.findById(lId);
+
+      const ev1 = this.createAndAppendEventInTx(EventTypes.TASK_COMPLETED, {
+        taskId: tId,
+        leaseId: lId,
+        generation: gen,
+        agentId: lease?.agentId,
+        projectId: lease?.projectId,
+        sessionId: lease?.sessionId,
+        result: resMeta,
+      });
+      if (ev1) committedEvents.push(ev1);
+
+      const ev2 = this.createAndAppendEventInTx(EventTypes.TASK_RELEASED, {
+        taskId: tId,
+        leaseId: lId,
+        agentId: lease?.agentId,
+        projectId: lease?.projectId,
+        sessionId: lease?.sessionId,
+        reason: "COMPLETED",
+      });
+      if (ev2) committedEvents.push(ev2);
     });
 
-    const lease = this.leaseRepo.findById(lId);
-    this.emitEvent(EventTypes.TASK_COMPLETED, {
-      taskId: tId,
-      leaseId: lId,
-      generation: gen,
-      agentId: lease?.agentId,
-      projectId: lease?.projectId,
-      sessionId: lease?.sessionId,
-      result: resMeta,
-    });
-
-    this.emitEvent(EventTypes.TASK_RELEASED, {
-      taskId: tId,
-      leaseId: lId,
-      agentId: lease?.agentId,
-      projectId: lease?.projectId,
-      sessionId: lease?.sessionId,
-      reason: "COMPLETED",
-    });
+    if (this.eventStore && committedEvents.length > 0) {
+      this.eventStore.notifyCommitted(committedEvents);
+    }
 
     return true;
   }
@@ -452,30 +469,37 @@ export class TaskClaimManager {
       return false;
     }
 
+    const committedEvents: any[] = [];
     this.engine.transaction(() => {
       this.taskRepo.updateStatus(tId, "failed");
       this.leaseRepo.updateStatus(lId, "RELEASED");
+      const lease = this.leaseRepo.findById(lId);
+
+      const ev1 = this.createAndAppendEventInTx(EventTypes.TASK_FAILED, {
+        taskId: tId,
+        leaseId: lId,
+        generation: gen,
+        agentId: lease?.agentId,
+        projectId: lease?.projectId,
+        sessionId: lease?.sessionId,
+        error: errStr,
+      });
+      if (ev1) committedEvents.push(ev1);
+
+      const ev2 = this.createAndAppendEventInTx(EventTypes.TASK_RELEASED, {
+        taskId: tId,
+        leaseId: lId,
+        agentId: lease?.agentId,
+        projectId: lease?.projectId,
+        sessionId: lease?.sessionId,
+        reason: "FAILED",
+      });
+      if (ev2) committedEvents.push(ev2);
     });
 
-    const lease = this.leaseRepo.findById(lId);
-    this.emitEvent(EventTypes.TASK_FAILED, {
-      taskId: tId,
-      leaseId: lId,
-      generation: gen,
-      agentId: lease?.agentId,
-      projectId: lease?.projectId,
-      sessionId: lease?.sessionId,
-      error: errStr,
-    });
-
-    this.emitEvent(EventTypes.TASK_RELEASED, {
-      taskId: tId,
-      leaseId: lId,
-      agentId: lease?.agentId,
-      projectId: lease?.projectId,
-      sessionId: lease?.sessionId,
-      reason: "FAILED",
-    });
+    if (this.eventStore && committedEvents.length > 0) {
+      this.eventStore.notifyCommitted(committedEvents);
+    }
 
     return true;
   }
@@ -522,44 +546,52 @@ export class TaskClaimManager {
       return false;
     }
 
+    const committedEvents: any[] = [];
     this.engine.transaction(() => {
       this.taskRepo.updateStatus(tId, "queued");
       this.leaseRepo.updateStatus(lId, "RELEASED");
+      const lease = this.leaseRepo.findById(lId);
+
+      const ev = this.createAndAppendEventInTx(EventTypes.TASK_RELEASED, {
+        taskId: tId,
+        leaseId: lId,
+        agentId: lease?.agentId,
+        projectId: lease?.projectId,
+        sessionId: lease?.sessionId,
+        reason: releaseReason,
+      });
+      if (ev) committedEvents.push(ev);
     });
 
-    const lease = this.leaseRepo.findById(lId);
-    this.emitEvent(EventTypes.TASK_RELEASED, {
-      taskId: tId,
-      leaseId: lId,
-      agentId: lease?.agentId,
-      projectId: lease?.projectId,
-      sessionId: lease?.sessionId,
-      reason: releaseReason,
-    });
+    if (this.eventStore && committedEvents.length > 0) {
+      this.eventStore.notifyCommitted(committedEvents);
+    }
 
     return true;
   }
 
   /**
-   * Emit audit event to EventStore.
+   * Creates and appends an event to the EventStore inside the current transaction.
    */
-  private emitEvent(type: string, payload: Record<string, unknown>): void {
-    if (!this.eventStore) return;
-    try {
-      this.eventStore.append({
-        id: `evt_${randomUUID()}`,
-        schemaVersion: 1,
-        type,
-        actor: "system",
-        projectId: (payload.projectId as string) || "system",
-        sessionId: payload.sessionId ? (payload.sessionId as string) : undefined,
-        taskId: payload.taskId ? (payload.taskId as string) : undefined,
-        agentId: payload.agentId ? (payload.agentId as string) : undefined,
-        payload,
-        timestamp: new Date().toISOString(),
-      });
-    } catch {
-      // EventStore logging must not crash primary transaction
-    }
+  private createAndAppendEventInTx(
+    type: string,
+    payload: Record<string, unknown>
+  ): any {
+    if (!this.eventStore) return null;
+    const event = {
+      id: `evt_${randomUUID()}`,
+      schemaVersion: 1,
+      type,
+      actor: "system" as const,
+      projectId: (payload.projectId as string) || "system",
+      sessionId: payload.sessionId ? (payload.sessionId as string) : undefined,
+      taskId: payload.taskId ? (payload.taskId as string) : undefined,
+      agentId: payload.agentId ? (payload.agentId as string) : undefined,
+      payload,
+      timestamp: new Date().toISOString(),
+    };
+    return this.eventStore.appendWithinTransaction(event);
+
   }
 }
+
