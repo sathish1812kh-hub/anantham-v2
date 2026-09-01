@@ -6,16 +6,22 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P10 — PRODUCTION RELEASE, SELF-HOSTING & CERTIFICATION)
 
-### [TASK-P10.12 — PRODUCTION PUBLICATION & DEPLOYMENT ACCEPTANCE GATE](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [TASK-P10.13 — FINAL EVIDENCE RECONCILIATION & PRODUCTION OPERATIONS READINESS GATE](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `COMPLETED`
-- **Owner**: Principal Release Engineer, Production Reliability Engineer & Deployment Auditor
+- **Owner**: Principal Production Reliability Engineer & SRE Auditor
 - **Completed Date**: 2026-09-02
-- **Description**: Production publication and deployment acceptance gate completed. Verified immutable release provenance chain (commit d8ac43f -> tag v2.0.0-alpha.1 -> tarball SHA-256 a673adfb793c6f421d3ada2a99c460b860046e7796b46b72bc13f6ab2b20ef81), established objective proof for P10.10 -> P10.11 hash invariance (documentation/test exclusions in package.json), verified Node.js >=22.0.0 engine contract with native SQLite WAL, executed full production smoke workload directly from extracted package, and confirmed active hot backup, crash recovery, and security gates. 852/852 automated tests passing, 31/31 release smoke tests passing.
+- **Description**: Final evidence reconciliation and operational readiness gate completed. Audited release provenance, clarified Node.js >=22.5.0 engine contract for native node:sqlite DatabaseSync, reconciled 12 core claim-evidence dimensions (RPO-0, atomic rename, at-least-once network, empirically bounded RSS, local distribution), verified 4 human operator runbooks (startup, failure recovery, disaster recovery, migration recovery), and confirmed platform readiness for production operations.
 - **Artifact**: `dist/release/anantham-v2-2.0.0-alpha.1.tgz`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P10.13 — FINAL EVIDENCE RECONCILIATION & PRODUCTION OPERATIONS READINESS GATE](file:///C:/herness/dist/release/release-manifest.json)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Production Reliability Engineer & SRE Auditor
+- **Completed Date**: 2026-09-02
+- **Verification**: Engine contract set to >=22.5.0, 12-claim reconciliation matrix, 4 operator runbooks verified, 852/852 automated tests passing, 31/31 release smoke tests passing, 0 type errors, 1000/1000 scorecard.
 
 ### [TASK-P10.12 — PRODUCTION PUBLICATION & DEPLOYMENT ACCEPTANCE GATE](file:///C:/herness/tests/release/p10-12-production-deployment-acceptance.test.ts)
 - **Status**: `COMPLETED`

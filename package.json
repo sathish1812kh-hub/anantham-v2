@@ -44,6 +44,9 @@
   ],
   "author": "Anantham Engineering Team",
   "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22.5.0"
+  },
   "dependencies": {
     "zod": "^3.24.2"
   },
