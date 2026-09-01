@@ -136,7 +136,7 @@ export class WebhookDispatcher {
     }
 
     // 3. Execute HTTP Dispatch with retry
-    let maxAttempts = sub.retryPolicy.maxAttempts;
+    const maxAttempts = sub.retryPolicy?.maxAttempts ?? 3;
     let attempt = 0;
     let success = false;
     let lastError: string | undefined;

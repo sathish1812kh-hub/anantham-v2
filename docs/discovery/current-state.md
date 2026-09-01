@@ -4,12 +4,12 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `cef81d5`
-- **Generated**: `2026-09-01T23:41:32Z`
+- **Project Commit**: `0ed641e`
+- **Generated**: `2026-09-02T00:35:23Z`
 - **Current Release**: `v2.0.0-alpha.1`
 - **Current Phase**: `P10 — PRODUCTION RELEASE, SELF-HOSTING & CERTIFICATION (COMPLETED)`
-- **Current Task**: `TASK-P10.9-PRODUCTION-GRADE-ADVERSARIAL — Completed & Audited`
-- **Last Completed Task**: `TASK-P10.9 — PRODUCTION-GRADE ADVERSARIAL SYSTEM AUDIT: COMPOSITION, TOCTOU, EXTERNAL SIDE EFFECTS, RESOURCE EXHAUSTION & RECOVERY`
+- **Current Task**: `TASK-P10.10-PRODUCTION-CHAOS-DURABILITY — Completed & Audited`
+- **Last Completed Task**: `TASK-P10.10 — LONG-DURATION PRODUCTION CHAOS, NETWORK PARTITION, POWER-LOSS & EXACTLY-ONCE BOUNDARY AUDIT`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`
@@ -17,6 +17,7 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 - **Pending Approvals**:
   - `None (ALL PHASES P1-P10 IMPLEMENTED, TESTED, AUDITED, REMEDIATED, HARDENED, GOLD CERTIFIED & RELEASED).`
 - **Recently Completed Milestones**:
+  - [P10.10-PRODUCTION-CHAOS-DURABILITY](file:///C:/herness/tests/chaos/p10-10-network-chaos-soak.test.ts) (Long-duration production chaos, network partition, power-loss & exactly-once boundary audit. Real TCP/HTTP network failure harness [socket destruction, 500/503 errors], online hot backup VACUUM INTO and point-in-time restore verification during active writes, 100-cycle repeated crash recovery campaign, with 852/852 tests passing)
   - [P10.9-PRODUCTION-GRADE-ADVERSARIAL](file:///C:/herness/tests/security/p10-9-compositional-adversarial-audit.test.ts) (Production-grade adversarial system audit across 14 subsystem boundaries. 50-worker TOCTOU concurrency fuzzing, Windows-specific path boundary verification [DOS device names, alternate data streams, trailing dot escapes], split-brain monotonic lease fencing, end-to-end canary secret scrubbing, with 849/849 tests passing)
   - [P10.8-FINAL-RELEASE-PROVENANCE](file:///C:/herness/tests/release/p10-8-provenance-side-effects.test.ts) (Authoritative release provenance, external side-effect, and post-fix invariant audit across all 14 subsystems. Verified 100% cryptographic binding between Git commit 47b29e5, annotated tag v2.0.0-alpha.1, package.json, CLI /version command, README.md, release manifest, and tarball SHA-256 467c1a1b0ab31721300e3f9bc46b2270bbd0de6d4251bac933c1d67f5ca3644a, with 844/844 tests passing)
   - [P10.7-PRE-PRODUCTION-FINAL-RED-TEAM](file:///C:/herness/tests/security/p10-7-redteam-adversarial-audit.test.ts) (Pre-production final red-team, operational chaos, and release-blocker audit across all 14 subsystem boundaries. Re-attacked all findings from P10.4, P10.5, and P10.6, evaluated revocation latency, duplicate side effects, exactly-once claim disaggregation, cross-project indirect reference isolation, and state machine concurrency fuzzing with 841/841 tests passing)

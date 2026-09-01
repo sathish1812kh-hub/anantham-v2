@@ -17,7 +17,7 @@
   "scripts": {
     "build": "tsc",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run",
+    "test": "node --max-old-space-size=8192 ./node_modules/vitest/vitest.mjs run",
     "test:watch": "vitest",
     "release:build": "node scripts/release-engineering.mjs build",
     "release:audit": "node scripts/release-engineering.mjs audit",

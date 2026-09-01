@@ -164,4 +164,26 @@ export class SqliteEngine {
     const violations = stmt.all() as Array<Record<string, unknown>>;
     return { ok: violations.length === 0, violations };
   }
+
+  /**
+   * Creates an online hot backup using SQLite VACUUM INTO.
+   */
+  public backup(destinationPath: string): void {
+    if (!this.db) {
+      throw new Error("Cannot run backup on closed database.");
+    }
+    const escaped = destinationPath.replace(/'/g, "''");
+    this.db.exec(`VACUUM INTO '${escaped}';`);
+  }
+
+  /**
+   * Executes explicit WAL checkpoint.
+   */
+  public checkpoint(mode: "PASSIVE" | "FULL" | "RESTART" | "TRUNCATE" = "PASSIVE"): void {
+    if (!this.db) {
+      throw new Error("Cannot checkpoint closed database.");
+    }
+    this.db.exec(`PRAGMA wal_checkpoint(${mode});`);
+  }
 }
+

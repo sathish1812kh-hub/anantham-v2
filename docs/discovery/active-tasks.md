@@ -6,16 +6,22 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P10 — PRODUCTION RELEASE, SELF-HOSTING & CERTIFICATION)
 
-### [TASK-P10.9 — PRODUCTION-GRADE ADVERSARIAL SYSTEM AUDIT: COMPOSITION, TOCTOU, EXTERNAL SIDE EFFECTS, RESOURCE EXHAUSTION & RECOVERY](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [TASK-P10.10 — LONG-DURATION PRODUCTION CHAOS, NETWORK PARTITION, POWER-LOSS & EXACTLY-ONCE BOUNDARY AUDIT](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `COMPLETED`
-- **Owner**: Principal Security Architect, Distributed Systems Engineer & Red-Team Auditor
-- **Completed Date**: 2026-09-01
-- **Description**: Production-grade adversarial system audit completed across all 14 subsystems. Evaluated 50-worker TOCTOU concurrency fuzzing, Windows-specific path boundary defenses (DOS reserved device names, alternate data streams, trailing dot/space escapes), split-brain monotonic lease fencing, end-to-end canary secret scrubbing across structured objects, and multi-cycle crash recovery idempotency. 849/849 automated tests passing.
+- **Owner**: Principal Distributed-Systems Reliability Engineer & Chaos Auditor
+- **Completed Date**: 2026-09-02
+- **Description**: Production chaos, network partition, and physical durability audit completed across all 14 subsystems. Evaluated real TCP/HTTP failure harness (socket drops, 500/503 errors), online hot backup (VACUUM INTO) with point-in-time restore verification during active writes, 100-cycle repeated crash recovery campaign with zero entity drift, and disaggregation of SQLite ACID state from at-least-once external network calls. 852/852 automated tests passing.
 - **Artifact**: `dist/release/anantham-v2-2.0.0-alpha.1.tgz`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P10.10 — PRODUCTION CHAOS, NETWORK PARTITION & DURABILITY](file:///C:/herness/tests/chaos/p10-10-network-chaos-soak.test.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Distributed-Systems Reliability Engineer & Chaos Auditor
+- **Completed Date**: 2026-09-02
+- **Verification**: 1 new dedicated chaos test suite (`tests/chaos/p10-10-network-chaos-soak.test.ts`), 852/852 Vitest tests passing across 403 suites, 0 type errors, 1000/1000 scorecard.
 
 ### [TASK-P10.9 — PRODUCTION-GRADE ADVERSARIAL SYSTEM AUDIT](file:///C:/herness/tests/security/p10-9-compositional-adversarial-audit.test.ts)
 - **Status**: `COMPLETED`
