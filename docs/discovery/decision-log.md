@@ -290,7 +290,22 @@ This document records architectural decisions, their trade-offs, and compliance 
   3. *Interrupted In-Progress Task Sweep (WR-02)*: `CrashRecoveryEngine` sweeps orphaned tasks stuck in `running`, `claimed`, or `verifying` state without active unexpired leases and resets them to `queued`, allowing subsequent workers to claim them with incremented generation tokens.
   4. *Physical Database & Filesystem Assertion / Checkpoint Verification (WR-07, WR-10)*: `AssertionEvaluator` executes real physical SQL checks (`PRAGMA integrity_check`, referential constraints, schema checks), and `CheckpointValidator.validateComplete` validates physical disk existence (`fs.existsSync`) and streaming SHA-256 digests of artifact files on disk.
   5. *Idempotent Repeated Recovery*: Verified that consecutive crash-recovery cycles (`Crash -> Recovery -> Crash -> Recovery`) execute without duplicating tasks, leases, or corrupting state.
-- **Consequences**: Provable RPO-0 durability, guaranteed un-jamming of crashed tasks, hardened generation fencing, atomic state/event consistency, and tamper-resistant objective evaluation metrics.
+---
+
+## ADR-024: Security, Vulnerability & Adversarial Hardening
+
+- **Status**: `ACCEPTED`
+- **Date**: 2026-09-01
+- **Context**: In an autonomous multi-agent runtime executing external tools, subagents, and MCP integrations, attack surfaces encompass indirect prompt injection, tool policy bypasses, path traversal escapes, command injection, secret leakage, permission escalation, and plugin supply-chain tampering.
+- **Decision**: Establish rigorous, layered adversarial security defenses across Anantham V2:
+  1. *Prompt Injection & Adversarial Red-Team Defenses*: Deterministic classification and neutralization of indirect prompt injections delivered via attachments, MCP tool outputs, and user prompts using `SecurityEventClassifier` and `ContentSanitizer`.
+  2. *Tool Policy & Path Traversal Enforcement*: `ToolGateway` and `PolicyEngine` strictly block directory traversal escapes (`../../`, Windows system paths) and enforce project tenant boundaries.
+  3. *Secret Redaction & Tenant Secret Isolation*: Automated scrubbing of Bearer tokens, API keys, and RSA private keys in all tool and model payloads via `ContentSanitizer` and `InMemorySecretStore`.
+  4. *Subagent Delegation Ceiling*: `DelegationGuard` blocks anti-privilege escalation, ensuring child subagents cannot request permissions or tools beyond the parent orchestrator.
+  5. *Approval TOCTOU Protection*: `ApprovalManager` binds requests to deterministic SHA-256 canonical argument digests and invalidates expired approvals.
+  6. *MCP & Plugin Integrity Guards*: `PluginRegistry` enforces cryptographic SHA-256 manifest verification, and `MCPOutputSanitizer` bounds bytes and strips leaked credentials.
+- **Consequences**: Provable multi-tenant isolation, tamper-evident audit trails, robust defense-in-depth against prompt injection and tool exploitation.
+
 
 
 
