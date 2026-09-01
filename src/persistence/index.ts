@@ -33,4 +33,5 @@ export * from "./repositories/checkpoint-repository.js";
 export * from "./repositories/artifact-repository.js";
 export * from "./repositories/attachment-repository.js";
 export * from "./repositories/memory-repository.js";
-
+export * from "./migrations/010_evaluation_runs.js";
+export * from "./repositories/evaluation-repository.js";

@@ -105,9 +105,19 @@ export class ProjectRepository {
     return rows.map((r) => this.rowToProject(r));
   }
 
+  public updateStatus(id: string, status: ProjectStatus): void {
+    const stmt = this.engine.raw.prepare(`
+      UPDATE projects
+      SET status = ?, last_activity_at = ?
+      WHERE id = ?;
+    `);
+    stmt.run(status, new Date().toISOString(), id);
+  }
+
   public delete(id: string): boolean {
     const stmt = this.engine.raw.prepare("DELETE FROM projects WHERE id = ?;");
     const result = stmt.run(id);
     return Number(result.changes) > 0;
   }
 }
+

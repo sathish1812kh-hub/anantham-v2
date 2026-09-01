@@ -34,6 +34,7 @@ export * from "./api/index.js";
 export * from "./sdk/index.js";
 export * from "./integrations/index.js";
 export * from "./observability/index.js";
+export * from "./evaluation/index.js";
 
 
 

@@ -491,6 +491,59 @@ export class ApiRouter {
         return;
       }
 
+      // --- Benchmarking & Evaluation Harness ---
+      if (pathname === "/v1/evaluation/datasets" && method === "GET") {
+        const { BenchmarkRegistry } = await import("../evaluation/benchmark-registry.js");
+        const registry = new BenchmarkRegistry();
+        const datasets = registry.listDatasets();
+        this.sendJson(res, 200, { success: true, data: datasets });
+        return;
+      }
+
+      if (pathname === "/v1/evaluation/runs" && method === "POST") {
+        const datasetId = (body as any)?.datasetId;
+        if (!datasetId) {
+          throw new Error("Validation Error: Missing required 'datasetId' in request body.");
+        }
+        const { EvaluationManager } = await import("../evaluation/evaluation-manager.js");
+        const evalManager = new EvaluationManager({
+          engine: this.engine,
+          eventStore: this.eventStore,
+        });
+        const run = await evalManager.runEvaluation(datasetId, {
+          version: (body as any)?.version,
+        });
+        this.sendJson(res, 201, { success: true, data: run });
+        return;
+      }
+
+      const evalRunReportMatch = pathname.match(/^\/v1\/evaluation\/runs\/([^/]+)\/report$/);
+      if (evalRunReportMatch && method === "GET") {
+        const runId = evalRunReportMatch[1]!;
+        const baselineRunId = url.searchParams.get("baselineRunId") ?? undefined;
+        const { EvaluationManager } = await import("../evaluation/evaluation-manager.js");
+        const evalManager = new EvaluationManager({
+          engine: this.engine,
+          eventStore: this.eventStore,
+        });
+        const report = evalManager.generateReport(runId, baselineRunId);
+        this.sendJson(res, 200, { success: true, data: report });
+        return;
+      }
+
+      const evalRunMatch = pathname.match(/^\/v1\/evaluation\/runs\/([^/]+)$/);
+      if (evalRunMatch && method === "GET") {
+        const runId = evalRunMatch[1]!;
+        const { EvaluationRepository } = await import("../persistence/repositories/evaluation-repository.js");
+        const evalRepo = new EvaluationRepository(this.engine);
+        const run = evalRepo.findRunById(runId);
+        if (!run) {
+          throw new Error(`Not Found: Evaluation run '${runId}' does not exist.`);
+        }
+        this.sendJson(res, 200, { success: true, data: run });
+        return;
+      }
+
       // 404 Route Not Found
       throw new Error(`Not Found: Endpoint '${method} ${pathname}' does not exist.`);
     } catch (err) {

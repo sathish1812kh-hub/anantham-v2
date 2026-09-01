@@ -39,3 +39,4 @@ export * from "./tui.js";
 export * from "./api.js";
 export * from "./integration.js";
 export * from "./observability.js";
+export * from "./evaluation.js";

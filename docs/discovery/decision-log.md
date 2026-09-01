@@ -262,6 +262,24 @@ This document records architectural decisions, their trade-offs, and compliance 
   6. *Machine-Verifiable Compliance Bundles*: `ComplianceExporter` produces cryptographically signed compliance audit reports for external auditing.
 - **Consequences**: Provable audit integrity, zero credential leakage, robust system diagnostics, and full compliance readiness.
 
+---
+
+## ADR-022: Benchmark Datasets, Scenarios & Evaluation Harness
+
+- **Status**: `ACCEPTED`
+- **Date**: 2026-09-01
+- **Context**: Anantham V2 requires a rigorous, objective evaluation harness to measure agentic execution, tool use, workflows, background jobs, lease fencing, crash recovery, prompt injection defense, secret redaction, and project isolation without relying on model self-report.
+- **Decision**: Implement the Evaluation Subsystem (`src/domain/evaluation.ts`, SQLite Migration 010, `EvaluationRepository`, `BenchmarkRegistry`, `AssertionEvaluator`, `EvidenceCollector`, `RegressionEngine`, `EvaluationHarness`, `EvaluationManager`):
+  1. *Model Output is NOT Evidence*: Model claims of completion are never accepted as proof. The harness validates authoritative SQLite rows, immutable EventStore events, artifact hashes, and process exit codes.
+  2. *Evaluation is NOT Authority*: The evaluation harness strictly observes and measures runtime behavior. It never bypasses `PolicyEngine`, `ToolGateway`, `TaskClaimManager`, `WorkflowEngine`, or project tenant boundaries.
+  3. *Immutable Versioned Benchmarks*: Standard benchmark suites (`dataset_core_v1`, `dataset_security_v1`, `dataset_recovery_v1`) provide deterministic testing across difficulty levels.
+  4. *Objective Machine-Verifiable Assertions*: Evaluates `STATE_EQUALS`, `EVENT_EXISTS`, `ARTIFACT_EXISTS`, `POLICY_DECISION`, `TOOL_COUNT_LIMIT`, `RESOURCE_LIMIT`, `SECRET_ABSENT`, `PROJECT_CONTAINMENT`, and `RECOVERY_SURVIVED`.
+  5. *Isolated Execution Context*: Each evaluation run executes inside dedicated temporary projects and sessions, ensuring zero pollution of production or user workspaces.
+  6. *Durable Evaluation Records*: SQLite Migration 010 persists `eval_runs` and `eval_case_results` transactionally.
+  7. *Regression Detection*: `RegressionEngine` computes score deltas, new failures, and fixed failures against prior baseline runs.
+- **Consequences**: Objective, reproducible verification across runtime updates, provable defense against regressions, and complete benchmark traceability.
+
+
 
 
 

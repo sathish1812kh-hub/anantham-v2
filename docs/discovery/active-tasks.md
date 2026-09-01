@@ -6,21 +6,28 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P9 — BENCHMARKS, EVALUATION & RELEASE HARNESS)
 
-### [P9.1 — Benchmark Datasets, Scenarios & Evaluation Harness](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P9.2 — Recovery, Chaos, Interruption & Durability Evaluation](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Lead Quality, Evaluation & Release Architect
-- **Description**: Build benchmark dataset loaders, realistic AI engineering task scenarios, and automated evaluation metrics.
-- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.4`, `P7.1–P7.4`, `P8.1–P8.5`.
+- **Owner**: Lead Reliability & Chaos Engineering Architect
+- **Description**: Build crash recovery, SIGKILL simulations, database interruption, and provider outage benchmarks.
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.4`, `P7.1–P7.4`, `P8.1–P8.5`, `P9.1`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P9.1-BENCHMARK-DATASETS-SCENARIOS-EVALUATION-HARNESS — Benchmark Datasets, Scenarios & Evaluation Harness](file:///C:/herness/src/evaluation/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Lead Quality, Evaluation & Release Architect
+- **Completed Date**: 2026-09-01
+- **Verification**: 755/755 tests passing across 362 test suites in Vitest. Authoritative Benchmarking, Evaluation & Quality Harness subsystem. Domain contracts in `src/domain/evaluation.ts` (`BenchmarkCategorySchema`, `EvaluationAssertionTypeSchema`, `EvaluationAssertionSchema`, `BenchmarkCaseSchema`, `BenchmarkDatasetSchema`, `AssertionEvaluationResultSchema`, `EvaluationCaseResultSchema`, `EvaluationRunSchema`, `RegressionComparisonSchema`, `EvaluationReportSchema`). SQLite migration 010 with tables `eval_runs` and `eval_case_results`. `EvaluationRepository` (CRUD and transactional persistence for evaluation runs and case results). `BenchmarkRegistry` (preloaded versioned standard datasets: `dataset_core_v1`, `dataset_security_v1`, `dataset_recovery_v1`). `AssertionEvaluator` (objective machine verification for `STATE_EQUALS`, `EVENT_EXISTS`, `ARTIFACT_EXISTS`, `POLICY_DECISION`, `TOOL_COUNT_LIMIT`, `RESOURCE_LIMIT`, `SECRET_ABSENT`, `PROJECT_CONTAINMENT`, `RECOVERY_SURVIVED`). `EvidenceCollector` (immutable runtime evidence gathering). `RegressionEngine` (run comparison against baseline, calculating score deltas and new/fixed failures). `EvaluationHarness` (isolated project/session sandboxes, test execution, scoring, and cleanup). `EvaluationManager` central container. REST endpoints `/v1/evaluation/datasets`, `/v1/evaluation/runs`, `/v1/evaluation/runs/:id`, and `/v1/evaluation/runs/:id/report` in `ApiRouter`. Full automated test matrix across 10 test suites.
 
 ### [TASK-P8.5-SECURITY-GOVERNANCE-OBSERVABILITY — Security, Governance & Observability (Audit Logging, Telemetry & Compliance)](file:///C:/herness/src/observability/index.ts)
 - **Status**: `COMPLETED`
 - **Owner**: Lead Security & Observability Architect
 - **Completed Date**: 2026-09-01
 - **Verification**: 736/736 tests passing across 352 test suites in Vitest. Authoritative Observability, Security, Audit & Governance subsystem. Domain contracts in `src/domain/observability.ts` (`SecurityEventClassificationSchema`, `SecurityAuditRecordSchema`, `TelemetryMetricSchema`, `TelemetrySpanSchema`, `DiagnosticReportSchema`, `ComplianceReportSchema`). `AuditLogger` (cryptographic SHA-256 hash chaining and tamper-evident integrity verification via `verifyChain()`). `SecurityEventClassifier` (deterministic classification of security anomalies, policy denials, prompt injections, signature failures, and tenant violations). `TelemetryEngine` (structured metric counters, gauges, histograms with min/max/avg/p95, and execution spans). `DiagnosticInspector` (deep SQLite WAL integrity, migration verification, active lease scans, and orphan detection). `ComplianceExporter` (machine-verifiable compliance audit bundles with cryptographic digest verification). `ContentSanitizer` recursive secret-safe redaction. REST endpoints `/v1/observability/audit`, `/v1/observability/metrics`, and `/v1/observability/compliance` in `ApiRouter`. Full automated test matrix across 10 test suites.
+
 
 ### [TASK-P8.4-INTEGRATIONS-EXTERNAL-SYSTEMS-WEBHOOKS-CICD-IDE — Integrations (External Systems, Webhooks, CI/CD, IDE Extensions)](file:///C:/herness/src/integrations/index.ts)
 - **Status**: `COMPLETED`
