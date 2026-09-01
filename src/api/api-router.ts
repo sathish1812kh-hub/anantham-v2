@@ -424,6 +424,28 @@ export class ApiRouter {
         return;
       }
 
+      // --- Inbound Webhook Ingestion ---
+      const inboundWebhookMatch = pathname.match(/^\/v1\/webhooks\/inbound\/([^/]+)$/);
+      if (inboundWebhookMatch && method === "POST") {
+        const integrationId = inboundWebhookMatch[1]!;
+        const { WebhookIngestionEngine } = await import("../integrations/webhook-ingestion-engine.js");
+        const { IntegrationRepository } = await import("../persistence/repositories/integration-repository.js");
+        const integrationRepo = new IntegrationRepository(this.engine);
+        const ingestionEngine = new WebhookIngestionEngine({
+          eventStore: this.eventStore,
+          integrationRepo,
+        });
+
+        const rawBodyStr = JSON.stringify(body);
+        const ingestRes = ingestionEngine.ingest(integrationId, rawBodyStr, req.headers);
+        if (!ingestRes.accepted) {
+          throw new Error(`Bad Request: ${ingestRes.errorMessage}`);
+        }
+
+        this.sendJson(res, 200, { success: true, data: ingestRes });
+        return;
+      }
+
       // 404 Route Not Found
       throw new Error(`Not Found: Endpoint '${method} ${pathname}' does not exist.`);
     } catch (err) {

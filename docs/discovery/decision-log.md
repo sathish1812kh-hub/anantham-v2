@@ -231,6 +231,22 @@ This document records architectural decisions, their trade-offs, and compliance 
   5. *OpenAPI 3.1 & Typed SDK Parity*: `OpenApiGenerator` outputs valid OpenAPI 3.1.0 specifications; `AnanthamClient` provides typed promises, automatic authentication, error unrolling (`AnanthamApiError`), and pagination helpers.
 - **Consequences**: Pure interface decoupling, robust tenant containment, zero business logic drift, high-performance programmatic access, and full RPO-0 ACID durability.
 
+---
+
+## ADR-020: External Integrations, Inbound HMAC Webhooks, Durable Outbound Dispatch & CI/CD/IDE Adapters
+
+- **Status**: `ACCEPTED`
+- **Date**: 2026-09-01
+- **Context**: External systems (GitHub, GitLab, Slack, IDEs, CI/CD runners) require bidirectional integration with Anantham V2. The integration boundary must strictly treat external payloads as untrusted data without establishing a second persistence authority, scheduler, or policy bypass.
+- **Decision**: Implement the Integrations Subsystem (`src/domain/integration.ts`, SQLite migration 009, `IntegrationRepository`, `WebhookSubscriptionRepository`, `WebhookDeliveryRepository`, `WebhookIngestionEngine`, `WebhookDispatcher`, `CicdAdapter`, `IdeAdapter`, `IntegrationManager`):
+  1. *Adapters Not Authorities*: Integrations adapt external formats into canonical domain contracts and delegate all actions to existing runtime engines. External systems cannot directly execute commands or bypass `PolicyEngine` / `ToolGateway`.
+  2. *Inbound Cryptographic HMAC Verification*: Inbound webhooks require timing-safe HMAC-SHA256 signature verification against secret references before accepting payload.
+  3. *Replay Protection & Idempotency*: Duplicate deliveries are rejected via persistent delivery ID checks in SQLite WAL.
+  4. *Durable Outbound Delivery & Classified Retries*: Outbound webhooks persist `WebhookDeliveryRecord` before dispatch, sign payloads with `X-Anantham-Signature`, and employ exponential backoff retries with transient (5xx, 429) vs permanent (4xx) failure classification.
+  5. *Project Tenant Containment*: Enforces strict project boundaries, ensuring events from Project A cannot be dispatched to Project B webhooks or accessed by Project B integrations.
+- **Consequences**: Robust integration security, zero untrusted execution, reliable delivery guarantees across restarts, and full RPO-0 durability.
+
+
 
 
 

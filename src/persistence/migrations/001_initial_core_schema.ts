@@ -219,6 +219,7 @@ import { migration005 } from "./005_workspaces_parallel.js";
 import { migration006 } from "./006_workflows_orchestration.js";
 import { migration007 } from "./007_background_jobs.js";
 import { migration008 } from "./008_remote_nodes_dispatch.js";
+import { migration009 } from "./009_integrations_webhooks.js";
 
 export const allMigrations: Migration[] = [
   migration001,
@@ -229,4 +230,6 @@ export const allMigrations: Migration[] = [
   migration006,
   migration007,
   migration008,
+  migration009,
 ];
+

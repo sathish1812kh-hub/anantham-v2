@@ -32,6 +32,7 @@ export * from "./cli/index.js";
 export * from "./tui/index.js";
 export * from "./api/index.js";
 export * from "./sdk/index.js";
+export * from "./integrations/index.js";
 
 
 

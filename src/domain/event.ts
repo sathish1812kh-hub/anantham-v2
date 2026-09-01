@@ -237,6 +237,13 @@ export const EventTypes = {
   VERIFICATION_STARTED: "verification.started",
   VERIFICATION_COMPLETED: "verification.completed",
   VERIFICATION_FAILED: "verification.failed",
+
+  // Integration plane
+  INTEGRATION_REGISTERED: "integration.registered",
+  INTEGRATION_WEBHOOK_RECEIVED: "integration.webhook_received",
+  INTEGRATION_WEBHOOK_DELIVERED: "integration.webhook_delivered",
+  INTEGRATION_WEBHOOK_FAILED: "integration.webhook_failed",
+  INTEGRATION_CICD_TRIGGERED: "integration.cicd_triggered",
 } as const;
 
 export type EventType = (typeof EventTypes)[keyof typeof EventTypes] | (string & {});

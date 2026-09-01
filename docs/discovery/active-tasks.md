@@ -6,15 +6,21 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 1. Active Phase Backlog (P8 — CLI / TUI / API / INTEGRATIONS)
 
-### [P8.4 — Integrations (External Systems, Webhooks, CI/CD, IDE Extensions)](file:///C:/herness/docs/discovery/current-state.md#L10)
+### [P8.5 — Security, Governance & Observability (Audit Logging, Telemetry & Compliance)](file:///C:/herness/docs/discovery/current-state.md#L10)
 - **Status**: `READY_FOR_EXECUTION`
-- **Owner**: Lead Integrations & Developer Tools Architect
-- **Description**: Implement external systems integration, webhook event dispatching, CI/CD runners, and IDE extension protocols.
-- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.4`, `P7.1–P7.4`, `P8.1`, `P8.2`, `P8.3`.
+- **Owner**: Lead Security & Observability Architect
+- **Description**: Implement centralized audit logging, telemetry metrics/tracing, compliance checks, and security dashboard.
+- **Dependencies**: `P1.1–P1.5`, `P2.1–P2.6`, `P3.1–P3.5`, `P4.1–P4.5`, `P5.1–P5.4`, `P6.1–P6.4`, `P7.1–P7.4`, `P8.1`, `P8.2`, `P8.3`, `P8.4`.
 
 ---
 
 ## 2. Completed Milestones (Recent)
+
+### [TASK-P8.4-INTEGRATIONS-EXTERNAL-SYSTEMS-WEBHOOKS-CICD-IDE — Integrations (External Systems, Webhooks, CI/CD, IDE Extensions)](file:///C:/herness/src/integrations/index.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Lead Integrations & Developer Tools Architect
+- **Completed Date**: 2026-09-01
+- **Verification**: 715/715 tests passing across 342 test suites in Vitest. Pure adapter architecture connecting external systems into Anantham V2 without bypassing `PolicyEngine` or `ToolGateway`. Domain contracts in `src/domain/integration.ts` (`IntegrationDefinitionSchema`, `InboundWebhookPayloadSchema`, `OutboundWebhookSubscriptionSchema`, `WebhookDeliveryRecordSchema`, `CicdTriggerPayloadSchema`, `IdeProtocolMessageSchema`). SQLite migration 009 with tables `integrations`, `webhook_subscriptions`, `webhook_deliveries`. `IntegrationRepository`, `WebhookSubscriptionRepository`, `WebhookDeliveryRepository`. `WebhookIngestionEngine` (timing-safe HMAC-SHA256 verification and replay protection via persistent deliveryId deduplication). `WebhookDispatcher` (durable EventStore subscription, signed HTTP delivery, and exponential backoff retry classification). `CicdAdapter` (GitHub Actions & GitLab CI pipeline trigger translation to runtime tasks/sessions). `IdeAdapter` (JSON-RPC protocol adapter for VS Code, JetBrains, and Cursor IDE extensions). `IntegrationManager` container. Inbound webhook endpoint `/v1/webhooks/inbound/:id` in `ApiRouter`. Full automated test matrix across 11 test suites.
 
 ### [TASK-P8.3-API-SDK-PROGRAMMATIC-RUNTIME-ACCESS — API & SDK / Programmatic Runtime Access](file:///C:/herness/src/api/index.ts)
 - **Status**: `COMPLETED`
