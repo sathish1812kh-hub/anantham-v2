@@ -538,12 +538,13 @@ Every update MUST include:
 
 
 ### P9.4 Multimodal
-- [ ] required fixture suite
-- [ ] representation selection
-- [ ] extraction failures
-- [ ] corrupt/oversized files
-- [ ] archive safety
-- [ ] unsupported modality handling
+- [x] required fixture suite
+- [x] representation selection
+- [x] extraction failures
+- [x] corrupt/oversized files
+- [x] archive safety
+- [x] unsupported modality handling
+
 
 ### P9.5 Evaluation
 - [ ] resume benchmark
@@ -603,7 +604,20 @@ The PRD defines concrete acceptance targets including RPO 0 for committed state 
 
 Antigravity MUST append an entry after every completed work package:
 
+## 2026-09-01 17:15 — TASK-P9.4-MULTIMODAL-ROBUSTNESS-FIXTURES
+
+Status: VERIFIED COMPLETE
+What changed: Implemented and verified comprehensive multimodal robustness, fixture red-teaming, representation selection, and unknown binary durability (ADR-025). Created dedicated multimodal test suites in `tests/multimodal/` covering all 10 multimodal fixture streams (Text with UTF-8/BOM/mixed line endings, Structured JSON/CSV/TSV with prototype pollution defenses, Code treated as passive content without execution authority, PDF document extraction, PNG/JPEG/GIF image magic byte detection, Audio/Video media headers, Archive safety with zip bomb decompression ratio and Zip Slip path traversal checks, and MIME spoofing detection blocking disguised executable binaries). Verified deterministic representation selection and token budget enforcement via `RepresentationSelector` (`selected_tokens <= effective_context_budget`). Verified unknown binary byte-for-byte preservation and SHA-256 parity across SQLite restarts. Verified parser isolation, embedded secret scrubbing, and full multimodal capability matrix resolution.
+Files: src/content/content-ingestion-engine.ts, src/content/representation-selector.ts, src/content/content-guards.ts, src/content/parsers/text-parser.ts, src/content/parsers/structured-parser.ts, src/content/parsers/pdf-parser.ts, src/content/parsers/image-parser.ts, src/content/parsers/media-parser.ts, src/content/parsers/archive-parser.ts, src/content/parsers/binary-parser.ts, docs/discovery/decision-log.md, docs/discovery/current-state.md, docs/discovery/active-tasks.md, ANANTHAM PROJECT SOURCES/DEVELOPMENT/ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md, tests/multimodal/*.test.ts
+Tests: 790 automated tests passing across 378 test suites in Vitest (multimodal fixture red-team validation, representation selection and token budget enforcement, unknown binary byte preservation across SQLite restart, parser isolation and embedded secret redaction, and complete multimodal capability matrix resolution).
+Verification: npm run typecheck (0 errors under strict: true), npm test (790/790 passing), npm run build (clean), npm run scorecard (1000/1000 Certified Perfect), multi-engine sync (CodeGraph, Graphify, Neo4j, Graphiti, Git).
+Commit/Revision: Active
+Risks: None.
+Unresolved: None.
+Next: P9.5 System-Level Evaluation & Adversarial Scenarios.
+
 ## 2026-09-01 16:20 — TASK-P9.3-SECURITY-VULNERABILITY-ADVERSARIAL-HARDENING
+
 
 Status: VERIFIED COMPLETE
 What changed: Implemented and verified comprehensive security, vulnerability, and adversarial hardening across all runtime surfaces (ADR-024). Created dedicated adversarial red-team test suites in `tests/security/` covering prompt injection defenses (jailbreak neutralization, indirect injection via attachments and MCP tool outputs), tool policy bypass & path traversal defenses (boundary escapes, command injection, and high-risk tool approval gating), secret exfiltration & tenant secret isolation (automated regex scrubbing of API keys/Bearer tokens/RSA keys and project secret store scoping), subagent permission escalation & TOCTOU defenses (`DelegationGuard` privilege ceilings and `ApprovalManager` expiration invalidation), and malicious MCP / plugin supply-chain defenses (`PluginRegistry` SHA-256 manifest integrity and `MCPOutputSanitizer` byte bounding and credential stripping).

@@ -304,7 +304,21 @@ This document records architectural decisions, their trade-offs, and compliance 
   4. *Subagent Delegation Ceiling*: `DelegationGuard` blocks anti-privilege escalation, ensuring child subagents cannot request permissions or tools beyond the parent orchestrator.
   5. *Approval TOCTOU Protection*: `ApprovalManager` binds requests to deterministic SHA-256 canonical argument digests and invalidates expired approvals.
   6. *MCP & Plugin Integrity Guards*: `PluginRegistry` enforces cryptographic SHA-256 manifest verification, and `MCPOutputSanitizer` bounds bytes and strips leaked credentials.
-- **Consequences**: Provable multi-tenant isolation, tamper-evident audit trails, robust defense-in-depth against prompt injection and tool exploitation.
+---
+
+## ADR-025: Multimodal Robustness, Representation Selection & Fixture Architecture
+
+- **Status**: `ACCEPTED`
+- **Date**: 2026-09-01
+- **Context**: Autonomous multi-agent systems ingest heterogeneous multimodal content streams (text, code, structured data, PDF documents, images, audio, video, archives, unknown binaries, and MIME-spoofed payloads). Flaws in representation selection, token budget enforcement, parser isolation, or binary preservation can cause context explosion, arbitrary code execution, or silent data loss.
+- **Decision**: Harden multimodal processing pipelines across Anantham V2:
+  1. *Code as Content Invariant*: Code files (TypeScript, Python, Shell, Markdown) are ingested strictly as passive content representations with zero executable authority.
+  2. *Deterministic Modality Representation Selection*: `RepresentationSelector` matches native modalities (vision, audio, video) when supported by `ModelModalityProfile`, and falls back to structured/text/metadata when unsupported.
+  3. *Token Budget Enforcement*: `RepresentationSelector` enforces `maxTokensPerItem` to prevent context-window explosion, truncating oversized items deterministically with explicit metadata markers.
+  4. *Unknown Binary Preservation & Durability*: Raw binary payloads are preserved byte-for-byte with exact SHA-256 digests and zero fabricated parser outputs, verified durable across SQLite restarts.
+  5. *MIME Spoofing & Archive Safety*: Magic byte detection strictly overrides user- or model-claimed MIME types; archive decompression ratio checks (100:1) and Zip Slip path traversal checks are enforced.
+- **Consequences**: Provable resource containment, deterministic multimodal routing, zero silent binary corruption, and tamper-resistant content ingestion.
+
 
 
 

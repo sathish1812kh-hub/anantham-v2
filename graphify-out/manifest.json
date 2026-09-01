@@ -25,8 +25,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\governance\\scorecard.json": {
-    "mtime": 1788259995.313867,
-    "ast_hash": "20fef7c076c6b92a114d2a39119594e2",
+    "mtime": 1788263494.0755565,
+    "ast_hash": "064bb622af11c56957aad5ed58253ec4",
     "semantic_hash": ""
   },
   "C:\\herness\\scripts\\certification-scorecard.ps1": {
@@ -2504,6 +2504,26 @@
     "ast_hash": "180b884e480bf3a89296b2bf5ea22b50",
     "semantic_hash": ""
   },
+  "C:\\herness\\tests\\multimodal\\fixture-suite-red-team.test.ts": {
+    "mtime": 1788263264.3712432,
+    "ast_hash": "f1a50100554edef07bc502c9dd71b279",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\multimodal\\multimodal-capability-matrix.test.ts": {
+    "mtime": 1788263228.4171467,
+    "ast_hash": "2e127144b6fec007599cf054aed25515",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\multimodal\\parser-isolation-adversarial.test.ts": {
+    "mtime": 1788263268.3427713,
+    "ast_hash": "61abac07b345736e280724d99c7e8ac6",
+    "semantic_hash": ""
+  },
+  "C:\\herness\\tests\\multimodal\\unknown-binary-durability.test.ts": {
+    "mtime": 1788263276.4510174,
+    "ast_hash": "398238790b21587606d17b8fa11b0ec1",
+    "semantic_hash": ""
+  },
   "C:\\herness\\tests\\observability\\audit-logger-tamper-evidence.test.ts": {
     "mtime": 1788252876.615975,
     "ast_hash": "a8b53b58f4181c1395c1285ab20f162e",
@@ -3465,8 +3485,8 @@
     "semantic_hash": ""
   },
   "C:\\herness\\ANANTHAM PROJECT SOURCES\\DEVELOPMENT\\ANANTHAM_V2_MASTER_DEVELOPMENT_PLAN.md": {
-    "mtime": 1788259920.6734636,
-    "ast_hash": "dc841ea3c606bcf8b5643276dde2c43a",
+    "mtime": 1788263417.5149994,
+    "ast_hash": "fe6a92cb04bb297a1ee935a5c3d6bf1e",
     "semantic_hash": ""
   },
   "C:\\herness\\ANANTHAM PROJECT SOURCES\\prd\\ANANTHAM_PRD_V2_PART_1_PRODUCT_AND_ARCHITECTURE.md": {
@@ -3495,13 +3515,13 @@
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\current-state.md": {
-    "mtime": 1788259212.4439232,
-    "ast_hash": "8e249e4e18bdd6b2397017dd0c1b8dc4",
+    "mtime": 1788260384.0868833,
+    "ast_hash": "c34c4e8d2047ef3ff7bdc82911c46391",
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\decision-log.md": {
-    "mtime": 1788259901.4772286,
-    "ast_hash": "a41e64e4c0bffd6f79d8fe95f3f87c81",
+    "mtime": 1788263395.3586185,
+    "ast_hash": "1531bca7e9dd2c39a1ae6fcf0fa6a8cf",
     "semantic_hash": ""
   },
   "C:\\herness\\docs\\discovery\\dependency-registry.md": {
