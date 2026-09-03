@@ -36,7 +36,7 @@ describe("P10.12 Production Publication & Deployment Acceptance Suite", () => {
     const tarballSha256 = createHash("sha256").update(tarballBuf).digest("hex");
 
     expect(tarballSha256).toBe(manifest.sha256);
-    expect(manifest.sha256).toBe("c4fe08a647c2b1a5f367ba209f6b9cfda81962715429819b71328e4034b85165");
+    expect(manifest.sha256).toBe("e3e93a9474f2c79457a12ae79cae475474178ade0da7f8410eefa20d11ec980b");
     expect(manifest.runtimeDependencies).toEqual(["zod"]);
   });
 

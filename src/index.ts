@@ -17,6 +17,8 @@ export * from "./models/index.js";
 export * from "./policy/index.js";
 export * from "./tools/index.js";
 export * from "./execution/index.js";
+// Explicit re-export to disambiguate domain RiskLevel from execution risk definitions
+export type { RiskLevel } from "./domain/index.js";
 export * from "./side-effects/index.js";
 export * from "./mcp/index.js";
 export * from "./plugins/index.js";

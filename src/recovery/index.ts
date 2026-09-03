@@ -4,3 +4,4 @@ export * from "./checkpoint-validator.js";
 export * from "./lease-manager.js";
 export * from "./orphan-detector.js";
 export * from "./crash-recovery-engine.js";
+export * from "./browser-zombie-reclaimer.js";

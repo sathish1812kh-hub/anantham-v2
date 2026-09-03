@@ -34,4 +34,7 @@ export * from "./repositories/artifact-repository.js";
 export * from "./repositories/attachment-repository.js";
 export * from "./repositories/memory-repository.js";
 export * from "./migrations/010_evaluation_runs.js";
+export * from "./migrations/011_snapshots_and_wal_maintenance.js";
 export * from "./repositories/evaluation-repository.js";
+export * from "./database-backup-manager.js";
+export * from "./wal-checkpoint-scheduler.js";

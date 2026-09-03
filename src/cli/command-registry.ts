@@ -19,6 +19,8 @@ import { SessionResumeEngine } from "../resume/session-resume-engine.js";
 import { ToolRegistry } from "../tools/tool-registry.js";
 import { PolicyEngine } from "../policy/policy-engine.js";
 import { TaskClaimManager } from "../tasks/task-claim-manager.js";
+import { ProjectDeletionSafetyManager, type ProjectDeletionTier } from "../workspace/project-deletion-safety.js";
+import { SlashMigrateCommand } from "./slash-migrate.js";
 
 export type CommandHandler = (
   cmd: ParsedCommand,
@@ -188,12 +190,12 @@ export class CommandRegistry {
     this.registerCommand(
       {
         name: "project",
-        description: "Manage projects (list, select, create)",
-        aliases: ["proj", "p"],
-        usage: "/project [list | select <id> | create <name>]",
+        description: "Manage projects (list, select, create, remove)",
+        aliases: ["projects", "proj", "p"],
+        usage: "/project [list | select <id> | create <name> | remove <id|name> [--tier <REGISTRY_ONLY|REGISTRY_AND_METADATA|DESTRUCTIVE>] [--confirm <token>] [--metadata-path <path>]]",
         options: [],
       },
-      (cmd, ctrl) => {
+      async (cmd, ctrl) => {
         const sub = cmd.args[0]?.toLowerCase() || "list";
 
         if (sub === "list") {
@@ -250,7 +252,77 @@ export class CommandRegistry {
           };
         }
 
-        throw new Error(`Unknown project subcommand "${sub}". Use 'list', 'select', or 'create'.`);
+        if (sub === "remove" || sub === "delete") {
+          const target = cmd.args[1];
+          if (!target) {
+            throw new Error(
+              "Missing project ID or name. Usage: /project remove <id|name> [--tier <REGISTRY_ONLY|REGISTRY_AND_METADATA|DESTRUCTIVE>] [--confirm <token>] [--metadata-path <path>]"
+            );
+          }
+
+          let tier: ProjectDeletionTier = "REGISTRY_ONLY";
+          let confirmToken: string | undefined;
+          let metadataPath: string | undefined;
+
+          for (let i = 2; i < cmd.args.length; i++) {
+            const arg = cmd.args[i]!;
+            if (arg === "--tier" && i + 1 < cmd.args.length) {
+              tier = cmd.args[++i] as ProjectDeletionTier;
+            } else if (arg.startsWith("--tier=")) {
+              tier = arg.split("=")[1] as ProjectDeletionTier;
+            } else if (arg === "--confirm" && i + 1 < cmd.args.length) {
+              confirmToken = cmd.args[++i];
+            } else if (arg.startsWith("--confirm=")) {
+              confirmToken = arg.split("=")[1];
+            } else if (arg === "--metadata-path" && i + 1 < cmd.args.length) {
+              metadataPath = cmd.args[++i];
+            } else if (arg.startsWith("--metadata-path=")) {
+              metadataPath = arg.split("=")[1];
+            }
+          }
+
+          // Resolve project by ID or by name
+          let targetProject: Project | null | undefined = this.projectRepo.findById(target);
+          if (!targetProject) {
+            const allProjects = ctrl.listProjects();
+            targetProject = allProjects.find((p) => p.name.toLowerCase() === target.toLowerCase());
+          }
+
+          if (!targetProject) {
+            throw new Error(`Project "${target}" not found.`);
+          }
+
+          let delResult;
+          if (this.engine) {
+            const mgr = new ProjectDeletionSafetyManager(this.engine);
+            delResult = await mgr.removeProject(targetProject.id, {
+              tier,
+              confirmToken,
+              metadataPath,
+            });
+          } else {
+            this.projectRepo.delete(targetProject.id);
+            delResult = {
+              projectId: targetProject.id,
+              projectName: targetProject.name,
+              tier,
+              registryDeleted: true,
+              metadataDeleted: false,
+              sourceDeleted: false,
+              timestamp: new Date().toISOString(),
+            };
+          }
+
+          return {
+            success: true,
+            commandName: "project",
+            message: `Project "${targetProject.name}" (${targetProject.id}) removed successfully (tier: ${tier}).`,
+            data: delResult,
+            exitRequested: false,
+          };
+        }
+
+        throw new Error(`Unknown project subcommand "${sub}". Use 'list', 'select', 'create', or 'remove'.`);
       }
     );
 
@@ -576,6 +648,42 @@ export class CommandRegistry {
             version: "2.0.0-alpha.1",
             releaseChannel: "alpha",
           },
+          exitRequested: false,
+        };
+      }
+    );
+
+    // 13. /migrate
+    this.registerCommand(
+      {
+        name: "migrate",
+        description: "Migrate configurations from Claude, Cursor, Gemini, Cline, Roo, Aider, OpenCode into native Anantham format",
+        aliases: ["import-config", "mig"],
+        usage: "/migrate [claude | gemini | cursor | cline | roo | aider | opencode | auto | all] [--dry-run] [--overwrite] [--output <path>]",
+        options: [
+          { name: "dry-run", description: "Preview migration without modifying files", type: "boolean", required: false },
+          { name: "overwrite", description: "Overwrite existing target files", type: "boolean", required: false },
+          { name: "output", description: "Custom destination file path", type: "string", required: false },
+        ],
+      },
+      async (cmd, ctrl) => {
+        let workspaceRoot = process.cwd();
+        const activeProjectId = ctrl.getContext().activeProjectId;
+        if (activeProjectId) {
+          const activeProj = this.projectRepo.findById(activeProjectId);
+          if (activeProj?.rootPath) {
+            workspaceRoot = activeProj.rootPath;
+          }
+        }
+
+        const migrateCmd = new SlashMigrateCommand();
+        const result = await migrateCmd.execute(cmd.args, workspaceRoot);
+
+        return {
+          success: result.success,
+          commandName: "migrate",
+          message: result.message,
+          data: result,
           exitRequested: false,
         };
       }

@@ -90,7 +90,11 @@ Options:
   await cli.initialize();
 
   if (executeCmd) {
-    await cli.executeSingleCommand(executeCmd);
+    const result = await cli.executeSingleCommand(executeCmd);
+    const output = cli.renderer.renderResult(result);
+    if (output) {
+      console.log(output);
+    }
     cli.shutdown();
   } else {
     await cli.startInteractive();

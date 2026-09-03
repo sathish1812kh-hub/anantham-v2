@@ -8,3 +8,4 @@ export * from "./webhook-dispatcher.js";
 export * from "./cicd-adapter.js";
 export * from "./ide-adapter.js";
 export * from "./integration-manager.js";
+export * from "./connector-dlq-router.js";

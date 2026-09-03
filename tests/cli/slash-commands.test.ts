@@ -139,4 +139,28 @@ describe("P8.1 CLI — Built-in Slash Commands Suite", () => {
     expect(res.success).toBe(true);
     expect((res.data as any).status).toBe("ENFORCING");
   });
+
+  it("executes /project remove with ProjectDeletionSafetyManager", async () => {
+    const createRes = await registry.execute(parser.parse('/project create "ProjectToRemove"'));
+    expect(createRes.success).toBe(true);
+    const createdProject = createRes.data as any;
+
+    // Remove project
+    const removeRes = await registry.execute(
+      parser.parse(`/project remove ${createdProject.id} --tier=REGISTRY_ONLY`)
+    );
+    expect(removeRes.success).toBe(true);
+    expect(removeRes.message).toContain("removed successfully");
+    expect(removeRes.data.registryDeleted).toBe(true);
+
+    // Verify it is gone from list
+    const listRes = await registry.execute(parser.parse("/project list"));
+    expect((listRes.data as any[]).length).toBe(0);
+  });
+
+  it("executes /migrate detection and preview via CommandRegistry", async () => {
+    const res = await registry.execute(parser.parse("/migrate"));
+    expect(res.success).toBe(true);
+    expect(res.commandName).toBe("migrate");
+  });
 });

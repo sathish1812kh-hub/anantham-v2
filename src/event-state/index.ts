@@ -11,3 +11,4 @@ export * from "./projections/session-summary-projection.js";
 export * from "./projections/task-board-projection.js";
 export * from "./projections/projection-manager.js";
 export * from "./session-tree/session-tree-manager.js";
+export * from "./delta-snapshot-manager.js";

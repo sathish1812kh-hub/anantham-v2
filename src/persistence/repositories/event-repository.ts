@@ -111,6 +111,34 @@ export class EventRepository {
     return rows.map((r) => this.rowToEvent(r));
   }
 
+  public listByProject(
+    projectId: string,
+    options?: { type?: string; limit?: number; offset?: number }
+  ): Readonly<HarnessEvent>[] {
+    let sql = "SELECT * FROM events WHERE project_id = ?";
+    const params: (string | number | null)[] = [projectId];
+
+    if (options?.type) {
+      sql += " AND type = ?";
+      params.push(options.type);
+    }
+    sql += " ORDER BY timestamp ASC";
+
+    if (options?.limit) {
+      sql += " LIMIT ?";
+      params.push(options.limit);
+      if (options?.offset) {
+        sql += " OFFSET ?";
+        params.push(options.offset);
+      }
+    }
+    sql += ";";
+
+    const stmt = this.engine.raw.prepare(sql);
+    const rows = stmt.all(...params) as unknown as EventRow[];
+    return rows.map((r) => this.rowToEvent(r));
+  }
+
   public countBySession(sessionId: string): number {
     const stmt = this.engine.raw.prepare(`
       SELECT COUNT(*) as count FROM events WHERE session_id = ?;

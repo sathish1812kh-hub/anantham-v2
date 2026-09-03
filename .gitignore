@@ -42,3 +42,8 @@ pnpm-debug.log*
 .codegraph/
 .graphify/.graphify_*
 graphify-out/cache/
+
+# Ephemeral subagent workspaces and scratch directories
+.agents/*
+!.agents/skills/
+

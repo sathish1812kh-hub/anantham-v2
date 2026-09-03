@@ -16,6 +16,7 @@ import { CrashRecoveryEngine } from "../recovery/crash-recovery-engine.js";
 
 import { CheckpointRepository } from "../persistence/repositories/checkpoint-repository.js";
 import { EventRepository } from "../persistence/repositories/event-repository.js";
+import { registerNativeTools } from "../tools/native/register-native-tools.js";
 
 import { CommandParser } from "./command-parser.js";
 import { OutputRenderer } from "./output-renderer.js";
@@ -140,6 +141,9 @@ export class CliApplication {
     this.engine.open();
     const migrator = new MigrationEngine(this.engine);
     migrator.migrate();
+
+    // Register native tools for CLI session
+    registerNativeTools(this.toolRegistry);
 
     // Perform startup recovery check
     try {

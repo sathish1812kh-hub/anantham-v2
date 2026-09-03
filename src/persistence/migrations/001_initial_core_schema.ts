@@ -221,6 +221,7 @@ import { migration007 } from "./007_background_jobs.js";
 import { migration008 } from "./008_remote_nodes_dispatch.js";
 import { migration009 } from "./009_integrations_webhooks.js";
 import { migration010 } from "./010_evaluation_runs.js";
+import { migration011 } from "./011_snapshots_and_wal_maintenance.js";
 
 export const allMigrations: Migration[] = [
   migration001,
@@ -233,6 +234,7 @@ export const allMigrations: Migration[] = [
   migration008,
   migration009,
   migration010,
+  migration011,
 ];
 
 
