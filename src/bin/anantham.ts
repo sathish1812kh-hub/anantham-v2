@@ -7,6 +7,12 @@ import { ApiServer } from "../api/api-server.js";
 import { type CliOutputMode } from "../domain/cli.js";
 
 async function main(): Promise<void> {
+  try {
+    if (typeof process.loadEnvFile === "function") {
+      process.loadEnvFile();
+    }
+  } catch {}
+
   const args = process.argv.slice(2);
   let dbPath = path.join(process.cwd(), ".anantham", "anantham.db");
   let outputMode: CliOutputMode = "text";

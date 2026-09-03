@@ -21,6 +21,7 @@ import { PolicyEngine } from "../policy/policy-engine.js";
 import { TaskClaimManager } from "../tasks/task-claim-manager.js";
 import { ProjectDeletionSafetyManager, type ProjectDeletionTier } from "../workspace/project-deletion-safety.js";
 import { SlashMigrateCommand } from "./slash-migrate.js";
+import { maskSecret } from "../models/secret-store.js";
 
 export type CommandHandler = (
   cmd: ParsedCommand,
@@ -684,6 +685,120 @@ export class CommandRegistry {
           commandName: "migrate",
           message: result.message,
           data: result,
+          exitRequested: false,
+        };
+      }
+    );
+
+    // 14. /key
+    this.registerCommand(
+      {
+        name: "key",
+        description: "Manage provider API keys (list, set <provider> <key>, remove <provider>)",
+        aliases: ["keys", "apikey"],
+        usage: "/key [list | set <provider> <key> | remove <provider>]",
+        options: [],
+      },
+      (cmd) => {
+        const sub = cmd.args[0]?.toLowerCase() || "list";
+
+        if (sub === "set") {
+          const provider = cmd.args[1]?.toLowerCase();
+          const key = cmd.args[2];
+          if (!provider || !key) {
+            throw new Error("Usage: /key set <provider> <apiKey> (e.g. /key set openrouter sk-or-v1-...)");
+          }
+          const envVar = `${provider.toUpperCase().replace(/-/g, "_")}_API_KEY`;
+          process.env[envVar] = key;
+          return {
+            success: true,
+            commandName: "key",
+            message: `API key for provider '${provider}' set successfully (${envVar}: ${maskSecret(key)}).`,
+            data: { provider, envVar, maskedKey: maskSecret(key) },
+            exitRequested: false,
+          };
+        }
+
+        if (sub === "remove" || sub === "delete") {
+          const provider = cmd.args[1]?.toLowerCase();
+          if (!provider) {
+            throw new Error("Usage: /key remove <provider>");
+          }
+          const envVar = `${provider.toUpperCase().replace(/-/g, "_")}_API_KEY`;
+          delete process.env[envVar];
+          return {
+            success: true,
+            commandName: "key",
+            message: `API key for provider '${provider}' removed.`,
+            data: { provider, envVar },
+            exitRequested: false,
+          };
+        }
+
+        if (sub === "list") {
+          const knownProviders = ["openrouter", "openai", "anthropic", "gemini", "groq", "deepseek"];
+          const configured = knownProviders.map((p) => {
+            const envVar = `${p.toUpperCase().replace(/-/g, "_")}_API_KEY`;
+            const val = process.env[envVar];
+            return {
+              provider: p,
+              configured: !!val,
+              masked: val ? maskSecret(val) : "Not Set",
+            };
+          });
+
+          const summary = configured.map((c) => `  ${c.provider.padEnd(12)}: ${c.masked}`).join("\n");
+          return {
+            success: true,
+            commandName: "key",
+            message: `Configured Provider Keys:\n${summary}`,
+            data: configured,
+            exitRequested: false,
+          };
+        }
+
+        throw new Error(`Unknown key subcommand '${sub}'. Use 'list', 'set <provider> <key>', or 'remove <provider>'.`);
+      }
+    );
+
+    // 15. /model
+    this.registerCommand(
+      {
+        name: "model",
+        description: "Display or switch the active LLM model",
+        aliases: ["m"],
+        usage: "/model [modelId]",
+        options: [],
+      },
+      (cmd, ctrl) => {
+        if (cmd.args.length > 0) {
+          const modelId = cmd.args[0]!;
+          const activeProjectId = ctrl.getContext().activeProjectId;
+          if (activeProjectId) {
+            const proj = this.projectRepo.findById(activeProjectId);
+            if (proj) {
+              proj.modelProfile = modelId;
+              this.projectRepo.save(proj);
+            }
+          }
+          return {
+            success: true,
+            commandName: "model",
+            message: `Active model set to '${modelId}'.`,
+            data: { model: modelId },
+            exitRequested: false,
+          };
+        }
+
+        const activeProjectId = ctrl.getContext().activeProjectId;
+        const proj = activeProjectId ? this.projectRepo.findById(activeProjectId) : null;
+        const currentModel = proj?.modelProfile || "gemini-2.5-pro";
+
+        return {
+          success: true,
+          commandName: "model",
+          message: `Current active model: ${currentModel}`,
+          data: { model: currentModel },
           exitRequested: false,
         };
       }
