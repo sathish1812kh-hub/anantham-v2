@@ -1,3 +1,4 @@
+import { z } from "zod";
 import { type ParsedCommand, ParsedCommandSchema } from "../domain/cli.js";
 
 /**
@@ -6,6 +7,25 @@ import { type ParsedCommand, ParsedCommandSchema } from "../domain/cli.js";
  * PRD Part 2 Section 170–175.
  */
 export class CommandParser {
+  /**
+   * Format a Zod validation error into a clean, single-line human-readable string.
+   */
+  public static formatZodError(error: z.ZodError): string {
+    const messages = error.issues.map((issue) => {
+      const field = issue.path.length > 0 ? `${issue.path.join(".")}: ` : "";
+      if (issue.code === "invalid_union" && Array.isArray((issue as unknown as { unionErrors?: z.ZodError[] }).unionErrors)) {
+        const branchMessages = (issue as unknown as { unionErrors: z.ZodError[] }).unionErrors
+          .flatMap((subErr) => (subErr.issues ?? []).map((subIssue) => subIssue.message))
+          .filter(Boolean);
+        if (branchMessages.length > 0) {
+          return `${field}Invalid input: ${branchMessages.join(" OR ")}`;
+        }
+      }
+      return `${field}${issue.message}`;
+    });
+    return `Command validation failed: ${messages.join("; ")}`;
+  }
+
   /**
    * Parse a raw command string.
    */
@@ -26,8 +46,13 @@ export class CommandParser {
     }
 
     const firstToken = tokens[0]!;
-    const isSlashCommand = firstToken.startsWith("/");
-    const commandName = isSlashCommand ? firstToken.slice(1).toLowerCase() : firstToken.toLowerCase();
+    const isSlashCommand = firstToken.startsWith("/") || firstToken.startsWith(":");
+    const rawName = isSlashCommand ? firstToken.replace(/^[/:]+/, "").toLowerCase() : firstToken.toLowerCase();
+    const commandName = rawName.trim();
+
+    if (!commandName) {
+      throw new Error("Empty command input.");
+    }
 
     const args: string[] = [];
     const options: Record<string, string | boolean | number> = {};
@@ -67,13 +92,20 @@ export class CommandParser {
       }
     }
 
-    return ParsedCommandSchema.parse({
-      raw: trimmed,
-      name: commandName,
-      args,
-      options,
-      isSlashCommand,
-    });
+    try {
+      return ParsedCommandSchema.parse({
+        raw: trimmed,
+        name: commandName,
+        args,
+        options,
+        isSlashCommand,
+      });
+    } catch (err) {
+      if (err instanceof z.ZodError) {
+        throw new Error(CommandParser.formatZodError(err));
+      }
+      throw err;
+    }
   }
 
   /**

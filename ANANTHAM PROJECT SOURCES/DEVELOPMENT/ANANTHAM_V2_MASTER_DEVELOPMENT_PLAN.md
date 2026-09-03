@@ -467,6 +467,10 @@ Every update MUST include:
 - [x] approvals
 - [x] logs/diagnostics
 - [x] notifications
+- [x] interactive input handling & arrow key ANSI escape sequence decoding
+- [x] slash command history navigation & in-line cursor editing
+- [x] clean single-line error formatting & bare slash cancellation
+- [x] responsive mode indicators ([NORMAL MODE] vs [COMMAND MODE])
 
 ### P8.3 API/SDK
 - [x] HTTP
@@ -1157,4 +1161,28 @@ A checkbox means:
 not:
 
 `code appears to exist`.
+
+---
+
+# 8. WORK PACKAGE COMPLETION LOG
+
+### Entry: 2026-09-03T14:38:00Z
+- **Task ID**: `TASK-TUI-INPUT-UX`
+- **What changed**:
+  - Implemented streaming ANSI escape sequence decoding in `src/tui/tui-application.ts` and `src/tui/tui-controller.ts` with 50ms unref'd escape timeout.
+  - Added arrow key, Home, End, Delete, PageUp, PageDown, and Function key safety in normal mode to prevent premature ESC-quit termination.
+  - Implemented command history navigation (Up/Down arrows) with draft buffer preservation across mode toggles, capacity capping (100), and slash deduplication.
+  - Added in-line cursor navigation, mid-line editing, Forward Delete, and control keys (`Ctrl+U`, `Ctrl+W`, `Ctrl+L`, `Ctrl+D`, `Ctrl+C`).
+  - Added responsive mode indicators (`[NORMAL MODE]` vs `[COMMAND MODE]`) with narrow-screen compact fallbacks (< 50 cols) and ellipsis truncation for long prompts in `src/tui/tui-renderer.ts` and `src/tui/terminal-layout.ts`.
+  - Added graceful handling of empty, whitespace, and bare slash/colon inputs in `src/cli/command-parser.ts` rejecting empty commands cleanly without Zod errors.
+  - Added single-line error formatting in `src/cli/command-parser.ts` and `src/cli/error-handler.ts`, unpacking nested and `invalid_union` Zod issues.
+  - Created 42 dedicated vitest unit tests in `tests/tui/tui-input-ux.test.ts`.
+- **Tests executed**:
+  - `npx vitest run tests/tui/tui-input-ux.test.ts`: 42/42 tests passing across 248 assertions.
+  - `npx vitest run tests/tui tests/cli`: 35 test files passing, 133/133 tests passing.
+  - `npm run typecheck`: 0 errors under `strict: true`.
+- **Verification evidence**:
+  - Independent Victory Audit confirmed (VERDICT: VICTORY CONFIRMED, zero test tampering, zero hardcoded facades).
+- **Remaining risks/issues**: None.
+- **Commit/hash**: `0a9edf8` + working tree changes.
 

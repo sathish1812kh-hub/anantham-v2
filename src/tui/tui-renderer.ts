@@ -49,7 +49,9 @@ export class TuiRenderer {
     mode: TuiViewMode,
     adapter: TuiStateAdapter,
     commandPrompt = "",
-    errorMessage = ""
+    errorMessage = "",
+    isCommandMode?: boolean,
+    _cursorPosition?: number
   ): string {
     const lines: string[] = [];
     const width = this.dimensions.width;
@@ -126,10 +128,27 @@ export class TuiRenderer {
 
     // 5. Command Bar / Prompt (Bottom)
     lines.push(TerminalLayout.renderDivider(width, "─"));
-    if (commandPrompt) {
-      lines.push(` : ${TuiSanitizer.sanitize(commandPrompt)}_`);
+    const inCommandMode = isCommandMode ?? (commandPrompt.length > 0);
+    if (inCommandMode) {
+      const isNarrow = width < 50;
+      const prefix = isNarrow ? " [CMD] : " : " [COMMAND MODE] : ";
+      const suffix = isNarrow ? "_ | [↵] [ESC]" : "_ | [ENTER] Run, [ESC] Cancel";
+      const avail = Math.max(0, width - prefix.length - suffix.length);
+      const cleanPrompt = TuiSanitizer.sanitize(commandPrompt);
+      const visiblePrompt = cleanPrompt.length <= avail
+        ? cleanPrompt
+        : avail > 3
+          ? "..." + cleanPrompt.slice(-(avail - 3))
+          : cleanPrompt.slice(-avail);
+      lines.push(`${prefix}${visiblePrompt}${suffix}`);
     } else {
-      lines.push(" [1-9] Switch View | [/] Command Bar | [r] Refresh | [q] Quit");
+      if (width >= 48) {
+        lines.push(" [NORMAL MODE] [1-9] Views, [:] Command, [q] Quit");
+      } else if (width >= 32) {
+        lines.push(" [NORMAL] [:] Cmd, [q] Quit");
+      } else {
+        lines.push(TuiSanitizer.truncate(" [NORM] [:] [q]", width));
+      }
     }
 
     return lines.join("\n");
@@ -340,7 +359,7 @@ export class TuiRenderer {
       "  [?] Help         - Keybindings & Usage Guide",
       "",
       "COMMAND BAR:",
-      "  [/] Enter Command Bar to execute any slash command (/project, /task, /doctor, etc.)",
+      "  [:] or [/] Enter Command Bar to execute any slash command (/project, /task, /doctor, etc.)",
       "  [r] Refresh current view",
       "  [q] / [ESC] Graceful exit",
     ];

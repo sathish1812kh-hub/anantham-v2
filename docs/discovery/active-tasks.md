@@ -17,6 +17,12 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 2. Completed Milestones (Recent)
 
+### [TASK-TUI-INPUT-UX — TUI INTERACTIVE INPUT HANDLING & UX HARDENING](file:///C:/herness/tests/tui/tui-input-ux.test.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Terminal Reliability Engineer & TUI Architect
+- **Completed Date**: 2026-09-03
+- **Verification**: 1 new dedicated input UX test suite (`tests/tui/tui-input-ux.test.ts`) with 42/42 tests passing across 248 assertions, 133/133 Vitest tests passing across 35 TUI and CLI test suites, zero TypeScript typecheck errors under `strict: true`, independent Victory Audit confirmed with zero test tampering.
+
 ### [TASK-P10.13 — FINAL EVIDENCE RECONCILIATION & PRODUCTION OPERATIONS READINESS GATE](file:///C:/herness/dist/release/release-manifest.json)
 - **Status**: `COMPLETED`
 - **Owner**: Principal Production Reliability Engineer & SRE Auditor

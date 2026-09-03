@@ -76,6 +76,9 @@ export class TuiApplication {
   public readonly controller: TuiController;
 
   private isInitialized = false;
+  private escapeTimer?: NodeJS.Timeout;
+  private activeStream?: Readable;
+  private resizeListener?: () => void;
 
   constructor(options: TuiApplicationOptions = {}) {
     const dbPath = options.dbPath ?? ":memory:";
@@ -212,26 +215,136 @@ export class TuiApplication {
     this.controller.start();
 
     const inStream = input ?? process.stdin;
+    this.activeStream = inStream;
+
     if (inStream === process.stdin && process.stdin.isTTY) {
       process.stdin.setRawMode(true);
       process.stdin.resume();
     }
 
-    for await (const chunk of inStream) {
-      const str = chunk.toString();
-      for (const char of str) {
-        const keepRunning = await this.controller.handleInput(char);
-        if (!keepRunning) {
+    if (typeof process.stdout.on === "function") {
+      this.resizeListener = () => {
+        if (process.stdout.columns && process.stdout.rows) {
+          this.controller.setDimensions({
+            width: process.stdout.columns,
+            height: process.stdout.rows,
+          });
+        }
+      };
+      process.stdout.on("resize", this.resizeListener);
+    }
+
+    let pendingBuffer = "";
+
+    const flushBuffer = async (force: boolean): Promise<boolean> => {
+      if (pendingBuffer.length === 0) return true;
+      const { tokens, remainder } = TuiController.decodeInputTokens(pendingBuffer, force);
+      pendingBuffer = remainder;
+
+      for (const token of tokens) {
+        const keepRunning = await this.controller.handleInput(token);
+        if (!keepRunning || !this.controller.getIsRunning()) {
+          return false;
+        }
+      }
+      return true;
+    };
+
+    try {
+      for await (const chunk of inStream) {
+        if (this.escapeTimer) {
+          clearTimeout(this.escapeTimer);
+          this.escapeTimer = undefined;
+        }
+
+        pendingBuffer += chunk.toString();
+        const keepRunning = await flushBuffer(false);
+        if (!keepRunning || !this.controller.getIsRunning()) {
           return;
+        }
+
+        if (pendingBuffer.length > 0) {
+          this.escapeTimer = setTimeout(async () => {
+            this.escapeTimer = undefined;
+            if (pendingBuffer.length > 0 && this.controller.getIsRunning()) {
+              await flushBuffer(true);
+            }
+          }, 50);
+          if (typeof this.escapeTimer.unref === "function") {
+            this.escapeTimer.unref();
+          }
+        }
+      }
+    } catch (err: unknown) {
+      const isPremature =
+        err instanceof Error &&
+        (err.message.includes("Premature close") ||
+          (err as { code?: string }).code === "ERR_STREAM_PREMATURE_CLOSE");
+      if (!this.controller.getIsRunning() && isPremature) {
+        // Expected stream closure during shutdown
+      } else {
+        throw err;
+      }
+    } finally {
+      if (this.escapeTimer) {
+        clearTimeout(this.escapeTimer);
+        this.escapeTimer = undefined;
+      }
+      if (this.resizeListener && typeof process.stdout.off === "function") {
+        process.stdout.off("resize", this.resizeListener);
+        this.resizeListener = undefined;
+      }
+      if (inStream === process.stdin && process.stdin.isTTY && typeof process.stdin.setRawMode === "function") {
+        try {
+          process.stdin.setRawMode(false);
+          process.stdin.pause();
+        } catch {
+          // Suppress terminal restoration errors
         }
       }
     }
+
+    // Flush any pending remainder when stream completes
+    if (pendingBuffer.length > 0) {
+      await flushBuffer(true);
+    }
+  }
+
+  /**
+   * Stop TUI application execution.
+   */
+  public stop(): void {
+    this.shutdown();
   }
 
   /**
    * Shutdown TUI application gracefully.
    */
   public shutdown(): void {
+    if (this.escapeTimer) {
+      clearTimeout(this.escapeTimer);
+      this.escapeTimer = undefined;
+    }
+
+    if (this.resizeListener && typeof process.stdout.off === "function") {
+      process.stdout.off("resize", this.resizeListener);
+      this.resizeListener = undefined;
+    }
+
+    if (this.activeStream && this.activeStream !== process.stdin && typeof this.activeStream.destroy === "function") {
+      this.activeStream.destroy();
+      this.activeStream = undefined;
+    }
+
+    if (process.stdin.isTTY && typeof process.stdin.setRawMode === "function") {
+      try {
+        process.stdin.setRawMode(false);
+        process.stdin.pause();
+      } catch {
+        // Suppress terminal raw mode teardown errors
+      }
+    }
+
     this.controller.stop();
     this.stateAdapter.destroy();
     this.signalHandler.detach();

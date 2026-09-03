@@ -132,11 +132,18 @@ export class TerminalLayout {
     sessionId: string | undefined,
     dimensions: TuiDimensions
   ): string {
-    const left = ` ❖ Anantham V2 | Project: ${projectId ?? "(none)"} | Session: ${sessionId ?? "(none)"}`;
-    const right = `Status: [${status}] | ${dimensions.width}x${dimensions.height} `;
-    const space = Math.max(2, dimensions.width - left.length - right.length);
-
-    return `${left}${" ".repeat(space)}${right}`;
+    const width = dimensions.width;
+    const left = width >= 70
+      ? ` ❖ Anantham V2 | Project: ${projectId ?? "(none)"} | Session: ${sessionId ?? "(none)"}`
+      : width >= 45
+        ? ` ❖ Anantham | ${projectId ?? "(none)"}`
+        : " ❖ Anantham";
+    const right = width >= 60
+      ? `Status: [${status}] | ${dimensions.width}x${dimensions.height} `
+      : `[${status}] `;
+    const space = Math.max(1, width - left.length - right.length);
+    const combined = `${left}${" ".repeat(space)}${right}`;
+    return combined.length <= width ? combined : combined.slice(0, width);
   }
 
   /**
