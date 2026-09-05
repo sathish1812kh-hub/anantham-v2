@@ -17,6 +17,12 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 2. Completed Milestones (Recent)
 
+### [TASK-TUI-MODEL-SELECTION — OPENCODE PARITY MODEL SELECTION, PROVIDER AUTO-DETECTION & LIVE SEARCH](file:///C:/herness/tests/tui/tui-screen-and-commands.test.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Terminal Reliability Engineer & Agent Architect
+- **Completed Date**: 2026-09-05
+- **Verification**: 8/8 dedicated tests in `tests/tui/tui-screen-and-commands.test.ts`, 83/83 TUI unit tests passing, zero TypeScript errors under `strict: true`. Supports quick numeric selection (`/model 1`), custom model persistence (`/model add`), auto-detection of configured keys in `/models`, and live OpenRouter query (`/models search`).
+
 ### [TASK-TUI-INPUT-UX — TUI INTERACTIVE INPUT HANDLING & UX HARDENING](file:///C:/herness/tests/tui/tui-input-ux.test.ts)
 - **Status**: `COMPLETED`
 - **Owner**: Principal Terminal Reliability Engineer & TUI Architect

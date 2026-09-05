@@ -55,7 +55,8 @@ export class OpenAICompatibleAdapter implements ProviderAdapter {
     if (this.secretStore && this.credentialId) {
       return this.secretStore.getSecret(this.credentialId);
     }
-    return undefined;
+    const envVar = `${this.providerId.toUpperCase().replace(/-/g, "_")}_API_KEY`;
+    return process.env[envVar];
   }
 
   private normalizeError(status: number, errorData: any, message?: string): Error {

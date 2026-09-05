@@ -7,6 +7,7 @@ export interface UserConfig {
   defaultModel?: string;
   theme?: string;
   lastUpdated?: string;
+  customModels?: string[];
 }
 
 /**
@@ -102,12 +103,47 @@ export class UserConfigManager {
   }
 
   public getDefaultModel(): string {
-    return this.config.defaultModel || "gemini-2.5-pro";
+    if (this.config.defaultModel) {
+      return this.config.defaultModel;
+    }
+    // If OpenRouter is configured, default to Claude 3.5 Sonnet on OpenRouter
+    if (this.getApiKey("openrouter")) {
+      return "openrouter/anthropic/claude-3.5-sonnet";
+    }
+    return "gemini-2.5-pro";
   }
 
   public setDefaultModel(modelId: string): void {
     this.config.defaultModel = modelId;
     this.save();
+  }
+
+  public getCustomModels(): string[] {
+    return this.config.customModels || [];
+  }
+
+  public addCustomModel(modelId: string): void {
+    const trimmed = modelId.trim();
+    if (!trimmed) return;
+    if (!this.config.customModels) {
+      this.config.customModels = [];
+    }
+    if (!this.config.customModels.includes(trimmed)) {
+      this.config.customModels.push(trimmed);
+      this.save();
+    }
+  }
+
+  public removeCustomModel(modelId: string): boolean {
+    if (!this.config.customModels) return false;
+    const trimmed = modelId.trim();
+    const initialLen = this.config.customModels.length;
+    this.config.customModels = this.config.customModels.filter((m) => m !== trimmed);
+    if (this.config.customModels.length !== initialLen) {
+      this.save();
+      return true;
+    }
+    return false;
   }
 
   public syncAllToProcessEnv(): void {

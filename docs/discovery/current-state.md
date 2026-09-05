@@ -4,13 +4,13 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `595002b`
-- **Generated**: `2026-09-03T20:13:51Z`
-- **Current Release**: `v2.0.1`
-- **Current Phase**: `TUI & CLI INTERACTIVE INPUT UX HARDENING`
-- **Current Task**: `TASK-TUI-INPUT-UX — Interactive input handling, arrow key decoding, command history, and mode indicators`
-- **Last Completed Task**: `TASK-TUI-INPUT-UX — Verified with 42/42 dedicated tests and 133/133 TUI/CLI integration tests`
-- **Next Task**: `ALL MILESTONES M1-M6 + TUI UX HARDENING FULLY DELIVERED & GOLD CERTIFIED`
+- **Project Commit**: `e474a2f`
+- **Generated**: `2026-09-05T14:15:00Z`
+- **Current Release**: `v2.0.2`
+- **Current Phase**: `TUI & CLI MODEL MANAGEMENT & OPENCODE PARITY`
+- **Current Task**: `TASK-TUI-MODEL-SELECTION — Quick numeric selection (/model 1), provider auto-detection, and OpenRouter live search`
+- **Last Completed Task**: `TASK-TUI-MODEL-SELECTION — Verified with 8/8 dedicated tests and 83/83 TUI test suite passing`
+- **Next Task**: `NPM RELEASE v2.0.2 FINAL PUBLICATION`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`

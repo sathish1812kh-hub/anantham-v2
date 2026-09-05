@@ -217,7 +217,6 @@ describe("TUI Alternate Screen Buffer & OpenCode-Parity Command Output", () => {
   it("lists curated models via /models and switches active model via /model", async () => {
     const resModels = await commandRegistry.execute(parser.parse("/models"));
     expect(resModels.success).toBe(true);
-    expect(resModels.message).toContain("OPENROUTER");
     expect(resModels.message).toContain("claude-3.5-sonnet");
 
     const resSpecific = await commandRegistry.execute(parser.parse("/models openrouter"));
@@ -231,5 +230,51 @@ describe("TUI Alternate Screen Buffer & OpenCode-Parity Command Output", () => {
     const resCheck = await commandRegistry.execute(parser.parse("/model"));
     expect(resCheck.success).toBe(true);
     expect(resCheck.message).toContain("openrouter/anthropic/claude-3.5-sonnet");
+  });
+
+  it("supports quick numeric model selection via /model <number>", async () => {
+    // Select model 2
+    const res2 = await commandRegistry.execute(parser.parse("/model 2"));
+    expect(res2.success).toBe(true);
+    expect(res2.message).toContain("✔ Active model switched to");
+
+    // Select model 1
+    const res1 = await commandRegistry.execute(parser.parse("/model 1"));
+    expect(res1.success).toBe(true);
+    expect(res1.message).toContain("✔ Active model switched to");
+
+    // Verify invalid number returns error result
+    const resInvalid = await commandRegistry.execute(parser.parse("/model 999"));
+    expect(resInvalid.success).toBe(false);
+    expect(resInvalid.error).toContain("Invalid model index [999]");
+  });
+
+  it("supports adding and removing custom models via /model add and /model remove", async () => {
+    const customId = "openrouter/mistralai/mistral-large-2407";
+    const resAdd = await commandRegistry.execute(parser.parse(`/model add ${customId}`));
+    expect(resAdd.success).toBe(true);
+    expect(resAdd.message).toContain("Added custom model");
+
+    const resCheck = await commandRegistry.execute(parser.parse("/model"));
+    expect(resCheck.message).toContain(customId);
+
+    const resRemove = await commandRegistry.execute(parser.parse(`/model remove ${customId}`));
+    expect(resRemove.success).toBe(true);
+    expect(resRemove.message).toContain("Removed custom model");
+  });
+
+  it("prioritizes configured providers when displaying /models", async () => {
+    // Connect openrouter key
+    await commandRegistry.execute(parser.parse("/key set openrouter sk-or-test-detection-key"));
+
+    const resModels = await commandRegistry.execute(parser.parse("/models"));
+    expect(resModels.success).toBe(true);
+    expect(resModels.message).toContain("Available Models for Configured Providers");
+    expect(resModels.message).toContain("OPENROUTER");
+    expect(resModels.message).toContain("[1]");
+    expect(resModels.message).toContain("openrouter/anthropic/claude-3.5-sonnet");
+
+    // Clean up
+    await commandRegistry.execute(parser.parse("/key remove openrouter"));
   });
 });

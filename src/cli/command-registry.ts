@@ -43,6 +43,92 @@ export interface CommandRegistryOptions {
   errorHandler?: CliErrorHandler;
 }
 
+export interface ModelEntry {
+  id: string;
+  provider: string;
+  isCustom?: boolean;
+}
+
+export const CURATED_MODELS_BY_PROVIDER: Record<string, string[]> = {
+  openrouter: [
+    "openrouter/anthropic/claude-3.5-sonnet",
+    "openrouter/deepseek/deepseek-r1",
+    "openrouter/openai/gpt-4o",
+    "openrouter/google/gemini-2.5-pro",
+    "openrouter/meta-llama/llama-3.3-70b-instruct",
+    "openrouter/qwen/qwen-2.5-coder-32b-instruct",
+  ],
+  anthropic: [
+    "claude-3-5-sonnet-20241022",
+    "claude-3-5-haiku-20241022",
+    "claude-3-opus-20240229",
+  ],
+  openai: [
+    "gpt-4o",
+    "gpt-4o-mini",
+    "o1",
+    "o3-mini",
+  ],
+  gemini: [
+    "gemini-2.5-pro",
+    "gemini-2.5-flash",
+    "gemini-2.0-flash-thinking-exp",
+  ],
+  groq: [
+    "groq/llama-3.3-70b-versatile",
+    "groq/deepseek-r1-distill-llama-70b",
+  ],
+  deepseek: [
+    "deepseek-chat",
+    "deepseek-reasoner",
+  ],
+  ollama: [
+    "ollama/llama3.2",
+    "ollama/mistral",
+    "ollama/qwen2.5-coder",
+  ],
+};
+
+export function getNumberedModelList(configMgr: UserConfigManager): ModelEntry[] {
+  const result: ModelEntry[] = [];
+  const configuredProviders = configMgr
+    .listKeys()
+    .filter((k) => k.configured)
+    .map((k) => k.provider);
+
+  // 1. Prioritize models for configured providers
+  for (const prov of configuredProviders) {
+    const list = CURATED_MODELS_BY_PROVIDER[prov] || [];
+    for (const id of list) {
+      if (!result.some((r) => r.id === id)) {
+        result.push({ id, provider: prov });
+      }
+    }
+  }
+
+  // 2. Custom models
+  for (const customId of configMgr.getCustomModels()) {
+    if (!result.some((r) => r.id === customId)) {
+      result.push({ id: customId, provider: "custom", isCustom: true });
+    }
+  }
+
+  // 3. Fallback default models if no keys configured
+  if (result.length === 0) {
+    const defaultOrder = ["openrouter", "gemini", "anthropic", "openai"];
+    for (const prov of defaultOrder) {
+      const list = CURATED_MODELS_BY_PROVIDER[prov] || [];
+      for (const id of list.slice(0, 2)) {
+        if (!result.some((r) => r.id === id)) {
+          result.push({ id, provider: prov });
+        }
+      }
+    }
+  }
+
+  return result;
+}
+
 /**
  * Command Registry & Execution Dispatcher.
  * PRD Part 2 Section 170–175.
@@ -778,43 +864,91 @@ export class CommandRegistry {
     this.registerCommand(
       {
         name: "model",
-        description: "Display or switch the active LLM model",
+        description: "Display, switch, or add active LLM models (supports /model <number>, /model add <id>)",
         aliases: ["m"],
-        usage: "/model [modelId]",
+        usage: "/model [<number> | <modelId> | add <modelId> | remove <modelId>]",
         options: [],
       },
       (cmd, ctrl) => {
         const configMgr = UserConfigManager.getInstance();
-
-        if (cmd.args.length > 0) {
-          const modelId = cmd.args[0]!;
-          configMgr.setDefaultModel(modelId);
-          const activeProjectId = ctrl.getContext().activeProjectId;
-          if (activeProjectId) {
-            const proj = this.projectRepo.findById(activeProjectId);
-            if (proj) {
-              proj.modelProfile = modelId;
-              this.projectRepo.save(proj);
-            }
-          }
-          return {
-            success: true,
-            commandName: "model",
-            message: `✔ Active model switched to '${modelId}' (persisted to config & project).`,
-            data: { model: modelId },
-            exitRequested: false,
-          };
-        }
-
         const activeProjectId = ctrl.getContext().activeProjectId;
         const proj = activeProjectId ? this.projectRepo.findById(activeProjectId) : null;
         const currentModel = proj?.modelProfile || configMgr.getDefaultModel();
 
+        if (cmd.args.length === 0) {
+          return {
+            success: true,
+            commandName: "model",
+            message: `Current active model: ${currentModel}\n\nQuick switch: /model <number> (e.g. /model 1)\nAdd custom:   /model add <modelId>\nList models:  /models`,
+            data: { model: currentModel },
+            exitRequested: false,
+          };
+        }
+
+        const sub = cmd.args[0]!.toLowerCase();
+
+        // /model add <modelId>
+        if (sub === "add") {
+          const modelId = cmd.args[1]?.trim();
+          if (!modelId) {
+            throw new Error("Usage: /model add <modelId> (e.g. /model add openrouter/mistralai/mistral-large)");
+          }
+          configMgr.addCustomModel(modelId);
+          configMgr.setDefaultModel(modelId);
+          if (proj) {
+            proj.modelProfile = modelId;
+            this.projectRepo.save(proj);
+          }
+          return {
+            success: true,
+            commandName: "model",
+            message: `✔ Added custom model '${modelId}' and switched to it.\n  Saved to ~/.anantham/config.json and active project.`,
+            data: { model: modelId, custom: true },
+            exitRequested: false,
+          };
+        }
+
+        // /model remove <modelId>
+        if (sub === "remove" || sub === "delete") {
+          const modelId = cmd.args[1]?.trim();
+          if (!modelId) {
+            throw new Error("Usage: /model remove <modelId>");
+          }
+          const removed = configMgr.removeCustomModel(modelId);
+          return {
+            success: true,
+            commandName: "model",
+            message: removed
+              ? `✔ Removed custom model '${modelId}'.`
+              : `Model '${modelId}' was not in custom models list.`,
+            data: { model: modelId, removed },
+            exitRequested: false,
+          };
+        }
+
+        let targetModel = cmd.args[0]!.trim();
+
+        // Check if numeric selection (e.g. /model 1 or /model 2)
+        if (/^\d+$/.test(targetModel)) {
+          const num = parseInt(targetModel, 10);
+          const list = getNumberedModelList(configMgr);
+          if (num < 1 || num > list.length) {
+            throw new Error(`Invalid model index [${num}]. Run '/models' to view available numbers (1-${list.length}).`);
+          }
+          targetModel = list[num - 1]!.id;
+        }
+
+        configMgr.setDefaultModel(targetModel);
+        if (proj) {
+          proj.modelProfile = targetModel;
+          this.projectRepo.save(proj);
+        }
+
         return {
           success: true,
           commandName: "model",
-          message: `Current active model: ${currentModel}\nType '/models' to view curated popular models or '/model <id>' to switch.`,
-          data: { model: currentModel },
+          message: `✔ Active model switched to '${targetModel}' (persisted to config & project).`,
+          data: { model: targetModel },
           exitRequested: false,
         };
       }
@@ -824,75 +958,130 @@ export class CommandRegistry {
     this.registerCommand(
       {
         name: "models",
-        description: "List curated popular LLM models across providers",
+        description: "List curated AI models, search OpenRouter models, or list by provider",
         aliases: ["model-list"],
-        usage: "/models [openrouter | anthropic | openai | gemini | groq | deepseek | ollama]",
+        usage: "/models [all | <provider> | search <query> | fetch]",
         options: [],
       },
-      (cmd) => {
-        const target = cmd.args[0]?.toLowerCase();
+      async (cmd, ctrl) => {
+        const configMgr = UserConfigManager.getInstance();
+        const activeProjectId = ctrl.getContext().activeProjectId;
+        const proj = activeProjectId ? this.projectRepo.findById(activeProjectId) : null;
+        const activeModel = proj?.modelProfile || configMgr.getDefaultModel();
 
-        const curated: Record<string, string[]> = {
-          openrouter: [
-            "openrouter/anthropic/claude-3.5-sonnet",
-            "openrouter/deepseek/deepseek-r1",
-            "openrouter/openai/gpt-4o",
-            "openrouter/google/gemini-2.5-pro",
-            "openrouter/meta-llama/llama-3.3-70b-instruct",
-            "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-          ],
-          anthropic: [
-            "claude-3-5-sonnet-20241022",
-            "claude-3-5-haiku-20241022",
-            "claude-3-opus-20240229",
-          ],
-          openai: [
-            "gpt-4o",
-            "gpt-4o-mini",
-            "o1",
-            "o3-mini",
-          ],
-          gemini: [
-            "gemini-2.5-pro",
-            "gemini-2.5-flash",
-            "gemini-2.0-flash-thinking-exp",
-          ],
-          groq: [
-            "groq/llama-3.3-70b-versatile",
-            "groq/deepseek-r1-distill-llama-70b",
-          ],
-          deepseek: [
-            "deepseek-chat",
-            "deepseek-reasoner",
-          ],
-          ollama: [
-            "ollama/llama3.2",
-            "ollama/mistral",
-            "ollama/qwen2.5-coder",
-          ],
-        };
+        const arg = cmd.args[0]?.toLowerCase();
 
-        if (target && curated[target]) {
-          const list = curated[target]!.map((m) => `  • ${m}`).join("\n");
+        // /models search <query> or /models fetch
+        if (arg === "search" || arg === "fetch") {
+          const query = cmd.args.slice(1).join(" ").toLowerCase();
+          const orKey = configMgr.getApiKey("openrouter");
+          if (!orKey) {
+            throw new Error("OpenRouter API key required to search live models. Connect it with: /key set openrouter <key>");
+          }
+          try {
+            const res = await fetch("https://openrouter.ai/api/v1/models", {
+              headers: { Authorization: `Bearer ${orKey}` },
+              signal: AbortSignal.timeout(6000),
+            });
+            if (!res.ok) {
+              throw new Error(`OpenRouter API responded with HTTP ${res.status}`);
+            }
+            const data = (await res.json()) as { data?: Array<{ id: string; name?: string; context_length?: number }> };
+            let items = data.data || [];
+            if (query) {
+              items = items.filter(
+                (m) => m.id.toLowerCase().includes(query) || (m.name && m.name.toLowerCase().includes(query))
+              );
+            }
+            const matched = items.slice(0, 8);
+            if (matched.length === 0) {
+              return {
+                success: true,
+                commandName: "models",
+                message: `No OpenRouter models found matching '${query}'.`,
+                data: [],
+                exitRequested: false,
+              };
+            }
+            const lines = matched.map(
+              (m) => `  • ${m.id} (${m.context_length ? `${Math.round(m.context_length / 1000)}k ctx` : "std"})`
+            );
+            return {
+              success: true,
+              commandName: "models",
+              message: `OpenRouter Live Models${query ? ` (search: '${query}')` : " (top)"}:\n${lines.join("\n")}\n\nTo use: /model <modelId> or /model add <modelId>`,
+              data: matched.map((m) => m.id),
+              exitRequested: false,
+            };
+          } catch (err: any) {
+            throw new Error(`Failed to query OpenRouter live models: ${err.message}`);
+          }
+        }
+
+        // /models all
+        if (arg === "all") {
+          const sections: string[] = [];
+          for (const [provider, models] of Object.entries(CURATED_MODELS_BY_PROVIDER)) {
+            sections.push(`[${provider.toUpperCase()}]:\n` + models.slice(0, 3).map((m) => `  • ${m}`).join("\n"));
+          }
           return {
             success: true,
             commandName: "models",
-            message: `Models for [${target.toUpperCase()}]:\n${list}\n\nSwitch via: /model <modelId>`,
-            data: curated[target],
+            message: `Curated AI Models Catalog:\n\n${sections.join("\n\n")}\n\nSwitch via: /model <modelId>`,
+            data: CURATED_MODELS_BY_PROVIDER,
             exitRequested: false,
           };
         }
 
-        const sections: string[] = [];
-        for (const [provider, models] of Object.entries(curated)) {
-          sections.push(`[${provider.toUpperCase()}]:\n` + models.slice(0, 3).map((m) => `  • ${m}`).join("\n"));
+        // Specific provider e.g. /models anthropic or /models openrouter
+        if (arg && CURATED_MODELS_BY_PROVIDER[arg]) {
+          const list = CURATED_MODELS_BY_PROVIDER[arg]!.map((m) => {
+            const activeTag = m === activeModel ? " (ACTIVE)" : "";
+            return `  • ${m}${activeTag}`;
+          }).join("\n");
+          return {
+            success: true,
+            commandName: "models",
+            message: `Models for [${arg.toUpperCase()}]:\n${list}\n\nSwitch via: /model <modelId>`,
+            data: CURATED_MODELS_BY_PROVIDER[arg],
+            exitRequested: false,
+          };
         }
+
+        // Default: List models for configured providers + custom models
+        const configuredKeys = configMgr.listKeys().filter((k) => k.configured);
+        const list = getNumberedModelList(configMgr);
+
+        if (configuredKeys.length > 0) {
+          const provNames = configuredKeys.map((k) => k.provider.toUpperCase()).join(", ");
+          const rows = list.map((item, idx) => {
+            const num = `[${idx + 1}]`.padEnd(4);
+            const isActive = item.id === activeModel ? " (ACTIVE)" : "";
+            const customTag = item.isCustom ? " [Custom]" : "";
+            return `  ${num} ${item.id}${customTag}${isActive}`;
+          });
+
+          return {
+            success: true,
+            commandName: "models",
+            message: `Available Models for Configured Providers (${provNames}):\n${rows.join("\n")}\n\nSwitch: /model <number> (e.g. /model 1) | /model <modelId>\nCustom: /model add <id> | Search: /models search <query>`,
+            data: list,
+            exitRequested: false,
+          };
+        }
+
+        // Fallback when no keys configured
+        const fallbackRows = list.map((item, idx) => {
+          const num = `[${idx + 1}]`.padEnd(4);
+          const isActive = item.id === activeModel ? " (ACTIVE)" : "";
+          return `  ${num} ${item.id} [${item.provider}]${isActive}`;
+        });
 
         return {
           success: true,
           commandName: "models",
-          message: `Curated AI Models:\n\n${sections.join("\n\n")}\n\nRun '/models <provider>' for more or '/model <id>' to select.`,
-          data: curated,
+          message: `Curated AI Models (No API keys configured yet):\n${fallbackRows.join("\n")}\n\nConnect OpenRouter or other keys via:\n  /key set openrouter <your-api-key>\nSwitch: /model <number> | View all: /models all`,
+          data: list,
           exitRequested: false,
         };
       }
