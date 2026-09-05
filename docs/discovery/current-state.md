@@ -4,8 +4,8 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 ---
 
-- **Project Commit**: `e474a2f`
-- **Generated**: `2026-09-05T14:15:00Z`
+- **Project Commit**: `41ad18c`
+- **Generated**: `2026-09-05T20:14:49Z`
 - **Current Release**: `v2.0.2`
 - **Current Phase**: `TUI & CLI MODEL MANAGEMENT & OPENCODE PARITY`
 - **Current Task**: `TASK-TUI-MODEL-SELECTION — Quick numeric selection (/model 1), provider auto-detection, and OpenRouter live search`

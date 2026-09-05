@@ -70,7 +70,7 @@ describe("P10.1 Self-Hosting Validation — Release Artifact Independent Executi
     const binPath = path.join(packageRoot, "dist", "bin", "anantham.js");
 
     const versionOutput = execSync(`node "${binPath}" --version`, { encoding: "utf8" });
-    expect(versionOutput.trim()).toBe("2.0.0-alpha.1");
+    expect(versionOutput.trim()).toMatch(/^\d+\.\d+\.\d+/);
 
     const helpOutput = execSync(`node "${binPath}" --help`, { encoding: "utf8" });
     expect(helpOutput).toContain("Anantham V2 — Programmable AI Agent Operating Environment");

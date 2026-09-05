@@ -37,7 +37,7 @@ describe("P9.6 Release Engineering — Clean-Environment Installation & Runtime 
     expect(helpOutput).toContain("Anantham V2");
 
     const versionOutput = execSync(`node "${binPath}" --version`, { encoding: "utf8" });
-    expect(versionOutput.trim()).toBe("2.0.0-alpha.1");
+    expect(versionOutput.trim()).toMatch(/^\d+\.\d+\.\d+/);
   });
 
   it("verifies clean SQLite engine and migration initialization from packaged artifacts", async () => {
