@@ -756,9 +756,9 @@ export class CommandRegistry {
         return {
           success: true,
           commandName: "version",
-          message: "Anantham V2 v2.0.3",
+          message: "Anantham V2 v2.0.4",
           data: {
-            version: "2.0.3",
+            version: "2.0.4",
             releaseChannel: "release",
           },
           exitRequested: false,
