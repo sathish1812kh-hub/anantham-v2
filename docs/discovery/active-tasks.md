@@ -17,6 +17,12 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 2. Completed Milestones (Recent)
 
+### [TASK-NPM-RELEASE-V2.0.3 — OFFICIAL NPM PUBLICATION OF ANANTHAM-V2@2.0.3](https://www.npmjs.com/package/anantham-v2)
+- **Status**: `COMPLETED`
+- **Owner**: Lead Release Engineer & Platform Architect
+- **Completed Date**: 2026-09-06
+- **Verification**: Successfully published `anantham-v2@2.0.3` to `registry.npmjs.org` with 2FA OTP authorization. Verified by running clean global installation (`npm install -g anantham-v2@latest`). Executed global smoke checks: `anantham --version` (returns `2.0.3`), `anantham -e "/version"` (returns `Anantham V2 v2.0.3`), and `anantham -e "/usage"` (returns real-time token usage matrix & financial telemetry). Tag `v2.0.3` committed and pushed to GitHub.
+
 ### [TASK-TUI-ANTIGRAVITY-HARNESS — ANTIGRAVITY CLI HARNESS, TRUECOLOR ANSI ENGINE, COMMAND PALETTE & TOKEN DASHBOARD](file:///C:/herness/tests/tui/antigravity-harness-integration.test.ts)
 - **Status**: `COMPLETED`
 - **Owner**: Principal Terminal Reliability Engineer & Agent Architect

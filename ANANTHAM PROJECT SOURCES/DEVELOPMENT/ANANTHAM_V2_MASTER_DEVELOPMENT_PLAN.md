@@ -1221,9 +1221,8 @@ not:
   - `npx vitest run tests/tui/`: 21 test files passing, 104/104 tests passing.
 - **Verification evidence**:
   - `dist/` artifacts compiled with `v2.0.3`.
-  - Global `anantham` binary updated and verified.
-- **Remaining risks/issues**: Awaiting npm 2FA OTP for final registry publication.
-- **Commit/hash**: In progress.
+- **Remaining risks/issues**: None. Package is live on npm registry (https://www.npmjs.com/package/anantham-v2) and verified via global installation.
+- **Commit/hash**: `20239d7` (Git tag `v2.0.3`).
 
 
 
