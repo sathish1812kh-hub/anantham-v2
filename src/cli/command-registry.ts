@@ -22,6 +22,7 @@ import { TaskClaimManager } from "../tasks/task-claim-manager.js";
 import { ProjectDeletionSafetyManager, type ProjectDeletionTier } from "../workspace/project-deletion-safety.js";
 import { SlashMigrateCommand } from "./slash-migrate.js";
 import { maskSecret } from "../models/secret-store.js";
+import { UserConfigManager } from "../persistence/user-config-manager.js";
 
 export type CommandHandler = (
   cmd: ParsedCommand,
@@ -158,10 +159,12 @@ export class CommandRegistry {
           usage: d.usage,
         }));
 
+        const formatted = list.map((c) => `  ${c.command.padEnd(14)} — ${c.description}`).join("\n");
+
         return {
           success: true,
           commandName: "help",
-          message: "Available Anantham V2 Commands",
+          message: `Available Anantham V2 Commands:\n${formatted}`,
           data: list,
           exitRequested: false,
         };
@@ -690,69 +693,79 @@ export class CommandRegistry {
       }
     );
 
-    // 14. /key
+    // 14. /key & /connect
     this.registerCommand(
       {
         name: "key",
         description: "Manage provider API keys (list, set <provider> <key>, remove <provider>)",
-        aliases: ["keys", "apikey"],
+        aliases: ["keys", "apikey", "connect"],
         usage: "/key [list | set <provider> <key> | remove <provider>]",
         options: [],
       },
-      (cmd) => {
-        const sub = cmd.args[0]?.toLowerCase() || "list";
+      (cmd, ctrl) => {
+        let sub = cmd.args[0]?.toLowerCase() || "list";
+        let providerArg = cmd.args[1];
+        let keyArg = cmd.args[2];
+
+        // Support direct /connect openrouter sk-... or /connect <provider>
+        if (cmd.name.toLowerCase() === "connect") {
+          sub = "set";
+          providerArg = cmd.args[0];
+          keyArg = cmd.args[1];
+        }
+
+        const configMgr = UserConfigManager.getInstance();
+        let workspaceDir = process.cwd();
+        const activeProjectId = ctrl.getContext().activeProjectId;
+        if (activeProjectId) {
+          const proj = this.projectRepo.findById(activeProjectId);
+          if (proj?.rootPath) {
+            workspaceDir = proj.rootPath;
+          }
+        }
 
         if (sub === "set") {
-          const provider = cmd.args[1]?.toLowerCase();
-          const key = cmd.args[2];
+          const provider = providerArg?.toLowerCase();
+          const key = keyArg;
           if (!provider || !key) {
             throw new Error("Usage: /key set <provider> <apiKey> (e.g. /key set openrouter sk-or-v1-...)");
           }
+          configMgr.setApiKey(provider, key, workspaceDir);
           const envVar = `${provider.toUpperCase().replace(/-/g, "_")}_API_KEY`;
-          process.env[envVar] = key;
           return {
             success: true,
             commandName: "key",
-            message: `API key for provider '${provider}' set successfully (${envVar}: ${maskSecret(key)}).`,
+            message: `✔ API key for provider '${provider}' connected successfully!\n  Variable: ${envVar} = ${maskSecret(key)}\n  Saved to ~/.anantham/config.json and workspace .env`,
             data: { provider, envVar, maskedKey: maskSecret(key) },
             exitRequested: false,
           };
         }
 
         if (sub === "remove" || sub === "delete") {
-          const provider = cmd.args[1]?.toLowerCase();
+          const provider = providerArg?.toLowerCase();
           if (!provider) {
             throw new Error("Usage: /key remove <provider>");
           }
-          const envVar = `${provider.toUpperCase().replace(/-/g, "_")}_API_KEY`;
-          delete process.env[envVar];
+          configMgr.removeApiKey(provider, workspaceDir);
           return {
             success: true,
             commandName: "key",
-            message: `API key for provider '${provider}' removed.`,
-            data: { provider, envVar },
+            message: `✔ API key for provider '${provider}' removed from config and environment.`,
+            data: { provider },
             exitRequested: false,
           };
         }
 
         if (sub === "list") {
-          const knownProviders = ["openrouter", "openai", "anthropic", "gemini", "groq", "deepseek"];
-          const configured = knownProviders.map((p) => {
-            const envVar = `${p.toUpperCase().replace(/-/g, "_")}_API_KEY`;
-            const val = process.env[envVar];
-            return {
-              provider: p,
-              configured: !!val,
-              masked: val ? maskSecret(val) : "Not Set",
-            };
-          });
-
-          const summary = configured.map((c) => `  ${c.provider.padEnd(12)}: ${c.masked}`).join("\n");
+          const list = configMgr.listKeys();
+          const rows = list.map(
+            (c) => `  ${c.provider.padEnd(12)} : ${c.masked.padEnd(16)} [${c.configured ? "✔ Configured" : "✖ Not Set"}]`
+          );
           return {
             success: true,
             commandName: "key",
-            message: `Configured Provider Keys:\n${summary}`,
-            data: configured,
+            message: `Configured AI Provider Keys:\n${rows.join("\n")}\n\nUse: /key set <provider> <apiKey> to connect a provider.`,
+            data: list,
             exitRequested: false,
           };
         }
@@ -771,8 +784,11 @@ export class CommandRegistry {
         options: [],
       },
       (cmd, ctrl) => {
+        const configMgr = UserConfigManager.getInstance();
+
         if (cmd.args.length > 0) {
           const modelId = cmd.args[0]!;
+          configMgr.setDefaultModel(modelId);
           const activeProjectId = ctrl.getContext().activeProjectId;
           if (activeProjectId) {
             const proj = this.projectRepo.findById(activeProjectId);
@@ -784,7 +800,7 @@ export class CommandRegistry {
           return {
             success: true,
             commandName: "model",
-            message: `Active model set to '${modelId}'.`,
+            message: `✔ Active model switched to '${modelId}' (persisted to config & project).`,
             data: { model: modelId },
             exitRequested: false,
           };
@@ -792,13 +808,91 @@ export class CommandRegistry {
 
         const activeProjectId = ctrl.getContext().activeProjectId;
         const proj = activeProjectId ? this.projectRepo.findById(activeProjectId) : null;
-        const currentModel = proj?.modelProfile || "gemini-2.5-pro";
+        const currentModel = proj?.modelProfile || configMgr.getDefaultModel();
 
         return {
           success: true,
           commandName: "model",
-          message: `Current active model: ${currentModel}`,
+          message: `Current active model: ${currentModel}\nType '/models' to view curated popular models or '/model <id>' to switch.`,
           data: { model: currentModel },
+          exitRequested: false,
+        };
+      }
+    );
+
+    // 16. /models
+    this.registerCommand(
+      {
+        name: "models",
+        description: "List curated popular LLM models across providers",
+        aliases: ["model-list"],
+        usage: "/models [openrouter | anthropic | openai | gemini | groq | deepseek | ollama]",
+        options: [],
+      },
+      (cmd) => {
+        const target = cmd.args[0]?.toLowerCase();
+
+        const curated: Record<string, string[]> = {
+          openrouter: [
+            "openrouter/anthropic/claude-3.5-sonnet",
+            "openrouter/deepseek/deepseek-r1",
+            "openrouter/openai/gpt-4o",
+            "openrouter/google/gemini-2.5-pro",
+            "openrouter/meta-llama/llama-3.3-70b-instruct",
+            "openrouter/qwen/qwen-2.5-coder-32b-instruct",
+          ],
+          anthropic: [
+            "claude-3-5-sonnet-20241022",
+            "claude-3-5-haiku-20241022",
+            "claude-3-opus-20240229",
+          ],
+          openai: [
+            "gpt-4o",
+            "gpt-4o-mini",
+            "o1",
+            "o3-mini",
+          ],
+          gemini: [
+            "gemini-2.5-pro",
+            "gemini-2.5-flash",
+            "gemini-2.0-flash-thinking-exp",
+          ],
+          groq: [
+            "groq/llama-3.3-70b-versatile",
+            "groq/deepseek-r1-distill-llama-70b",
+          ],
+          deepseek: [
+            "deepseek-chat",
+            "deepseek-reasoner",
+          ],
+          ollama: [
+            "ollama/llama3.2",
+            "ollama/mistral",
+            "ollama/qwen2.5-coder",
+          ],
+        };
+
+        if (target && curated[target]) {
+          const list = curated[target]!.map((m) => `  • ${m}`).join("\n");
+          return {
+            success: true,
+            commandName: "models",
+            message: `Models for [${target.toUpperCase()}]:\n${list}\n\nSwitch via: /model <modelId>`,
+            data: curated[target],
+            exitRequested: false,
+          };
+        }
+
+        const sections: string[] = [];
+        for (const [provider, models] of Object.entries(curated)) {
+          sections.push(`[${provider.toUpperCase()}]:\n` + models.slice(0, 3).map((m) => `  • ${m}`).join("\n"));
+        }
+
+        return {
+          success: true,
+          commandName: "models",
+          message: `Curated AI Models:\n\n${sections.join("\n\n")}\n\nRun '/models <provider>' for more or '/model <id>' to select.`,
+          data: curated,
           exitRequested: false,
         };
       }

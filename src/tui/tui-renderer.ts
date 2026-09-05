@@ -51,7 +51,8 @@ export class TuiRenderer {
     commandPrompt = "",
     errorMessage = "",
     isCommandMode?: boolean,
-    _cursorPosition?: number
+    _cursorPosition?: number,
+    commandOutput?: { title: string; lines: string[] }
   ): string {
     const lines: string[] = [];
     const width = this.dimensions.width;
@@ -83,39 +84,43 @@ export class TuiRenderer {
     lines.push(TerminalLayout.renderTabBar(tabs, width));
     lines.push(TerminalLayout.renderDivider(width, "─"));
 
-    // 3. View Content
+    // 3. View Content or Command Output Modal
     let contentLines: string[] = [];
-    switch (mode) {
-      case "dashboard":
-        contentLines = this.renderDashboard(adapter);
-        break;
-      case "session":
-        contentLines = this.renderSession(adapter);
-        break;
-      case "tasks":
-        contentLines = this.renderTasks(adapter);
-        break;
-      case "workflows":
-        contentLines = this.renderWorkflows(adapter);
-        break;
-      case "agents":
-        contentLines = this.renderAgents(adapter);
-        break;
-      case "jobs":
-        contentLines = this.renderJobs(adapter);
-        break;
-      case "nodes":
-        contentLines = this.renderNodes(adapter);
-        break;
-      case "approvals":
-        contentLines = this.renderApprovals(adapter);
-        break;
-      case "events":
-        contentLines = this.renderEvents(adapter);
-        break;
-      case "help":
-        contentLines = this.renderHelp();
-        break;
+    if (commandOutput && commandOutput.lines.length > 0) {
+      contentLines = this.renderCommandOutputModal(commandOutput);
+    } else {
+      switch (mode) {
+        case "dashboard":
+          contentLines = this.renderDashboard(adapter);
+          break;
+        case "session":
+          contentLines = this.renderSession(adapter);
+          break;
+        case "tasks":
+          contentLines = this.renderTasks(adapter);
+          break;
+        case "workflows":
+          contentLines = this.renderWorkflows(adapter);
+          break;
+        case "agents":
+          contentLines = this.renderAgents(adapter);
+          break;
+        case "jobs":
+          contentLines = this.renderJobs(adapter);
+          break;
+        case "nodes":
+          contentLines = this.renderNodes(adapter);
+          break;
+        case "approvals":
+          contentLines = this.renderApprovals(adapter);
+          break;
+        case "events":
+          contentLines = this.renderEvents(adapter);
+          break;
+        case "help":
+          contentLines = this.renderHelp();
+          break;
+      }
     }
 
     lines.push(...contentLines);
@@ -365,6 +370,21 @@ export class TuiRenderer {
     ];
 
     return TerminalLayout.drawBox(lines, { title: "HELP & NAVIGATION GUIDE", width: this.dimensions.width - 2 });
+  }
+
+  public renderCommandOutputModal(output: { title: string; lines: string[] }): string[] {
+    const maxRows = Math.max(6, this.dimensions.height - 8);
+    const displayedLines = output.lines.slice(0, maxRows);
+    if (output.lines.length > maxRows) {
+      displayedLines.push(`  ... (${output.lines.length - maxRows} more lines) ...`);
+    }
+    displayedLines.push("");
+    displayedLines.push("  Press [c] or [ESC] or [1-9] to dismiss output");
+
+    return TerminalLayout.drawBox(displayedLines, {
+      title: output.title,
+      width: Math.max(20, this.dimensions.width - 2),
+    });
   }
 
   /**

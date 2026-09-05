@@ -43,6 +43,7 @@ export class TuiController {
   private historyIndex = -1;
   private historyDraft = "";
   private savedDraft = "";
+  private commandOutput: { title: string; lines: string[] } | null = null;
   private cursorPosition = 0;
   private isBracketedPaste = false;
 
@@ -71,6 +72,7 @@ export class TuiController {
 
   public setView(view: TuiViewMode): void {
     this.currentView = view;
+    this.commandOutput = null;
     this.requestRender();
   }
 
@@ -93,6 +95,8 @@ export class TuiController {
 
   public start(): void {
     this.isRunning = true;
+    // Enter alternate screen buffer, hide cursor, clear and home
+    this.output.write("\x1b[?1049h\x1b[?25l\x1b[2J\x1b[H");
     this.renderNow();
   }
 
@@ -106,6 +110,8 @@ export class TuiController {
       this.unregisterStateListener();
       this.unregisterStateListener = undefined;
     }
+    // Restore normal screen buffer and restore cursor
+    this.output.write("\x1b[?1049l\x1b[?25h");
   }
 
   /**
@@ -132,11 +138,12 @@ export class TuiController {
       this.isCommandMode ? this.commandBuffer : "",
       this.errorMessage,
       this.isCommandMode,
-      this.isCommandMode ? this.cursorPosition : undefined
+      this.isCommandMode ? this.cursorPosition : undefined,
+      this.commandOutput ?? undefined
     );
 
-    // Clear screen and redraw
-    this.output.write("\x1b[2J\x1b[H" + rendered + "\n");
+    // In alternate buffer, position at home (1,1) and write frame WITHOUT trailing newline!
+    this.output.write("\x1b[H" + rendered);
   }
 
   /**
@@ -566,6 +573,14 @@ export class TuiController {
     }
 
     // 2. Normal mode actions
+    if (this.commandOutput) {
+      if (token === "c" || token === "C" || token === "\x1b" || token === "\r" || token === "\n") {
+        this.commandOutput = null;
+        this.requestRender();
+        return true;
+      }
+    }
+
     switch (token) {
       case "1":
         this.setView("dashboard");
@@ -689,6 +704,17 @@ export class TuiController {
           errStr = this.errorHandler.handleError(parsed.name, new Error(errStr)).error ?? errStr;
         }
         this.errorMessage = errStr.replace(/\r?\n\s*/g, " ").trim();
+        this.commandOutput = null;
+      } else {
+        this.errorMessage = "";
+        if (result.message) {
+          this.commandOutput = {
+            title: `COMMAND RESULT: /${parsed.name.toUpperCase()}`,
+            lines: result.message.split("\n"),
+          };
+        } else {
+          this.commandOutput = null;
+        }
       }
 
       if (result.exitRequested) {

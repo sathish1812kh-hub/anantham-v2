@@ -5,12 +5,17 @@ import { CliApplication } from "../cli/cli-application.js";
 import { TuiApplication } from "../tui/tui-application.js";
 import { ApiServer } from "../api/api-server.js";
 import { type CliOutputMode } from "../domain/cli.js";
+import { UserConfigManager } from "../persistence/user-config-manager.js";
 
 async function main(): Promise<void> {
   try {
     if (typeof process.loadEnvFile === "function") {
       process.loadEnvFile();
     }
+  } catch {}
+
+  try {
+    UserConfigManager.getInstance().syncAllToProcessEnv();
   } catch {}
 
   const args = process.argv.slice(2);
