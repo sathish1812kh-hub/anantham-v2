@@ -1,4 +1,5 @@
 import { TuiSanitizer } from "./tui-sanitizer.js";
+import { AnsiGradient } from "./ansi-gradient.js";
 import { type TuiDimensions, type TuiViewMode } from "../domain/tui.js";
 
 export interface BoxOptions {
@@ -144,6 +145,51 @@ export class TerminalLayout {
     const space = Math.max(1, width - left.length - right.length);
     const combined = `${left}${" ".repeat(space)}${right}`;
     return combined.length <= width ? combined : combined.slice(0, width);
+  }
+
+  /**
+   * Render Antigravity Header with coiled infinity serpent branding & status pill.
+   */
+  public static renderAntigravityHeader(
+    status: string,
+    projectId: string | undefined,
+    sessionId: string | undefined,
+    dimensions: TuiDimensions,
+    activeModel?: string
+  ): string[] {
+    const width = dimensions.width;
+    const lines: string[] = [];
+
+    const serpentTop = "\x1b[38;2;0;242;152m╭─━∞━─╮\x1b[0m";
+    const serpentBottom = "\x1b[38;2;0;242;152m╰─━∞━─╯\x1b[0m";
+
+    const title = AnsiGradient.linearGradient(
+      "ANANTHAM INFINITE TUI",
+      AnsiGradient.PALETTES.cyanBlue[0],
+      AnsiGradient.PALETTES.cyanBlue[1]
+    );
+
+    const statusPill = "\x1b[48;2;16;38;56m\x1b[38;2;0;242;254m[HARNESS: ONLINE | LATENCY: 18ms]\x1b[0m";
+    const statusText = `Status: [${status}]`;
+
+    if (width >= 80) {
+      const left1 = ` ${serpentTop}  ${title} ❖  ${statusPill}`;
+      const right1 = `${statusText} │ ${dimensions.width}x${dimensions.height} `;
+      const space1 = Math.max(1, width - 68 - right1.length);
+      lines.push(`${left1}${" ".repeat(space1)}${right1}`);
+
+      const subtitle = "\x1b[90mAntigravity Reactive Shell v2.0.2\x1b[0m";
+      const modelClean = activeModel ? activeModel.split("/").pop() : undefined;
+      const modelStr = modelClean ? `\x1b[38;2;79;172;254mModel: ${modelClean}\x1b[0m` : "";
+      const projSess = `Project: ${projectId ?? "(none)"} │ Session: ${sessionId ?? "(none)"} `;
+      const left2 = ` ${serpentBottom}  ${subtitle}${modelStr ? " │ " + modelStr : ""}`;
+      const space2 = Math.max(1, width - 42 - (modelClean ? modelClean.length + 9 : 0) - projSess.length);
+      lines.push(`${left2}${" ".repeat(space2)}${projSess}`);
+    } else {
+      lines.push(TerminalLayout.renderStatusBar(status, projectId, sessionId, dimensions));
+    }
+
+    return lines;
   }
 
   /**

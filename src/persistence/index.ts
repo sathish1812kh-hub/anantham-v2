@@ -38,3 +38,5 @@ export * from "./migrations/011_snapshots_and_wal_maintenance.js";
 export * from "./repositories/evaluation-repository.js";
 export * from "./database-backup-manager.js";
 export * from "./wal-checkpoint-scheduler.js";
+export * from "./user-config-manager.js";
+export * from "./token-metrics-manager.js";

@@ -4,6 +4,8 @@ import { type TuiStateAdapter } from "./tui-state-adapter.js";
 import { type TuiDimensions, type TuiViewMode } from "../domain/tui.js";
 import { type BackgroundJob } from "../domain/job.js";
 import { type NodeIdentity } from "../domain/node.js";
+import { TokenDashboardRenderer } from "./token-dashboard-renderer.js";
+import { CommandPalette, type PaletteCommand } from "./command-palette.js";
 
 export interface TuiRendererOptions {
   dimensions?: TuiDimensions;
@@ -52,20 +54,34 @@ export class TuiRenderer {
     errorMessage = "",
     isCommandMode?: boolean,
     _cursorPosition?: number,
-    commandOutput?: { title: string; lines: string[] }
+    commandOutput?: { title: string; lines: string[] },
+    paletteOverlay?: { filtered: PaletteCommand[]; selectedIndex: number },
+    activeModel?: string
   ): string {
     const lines: string[] = [];
     const width = this.dimensions.width;
 
-    // 1. Status Bar (Top)
-    lines.push(
-      TerminalLayout.renderStatusBar(
-        adapter.getStatus(),
-        adapter.getActiveProjectId(),
-        adapter.getActiveSessionId(),
-        this.dimensions
-      )
-    );
+    // 1. Status Bar / Antigravity Branding Header (Top)
+    if (width >= 80) {
+      lines.push(
+        ...TerminalLayout.renderAntigravityHeader(
+          adapter.getStatus(),
+          adapter.getActiveProjectId(),
+          adapter.getActiveSessionId(),
+          this.dimensions,
+          activeModel
+        )
+      );
+    } else {
+      lines.push(
+        TerminalLayout.renderStatusBar(
+          adapter.getStatus(),
+          adapter.getActiveProjectId(),
+          adapter.getActiveSessionId(),
+          this.dimensions
+        )
+      );
+    }
     lines.push(TerminalLayout.renderDivider(width, "═"));
 
     // 2. Navigation Tab Bar
@@ -79,6 +95,7 @@ export class TuiRenderer {
       { key: "7", label: "Nodes", mode: "nodes", active: mode === "nodes" },
       { key: "8", label: "Approvals", mode: "approvals", active: mode === "approvals" },
       { key: "9", label: "Events", mode: "events", active: mode === "events" },
+      { key: "U", label: "Usage", mode: "usage", active: mode === "usage" },
       { key: "?", label: "Help", mode: "help", active: mode === "help" },
     ];
     lines.push(TerminalLayout.renderTabBar(tabs, width));
@@ -120,6 +137,9 @@ export class TuiRenderer {
         case "help":
           contentLines = this.renderHelp();
           break;
+        case "usage":
+          contentLines = TokenDashboardRenderer.render(width, this.dimensions.height);
+          break;
       }
     }
 
@@ -131,14 +151,28 @@ export class TuiRenderer {
       lines.push(`\x1b[1;31m✖ Error: ${TuiSanitizer.sanitize(errorMessage)}\x1b[0m`);
     }
 
-    // 5. Command Bar / Prompt (Bottom)
+    // 5. Command Palette Popover Overlay (Floating above bottom bar)
+    if (paletteOverlay && paletteOverlay.filtered && paletteOverlay.filtered.length > 0) {
+      lines.push(...CommandPalette.renderOverlay(paletteOverlay.filtered, paletteOverlay.selectedIndex, width));
+    }
+
+    // 6. Command Bar / Prompt (Bottom)
     lines.push(TerminalLayout.renderDivider(width, "─"));
     const inCommandMode = isCommandMode ?? (commandPrompt.length > 0);
     if (inCommandMode) {
       const isNarrow = width < 50;
-      const prefix = isNarrow ? " [CMD] : " : " [COMMAND MODE] : ";
-      const suffix = isNarrow ? "_ | [↵] [ESC]" : "_ | [ENTER] Run, [ESC] Cancel";
-      const avail = Math.max(0, width - prefix.length - suffix.length);
+      const isSlash = commandPrompt.startsWith("/");
+      const prefix = isNarrow
+        ? " [CMD] : "
+        : isSlash
+          ? " \x1b[38;2;0;242;254m❖ anantham:preview >\x1b[0m "
+          : " [COMMAND MODE] : ";
+      const suffix = isNarrow
+        ? "_ | [↵] [ESC]"
+        : isSlash
+          ? "_ \x1b[90m| [ENTER] Run, [TAB] Complete, [ESC] Close\x1b[0m"
+          : "_ | [ENTER] Run, [ESC] Cancel";
+      const avail = Math.max(0, width - 25 - suffix.length);
       const cleanPrompt = TuiSanitizer.sanitize(commandPrompt);
       const visiblePrompt = cleanPrompt.length <= avail
         ? cleanPrompt
@@ -147,7 +181,9 @@ export class TuiRenderer {
           : cleanPrompt.slice(-avail);
       lines.push(`${prefix}${visiblePrompt}${suffix}`);
     } else {
-      if (width >= 48) {
+      if (width >= 60) {
+        lines.push(" \x1b[38;2;0;242;254m❖\x1b[0m [NORMAL MODE] [1-9] Views, [:] Command, [q] Quit");
+      } else if (width >= 48) {
         lines.push(" [NORMAL MODE] [1-9] Views, [:] Command, [q] Quit");
       } else if (width >= 32) {
         lines.push(" [NORMAL] [:] Cmd, [q] Quit");

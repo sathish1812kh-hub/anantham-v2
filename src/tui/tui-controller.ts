@@ -5,6 +5,8 @@ import { type TuiRenderer } from "./tui-renderer.js";
 import { type CommandRegistry } from "../cli/command-registry.js";
 import { type CommandParser } from "../cli/command-parser.js";
 import { type CliErrorHandler } from "../cli/error-handler.js";
+import { CommandPalette, type PaletteCommand } from "./command-palette.js";
+import { UserConfigManager } from "../persistence/user-config-manager.js";
 
 export interface TuiControllerOptions {
   stateAdapter: TuiStateAdapter;
@@ -46,6 +48,7 @@ export class TuiController {
   private commandOutput: { title: string; lines: string[] } | null = null;
   private cursorPosition = 0;
   private isBracketedPaste = false;
+  private paletteSelectedIndex = 0;
 
   constructor(options: TuiControllerOptions) {
     this.stateAdapter = options.stateAdapter;
@@ -132,6 +135,22 @@ export class TuiController {
    * Render immediately to output stream.
    */
   public renderNow(): void {
+    let paletteOverlay: { filtered: PaletteCommand[]; selectedIndex: number } | undefined;
+    if (this.isCommandMode && this.commandBuffer.startsWith("/")) {
+      const filtered = CommandPalette.filterCommands(this.commandBuffer);
+      paletteOverlay = {
+        filtered,
+        selectedIndex: this.paletteSelectedIndex,
+      };
+    }
+
+    let activeModel: string | undefined;
+    try {
+      activeModel = UserConfigManager.getInstance().getDefaultModel();
+    } catch {
+      // Fallback
+    }
+
     const rendered = this.renderer.render(
       this.currentView,
       this.stateAdapter,
@@ -139,7 +158,9 @@ export class TuiController {
       this.errorMessage,
       this.isCommandMode,
       this.isCommandMode ? this.cursorPosition : undefined,
-      this.commandOutput ?? undefined
+      this.commandOutput ?? undefined,
+      paletteOverlay,
+      activeModel
     );
 
     // In alternate buffer, position at home (1,1) and write frame WITHOUT trailing newline!
@@ -372,8 +393,17 @@ export class TuiController {
     }
 
     if (this.isCommandMode) {
-      // 1. History navigation via Up / Down arrows
+      // 1. Command Palette / History navigation via Up / Down arrows
       if (TuiController.isArrowUp(token)) {
+        if (this.commandBuffer.startsWith("/")) {
+          const filtered = CommandPalette.filterCommands(this.commandBuffer);
+          if (filtered.length > 0) {
+            this.paletteSelectedIndex =
+              (this.paletteSelectedIndex - 1 + filtered.length) % filtered.length;
+            this.requestRender();
+            return true;
+          }
+        }
         if (this.commandHistory.length > 0) {
           if (this.historyIndex === -1) {
             this.historyDraft = this.commandBuffer;
@@ -389,6 +419,15 @@ export class TuiController {
       }
 
       if (TuiController.isArrowDown(token)) {
+        if (this.commandBuffer.startsWith("/")) {
+          const filtered = CommandPalette.filterCommands(this.commandBuffer);
+          if (filtered.length > 0) {
+            this.paletteSelectedIndex =
+              (this.paletteSelectedIndex + 1) % filtered.length;
+            this.requestRender();
+            return true;
+          }
+        }
         if (this.historyIndex !== -1) {
           if (this.historyIndex < this.commandHistory.length - 1) {
             this.historyIndex++;
@@ -447,15 +486,40 @@ export class TuiController {
         return true;
       }
 
+      // Tab completion for command palette
+      if (token === "\t") {
+        if (this.commandBuffer.startsWith("/")) {
+          const filtered = CommandPalette.filterCommands(this.commandBuffer);
+          if (filtered.length > 0) {
+            const selected = filtered[Math.min(this.paletteSelectedIndex, filtered.length - 1)];
+            if (selected) {
+              this.commandBuffer = selected.command + " ";
+              this.cursorPosition = this.commandBuffer.length;
+              this.paletteSelectedIndex = 0;
+              this.requestRender();
+              return true;
+            }
+          }
+        }
+        return true;
+      }
+
       // 3. Submit command (Enter)
       if (token === "\r" || token === "\n") {
-        const toExec = this.commandBuffer.trim();
+        let toExec = this.commandBuffer.trim();
+        if (toExec === "/" && this.commandBuffer.startsWith("/")) {
+          const filtered = CommandPalette.filterCommands(this.commandBuffer);
+          if (filtered.length > 0) {
+            toExec = filtered[this.paletteSelectedIndex]?.command ?? toExec;
+          }
+        }
         this.isCommandMode = false;
         this.commandBuffer = "";
         this.cursorPosition = 0;
         this.historyIndex = -1;
         this.historyDraft = "";
         this.savedDraft = "";
+        this.paletteSelectedIndex = 0;
         this.isBracketedPaste = false;
 
         // Empty command line or bare '/' / ':' cancels or clears without Zod error dump
@@ -477,6 +541,7 @@ export class TuiController {
         this.cursorPosition = 0;
         this.historyIndex = -1;
         this.historyDraft = "";
+        this.paletteSelectedIndex = 0;
         this.isBracketedPaste = false;
         this.requestRender();
         return true;
@@ -547,6 +612,7 @@ export class TuiController {
         this.commandBuffer =
           this.commandBuffer.slice(0, this.cursorPosition) + token + this.commandBuffer.slice(this.cursorPosition);
         this.cursorPosition++;
+        this.paletteSelectedIndex = 0;
         this.requestRender();
         return true;
       }
@@ -609,17 +675,30 @@ export class TuiController {
       case "9":
         this.setView("events");
         return true;
+      case "u":
+      case "U":
+        this.setView("usage");
+        return true;
       case "?":
       case "h":
         this.setView("help");
         return true;
       case ":":
-      case "/":
         this.isCommandMode = true;
         this.commandBuffer = this.savedDraft;
         this.cursorPosition = this.commandBuffer.length;
         this.historyIndex = -1;
         this.historyDraft = this.savedDraft;
+        this.paletteSelectedIndex = 0;
+        this.requestRender();
+        return true;
+      case "/":
+        this.isCommandMode = true;
+        this.commandBuffer = this.savedDraft || "/";
+        this.cursorPosition = this.commandBuffer.length;
+        this.historyIndex = -1;
+        this.historyDraft = this.commandBuffer;
+        this.paletteSelectedIndex = 0;
         this.requestRender();
         return true;
       case "r":
@@ -707,6 +786,19 @@ export class TuiController {
         this.commandOutput = null;
       } else {
         this.errorMessage = "";
+        const nameLower = parsed.name.toLowerCase();
+        if (nameLower === "clear") {
+          this.commandOutput = null;
+          this.errorMessage = "";
+          this.requestRender();
+          return;
+        } else if (nameLower === "usage") {
+          this.setView("usage");
+          this.commandOutput = null;
+          this.requestRender();
+          return;
+        }
+
         if (result.message) {
           this.commandOutput = {
             title: `COMMAND RESULT: /${parsed.name.toUpperCase()}`,

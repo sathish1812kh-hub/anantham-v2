@@ -28,6 +28,13 @@ export class TuiSanitizer {
   }
 
   /**
+   * Alias for sanitize: strip all ANSI escape sequences and control characters.
+   */
+  public static stripAnsi(text: string): string {
+    return this.sanitize(text);
+  }
+
+  /**
    * Truncate string with ellipsis if exceeding maxLength without breaking character layout.
    */
   public static truncate(text: string, maxLength: number): string {

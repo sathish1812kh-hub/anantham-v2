@@ -14,6 +14,7 @@ export const TuiViewModeSchema = z.enum([
   "approvals",
   "events",
   "help",
+  "usage",
 ]);
 export type TuiViewMode = z.infer<typeof TuiViewModeSchema>;
 
