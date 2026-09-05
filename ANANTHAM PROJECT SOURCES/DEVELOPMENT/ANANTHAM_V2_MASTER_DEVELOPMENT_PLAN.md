@@ -1205,8 +1205,26 @@ not:
 - **Verification evidence**:
   - Global npm install verified (`npm install -g .`).
   - All 104 TUI/CLI tests passing cleanly.
-- **Remaining risks/issues**: None.
+- **Commit/hash**: `c7017ac`.
+
+### Entry: 2026-09-06T00:54:00Z
+- **Task ID**: `TASK-NPM-RELEASE-V2.0.3`
+- **What changed**:
+  - Bumped version to `2.0.3` across `package.json`, `src/bin/anantham.ts`, `src/cli/command-registry.ts`, `src/tui/terminal-layout.ts`, and `docs/discovery/current-state.md` to resolve npm registry version collision.
+  - Rebuilt TypeScript artifacts (`npm run build`).
+  - Executed TUI & CLI test suites (104/104 passing across 21 test files).
+  - Verified local and global binary installation (`anantham --version` -> `2.0.3`, `anantham -e "/version"` -> `v2.0.3`).
+  - Packaged `anantham-v2-2.0.3.tgz` (848.1 kB) for npm registry publication.
+- **Tests executed**:
+  - `npm run typecheck`: 0 errors under `strict: true`.
+  - `npm run build`: Clean TypeScript compilation.
+  - `npx vitest run tests/tui/`: 21 test files passing, 104/104 tests passing.
+- **Verification evidence**:
+  - `dist/` artifacts compiled with `v2.0.3`.
+  - Global `anantham` binary updated and verified.
+- **Remaining risks/issues**: Awaiting npm 2FA OTP for final registry publication.
 - **Commit/hash**: In progress.
+
 
 
 

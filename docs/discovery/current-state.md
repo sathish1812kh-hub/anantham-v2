@@ -6,11 +6,11 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 - **Project Commit**: `f77d548`
 - **Generated**: `2026-09-05T20:53:31Z`
-- **Current Release**: `v2.0.2`
+- **Current Release**: `v2.0.3`
 - **Current Phase**: `TUI & CLI ANTIGRAVITY HARNESS & TOKEN DASHBOARD`
-- **Current Task**: `TASK-TUI-ANTIGRAVITY-HARNESS — Antigravity-Style CLI Harness & Token Usage Dashboard via Stitch MCP`
+- **Current Task**: `TASK-NPM-RELEASE-V2.0.3 — Bump to v2.0.3 & Publish to npm Registry`
 - **Last Completed Task**: `TASK-TUI-ANTIGRAVITY-HARNESS — TrueColor ANSI gradient engine, command palette overlay, real-time token metrics manager, model leaderboard, and 7-day sparklines (104/104 TUI tests passing)`
-- **Next Task**: `NPM RELEASE v2.0.2 FINAL PUBLICATION & DISTRIBUTION`
+- **Next Task**: `NPM RELEASE v2.0.3 VERIFICATION & DISTRIBUTION`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`
