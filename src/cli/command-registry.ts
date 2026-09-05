@@ -647,10 +647,10 @@ export class CommandRegistry {
         return {
           success: true,
           commandName: "version",
-          message: "Anantham V2 v2.0.0-alpha.1",
+          message: "Anantham V2 v2.0.2",
           data: {
-            version: "2.0.0-alpha.1",
-            releaseChannel: "alpha",
+            version: "2.0.2",
+            releaseChannel: "release",
           },
           exitRequested: false,
         };
