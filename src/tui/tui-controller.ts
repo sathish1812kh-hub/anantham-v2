@@ -7,6 +7,8 @@ import { type CommandParser } from "../cli/command-parser.js";
 import { type CliErrorHandler } from "../cli/error-handler.js";
 import { CommandPalette, type PaletteCommand } from "./command-palette.js";
 import { UserConfigManager } from "../persistence/user-config-manager.js";
+import { ModelAccordionBrowser } from "./model-accordion-browser.js";
+import { ModelCatalogCache } from "../persistence/model-catalog-cache.js";
 
 export interface TuiControllerOptions {
   stateAdapter: TuiStateAdapter;
@@ -49,6 +51,7 @@ export class TuiController {
   private cursorPosition = 0;
   private isBracketedPaste = false;
   private paletteSelectedIndex = 0;
+  private modelBrowserModal: ModelAccordionBrowser | null = null;
 
   constructor(options: TuiControllerOptions) {
     this.stateAdapter = options.stateAdapter;
@@ -76,6 +79,48 @@ export class TuiController {
   public setView(view: TuiViewMode): void {
     this.currentView = view;
     this.commandOutput = null;
+    this.modelBrowserModal = null;
+    this.requestRender();
+  }
+
+  public getModelBrowserModal(): ModelAccordionBrowser | null {
+    return this.modelBrowserModal;
+  }
+
+  public setModelBrowserModal(modal: ModelAccordionBrowser | null): void {
+    this.modelBrowserModal = modal;
+    this.requestRender();
+  }
+
+  public getCommandOutput(): { title: string; lines: string[] } | null {
+    return this.commandOutput;
+  }
+
+  public setCommandOutput(output: { title: string; lines: string[] } | null): void {
+    this.commandOutput = output;
+    this.requestRender();
+  }
+
+  public async openModelBrowserModal(): Promise<void> {
+    const cache = ModelCatalogCache.getInstance();
+    let models = cache.getCachedModels();
+    if (!models || models.length === 0) {
+      try {
+        models = await cache.getModels();
+      } catch {
+        models = cache.getCachedModels() || [];
+      }
+    }
+    let activeModelId: string | undefined;
+    try {
+      activeModelId = UserConfigManager.getInstance().getDefaultModel();
+    } catch {
+      // Fallback
+    }
+    this.modelBrowserModal = new ModelAccordionBrowser(models ?? [], activeModelId);
+    this.commandOutput = null;
+    this.isCommandMode = false;
+    this.commandBuffer = "";
     this.requestRender();
   }
 
@@ -105,6 +150,7 @@ export class TuiController {
 
   public stop(): void {
     this.isRunning = false;
+    this.modelBrowserModal = null;
     if (this.renderTimeout) {
       clearTimeout(this.renderTimeout);
       this.renderTimeout = undefined;
@@ -115,6 +161,14 @@ export class TuiController {
     }
     // Restore normal screen buffer and restore cursor
     this.output.write("\x1b[?1049l\x1b[?25h");
+
+    if (process.stdin.isTTY && typeof process.stdin.setRawMode === "function") {
+      try {
+        process.stdin.setRawMode(false);
+      } catch {
+        // Safe fallback in test/mock environments
+      }
+    }
   }
 
   /**
@@ -160,7 +214,8 @@ export class TuiController {
       this.isCommandMode ? this.cursorPosition : undefined,
       this.commandOutput ?? undefined,
       paletteOverlay,
-      activeModel
+      activeModel,
+      this.modelBrowserModal
     );
 
     // In alternate buffer, position at home (1,1) and write frame WITHOUT trailing newline!
@@ -356,6 +411,38 @@ export class TuiController {
    * Process a single decoded token or key sequence.
    */
   private async handleSingleToken(token: string): Promise<boolean> {
+    // 0. Model Accordion Browser modal key routing
+    if (this.modelBrowserModal) {
+      const result = this.modelBrowserModal.handleKey(token);
+      if (result.action === "close") {
+        this.modelBrowserModal = null;
+        this.requestRender();
+        return true;
+      }
+      if (result.action === "select") {
+        const selectedId = result.selectedModelId;
+        this.modelBrowserModal = null;
+        if (selectedId) {
+          try {
+            UserConfigManager.getInstance().setDefaultModel(selectedId);
+            if (this.commandRegistry && this.commandParser) {
+              await this.commandRegistry.execute(this.commandParser.parse(`/model ${selectedId}`));
+            }
+          } catch {
+            // Safe fallback
+          }
+        }
+        this.errorMessage = "";
+        this.requestRender();
+        return true;
+      }
+      if (result.action === "render") {
+        this.requestRender();
+        return true;
+      }
+      return true;
+    }
+
     // Bracketed paste markers (200~ start, 201~ end)
     if (token === "\x1b[200~") {
       this.isBracketedPaste = true;
@@ -532,8 +619,8 @@ export class TuiController {
       }
 
       // 4. Cancel command mode
-      // ESC (\u001B): preserves draft for rapid mode toggle (: -> ESC -> :)
-      if (token === "\u001B") {
+      // ESC (\u001B / \x1b): preserves draft for rapid mode toggle (: -> ESC -> :)
+      if (token === "\u001B" || token === "\x1b" || token.toLowerCase() === "escape") {
         const draftToSave = this.historyIndex !== -1 ? this.historyDraft : this.commandBuffer;
         this.savedDraft = draftToSave;
         this.isCommandMode = false;
@@ -640,7 +727,15 @@ export class TuiController {
 
     // 2. Normal mode actions
     if (this.commandOutput) {
-      if (token === "c" || token === "C" || token === "\x1b" || token === "\r" || token === "\n") {
+      if (
+        token === "c" ||
+        token === "C" ||
+        token === "\x1b" ||
+        token === "\u001B" ||
+        token.toLowerCase() === "escape" ||
+        token === "\r" ||
+        token === "\n"
+      ) {
         this.commandOutput = null;
         this.requestRender();
         return true;
@@ -707,6 +802,8 @@ export class TuiController {
         return true;
       case "q":
       case "\u001B":
+      case "escape":
+      case "Escape":
       case "\u0003": // Ctrl+C terminates normal mode
       case "\u0004": // Ctrl+D (EOF) terminates normal mode
         this.stop();
@@ -775,6 +872,14 @@ export class TuiController {
       const parsed = this.commandParser.parse(
         trimmed.startsWith("/") || trimmed.startsWith(":") ? trimmed : `/${trimmed}`
       );
+      const nameLower = parsed.name.toLowerCase();
+
+      // Intercept /models, /model, /m without arguments in interactive TUI mode to launch ModelAccordionBrowser modal
+      if ((nameLower === "models" || nameLower === "model" || nameLower === "m") && parsed.args.length === 0) {
+        await this.openModelBrowserModal();
+        return;
+      }
+
       const result = await this.commandRegistry.execute(parsed);
 
       if (!result.success) {

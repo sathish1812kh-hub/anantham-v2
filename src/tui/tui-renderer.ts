@@ -6,6 +6,7 @@ import { type BackgroundJob } from "../domain/job.js";
 import { type NodeIdentity } from "../domain/node.js";
 import { TokenDashboardRenderer } from "./token-dashboard-renderer.js";
 import { CommandPalette, type PaletteCommand } from "./command-palette.js";
+import { type ModelAccordionBrowser } from "./model-accordion-browser.js";
 
 export interface TuiRendererOptions {
   dimensions?: TuiDimensions;
@@ -56,7 +57,8 @@ export class TuiRenderer {
     _cursorPosition?: number,
     commandOutput?: { title: string; lines: string[] },
     paletteOverlay?: { filtered: PaletteCommand[]; selectedIndex: number },
-    activeModel?: string
+    activeModel?: string,
+    modelBrowserModal?: ModelAccordionBrowser | null
   ): string {
     const lines: string[] = [];
     const width = this.dimensions.width;
@@ -101,9 +103,11 @@ export class TuiRenderer {
     lines.push(TerminalLayout.renderTabBar(tabs, width));
     lines.push(TerminalLayout.renderDivider(width, "─"));
 
-    // 3. View Content or Command Output Modal
+    // 3. View Content or Modal (Model Accordion Browser or Command Output Modal)
     let contentLines: string[] = [];
-    if (commandOutput && commandOutput.lines.length > 0) {
+    if (modelBrowserModal) {
+      contentLines = this.renderModelBrowserModal(modelBrowserModal);
+    } else if (commandOutput && commandOutput.lines.length > 0) {
       contentLines = this.renderCommandOutputModal(commandOutput);
     } else {
       switch (mode) {
@@ -421,6 +425,19 @@ export class TuiRenderer {
       title: output.title,
       width: Math.max(20, this.dimensions.width - 2),
     });
+  }
+
+  public renderModelBrowserModal(modal: ModelAccordionBrowser): string[] {
+    const modalWidth = Math.min(this.dimensions.width - 2, 100);
+    const modalHeight = Math.max(8, this.dimensions.height - 8);
+    const lines = modal.render(modalWidth, modalHeight);
+    const banner = ` \x1b[38;2;0;242;254m❖\x1b[0m COMMAND RESULT: /MODELS`;
+    const leftPad = Math.max(0, Math.floor((this.dimensions.width - modalWidth) / 2));
+    if (leftPad > 0) {
+      const padStr = " ".repeat(leftPad);
+      return [banner, ...lines.map((line) => `${padStr}${line}`)];
+    }
+    return [banner, ...lines];
   }
 
   /**

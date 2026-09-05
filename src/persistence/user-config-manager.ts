@@ -8,6 +8,8 @@ export interface UserConfig {
   theme?: string;
   lastUpdated?: string;
   customModels?: string[];
+  logoPath?: string;
+  logo_path?: string;
 }
 
 /**
@@ -144,6 +146,22 @@ export class UserConfigManager {
       return true;
     }
     return false;
+  }
+
+  public getLogoPath(): string | undefined {
+    return this.config.logoPath || this.config.logo_path;
+  }
+
+  public setLogoPath(logoPath: string): void {
+    const trimmed = logoPath.trim();
+    if (!trimmed) {
+      delete this.config.logoPath;
+      delete this.config.logo_path;
+    } else {
+      this.config.logoPath = trimmed;
+      this.config.logo_path = trimmed;
+    }
+    this.save();
   }
 
   public syncAllToProcessEnv(): void {

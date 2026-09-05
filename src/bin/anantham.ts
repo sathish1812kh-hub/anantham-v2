@@ -48,6 +48,12 @@ async function main(): Promise<void> {
       initialProjectId = args[++i];
     } else if (arg === "--session" && args[i + 1]) {
       initialSessionId = args[++i];
+    } else if (arg === "--logo" && args[i + 1]) {
+      const customLogo = args[++i]!;
+      process.env.ANANTHAM_LOGO_PATH = customLogo;
+      try {
+        UserConfigManager.getInstance().setLogoPath(customLogo);
+      } catch {}
     } else if (arg === "--help" || arg === "-h") {
       console.log(`
 Anantham V2 — Programmable AI Agent Operating Environment
@@ -63,6 +69,7 @@ Options:
   -e, --eval <cmd>  Execute single slash command and exit
   --project <id>    Initial active project ID
   --session <id>    Initial active session ID
+  --logo <path>     Custom logo image path (PNG/Sixel/ANSI)
   -h, --help        Show this help message
   -v, --version     Show runtime version
       `);

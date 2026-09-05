@@ -5,8 +5,19 @@ import { CliApplication } from "../src/cli/cli-application.js";
 import { TuiApplication } from "../src/tui/tui-application.js";
 import { ApiServer } from "../src/api/api-server.js";
 import { type CliOutputMode } from "../src/domain/cli.js";
+import { UserConfigManager } from "../src/persistence/user-config-manager.js";
 
 async function main(): Promise<void> {
+  try {
+    if (typeof process.loadEnvFile === "function") {
+      process.loadEnvFile();
+    }
+  } catch {}
+
+  try {
+    UserConfigManager.getInstance().syncAllToProcessEnv();
+  } catch {}
+
   const args = process.argv.slice(2);
   let dbPath = path.join(process.cwd(), ".anantham", "anantham.db");
   let outputMode: CliOutputMode = "text";
@@ -37,6 +48,35 @@ async function main(): Promise<void> {
       initialProjectId = args[++i];
     } else if (arg === "--session" && args[i + 1]) {
       initialSessionId = args[++i];
+    } else if (arg === "--logo" && args[i + 1]) {
+      const customLogo = args[++i]!;
+      process.env.ANANTHAM_LOGO_PATH = customLogo;
+      try {
+        UserConfigManager.getInstance().setLogoPath(customLogo);
+      } catch {}
+    } else if (arg === "--help" || arg === "-h") {
+      console.log(`
+Anantham V2 — Programmable AI Agent Operating Environment
+Usage: anantham [options] [command]
+
+Options:
+  --db <path>       Custom SQLite database path
+  --tui             Launch Terminal User Interface
+  --server          Launch HTTP REST API server
+  --port <number>   Port for REST API server (default: 3000)
+  --json            Output in JSON format
+  --jsonl           Output in JSON Lines format
+  -e, --eval <cmd>  Execute single slash command and exit
+  --project <id>    Initial active project ID
+  --session <id>    Initial active session ID
+  --logo <path>     Custom logo image path (PNG/Sixel/ANSI)
+  -h, --help        Show this help message
+  -v, --version     Show runtime version
+      `);
+      process.exit(0);
+    } else if (arg === "--version" || arg === "-v") {
+      console.log("2.0.3");
+      process.exit(0);
     } else if (!arg.startsWith("-") && !executeCmd) {
       executeCmd = args.slice(i).join(" ");
       break;

@@ -24,6 +24,7 @@ import { SlashMigrateCommand } from "./slash-migrate.js";
 import { maskSecret } from "../models/secret-store.js";
 import { UserConfigManager } from "../persistence/user-config-manager.js";
 import { TokenMetricsManager } from "../persistence/token-metrics-manager.js";
+import { ModelCatalogCache } from "../persistence/model-catalog-cache.js";
 
 export type CommandHandler = (
   cmd: ParsedCommand,
@@ -114,7 +115,21 @@ export function getNumberedModelList(configMgr: UserConfigManager): ModelEntry[]
     }
   }
 
-  // 3. Fallback default models if no keys configured
+  // 3. Cached models from ModelCatalogCache (if any and not already present)
+  try {
+    const cached = ModelCatalogCache.getInstance().getCachedModels();
+    if (cached && cached.length > 0) {
+      for (const m of cached) {
+        if (!result.some((r) => r.id === m.id)) {
+          result.push({ id: m.id, provider: m.provider });
+        }
+      }
+    }
+  } catch {
+    // safe fallback
+  }
+
+  // 4. Fallback default models if no keys configured
   if (result.length === 0) {
     const defaultOrder = ["openrouter", "gemini", "anthropic", "openai"];
     for (const prov of defaultOrder) {
@@ -175,7 +190,14 @@ export class CommandRegistry {
   }
 
   public getDescriptor(name: string): CommandDescriptor | undefined {
-    return this.descriptors.get(name.toLowerCase());
+    const direct = this.descriptors.get(name.toLowerCase());
+    if (direct) return direct;
+    for (const desc of this.descriptors.values()) {
+      if (desc.aliases.some((a) => a.toLowerCase() === name.toLowerCase())) {
+        return desc;
+      }
+    }
+    return undefined;
   }
 
   public listDescriptors(): CommandDescriptor[] {
@@ -217,7 +239,7 @@ export class CommandRegistry {
       (cmd) => {
         if (cmd.args.length > 0) {
           const target = cmd.args[0]!.replace(/^\//, "").toLowerCase();
-          const desc = this.descriptors.get(target);
+          const desc = this.getDescriptor(target);
           if (!desc) {
             return {
               success: false,
@@ -861,34 +883,76 @@ export class CommandRegistry {
       }
     );
 
-    // 15. /model
+    // 15. /models (Unified Model Command aliased to /model, /m, /model-list)
     this.registerCommand(
       {
-        name: "model",
-        description: "Display, switch, or add active LLM models (supports /model <number>, /model add <id>)",
-        aliases: ["m"],
-        usage: "/model [<number> | <modelId> | add <modelId> | remove <modelId>]",
+        name: "models",
+        description: "Display, switch, search, or browse AI models (aliased to /model)",
+        aliases: ["model", "m", "model-list"],
+        usage: "/models [<number> | <modelId> | <provider> | add <id> | remove <id> | search <query> | all]",
         options: [],
       },
-      (cmd, ctrl) => {
+      async (cmd, ctrl) => {
         const configMgr = UserConfigManager.getInstance();
+        const cmdName = cmd.name.toLowerCase();
         const activeProjectId = ctrl.getContext().activeProjectId;
         const proj = activeProjectId ? this.projectRepo.findById(activeProjectId) : null;
         const currentModel = proj?.modelProfile || configMgr.getDefaultModel();
 
+        // 1. If run without arguments:
         if (cmd.args.length === 0) {
+          if (cmdName === "model") {
+            const list = getNumberedModelList(configMgr);
+            const customModels = configMgr.getCustomModels();
+            const customInfo = customModels.length > 0 ? `\nCustom models: ${customModels.join(", ")}` : "";
+            return {
+              success: true,
+              commandName: "model",
+              message: `Current active model: ${currentModel}\n\nQuick switch: /model <number> (e.g. /model 1)\nAdd custom:   /model add <modelId>\nList models:  /models${customInfo}`,
+              data: { model: currentModel, models: list, interactiveModal: true },
+              exitRequested: false,
+            };
+          }
+
+          const configuredKeys = configMgr.listKeys().filter((k) => k.configured);
+          const list = getNumberedModelList(configMgr);
+
+          let listBody: string;
+          if (configuredKeys.length > 0) {
+            const provNames = configuredKeys.map((k) => k.provider.toUpperCase()).join(", ");
+            const rows = list.map((item, idx) => {
+              const num = `[${idx + 1}]`.padEnd(4);
+              const isActive = item.id === currentModel ? " (ACTIVE)" : "";
+              const customTag = item.isCustom ? " [Custom]" : "";
+              return `  ${num} ${item.id}${customTag}${isActive}`;
+            });
+            listBody = `Available Models for Configured Providers (${provNames}):\n${rows.join("\n")}\n\nSwitch: /model <number> (e.g. /model 1) | /model <modelId>\nCustom: /model add <id> | Search: /models search <query>`;
+          } else {
+            const fallbackRows = list.map((item, idx) => {
+              const num = `[${idx + 1}]`.padEnd(4);
+              const isActive = item.id === currentModel ? " (ACTIVE)" : "";
+              return `  ${num} ${item.id} [${item.provider}]${isActive}`;
+            });
+            listBody = `Curated AI Models (No API keys configured yet):\n${fallbackRows.join("\n")}\n\nConnect OpenRouter or other keys via:\n  /key set openrouter <your-api-key>\nSwitch: /model <number> | View all: /models all`;
+          }
+
           return {
             success: true,
-            commandName: "model",
-            message: `Current active model: ${currentModel}\n\nQuick switch: /model <number> (e.g. /model 1)\nAdd custom:   /model add <modelId>\nList models:  /models`,
-            data: { model: currentModel },
+            commandName: "models",
+            message: `Current active model: ${currentModel}\n\n${listBody}`,
+            data: {
+              model: currentModel,
+              activeModel: currentModel,
+              models: list,
+              interactiveModal: true,
+            },
             exitRequested: false,
           };
         }
 
         const sub = cmd.args[0]!.toLowerCase();
 
-        // /model add <modelId>
+        // 2. /model add <modelId>
         if (sub === "add") {
           const modelId = cmd.args[1]?.trim();
           if (!modelId) {
@@ -902,14 +966,14 @@ export class CommandRegistry {
           }
           return {
             success: true,
-            commandName: "model",
+            commandName: cmdName,
             message: `✔ Added custom model '${modelId}' and switched to it.\n  Saved to ~/.anantham/config.json and active project.`,
             data: { model: modelId, custom: true },
             exitRequested: false,
           };
         }
 
-        // /model remove <modelId>
+        // 3. /model remove <modelId> or delete
         if (sub === "remove" || sub === "delete") {
           const modelId = cmd.args[1]?.trim();
           if (!modelId) {
@@ -918,7 +982,7 @@ export class CommandRegistry {
           const removed = configMgr.removeCustomModel(modelId);
           return {
             success: true,
-            commandName: "model",
+            commandName: cmdName,
             message: removed
               ? `✔ Removed custom model '${modelId}'.`
               : `Model '${modelId}' was not in custom models list.`,
@@ -927,53 +991,8 @@ export class CommandRegistry {
           };
         }
 
-        let targetModel = cmd.args[0]!.trim();
-
-        // Check if numeric selection (e.g. /model 1 or /model 2)
-        if (/^\d+$/.test(targetModel)) {
-          const num = parseInt(targetModel, 10);
-          const list = getNumberedModelList(configMgr);
-          if (num < 1 || num > list.length) {
-            throw new Error(`Invalid model index [${num}]. Run '/models' to view available numbers (1-${list.length}).`);
-          }
-          targetModel = list[num - 1]!.id;
-        }
-
-        configMgr.setDefaultModel(targetModel);
-        if (proj) {
-          proj.modelProfile = targetModel;
-          this.projectRepo.save(proj);
-        }
-
-        return {
-          success: true,
-          commandName: "model",
-          message: `✔ Active model switched to '${targetModel}' (persisted to config & project).`,
-          data: { model: targetModel },
-          exitRequested: false,
-        };
-      }
-    );
-
-    // 16. /models
-    this.registerCommand(
-      {
-        name: "models",
-        description: "List curated AI models, search OpenRouter models, or list by provider",
-        aliases: ["model-list"],
-        usage: "/models [all | <provider> | search <query> | fetch]",
-        options: [],
-      },
-      async (cmd, ctrl) => {
-        const configMgr = UserConfigManager.getInstance();
-        const activeProjectId = ctrl.getContext().activeProjectId;
-        const proj = activeProjectId ? this.projectRepo.findById(activeProjectId) : null;
-        const activeModel = proj?.modelProfile || configMgr.getDefaultModel();
-
-        const arg = cmd.args[0]?.toLowerCase();
-
-        // /models search <query> or /models fetch
-        if (arg === "search" || arg === "fetch") {
+        // 4. /models search <query> or /models fetch
+        if (sub === "search" || sub === "fetch") {
           const query = cmd.args.slice(1).join(" ").toLowerCase();
           const orKey = configMgr.getApiKey("openrouter");
           if (!orKey) {
@@ -1019,8 +1038,8 @@ export class CommandRegistry {
           }
         }
 
-        // /models all
-        if (arg === "all") {
+        // 5. /models all
+        if (sub === "all") {
           const sections: string[] = [];
           for (const [provider, models] of Object.entries(CURATED_MODELS_BY_PROVIDER)) {
             sections.push(`[${provider.toUpperCase()}]:\n` + models.slice(0, 3).map((m) => `  • ${m}`).join("\n"));
@@ -1034,55 +1053,59 @@ export class CommandRegistry {
           };
         }
 
-        // Specific provider e.g. /models anthropic or /models openrouter
-        if (arg && CURATED_MODELS_BY_PROVIDER[arg]) {
-          const list = CURATED_MODELS_BY_PROVIDER[arg]!.map((m) => {
-            const activeTag = m === activeModel ? " (ACTIVE)" : "";
+        // 6. Specific provider e.g. /models anthropic or /models openrouter
+        if (CURATED_MODELS_BY_PROVIDER[sub]) {
+          const list = CURATED_MODELS_BY_PROVIDER[sub]!.map((m) => {
+            const activeTag = m === currentModel ? " (ACTIVE)" : "";
             return `  • ${m}${activeTag}`;
           }).join("\n");
           return {
             success: true,
-            commandName: "models",
-            message: `Models for [${arg.toUpperCase()}]:\n${list}\n\nSwitch via: /model <modelId>`,
-            data: CURATED_MODELS_BY_PROVIDER[arg],
+            commandName: cmdName,
+            message: `Models for [${sub.toUpperCase()}]:\n${list}\n\nSwitch via: /model <modelId>`,
+            data: CURATED_MODELS_BY_PROVIDER[sub],
             exitRequested: false,
           };
         }
 
-        // Default: List models for configured providers + custom models
-        const configuredKeys = configMgr.listKeys().filter((k) => k.configured);
-        const list = getNumberedModelList(configMgr);
-
-        if (configuredKeys.length > 0) {
-          const provNames = configuredKeys.map((k) => k.provider.toUpperCase()).join(", ");
-          const rows = list.map((item, idx) => {
+        // 7. Numeric selection (e.g. /model 1 or /model 2)
+        let targetModel = cmd.args[0]!.trim();
+        if (/^\d+$/.test(targetModel)) {
+          const num = parseInt(targetModel, 10);
+          const list = getNumberedModelList(configMgr);
+          if (num < 1 || num > list.length) {
+            throw new Error(`Invalid model index [${num}]. Run '/models' to view available numbers (1-${list.length}).`);
+          }
+          targetModel = list[num - 1]!.id;
+        } else if (cmdName === "models" && !targetModel.includes("/")) {
+          // If invoked as /models with an unknown provider argument, fall back gracefully to Curated AI Models list
+          const list = getNumberedModelList(configMgr);
+          const fallbackRows = list.map((item, idx) => {
             const num = `[${idx + 1}]`.padEnd(4);
-            const isActive = item.id === activeModel ? " (ACTIVE)" : "";
-            const customTag = item.isCustom ? " [Custom]" : "";
-            return `  ${num} ${item.id}${customTag}${isActive}`;
+            const isActive = item.id === currentModel ? " (ACTIVE)" : "";
+            return `  ${num} ${item.id} [${item.provider}]${isActive}`;
           });
-
           return {
             success: true,
             commandName: "models",
-            message: `Available Models for Configured Providers (${provNames}):\n${rows.join("\n")}\n\nSwitch: /model <number> (e.g. /model 1) | /model <modelId>\nCustom: /model add <id> | Search: /models search <query>`,
+            message: `Curated AI Models (Unknown provider '${cmd.args[0]}'):\n${fallbackRows.join("\n")}\n\nSwitch: /model <number> | View all: /models all`,
             data: list,
             exitRequested: false,
           };
         }
 
-        // Fallback when no keys configured
-        const fallbackRows = list.map((item, idx) => {
-          const num = `[${idx + 1}]`.padEnd(4);
-          const isActive = item.id === activeModel ? " (ACTIVE)" : "";
-          return `  ${num} ${item.id} [${item.provider}]${isActive}`;
-        });
+        // 8. Model ID switch (e.g. /model gpt-4o or /model openrouter/anthropic/claude-3.5-sonnet)
+        configMgr.setDefaultModel(targetModel);
+        if (proj) {
+          proj.modelProfile = targetModel;
+          this.projectRepo.save(proj);
+        }
 
         return {
           success: true,
-          commandName: "models",
-          message: `Curated AI Models (No API keys configured yet):\n${fallbackRows.join("\n")}\n\nConnect OpenRouter or other keys via:\n  /key set openrouter <your-api-key>\nSwitch: /model <number> | View all: /models all`,
-          data: list,
+          commandName: cmdName,
+          message: `✔ Active model switched to '${targetModel}' (persisted to config & project).`,
+          data: { model: targetModel },
           exitRequested: false,
         };
       }
