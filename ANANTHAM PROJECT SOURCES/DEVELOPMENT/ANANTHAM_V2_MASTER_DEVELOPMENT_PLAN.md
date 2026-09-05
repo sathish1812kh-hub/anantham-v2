@@ -1167,22 +1167,24 @@ not:
 # 8. WORK PACKAGE COMPLETION LOG
 
 ### Entry: 2026-09-03T14:38:00Z
-- **Task ID**: `TASK-TUI-INPUT-UX`
+### Entry: 2026-09-05T14:15:00Z
+- **Task ID**: `TASK-TUI-MODEL-SELECTION`
 - **What changed**:
-  - Implemented streaming ANSI escape sequence decoding in `src/tui/tui-application.ts` and `src/tui/tui-controller.ts` with 50ms unref'd escape timeout.
-  - Added arrow key, Home, End, Delete, PageUp, PageDown, and Function key safety in normal mode to prevent premature ESC-quit termination.
-  - Implemented command history navigation (Up/Down arrows) with draft buffer preservation across mode toggles, capacity capping (100), and slash deduplication.
-  - Added in-line cursor navigation, mid-line editing, Forward Delete, and control keys (`Ctrl+U`, `Ctrl+W`, `Ctrl+L`, `Ctrl+D`, `Ctrl+C`).
-  - Added responsive mode indicators (`[NORMAL MODE]` vs `[COMMAND MODE]`) with narrow-screen compact fallbacks (< 50 cols) and ellipsis truncation for long prompts in `src/tui/tui-renderer.ts` and `src/tui/terminal-layout.ts`.
-  - Added graceful handling of empty, whitespace, and bare slash/colon inputs in `src/cli/command-parser.ts` rejecting empty commands cleanly without Zod errors.
-  - Added single-line error formatting in `src/cli/command-parser.ts` and `src/cli/error-handler.ts`, unpacking nested and `invalid_union` Zod issues.
-  - Created 42 dedicated vitest unit tests in `tests/tui/tui-input-ux.test.ts`.
+  - Implemented OpenCode-parity smart model selection and auto-detection in `src/cli/command-registry.ts`.
+  - Added quick numeric model selection (`/model 1`, `/model 2`) mapping to numbered list.
+  - Added custom model persistence via `/model add <modelId>` and `/model remove <modelId>` in `UserConfigManager`.
+  - Updated `/models` to auto-detect configured API keys (e.g. OpenRouter) and prioritize them in a clean numbered list (`[1]`, `[2]`, `[3]`) fitting within 80x24 terminal modal bounds without truncation.
+  - Added live OpenRouter model querying (`/models search <keyword>` and `/models fetch`) calling OpenRouter API with Bearer token.
+  - Added environment variable fallback in `OpenAICompatibleAdapter.getAuthToken()` to seamlessly consume credentials from `UserConfigManager.syncAllToProcessEnv()`.
+  - Created 8 dedicated vitest tests in `tests/tui/tui-screen-and-commands.test.ts`.
 - **Tests executed**:
-  - `npx vitest run tests/tui/tui-input-ux.test.ts`: 42/42 tests passing across 248 assertions.
-  - `npx vitest run tests/tui tests/cli`: 35 test files passing, 133/133 tests passing.
+  - `npx vitest run tests/tui/tui-screen-and-commands.test.ts`: 8/8 tests passing.
+  - `npx vitest run tests/tui/`: 16 test files passing, 83/83 tests passing.
   - `npm run typecheck`: 0 errors under `strict: true`.
+  - Live CLI smoke test: `anantham -e "/models"`, `anantham -e "/model 2"`, `anantham -e "/model 1"`, `anantham -e "/model add ..."`, `anantham -e "/models search sonnet"` all passing cleanly.
 - **Verification evidence**:
-  - Independent Victory Audit confirmed (VERDICT: VICTORY CONFIRMED, zero test tampering, zero hardcoded facades).
+  - Global npm link verified and live. Tag `v2.0.2` updated and pushed to remote `origin/main`.
 - **Remaining risks/issues**: None.
-- **Commit/hash**: `0a9edf8` + working tree changes.
+- **Commit/hash**: `2e10c3b`.
+
 
