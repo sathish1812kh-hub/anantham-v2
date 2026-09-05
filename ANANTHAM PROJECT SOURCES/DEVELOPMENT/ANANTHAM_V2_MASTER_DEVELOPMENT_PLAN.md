@@ -1224,6 +1224,27 @@ not:
 - **Remaining risks/issues**: None. Package is live on npm registry (https://www.npmjs.com/package/anantham-v2) and verified via global installation.
 - **Commit/hash**: `20239d7` (Git tag `v2.0.3`).
 
+### Entry: 2026-09-06T02:10:00Z
+- **Task ID**: `TASK-TUI-OPENROUTER-ACCORDION-HARNESS`
+- **What changed**:
+  - Implemented `ModelCatalogCache` (`src/persistence/model-catalog-cache.ts`) with live OpenRouter catalog fetch, 1-hr TTL disk caching at `~/.anantham/models_cache.json`, atomic file writes, pricing normalization per 1M tokens, and 6-provider fallback matrix.
+  - Built `ModelAccordionBrowser` (`src/tui/model-accordion-browser.ts`) collapsible tree view component grouping models by provider prefix (`openai/*`, `anthropic/*`, `google/*`, `deepseek/*`, `meta-llama/*`, `virtuals/*`), arrow/space/enter navigation, search filtering, context badges, and pricing.
+  - Consolidated `/models` and `/model` commands in `src/cli/command-registry.ts` to seamlessly launch the accordion browser modal in TUI mode.
+  - Implemented context-aware two-tier `Escape` key state machine in `src/tui/tui-controller.ts`: modal dismissal returning focus to root command bar vs root prompt buffer teardown (`\x1b[?1049l\x1b[?25h`) and clean zero-exit (`exit 0`).
+  - Built `TerminalLogoRenderer` (`src/tui/terminal-logo-renderer.ts`) probing Kitty Graphics protocol, Sixel, and iTerm2 inline image protocol with 24-bit TrueColor half-blocks (`▀`, `▄`, `█`) fallback from `--logo <path>` or `./assets/logo.png`.
+  - Added 29 comprehensive test suites (316 tests) in `tests/tui/`.
+- **Tests executed**:
+  - `npm run typecheck`: 0 errors under `strict: true`.
+  - `npm run build`: Clean TypeScript compilation.
+  - `npx vitest run tests/tui/`: 29/29 files, 316/316 tests passing (100%).
+  - `npm test`: 517/517 files, 1459/1459 tests passing (100%).
+  - Live CLI smoke: `anantham --version`, `anantham -e "/models"`, `anantham -e "/usage"` all passing clean (exit 0).
+- **Verification evidence**:
+  - Independent Victory Audit: `VICTORY CONFIRMED` (auditor ID: `adb9b6f2-0da6-4b87-a64c-cab9627f9969`).
+- **Remaining risks/issues**: None.
+- **Commit/hash**: `045e9f5`.
+
+
 
 
 

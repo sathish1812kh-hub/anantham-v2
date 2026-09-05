@@ -17,6 +17,12 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 2. Completed Milestones (Recent)
 
+### [TASK-TUI-OPENROUTER-ACCORDION-HARNESS — OPENROUTER ACCORDION EXPLORER, TERMINAL LOGO & TWO-TIER ESCAPE](file:///C:/herness/src/tui/model-accordion-browser.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Terminal Reliability Engineer & Teamwork Multi-Agent Team
+- **Completed Date**: 2026-09-06
+- **Verification**: 316/316 passing TUI tests across 29 test files, 1459/1459 passing tests across full platform (0 regressions), zero TypeScript errors under `strict: true`. Implements `ModelCatalogCache` (1-hr TTL disk cache at `~/.anantham/models_cache.json`), `ModelAccordionBrowser` (interactive provider accordion, search query filtering, arrow/space navigation, pricing & context badges), unified `/models` and `/model` commands, two-tier `Escape` key state machine (in-modal dismiss vs root buffer reset `\x1b[?1049l\x1b[?25h` & exit 0), `TerminalLogoRenderer` (Kitty/Sixel/iTerm2 probe + 24-bit TrueColor half-blocks), and full headless CLI execution. Confirmed by independent Victory Audit (`victory_auditor_4`).
+
 ### [TASK-NPM-RELEASE-V2.0.3 — OFFICIAL NPM PUBLICATION OF ANANTHAM-V2@2.0.3](https://www.npmjs.com/package/anantham-v2)
 - **Status**: `COMPLETED`
 - **Owner**: Lead Release Engineer & Platform Architect
