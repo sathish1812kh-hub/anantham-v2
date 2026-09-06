@@ -319,6 +319,10 @@ export class TerminalLogoRenderer {
       fs.existsSync(resolvedPath)
     ) {
       try {
+        const stat = fs.statSync(resolvedPath);
+        if (!stat.isFile()) {
+          return TerminalLogoRenderer.renderHalfBlockLogo(width);
+        }
         const graphicSequence = TerminalLogoRenderer.renderGraphicProtocol(
           effectiveProtocol,
           resolvedPath

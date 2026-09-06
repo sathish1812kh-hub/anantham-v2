@@ -185,7 +185,14 @@ export class TuiRenderer {
           : cleanPrompt.slice(-avail);
       lines.push(`${prefix}${visiblePrompt}${suffix}`);
     } else {
-      if (width >= 60) {
+      if (width >= 80) {
+        const leftPrompt = " \x1b[38;2;0;242;254m❯\x1b[0m \x1b[90mask anything or type / for commands...\x1b[0m";
+        const rightMode = "\x1b[38;2;0;242;254m❖\x1b[0m [NORMAL MODE] [1-9] Views, [:] Command, [q] Quit";
+        const visLeft = TuiSanitizer.stripAnsi(leftPrompt).length;
+        const visRight = TuiSanitizer.stripAnsi(rightMode).length;
+        const gap = Math.max(1, width - visLeft - visRight);
+        lines.push(`${leftPrompt}${" ".repeat(gap)}${rightMode}`);
+      } else if (width >= 60) {
         lines.push(" \x1b[38;2;0;242;254m❖\x1b[0m [NORMAL MODE] [1-9] Views, [:] Command, [q] Quit");
       } else if (width >= 48) {
         lines.push(" [NORMAL MODE] [1-9] Views, [:] Command, [q] Quit");

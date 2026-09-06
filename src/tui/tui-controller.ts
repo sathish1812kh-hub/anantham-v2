@@ -594,10 +594,13 @@ export class TuiController {
       // 3. Submit command (Enter)
       if (token === "\r" || token === "\n") {
         let toExec = this.commandBuffer.trim();
-        if (toExec === "/" && this.commandBuffer.startsWith("/")) {
+        if (this.commandBuffer.startsWith("/")) {
           const filtered = CommandPalette.filterCommands(this.commandBuffer);
           if (filtered.length > 0) {
-            toExec = filtered[this.paletteSelectedIndex]?.command ?? toExec;
+            const selected = filtered[this.paletteSelectedIndex];
+            if (toExec === "/" || (!toExec.includes(" ") && selected)) {
+              toExec = selected?.command ?? toExec;
+            }
           }
         }
         this.isCommandMode = false;

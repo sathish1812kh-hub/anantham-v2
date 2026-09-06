@@ -175,7 +175,9 @@ export class TerminalLayout {
     if (width >= 80) {
       const left1 = ` ${serpentTop}  ${title} ❖  ${statusPill}`;
       const right1 = `${statusText} │ ${dimensions.width}x${dimensions.height} `;
-      const space1 = Math.max(1, width - 68 - right1.length);
+      const visibleLeft1 = TuiSanitizer.stripAnsi(left1).length;
+      const visibleRight1 = TuiSanitizer.stripAnsi(right1).length;
+      const space1 = Math.max(1, width - visibleLeft1 - visibleRight1);
       lines.push(`${left1}${" ".repeat(space1)}${right1}`);
 
       const subtitle = "\x1b[90mAntigravity Reactive Shell v2.0.4\x1b[0m";
@@ -183,7 +185,9 @@ export class TerminalLayout {
       const modelStr = modelClean ? `\x1b[38;2;79;172;254mModel: ${modelClean}\x1b[0m` : "";
       const projSess = `Project: ${projectId ?? "(none)"} │ Session: ${sessionId ?? "(none)"} `;
       const left2 = ` ${serpentBottom}  ${subtitle}${modelStr ? " │ " + modelStr : ""}`;
-      const space2 = Math.max(1, width - 42 - (modelClean ? modelClean.length + 9 : 0) - projSess.length);
+      const visibleLeft2 = TuiSanitizer.stripAnsi(left2).length;
+      const visibleRight2 = TuiSanitizer.stripAnsi(projSess).length;
+      const space2 = Math.max(1, width - visibleLeft2 - visibleRight2);
       lines.push(`${left2}${" ".repeat(space2)}${projSess}`);
     } else {
       lines.push(TerminalLayout.renderStatusBar(status, projectId, sessionId, dimensions));
