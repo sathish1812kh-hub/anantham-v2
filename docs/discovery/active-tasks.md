@@ -17,6 +17,12 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 2. Completed Milestones (Recent)
 
+### [TASK-NPM-RELEASE-V2.0.5 — RELEASE V2.0.5, TUI ESCAPE SEQUENCE HARDENING & ANTIGRAVITY PROMPT](https://www.npmjs.com/package/anantham-v2)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Release Engineer & Terminal Reliability Team
+- **Completed Date**: 2026-09-06
+- **Verification**: Bumped version to `v2.0.5` across all manifests and binary entrypoints. Fixed Windows Terminal Kitty protocol raw escape sequence leak (blue 'A' character flood across 15 lines) by strictly enforcing 24-bit TrueColor half-blocks or ASCII coiled serpent fallback on Windows/unverified terminals. Fixed column width overflow using `TuiSanitizer.stripAnsi` in `TerminalLayout`. Styled clean Antigravity prompt line ` ❯ ask anything or type / for commands...` with single upper divider. Implemented instant execution on `Enter` in the floating command palette. Packaged `anantham-v2-2.0.5.tgz` (871.7 kB), installed globally via `npm install -g`, and verified global execution: `anantham --version` (returns `2.0.5`), `anantham -e "/version"` (returns `Anantham V2 v2.0.5`), and `anantham -e "/usage"`. All 29 TUI test files (316/316 tests) passing cleanly.
+
 ### [TASK-TUI-OPENROUTER-ACCORDION-HARNESS — OPENROUTER ACCORDION EXPLORER, TERMINAL LOGO & TWO-TIER ESCAPE](file:///C:/herness/src/tui/model-accordion-browser.ts)
 - **Status**: `COMPLETED`
 - **Owner**: Principal Terminal Reliability Engineer & Teamwork Multi-Agent Team

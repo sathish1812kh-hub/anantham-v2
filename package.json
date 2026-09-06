@@ -1,6 +1,6 @@
 {
   "name": "anantham-v2",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Anantham V2 — Programmable AI Agent Operating Environment",
   "type": "module",
   "main": "./dist/index.js",

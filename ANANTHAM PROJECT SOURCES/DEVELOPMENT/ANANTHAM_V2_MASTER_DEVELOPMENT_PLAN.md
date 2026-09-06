@@ -1244,6 +1244,27 @@ not:
 - **Remaining risks/issues**: None.
 - **Commit/hash**: `045e9f5`.
 
+### Entry: 2026-09-06T11:24:00Z
+- **Task ID**: `TASK-NPM-RELEASE-V2.0.5`
+- **What changed**:
+  - Bumped version to `2.0.5` across `package.json`, `bin/anantham.ts`, `src/bin/anantham.ts`, `src/cli/command-registry.ts`, and `src/tui/terminal-layout.ts`.
+  - Recompiled TypeScript distribution artifacts (`npm run build`).
+  - Enforced terminal logo escape sequence hardening in `src/tui/terminal-logo-renderer.ts`, preventing unhandled Kitty graphics protocol APC base64 escapes on Windows Terminal (`process.platform === "win32"` fallback to TrueColor half-blocks or ASCII coiled serpent emblem).
+  - Calculated exact column widths and divider lengths using `TuiSanitizer.stripAnsi` in `src/tui/terminal-layout.ts`, preventing line wrapping and double spacing on 80/100 column terminals.
+  - Implemented clean Antigravity prompt area ` ❯ ask anything or type / for commands...` with single upper divider in `src/tui/tui-renderer.ts`.
+  - Implemented instant command execution on `Enter` from the floating command palette overlay in `src/tui/tui-controller.ts`.
+  - Packaged reproducible release archive `dist/release/anantham-v2-2.0.5.tgz` (871.7 kB).
+  - Installed and verified global binary via `npm install -g ./anantham-v2-2.0.5.tgz`: `anantham --version` (2.0.5), `anantham -e "/version"` (Anantham V2 v2.0.5), and `anantham -e "/usage"` (real-time token metrics).
+- **Tests executed**:
+  - `npm run typecheck`: 0 errors under `strict: true`.
+  - `npm run build`: Clean TypeScript compilation.
+  - `npx vitest run tests/tui/`: 29/29 files, 316/316 tests passing (100%).
+- **Verification evidence**:
+  - Headless CLI and global binary invocations all passing cleanly (exit code 0).
+- **Remaining risks/issues**: Active npm auth token expired; user can run `npm publish` with 2FA/browser login or supply npm auth token.
+- **Commit/hash**: `00f27bf`.
+
+
 
 
 

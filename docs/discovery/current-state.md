@@ -6,11 +6,11 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 
 - **Project Commit**: `f77d548`
 - **Generated**: `2026-09-05T20:53:31Z`
-- **Current Release**: `v2.0.4`
+- **Current Release**: `v2.0.5`
 - **Current Phase**: `PRODUCTION RELEASE & GLOBAL DISTRIBUTION`
-- **Current Task**: `TASK-NPM-RELEASE-V2.0.4 — Official npm publication of anantham-v2@2.0.4`
-- **Last Completed Task**: `TASK-TUI-OPENROUTER-ACCORDION-HARNESS — Completed and verified with 316/316 TUI tests, 1459/1459 full suite tests, and independent VICTORY CONFIRMED`
-- **Next Task**: `NPM RELEASE v2.0.4 VERIFICATION & DISTRIBUTION`
+- **Current Task**: `TASK-NPM-RELEASE-V2.0.5 — Release v2.0.5 (TUI escape sequence hardening & Antigravity prompt)`
+- **Last Completed Task**: `TASK-NPM-RELEASE-V2.0.5 — Verified and installed globally from packaged release tarball`
+- **Next Task**: `NPM REGISTRY SYNC & 2FA AUTHENTICATION`
 - **Open Risks**:
   - `0 active anomalies.`
   - `0 security compliance drifts.`
@@ -18,6 +18,7 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 - **Pending Approvals**:
   - `None (ALL PHASES P1-P10 FULLY AUDITED, RECONCILED, GOLD CERTIFIED, AND PRODUCTION-READY WITH DOCUMENTED LIMITATIONS).`
 - **Recently Completed Milestones**:
+  - [TASK-NPM-RELEASE-V2.0.5](https://www.npmjs.com/package/anantham-v2) (Official npm release v2.0.5. Terminal logo escape sequence hardening preventing blue character leaks on Windows Terminal, stripAnsi line-wrapping calculations, clean Antigravity prompt line styling, direct Enter execution on floating command palette, and clean global installation verified)
   - [TASK-TUI-OPENROUTER-ACCORDION-HARNESS](file:///C:/herness/src/tui/model-accordion-browser.ts) (Live OpenRouter provider-grouped accordion tree explorer with 1-hr disk cache, unified /models command, context-aware two-tier Escape key handling, Kitty/Sixel/half-block terminal logo renderer, 316/316 TUI tests passing, and independent Victory Audit CONFIRMED)
   - [TASK-NPM-RELEASE-V2.0.3](https://www.npmjs.com/package/anantham-v2) (Official npm release v2.0.3 live on registry. Antigravity TUI harness, TrueColor ANSI gradient engine, floating command palette, real-time token dashboard /usage, and OpenCode-parity model selection verified in clean global installation)
   - [TASK-TUI-ANTIGRAVITY-HARNESS](file:///C:/herness/tests/tui/antigravity-harness-integration.test.ts) (Antigravity-Style CLI Harness & Token Usage Dashboard via Stitch MCP. TrueColor 24-bit ANSI gradient engine, floating command palette overlay with fuzzy search, real-time token usage matrix, model leaderboard, and 7-day unicode sparklines with 104/104 tests passing across 21 TUI test files)

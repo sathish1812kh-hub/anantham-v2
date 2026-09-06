@@ -75,7 +75,7 @@ Options:
       `);
       process.exit(0);
     } else if (arg === "--version" || arg === "-v") {
-      console.log("2.0.4");
+      console.log("2.0.5");
       process.exit(0);
     } else if (!arg.startsWith("-") && !executeCmd) {
       executeCmd = args.slice(i).join(" ");

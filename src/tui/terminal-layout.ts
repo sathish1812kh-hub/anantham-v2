@@ -180,7 +180,7 @@ export class TerminalLayout {
       const space1 = Math.max(1, width - visibleLeft1 - visibleRight1);
       lines.push(`${left1}${" ".repeat(space1)}${right1}`);
 
-      const subtitle = "\x1b[90mAntigravity Reactive Shell v2.0.4\x1b[0m";
+      const subtitle = "\x1b[90mAntigravity Reactive Shell v2.0.5\x1b[0m";
       const modelClean = activeModel ? activeModel.split("/").pop() : undefined;
       const modelStr = modelClean ? `\x1b[38;2;79;172;254mModel: ${modelClean}\x1b[0m` : "";
       const projSess = `Project: ${projectId ?? "(none)"} │ Session: ${sessionId ?? "(none)"} `;
