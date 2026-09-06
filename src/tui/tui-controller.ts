@@ -777,6 +777,10 @@ export class TuiController {
       case "U":
         this.setView("usage");
         return true;
+      case "t":
+      case "T":
+        this.setView("teamwork");
+        return true;
       case "?":
       case "h":
         this.setView("help");
@@ -902,6 +906,11 @@ export class TuiController {
           return;
         } else if (nameLower === "usage") {
           this.setView("usage");
+          this.commandOutput = null;
+          this.requestRender();
+          return;
+        } else if (nameLower === "teamwork-preview" || nameLower === "teamwork" || nameLower === "preview") {
+          this.setView("teamwork");
           this.commandOutput = null;
           this.requestRender();
           return;

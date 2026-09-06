@@ -17,6 +17,12 @@ This document tracks active, blocked, and recently completed sprint tasks. It is
 
 ## 2. Completed Milestones (Recent)
 
+### [TASK-TUI-ANTIGRAVITY-ENHANCEMENTS — MULTI-AGENT TOPOLOGY, KEY HANDSHAKE & DUAL CONFIG](file:///C:/herness/src/tui/teamwork-preview-canvas.ts)
+- **Status**: `COMPLETED`
+- **Owner**: Principal Terminal Reliability Engineer & Teamwork Multi-Agent Team
+- **Completed Date**: 2026-09-06
+- **Verification**: Implemented `TeamworkPreviewCanvas` (`src/tui/teamwork-preview-canvas.ts`) rendering 4 visual agent nodes (`[ Architect ]`, `[ Coder ]`, `[ Reviewer ]`, `[ SRE / Auditor ]`), dependency graph lines, message routing paths, and TrueColor status pills (`● [IDLE]`, `▲ [PLANNING]`, `⚡ [EXECUTING]`). Implemented `validateOpenRouterKey` (`src/persistence/openrouter-key-validator.ts`) executing `GET https://openrouter.ai/api/v1/auth/key` with `Authorization`, `HTTP-Referer`, and `X-Title` headers, parsing account limits and metadata, and enforcing pre-persistence validation gating. Implemented dual-path storage resolution prioritizing `~/.antigravity/` with automatic fallback to `~/.anantham/`. Implemented Antigravity Header Dock layout (`[LOGO] ANTIGRAVITY HARNESS │ GATEWAY: OpenRouter │ MODEL: <model | auto>`) in `src/tui/terminal-layout.ts`. 762/762 TUI tests passing across 34 files, 32/32 persistence/CLI handshake tests passing, 0 typecheck errors under `strict: true`, independent Victory Audit confirmed (`victory_auditor_5`, VICTORY CONFIRMED).
+
 ### [TASK-NPM-RELEASE-V2.0.5 — RELEASE V2.0.5, TUI ESCAPE SEQUENCE HARDENING & ANTIGRAVITY PROMPT](https://www.npmjs.com/package/anantham-v2)
 - **Status**: `COMPLETED`
 - **Owner**: Principal Release Engineer & Terminal Reliability Team

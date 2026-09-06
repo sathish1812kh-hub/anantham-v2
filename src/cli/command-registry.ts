@@ -25,6 +25,8 @@ import { maskSecret } from "../models/secret-store.js";
 import { UserConfigManager } from "../persistence/user-config-manager.js";
 import { TokenMetricsManager } from "../persistence/token-metrics-manager.js";
 import { ModelCatalogCache } from "../persistence/model-catalog-cache.js";
+import { validateOpenRouterKey } from "../persistence/openrouter-key-validator.js";
+import { TeamworkPreviewCanvas } from "../tui/teamwork-preview-canvas.js";
 
 export type CommandHandler = (
   cmd: ParsedCommand,
@@ -811,7 +813,7 @@ export class CommandRegistry {
         usage: "/key [list | set <provider> <key> | remove <provider>]",
         options: [],
       },
-      (cmd, ctrl) => {
+      async (cmd, ctrl) => {
         let sub = cmd.args[0]?.toLowerCase() || "list";
         let providerArg = cmd.args[1];
         let keyArg = cmd.args[2];
@@ -839,12 +841,48 @@ export class CommandRegistry {
           if (!provider || !key) {
             throw new Error("Usage: /key set <provider> <apiKey> (e.g. /key set openrouter sk-or-v1-...)");
           }
+
+          if (provider === "openrouter") {
+            const validation = await validateOpenRouterKey(key);
+            if (!validation.valid) {
+              return {
+                success: false,
+                commandName: "key",
+                message: `✖ OpenRouter API key validation failed: ${validation.error || "Invalid key"}`,
+                data: { provider, valid: false, error: validation.error },
+                exitRequested: false,
+              };
+            }
+
+            configMgr.setApiKey(provider, key, workspaceDir);
+            if (validation.metadata) {
+              configMgr.setKeyMetadata(provider, validation.metadata);
+            }
+            const envVar = "OPENROUTER_API_KEY";
+            const meta = validation.metadata;
+            const metaLines: string[] = [];
+            if (meta?.label) metaLines.push(`  Label: ${meta.label}`);
+            if (meta) {
+              const limitStr = meta.limit !== null && meta.limit !== undefined ? `$${meta.limit} USD` : "Unlimited";
+              metaLines.push(`  Usage: $${meta.usage.toFixed(4)} USD | Limit: ${limitStr}`);
+              metaLines.push(`  Tier: ${meta.is_free_tier ? "Free Tier" : "Paid"}`);
+            }
+            const metaBlock = metaLines.length > 0 ? `\n${metaLines.join("\n")}` : "";
+            return {
+              success: true,
+              commandName: "key",
+              message: `✔ API key for provider '${provider}' connected successfully!${metaBlock}\n  Variable: ${envVar} = ${maskSecret(key)}\n  Saved to ~/.antigravity/config.json and workspace .env`,
+              data: { provider, envVar, maskedKey: maskSecret(key), metadata: meta },
+              exitRequested: false,
+            };
+          }
+
           configMgr.setApiKey(provider, key, workspaceDir);
           const envVar = `${provider.toUpperCase().replace(/-/g, "_")}_API_KEY`;
           return {
             success: true,
             commandName: "key",
-            message: `✔ API key for provider '${provider}' connected successfully!\n  Variable: ${envVar} = ${maskSecret(key)}\n  Saved to ~/.anantham/config.json and workspace .env`,
+            message: `✔ API key for provider '${provider}' connected successfully!\n  Variable: ${envVar} = ${maskSecret(key)}\n  Saved to ~/.antigravity/config.json and workspace .env`,
             data: { provider, envVar, maskedKey: maskSecret(key) },
             exitRequested: false,
           };
@@ -867,9 +905,14 @@ export class CommandRegistry {
 
         if (sub === "list") {
           const list = configMgr.listKeys();
-          const rows = list.map(
-            (c) => `  ${c.provider.padEnd(12)} : ${c.masked.padEnd(16)} [${c.configured ? "✔ Configured" : "✖ Not Set"}]`
-          );
+          const rows = list.map((c) => {
+            let metaExtra = "";
+            if (c.metadata) {
+              const limitStr = c.metadata.limit !== null && c.metadata.limit !== undefined ? `$${c.metadata.limit}` : "unlimited";
+              metaExtra = ` (${c.metadata.label || "default"} | usage: $${c.metadata.usage.toFixed(4)} / ${limitStr}${c.metadata.is_free_tier ? " | free tier" : ""})`;
+            }
+            return `  ${c.provider.padEnd(12)} : ${c.masked.padEnd(16)} [${c.configured ? "✔ Configured" : "✖ Not Set"}]${metaExtra}`;
+          });
           return {
             success: true,
             commandName: "key",
@@ -967,7 +1010,7 @@ export class CommandRegistry {
           return {
             success: true,
             commandName: cmdName,
-            message: `✔ Added custom model '${modelId}' and switched to it.\n  Saved to ~/.anantham/config.json and active project.`,
+            message: `✔ Added custom model '${modelId}' and switched to it.\n  Saved to ~/.antigravity/config.json and active project.`,
             data: { model: modelId, custom: true },
             exitRequested: false,
           };
@@ -1168,17 +1211,19 @@ export class CommandRegistry {
         return {
           success: true,
           commandName: "teamwork-preview",
-          message: [
-            "❖ Teamwork Preview Harness Status: ONLINE",
-            "  Engine           : Anantham V2 Autonomous Agent Coordinator",
-            "  Parallel Workers : 4 active worker execution slots",
-            "  Task Partitioning: Wave DAG with generation-fenced leases",
-            "  Durability       : SQLite WAL (synchronous = FULL, RPO-0)",
-            "  Safety Boundary  : ToolGateway sandboxed capability routing",
-            "",
-            "Autonomous team preview ready. Submit prompt tasks via interactive CLI or TUI.",
-          ].join("\n"),
-          data: { status: "ONLINE", workers: 4, mode: "wave_dag" },
+          message: TeamworkPreviewCanvas.renderText(),
+          data: {
+            status: "ONLINE",
+            workers: 4,
+            mode: "wave_dag",
+            fencingToken: "0x04F2",
+            epoch: 14,
+            depthWaves: 3,
+            worktrees: ["/wt/architect", "/wt/coder-1", "/wt/coder-2", "/wt/sre"],
+            leasesHeld: "4/4 held",
+            durability: "SQLite WAL synchronous = FULL, RPO-0",
+            security: "ToolGateway sandboxed",
+          },
           exitRequested: false,
         };
       }

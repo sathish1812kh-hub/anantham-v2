@@ -1264,6 +1264,27 @@ not:
 - **Remaining risks/issues**: Active npm auth token expired; user can run `npm publish` with 2FA/browser login or supply npm auth token.
 - **Commit/hash**: `00f27bf`.
 
+### Entry: 2026-09-06T17:05:00Z
+- **Task ID**: `TASK-TUI-ANTIGRAVITY-ENHANCEMENTS`
+- **What changed**:
+  - Implemented `TeamworkPreviewCanvas` (`src/tui/teamwork-preview-canvas.ts`) with interactive ASCII multi-agent orchestration topology (Architect, Coder, Reviewer, SRE/Auditor), dependency lines, message routing paths, TrueColor status pills (`IDLE`, `PLANNING`, `EXECUTING`), and wave DAG fencing metrics.
+  - Implemented `validateOpenRouterKey` (`src/persistence/openrouter-key-validator.ts`) executing `GET https://openrouter.ai/api/v1/auth/key` with `Authorization: Bearer <API_KEY>`, `HTTP-Referer: https://github.com/antigravity/cli`, and `X-Title: Antigravity CLI`, with pre-persistence validation gating.
+  - Implemented dual-path storage resolution prioritizing `~/.antigravity/` with fallback to `~/.anantham/` across config, models cache, and telemetry metrics.
+  - Implemented Antigravity Header Dock layout in `src/tui/terminal-layout.ts`: `[LOGO] ANTIGRAVITY HARNESS │ GATEWAY: OpenRouter │ MODEL: <activeModel | auto>`.
+  - Added dedicated test suites: `tests/tui/teamwork-preview-canvas.test.ts`, `tests/tui/antigravity-header-dock.test.ts`, `tests/tui/adversarial-terminal-layout.test.ts`, `tests/persistence/openrouter-key-validator.test.ts`, `tests/persistence/dual-path-config.test.ts`, and `tests/cli/key-handshake-command.test.ts`.
+  - Added `[T] Teamwork` tab in TUI navigation bar.
+- **Tests executed**:
+  - `npm run typecheck`: 0 errors under `strict: true`.
+  - `npm run build`: Clean TypeScript compilation.
+  - `npx vitest run tests/tui/`: 34/34 files, 762/762 tests passing (100%).
+  - `npx vitest run tests/persistence/ tests/cli/`: 32/32 tests passing (100%).
+  - Headless CLI smoke: `anantham --version`, `anantham -e "/version"`, `anantham -e "/teamwork-preview"`, `anantham -e "/usage"`, and `anantham -e "/models"`.
+- **Verification evidence**:
+  - Independent Victory Audit: `VICTORY CONFIRMED` (auditor ID: `83ed3e3e-f068-4dcf-ae51-25122e193da1`).
+- **Remaining risks/issues**: None.
+- **Commit/hash**: `1410ef2`.
+
+
 
 
 

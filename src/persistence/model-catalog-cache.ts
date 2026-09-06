@@ -70,12 +70,14 @@ export function parsePricePerM(rawPrice?: string | number): number {
 
 /**
  * Persistent cache manager for OpenRouter live catalog models.
- * Saves to ~/.anantham/models_cache.json with 1-hour TTL and atomic writes.
+ * Saves to ~/.antigravity/models_cache.json with 1-hour TTL and fallback to ~/.anantham/models_cache.json.
  */
 export class ModelCatalogCache {
   private static instance: ModelCatalogCache | undefined;
   private readonly storageDir: string;
   private readonly storagePath: string;
+  private readonly fallbackStorageDir: string;
+  private readonly fallbackStoragePath: string;
   private readonly ttlMs: number;
   private memoryCache: ModelCacheData | null = null;
 
@@ -255,16 +257,22 @@ export class ModelCatalogCache {
     },
   ];
 
-  public constructor(customStorageDir?: string, ttlMs: number = ModelCatalogCache.DEFAULT_TTL_MS) {
-    this.storageDir = customStorageDir || path.join(os.homedir(), ".anantham");
+  public constructor(
+    customStorageDir?: string,
+    ttlMs: number = ModelCatalogCache.DEFAULT_TTL_MS,
+    customFallbackDir?: string
+  ) {
+    this.storageDir = customStorageDir || path.join(os.homedir(), ".antigravity");
     this.storagePath = path.join(this.storageDir, "models_cache.json");
+    this.fallbackStorageDir = customFallbackDir || (customStorageDir ? customStorageDir : path.join(os.homedir(), ".anantham"));
+    this.fallbackStoragePath = path.join(this.fallbackStorageDir, "models_cache.json");
     this.ttlMs = ttlMs;
     this.loadFromDisk();
   }
 
-  public static getInstance(customStorageDir?: string, ttlMs?: number): ModelCatalogCache {
-    if (!ModelCatalogCache.instance || customStorageDir !== undefined) {
-      ModelCatalogCache.instance = new ModelCatalogCache(customStorageDir, ttlMs);
+  public static getInstance(customStorageDir?: string, ttlMs?: number, customFallbackDir?: string): ModelCatalogCache {
+    if (!ModelCatalogCache.instance || customStorageDir !== undefined || customFallbackDir !== undefined) {
+      ModelCatalogCache.instance = new ModelCatalogCache(customStorageDir, ttlMs, customFallbackDir);
     }
     return ModelCatalogCache.instance;
   }
@@ -273,10 +281,24 @@ export class ModelCatalogCache {
     ModelCatalogCache.instance = undefined;
   }
 
+  public getStorageDir(): string {
+    return this.storageDir;
+  }
+
+  public getStoragePath(): string {
+    return this.storagePath;
+  }
+
+  public getFallbackStoragePath(): string {
+    return this.fallbackStoragePath;
+  }
+
   /**
    * Reads cached models from disk if present and valid.
+   * Checks primary path first (~/.antigravity/models_cache.json), then fallback (~/.anantham/models_cache.json).
    */
   private loadFromDisk(): ModelCacheData | null {
+    // 1. Primary cache path
     try {
       if (fs.existsSync(this.storagePath)) {
         const raw = fs.readFileSync(this.storagePath, "utf-8");
@@ -292,8 +314,28 @@ export class ModelCatalogCache {
         }
       }
     } catch {
-      // Fallback on read or JSON parse failure
+      // Primary cache read failed, attempt fallback
     }
+
+    // 2. Fallback cache path
+    try {
+      if (this.fallbackStoragePath !== this.storagePath && fs.existsSync(this.fallbackStoragePath)) {
+        const raw = fs.readFileSync(this.fallbackStoragePath, "utf-8");
+        const parsed = JSON.parse(raw) as ModelCacheData;
+        if (
+          parsed &&
+          typeof parsed.fetchedAt === "number" &&
+          Array.isArray(parsed.models) &&
+          parsed.models.length > 0
+        ) {
+          this.memoryCache = parsed;
+          return parsed;
+        }
+      }
+    } catch {
+      // Fallback cache read failed
+    }
+
     return null;
   }
 

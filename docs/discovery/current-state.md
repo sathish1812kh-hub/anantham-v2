@@ -5,11 +5,11 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 ---
 
 - **Project Commit**: `1410ef2`
-- **Generated**: `2026-09-06T17:14:00Z`
+- **Generated**: `2026-09-06T17:00:00Z`
 - **Current Release**: `v2.0.5`
 - **Current Phase**: `PRODUCTION RELEASE & GLOBAL DISTRIBUTION`
-- **Current Task**: `TASK-NPM-RELEASE-V2.0.5 — Release v2.0.5 (TUI escape sequence hardening & Antigravity prompt)`
-- **Last Completed Task**: `TASK-NPM-RELEASE-V2.0.5 — Verified and installed globally from packaged release tarball`
+- **Current Task**: `TASK-TUI-ANTIGRAVITY-ENHANCEMENTS — Multi-Agent ASCII Topology (/teamwork-preview), OpenRouter Key Handshake & Dual Config Paths`
+- **Last Completed Task**: `TASK-TUI-ANTIGRAVITY-ENHANCEMENTS — Completed and verified with 762/762 TUI tests, 32 persistence tests, and independent Victory Audit VICTORY CONFIRMED`
 - **Next Task**: `NPM REGISTRY SYNC & 2FA AUTHENTICATION`
 - **Open Risks**:
   - `0 active anomalies.`
@@ -18,6 +18,7 @@ This file acts as the single-file project snapshot loaded at the beginning of ev
 - **Pending Approvals**:
   - `None (ALL PHASES P1-P10 FULLY AUDITED, RECONCILED, GOLD CERTIFIED, AND PRODUCTION-READY WITH DOCUMENTED LIMITATIONS).`
 - **Recently Completed Milestones**:
+  - [TASK-TUI-ANTIGRAVITY-ENHANCEMENTS](file:///C:/herness/src/tui/teamwork-preview-canvas.ts) (Multi-Agent ASCII Orchestration Topology for /teamwork-preview, OpenRouter GET /api/v1/auth/key handshake with header metadata extraction, dual-path resolution ~/.antigravity/ falling back to ~/.anantham/, Antigravity Header Dock layout [LOGO] ANTIGRAVITY HARNESS | GATEWAY: OpenRouter | MODEL: <model>, 762/762 TUI tests passing, independent Victory Audit VICTORY CONFIRMED)
   - [TASK-NPM-RELEASE-V2.0.5](https://www.npmjs.com/package/anantham-v2) (Official npm release v2.0.5. Terminal logo escape sequence hardening preventing blue character leaks on Windows Terminal, stripAnsi line-wrapping calculations, clean Antigravity prompt line styling, direct Enter execution on floating command palette, and clean global installation verified)
   - [TASK-TUI-OPENROUTER-ACCORDION-HARNESS](file:///C:/herness/src/tui/model-accordion-browser.ts) (Live OpenRouter provider-grouped accordion tree explorer with 1-hr disk cache, unified /models command, context-aware two-tier Escape key handling, Kitty/Sixel/half-block terminal logo renderer, 316/316 TUI tests passing, and independent Victory Audit CONFIRMED)
   - [TASK-NPM-RELEASE-V2.0.3](https://www.npmjs.com/package/anantham-v2) (Official npm release v2.0.3 live on registry. Antigravity TUI harness, TrueColor ANSI gradient engine, floating command palette, real-time token dashboard /usage, and OpenCode-parity model selection verified in clean global installation)

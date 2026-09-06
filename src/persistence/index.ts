@@ -40,3 +40,5 @@ export * from "./database-backup-manager.js";
 export * from "./wal-checkpoint-scheduler.js";
 export * from "./user-config-manager.js";
 export * from "./token-metrics-manager.js";
+export * from "./model-catalog-cache.js";
+export * from "./openrouter-key-validator.js";

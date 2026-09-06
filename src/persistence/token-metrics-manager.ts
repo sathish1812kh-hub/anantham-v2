@@ -48,9 +48,12 @@ export interface TokenMetricsData {
 }
 
 export class TokenMetricsManager {
-  private static instance: TokenMetricsManager;
+  private static instance: TokenMetricsManager | undefined;
   private readonly storageDir: string;
   private readonly storagePath: string;
+  private readonly fallbackStorageDir: string;
+  private readonly fallbackStoragePath: string;
+  private readonly isCustomStorage: boolean;
   private data: TokenMetricsData;
 
   public static readonly PRICING: Record<string, ModelPricing> = {
@@ -71,27 +74,43 @@ export class TokenMetricsManager {
     cachedPerM: 0.2,
   };
 
-  constructor(customStorageDir?: string) {
-    this.storageDir = customStorageDir || path.join(os.homedir(), ".anantham");
-    this.storagePath = path.join(this.storageDir, "token_metrics.json");
+  constructor(customStorageDir?: string, customFallbackDir?: string) {
+    this.isCustomStorage = Boolean(customStorageDir);
+    this.storageDir = customStorageDir || path.join(os.homedir(), ".antigravity");
+    this.storagePath = path.join(this.storageDir, "usage_metrics.json");
+    this.fallbackStorageDir = customFallbackDir || (customStorageDir ? customStorageDir : path.join(os.homedir(), ".anantham"));
+    this.fallbackStoragePath = path.join(this.fallbackStorageDir, "token_metrics.json");
     this.data = this.readFromDisk();
     if (this.data.records.length === 0) {
       this.seedRealisticMetrics();
     }
   }
 
-  public static getInstance(customStorageDir?: string): TokenMetricsManager {
-    if (!TokenMetricsManager.instance || customStorageDir) {
-      TokenMetricsManager.instance = new TokenMetricsManager(customStorageDir);
+  public static getInstance(customStorageDir?: string, customFallbackDir?: string): TokenMetricsManager {
+    if (!TokenMetricsManager.instance || customStorageDir !== undefined || customFallbackDir !== undefined) {
+      TokenMetricsManager.instance = new TokenMetricsManager(customStorageDir, customFallbackDir);
     }
     return TokenMetricsManager.instance;
   }
 
   public static resetInstance(): void {
-    TokenMetricsManager.instance = undefined as unknown as TokenMetricsManager;
+    TokenMetricsManager.instance = undefined;
+  }
+
+  public getStorageDir(): string {
+    return this.storageDir;
+  }
+
+  public getStoragePath(): string {
+    return this.storagePath;
+  }
+
+  public getFallbackStoragePath(): string {
+    return this.fallbackStoragePath;
   }
 
   private readFromDisk(): TokenMetricsData {
+    // 1. Primary telemetry path (~/.antigravity/usage_metrics.json)
     try {
       if (fs.existsSync(this.storagePath)) {
         const content = fs.readFileSync(this.storagePath, "utf-8");
@@ -104,8 +123,25 @@ export class TokenMetricsManager {
         }
       }
     } catch {
+      // Primary read failed, attempt fallback
+    }
+
+    // 2. Fallback telemetry path (~/.anantham/token_metrics.json or customDir/token_metrics.json)
+    try {
+      if (this.fallbackStoragePath !== this.storagePath && fs.existsSync(this.fallbackStoragePath)) {
+        const content = fs.readFileSync(this.fallbackStoragePath, "utf-8");
+        const parsed = JSON.parse(content);
+        if (parsed && Array.isArray(parsed.records)) {
+          return {
+            records: parsed.records,
+            monthlyBudgetUsd: parsed.monthlyBudgetUsd ?? 2000,
+          };
+        }
+      }
+    } catch {
       // Fallback on read failure
     }
+
     return { records: [], monthlyBudgetUsd: 2000 };
   }
 
@@ -116,7 +152,26 @@ export class TokenMetricsManager {
       }
       const tmpPath = `${this.storagePath}.tmp.${Date.now()}`;
       fs.writeFileSync(tmpPath, JSON.stringify(this.data, null, 2), "utf-8");
-      fs.renameSync(tmpPath, this.storagePath);
+      try {
+        fs.renameSync(tmpPath, this.storagePath);
+      } catch {
+        fs.copyFileSync(tmpPath, this.storagePath);
+        try {
+          fs.unlinkSync(tmpPath);
+        } catch {
+          // Ignore temp cleanup error
+        }
+      }
+
+      // Backward compatibility: when customStorageDir is provided, mirror to token_metrics.json
+      if (this.isCustomStorage || this.fallbackStoragePath === path.join(this.storageDir, "token_metrics.json")) {
+        const legacyPath = path.join(this.storageDir, "token_metrics.json");
+        try {
+          fs.writeFileSync(legacyPath, JSON.stringify(this.data, null, 2), "utf-8");
+        } catch {
+          // Ignore legacy mirror errors
+        }
+      }
     } catch {
       // Non-critical metric save failure fallback
     }

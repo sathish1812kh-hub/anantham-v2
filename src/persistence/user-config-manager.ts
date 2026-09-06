@@ -1,9 +1,20 @@
 import fs from "node:fs";
 import path from "node:path";
 import os from "node:os";
+import {
+  OpenRouterKeyMetadata,
+  OpenRouterKeyValidationResult,
+  KeyValidationOptions,
+  validateOpenRouterKey,
+} from "./openrouter-key-validator.js";
+
+export interface StoredKeyMetadata extends OpenRouterKeyMetadata {
+  validatedAt?: string;
+}
 
 export interface UserConfig {
   apiKeys: Record<string, string>;
+  keyMetadata?: Record<string, StoredKeyMetadata>;
   defaultModel?: string;
   theme?: string;
   lastUpdated?: string;
@@ -12,40 +23,107 @@ export interface UserConfig {
   logo_path?: string;
 }
 
+export interface ConfiguredKeyInfo {
+  provider: string;
+  configured: boolean;
+  masked: string;
+  metadata?: StoredKeyMetadata;
+}
+
 /**
- * UserConfigManager handles persistent configuration for Anantham V2
+ * UserConfigManager handles persistent configuration for Anantham V2 / Antigravity CLI
  * across CLI, TUI, and Agent runtimes.
- * Stores global config in ~/.anantham/config.json and optionally syncs with project .env.
+ * Supports dual-path hierarchy: ~/.antigravity/config.json primary with ~/.anantham/config.json fallback.
  */
 export class UserConfigManager {
-  private static instance: UserConfigManager;
+  private static instance: UserConfigManager | undefined;
   private readonly configDir: string;
   private readonly configPath: string;
+  private readonly fallbackConfigDir: string;
+  private readonly fallbackConfigPath: string;
   private config: UserConfig;
 
-  constructor(customConfigDir?: string) {
-    this.configDir = customConfigDir || path.join(os.homedir(), ".anantham");
+  constructor(customConfigDir?: string, customFallbackDir?: string) {
+    this.configDir = customConfigDir || path.join(os.homedir(), ".antigravity");
     this.configPath = path.join(this.configDir, "config.json");
+    this.fallbackConfigDir = customFallbackDir || (customConfigDir ? customConfigDir : path.join(os.homedir(), ".anantham"));
+    this.fallbackConfigPath = path.join(this.fallbackConfigDir, "config.json");
     this.config = this.readFromDisk();
   }
 
-  public static getInstance(customConfigDir?: string): UserConfigManager {
-    if (!UserConfigManager.instance || customConfigDir) {
-      UserConfigManager.instance = new UserConfigManager(customConfigDir);
+  public static getInstance(customConfigDir?: string, customFallbackDir?: string): UserConfigManager {
+    if (!UserConfigManager.instance || customConfigDir !== undefined || customFallbackDir !== undefined) {
+      UserConfigManager.instance = new UserConfigManager(customConfigDir, customFallbackDir);
     }
     return UserConfigManager.instance;
   }
 
+  public static resetInstance(): void {
+    UserConfigManager.instance = undefined;
+  }
+
+  public getConfigDir(): string {
+    return this.configDir;
+  }
+
+  public getConfigPath(): string {
+    return this.configPath;
+  }
+
+  public getFallbackConfigDir(): string {
+    return this.fallbackConfigDir;
+  }
+
+  public getFallbackConfigPath(): string {
+    return this.fallbackConfigPath;
+  }
+
   private readFromDisk(): UserConfig {
+    // 1. Primary path (~/.antigravity/config.json or custom)
     try {
       if (fs.existsSync(this.configPath)) {
         const content = fs.readFileSync(this.configPath, "utf-8");
-        return JSON.parse(content);
+        const parsed = JSON.parse(content);
+        if (parsed && typeof parsed === "object") {
+          return {
+            apiKeys: parsed.apiKeys || {},
+            keyMetadata: parsed.keyMetadata || {},
+            defaultModel: parsed.defaultModel,
+            theme: parsed.theme,
+            lastUpdated: parsed.lastUpdated,
+            customModels: parsed.customModels,
+            logoPath: parsed.logoPath,
+            logo_path: parsed.logo_path,
+          };
+        }
       }
     } catch {
-      // Fallback on read failure
+      // Primary read failed, attempt fallback
     }
-    return { apiKeys: {} };
+
+    // 2. Fallback path (~/.anantham/config.json)
+    try {
+      if (this.fallbackConfigPath !== this.configPath && fs.existsSync(this.fallbackConfigPath)) {
+        const content = fs.readFileSync(this.fallbackConfigPath, "utf-8");
+        const parsed = JSON.parse(content);
+        if (parsed && typeof parsed === "object") {
+          return {
+            apiKeys: parsed.apiKeys || {},
+            keyMetadata: parsed.keyMetadata || {},
+            defaultModel: parsed.defaultModel,
+            theme: parsed.theme,
+            lastUpdated: parsed.lastUpdated,
+            customModels: parsed.customModels,
+            logoPath: parsed.logoPath,
+            logo_path: parsed.logo_path,
+          };
+        }
+      }
+    } catch {
+      // Fallback read failed
+    }
+
+    return { apiKeys: {}, keyMetadata: {} };
   }
 
   public save(): void {
@@ -56,13 +134,30 @@ export class UserConfigManager {
       this.config.lastUpdated = new Date().toISOString();
       fs.writeFileSync(this.configPath, JSON.stringify(this.config, null, 2), "utf-8");
     } catch (err) {
-      console.error("Warning: Failed to save ~/.anantham/config.json:", err);
+      console.error(`Warning: Failed to save ${this.configPath}:`, err);
     }
   }
 
   public getApiKey(provider: string): string | undefined {
     const key = provider.toLowerCase();
     return this.config.apiKeys[key] || process.env[`${key.toUpperCase().replace(/-/g, "_")}_API_KEY`];
+  }
+
+  public getKeyMetadata(provider: string): StoredKeyMetadata | undefined {
+    const key = provider.toLowerCase();
+    return this.config.keyMetadata?.[key];
+  }
+
+  public setKeyMetadata(provider: string, metadata: OpenRouterKeyMetadata): void {
+    const key = provider.toLowerCase();
+    if (!this.config.keyMetadata) {
+      this.config.keyMetadata = {};
+    }
+    this.config.keyMetadata[key] = {
+      ...metadata,
+      validatedAt: new Date().toISOString(),
+    };
+    this.save();
   }
 
   public setApiKey(provider: string, apiKey: string, workspaceDir?: string): void {
@@ -78,10 +173,53 @@ export class UserConfigManager {
     this.syncToWorkspaceDotenv(envVar, apiKey, workspaceDir || process.cwd());
   }
 
+  /**
+   * Validates key via handshake (if OpenRouter) before persisting credentials.
+   */
+  public async validateAndSetApiKey(
+    provider: string,
+    apiKey: string,
+    workspaceDir?: string,
+    options?: KeyValidationOptions
+  ): Promise<OpenRouterKeyValidationResult> {
+    const key = provider.toLowerCase();
+    const trimmed = apiKey ? apiKey.trim() : "";
+    if (!trimmed) {
+      return {
+        valid: false,
+        error: "API key cannot be empty",
+      };
+    }
+
+    if (key === "openrouter") {
+      const validation = await validateOpenRouterKey(trimmed, options);
+      if (!validation.valid) {
+        return validation;
+      }
+      this.setApiKey(provider, trimmed, workspaceDir);
+      if (validation.metadata) {
+        this.setKeyMetadata(provider, validation.metadata);
+      }
+      return validation;
+    }
+
+    // Generic provider
+    this.setApiKey(provider, trimmed, workspaceDir);
+    return { valid: true };
+  }
+
   public removeApiKey(provider: string, workspaceDir?: string): boolean {
     const key = provider.toLowerCase();
+    let removed = false;
     if (this.config.apiKeys[key]) {
       delete this.config.apiKeys[key];
+      removed = true;
+    }
+    if (this.config.keyMetadata?.[key]) {
+      delete this.config.keyMetadata[key];
+      removed = true;
+    }
+    if (removed) {
       this.save();
 
       const envVar = `${key.toUpperCase().replace(/-/g, "_")}_API_KEY`;
@@ -92,14 +230,16 @@ export class UserConfigManager {
     return false;
   }
 
-  public listKeys(): Array<{ provider: string; configured: boolean; masked: string }> {
+  public listKeys(): ConfiguredKeyInfo[] {
     const knownProviders = ["openrouter", "openai", "anthropic", "gemini", "groq", "deepseek", "ollama"];
     return knownProviders.map((p) => {
       const val = this.getApiKey(p);
+      const meta = this.getKeyMetadata(p);
       return {
         provider: p,
         configured: !!val,
         masked: val ? this.maskSecret(val) : "Not Set",
+        ...(meta ? { metadata: meta } : {}),
       };
     });
   }

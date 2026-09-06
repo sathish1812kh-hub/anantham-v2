@@ -5,6 +5,7 @@ import { type TuiDimensions, type TuiViewMode } from "../domain/tui.js";
 import { type BackgroundJob } from "../domain/job.js";
 import { type NodeIdentity } from "../domain/node.js";
 import { TokenDashboardRenderer } from "./token-dashboard-renderer.js";
+import { TeamworkPreviewCanvas } from "./teamwork-preview-canvas.js";
 import { CommandPalette, type PaletteCommand } from "./command-palette.js";
 import { type ModelAccordionBrowser } from "./model-accordion-browser.js";
 
@@ -98,6 +99,7 @@ export class TuiRenderer {
       { key: "8", label: "Approvals", mode: "approvals", active: mode === "approvals" },
       { key: "9", label: "Events", mode: "events", active: mode === "events" },
       { key: "U", label: "Usage", mode: "usage", active: mode === "usage" },
+      { key: "T", label: "Teamwork", mode: "teamwork", active: mode === "teamwork" },
       { key: "?", label: "Help", mode: "help", active: mode === "help" },
     ];
     lines.push(TerminalLayout.renderTabBar(tabs, width));
@@ -144,6 +146,9 @@ export class TuiRenderer {
         case "usage":
           contentLines = TokenDashboardRenderer.render(width, this.dimensions.height);
           break;
+        case "teamwork":
+          contentLines = TeamworkPreviewCanvas.render(width, this.dimensions.height);
+          break;
       }
     }
 
@@ -161,47 +166,14 @@ export class TuiRenderer {
     }
 
     // 6. Command Bar / Prompt (Bottom)
-    lines.push(TerminalLayout.renderDivider(width, "─"));
-    const inCommandMode = isCommandMode ?? (commandPrompt.length > 0);
-    if (inCommandMode) {
-      const isNarrow = width < 50;
-      const isSlash = commandPrompt.startsWith("/");
-      const prefix = isNarrow
-        ? " [CMD] : "
-        : isSlash
-          ? " \x1b[38;2;0;242;254m❖ anantham:preview >\x1b[0m "
-          : " [COMMAND MODE] : ";
-      const suffix = isNarrow
-        ? "_ | [↵] [ESC]"
-        : isSlash
-          ? "_ \x1b[90m| [ENTER] Run, [TAB] Complete, [ESC] Close\x1b[0m"
-          : "_ | [ENTER] Run, [ESC] Cancel";
-      const avail = Math.max(0, width - 25 - suffix.length);
-      const cleanPrompt = TuiSanitizer.sanitize(commandPrompt);
-      const visiblePrompt = cleanPrompt.length <= avail
-        ? cleanPrompt
-        : avail > 3
-          ? "..." + cleanPrompt.slice(-(avail - 3))
-          : cleanPrompt.slice(-avail);
-      lines.push(`${prefix}${visiblePrompt}${suffix}`);
-    } else {
-      if (width >= 80) {
-        const leftPrompt = " \x1b[38;2;0;242;254m❯\x1b[0m \x1b[90mask anything or type / for commands...\x1b[0m";
-        const rightMode = "\x1b[38;2;0;242;254m❖\x1b[0m [NORMAL MODE] [1-9] Views, [:] Command, [q] Quit";
-        const visLeft = TuiSanitizer.stripAnsi(leftPrompt).length;
-        const visRight = TuiSanitizer.stripAnsi(rightMode).length;
-        const gap = Math.max(1, width - visLeft - visRight);
-        lines.push(`${leftPrompt}${" ".repeat(gap)}${rightMode}`);
-      } else if (width >= 60) {
-        lines.push(" \x1b[38;2;0;242;254m❖\x1b[0m [NORMAL MODE] [1-9] Views, [:] Command, [q] Quit");
-      } else if (width >= 48) {
-        lines.push(" [NORMAL MODE] [1-9] Views, [:] Command, [q] Quit");
-      } else if (width >= 32) {
-        lines.push(" [NORMAL] [:] Cmd, [q] Quit");
-      } else {
-        lines.push(TuiSanitizer.truncate(" [NORM] [:] [q]", width));
-      }
-    }
+    const promptLines = TerminalLayout.renderPromptBar({
+      width,
+      commandPrompt,
+      isCommandMode,
+      cursorPosition: _cursorPosition,
+      bottomRule: false,
+    });
+    lines.push(...promptLines);
 
     return lines.join("\n");
   }

@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, afterEach } from "vitest";
+import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { TuiController } from "../../src/tui/tui-controller.js";
 import { TuiRenderer } from "../../src/tui/tui-renderer.js";
 import { TuiStateAdapter } from "../../src/tui/tui-state-adapter.js";
@@ -10,12 +10,14 @@ import { ProjectRepository } from "../../src/persistence/repositories/project-re
 import { SessionRepository } from "../../src/persistence/repositories/session-repository.js";
 import { TaskRepository } from "../../src/persistence/repositories/task-repository.js";
 import { UserConfigManager } from "../../src/persistence/user-config-manager.js";
+import { ModelCatalogCache } from "../../src/persistence/model-catalog-cache.js";
 import { Writable } from "node:stream";
 import fs from "node:fs";
 import path from "node:path";
 import os from "node:os";
 
 describe("TUI Alternate Screen Buffer & OpenCode-Parity Command Output", () => {
+  const originalFetch = globalThis.fetch;
   let engine: SqliteEngine;
   let projectRepo: ProjectRepository;
   let sessionRepo: SessionRepository;
@@ -28,8 +30,36 @@ describe("TUI Alternate Screen Buffer & OpenCode-Parity Command Output", () => {
   let testOutputDir: string;
 
   beforeEach(() => {
-    testOutputDir = path.join(os.tmpdir(), `anantham-test-${Date.now()}`);
+    testOutputDir = path.join(os.tmpdir(), `anantham-test-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`);
     fs.mkdirSync(testOutputDir, { recursive: true });
+
+    UserConfigManager.resetInstance();
+    UserConfigManager.getInstance(testOutputDir);
+
+    ModelCatalogCache.resetInstance();
+    ModelCatalogCache.getInstance(testOutputDir);
+
+    globalThis.fetch = vi.fn().mockImplementation(async (url: any) => {
+      if (typeof url === "string" && url.includes("/api/v1/auth/key")) {
+        return {
+          ok: true,
+          status: 200,
+          json: async () => ({
+            data: {
+              label: "Test OpenRouter Key",
+              limit: 100,
+              usage: 0.1234,
+              is_free_tier: false,
+            },
+          }),
+        } as unknown as Response;
+      }
+      return {
+        ok: true,
+        status: 200,
+        json: async () => ({ data: [] }),
+      } as unknown as Response;
+    });
 
     engine = new SqliteEngine({ path: ":memory:" });
     engine.open();
@@ -97,6 +127,11 @@ describe("TUI Alternate Screen Buffer & OpenCode-Parity Command Output", () => {
   });
 
   afterEach(() => {
+    globalThis.fetch = originalFetch;
+    delete process.env.OPENROUTER_API_KEY;
+    delete process.env.ANTHROPIC_API_KEY;
+    UserConfigManager.resetInstance();
+    ModelCatalogCache.resetInstance();
     engine.close();
     try {
       fs.rmSync(testOutputDir, { recursive: true, force: true });
@@ -265,7 +300,8 @@ describe("TUI Alternate Screen Buffer & OpenCode-Parity Command Output", () => {
 
   it("prioritizes configured providers when displaying /models", async () => {
     // Connect openrouter key
-    await commandRegistry.execute(parser.parse("/key set openrouter sk-or-test-detection-key"));
+    const resKey = await commandRegistry.execute(parser.parse("/key set openrouter sk-or-test-detection-key"));
+    expect(resKey.success).toBe(true);
 
     const resModels = await commandRegistry.execute(parser.parse("/models"));
     expect(resModels.success).toBe(true);
